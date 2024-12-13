@@ -5,13 +5,15 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="A propos | La 3ème dimension" description="About Jeanine White Lorem Ipsum">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
+			align="center"
 				title="A propos"
 				tagline="Bonjour, je suis Raphaël et j'ai eu l'idée de crée La 3eme dimension un concept d'approche différent de design, dans l'optique d'apporter un oeil et une expertise adapté aux besoins et à la demande de chacun, j'ai concu plusieurs objets (télescope, lunette astronomique etc) qui m'ont demandé d'être extremement rigoureux. J'ai pour objectif de mettre se savoir faire au profit de vos besoins. "
-			>
+			
+				>
 			</Hero>
 
 			<img
@@ -21,31 +23,6 @@ import Hero from '../components/Hero.astro';
 					alt="Portrait"
 					/>
 
-			<section>
-				<h2 class="section-title"><a href="https://astro.build/">Instagram</a></h2>
-				<div class="content">
-					<p>
-					</p>
-					<p>
-						Abonnez vous ! 
-					</p>
-					<p>
-					
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title"><a href="https://astro.build/">Facebook</a></h2>
-				<div class="content">
-					<p> Pour un peu plus de contenu </p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title"><a href="https://astro.build/">Mon Bento</a></h2>
-				<div class="content">
-					<p>Qui regroupe l'ensemble de nos platformes</p>
-				</div>
-			</section>
 		</main>
 
 		<ContactCTA />
@@ -57,6 +34,8 @@ import Hero from '../components/Hero.astro';
 		display: flex;
 		flex-direction: column;
 		gap: 3.5rem;
+		
+		
 	}
 
 	img {
@@ -71,6 +50,7 @@ import Hero from '../components/Hero.astro';
 		flex-direction: column;
 		gap: 0.5rem;
 		color: var(--gray-200);
+		
 	}
 
 	.section-title {
@@ -93,11 +73,15 @@ import Hero from '../components/Hero.astro';
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
+	.hero {
+		text-align :"center";
+	 }
 
 	@media (min-width: 50em) {
 		.about {
 			display: grid;
 			grid-template-columns: 1fr 60% 1fr;
+			text-align: left;
 		}
 
 		.about > :global(:first-child) {

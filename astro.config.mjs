@@ -1,4 +1,6 @@
-import { defineConfig } from 'astro/config';
+mport { defineConfig } from 'astro/config'
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://github.com/La3emedimension',
+  base: 'la_3eme_dimension',
+})

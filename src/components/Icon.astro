@@ -28,6 +28,7 @@ const gradientId = 'icon-gradient-' + Math.round(Math.random() * 10e12).toString
 	fill={gradient ? `url(#${gradientId})` : color}
 	{...attrs}
 >
+
 	<g set:html={iconPath} />
 	{
 		gradient && (
