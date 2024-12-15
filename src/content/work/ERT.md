@@ -13,6 +13,8 @@ tags:
 
 E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuse, amas d'étoiles.
 
+<img src="/assets/ERT 7.jpg">
+
 ---
 Elle est constituée de plusieur modules : 
 
@@ -35,5 +37,7 @@ Voici quelques images du projet :
 <img src="/assets/ERT.jpg">
 <img src="/assets/ERT 2.jpg">
 <img src="/assets/ERT 5.jpg">
+<img src="/assets/ERT 6.jpg">
+<img src="/assets/ERT 8.jpg">
 
 Si le projet vous interesse n'hésitez pas à me contacter par mail ! 
