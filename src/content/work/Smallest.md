@@ -33,8 +33,12 @@ L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la préc
 
 Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
 
-Le porte oculaire en 1.25 pouces permet l'utilisation de très bon oculaires de grandes marques 
- 
+Le porte oculaire en 1.25 pouces permet l'utilisation de très bon oculaires de grandes marques.
+
+---
+le projet:
+<iframe src="https://laposte4284.autodesk360.com/shares/public/SH30dd5QT870c25f12fcfd09f13d7ee334c6?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+---
 
 #### Le Smallest c'est ?
 
