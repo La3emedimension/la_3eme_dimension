@@ -37,7 +37,11 @@ Le porte oculaire en 1.25 pouces permet l'utilisation de très bon oculaires de 
 
 ---
 le projet:
+<div class="embedresize">
+<div>
 <iframe src="https://laposte4284.autodesk360.com/shares/public/SH30dd5QT870c25f12fcfd09f13d7ee334c6?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+</div>
+</div>
 ---
 
 #### Le Smallest c'est ?
