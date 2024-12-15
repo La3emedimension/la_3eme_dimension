@@ -13,7 +13,7 @@ tags:
 
 ## Smallest, pourquoi ce projet?
 
-> L'objectif c'est de pouvoir toujours avoir un télescope avec soit en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compacte, modulaire et permets d'avoir un bon compromis diamètre et portabilitée. 
+> L'objectif c'est de pouvoir toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permets d'avoir un bon compromis diamètre et portabilitée. 
 ---
 <img src="/assets/150-750 (8).jpg">
 
@@ -24,26 +24,26 @@ Le <a href="https://astro.build/">Smallest</a> c'est un projet qui a pour but de
 
 ### Comment ?
 
-L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponds au problèmatique optique. J'ai utilisé fusion 360 d'autodesk, 
+L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponds aux problèmatiques optiques. J'ai utilisé fusion 360 d'autodesk, 
 
 <img src="/assets/150-750 (5).jpg">
 ---
 
 ### Un kit de conversion ? 
 
-Le Smallest s'adapte parfaitement aux optiques industriel des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel. Puis de les mettres dans le Kit. 
+Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
 
-Le porte oculaire en 1.25 pouces permets l'utilisation de très bon oculaires de grande marque 
+Le porte oculaire en 1.25 pouces permet l'utilisation de très bon oculaires de grandes marques 
  
 
 #### Le Smallest c'est ?
 
 - Un kit pour les optiques de 150/750.
-- il est repliable sur lui même.
-- transportable en avion.
+- Il est repliable sur lui même.
+- Transportable en avion.
 - Porte oculaire 1.25.
 - Tube en alluminium.
-- compatible queue d'aronde pour chercheurs.
+- Compatible queue d'aronde pour chercheurs.
 - Structure dobson avec monture et tube dans le même kit
 
 ---
