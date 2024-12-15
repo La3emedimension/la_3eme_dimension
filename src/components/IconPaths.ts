@@ -34,7 +34,11 @@ export const iconPaths = {
 	'discord-logo': `<circle stroke="none" cx="96" cy="144" r="12"/><circle stroke="none" cx="160" cy="144" r="12"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M74 80a175 175 0 0 1 54-8 175 175 0 0 1 54 8m0 96a175 175 0 0 1-54 8 175 175 0 0 1-54-8"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m155 182 12 24a8 8 0 0 0 9 4c25-6 46-16 61-30a8 8 0 0 0 3-8L206 59a8 8 0 0 0-5-5 176 176 0 0 0-30-9 8 8 0 0 0-9 5l-8 24m-53 108-12 24a8 8 0 0 1-9 4c-25-6-46-16-61-30a8 8 0 0 1-3-8L50 59a8 8 0 0 1 5-5 176 176 0 0 1 30-9 8 8 0 0 1 9 5l8 24"/>`,
 	'linkedin-logo': `<rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" rx="8"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M120 112v64m-32-64v64m32-36a28 28 0 0 1 56 0v36"/><circle stroke="none" cx="88" cy="80" r="12"/>`,
 	'instagram-logo': `<circle cx="128" cy="128" r="40" fill="none" stroke-miterlimit="10" stroke-width="16"/><rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" rx="48"/><circle cx="180" cy="76" r="12" stroke="none" />`,
-	'tiktok-logo': `<path fill="none" d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>`,
-	'printables-logo': `<path  fill="none" d="m0 35 12.172-7L0 21ZM12.172 0 0 7l12.172 7v14l12.172-7V7Z"></path>`,
+	'tiktok-logo': `<path fill="none" d="M224,48H32a8,8,0,0,0-8,8V192a16,>16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>`,
+	'printables-logo': `<path fill="none" d="M 100 0 C 92.596 -0.274 93.107 114.745 100 115 L 200 57 L 100 0 Z" bx:origin="0.5 0.500001"/>
+    					<path fill="none" d="M 0 172.474 L 0 287.474 L 100 229.474 L 0 172.474 Z" bx:origin="0.5 0.500001"/>
+    					<path fill="none" d="M 0 0 C -6.355 -0.771 -7.465 113.966 0 115 L 100 57 L 0 0 Z" transform="matrix(-1, 0, 0, -1, 100, 115.00023)" bx:origin="0.5 0.500001"/>
+    					<path fill="none" d="M 100 57 L 100 172 C 104.237 182.064 204.237 124.064 200 114 C 200.363 95.923 106.16 50.129 100 57 Z" transform="matrix(-1, 0, 0, -1, 300, 229.00023)" bx:origin="0.5 0.500001"/>
+    					<path fill="none" d="M 100 115 L 100 230 L 200 172 C 203.364 169.57 106.006 110.662 100 115 Z" bx:origin="0.5 0.500001"/>`,
 	
 };
