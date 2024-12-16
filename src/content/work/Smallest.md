@@ -1,5 +1,5 @@
 ---
-title: Smallest  
+title: Smallest 
 publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
@@ -8,7 +8,7 @@ description: |
 tags:
   - Design
   - Astronomie
-  - Projet DIY
+  - Projet DIY    
 ---
 
 ## Smallest, pourquoi ce projet?
@@ -60,22 +60,22 @@ le projet:
 
 <style>
 .embedresize {
-max-width: 560px;
-margin: auto;
-}
-
-.embedresize div {
-position: relative;
-height: 0;
-padding-bottom: 56.25%;
-}
-
-.embedresize iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
-
+    max-width: 560px;
+    margin: auto;
+    }
+    
+    .embedresize div {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    }
+    
+    .embedresize iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
 </style>
+
