@@ -10,18 +10,12 @@ import Hero from '../components/Hero.astro';
 		<main class="wrapper about">
 			<Hero
 				title="A propos"
-				tagline="Bonjour, je suis Raphaël et j'ai eu l'idée de crée La 3eme dimension un concept d'approche différent de design, dans l'optique d'apporter un oeil et une expertise adapté aux besoins et à la demande de chacun, j'ai concu plusieurs objets (télescope, lunette astronomique etc) qui m'ont demandé d'être extremement rigoureux. J'ai pour objectif de mettre se savoir faire au profit de vos besoins. "
+				tagline="Bonjour, nous avons eu l'idée de crée La 3eme dimension un concept qui a pour but une approche différent du design, dans l'optique d'apporter un oeil et une expertise adapté aux besoins et à la demande de chacun, nous avons concu plusieurs objets (télescope, lunette astronomique, objets du quotidien, etc) qui demande d'être extremement rigoureux. En ayant pour objectif de mettre se savoir faire au profit de vos besoins. "
 			
 				>
 			</Hero>
 
-			<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Portrait"
-					/>
-
+			
 		</main>
 
 		<ContactCTA />
@@ -29,17 +23,16 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+	.
 	.about {
 		display: flex;
 		flex-direction: column;
 		gap: 3.5rem;
-		
-		
 	}
 
 	img {
-
-		margin-top: 1.5rem;
+		margin-top: auto;
+		margin-right: 5%;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);		
 	}
@@ -78,10 +71,12 @@ import Hero from '../components/Hero.astro';
 			display: grid;
 			grid-template-columns: 1fr 60% 1fr;
 			text-align: left;
+			margin-left: 5%;
+			;
 		}
 
 		.about > :global(:first-child) {
-			grid-column-start: 2;
+			grid-column: 1/3;
 		}
 
 		section {
