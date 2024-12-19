@@ -13,10 +13,11 @@ import Hero from '../components/Hero.astro';
 
 					Depuis 2016, nous évoluons dans le domaine de la communication, ce qui nous a permis d'acquérir des compétences en design et en dessin, enrichissant notre approche créative et visuelle dans la conception 3D.
 				    
-					Depuis plus de 4 ans, Nous nous consacrons à l'impression 3D, explorant différentes techniques et matériaux. Une approche qui privilégie un équilibre entre design, simplicité, économie et efficacité. Chaque création est pensée pour répondre aux besoins de manière astucieuse, économique, fonctionnelle et accessible.<br>
+					Depuis plus de 4 ans, nous nous consacrons à l'impression 3D, explorant différentes techniques et matériaux. Une approche qui privilégie un équilibre entre design, simplicité, économies et efficacité. Chaque création est pensée pour répondre aux besoins de manière astucieuse, économique, fonctionnelle et accessible.<br>
 				   
-					Si vous partagez la passion pour le design et répondre à des problématiques technique ou si vous souhaitez découvrir nos réalisations, je vous invite à plonger dans l'univers de La 3ème Dimension.
-			</Hero>			
+					Si vous partagez la passion pour le design tout en repondant à des problématiques techniques ou si vous souhaitez découvrir nos réalisations, je vous invite à plonger dans l'univers de La 3ème Dimension...
+			</Hero>	
+
 		</main>
 
 		<ContactCTA />
@@ -33,7 +34,8 @@ import Hero from '../components/Hero.astro';
 
 	img {
 		margin-top: auto;
-		margin-right: 5%;
+		margin-right:auto;
+		margin-block: auto;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);		
 	}
@@ -43,6 +45,7 @@ import Hero from '../components/Hero.astro';
 		flex-direction: column;
 		gap: 0.5rem;
 		color: var(--gray-200);
+
 		
 	}
 
@@ -68,9 +71,7 @@ import Hero from '../components/Hero.astro';
 	}
 
 	@media (min-width: 50em) {
-		.hero {
-		font-size: medium;
-	}
+		
 		.about {
 			display: grid;
 			grid-template-columns: 1fr 60% 1fr;
@@ -87,6 +88,7 @@ import Hero from '../components/Hero.astro';
 			display: contents;
 			font-size: var(--text-lg);
 		}
+
 	}
 	
 </style>
