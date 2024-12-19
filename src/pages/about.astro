@@ -8,14 +8,15 @@ import Hero from '../components/Hero.astro';
 <BaseLayout title="A propos | La 3ème dimension" description="About Jeanine White Lorem Ipsum">
 	<div class="stack gap-20">
 		<main class="wrapper about">
-			<Hero
-				title="A propos"
-				tagline="Bonjour, nous avons eu l'idée de créer La 3eme dimension suite à un concept qui a pour but une approche différent du design, dans l'optique d'apporter un oeil et une expertise adapté aux besoins et à la demande de chacun, nous avons concu plusieurs objets (télescope, lunette astronomique, objets du quotidien, etc) qui demande d'être extremement rigoureux. En ayant pour objectif de mettre se savoir faire au profit de vos besoins. "
-			
-				>
-			</Hero>
+			<Hero title="A propos">
+				La 3ème Dimension est née d'une passion pour la conception et l'innovation en 3D. Ce projet puise ses racines dans diverses expériences, notamment la fabrication du télescope Smallest et plusieurs autres réalisations dans divers domaines, dont l'astronomie. Ces projets ont été l'occasion de développer une expertise dans la création d'éléments optiques complexes, permettant d'atteindre un haut niveau de précision.<br>
 
-			
+					Depuis 2016, nous évoluons dans le domaine de la communication, ce qui nous a permis d'acquérir des compétences en design et en dessin, enrichissant notre approche créative et visuelle dans la conception 3D.
+				    
+					Depuis plus de 4 ans, Nous nous consacrons à l'impression 3D, explorant différentes techniques et matériaux. Une approche qui privilégie un équilibre entre design, simplicité, économie et efficacité. Chaque création est pensée pour répondre aux besoins de manière astucieuse, économique, fonctionnelle et accessible.<br>
+				   
+					Si vous partagez la passion pour le design et répondre à des problématiques technique ou si vous souhaitez découvrir nos réalisations, je vous invite à plonger dans l'univers de La 3ème Dimension.
+			</Hero>			
 		</main>
 
 		<ContactCTA />
@@ -23,7 +24,7 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
-	.
+	
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -67,6 +68,9 @@ import Hero from '../components/Hero.astro';
 	}
 
 	@media (min-width: 50em) {
+		.hero {
+		font-size: medium;
+	}
 		.about {
 			display: grid;
 			grid-template-columns: 1fr 60% 1fr;
