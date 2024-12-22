@@ -26,6 +26,8 @@ Les pots sont conçu de t'elle manière à recevoir, serviettes, couverts et ver
 <img src="/assets/pdc (3).jpg">
 <img src="/assets/pdc (4).jpg">
 <img src="/assets/pdc (5).jpg">
+<img src="/assets/pdc (6).jpg">
+<img src="/assets/pdc (7).jpg">
 
 ---
 
