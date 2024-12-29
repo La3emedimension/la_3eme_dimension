@@ -55,8 +55,15 @@ le projet:
 - Compatible queue d'aronde pour chercheurs.
 - Structure dobson avec monture et tube dans le même kit
 
+<div class="embedresize">
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
 ---
 <img src="/assets/Smallest.jpg">
+<img src="/assets/150 1.jpg">
+<img src="/assets/150 2.jpg">
 
 <style>
 .embedresize {
