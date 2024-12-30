@@ -26,7 +26,7 @@ Le <a href="https://astro.build/">Smallest</a> est un projet qui a pour but de r
 
 L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk, 
 
-<img src="/assets/150-750 (5).jpg">
+<img src="/assets/tp 150750.gif">
 ---
 
 ### Un kit de conversion ? 
