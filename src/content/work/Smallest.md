@@ -60,10 +60,15 @@ le projet:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
+
 ---
 <img src="/assets/Smallest.jpg">
 <img src="/assets/150 1.jpg">
 <img src="/assets/150 2.jpg">
+
+Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
+
+<img src="/assets/POS (3).jpg">
 
 <style>
 .embedresize {
