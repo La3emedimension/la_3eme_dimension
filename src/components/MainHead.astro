@@ -12,12 +12,6 @@ const {
 } = Astro.props;
 ---
 
-<meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
-<title>{title}</title>
-
 <!-- HTML Meta Tags -->
 <meta name="description" content="La 3ème dimension">
 
@@ -37,6 +31,11 @@ const {
 <meta name="twitter:image" content="preview.jpg">
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
