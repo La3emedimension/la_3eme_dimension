@@ -4,7 +4,7 @@ publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
-  Un kit de conversion pour telescope. En grande partie imprimé en 3d pour des miroirs de 150 et de 750mm de focale
+  Un kit de conversion pour télescope. En grande partie imprimé en 3d pour des miroirs de 150 et de 750mm de focale
 tags:
   - Design
   - Astronomie
@@ -13,27 +13,27 @@ tags:
 
 ## Smallest, pourquoi ce projet?
 
-> L'objectif c'est de pouvoir toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permets d'avoir un bon compromis diamètre et portabilitée. 
+> L'objectif c'est de pouvoir toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis diamètre et portabilité. 
 ---
 <img src="/assets/150-750 (8).jpg">
 
-Le <a href="https://astro.build/">Smallest</a> c'est un projet qui a pour but de répondre à une problématique que j'ai rencontré en tant qu'astronome amateur, pourvoir toujours avoir avec moi un petit telescope suffisament puissant pour observer le ciel. Il permet aussi d'aller chercher le ciel dans les lieux les plus reculer et de l'avoir avec soit en avion dans le respect des rêgles en vigueurs. Il tiens dans une saccoche d'ordinateur et on peut facilement retirer les optiques.
+Le <a href="https://astro.build/">Smallest</a> est un projet qui a pour but de répondre à une problématique rencontrée en tant qu'astronome amateur: toujours avoir un petit telescope suffisament puissant pour observer le ciel. Il permet d'aller chercher le ciel dans les lieux les plus reculés ou l'avoir avec soi en avion dans le respect des règles en vigueur. Il tient dans une saccoche d'ordinateur et on peut facilement retirer les optiques.
 
 <img src="/assets/150-750 (13).jpg">
 
 
 ### Comment ?
 
-L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponds aux problèmatiques optiques. J'ai utilisé fusion 360 d'autodesk, 
+L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk, 
 
-<img src="/assets/150-750 (5).jpg">
+<img src="/assets/tp 150750.gif">
 ---
 
 ### Un kit de conversion ? 
 
 Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
 
-Le porte oculaire en 1.25 pouces permet l'utilisation de très bon oculaires de grandes marques.
+Le porte oculaire en 1.25 pouces permet l'utilisation de très bonnes optiques de grandes marques.
 
 ---
 le projet:
@@ -48,22 +48,27 @@ le projet:
 #### Le Smallest c'est ?
 
 - Un kit pour les optiques de 150/750.
-- Il est repliable sur lui même.
+- Il est repliable sur lui-même.
 - Transportable en avion.
 - Porte oculaire 1.25.
-- Tube en alluminium.
+- Tube en aluminium.
 - Compatible queue d'aronde pour chercheurs.
-- Structure dobson avec monture et tube dans le même kit
+- Structure Dobson avec monture et tube dans le même kit
 
 <div class="embedresize">
 <div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
+
 ---
 <img src="/assets/Smallest.jpg">
 <img src="/assets/150 1.jpg">
 <img src="/assets/150 2.jpg">
+
+Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
+
+<img src="/assets/POS (3).jpg">
 
 <style>
 .embedresize {

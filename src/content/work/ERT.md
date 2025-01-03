@@ -1,31 +1,31 @@
 ---
-title: ERT
+title: E.R.T
 publishDate: 2019-12-01 00:00:00
 img: /assets/ERT 4.jpg
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |
-  Educational Refracting Telescope. Lunette pedagogique pour comprendre son fonctionnement optique.
+  Educational Refracting Telescope. Lunette pédagogique pour comprendre le fonctionnement optique.
 tags:
   - Design
   - Éducation
   - Astronomie
 ---
 
-E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuse, amas d'étoiles.
+E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles...
 
 <img src="/assets/ERT 7.jpg">
 
 ---
-Elle est constituée de plusieur modules : 
+Elle est constituée de plusieurs modules : 
 
-- Barillet lentille
-- Baffle anti lumière parasite
-- Tube optique
-- Porte oculaire en 1.25 pouces
-- renvoie coudé avec prisme de jumelles
-- oculaie en 1.25p
+- Barillet lentille.
+- Baffle anti lumière parasite.
+- Tube optique.
+- Porte oculaire en 1.25 pouces.
+- renvoi coudé avec prisme de jumelles.
+- oculaire.
 
-L'ensemble de ces élèments n'a qu'un seul sens de montage et ça se fait facilement comme le montre la vidéo ci dessous :
+L'ensemble de ces éléments n'a qu'un seul sens de montage et se fait facilement comme le montre la vidéo ci-dessous :
 <div class="embedresize">
 <div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GQQfFflsZY0?si=n0A6sX5l8ryyjEZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
