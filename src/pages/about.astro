@@ -25,6 +25,9 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+	.hero{
+		text-align: center;
+	}
 	
 	.about {
 		display: flex;
@@ -73,9 +76,9 @@ import Hero from '../components/Hero.astro';
 	@media (min-width: 50em) {
 		
 		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-			text-align: left;
+			display: flex;
+			grid-template-columns: 2fr 60% 1fr;
+			text-align: center;
 			margin-left: 5%;
 			;
 		}
