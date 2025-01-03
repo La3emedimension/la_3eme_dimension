@@ -11,6 +11,7 @@ const {
 	description = 'La 3ème dimension',
 } = Astro.props;
 ---
+
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
@@ -24,7 +25,6 @@ const {
 	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
 	rel="stylesheet"
 />
-
 <script is:inline>
 	// This code is inlined in the head to make dark mode instant & blocking.
 	const getThemePreference = () => {
@@ -45,3 +45,24 @@ const {
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	}
 </script>
+
+<!-- HTML Meta Tags -->
+<title>La 3ème dimension</title>
+<meta name="description" content="La 3ème dimension">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://la3emedim.fr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La 3ème dimension">
+<meta property="og:description" content="La 3ème dimension">
+<meta property="og:image" content="preview.jpg">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="la3emedim.fr">
+<meta property="twitter:url" content="https://la3emedim.fr">
+<meta name="twitter:title" content="La 3ème dimension">
+<meta name="twitter:description" content="La 3ème dimension">
+<meta name="twitter:image" content="preview.jpg">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
