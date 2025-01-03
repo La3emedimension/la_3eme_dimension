@@ -15,7 +15,7 @@ tags:
 Le Backpack Holder Hook
 ---
 
-Le Backpack Holder Hook n'est rien de plus qu'une adatation du crochet de sac à main à destination des baroudeurs, il est conçu et designé pour avoir un maximum d'éfficacité avec le moins de matière possible.
+Le Backpack Holder Hook est une adatation du crochet de sac à main à destination des baroudeurs, il est conçu et designé pour avoir un maximum d'éfficacité avec le moins de matière possible.
 
 <img src="/assets/BHH desk.gif">
 
