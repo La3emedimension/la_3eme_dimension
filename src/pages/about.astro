@@ -7,17 +7,19 @@ import Hero from '../components/Hero.astro';
 
 <BaseLayout title="A propos | La 3ème dimension" description="About La 3ème dimension">
 	<div class="stack gap-20">
-		<main class="wrapper about">
+		<main class="about">
 			<Hero title="A propos">
-				La 3ème Dimension est née d'une passion pour la conception et l'innovation en 3D. Ce projet puise ses racines dans diverses expériences, notamment la fabrication du télescope Smallest et plusieurs autres réalisations dans divers domaines.<br>
+				<p>La 3ème Dimension est née d'une passion pour la conception et l'innovation en 3D. Ce projet puise ses racines dans diverses expériences, notamment la fabrication du télescope Smallest et plusieurs autres réalisations dans divers domaines.</p>
 
-					Depuis 2016, nous évoluons dans le domaine de la communication, ce qui nous a permis d'acquérir des compétences en design et en dessin, enrichissant notre approche créative et visuelle dans la conception 3D.
+					<p>Depuis 2016, nous évoluons dans le domaine de la communication, ce qui nous a permis d'acquérir des compétences en design et en dessin, enrichissant notre approche créative et visuelle dans la conception 3D.</p>
 				    
-					Depuis plus de 4 ans, nous nous consacrons à l'impression 3D, explorant différentes techniques et matériaux. Une approche qui privilégie un équilibre entre design, simplicité, optimisation et efficacité. Chaque création est pensée pour répondre aux besoins de manière astucieuse, économique, fonctionnelle et accessible.<br>
+					<p>Depuis plus de 4 ans, nous nous consacrons à l'impression 3D, explorant différentes techniques et matériaux. Une approche qui privilégie un équilibre entre design, simplicité, optimisation et efficacité. Chaque création est pensée pour répondre aux besoins de manière astucieuse, économique, fonctionnelle et accessible.</p>
 				   
-					Si vous souhaitez découvrir nos réalisations, je vous invite à plonger dans l'univers de La 3ème Dimension...
+					<p>Si vous souhaitez découvrir nos réalisations, je vous invite à plonger dans l'univers de La 3ème Dimension.</p>
+					
 			</Hero>	
-
+			<img src="/assets/apropos.jpg">
+		
 		</main>
 
 		<ContactCTA />
@@ -25,27 +27,33 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
-	.hero{
-		text-align: center;
+	p{
+		text-align: left;
+		font-size: 90%;
 	}
 	
 	.about {
 		display: flex;
 		flex-direction: column;
 		gap: 3.5rem;
+		
 	}
 
 	img {
-		margin-top: auto;
-		margin-right:auto;
-		margin-block: auto;
+		width: 80%;
+		height: 80%;
+		margin-top: 7%;
+		margin-right: 5%;;
+		
 		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);		
+		box-shadow: var(--shadow-md);
+		display: flex;	
+		flex-direction: row;
 	}
 
 	section {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		gap: 0.5rem;
 		color: var(--gray-200);
 
@@ -53,6 +61,7 @@ import Hero from '../components/Hero.astro';
 	}
 
 	.section-title {
+		font-size: medium;
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
@@ -76,11 +85,12 @@ import Hero from '../components/Hero.astro';
 	@media (min-width: 50em) {
 		
 		.about {
+			font-size: medium;
 			display: flex;
-			grid-template-columns: 2fr 60% 1fr;
+			flex-direction: row;
+		
 			text-align: center;
 			margin-left: 5%;
-			;
 		}
 
 		.about > :global(:first-child) {
