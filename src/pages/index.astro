@@ -43,12 +43,13 @@ const projects = (await getCollection('work'))
 					
 				</Hero>
 
-				<img
-					alt="Purple 3d print"
-					width="auto"
-					height="auto"
-					src="/assets/portrait.jpg"
-				/>
+				<video autoplay>
+  <source src="/assets/homevideo.mp4" type="video/mp4" />
+  <p>
+    Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
+    <a href="/assets/homevideo.mp4">un lien pour télécharger la vidéo</a>.
+  </p>
+</video>
 			</header>
 
 			<Skills />
@@ -58,6 +59,7 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
+	
 	a{
 		text-decoration: none;
 	}
@@ -80,7 +82,9 @@ const projects = (await getCollection('work'))
 		display: none;
 	}
 
-	.hero img {
+	.hero video {
+		width: 100%;
+		height: 100%;
 		aspect-ratio: auto;
 		object-fit: cover;
 		object-position: top;
@@ -102,7 +106,7 @@ const projects = (await getCollection('work'))
 			gap: 0.5rem;
 		}
 
-		.hero img {
+		.hero video {
 			aspect-ratio: auto;
 			border-radius: 1rem;
 			object-fit: cover;
