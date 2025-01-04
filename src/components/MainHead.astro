@@ -12,18 +12,9 @@ const {
 } = Astro.props;
 ---
 <meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
-
-<title>{title}</title>
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-	rel="stylesheet"
-/>
 
 <!-- HTML Meta Tags -->
 <title>La 3ème dimension</title>
@@ -44,7 +35,15 @@ const {
 <meta name="twitter:description" content="La 3ème dimension">
 <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/3758858d-5434-49b1-ae27-f0b97ab73095.png?token=xb5Sy25BH8ia-vRr7OVszfxkf20WVp8SkJDWuZyPleo&height=675&width=1200&expires=33271940480">
 
+<title>{title}</title>
 
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+	rel="stylesheet"
+/>
 <script is:inline>
 	// This code is inlined in the head to make dark mode instant & blocking.
 	const getThemePreference = () => {
