@@ -19,7 +19,7 @@ Le Backpack Holder Hook est une adatation du crochet de sac à main à destinati
 
 <img src="/assets/BHH desk.gif">
 
-La forme proche de la lettre C et le sens d'impression permet au crochet de maintenir jusqu'à 12 kilos ( test effectuer avec un sac à dos de 12 kilos sur 8 heures.). Il peut aussi servir de crochet universel une fois couplet avec un mousqueton et un bout de paracorde. 
+La forme proche de la lettre C et le sens d'impression permet au crochet de maintenir jusqu'à 12 kilos ( test effectué avec un sac à dos de 12 kilos sur 8 heures.). Il peut aussi servir de crochet universel une fois couplet avec un mousqueton et un bout de paracorde. 
 
  <img src="/assets/BHH (3).gif">
 <img src="/assets/BHH (1).jpg">

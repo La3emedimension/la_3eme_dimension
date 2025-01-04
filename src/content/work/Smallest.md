@@ -17,7 +17,7 @@ tags:
 ---
 <img src="/assets/150-750 (8).jpg">
 
-Le Smallest est un projet qui a pour but de répondre à une problématique rencontrée en tant qu'astronome amateur: toujours avoir un petit telescope suffisament puissant pour observer le ciel. Il permet d'aller chercher le ciel dans les lieux les plus reculés ou l'avoir avec soi en avion dans le respect des règles en vigueur. Il tient dans une saccoche d'ordinateur et on peut facilement retirer les optiques.
+Le Smallest a pour but de répondre à une problématique rencontrée en tant qu'astronome amateur: toujours avoir un petit telescope suffisament puissant pour observer le ciel. Il permet d'aller chercher le ciel dans les lieux les plus reculés ou l'avoir avec soi en avion dans le respect des règles en vigueur. Il tient dans une saccoche d'ordinateur et on peut facilement retirer les optiques.
 
 <img src="/assets/150-750 (13).jpg">
 
