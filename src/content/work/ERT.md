@@ -25,7 +25,7 @@ Elle est constituée de plusieurs modules :
 - renvoi coudé avec prisme de jumelles.
 - oculaire.
 
-L'ensemble de ces éléments n'a qu'un seul sens de montage et se fait facilement comme le montre la vidéo ci-dessous :
+L'ensemble de ces éléments n'ont qu'un seul sens de montage et se fait facilement comme le montre la vidéo ci-dessous :
 <div class="embedresize">
 <div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GQQfFflsZY0?si=n0A6sX5l8ryyjEZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
