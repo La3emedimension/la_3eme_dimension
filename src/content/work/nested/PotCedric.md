@@ -2,7 +2,7 @@
 title: Pots de table
 publishDate: 2020-03-04 00:00:00
 img: /assets/stock-2.jpg
-img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
+img_alt: Restauration, optimisation de table, rangement, service.
 description: |
   Projet de pots de table pour le restaurateur "La fabric de Cedric" à Montauban (82)
 tags:

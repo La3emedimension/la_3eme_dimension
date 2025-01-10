@@ -2,7 +2,7 @@
 title: BHH 
 publishDate: 2019-10-02 00:00:00
 img: /assets/BHH (2).jpg
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
+img_alt: adatation du crochet de sac à main sur un sac à dos en jean sur un sac à dos Herschel
 description: |
   Le Backpack Holder Hook
 tags:

@@ -2,7 +2,7 @@
 title: E.R.T
 publishDate: 2019-12-01 00:00:00
 img: /assets/ERT 4.jpg
-img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
+img_alt: Petite lunette pédagogique pour faire de l'astronomie et comprendre son fonctionne optique.
 description: |
   Educational Refracting Telescope. Lunette pédagogique pour comprendre le fonctionnement optique.
 tags:

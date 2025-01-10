@@ -2,7 +2,7 @@
 title: Smallest 
 publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img_alt: télescope imprimé en 3D avec vue sur les pyrénées et couché de soleil.
 description: |
   Un kit de conversion pour télescope. En grande partie imprimé en 3d pour des miroirs de 150mm et de 750mm de focale
 tags:
