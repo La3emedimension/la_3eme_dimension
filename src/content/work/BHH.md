@@ -10,7 +10,7 @@ tags:
   - Bagpack upgrade
   - Optimisation
 ---
-
+  <import Pill from= /components/Pill.astro>
 ---
 Le Backpack Holder Hook
 ---
@@ -25,6 +25,7 @@ La forme proche de la lettre C et le sens d'impression permet au crochet de main
 <img src="/assets/BHH (1).jpg">
 
 Vous pouvez retrouver le Réel <a href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>
+
 
 <style>
 .embedresize {

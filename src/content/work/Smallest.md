@@ -4,7 +4,7 @@ publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
 img_alt: télescope imprimé en 3D avec vue sur les pyrénées et couché de soleil.
 description: |
-  Un kit de conversion pour télescope. En grande partie imprimé en 3d pour des miroirs de 150mm et de 750mm de focale
+  Un kit de conversion pour télescope imprimé en 3d, pour des miroirs de 150mm et de 750mm de focale
 tags:
   - Design
   - Astronomie
@@ -13,7 +13,7 @@ tags:
 
 ## Smallest, pourquoi ce projet?
 
-> L'objectif c'est de pouvoir toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis entre diamètre et portabilité. 
+> L'objectif c'est de toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis entre diamètre et portabilité. 
 ---
 <img src="/assets/150-750 (8).jpg">
 
