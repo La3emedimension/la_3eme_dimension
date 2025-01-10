@@ -30,4 +30,11 @@ Les pots sont conçus de manière à recevoir, serviettes, couverts et verres de
 <img src="/assets/pdc (7).jpg">
 
 ---
-
+<style>
+  img{
+    margin: auto;
+    max-height: 90vh;
+    object-fit: cover;
+    display: flex;
+  }
+</style>

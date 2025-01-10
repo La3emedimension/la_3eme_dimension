@@ -10,7 +10,7 @@ tags:
   - Bagpack upgrade
   - Optimisation
 ---
-  <import Pill from= /components/Pill.astro>
+
 ---
 Le Backpack Holder Hook
 ---
@@ -22,12 +22,22 @@ Le Backpack Holder Hook est une adatation du crochet de sac à main à destinati
 La forme proche de la lettre C et le sens d'impression permet au crochet de maintenir jusqu'à 12 kilos ( test effectué avec un sac à dos de 12 kilos sur 8 heures.). Il peut aussi servir de crochet universel une fois couplet avec un mousqueton et un bout de paracorde. 
 
  <img src="/assets/BHH (3).gif">
-<img src="/assets/BHH (1).jpg">
+
 
 Vous pouvez retrouver le Réel <a href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>
 
+<img src="/assets/BHH (1).jpg">
+
 
 <style>
+
+img{
+    margin: auto;
+    max-height: 90vh;
+    object-fit: cover;
+    display: flex;
+  }
+
 .embedresize {
     max-width: 560px;
     margin: auto;

@@ -48,6 +48,14 @@ Si le projet vous intéresse n'hésitez pas à me contacter par mail !
 
 
 <style>
+
+img{
+margin: auto;
+max-height: 90vh;
+object-fit: cover;
+display: flex;
+}
+  
 .embedresize {
 max-width: 560px;
 margin: auto;

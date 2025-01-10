@@ -71,6 +71,13 @@ Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pi
 <img src="/assets/POS (3).jpg">
 
 <style>
+
+  img{
+    margin: auto;
+    max-height: 90vh;
+    object-fit: cover;
+    display: flex;
+  }
 .embedresize {
     max-width: 560px;
     margin: auto;
