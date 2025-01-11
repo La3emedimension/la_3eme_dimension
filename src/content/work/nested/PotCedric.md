@@ -1,10 +1,10 @@
 ---
-title: Pots de table
+title: Aide au service
 publishDate: 2020-03-04 00:00:00
 img: /assets/stock-2.jpg
 img_alt: Restauration, optimisation de table, rangement, service.
 description: |
-  Projet de pots de table pour le restaurateur "La fabric de Cedric" à Montauban (82)
+  Projet de pots pour optimiser le service pour le restaurateur "La fabric de Cedric" à Montauban (82)
 tags:
   - Optimisation
   - Confort
