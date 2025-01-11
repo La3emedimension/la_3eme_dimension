@@ -40,7 +40,7 @@ le projet:
 
 <div class="embedresize">
 <div>
-<iframe src="https://laposte4284.autodesk360.com/shares/public/SH30dd5QT870c25f12fcfd09f13d7ee334c6?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe src="https://laposte4284.autodesk360.com/shares/public/SH30dd5QT870c25f12fcfd09f13d7ee334c6?mode=embed" width="740" height="580" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 </div>
 </div>
 
@@ -57,7 +57,7 @@ le projet:
 
 <div class="embedresize">
 <div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
 
@@ -79,7 +79,7 @@ Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pi
     display: flex;
   }
 .embedresize {
-    max-width: 560px;
+    max-width: 760px;
     margin: auto;
     }
     

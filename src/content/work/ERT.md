@@ -59,7 +59,7 @@ display: flex;
 }
   
 .embedresize {
-max-width: 560px;
+max-width: 760px;
 margin: auto;
 }
 
