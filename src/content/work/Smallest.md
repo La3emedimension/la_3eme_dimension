@@ -66,9 +66,16 @@ le projet:
 <img src="/assets/150 1.jpg">
 <img src="/assets/150 2.jpg">
 
-Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
+### Le projet a été présenté le 14 mai 2024 lors du festival <a href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
 
 <img src="/assets/POS (3).jpg">
+
+### Soirée d'observation du 21 octobre 2024 pour la cométe C/2023 A3 (Tsuchinshan-ATLAS).
+<img src="/assets/c.jpg">
+Image réalisée avec le téléphone à mains levées devant l'oculaire du télescope.
+<img src="/assets/c1.jpg">
+Astro dessin :
+<img src="/assets/c2.jpeg">
 
 <style>
 
