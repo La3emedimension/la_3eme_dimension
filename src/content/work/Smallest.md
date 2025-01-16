@@ -74,7 +74,7 @@ le projet:
 <img src="/assets/c.jpg">
 Image réalisée avec le téléphone à mains levées devant l'oculaire du télescope.
 <img src="/assets/c1.jpg">
-L'astro dessin de la comète réalisé au Smallest :
+L'astro dessin de la comète réalisé avec le Smallest :
 <img src="/assets/c2.jpeg">
 
 <style>
