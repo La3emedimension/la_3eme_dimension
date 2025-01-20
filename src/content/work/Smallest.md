@@ -85,12 +85,16 @@ L'astro dessin de la comète réalisé avec le Smallest :
 <style>
 
   video{
- margin: auto;
+    width: 100%;
+		height: 100%;
+		aspect-ratio: auto;
+    margin: auto;
     max-height: 90vh;
     object-fit: cover;
     display: flex;
     border: 2px solid var(--gray-800);
 		border-radius: 3rem;
+    box-shadow: var(--shadow-md);
 }
   img{
     margin: auto;
