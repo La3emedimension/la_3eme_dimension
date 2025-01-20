@@ -26,8 +26,13 @@ Le Smallest a pour but de répondre à une problématique rencontrée en tant qu
 
 L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk comme outils de dessin. 
 
-<img src="/assets/tp 150750.gif">
-
+<video autoplay loop playsinline>
+  <source src="/assets/tp 150750.mp4" type="video/mp4" />
+  <p>
+    Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
+    <a href="/assets/tp 150750.mp4">un lien pour télécharger la vidéo</a>.
+  </p>
+</video>
 
 ### Un kit de conversion ? 
 
@@ -79,6 +84,14 @@ L'astro dessin de la comète réalisé avec le Smallest :
 
 <style>
 
+  video{
+ margin: auto;
+    max-height: 90vh;
+    object-fit: cover;
+    display: flex;
+    border: 2px solid var(--gray-800);
+		border-radius: 3rem;
+}
   img{
     margin: auto;
     max-height: 90vh;
