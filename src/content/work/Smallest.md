@@ -101,6 +101,7 @@ L'astro dessin de la comète réalisé avec le Smallest :
 .embedresize {
     max-width: 760px;
     margin: auto;
+		border-radius: 2rem;
     }
     
     .embedresize div {
@@ -115,6 +116,7 @@ L'astro dessin de la comète réalisé avec le Smallest :
     left: 0;
     width: 100%;
     height: 100%;
+		border-radius: 2rem;
     }
 </style>
 
