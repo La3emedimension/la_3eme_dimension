@@ -57,24 +57,26 @@ max-height: 90vh;
 object-fit: cover;
 display: flex;
 }
-  
+
 .embedresize {
-max-width: 760px;
-margin: auto;
-}
-
+    max-width: 760px;
+    margin: auto;
+		border-radius: 2rem;
+    }
+    
 .embedresize div {
-position: relative;
-height: 0;
-padding-bottom: 56.25%;
-}
-
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    }
+    
 .embedresize iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+		border-radius: 2rem;
+    }
 
 </style>
