@@ -24,13 +24,26 @@ La forme proche de la lettre C et le sens d'impression permets au crochet de mai
  <img src="/assets/BHH (3).gif">
 
 
-Vous pouvez retrouver le Réel <a href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>
+Vous pouvez retrouver le Réel <a  class="button" href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a class="button" href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>
 
 <img src="/assets/BHH (1).jpg">
 
 
 <style>
-
+ .button {
+        cursor: pointer;
+            text-align : center;
+            align-items: center;
+            padding: 0.10rem 0.60rem;
+            gap: 0.5rem;
+            color: var(--accent-text-over);
+            border: 1px solid var(--accent-regular);
+            background-color: var(--accent-regular);
+            border-radius: 999rem;
+            line-height: 1.35;
+            white-space: nowrap;
+            vertical-align : middle;
+      }
 img{
     margin: auto;
     max-height: 90vh;

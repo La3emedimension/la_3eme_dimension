@@ -13,8 +13,6 @@ tags:
 
 E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles... 
 
-
-
 ---
 Elle est constituée de plusieurs modules : 
 
