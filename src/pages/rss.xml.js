@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
-export function GET(context) {
+export async function GET(context) {
   const blog = await getCollection('work')
   return rss({
     // Champ `<title>` dans le fichier xml de sortie
