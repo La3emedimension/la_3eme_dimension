@@ -8,7 +8,8 @@ description: |
 tags:
   - Design
   - Astronomie
-  - Projet DIY    
+  - Compact
+  - Optimisation   
 ---
 
 ## Smallest, pourquoi ce projet?
