@@ -1,6 +1,6 @@
 ---
 title: Enseigne lumineuse
-publishDate: 2020-03-04 00:00:00
+publishDate: 2025-03-14 00:00:00
 img: /assets/enseigne5.jpg
 img_alt: enseigne lumineuse imprimée en 3D
 description: |
