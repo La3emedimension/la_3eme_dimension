@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Mentions légales | La 3ème dimension" description="Mentions légales La 3ème dimension">
+	<div class="stack gap-20">
+		<main class="mentions légale">
+			<Hero title="Mentions légales">
+				<h4>Éditeur du site :</h4>
+				<p>Nom de l'entreprise : La 3ème dimension</p>
+				<p>Forme juridique : Micro-entreprise</p>
+				<p>Numéro SIRET : [94334362400012</p>
+				<p>Responsable de la publication : Labro Raphaël</p>
+				<p>Adresse : 266 rue du commandant Bayssade, 82600 Verdun-sur-Garonne </p>
+				<p>Téléphone : [Numéro de contact]</p>
+				<p>E-mail : la3emedim@gmail.com</p>
+				<h4>Hébergement du site :</h4>
+				<p>Nom de l’hébergeur : OVH</p>
+				<p>Adresse de l’hébergeur : 2, rue Kellermann, 59100 Roubaix.</p>
+				<p>Téléphone : [Numéro de téléphone de l’hébergeur]</p>
+				<h4>Activité :</h4>
+				<p>La 3ème dimension  est spécialisé dans la création et la vente de produits réalisés par impression 3D.</p>
+				<h4>Numéro d'immatriculation au registre :</h4>
+				<p>Immatriculé au Registre du commerce et des sociétés de Montauban, ou au Répertoire des métiers si applicable.</p>
+				<h4>TVA :</h4>
+				<p>TVA non applicable – article 293 B du CGI (si tu es en franchise de TVA, ce qui est le cas par défaut pour une micro-entreprise).</p>
+				<h4>Propriété intellectuelle :</h4>
+				<p>Tous les contenus présents sur le site (textes, images, modèles 3D, etc.) sont la propriété exclusive de [Ton nom/ton entreprise], sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.</p>
+				<h4>Politique de confidentialité & cookies :</h4>
+				<p>Ce site utilise des cookies à des fins de fonctionnement et d’analyse. Les données collectées via le formulaire de contact ou les commandes sont uniquement utilisées pour le traitement des demandes et ne sont pas revendues à des tiers.</p>
+			</Hero>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+
+	
+	h4{
+		margin-right: 15px;
+		margin-left: 50px;
+	}
+	p{
+		text-align: left;
+		font-size: 70%;
+		margin-right: 15px;
+		margin-left: 40px;
+	}
+	
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+		align-items: center;
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+
+	img {
+		max-width:30vh;
+		width: 40vh;
+		margin-right: 5%;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);		
+	}
+
+	section {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		color: var(--gray-200);		
+	}
+
+	.section-title {
+		font-size: 30%;
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		
+		.about {
+			display: flex;
+			flex-direction: row;
+			text-align: center;
+			margin-left: 5%;
+		}
+
+		.about > :global(:first-child) {
+			grid-column: 1/3;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+
+	}
+	
+</style>
