@@ -32,10 +32,7 @@ Vous pouvez retrouver le Réel <a  class="button" href="https://www.instagram.co
   src="https://js.stripe.com/v3/buy-button.js">
 </script>
 
-<stripe-buy-button
-  buy-button-id="buy_btn_1RQYYxRqkfolIfPm8pbumRkk"
-  publishable-key="pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm"
->
+<stripe-buy-button buy-button-id="buy_btn_1RQYYxRqkfolIfPm8pbumRkk" publishable-key="pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm">
 </stripe-buy-button>
 
 <style>

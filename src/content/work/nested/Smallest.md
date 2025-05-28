@@ -41,10 +41,14 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
 
 Le porte oculaire en 1.25 pouces permet l'utilisation de très bonnes optiques de grandes marques.
 
+<img src="/assets/1150 V2 2.jpg">
 ---
 le projet:
 
 <img src="/assets/draw150750.jpg">
+<img src="/assets/150 V2.jpg">
+<img src="/assets/150 V2 3.jpg">
+<img src="/assets/150 V2 4.jpg">
 
 <div class="embedresize">
 <div>
@@ -62,6 +66,13 @@ le projet:
 - Tiges en aluminium.
 - Compatible queue d'aronde pour chercheurs.
 - Structure Dobson avec monture et tube dans le même kit
+
+Question tarif nous proposons le télescope à 550€ hors optique, pour la partie optique plusieurs choix sont possibles : 
+  1) Occasion (lbc, webastro, etc)
+  2) GSO (en cours de renseignement pour les tarifs)
+  3) Optiques artisans par Galifrey optics pour 550€ donc 1100€ pour le Smallest avec optiques.
+
+  Pour plus d'informations ou passer commande, veuillez nous contacter.
 
 <div class="embedresize">
 <div>
