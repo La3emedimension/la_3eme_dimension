@@ -67,7 +67,7 @@ le projet:
 - Compatible queue d'aronde pour chercheurs.
 - Structure Dobson avec monture et tube dans le même kit
 
- #### Question tarif :
+ #### Question tarifs :
  Nous proposons le télescope à 550€ hors optique, pour la partie optique plusieurs choix sont possibles : 
   1) Occasion (lbc, webastro, etc)
   2) GSO (en cours de renseignement pour les tarifs)
