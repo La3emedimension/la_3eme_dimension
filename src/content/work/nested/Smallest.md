@@ -41,18 +41,13 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
 
 Le porte oculaire en 1.25 pouces permet l'utilisation de très bonnes optiques de grandes marques.
 
-<img src="/assets/1150 V2 2.jpg">
----
-le projet:
+<img src="/assets/150 V2 2.jpg">
 
+Le projet:
 <img src="/assets/draw150750.jpg">
-<img src="/assets/150 V2.jpg">
-<img src="/assets/150 V2 3.jpg">
-<img src="/assets/150 V2 4.jpg">
-
 <div class="embedresize">
 <div>
-<iframe src="https://laposte4284.autodesk360.com/shares/public/SH30dd5QT870c25f12fcfd09f13d7ee334c6?mode=embed" width="740" height="580" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-7mI89_OHzk?si=CcNnC8RL5jqz0lHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
 
@@ -68,10 +63,10 @@ le projet:
 - Structure Dobson avec monture et tube dans le même kit
 
  #### Question tarifs :
- Nous proposons le télescope à 550€ hors optique, pour la partie optique plusieurs choix sont possibles : 
+ Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
   1) Occasion (lbc, webastro, etc)
   2) GSO (en cours de renseignement pour les tarifs)
-  3) Optiques artisans par Galifrey optics pour 550€ donc 1100€ pour le Smallest avec optiques.
+  3) Optiques artisans par Gallifrey Optics pour 550€ donc 1100€ pour le Smallest avec optiques.
 
   Pour plus d'informations ou passer commande, veuillez nous contacter.
 
@@ -82,6 +77,9 @@ le projet:
 </div>
 
 ---
+<img src="/assets/150 V2.jpg">
+<img src="/assets/150 V2 3.jpg">
+<img src="/assets/150 V2 4.jpg">
 <img src="/assets/Smallest.jpg">
 <img src="/assets/150 1.jpg">
 <img src="/assets/150 2.jpg">
