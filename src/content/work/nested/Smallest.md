@@ -39,7 +39,6 @@ L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la préc
 
 Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
 
-Le porte oculaire en 1.25 pouces permet l'utilisation de très bonnes optiques de grandes marques.
 
 <img src="/assets/150 V2 2.jpg">
 
@@ -51,7 +50,6 @@ Le projet:
 </div>
 </div>
 
-
 #### Le Smallest c'est ?
 
 - Un kit pour les optiques de 150/750.
@@ -61,6 +59,9 @@ Le projet:
 - Tiges en aluminium.
 - Compatible queue d'aronde pour chercheurs.
 - Structure Dobson avec monture et tube dans le même kit
+- 4 kilos avec optiques.
+- Le format nomade est de 25cm de large par 25cm de long pour 20cm de haut.
+- Le format observation 25cm par 25cm par 87cm de haut.
 
  #### Question tarifs :
  Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
