@@ -58,7 +58,7 @@ Le projet:
 - Porte oculaire 1.25.
 - Tiges en aluminium.
 - Compatible queue d'aronde pour chercheurs.
-- Structure Dobson avec monture et tube dans le même kit
+- Structure Dobson avec monture et tubes dans le même kit
 - 4 kilos avec optiques.
 - Le format nomade est de 25cm de large par 25cm de long pour 20cm de haut.
 - Le format observation 25cm par 25cm par 87cm de haut.
@@ -71,14 +71,7 @@ Le projet:
   2) GSO (en cours de renseignement pour les tarifs)
   3) Optiques artisans par Gallifrey Optics pour 650€ donc 1200€ pour le Smallest avec optiques.
 
-  Pour plus d'informations ou passer commande, veuillez nous contacter. 
-  <aside>
-	<h2>Vous avez un besoin lié à l'impression 3D ?</h2>
-	<CallToAction href="mailto:la3emedim@gmail.com">
-		Contactez-nous !
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
-</aside>
+  Pour plus d'informations ou passer commande, veuillez nous contacter <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
 
 <div class="embedresize">
 <div>
