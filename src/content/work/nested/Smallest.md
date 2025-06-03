@@ -71,7 +71,7 @@ Le projet:
   2) GSO (en cours de renseignement pour les tarifs)
   3) Optiques artisans par Gallifrey Optics pour 650€ donc 1200€ pour le Smallest avec optiques.
 
-  Pour plus d'informations ou passer commande, veuillez nous contacter <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
+  Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
 
 <div class="embedresize">
 <div>
