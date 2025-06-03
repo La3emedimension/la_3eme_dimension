@@ -63,6 +63,8 @@ Le projet:
 - Le format nomade est de 25cm de large par 25cm de long pour 20cm de haut.
 - Le format observation 25cm par 25cm par 87cm de haut.
 
+<img src="/assets/m150.jpeg">
+
  #### Question tarifs :
  Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
   1) Occasion (lbc, webastro, etc)
