@@ -39,14 +39,17 @@ L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la préc
 
 Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
 
-
-<img src="/assets/150 V2 2.jpg">
-
-Le projet:
+### Le projet:
 <img src="/assets/draw150750.jpg">
 <div class="embedresize">
 <div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-7mI89_OHzk?si=CcNnC8RL5jqz0lHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="embedresize">
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
 
@@ -73,15 +76,11 @@ Le projet:
 
   Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
 
-<div class="embedresize">
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Lar00Vi2tGs?si=i8HUnNVpzsIOMTrh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
 
 ---
 <img src="/assets/S150.jpg">
 <img src="/assets/S1502.jpg">
+<img src="/assets/150 V2 2.jpg">
 <img src="/assets/150 V2.jpg">
 <img src="/assets/150 V2 3.jpg">
 <img src="/assets/150 V2 4.jpg">
