@@ -78,6 +78,8 @@ Le projet:
 </div>
 
 ---
+<img src="/assets/S150.jpg">
+<img src="/assets/S1502.jpg">
 <img src="/assets/150 V2.jpg">
 <img src="/assets/150 V2 3.jpg">
 <img src="/assets/150 V2 4.jpg">
