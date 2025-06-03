@@ -69,7 +69,7 @@ Le projet:
  Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
   1) Occasion (lbc, webastro, etc)
   2) GSO (en cours de renseignement pour les tarifs)
-  3) Optiques artisans par Gallifrey Optics pour 550€ donc 1100€ pour le Smallest avec optiques.
+  3) Optiques artisans par Gallifrey Optics pour 650€ donc 1200€ pour le Smallest avec optiques.
 
   Pour plus d'informations ou passer commande, veuillez nous contacter.
 
