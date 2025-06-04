@@ -70,9 +70,10 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
 
  #### Question tarifs :
  Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
+ 
   1) Occasion (lbc, webastro, etc)
-  2) GSO (en cours de renseignement pour les tarifs)
-  3) Optiques artisans par Gallifrey Optics pour 650€ donc 1200€ pour le Smallest avec optiques.
+  2) GSO ou chinoise
+  3) Nous vous conseillons les optiques artisans par Gallifrey Optics pour le primaire (paul.fays@gallifrey-optics.fr) et/ou Zen pour secondaire et primaire(https://www.costruzioniottichezen.com/).
 
   Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
 
