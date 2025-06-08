@@ -1,0 +1,90 @@
+---
+interface SpecGroup {
+	title: string;
+	specs: Record<string, string>;
+}
+
+interface Props {
+	title: string;
+	specGroups: SpecGroup[];
+}
+
+const { title, specGroups } = Astro.props;
+---
+
+<section class="specs-section">
+	<div class="container">
+		<h2>{title}</h2>
+		<div class="specs-grid">
+			{specGroups.map(group => (
+				<div class="specs-table">
+					<h3>{group.title}</h3>
+					<table>
+						{Object.entries(group.specs).map(([key, value]) => (
+							<tr>
+								<td>{key}</td>
+								<td set:html={value} />
+							</tr>
+						))}
+					</table>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.specs-section {
+		padding: 6rem 0;
+		background: var(--gray-900);
+	}
+
+	.specs-section h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--gray-100);
+		margin-bottom: 4rem;
+	}
+
+	.specs-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.specs-table {
+		background: var(--gray-999);
+		padding: 2rem;
+		border-radius: 1rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.specs-table h3 {
+		color: var(--accent-regular);
+		margin-bottom: 1.5rem;
+		font-size: 1.3rem;
+	}
+
+	.specs-table table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.specs-table td {
+		padding: 0.75rem 0;
+		border-bottom: 1px solid var(--gray-800);
+		color: var(--gray-300);
+	}
+
+	.specs-table td:first-child {
+		font-weight: 500;
+		color: var(--gray-200);
+		width: 40%;
+	}
+</style>

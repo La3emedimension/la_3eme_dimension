@@ -1,0 +1,99 @@
+---
+// Parametric product page layout
+import BaseLayout from './BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import ProductHero from '../components/ProductHero.astro';
+import VideoShowcase from '../components/VideoShowcase.astro';
+import Gallery from '../components/Gallery.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SpecsTable from '../components/SpecsTable.astro';
+import PricingSection from '../components/PricingSection.astro';
+import ProductNavigation from '../components/ProductNavigation.astro';
+import Lightbox from '../components/Lightbox.astro';
+
+export interface ProductConfig {
+  // SEO
+  seoTitle: string;
+  seoDescription: string;
+  seoKeywords: string;
+  ogImage?: string;
+  structuredData?: any;
+  
+  // Sections configuration
+  sections: SectionConfig[];
+  
+  // Navigation
+  navigationItems?: NavigationItem[];
+  
+  // Footer
+  showContactCTA?: boolean;
+  showNavigation?: boolean;
+  showLightbox?: boolean;
+}
+
+export interface SectionConfig {
+  type: 'hero' | 'gallery' | 'video' | 'features' | 'specs' | 'pricing' | 'custom';
+  id?: string;
+  data: any;
+  customComponent?: any;
+}
+
+export interface NavigationItem {
+  id: string;
+  label: string;
+}
+
+const { 
+  seoTitle,
+  seoDescription, 
+  seoKeywords,
+  ogImage,
+  structuredData,
+  sections,
+  navigationItems = [],
+  showContactCTA = true,
+  showNavigation = true,
+  showLightbox = true
+} = Astro.props as ProductConfig;
+
+// Build section components map
+const sectionComponents = {
+  hero: ProductHero,
+  gallery: Gallery,
+  video: VideoShowcase, 
+  features: FeatureGrid,
+  specs: SpecsTable,
+  pricing: PricingSection
+};
+---
+
+<BaseLayout 
+  title={seoTitle} 
+  description={seoDescription}
+  keywords={seoKeywords}
+  ogImage={ogImage}
+  structuredData={structuredData}
+>
+  {sections.map((section) => {
+    const Component = section.type === 'custom' ? section.customComponent : sectionComponents[section.type];
+    
+    if (!Component && section.type !== 'custom') {
+      console.warn(`Unknown section type: ${section.type}`);
+      return null;
+    }
+    
+    return (
+      <section id={section.id || `section-${section.type}`}>
+        <Component {...section.data} />
+      </section>
+    );
+  })}
+
+  {showContactCTA && <ContactCTA />}
+  
+  {showNavigation && navigationItems.length > 0 && (
+    <ProductNavigation items={navigationItems} />
+  )}
+  
+  {showLightbox && <Lightbox />}
+</BaseLayout>

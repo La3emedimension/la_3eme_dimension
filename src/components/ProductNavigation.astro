@@ -1,0 +1,185 @@
+---
+interface NavItem {
+	id: string;
+	label: string;
+}
+
+interface Props {
+	items: NavItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="product-navigation" id="product-nav">
+	<div class="nav-container">
+		<ul class="nav-list">
+			{items.map(item => (
+				<li class="nav-item">
+					<a href={`#${item.id}`} class="nav-link" data-section={item.id}>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</nav>
+
+<script>
+	// Scroll spy functionality
+	const navigation = document.getElementById('product-nav');
+	const navLinks = document.querySelectorAll('.nav-link');
+	const sections = document.querySelectorAll('[id^="section-"]');
+	
+	if (navigation && navLinks.length > 0) {
+		// Hide/show navigation based on scroll
+		let lastScrollY = window.scrollY;
+		let isNavVisible = false;
+		
+		function updateNavVisibility() {
+			const currentScrollY = window.scrollY;
+			const shouldShow = currentScrollY > 400; // Show after hero section
+			
+			if (shouldShow !== isNavVisible) {
+				isNavVisible = shouldShow;
+				navigation.classList.toggle('visible', shouldShow);
+			}
+			
+			lastScrollY = currentScrollY;
+		}
+		
+		// Scroll spy - highlight current section
+		function updateActiveLink() {
+			const scrollPosition = window.scrollY + 100;
+			
+			let currentSection = '';
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop;
+				const sectionHeight = section.offsetHeight;
+				
+				if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+					currentSection = section.id.replace('section-', '');
+				}
+			});
+			
+			// Update active states
+			navLinks.forEach(link => {
+				const isActive = link.dataset.section === currentSection;
+				link.classList.toggle('active', isActive);
+			});
+		}
+		
+		// Smooth scroll to section
+		navLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				const targetId = `section-${link.dataset.section}`;
+				const targetElement = document.getElementById(targetId);
+				
+				if (targetElement) {
+					const offset = 80; // Account for fixed nav
+					const targetPosition = targetElement.offsetTop - offset;
+					
+					window.scrollTo({
+						top: targetPosition,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+		
+		// Add scroll listeners
+		window.addEventListener('scroll', () => {
+			updateNavVisibility();
+			updateActiveLink();
+		}, { passive: true });
+		
+		// Initial updates
+		updateNavVisibility();
+		updateActiveLink();
+	}
+</script>
+
+<style>
+	.product-navigation {
+		position: fixed;
+		top: 50%;
+		right: 2rem;
+		transform: translateY(-50%);
+		z-index: 200;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+		display: none;
+	}
+	
+	.product-navigation.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	.nav-container {
+		background: rgba(0, 0, 0, 0.8);
+		backdrop-filter: blur(10px);
+		border-radius: 2rem;
+		padding: 1rem 0.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: var(--shadow-lg);
+	}
+	
+	.nav-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	
+	.nav-item {
+		margin: 0;
+	}
+	
+	.nav-link {
+		display: block;
+		padding: 0.75rem 1rem;
+		color: white;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 500;
+		border-radius: 1.5rem;
+		transition: all 0.3s ease;
+		position: relative;
+		white-space: nowrap;
+	}
+	
+	.nav-link:hover {
+		color: white;
+		background: rgba(255, 255, 255, 0.15);
+	}
+	
+	.nav-link.active {
+		color: var(--accent-regular);
+		background: white;
+	}
+	
+	
+	/* Only show on desktop */
+	@media (min-width: 1024px) {
+		.product-navigation {
+			display: block;
+		}
+	}
+	
+	/* Adjust for smaller desktop screens */
+	@media (max-width: 1200px) {
+		.product-navigation {
+			right: 1rem;
+		}
+		
+		.nav-link {
+			font-size: 0.8rem;
+			padding: 0.6rem 0.8rem;
+		}
+	}
+</style>

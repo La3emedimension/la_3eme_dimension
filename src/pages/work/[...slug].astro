@@ -25,9 +25,60 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Use SEO data from frontmatter, with fallbacks
+const seoTitle = entry.data.seoTitle || `${entry.data.title} - Impression 3D Sur Mesure | La 3ème dimension`;
+const seoDescription = entry.data.seoDescription || entry.data.description;
+const seoKeywords = entry.data.seoKeywords || `${entry.data.tags.join(', ')}, impression 3d, la 3eme dimension, toulouse`;
+
+// Check if this is the Smallest telescope for structured data
+const isSmallest = entry.slug === 'nested/smallest';
+
+// Structured data for Smallest telescope
+const structuredData = isSmallest ? {
+	"@context": "https://schema.org",
+	"@type": "Product",
+	"name": "Smallest - Télescope Portable 150/750",
+	"description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution révolutionnaire pour l'astronomie nomade.",
+	"brand": {
+		"@type": "Brand",
+		"name": "La 3ème dimension"
+	},
+	"manufacturer": {
+		"@type": "Organization",
+		"name": "La 3ème dimension",
+		"url": "https://la3emedim.fr"
+	},
+	"category": "Télescopes",
+	"offers": {
+		"@type": "Offer",
+		"price": "550",
+		"priceCurrency": "EUR",
+		"availability": "https://schema.org/InStock",
+		"seller": {
+			"@type": "Organization",
+			"name": "La 3ème dimension"
+		}
+	},
+	"image": "https://la3emedim.fr/assets/Smallest.jpg",
+	"features": [
+		"Télescope Newton 150/750",
+		"Portable et compact", 
+		"Transportable en avion",
+		"Structure imprimée en 3D",
+		"Compatible optiques standard",
+		"Poids : 4kg avec optiques"
+	]
+} : null;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout 
+	title={seoTitle} 
+	description={seoDescription}
+	keywords={seoKeywords}
+	ogImage={isSmallest ? 'https://la3emedim.fr/assets/Smallest.jpg' : undefined}
+	structuredData={structuredData}
+>
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
@@ -54,6 +105,32 @@ const { Content } = await entry.render();
 		</div>
 		<ContactCTA />
 	</div>
+	
+	{/* Floating product buttons */}
+	{entry.slug === 'nested/smallest' && (
+		<a href="/product/smallest" class="floating-product-button">
+			<span>Voir le produit</span>
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+	)}
+	{entry.slug === 'bhh' && (
+		<a href="/product/bhh" class="floating-product-button">
+			<span>Voir le produit</span>
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+	)}
+	{entry.slug === 'ert' && (
+		<a href="/product/ert" class="floating-product-button">
+			<span>Voir le produit</span>
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+	)}
 </BaseLayout>
 
 <style>
@@ -146,6 +223,50 @@ const { Content } = await entry.render();
 
 		.content :global(blockquote) {
 			font-size: var(--text-2xl);
+		}
+	}
+
+	/* Floating Product Button */
+	.floating-product-button {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 1rem 1.5rem;
+		border-radius: 3rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9rem;
+		box-shadow: var(--shadow-lg);
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: all 0.3s ease;
+		border: 2px solid var(--accent-regular);
+	}
+
+	.floating-product-button:hover {
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.floating-product-button svg {
+		transition: transform 0.3s ease;
+	}
+
+	.floating-product-button:hover svg {
+		transform: translate(2px, -2px);
+	}
+
+	@media (max-width: 768px) {
+		.floating-product-button {
+			bottom: 1rem;
+			right: 1rem;
+			padding: 0.75rem 1.25rem;
+			font-size: 0.85rem;
 		}
 	}
 </style>

@@ -4,11 +4,17 @@ import '../styles/global.css';
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	keywords?: string | undefined;
+	ogImage?: string | undefined;
+	structuredData?: object | undefined;
 }
 
 const {
-	title = 'La 3ème dimension',
-	description = 'La 3ème dimension',
+	title = 'La 3ème dimension - Impression 3D & Télescopes Astronomiques',
+	description = 'Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable révolutionnaire pour l\'astronomie nomade. Service Toulouse et région.',
+	keywords = 'impression 3d, télescope portable, astronomie, smallest telescope, conception 3d, toulouse',
+	ogImage = 'https://la3emedim.fr/assets/preview.png',
+	structuredData,
 } = Astro.props;
 ---
 <meta charset="UTF-8" />
@@ -17,27 +23,38 @@ const {
 <meta name="generator" content={Astro.generator} />
 
 <!-- HTML Meta Tags -->
-<title>La 3ème dimension</title>
-<meta name="description" content="La 3ème dimension">
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="keywords" content={keywords}>
+<meta name="author" content="La 3ème dimension">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<meta name="geo.region" content="FR-31">
+<meta name="geo.placename" content="Toulouse et région Occitanie">
+<meta name="coverage" content="Toulouse, Blagnac, Colomiers, Balma, L'Union, Tournefeuille, Cugnaux, Muret">
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://la3emedim.fr">
+<meta property="og:url" content={Astro.url}>
 <meta property="og:type" content="website">
-<meta property="og:title" content="La 3ème dimension">
-<meta property="og:description" content="La 3ème dimension">
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/3758858d-5434-49b1-ae27-f0b97ab73095.png?token=xb5Sy25BH8ia-vRr7OVszfxkf20WVp8SkJDWuZyPleo&height=675&width=1200&expires=33271940480">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="La 3ème dimension">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="la3emedim.fr">
-<meta property="twitter:url" content="https://la3emedim.fr">
-<meta name="twitter:title" content="La 3ème dimension">
-<meta name="twitter:description" content="La 3ème dimension">
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/3758858d-5434-49b1-ae27-f0b97ab73095.png?token=xb5Sy25BH8ia-vRr7OVszfxkf20WVp8SkJDWuZyPleo&height=675&width=1200&expires=33271940480">
+<meta property="twitter:url" content={Astro.url}>
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogImage}>
 
 <script defer data-domain="la3emedim.fr" src="https://stats.documents.design/js/script.js"></script>
 
-<title>{title}</title>
+{structuredData && (
+	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />

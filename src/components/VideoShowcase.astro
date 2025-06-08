@@ -1,0 +1,107 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	videoId: string;
+	videoTitle: string;
+}
+
+const { title, description, videoId, videoTitle } = Astro.props;
+---
+
+<section class="video-showcase">
+	<div class="container">
+		<div class="video-content">
+			<div class="video-text">
+				<h2>{title}</h2>
+				<p>{description}</p>
+			</div>
+			<div class="video-wrapper">
+				<div class="video-embed">
+					<iframe 
+						width="560" 
+						height="315" 
+						src={`https://www.youtube.com/embed/${videoId}`}
+						title={videoTitle}
+						frameborder="0" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						referrerpolicy="strict-origin-when-cross-origin" 
+						allowfullscreen>
+					</iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.video-showcase {
+		padding: 6rem 0;
+		background: var(--gray-900);
+	}
+
+	.video-content {
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.video-text h2 {
+		font-size: 2.5rem;
+		color: var(--gray-100);
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+	}
+
+	.video-text p {
+		font-size: 1.2rem;
+		color: var(--gray-300);
+		line-height: 1.6;
+	}
+
+	.video-wrapper {
+		border-radius: 2rem;
+		overflow: hidden;
+		box-shadow: var(--shadow-xl);
+	}
+	
+	.video-embed {
+		position: relative;
+		width: 700px;
+		height: 400px;
+		max-width: 100%;
+	}
+	
+	.video-embed iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (max-width: 768px) {
+		.video-content {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+			text-align: center;
+		}
+
+		.video-text h2 {
+			font-size: 2rem;
+		}
+		
+		.video-embed {
+			width: 100%;
+			height: 0;
+			padding-bottom: 57.14%;
+		}
+	}
+</style>

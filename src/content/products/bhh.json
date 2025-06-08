@@ -1,0 +1,161 @@
+{
+  "seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
+  "seoDescription": "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
+  "seoKeywords": "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
+  "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
+  "stripePublishableKey": "pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "B.H.H - Backpack Holder Hook",
+    "description": "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Accessoires voyage",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/BHH (2).jpg",
+    "features": [
+      "Supporte jusqu'à 12kg",
+      "Design optimisé forme C",
+      "Impression 3D efficace",
+      "Compatible mousquetons",
+      "Fichiers gratuits disponibles"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "B.H.H",
+        "tagline": "Backpack Holder Hook",
+        "description": "Crochet innovant pour sac à dos, conçu pour les baroudeurs. Maximum d'efficacité avec le minimum de matière.",
+        "features": [
+          { "icon": "strategy", "text": "Supporte jusqu'à 12kg" },
+          { "icon": "terminal-window", "text": "Impression 3D optimisée" },
+          { "icon": "paper-plane-tilt", "text": "Ultra-portable" }
+        ],
+        "primaryCta": { "text": "Fichiers gratuits", "href": "https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments" },
+        "heroImage": { "src": "/assets/BHH (2).jpg", "alt": "Crochet BHH installé sur sac à dos" }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Pourquoi choisir le B.H.H ?",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Design optimisé",
+            "description": "Forme proche de la lettre C et sens d'impression permettent une résistance maximale avec un minimum de matière."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Capacité 12kg",
+            "description": "Testé avec un sac à dos de 12kg pendant 8 heures. Parfait pour les randonneurs et voyageurs."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Polyvalent",
+            "description": "Utilisable comme crochet universel avec un mousqueton et un bout de paracorde."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Open Source",
+            "description": "Fichiers STL gratuits disponibles sur Printables pour impression personnelle."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "En action",
+        "images": [
+          { 
+            "src": "/assets/BHH desk.gif", 
+            "alt": "Animation du crochet en utilisation", 
+            "caption": "Démonstration de l'utilisation du crochet BHH - accrochage simple et efficace" 
+          },
+          { 
+            "src": "/assets/BHH (3).gif", 
+            "alt": "Test de résistance", 
+            "caption": "Test de résistance avec sac à dos chargé - supporte jusqu'à 12kg" 
+          },
+          { 
+            "src": "/assets/BHH (1).jpg", 
+            "alt": "Vue détaillée du crochet", 
+            "caption": "Détail de la forme optimisée et de la finition d'impression 3D" 
+          }
+        ],
+        "background": "dark"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Performance",
+            "specs": {
+              "Charge max": "12 kg",
+              "Test durée": "8 heures",
+              "Matériau": "PLA/PETG",
+              "Poids": "~15g",
+              "Dimensions": "8 × 4 × 2 cm"
+            }
+          },
+          {
+            "title": "Impression 3D",
+            "specs": {
+              "Temps impression": "~1h",
+              "Support": "Non requis",
+              "Remplissage": "20-30%",
+              "Orientation": "Optimisée",
+              "Post-traitement": "Minimal"
+            }
+          },
+          {
+            "title": "Compatibilité",
+            "specs": {
+              "Sacs à dos": "Universel",
+              "Mousquetons": "Standard",
+              "Paracorde": "Compatible",
+              "Usage": "Intérieur/Extérieur",
+              "Licence": "Open Source"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "features", "label": "Avantages" },
+    { "id": "gallery", "label": "Démonstration" },
+    { "id": "specs", "label": "Spécifications" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

@@ -1,0 +1,109 @@
+---
+// Product overview section for Smallest
+---
+
+<section class="product-overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <h2>Astronomie nomade sans compromis</h2>
+        <p>
+          Le Smallest révolutionne l'astronomie portable en combinant les performances d'un télescope 150/750 
+          avec une portabilité exceptionnelle. Conçu pour les astronomes qui refusent de choisir entre qualité 
+          optique et mobilité.
+        </p>
+        <div class="overview-stats">
+          <div class="stat">
+            <span class="stat-number">25cm</span>
+            <span class="stat-label">Format transport</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">87cm</span>
+            <span class="stat-label">Hauteur observation</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4kg</span>
+            <span class="stat-label">Poids total</span>
+          </div>
+        </div>
+      </div>
+      <div class="overview-video">
+        <video autoplay loop muted playsinline>
+          <source src="/assets/tp 150750.mp4" type="video/mp4" />
+          <p>Votre navigateur ne prend pas en charge les vidéos HTML5.</p>
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .product-overview {
+    padding: 6rem 0;
+    background: var(--gray-900);
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .overview-text h2 {
+    font-size: 2.5rem;
+    color: var(--gray-100);
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-text p {
+    font-size: 1.2rem;
+    color: var(--gray-300);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .overview-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-regular);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+  }
+
+  .overview-video video {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 768px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .overview-stats {
+      justify-content: center;
+    }
+  }
+</style>

@@ -4,11 +4,14 @@ publishDate: 2025-03-14 00:00:00
 img: /assets/enseigne5.jpg
 img_alt: enseigne lumineuse imprimée en 3D
 description: |
-  Enseigne lumineuse imprimée en 3D pour mettre en avant votre marque
+  Enseigne LED personnalisée imprimée en 3D. Design sur mesure avec contrôleur RGB, connexion aviateur, câblage paracorde. Solution communication moderne.
 tags:
   - Communication 
   - enseigne
   - Design
+seoTitle: "Enseigne lumineuse - Enseigne LED Personnalisée Imprimée 3D | La 3ème dimension"
+seoDescription: "Enseigne LED personnalisée imprimée en 3D. Design sur mesure avec contrôleur RGB, connexion aviateur, câblage paracorde. Solution communication moderne."
+seoKeywords: "enseigne led, signalétique 3d, communication visuelle, enseigne personnalisée, communication, design, toulouse"
 
 ---
 

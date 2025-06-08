@@ -11,21 +11,84 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import ScrollIndicator from '../components/ScrollIndicator.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
-// Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
+// Content Fetching: Get Smallest telescope and other projects
+const allProjects = await getCollection('work');
+const smallestProject = allProjects.find(p => p.slug === 'nested/smallest');
+const otherProjects = allProjects
+	.filter(p => p.slug !== 'nested/smallest')
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+	.slice(0, 3);
+
+const projects = smallestProject ? [smallestProject, ...otherProjects] : otherProjects.slice(0, 4);
+
+// Business structured data for homepage
+const businessStructuredData = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"name": "La 3ème dimension",
+	"description": "Spécialiste en impression 3D et conception de télescopes compacts. Innovation dans l'astronomie portable avec le télescope Smallest. Service Toulouse et région.",
+	"url": "https://la3emedim.fr",
+	"telephone": "contact via email",
+	"email": "la3emedim@gmail.com",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Toulouse",
+		"addressRegion": "Occitanie", 
+		"addressCountry": "FR"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "43.6045",
+		"longitude": "1.4442"
+	},
+	"priceRange": "€€",
+	"serviceArea": {
+		"@type": "GeoCircle",
+		"geoMidpoint": {
+			"@type": "GeoCoordinates",
+			"latitude": "43.6045",
+			"longitude": "1.4442"
+		},
+		"geoRadius": "50000"
+	},
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Services d'impression 3D et télescopes",
+		"itemListElement": [
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Impression 3D sur mesure"
+				}
+			},
+			{
+				"@type": "Offer", 
+				"itemOffered": {
+					"@type": "Product",
+					"name": "Télescope Smallest portable"
+				}
+			}
+		]
+	}
+};
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<BaseLayout>
+<BaseLayout
+	title="La 3ème dimension - Impression 3D & Télescopes Astronomiques | Toulouse et région"
+	description="Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable révolutionnaire pour l'astronomie nomade. Service Toulouse et région (50km)."
+	keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
+	structuredData={businessStructuredData}
+>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
@@ -54,8 +117,41 @@ const projects = (await getCollection('work'))
 
 			<Skills />
 		</div>
+		
+		{smallestProject && (
+			<main class="wrapper section with-background bg-variant">
+				<div class="section-header stack gap-2 lg:gap-4">
+					<h3>🌟 Produit Phare</h3>
+					<p>Découvrez notre innovation révolutionnaire en astronomie portable</p>
+				</div>
+				<div class="gallery">
+					<a class="card featured" href="/product/smallest">
+						<span class="title">{smallestProject.data.title}</span>
+						<img src={smallestProject.data.img} alt={smallestProject.data.img_alt || ''} loading="lazy" decoding="async" />
+						<div class="featured-description">{smallestProject.data.description}</div>
+					</a>
+				</div>
+			</main>
+		)}
+		
+		<main class="wrapper section with-background bg-variant">
+			<div class="section-header stack gap-2 lg:gap-4">
+				<h3>Nos Réalisations</h3>
+				<p>Projets d'impression 3D et créations sur mesure</p>
+			</div>
+			<div class="gallery">
+				<Grid variant="offset">
+					{projects.slice(smallestProject ? 1 : 0).map((project) => (
+						<PortfolioPreview project={project} />
+					))}
+				</Grid>
+			</div>
+		</main>
+		
 		<ContactCTA />
 	</div>
+	
+	<ScrollIndicator />
 </BaseLayout>
 
 <style>
@@ -205,6 +301,112 @@ const projects = (await getCollection('work'))
 	}
 
 	/* ====================================================== */
+
+	/* Featured Card Styles */
+	.card {
+		display: grid;
+		grid-template: auto 1fr / auto 1fr;
+		height: 11rem;
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		overflow: hidden;
+		box-shadow: var(--shadow-sm);
+		text-decoration: none;
+		font-family: var(--font-brand);
+		font-size: var(--text-lg);
+		font-weight: 500;
+		transition: box-shadow var(--theme-transition);
+		filter: grayscale(100%);
+	}
+
+	.card:hover {
+		box-shadow: var(--shadow-md);
+		filter: grayscale(0%);
+	}
+
+	.card .title {
+		grid-area: 1 / 1 / 2 / 2;
+		z-index: 1;
+		margin: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: var(--gray-999);
+		color: var(--gray-200);
+		border-radius: 0.375rem;
+	}
+
+	.card img {
+		grid-area: 1 / 1 / 3 / 3;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card.featured {
+		height: 28rem;
+		min-height: 28rem;
+		grid-template: auto 1fr / auto 1fr;
+		border: 2px solid var(--accent-regular);
+		box-shadow: var(--shadow-lg);
+		transform: scale(1.02);
+		transition: all var(--theme-transition);
+	}
+
+	.card.featured:hover {
+		transform: scale(1.05);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.card.featured .title {
+		font-size: var(--text-xl);
+		font-weight: 600;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+	}
+
+	.featured-description {
+		grid-area: 2 / 1 / 3 / 3;
+		z-index: 2;
+		margin: 1rem;
+		padding: 1rem;
+		background: transparent;
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		border-radius: 0.5rem;
+		font-size: var(--text-base);
+		line-height: 1.4;
+		font-style: italic;
+		text-align: center;
+		font-weight: 500;
+		align-self: end;
+	}
+
+	@media (min-width: 50em) {
+		.card {
+			height: 22rem;
+			border-radius: 1.5rem;
+		}
+
+		.card.featured {
+			height: 32rem;
+			min-height: 32rem;
+		}
+
+		.card .title {
+			border-radius: 0.9375rem;
+		}
+
+		.card.featured .title {
+			font-size: var(--text-2xl);
+		}
+
+		.featured-description {
+			font-size: var(--text-lg);
+			margin: 1.5rem;
+			padding: 1.5rem;
+			text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+		}
+	}
 
 	.mention-card {
 		display: flex;

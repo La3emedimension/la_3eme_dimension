@@ -1,0 +1,199 @@
+{
+  "seoTitle": "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension",
+  "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
+  "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
+  "price": "Sur devis",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "E.R.T - Lunette Astronomique Éducative",
+    "description": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Instruments éducatifs",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/ERT 4.jpg",
+    "features": [
+      "Design modulaire éducatif",
+      "Montage intuitif",
+      "Porte-oculaire 1.25\"",
+      "Observation lune et objets brillants",
+      "Parfait pour l'apprentissage"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "E.R.T",
+        "tagline": "Lunette astronomique éducative",
+        "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
+        "features": [
+          { "icon": "strategy", "text": "Design modulaire" },
+          { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
+          { "icon": "terminal-window", "text": "Montage intuitif" }
+        ],
+        "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
+        "heroImage": { "src": "/assets/ERT 4.jpg", "alt": "Lunette astronomique ERT assemblée" }
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video",
+      "data": {
+        "title": "Montage simple et éducatif",
+        "description": "Découvrez comment assembler facilement la lunette E.R.T. Chaque module n'a qu'un seul sens de montage pour un apprentissage optimal.",
+        "videoId": "GQQfFflsZY0",
+        "videoTitle": "Assemblage de la lunette astronomique éducative E.R.T"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Modules et spécifications",
+        "specGroups": [
+          {
+            "title": "Modules inclus",
+            "specs": {
+              "Barillet lentille": "Objectif principal",
+              "Baffle": "Anti-lumière parasite",
+              "Tube optique": "Structure principale",
+              "Porte-oculaire": "Standard 1.25\"",
+              "Renvoi coudé": "Avec prisme",
+              "Oculaire": "Inclus"
+            }
+          },
+          {
+            "title": "Caractéristiques",
+            "specs": {
+              "Type": "Lunette astronomique",
+              "Usage": "Éducatif/Initiation",
+              "Montage": "Intuitif, un seul sens",
+              "Observations": "Lune, amas, galaxies",
+              "Âge recommandé": "8 ans et plus",
+              "Matériau": "PLA imprimé 3D"
+            }
+          },
+          {
+            "title": "Pédagogie",
+            "specs": {
+              "Objectif": "Découverte optique",
+              "Apprentissage": "Assemblage télescope",
+              "Compréhension": "Fonctionnement optique",
+              "Pratique": "Observation directe",
+              "Support": "Documentation incluse",
+              "Évolution": "Vers instruments avancés"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie du projet",
+        "images": [
+          { 
+            "src": "/assets/draw ERT.png", 
+            "alt": "Schéma technique de la lunette E.R.T", 
+            "caption": "Schéma de montage détaillé - chaque module a un seul sens d'assemblage" 
+          },
+          { 
+            "src": "/assets/ERT 7.jpg", 
+            "alt": "Vue d'ensemble de la lunette", 
+            "caption": "Vue complète de la lunette E.R.T assemblée - design éducatif optimisé" 
+          },
+          { 
+            "src": "/assets/ERT 3.jpg", 
+            "alt": "Détail des modules", 
+            "caption": "Détail des différents modules - barillet, baffle, tube optique" 
+          },
+          { 
+            "src": "/assets/ERT.jpg", 
+            "alt": "Lunette en position d'observation", 
+            "caption": "Position d'observation - ergonomie pensée pour l'apprentissage" 
+          },
+          { 
+            "src": "/assets/ERT 2.jpg", 
+            "alt": "Vue latérale", 
+            "caption": "Profil de la lunette montrant la simplicité du design modulaire" 
+          },
+          { 
+            "src": "/assets/ERT 5.jpg", 
+            "alt": "Porte-oculaire et renvoi coudé", 
+            "caption": "Détail du porte-oculaire 1.25\" et du renvoi coudé avec prisme" 
+          },
+          { 
+            "src": "/assets/ERT 6.jpg", 
+            "alt": "Vue arrière", 
+            "caption": "Vue arrière montrant l'ergonomie d'observation" 
+          },
+          { 
+            "src": "/assets/ERT 8.jpg", 
+            "alt": "Détail objectif", 
+            "caption": "Détail du barillet de lentille et du système anti-lumière parasite" 
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features", 
+      "data": {
+        "title": "Avantages éducatifs",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Apprentissage par l'expérience",
+            "description": "Montage intuitif qui permet de comprendre le fonctionnement d'une lunette astronomique."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Observations réelles",
+            "description": "Permet d'observer la lune, les amas d'étoiles et les galaxies lumineuses."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Design modulaire",
+            "description": "Chaque module n'a qu'un seul sens de montage pour éviter les erreurs d'assemblage."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Évolutif",
+            "description": "Excellente introduction avant de passer à des instruments plus avancés."
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "video", "label": "Montage" },
+    { "id": "specs", "label": "Modules" },
+    { "id": "gallery", "label": "Galerie" },
+    { "id": "features", "label": "Avantages" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

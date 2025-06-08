@@ -1,0 +1,166 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+	title: string;
+	tagline: string;
+	description: string;
+	features: Array<{icon: string, text: string}>;
+	primaryCta: {text: string, href: string};
+	secondaryCta?: {text: string, href: string};
+	heroImage: {src: string, alt: string};
+}
+
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage } = Astro.props;
+---
+
+<section class="hero-product">
+	<div class="hero-content">
+		<div class="hero-text">
+			<h1>{title}</h1>
+			<p class="hero-tagline">{tagline}</p>
+			<p class="hero-description" set:html={description} />
+			<div class="hero-features">
+				{features.map(feature => (
+					<div class="feature-badge">
+						<Icon icon={feature.icon} size="1.2em" />
+						<span>{feature.text}</span>
+					</div>
+				))}
+			</div>
+			<div class="hero-cta">
+				<a href={primaryCta.href} class="cta-primary">{primaryCta.text}</a>
+				{secondaryCta && (
+					<a href={secondaryCta.href} class="cta-secondary">{secondaryCta.text}</a>
+				)}
+			</div>
+		</div>
+		<div class="hero-media">
+			<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero-product {
+		padding: 4rem 0;
+		background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
+		min-height: 80vh;
+		display: flex;
+		align-items: center;
+	}
+
+	.hero-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.hero-text h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		color: var(--accent-regular);
+		margin-bottom: 1rem;
+		line-height: 1.1;
+	}
+
+	.hero-tagline {
+		font-size: 1.5rem;
+		color: var(--gray-200);
+		margin-bottom: 1rem;
+		font-weight: 500;
+	}
+
+	.hero-description {
+		font-size: 1.1rem;
+		color: var(--gray-300);
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.hero-features {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.feature-badge {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.cta-primary {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		border: 2px solid var(--accent-regular);
+	}
+
+	.cta-primary:hover {
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.cta-secondary {
+		background: transparent;
+		color: var(--gray-200);
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 500;
+		border: 2px solid var(--gray-600);
+		transition: all 0.3s ease;
+	}
+
+	.cta-secondary:hover {
+		background: var(--gray-800);
+		border-color: var(--gray-400);
+	}
+
+	.hero-image {
+		width: 100%;
+		height: auto;
+		border-radius: 1rem;
+		box-shadow: var(--shadow-xl);
+	}
+
+	@media (max-width: 768px) {
+		.hero-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			text-align: center;
+		}
+
+		.hero-text h1 {
+			font-size: 3rem;
+		}
+
+		.hero-cta {
+			justify-content: center;
+		}
+	}
+</style>

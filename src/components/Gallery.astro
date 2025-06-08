@@ -1,0 +1,77 @@
+---
+interface GalleryImage {
+	src: string;
+	alt: string;
+	caption?: string;
+}
+
+interface Props {
+	title: string;
+	images: GalleryImage[];
+	background?: 'light' | 'dark';
+}
+
+const { title, images, background = 'light' } = Astro.props;
+---
+
+<section class={`gallery-section ${background}`}>
+	<div class="container">
+		<h2>{title}</h2>
+		<div class="gallery-grid">
+			{images.map(image => (
+				<img 
+					src={image.src} 
+					alt={image.alt} 
+					data-caption={image.caption || image.alt} 
+					loading="lazy" 
+				/>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.gallery-section {
+		padding: 6rem 0;
+	}
+
+	.gallery-section.light {
+		background: var(--gray-999);
+	}
+
+	.gallery-section.dark {
+		background: var(--gray-900);
+	}
+
+	.gallery-section h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--gray-100);
+		margin-bottom: 4rem;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.gallery-grid img {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		border-radius: 0.5rem;
+		transition: transform 0.3s ease;
+		cursor: pointer;
+	}
+
+	.gallery-grid img:hover {
+		transform: scale(1.05);
+	}
+</style>

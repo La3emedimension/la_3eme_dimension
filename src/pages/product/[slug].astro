@@ -1,0 +1,66 @@
+---
+// Dynamic product page using parametric layout
+import { getCollection } from 'astro:content';
+import ProductLayout from '../../layouts/ProductLayout.astro';
+import SmallestOverview from '../../components/SmallestOverview.astro';
+import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
+import SmallestLearnMore from '../../components/SmallestLearnMore.astro';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const productConfig = product.data;
+
+// Add custom sections content for Smallest
+const customSections = [];
+
+// Add product overview section for Smallest
+if (product.id === 'smallest') {
+  customSections.push({
+    type: 'custom',
+    customComponent: SmallestOverview,
+    data: {}
+  });
+  
+  customSections.push({
+    type: 'custom', 
+    customComponent: SmallestSocialProof,
+    data: {}
+  });
+  
+  customSections.push({
+    type: 'custom',
+    customComponent: SmallestLearnMore, 
+    data: {}
+  });
+}
+
+// Insert custom sections at appropriate positions
+const allSections = [...productConfig.sections];
+if (product.id === 'smallest') {
+  // Insert overview after video section
+  const videoIndex = allSections.findIndex(s => s.type === 'video');
+  if (videoIndex !== -1) {
+    allSections.splice(videoIndex + 1, 0, customSections[0]);
+  }
+  
+  // Insert social proof and learn more after pricing
+  const pricingIndex = allSections.findIndex(s => s.type === 'pricing');  
+  if (pricingIndex !== -1) {
+    allSections.splice(pricingIndex + 1, 0, ...customSections.slice(1));
+  }
+}
+
+const finalConfig = {
+  ...productConfig,
+  sections: allSections
+};
+---
+
+<ProductLayout {...finalConfig} />

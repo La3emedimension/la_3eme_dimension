@@ -1,0 +1,171 @@
+---
+interface PricingOption {
+	title: string;
+	description: string;
+}
+
+interface Props {
+	title: string;
+	price: string;
+	priceNote: string;
+	included: string[];
+	ctaText: string;
+	ctaHref: string;
+	optionsTitle: string;
+	options: PricingOption[];
+}
+
+const { title, price, priceNote, included, ctaText, ctaHref, optionsTitle, options } = Astro.props;
+---
+
+<section class="pricing-section" id="pricing">
+	<div class="container">
+		<h2>Tarifs et options</h2>
+		<div class="pricing-grid">
+			<div class="pricing-card main-offer">
+				<h3>{title}</h3>
+				<div class="price">{price}</div>
+				<p class="price-note">{priceNote}</p>
+				<ul class="included">
+					{included.map(item => (
+						<li>{item}</li>
+					))}
+				</ul>
+				<a href={ctaHref} class="cta-primary">{ctaText}</a>
+			</div>
+			<div class="pricing-card">
+				<h3>{optionsTitle}</h3>
+				<div class="optics-options">
+					{options.map(option => (
+						<div class="option">
+							<h4>{option.title}</h4>
+							<p set:html={option.description} />
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.pricing-section {
+		padding: 6rem 0;
+		background: var(--gray-900);
+	}
+
+	.pricing-section h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: var(--gray-100);
+		margin-bottom: 4rem;
+	}
+
+	.pricing-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.pricing-card {
+		background: var(--gray-999);
+		padding: 3rem 2rem;
+		border-radius: 1rem;
+		border: 1px solid var(--gray-800);
+		text-align: center;
+	}
+
+	.main-offer {
+		border-color: var(--accent-regular);
+		position: relative;
+		transform: scale(1.05);
+	}
+
+	.pricing-card h3 {
+		font-size: 1.8rem;
+		color: var(--gray-100);
+		margin-bottom: 1rem;
+	}
+
+	.price {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--accent-regular);
+		margin-bottom: 0.5rem;
+	}
+
+	.price-note {
+		color: var(--gray-400);
+		margin-bottom: 2rem;
+	}
+
+	.included {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+
+	.included li {
+		padding: 0.5rem 0;
+		color: var(--gray-300);
+		border-bottom: 1px solid var(--gray-800);
+	}
+
+	.included li:before {
+		content: "✓ ";
+		color: var(--accent-regular);
+		font-weight: bold;
+	}
+
+	.cta-primary {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		border: 2px solid var(--accent-regular);
+		display: inline-block;
+	}
+
+	.cta-primary:hover {
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.optics-options .option {
+		margin-bottom: 1.5rem;
+		text-align: left;
+	}
+
+	.optics-options h4 {
+		color: var(--accent-regular);
+		margin-bottom: 0.5rem;
+	}
+
+	.optics-options p {
+		color: var(--gray-300);
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.pricing-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.main-offer {
+			transform: none;
+		}
+	}
+</style>

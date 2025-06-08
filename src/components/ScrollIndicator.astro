@@ -1,0 +1,123 @@
+---
+// ScrollIndicator component for homepage
+---
+
+<div class="scroll-indicator" id="scroll-indicator">
+	<div class="scroll-bubble">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M7 14L12 19L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M7 5L12 10L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</div>
+</div>
+
+<script>
+	// Scroll indicator functionality
+	const scrollIndicator = document.getElementById('scroll-indicator');
+	let isScrolled = false;
+
+	function handleScroll() {
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		
+		if (scrollTop > 50 && !isScrolled) {
+			isScrolled = true;
+			scrollIndicator?.classList.add('hidden');
+		} else if (scrollTop <= 50 && isScrolled) {
+			isScrolled = false;
+			scrollIndicator?.classList.remove('hidden');
+		}
+	}
+
+	// Add scroll listener
+	window.addEventListener('scroll', handleScroll, { passive: true });
+
+	// Add click handler to scroll to next section
+	scrollIndicator?.addEventListener('click', () => {
+		window.scrollTo({
+			top: window.innerHeight,
+			behavior: 'smooth'
+		});
+	});
+</script>
+
+<style>
+	.scroll-indicator {
+		position: fixed;
+		bottom: 2rem;
+		left: 50%;
+		z-index: 100;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		cursor: pointer;
+		opacity: 1;
+		animation: bounce 2s infinite;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.scroll-indicator.hidden {
+		opacity: 0;
+		transform: translateX(-50%) translateY(20px);
+		pointer-events: none;
+	}
+
+	.scroll-bubble {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: var(--shadow-lg);
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
+		transition: all 0.3s ease;
+	}
+
+	.scroll-bubble:hover {
+		transform: scale(1.1);
+		box-shadow: var(--shadow-xl);
+		background: var(--accent-dark);
+	}
+
+	.scroll-bubble svg {
+		opacity: 0.9;
+	}
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-8px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-4px);
+		}
+	}
+
+	/* Only show on homepage with sufficient viewport height */
+	@media (max-height: 600px) {
+		.scroll-indicator {
+			display: none;
+		}
+	}
+
+	/* Responsive sizing */
+	@media (max-width: 50em) {
+		.scroll-indicator {
+			bottom: 1.5rem;
+		}
+		
+		.scroll-bubble {
+			width: 3rem;
+			height: 3rem;
+		}
+		
+		.scroll-bubble svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+</style>

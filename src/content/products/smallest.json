@@ -1,0 +1,264 @@
+{
+  "seoTitle": "Smallest - Télescope Portable Révolutionnaire | La 3ème dimension",
+  "seoDescription": "Smallest : Le télescope 150/750 portable révolutionnaire. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
+  "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/Smallest.jpg",
+  "price": "550€",
+  "priceNote": "Hors optiques",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Smallest - Télescope Portable 150/750",
+    "description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution révolutionnaire pour l'astronomie nomade.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Télescopes",
+    "offers": {
+      "@type": "Offer",
+      "price": "550",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/Smallest.jpg",
+    "features": [
+      "Télescope Newton 150/750",
+      "Portable et compact",
+      "Transportable en avion",
+      "Structure imprimée en 3D",
+      "Compatible optiques standard",
+      "Poids : 4kg avec optiques"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Smallest",
+        "tagline": "Le télescope portable révolutionnaire",
+        "description": "\"Le meilleur télescope du monde, c'est celui que l'on utilise souvent !\"<br>Emportez votre télescope 150/750 partout avec vous.",
+        "features": [
+          { "icon": "paper-plane-tilt", "text": "Transportable en avion" },
+          { "icon": "rocket-launch", "text": "150/750 Newton" },
+          { "icon": "strategy", "text": "4kg avec optiques" }
+        ],
+        "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
+        "heroImage": { "src": "/assets/Smallest.jpg", "alt": "Télescope Smallest portable en configuration observation" }
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Montage et transport",
+        "images": [
+          { 
+            "src": "/assets/150-750 (8).jpg", 
+            "alt": "Smallest en configuration transport", 
+            "caption": "Le Smallest replié dans sa configuration de transport ultra-compacte - tient dans une sacoche d'ordinateur" 
+          },
+          { 
+            "src": "/assets/150-750 (13).jpg", 
+            "alt": "Smallest en observation", 
+            "caption": "Configuration d'observation complète - montage en moins de 4 minutes sans outil" 
+          },
+          { 
+            "src": "/assets/S150.jpg", 
+            "alt": "Vue détaillée du télescope", 
+            "caption": "Détails de la structure imprimée en 3D et du système de fixation des optiques" 
+          },
+          { 
+            "src": "/assets/S1502.jpg", 
+            "alt": "Assemblage du télescope", 
+            "caption": "Étapes d'assemblage du télescope - design modulaire et intuitif" 
+          }
+        ],
+        "background": "dark"
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video", 
+      "data": {
+        "title": "Montage en 4 minutes",
+        "description": "Découvrez la simplicité du Smallest : du transport à l'observation en moins de 4 minutes. Aucun outil requis, montage intuitif pour profiter rapidement du ciel étoilé.",
+        "videoId": "-7mI89_OHzk",
+        "videoTitle": "Montage et observation avec le télescope Smallest en 4 minutes"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Pourquoi choisir Smallest ?",
+        "features": [
+          {
+            "icon": "rocket-launch",
+            "title": "Performance optique",
+            "description": "Compatible avec les optiques industrielles des grandes marques. Diamètre 150mm, focale 750mm pour des observations de qualité."
+          },
+          {
+            "icon": "paper-plane-tilt", 
+            "title": "Transport aérien",
+            "description": "Respecte les dimensions cabine. Optiques démontables facilement. Tient dans une sacoche d'ordinateur."
+          },
+          {
+            "icon": "strategy",
+            "title": "Modulaire", 
+            "description": "Kit de conversion pour vos optiques existantes. Structure Dobson intégrée. Porte-oculaire 1.25\"."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Impression 3D",
+            "description": "Précision optimale grâce à la fabrication additive. Structure légère et résistante. Personnalisable."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Optiques",
+            "specs": {
+              "Type": "Newton 150/750",
+              "Diamètre": "150mm", 
+              "Focale": "750mm",
+              "Rapport F/D": "F/5",
+              "Porte-oculaire": "1.25\""
+            }
+          },
+          {
+            "title": "Dimensions & Poids",
+            "specs": {
+              "Transport": "25 × 25 × 20 cm",
+              "Observation": "25 × 25 × 87 cm",
+              "Poids total": "4 kg avec optiques",
+              "Structure": "Tiges aluminium",
+              "Monture": "Dobson intégrée"
+            }
+          },
+          {
+            "title": "Compatibilité",
+            "specs": {
+              "Optiques": "Standards 150/750",
+              "Chercheur": "Queue d'aronde",
+              "Transport": "Cabine avion",
+              "Montage": "Sans outils",
+              "Garantie": "2 ans"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "title": "Évolutions et observations",
+        "images": [
+          { 
+            "src": "/assets/150 V2 2.jpg", 
+            "alt": "Nouvelle version", 
+            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles" 
+          },
+          { 
+            "src": "/assets/150 V2.jpg", 
+            "alt": "Design V2", 
+            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation" 
+          },
+          { 
+            "src": "/assets/150 V2 3.jpg", 
+            "alt": "Version 2 - vue 3", 
+            "caption": "Détails des connexions et du système de verrouillage rapide" 
+          },
+          { 
+            "src": "/assets/150 V2 4.jpg", 
+            "alt": "Version 2 - vue 4", 
+            "caption": "Vue d'ensemble de la structure Dobson intégrée" 
+          },
+          { 
+            "src": "/assets/m150.jpeg", 
+            "alt": "Comparaison de taille", 
+            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire" 
+          },
+          { 
+            "src": "/assets/c.jpg", 
+            "alt": "Observation de la comète C/2023 A3", 
+            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest" 
+          },
+          { 
+            "src": "/assets/c1.jpg", 
+            "alt": "Photo comète à main levée", 
+            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire" 
+          },
+          { 
+            "src": "/assets/c2.jpeg", 
+            "alt": "Astro-dessin de la comète", 
+            "caption": "Astro-dessin de la comète C/2023 A3 réalisé lors de l'observation avec le Smallest" 
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Kit Smallest",
+        "price": "550€",
+        "priceNote": "Hors optiques",
+        "included": [
+          "Structure imprimée 3D complète",
+          "Tiges aluminium",
+          "Porte-oculaire 1.25\"",
+          "Support chercheur",
+          "Monture Dobson intégrée",
+          "Instructions de montage"
+        ],
+        "ctaText": "Commander maintenant",
+        "ctaHref": "mailto:la3emedim@gmail.com",
+        "optionsTitle": "Options optiques",
+        "options": [
+          {
+            "title": "Occasion",
+            "description": "Leboncoin, Webastro, forums spécialisés"
+          },
+          {
+            "title": "GSO / Chinoise",
+            "description": "Rapport qualité/prix optimal"
+          },
+          {
+            "title": "Artisanal",
+            "description": "<strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">paul.fays@gallifrey-optics.fr</a><br><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">costruzioniottichezen.com</a>"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "gallery", "label": "Images" },
+    { "id": "video", "label": "Démonstration" },
+    { "id": "features", "label": "Avantages" },
+    { "id": "specs", "label": "Spécifications" },
+    { "id": "pricing", "label": "Tarifs" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

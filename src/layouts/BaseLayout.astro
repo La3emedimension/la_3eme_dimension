@@ -10,14 +10,23 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	keywords?: string | undefined;
+	ogImage?: string | undefined;
+	structuredData?: object | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, keywords, ogImage, structuredData } = Astro.props;
 ---
 
 <html lang="fr_FR">
 	<head>
-		<MainHead title={title} description={description} />
+		<MainHead 
+			title={title} 
+			description={description}
+			keywords={keywords}
+			ogImage={ogImage}
+			structuredData={structuredData}
+		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
     rel="alternate"

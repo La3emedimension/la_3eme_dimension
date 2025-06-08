@@ -4,11 +4,14 @@ publishDate: 2019-12-01 00:00:00
 img: /assets/ERT 4.jpg
 img_alt: Petite lunette pédagogique pour faire de l'astronomie et comprendre son fonctionne optique.
 description: |
-  Educational Refracting Telescope. Lunette pédagogique pour comprendre le fonctionnement optique.
+  Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.
 tags:
   - Design
   - Éducation
   - Astronomie
+seoTitle: "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension"
+seoDescription: "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler."
+seoKeywords: "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse"
 ---
 
 E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles... 
@@ -48,6 +51,21 @@ Si le projet vous intéresse n'hésitez pas à me contacter par mail !
 
 
 <style>
+
+.button {
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    padding: 0.10rem 0.60rem;
+    gap: 0.5rem;
+    color: var(--accent-text-over);
+    border: 1px solid var(--accent-regular);
+    background-color: var(--accent-regular);
+    border-radius: 999rem;
+    line-height: 1.35;
+    white-space: nowrap;
+    vertical-align: middle;
+}
 
 img{
 margin: auto;

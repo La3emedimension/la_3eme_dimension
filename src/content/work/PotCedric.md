@@ -4,11 +4,14 @@ publishDate: 2020-03-04 00:00:00
 img: /assets/stock-2.jpg
 img_alt: Restauration, optimisation de table, rangement, service.
 description: |
-  Projet de pots pour optimiser le service pour le restaurateur "La fabric de Cedric" à Montauban (82)
+  Solution d'optimisation restaurant imprimée en 3D. Pots multifonctions pour couverts, verres et serviettes. Matériau PETG professionnel résistant 90°C.
 tags:
   - Optimisation
   - Confort
   - Design
+seoTitle: "Aide au service - Solution Restaurant Imprimée 3D | La 3ème dimension"
+seoDescription: "Solution d'optimisation restaurant imprimée en 3D. Pots multifonctions pour couverts, verres et serviettes. Matériau PETG professionnel résistant 90°C."
+seoKeywords: "optimisation restaurant, rangement service, restauration solution, aide restaurant, optimisation, confort, design, toulouse"
 
 ---
 
