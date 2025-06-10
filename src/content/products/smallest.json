@@ -2,7 +2,7 @@
   "seoTitle": "Smallest - Télescope Portable Révolutionnaire | La 3ème dimension",
   "seoDescription": "Smallest : Le télescope 150/750 portable révolutionnaire. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
   "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/Smallest.jpg",
+  "ogImage": "https://la3emedim.fr/assets/150 V2 4.jpg",
   "price": "550€",
   "priceNote": "Hors optiques",
   "emailContact": "la3emedim@gmail.com",
@@ -31,7 +31,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/Smallest.jpg",
+    "image": "https://la3emedim.fr/assets/150 V2 4.jpg",
     "features": [
       "Télescope Newton 150/750",
       "Portable et compact",
@@ -47,7 +47,7 @@
       "id": "section-hero",
       "data": {
         "title": "Smallest",
-        "tagline": "Le télescope portable révolutionnaire",
+        "tagline": "Le télescope portable",
         "description": "\"Le meilleur télescope du monde, c'est celui que l'on utilise souvent !\"<br>Emportez votre télescope 150/750 partout avec vous.",
         "features": [
           { "icon": "paper-plane-tilt", "text": "Transportable en avion" },
@@ -55,7 +55,7 @@
           { "icon": "strategy", "text": "4kg avec optiques" }
         ],
         "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
-        "heroImage": { "src": "/assets/Smallest.jpg", "alt": "Télescope Smallest portable en configuration observation" }
+        "heroImage": { "src": "/assets/150 V2 4.jpg", "alt": "Télescope Smallest portable en configuration observation" }
       }
     },
     {
@@ -107,17 +107,17 @@
           {
             "icon": "rocket-launch",
             "title": "Performance optique",
-            "description": "Compatible avec les optiques industrielles des grandes marques. Diamètre 150mm, focale 750mm pour des observations de qualité."
+            "description": "Diamètre 150mm, focale 750mm pour des observations de qualité."
           },
           {
             "icon": "paper-plane-tilt", 
-            "title": "Transport aérien",
-            "description": "Respecte les dimensions cabine. Optiques démontables facilement. Tient dans une sacoche d'ordinateur."
+            "title": "Transportabilité",
+            "description": "Respecte les dimensions cabine d'avion. Optiques démontables facilement. Tient dans une sacoche d'ordinateur ou dans un sac à dos. 4 kilos prêt pour la randonnée."
           },
           {
             "icon": "strategy",
             "title": "Modulaire", 
-            "description": "Kit de conversion pour vos optiques existantes. Structure Dobson intégrée. Porte-oculaire 1.25\"."
+            "description": "Kit de conversion pour vos optiques industrielles ou artisanals. Structure type Dobson. Porte-oculaire 1.25. Montage sans outils."
           },
           {
             "icon": "terminal-window",
