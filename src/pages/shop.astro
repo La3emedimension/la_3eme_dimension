@@ -5,8 +5,10 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 
-// Get all products
-const allProducts = await getCollection('products');
+// Get all products (excluding drafts in production)
+const allProducts = await getCollection('products', ({ data }) => {
+	return import.meta.env.DEV || !data.draft;
+});
 
 // Business structured data for shop page
 const shopStructuredData = {
@@ -78,7 +80,12 @@ const shopStructuredData = {
 									</div>
 								</div>
 								<div class="card-content">
-									<h3 class="product-title">{heroData?.title || product.id}</h3>
+									<h3 class="product-title">
+										{heroData?.title || product.id}
+										{import.meta.env.DEV && product.data.draft && (
+											<span class="draft-badge">DRAFT</span>
+										)}
+									</h3>
 									<p class="product-tagline">{heroData?.tagline}</p>
 									
 									{heroData?.features && (
@@ -335,6 +342,19 @@ const shopStructuredData = {
 	.price-note {
 		font-size: var(--text-xs);
 		color: var(--gray-400);
+	}
+
+	.draft-badge {
+		display: inline-block;
+		margin-left: 0.5rem;
+		padding: 0.125rem 0.375rem;
+		font-size: var(--text-xs);
+		font-weight: 600;
+		background: orange;
+		color: white;
+		border-radius: 0.25rem;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
 	}
 
 	@media (min-width: 50em) {

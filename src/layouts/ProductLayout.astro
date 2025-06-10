@@ -19,6 +19,9 @@ export interface ProductConfig {
   ogImage?: string;
   structuredData?: any;
   
+  // Draft mode
+  draft?: boolean;
+  
   // Sections configuration
   sections: SectionConfig[];
   
@@ -49,6 +52,7 @@ const {
   seoKeywords,
   ogImage,
   structuredData,
+  draft,
   sections,
   navigationItems = [],
   showContactCTA = true,
@@ -74,6 +78,13 @@ const sectionComponents = {
   ogImage={ogImage}
   structuredData={structuredData}
 >
+  {import.meta.env.DEV && draft && (
+    <div class="draft-banner">
+      <div class="wrapper">
+        <span class="draft-text">🚧 MODE BROUILLON - Cette page n'apparaîtra pas en production</span>
+      </div>
+    </div>
+  )}
   {sections.map((section) => {
     const Component = section.type === 'custom' ? section.customComponent : sectionComponents[section.type];
     
@@ -97,3 +108,28 @@ const sectionComponents = {
   
   {showLightbox && <Lightbox />}
 </BaseLayout>
+
+<style>
+  .draft-banner {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 0.75rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .draft-text {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    letter-spacing: 0.025em;
+  }
+
+  .wrapper {
+    max-width: 65ch;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+</style>

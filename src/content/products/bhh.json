@@ -1,4 +1,5 @@
 {
+  "draft": true,
   "seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
   "seoDescription": "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
   "seoKeywords": "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse",
@@ -51,8 +52,14 @@
           { "icon": "terminal-window", "text": "Impression 3D optimisée" },
           { "icon": "paper-plane-tilt", "text": "Ultra-portable" }
         ],
-        "primaryCta": { "text": "Fichiers gratuits", "href": "https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments" },
-        "heroImage": { "src": "/assets/BHH (2).jpg", "alt": "Crochet BHH installé sur sac à dos" }
+        "primaryCta": {
+          "text": "Fichiers gratuits",
+          "href": "https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments"
+        },
+        "heroImage": {
+          "src": "/assets/BHH (2).jpg",
+          "alt": "Crochet BHH installé sur sac à dos"
+        }
       }
     },
     {
@@ -90,20 +97,20 @@
       "data": {
         "title": "En action",
         "images": [
-          { 
-            "src": "/assets/BHH desk.gif", 
-            "alt": "Animation du crochet en utilisation", 
-            "caption": "Démonstration de l'utilisation du crochet BHH - accrochage simple et efficace" 
+          {
+            "src": "/assets/BHH desk.gif",
+            "alt": "Animation du crochet en utilisation",
+            "caption": "Démonstration de l'utilisation du crochet BHH - accrochage simple et efficace"
           },
-          { 
-            "src": "/assets/BHH (3).gif", 
-            "alt": "Test de résistance", 
-            "caption": "Test de résistance avec sac à dos chargé - supporte jusqu'à 12kg" 
+          {
+            "src": "/assets/BHH (3).gif",
+            "alt": "Test de résistance",
+            "caption": "Test de résistance avec sac à dos chargé - supporte jusqu'à 12kg"
           },
-          { 
-            "src": "/assets/BHH (1).jpg", 
-            "alt": "Vue détaillée du crochet", 
-            "caption": "Détail de la forme optimisée et de la finition d'impression 3D" 
+          {
+            "src": "/assets/BHH (1).jpg",
+            "alt": "Vue détaillée du crochet",
+            "caption": "Détail de la forme optimisée et de la finition d'impression 3D"
           }
         ],
         "background": "dark"

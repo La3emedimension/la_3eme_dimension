@@ -7,7 +7,9 @@ import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
 import SmallestLearnMore from '../../components/SmallestLearnMore.astro';
 
 export async function getStaticPaths() {
-  const products = await getCollection('products');
+  const products = await getCollection('products', ({ data }) => {
+    return import.meta.env.DEV || !data.draft;
+  });
   return products.map((product) => ({
     params: { slug: product.id },
     props: { product },

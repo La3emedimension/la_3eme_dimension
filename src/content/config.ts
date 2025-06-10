@@ -25,6 +25,9 @@ export const collections = {
 			ogImage: z.string().optional(),
 			structuredData: z.any().optional(),
 			
+			// Draft mode
+			draft: z.boolean().optional(),
+			
 			// Product pricing and purchase
 			price: z.string().optional(),
 			priceNote: z.string().optional(),
