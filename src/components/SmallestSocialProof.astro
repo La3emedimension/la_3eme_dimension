@@ -3,84 +3,127 @@
 ---
 
 <section class="social-proof">
-  <div class="container">
-    <h2> Communauté et évènements</h2>
-    <div class="proof-grid">
-      <div class="proof-item">
-        <img src="/assets/POS (3).jpg" alt="Présentation Pint of Science" loading="lazy" />
-        <div class="proof-content">
-          <h3>Pint of Science 2024</h3>
-          <p>Projet présenté le 14 mai 2024 lors du festival Pint of Science à Toulouse, devant un public de passionnés de sciences.</p>
+    <div class="container">
+        <h2>Communauté et évènements</h2>
+        <div class="proof-grid">
+            <div class="proof-item">
+                <img
+                    src="/assets/POS (3).jpg"
+                    alt="Présentation Pint of Science"
+                    loading="lazy"
+                />
+                <div class="proof-content">
+                    <h3>Pint of Science 2024</h3>
+                    <p>
+                        Projet présenté le 14 mai 2024 lors du festival Pint of
+                        Science à Toulouse, devant un public de passionnés de
+                        sciences.
+                    </p>
+                </div>
+            </div>
+            <div class="proof-item">
+                <img
+                    src="/assets/c2.jpeg"
+                    alt="Astro-dessin comète"
+                    loading="lazy"
+                />
+                <div class="proof-content">
+                    <h3>Observations réelles</h3>
+                    <p>
+                        Comète C/2023 A3 observée et dessinée avec le Smallest
+                        le 21 octobre 2024.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="proof-item">
-        <img src="/assets/c2.jpeg" alt="Astro-dessin comète" loading="lazy" />
-        <div class="proof-content">
-          <h3>Observations réelles</h3>
-          <p>Comète C/2023 A3 observée et dessinée avec le Smallest le 21 octobre 2024.</p>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .social-proof {
-    padding: 6rem 0;
-    background: var(--gray-999);
-  }
-
-  .social-proof h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--gray-100);
-    margin-bottom: 4rem;
-  }
-
-  .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
-  }
-
-  .proof-item {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    background: var(--gray-900);
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid var(--gray-800);
-  }
-
-  .proof-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .proof-content h3 {
-    color: var(--gray-100);
-    margin-bottom: 1rem;
-  }
-
-  .proof-content p {
-    color: var(--gray-300);
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .proof-item {
-      flex-direction: column;
-      text-align: center;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
     }
-  }
+
+    .social-proof {
+        padding: 6rem 0;
+        background: var(--gray-999);
+    }
+
+    .social-proof h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--gray-100);
+        margin-bottom: 4rem;
+    }
+
+    .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+    }
+
+    .proof-item {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        background: var(--gray-900);
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid var(--gray-800);
+    }
+
+    .proof-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .proof-content h3 {
+        color: var(--gray-100);
+        margin-bottom: 1rem;
+    }
+
+    .proof-content p {
+        color: var(--gray-300);
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .social-proof {
+            padding: 3rem 0;
+        }
+
+        .social-proof h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .proof-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .proof-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+        .proof-content h3 {
+            font-size: 1rem;
+        }
+
+        .proof-item img {
+            width: 80px;
+            height: 80px;
+        }
+    }
 </style>
