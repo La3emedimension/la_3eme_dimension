@@ -10,7 +10,7 @@ tags:
   - Bagpack upgrade
   - Optimisation
 seoTitle: "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension"
-seoDescription: "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles."
+seoDescription: "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles."
 seoKeywords: "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse"
 ---
 
@@ -31,12 +31,6 @@ Vous pouvez retrouver le Réel <a  class="button" href="https://www.instagram.co
 
 <img src="/assets/BHH (1).jpg">
 
-<script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
-
-<stripe-buy-button buy-button-id="buy_btn_1RQYYxRqkfolIfPm8pbumRkk" publishable-key="pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm">
-</stripe-buy-button>
 
 <style>
  .button {

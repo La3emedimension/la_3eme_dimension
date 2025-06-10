@@ -10,7 +10,7 @@ tags:
   - Éducation
   - Astronomie
 seoTitle: "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension"
-seoDescription: "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler."
+seoDescription: "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design éducatif et facile à assembler."
 seoKeywords: "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse"
 ---
 

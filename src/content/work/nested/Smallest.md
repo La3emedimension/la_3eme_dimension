@@ -11,7 +11,7 @@ tags:
   - Compact
   - Optimisation
 seoTitle: "Smallest - Télescope Portable Révolutionnaire | La 3ème dimension"
-seoDescription: "Smallest : Le télescope 150/750 portable révolutionnaire. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€."
+seoDescription: "Smallest : Le télescope 150/750 portable. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€."
 seoKeywords: "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse"   
 ---
 
