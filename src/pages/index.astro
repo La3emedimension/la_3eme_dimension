@@ -1,82 +1,85 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import ScrollIndicator from '../components/ScrollIndicator.astro';
+import CallToAction from "../components/CallToAction.astro";
+import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Skills from "../components/Skills.astro";
 
 // Content Fetching: Get Smallest telescope and other projects
-const allProjects = await getCollection('work');
-const smallestProject = allProjects.find(p => p.slug === 'nested/smallest');
+const allProjects = await getCollection("work");
+const smallestProject = allProjects.find((p) => p.slug === "nested/smallest");
 const otherProjects = allProjects
-	.filter(p => p.slug !== 'nested/smallest')
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 3);
+    .filter((p) => p.slug !== "nested/smallest")
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+    .slice(0, 3);
 
-const projects = smallestProject ? [smallestProject, ...otherProjects] : otherProjects.slice(0, 4);
+const projects = smallestProject
+    ? [smallestProject, ...otherProjects]
+    : otherProjects.slice(0, 4);
 
 // Business structured data for homepage
 const businessStructuredData = {
-	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"name": "La 3ème dimension",
-	"description": "Spécialiste en impression 3D et conception de télescopes compacts. Innovation dans l'astronomie portable avec le télescope Smallest. Service Toulouse et région.",
-	"url": "https://la3emedim.fr",
-	"telephone": "contact via email",
-	"email": "la3emedim@gmail.com",
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Toulouse",
-		"addressRegion": "Occitanie", 
-		"addressCountry": "FR"
-	},
-	"geo": {
-		"@type": "GeoCoordinates",
-		"latitude": "43.6045",
-		"longitude": "1.4442"
-	},
-	"priceRange": "€€",
-	"serviceArea": {
-		"@type": "GeoCircle",
-		"geoMidpoint": {
-			"@type": "GeoCoordinates",
-			"latitude": "43.6045",
-			"longitude": "1.4442"
-		},
-		"geoRadius": "50000"
-	},
-	"hasOfferCatalog": {
-		"@type": "OfferCatalog",
-		"name": "Services d'impression 3D et télescopes",
-		"itemListElement": [
-			{
-				"@type": "Offer",
-				"itemOffered": {
-					"@type": "Service",
-					"name": "Impression 3D sur mesure"
-				}
-			},
-			{
-				"@type": "Offer", 
-				"itemOffered": {
-					"@type": "Product",
-					"name": "Télescope Smallest portable"
-				}
-			}
-		]
-	}
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "La 3ème dimension",
+    description:
+        "Spécialiste en impression 3D et conception de télescopes compacts. Innovation dans l'astronomie portable avec le télescope Smallest. Service Toulouse et région.",
+    url: "https://la3emedim.fr",
+    telephone: "contact via email",
+    email: "la3emedim@gmail.com",
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toulouse",
+        addressRegion: "Occitanie",
+        addressCountry: "FR",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: "43.6045",
+        longitude: "1.4442",
+    },
+    priceRange: "€€",
+    serviceArea: {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: "43.6045",
+            longitude: "1.4442",
+        },
+        geoRadius: "50000",
+    },
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services d'impression 3D et télescopes",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Impression 3D sur mesure",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Product",
+                    name: "Télescope Smallest portable",
+                },
+            },
+        ],
+    },
 };
 
 // Full Astro Component Syntax:
@@ -84,344 +87,376 @@ const businessStructuredData = {
 ---
 
 <BaseLayout
-	title="La 3ème dimension - Impression 3D & Télescopes Astronomiques | Toulouse et région"
-	description="Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable révolutionnaire pour l'astronomie nomade. Service Toulouse et région (50km)."
-	keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
-	structuredData={businessStructuredData}
+    title="La 3ème dimension - Impression 3D & Télescopes Astronomiques | Toulouse et région"
+    description="Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable pratique pour l'astronomie nomade. Service Toulouse et région (50km)."
+    keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
+    structuredData={businessStructuredData}
 >
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="La 3ème dimension."
-					tagline="Service de conception, de modélisation et d’atelier d’impression 3D"
-					align="start"
-				>
-				<div class="roles">
-					<button onclick="window.location.href = '//la3emedim.fr/work/';">conception/impression <Icon icon= 'pencil-line' size="1.33em"/></button>
-					<button onclick="window.location.href = '//la3emedim.fr/shop/';">Boutique <Icon icon='Store-logo' size="1.33em"/></button>
-					<button onclick="window.location.href = '//www.printables.com/@La3emedimens_2102135';">Modèles <Icon icon='printables-logo' size="1.33em"/></button>
-				</div>
-				
-					
-				</Hero>
+    <div class="stack gap-20 lg:gap-48">
+        <div class="wrapper stack gap-8 lg:gap-20">
+            <header class="hero">
+                <Hero
+                    title="La 3ème dimension."
+                    tagline="Service de conception, de modélisation et d’atelier d’impression 3D"
+                    align="start"
+                >
+                    <div class="roles">
+                        <button
+                            onclick="window.location.href = '//la3emedim.fr/work/';"
+                            >conception/impression <Icon
+                                icon="pencil-line"
+                                size="1.33em"
+                            /></button
+                        >
+                        <button
+                            onclick="window.location.href = '//la3emedim.fr/shop/';"
+                            >Boutique <Icon
+                                icon="Store-logo"
+                                size="1.33em"
+                            /></button
+                        >
+                        <button
+                            onclick="window.location.href = '//www.printables.com/@La3emedimens_2102135';"
+                            >Modèles <Icon
+                                icon="printables-logo"
+                                size="1.33em"
+                            /></button
+                        >
+                    </div>
+                </Hero>
 
-				<video autoplay loop playsinline>
-  <source src="/assets/Homevideo(1).mp4" type="video/mp4" />
-  <p>
-    Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
-    <a href="/assets/homevideo.mp4">un lien pour télécharger la vidéo</a>.
-  </p>
-</video>
-			</header>
+                <video autoplay loop playsinline>
+                    <source src="/assets/Homevideo(1).mp4" type="video/mp4" />
+                    <p>
+                        Votre navigateur ne prend pas en charge les vidéos
+                        HTML5. Voici
+                        <a href="/assets/homevideo.mp4"
+                            >un lien pour télécharger la vidéo</a
+                        >.
+                    </p>
+                </video>
+            </header>
 
-			<Skills />
-		</div>
-		
-		{smallestProject && (
-			<main class="wrapper section with-background bg-variant">
-				<div class="section-header stack gap-2 lg:gap-4">
-					<h5>Découvrez une structure de télescope compacte</h5>
-				</div>
-				<div class="gallery">
-					<a class="card featured" href="/product/smallest">
-						<span class="title">{smallestProject.data.title}</span>
-						<img src={smallestProject.data.img} alt={smallestProject.data.img_alt || ''} loading="lazy" decoding="async" />
-						<div class="featured-description">{smallestProject.data.description}</div>
-					</a>
-				</div>
-			</main>
-		)}
-		
-		<main class="wrapper section with-background bg-variant">
-			<div class="section-header stack gap-2 lg:gap-4">
-				<h3>Nos Réalisations</h3>
-				<p>Projets d'impression 3D et créations sur mesure</p>
-			</div>
-			<div class="gallery">
-				<Grid variant="offset">
-					{projects.slice(smallestProject ? 1 : 0).map((project) => (
-						<PortfolioPreview project={project} />
-					))}
-				</Grid>
-			</div>
-		</main>
-		
-		<ContactCTA />
-	</div>
-	
-	<ScrollIndicator />
+            <Skills />
+        </div>
+
+        {
+            smallestProject && (
+                <main class="wrapper section with-background bg-variant">
+                    <div class="section-header stack gap-2 lg:gap-4">
+                        <h5>Découvrez une structure de télescope compacte</h5>
+                    </div>
+                    <div class="gallery">
+                        <a class="card featured" href="/product/smallest">
+                            <span class="title">
+                                {smallestProject.data.title}
+                            </span>
+                            <img
+                                src={smallestProject.data.img}
+                                alt={smallestProject.data.img_alt || ""}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div class="featured-description">
+                                {smallestProject.data.description}
+                            </div>
+                        </a>
+                    </div>
+                </main>
+            )
+        }
+
+        <main class="wrapper section with-background bg-variant">
+            <div class="section-header stack gap-2 lg:gap-4">
+                <h3>Nos Réalisations</h3>
+                <p>Projets d'impression 3D et créations sur mesure</p>
+            </div>
+            <div class="gallery">
+                <Grid variant="offset">
+                    {
+                        projects
+                            .slice(smallestProject ? 1 : 0)
+                            .map((project) => (
+                                <PortfolioPreview project={project} />
+                            ))
+                    }
+                </Grid>
+            </div>
+        </main>
+
+        <ContactCTA />
+    </div>
+
+    <ScrollIndicator />
 </BaseLayout>
 
 <style>
-	
-	a{
-		text-decoration: none;
-	}
-	button{
-		cursor: pointer;
-		display: flex;
-		text-align : center;
-		align-items: center;
-		padding: 0.5rem 1rem;
-		gap: 0.5rem;
-		color: var(--accent-text-over);
-		border: 1px solid var(--accent-regular);
-		background-color: var(--accent-regular);
-		border-radius: 999rem;
-		font-size: var(--text-md);
-		line-height: 1.35;
-		white-space: nowrap;
-		vertical-align : middle;
-	}
+    a {
+        text-decoration: none;
+    }
+    button {
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        color: var(--accent-text-over);
+        border: 1px solid var(--accent-regular);
+        background-color: var(--accent-regular);
+        border-radius: 999rem;
+        font-size: var(--text-md);
+        line-height: 1.35;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
 
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		
-	}
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
 
-	.roles {
-		display: none;
-	}
+    .roles {
+        display: none;
+    }
 
-	.hero video {
-		width: 50vh;
-		aspect-ratio: auto;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+    .hero video {
+        width: 50vh;
+        aspect-ratio: auto;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+    }
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 3fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
+    @media (min-width: 50em) {
+        .hero {
+            display: grid;
+            grid-template-columns: 6fr 3fr;
+            padding-inline: 2.5rem;
+            gap: 3.75rem;
+        }
 
-		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
+        .roles {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
 
-		.hero video {
-			aspect-ratio: auto;
-			border-radius: 1rem;
-			object-fit: cover;
-			margin: auto
-		}
-	}
+        .hero video {
+            aspect-ratio: auto;
+            border-radius: 1rem;
+            object-fit: cover;
+            margin: auto;
+        }
+    }
 
-	/* ====================================================== */
+    /* ====================================================== */
 
-	.section {
-		display: grid;
-		gap: 2rem;
-	}
+    .section {
+        display: grid;
+        gap: 2rem;
+    }
 
-	.with-background {
-		position: relative;
-	}
+    .with-background {
+        position: relative;
+    }
 
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
+    .with-background::before {
+        --hero-bg: var(--bg-image-subtle-2);
 
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        left: 50%;
+        width: 100vw;
+        aspect-ratio: calc(2.25 / var(--bg-scale));
+        top: 0;
+        transform: translateY(-75%) translateX(-50%);
+        background:
+            url("/assets/backgrounds/noise.png") top center/220px repeat,
+            var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+            var(--gray-999);
+        background-blend-mode: overlay, normal, normal, normal;
+        mix-blend-mode: var(--bg-blend-mode);
+        z-index: -1;
+    }
 
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
-	}
+    .with-background.bg-variant::before {
+        --hero-bg: var(--bg-image-subtle-1);
+    }
 
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
+    .section-header {
+        justify-self: center;
+        text-align: center;
+        max-width: 50ch;
+        font-size: var(--text-md);
+        color: var(--gray-300);
+    }
 
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
+    .section-header h3 {
+        font-size: var(--text-2xl);
+    }
 
-	@media (min-width: 50em) {
-		.section {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
-		}
+    @media (min-width: 50em) {
+        .section {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+            gap: 5rem;
+        }
 
-		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
-		}
+        .section.with-cta {
+            grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+        }
 
-		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
-		}
+        .section-header {
+            grid-area: header;
+            font-size: var(--text-lg);
+        }
 
-		.section-header h3 {
-			font-size: var(--text-4xl);
-		}
+        .section-header h3 {
+            font-size: var(--text-4xl);
+        }
 
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
-		}
+        .with-cta .section-header {
+            justify-self: flex-start;
+            text-align: left;
+        }
 
-		.gallery {
-			grid-area: gallery;
-		}
+        .gallery {
+            grid-area: gallery;
+        }
 
-		.cta {
-			grid-area: cta;
-		}
-	}
+        .cta {
+            grid-area: cta;
+        }
+    }
 
-	/* ====================================================== */
+    /* ====================================================== */
 
-	/* Featured Card Styles */
-	.card {
-		display: grid;
-		grid-template: auto 1fr / auto 1fr;
-		height: 11rem;
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		overflow: hidden;
-		box-shadow: var(--shadow-sm);
-		text-decoration: none;
-		font-family: var(--font-brand);
-		font-size: var(--text-lg);
-		font-weight: 500;
-		transition: box-shadow var(--theme-transition);
-		filter: grayscale(100%);
-	}
+    /* Featured Card Styles */
+    .card {
+        display: grid;
+        grid-template: auto 1fr / auto 1fr;
+        height: 11rem;
+        background: var(--gradient-subtle);
+        border: 1px solid var(--gray-800);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        text-decoration: none;
+        font-family: var(--font-brand);
+        font-size: var(--text-lg);
+        font-weight: 500;
+        transition: box-shadow var(--theme-transition);
+        filter: grayscale(100%);
+    }
 
-	.card:hover {
-		box-shadow: var(--shadow-md);
-		filter: grayscale(0%);
-	}
+    .card:hover {
+        box-shadow: var(--shadow-md);
+        filter: grayscale(0%);
+    }
 
-	.card .title {
-		grid-area: 1 / 1 / 2 / 2;
-		z-index: 1;
-		margin: 0.5rem;
-		padding: 0.5rem 1rem;
-		background: var(--gray-999);
-		color: var(--gray-200);
-		border-radius: 0.375rem;
-	}
+    .card .title {
+        grid-area: 1 / 1 / 2 / 2;
+        z-index: 1;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--gray-999);
+        color: var(--gray-200);
+        border-radius: 0.375rem;
+    }
 
-	.card img {
-		grid-area: 1 / 1 / 3 / 3;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+    .card img {
+        grid-area: 1 / 1 / 3 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-	.card.featured {
-		height: 28rem;
-		min-height: 28rem;
-		grid-template: auto 1fr / auto 1fr;
-		transform: scale(1.02);
-		transition: all var(--theme-transition);
-	}
+    .card.featured {
+        height: 28rem;
+        min-height: 28rem;
+        grid-template: auto 1fr / auto 1fr;
+        transform: scale(1.02);
+        transition: all var(--theme-transition);
+    }
 
-	.card.featured:hover {
-		transform: scale(1.05);
-		box-shadow: var(--shadow-xl);
-	}
+    .card.featured:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-xl);
+    }
 
-	.card.featured .title {
-		font-size: var(--text-xl);
-		font-weight: 600;
-		background: var(--accent-regular);
-		color: var(--accent-text-over);
-	}
+    .card.featured .title {
+        font-size: var(--text-xl);
+        font-weight: 600;
+        background: var(--accent-regular);
+        color: var(--accent-text-over);
+    }
 
-	.featured-description {
-		grid-area: 2 / 1 / 3 / 3;
-		z-index: 2;
-		margin: 1rem;
-		padding: 1rem;
-		background: transparent;
-		color: white;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-		border-radius: 0.5rem;
-		font-size: var(--text-base);
-		line-height: 1.4;
-		font-style: italic;
-		text-align: center;
-		font-weight: 500;
-		align-self: end;
-	}
+    .featured-description {
+        grid-area: 2 / 1 / 3 / 3;
+        z-index: 2;
+        margin: 1rem;
+        padding: 1rem;
+        background: transparent;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        border-radius: 0.5rem;
+        font-size: var(--text-base);
+        line-height: 1.4;
+        font-style: italic;
+        text-align: center;
+        font-weight: 500;
+        align-self: end;
+    }
 
-	@media (min-width: 50em) {
-		.card {
-			height: 22rem;
-			border-radius: 1.5rem;
-		}
+    @media (min-width: 50em) {
+        .card {
+            height: 22rem;
+            border-radius: 1.5rem;
+        }
 
-		.card.featured {
-			height: 32rem;
-			min-height: 32rem;
-		}
+        .card.featured {
+            height: 32rem;
+            min-height: 32rem;
+        }
 
-		.card .title {
-			border-radius: 0.9375rem;
-		}
+        .card .title {
+            border-radius: 0.9375rem;
+        }
 
-		.card.featured .title {
-			font-size: var(--text-2xl);
-		}
+        .card.featured .title {
+            font-size: var(--text-2xl);
+        }
 
-		.featured-description {
-			font-size: var(--text-lg);
-			margin: 1.5rem;
-			padding: 1.5rem;
-			text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-		}
-	}
+        .featured-description {
+            font-size: var(--text-lg);
+            margin: 1.5rem;
+            padding: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+        }
+    }
 
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
+    .mention-card {
+        display: flex;
+        height: 7rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid var(--gray-800);
+        border-radius: 1.5rem;
+        color: var(--gray-300);
+        background: var(--gradient-subtle);
+        box-shadow: var(--shadow-sm);
+    }
 
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-	}
+    @media (min-width: 50em) {
+        .mention-card {
+            border-radius: 1.5rem;
+            height: 9.5rem;
+        }
+    }
 </style>

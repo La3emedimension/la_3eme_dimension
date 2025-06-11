@@ -1,5 +1,5 @@
 {
-  "seoTitle": "Smallest - Télescope Portable Révolutionnaire | La 3ème dimension",
+  "seoTitle": "Smallest - Télescope Portable compact | La 3ème dimension",
   "seoDescription": "Smallest : Le télescope 150/750 est portable, Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
   "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse, Montauban",
   "ogImage": "https://la3emedim.fr/assets/150 V2 4.jpg",
@@ -10,7 +10,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Smallest - Télescope Portable 150/750",
-    "description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution révolutionnaire pour l'astronomie nomade.",
+    "description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution pratique pour l'astronomie nomade.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -55,7 +55,10 @@
           { "icon": "strategy", "text": "4kg avec optiques" }
         ],
         "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
-        "heroImage": { "src": "/assets/150 V2 4.jpg", "alt": "Télescope Smallest portable en configuration observation" }
+        "heroImage": {
+          "src": "/assets/150 V2 4.jpg",
+          "alt": "Télescope Smallest portable en configuration observation"
+        }
       }
     },
     {
@@ -64,25 +67,25 @@
       "data": {
         "title": "Montage et transport",
         "images": [
-          { 
-            "src": "/assets/150-750 (8).jpg", 
-            "alt": "Smallest en configuration transport", 
-            "caption": "Le Smallest replié dans sa configuration de transport ultra-compacte - tient dans une sacoche d'ordinateur ou un sac à dos" 
+          {
+            "src": "/assets/150-750 (8).jpg",
+            "alt": "Smallest en configuration transport",
+            "caption": "Le Smallest replié dans sa configuration de transport ultra-compacte - tient dans une sacoche d'ordinateur ou un sac à dos"
           },
-          { 
-            "src": "/assets/150-750 (13).jpg", 
-            "alt": "Smallest en observation", 
-            "caption": "Configuration d'observation complète - montage en moins de 4 minutes sans outil" 
+          {
+            "src": "/assets/150-750 (13).jpg",
+            "alt": "Smallest en observation",
+            "caption": "Configuration d'observation complète - montage en moins de 4 minutes sans outil"
           },
-          { 
-            "src": "/assets/S150.jpg", 
-            "alt": "Vue détaillée du télescope", 
-            "caption": "Détails de la structure imprimée en 3D et du système de fixation des optiques" 
+          {
+            "src": "/assets/S150.jpg",
+            "alt": "Vue détaillée du télescope",
+            "caption": "Détails de la structure imprimée en 3D et du système de fixation des optiques"
           },
-          { 
-            "src": "/assets/S1502.jpg", 
-            "alt": "Assemblage du télescope", 
-            "caption": "Étapes d'assemblage du télescope - design modulaire et intuitif" 
+          {
+            "src": "/assets/S1502.jpg",
+            "alt": "Assemblage du télescope",
+            "caption": "Étapes d'assemblage du télescope - design modulaire et intuitif"
           }
         ],
         "background": "dark"
@@ -90,7 +93,7 @@
     },
     {
       "type": "video",
-      "id": "section-video", 
+      "id": "section-video",
       "data": {
         "title": "Montage en 4 minutes",
         "description": "Découvrez la simplicité du Smallest : du transport à l'observation en moins de 4 minutes. Aucun outil requis, montage intuitif pour profiter rapidement du ciel étoilé.",
@@ -110,13 +113,13 @@
             "description": "Diamètre 150mm, focale 750mm pour des observations de qualité."
           },
           {
-            "icon": "paper-plane-tilt", 
+            "icon": "paper-plane-tilt",
             "title": "Transportabilité",
             "description": "Respecte les dimensions cabine d'avion. Optiques démontables facilement. Tient dans une sacoche d'ordinateur ou dans un sac à dos. 4 kilos prêt pour la randonnée."
           },
           {
             "icon": "strategy",
-            "title": "Modulaire", 
+            "title": "Modulaire",
             "description": "Kit de conversion pour vos optiques industrielles ou artisanals. Structure type Dobson. Porte-oculaire 1.25. Montage sans outils."
           },
           {
@@ -137,7 +140,7 @@
             "title": "Optiques",
             "specs": {
               "Type": "Newton 150/750",
-              "Diamètre": "150mm", 
+              "Diamètre": "150mm",
               "Focale": "750mm",
               "Rapport F/D": "F/5",
               "Porte-oculaire": "1.25\""
@@ -171,45 +174,45 @@
       "data": {
         "title": "Évolutions et observations",
         "images": [
-          { 
-            "src": "/assets/150 V2 2.jpg", 
-            "alt": "Nouvelle version", 
-            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles" 
+          {
+            "src": "/assets/150 V2 2.jpg",
+            "alt": "Nouvelle version",
+            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles"
           },
-          { 
-            "src": "/assets/150 V2.jpg", 
-            "alt": "Design V2", 
-            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation" 
+          {
+            "src": "/assets/150 V2.jpg",
+            "alt": "Design V2",
+            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation"
           },
-          { 
-            "src": "/assets/150 V2 3.jpg", 
-            "alt": "Version 2 - vue 3", 
-            "caption": "Détails des connexions et du système de verrouillage rapide" 
+          {
+            "src": "/assets/150 V2 3.jpg",
+            "alt": "Version 2 - vue 3",
+            "caption": "Détails des connexions et du système de verrouillage rapide"
           },
-          { 
-            "src": "/assets/150 V2 4.jpg", 
-            "alt": "Version 2 - vue 4", 
-            "caption": "Vue d'ensemble de la structure Dobson intégrée" 
+          {
+            "src": "/assets/150 V2 4.jpg",
+            "alt": "Version 2 - vue 4",
+            "caption": "Vue d'ensemble de la structure Dobson intégrée"
           },
-          { 
-            "src": "/assets/m150.jpeg", 
-            "alt": "Comparaison de taille", 
-            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire" 
+          {
+            "src": "/assets/m150.jpeg",
+            "alt": "Comparaison de taille",
+            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire"
           },
-          { 
-            "src": "/assets/c.jpg", 
-            "alt": "Observation de la comète C/2023 A3", 
-            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest" 
+          {
+            "src": "/assets/c.jpg",
+            "alt": "Observation de la comète C/2023 A3",
+            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest"
           },
-          { 
-            "src": "/assets/c1.jpg", 
-            "alt": "Photo comète à main levée", 
-            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire" 
+          {
+            "src": "/assets/c1.jpg",
+            "alt": "Photo comète à main levée",
+            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire"
           },
-          { 
-            "src": "/assets/c2.jpeg", 
-            "alt": "Astro-dessin de la comète", 
-            "caption": "Astro-dessin de la comète C/2023 A3 réalisé lors de l'observation avec le Smallest" 
+          {
+            "src": "/assets/c2.jpeg",
+            "alt": "Astro-dessin de la comète",
+            "caption": "Astro-dessin de la comète C/2023 A3 réalisé lors de l'observation avec le Smallest"
           }
         ],
         "background": "light"

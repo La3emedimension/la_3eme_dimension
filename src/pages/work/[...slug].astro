@@ -1,248 +1,264 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import ContactCTA from '../../components/ContactCTA.astro';
-import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
-import Pill from '../../components/Pill.astro';
+import ContactCTA from "../../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import Pill from "../../components/Pill.astro";
 
 interface Props {
-	entry: CollectionEntry<'work'>;
+    entry: CollectionEntry<"work">;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const work = await getCollection('work');
-	return work.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
+    const work = await getCollection("work");
+    return work.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 // Use SEO data from frontmatter, with fallbacks
-const seoTitle = entry.data.seoTitle || `${entry.data.title} - Impression 3D Sur Mesure | La 3ème dimension`;
+const seoTitle =
+    entry.data.seoTitle ||
+    `${entry.data.title} - Impression 3D Sur Mesure | La 3ème dimension`;
 const seoDescription = entry.data.seoDescription || entry.data.description;
-const seoKeywords = entry.data.seoKeywords || `${entry.data.tags.join(', ')}, impression 3d, la 3eme dimension, toulouse`;
+const seoKeywords =
+    entry.data.seoKeywords ||
+    `${entry.data.tags.join(", ")}, impression 3d, la 3eme dimension, toulouse`;
 
 // Check if this is the Smallest telescope for structured data
-const isSmallest = entry.slug === 'nested/smallest';
+const isSmallest = entry.slug === "nested/smallest";
 
 // Structured data for Smallest telescope
-const structuredData = isSmallest ? {
-	"@context": "https://schema.org",
-	"@type": "Product",
-	"name": "Smallest - Télescope Portable 150/750",
-	"description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution révolutionnaire pour l'astronomie nomade.",
-	"brand": {
-		"@type": "Brand",
-		"name": "La 3ème dimension"
-	},
-	"manufacturer": {
-		"@type": "Organization",
-		"name": "La 3ème dimension",
-		"url": "https://la3emedim.fr"
-	},
-	"category": "Télescopes",
-	"offers": {
-		"@type": "Offer",
-		"price": "550",
-		"priceCurrency": "EUR",
-		"availability": "https://schema.org/InStock",
-		"seller": {
-			"@type": "Organization",
-			"name": "La 3ème dimension"
-		}
-	},
-	"image": "https://la3emedim.fr/assets/Smallest.jpg",
-	"features": [
-		"Télescope Newton 150/750",
-		"Portable et compact", 
-		"Transportable en avion",
-		"Structure imprimée en 3D",
-		"Compatible optiques standard",
-		"Poids : 4kg avec optiques"
-	]
-} : null;
+const structuredData = isSmallest
+    ? {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Smallest - Télescope Portable 150/750",
+          description:
+              "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution pratique pour l'astronomie nomade.",
+          brand: {
+              "@type": "Brand",
+              name: "La 3ème dimension",
+          },
+          manufacturer: {
+              "@type": "Organization",
+              name: "La 3ème dimension",
+              url: "https://la3emedim.fr",
+          },
+          category: "Télescopes",
+          offers: {
+              "@type": "Offer",
+              price: "550",
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              seller: {
+                  "@type": "Organization",
+                  name: "La 3ème dimension",
+              },
+          },
+          image: "https://la3emedim.fr/assets/Smallest.jpg",
+          features: [
+              "Télescope Newton 150/750",
+              "Portable et compact",
+              "Transportable en avion",
+              "Structure imprimée en 3D",
+              "Compatible optiques standard",
+              "Poids : 4kg avec optiques",
+          ],
+      }
+    : null;
 ---
 
-<BaseLayout 
-	title={seoTitle} 
-	description={seoDescription}
-	keywords={seoKeywords}
-	ogImage={isSmallest ? 'https://la3emedim.fr/assets/Smallest.jpg' : undefined}
-	structuredData={structuredData}
+<BaseLayout
+    title={seoTitle}
+    description={seoDescription}
+    keywords={seoKeywords}
+    ogImage={isSmallest
+        ? "https://la3emedim.fr/assets/Smallest.jpg"
+        : undefined}
+    structuredData={structuredData}
 >
-	<div class="stack gap-20">
-		<div class="stack gap-15">
-			<header>
-				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Réalisations</a>
-					<Hero title={entry.data.title} align="start">
-						<div class="details">
-							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-							</div>
-							<p class="description">{entry.data.description}</p>
-						</div>
-					</Hero>
-				</div>
-			</header>
-			<main class="wrapper">
-				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-					<div class="content">
-						<Content />
-					</div>
-				</div>
-			</main>
-		</div>
-		<ContactCTA />
-	</div>
-	
-	
+    <div class="stack gap-20">
+        <div class="stack gap-15">
+            <header>
+                <div class="wrapper stack gap-2">
+                    <a class="back-link" href="/work/"
+                        ><Icon icon="arrow-left" /> Réalisations</a
+                    >
+                    <Hero title={entry.data.title} align="start">
+                        <div class="details">
+                            <div class="tags">
+                                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+                            </div>
+                            <p class="description">{entry.data.description}</p>
+                        </div>
+                    </Hero>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="stack gap-10 content">
+                    {
+                        entry.data.img && (
+                            <img
+                                src={entry.data.img}
+                                alt={entry.data.img_alt || ""}
+                            />
+                        )
+                    }
+                    <div class="content">
+                        <Content />
+                    </div>
+                </div>
+            </main>
+        </div>
+        <ContactCTA />
+    </div>
 </BaseLayout>
 
 <style>
-	header {
-		padding-bottom: 2.5rem;
-		border-bottom: 1px solid var(--gray-800);
-	}
+    header {
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--gray-800);
+    }
 
-	.back-link {
-		display: none;
-	}
+    .back-link {
+        display: none;
+    }
 
-	.details {
-		display: flex;
-		flex-direction: column;
-		padding: 0.5rem;
-		gap: 1.5rem;
-		justify-content: space-between;
-		align-items: center;
-	}
+    .details {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-	.tags {
-		display: flex;
-		gap: 0.5rem;
-	}
+    .tags {
+        display: flex;
+        gap: 0.5rem;
+    }
 
-	.description {
-		font-size: var(--text-lg);
-		max-width: 54ch;
-	}
+    .description {
+        font-size: var(--text-lg);
+        max-width: 54ch;
+    }
 
-	.content {
-		max-width: 120ch;
-		margin-inline: auto;
-	}
+    .content {
+        max-width: 120ch;
+        margin-inline: auto;
+    }
 
-	.content > :global(* + *) {
-		margin-top: 1rem;
-	}
+    .content > :global(* + *) {
+        margin-top: 1rem;
+    }
 
-	.content :global(h1),
-	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(h5) {
-		margin: 1.5rem 0;
-	}
+    .content :global(h1),
+    .content :global(h2),
+    .content :global(h3),
+    .content :global(h4),
+    .content :global(h5) {
+        margin: 1.5rem 0;
+    }
 
-	.content :global(img) {
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-sm);
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
-	}
+    .content :global(img) {
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        background: var(--gradient-subtle);
+        border: 1px solid var(--gray-800);
+    }
 
-	.content :global(blockquote) {
-		font-size: var(--text-lg);
-		font-family: var(--font-brand);
-		font-weight: 600;
-		line-height: 1.1;
-		padding-inline-start: 1.5rem;
-		border-inline-start: 0.25rem solid var(--accent-dark);
-		color: var(--gray-0);
-	}
+    .content :global(blockquote) {
+        font-size: var(--text-lg);
+        font-family: var(--font-brand);
+        font-weight: 600;
+        line-height: 1.1;
+        padding-inline-start: 1.5rem;
+        border-inline-start: 0.25rem solid var(--accent-dark);
+        color: var(--gray-0);
+    }
 
-	.back-link,
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .back-link,
+    .content :global(a) {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
 
-	.back-link:hover,
-	.back-link:focus,
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+    .back-link:hover,
+    .back-link:focus,
+    .content :global(a:hover),
+    .content :global(a:focus) {
+        text-decoration-color: currentColor;
+    }
 
-	@media (min-width: 50em) {
-		.back-link {
-			display: block;
-			align-self: flex-start;
-		}
+    @media (min-width: 50em) {
+        .back-link {
+            display: block;
+            align-self: flex-start;
+        }
 
-		.details {
-			flex-direction: row;
-			gap: 2.5rem;
-		}
+        .details {
+            flex-direction: row;
+            gap: 2.5rem;
+        }
 
-		.content :global(blockquote) {
-			font-size: var(--text-2xl);
-		}
-	}
+        .content :global(blockquote) {
+            font-size: var(--text-2xl);
+        }
+    }
 
-	/* Floating Product Button */
-	.floating-product-button {
-		position: fixed;
-		bottom: 2rem;
-		right: 2rem;
-		background: var(--accent-regular);
-		color: var(--accent-text-over);
-		padding: 1rem 1.5rem;
-		border-radius: 3rem;
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 0.9rem;
-		box-shadow: var(--shadow-lg);
-		z-index: 100;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		transition: all 0.3s ease;
-		border: 2px solid var(--accent-regular);
-	}
+    /* Floating Product Button */
+    .floating-product-button {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--accent-regular);
+        color: var(--accent-text-over);
+        padding: 1rem 1.5rem;
+        border-radius: 3rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: var(--shadow-lg);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent-regular);
+    }
 
-	.floating-product-button:hover {
-		background: var(--accent-dark);
-		transform: translateY(-2px);
-		box-shadow: var(--shadow-xl);
-	}
+    .floating-product-button:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+    }
 
-	.floating-product-button svg {
-		transition: transform 0.3s ease;
-	}
+    .floating-product-button svg {
+        transition: transform 0.3s ease;
+    }
 
-	.floating-product-button:hover svg {
-		transform: translate(2px, -2px);
-	}
+    .floating-product-button:hover svg {
+        transform: translate(2px, -2px);
+    }
 
-	@media (max-width: 768px) {
-		.floating-product-button {
-			bottom: 1rem;
-			right: 1rem;
-			padding: 0.75rem 1.25rem;
-			font-size: 0.85rem;
-		}
-	}
+    @media (max-width: 768px) {
+        .floating-product-button {
+            bottom: 1rem;
+            right: 1rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+        }
+    }
 </style>

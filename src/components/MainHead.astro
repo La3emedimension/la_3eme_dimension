@@ -1,22 +1,23 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	keywords?: string | undefined;
-	ogImage?: string | undefined;
-	structuredData?: object | undefined;
+    title?: string | undefined;
+    description?: string | undefined;
+    keywords?: string | undefined;
+    ogImage?: string | undefined;
+    structuredData?: object | undefined;
 }
 
 const {
-	title = 'La 3ème dimension - Impression 3D & Télescopes Astronomiques',
-	description = 'Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable révolutionnaire pour l\'astronomie nomade. Service Toulouse et région.',
-	keywords = 'impression 3d, télescope portable, astronomie, smallest telescope, conception 3d, toulouse',
-	ogImage = 'https://la3emedim.fr/assets/preview.png',
-	structuredData,
+    title = "La 3ème dimension - Impression 3D & Télescopes Astronomiques",
+    description = "Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable pratique pour l'astronomie nomade. Service Toulouse et région.",
+    keywords = "impression 3d, télescope portable, astronomie, smallest telescope, conception 3d, toulouse",
+    ogImage = "https://la3emedim.fr/assets/preview.png",
+    structuredData,
 } = Astro.props;
 ---
+
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="viewport" content="width=device-width" />
@@ -24,63 +25,82 @@ const {
 
 <!-- HTML Meta Tags -->
 <title>{title}</title>
-<meta name="description" content={description}>
-<meta name="keywords" content={keywords}>
-<meta name="author" content="La 3ème dimension">
-<meta name="robots" content="index, follow">
-<meta name="language" content="French">
-<meta name="geo.region" content="FR-31">
-<meta name="geo.placename" content="Toulouse et région Occitanie">
-<meta name="coverage" content="Toulouse, Blagnac, Colomiers, Balma, L'Union, Tournefeuille, Cugnaux, Muret">
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="La 3ème dimension" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="French" />
+<meta name="geo.region" content="FR-31" />
+<meta name="geo.placename" content="Toulouse et région Occitanie" />
+<meta
+    name="coverage"
+    content="Toulouse, Blagnac, Colomiers, Balma, L'Union, Tournefeuille, Cugnaux, Muret"
+/>
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content={Astro.url}>
-<meta property="og:type" content="website">
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
-<meta property="og:image" content={ogImage}>
-<meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="La 3ème dimension">
+<meta property="og:url" content={Astro.url} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="La 3ème dimension" />
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="la3emedim.fr">
-<meta property="twitter:url" content={Astro.url}>
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
-<meta name="twitter:image" content={ogImage}>
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="la3emedim.fr" />
+<meta property="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
 
-<script defer data-domain="la3emedim.fr" src="https://stats.documents.design/js/script.js"></script>
+<script
+    defer
+    data-domain="la3emedim.fr"
+    src="https://stats.documents.design/js/script.js"></script>
 
-{structuredData && (
-	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-)}
-
+{
+    structuredData && (
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(structuredData)}
+        />
+    )
+}
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-	rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+    rel="stylesheet"
 />
 
 <script is:inline>
-	// This code is inlined in the head to make dark mode instant & blocking.
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+    // This code is inlined in the head to make dark mode instant & blocking.
+    const getThemePreference = () => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
+            return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    };
+    const isDark = getThemePreference() === "dark";
+    document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
 
-	if (typeof localStorage !== 'undefined') {
-		// Watch the document element and persist user preference when it changes.
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('theme-dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
+    if (typeof localStorage !== "undefined") {
+        // Watch the document element and persist user preference when it changes.
+        const observer = new MutationObserver(() => {
+            const isDark =
+                document.documentElement.classList.contains("theme-dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        });
+    }
 </script>

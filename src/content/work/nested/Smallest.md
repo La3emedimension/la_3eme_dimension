@@ -1,6 +1,6 @@
 ---
-title: Smallest 
-publishDate:  2020-03-04 00:00:00 
+title: Smallest
+publishDate:  2020-03-04 00:00:00
 img: /assets/stock-1.jpg
 img_alt: télescope imprimé en 3D avec vue sur les pyrénées et couché de soleil.
 description: |
@@ -10,14 +10,14 @@ tags:
   - Astronomie
   - Compact
   - Optimisation
-seoTitle: "Smallest - Télescope Portable Révolutionnaire | La 3ème dimension"
+seoTitle: "Smallest - Télescope Portable compact | La 3ème dimension"
 seoDescription: "Smallest : Le télescope 150/750 portable. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€."
-seoKeywords: "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse"   
+seoKeywords: "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse"
 ---
 
 ## Smallest, pourquoi ce projet?
 
-> L'objectif c'est de toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis entre diamètre et portabilité. 
+> L'objectif c'est de toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis entre diamètre et portabilité.
 ---
 <img src="/assets/150-750 (8).jpg">
 
@@ -28,7 +28,7 @@ Le Smallest a pour but de répondre à une problématique rencontrée en tant qu
 
 ### Comment ?
 
-L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk comme outils de dessin. 
+L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk comme outils de dessin.
 
 <video autoplay loop playsinline>
   <source src="/assets/tp 150750.mp4" type="video/mp4" />
@@ -38,9 +38,9 @@ L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la préc
   </p>
 </video>
 
-### Un kit de conversion ? 
+### Un kit de conversion ?
 
-Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit. 
+Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques du commerce. Il vous suffit de retirer les miroirs primaire et secondaire du tube industriel, pour les positionner dans le Kit.
 
 ### Le projet:
 <img src="/assets/draw150750.jpg">
@@ -72,13 +72,13 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
 <img src="/assets/m150.jpeg">
 
  #### Question tarifs :
- Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles : 
- 
+ Nous proposons le télescope à 550€ hors optiques, pour la partie optique plusieurs choix sont possibles :
+
   1) Occasion (lbc, webastro, etc)
   2) GSO ou chinoise
   3) Nous vous conseillons les optiques artisans par Gallifrey Optics pour le primaire (paul.fays@gallifrey-optics.fr) et/ou Zen pour secondaire et primaire(https://www.costruzioniottichezen.com/).
 
-  Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>. 
+  Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>.
 
 
 ---
@@ -143,13 +143,13 @@ L'astro dessin de la comète réalisé avec le Smallest :
     margin: auto;
 		border-radius: 2rem;
     }
-    
+
     .embedresize div {
     position: relative;
     height: 0;
     padding-bottom: 56.25%;
     }
-    
+
     .embedresize iframe {
     position: absolute;
     top: 0;
@@ -159,4 +159,3 @@ L'astro dessin de la comète réalisé avec le Smallest :
 		border-radius: 2rem;
     }
 </style>
-
