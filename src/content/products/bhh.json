@@ -1,7 +1,7 @@
 {
   "draft": true,
   "seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
-  "seoDescription": "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
+  "seoDescription": "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
   "seoKeywords": "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse",
   "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
   "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
@@ -11,7 +11,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "B.H.H - Backpack Holder Hook",
-    "description": "Crochet innovant pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs.",
+    "description": "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -46,7 +46,7 @@
       "data": {
         "title": "B.H.H",
         "tagline": "Backpack Holder Hook",
-        "description": "Crochet innovant pour sac à dos, conçu pour les baroudeurs. Maximum d'efficacité avec le minimum de matière.",
+        "description": "Crochet pour sac à dos, conçu pour les baroudeurs. Maximum d'efficacité avec le minimum de matière.",
         "features": [
           { "icon": "strategy", "text": "Supporte jusqu'à 12kg" },
           { "icon": "terminal-window", "text": "Impression 3D optimisée" },
