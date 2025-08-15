@@ -126,19 +126,21 @@ const { title, tagline, description, features, primaryCta, secondaryCta, heroIma
 	}
 
 	.cta-secondary {
-		background: transparent;
-		color: var(--gray-200);
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
 		padding: 1rem 2rem;
 		border-radius: 0.5rem;
 		text-decoration: none;
-		font-weight: 500;
-		border: 2px solid var(--gray-600);
+		font-weight: 600;
+		font-size: 1.1rem;
 		transition: all 0.3s ease;
+		border: 2px solid var(--accent-regular);
 	}
 
 	.cta-secondary:hover {
-		background: var(--gray-800);
-		border-color: var(--gray-400);
+		background: var(--accent-dark);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
 	}
 
 	.hero-image {

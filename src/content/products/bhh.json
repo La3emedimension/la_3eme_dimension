@@ -1,11 +1,11 @@
 {
-  "draft": true,
-  "seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
+"seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
   "seoDescription": "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
   "seoKeywords": "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse",
   "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
   "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
   "stripePublishableKey": "pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm",
+  "price": "10€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -32,10 +32,9 @@
     },
     "image": "https://la3emedim.fr/assets/BHH (2).jpg",
     "features": [
-      "Supporte jusqu'à 12kg",
-      "Design optimisé forme C",
-      "Impression 3D efficace",
-      "Compatible mousquetons",
+      "Supporte jusqu'à 10kg",
+      "Design épuré et optimisé forme C",
+      "Compatible avec les mousquetons",
       "Fichiers gratuits disponibles"
     ]
   },
@@ -46,15 +45,19 @@
       "data": {
         "title": "B.H.H",
         "tagline": "Backpack Holder Hook",
-        "description": "Crochet pour sac à dos, conçu pour les baroudeurs. Maximum d'efficacité avec le minimum de matière.",
+        "description": "Crochet pour sac à dos, conçu pour les baroudeurs.",
         "features": [
-          { "icon": "strategy", "text": "Supporte jusqu'à 12kg" },
+          { "icon": "strategy", "text": "Supporte jusqu'à 10kg" },
           { "icon": "terminal-window", "text": "Impression 3D optimisée" },
           { "icon": "paper-plane-tilt", "text": "Ultra-portable" }
         ],
         "primaryCta": {
           "text": "Fichiers gratuits",
           "href": "https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments"
+        },
+         "secondaryCta": {
+          "text": "Commander",
+          "href": "https://buy.stripe.com/14AbJ3ajMbhp2rFbKQ67S03"
         },
         "heroImage": {
           "src": "/assets/BHH (2).jpg",
@@ -75,13 +78,13 @@
           },
           {
             "icon": "rocket-launch",
-            "title": "Capacité 12kg",
-            "description": "Testé avec un sac à dos de 12kg pendant 8 heures. Parfait pour les randonneurs et voyageurs."
+            "title": "Capacité 10kg",
+            "description": "Testé avec un sac à dos de 10kg pendant 8 heures. Parfait pour les randonneurs et voyageurs."
           },
           {
             "icon": "paper-plane-tilt",
             "title": "Polyvalent",
-            "description": "Utilisable comme crochet universel avec un mousqueton et un bout de paracorde."
+            "description": "Utilisable de plein de manières avec un mousqueton et un bout de paracorde."
           },
           {
             "icon": "terminal-window",
@@ -125,9 +128,9 @@
           {
             "title": "Performance",
             "specs": {
-              "Charge max": "12 kg",
+              "Charge max": "10 kg",
               "Test durée": "8 heures",
-              "Matériau": "PLA/PETG",
+              "Matériau": "PETG",
               "Poids": "~15g",
               "Dimensions": "8 × 4 × 2 cm"
             }
@@ -139,7 +142,8 @@
               "Support": "Non requis",
               "Remplissage": "20-30%",
               "Orientation": "Optimisée",
-              "Post-traitement": "Minimal"
+              "Post-traitement": "Minimal",
+              "Mousqueton": "STL à imprimé en 3D"
             }
           },
           {

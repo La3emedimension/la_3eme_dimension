@@ -1,40 +1,40 @@
 {
-"seoTitle": "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension",
-  "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
-  "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
-  "price": "100€",
+  "draft": true,
+  "seoTitle": "Pack d'accésoires pour ZWO seestar S50 | La 3ème dimension",
+  "seoDescription": "Le pack contient 1 baffle, 1 capuchon, 1 masque de bathinov, 2 capuchonq à aigrettes Newton et James Webb.",
+  "seoKeywords": "ZWO, seestar, S50, accésoires, astronomie, astrophotographie design, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/seestars50.png",
+  "price": "30€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "E.R.T - Lunette Astronomique Éducative",
-    "description": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles.",
+    "name": "Accessory pack for Seestar S50",
+    "description": "pack d'accésoires qui contient 1 baffle, 1 capuchon, 1 masque de bathinov, 2 capuchonq à aigrettes Newton et James Webb.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
     },
     "manufacturer": {
-      "@type": "Organization",
+      "@type": "astronomie",
       "name": "La 3ème dimension",
       "url": "https://la3emedim.fr"
     },
-    "category": "Instruments éducatifs",
+    "category": "astrophotographie",
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
       "seller": {
-        "@type": "Organization",
+        "@type": "accésories",
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ERT 4.jpg",
+    "image": "https://la3emedim.fr/assets/seestars50.png",
     "features": [
-      "Design modulaire éducatif",
-      "Montage intuitif",
-      "Porte-oculaire 1.25\"",
-      "Observation lune et objets brillants",
-      "Parfait pour l'apprentissage"
+      "Capuchon de protection ",
+      "Pare-lumière",
+      "Masque de Bathinov",
+      "masque type Newton et JWST"
     ]
   },
   "sections": [
@@ -42,66 +42,33 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "E.R.T",
-        "tagline": "Lunette astronomique éducative",
+        "title": "Pack d'accésoires pour ZWO seestar S50",
+        "tagline": "accésoires pour ZWO seestar S50",
         "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
         "features": [
-          { "icon": "strategy", "text": "Design modulaire" },
-          { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
-          { "icon": "terminal-window", "text": "Montage intuitif" }
+          { "icon": "strategy", "text": "Pack de 5 accésoires" },
+          { "icon": "rocket-launch", "text": "filtre et capuchons adaptable" },
+          { "icon": "terminal-window", "text": "facile d'utilisation" }
         ],
-        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/7sY00l63w5X5giv3ek67S04" },
-        "heroImage": { "src": "/assets/ERT 4.jpg", "alt": "Lunette astronomique ERT assemblée" }
+        "primaryCta": { "text": "Acheter", "href": "https://buy.stripe.com/6oUfZj1NgdpxaYb3ek67S01" },
+        "heroImage": { "src": "/assets/seestars50.png", "alt": "Seestar équipé d'un pare lumière et d'un capuchon" }
       }
     },
     
     {
-      "type": "video",
-      "id": "section-video",
-      "data": {
-        "title": "Montage simple et éducatif",
-        "description": "Découvrez comment assembler facilement la lunette E.R.T. Chaque module n'a qu'un seul sens de montage pour un apprentissage optimal.",
-        "videoId": "GQQfFflsZY0",
-        "videoTitle": "Assemblage de la lunette astronomique éducative E.R.T"
-      }
-    },
-    {
       "type": "specs",
       "id": "section-specs",
       "data": {
-        "title": "Modules et spécifications",
+        "title": "Contenu du pack",
         "specGroups": [
           {
             "title": "Modules inclus",
             "specs": {
-              "Barillet lentille": "Objectif principal",
+              "Capuchon lentille": "Protège lentille",
               "Baffle": "Anti-lumière parasite",
-              "Tube optique": "Structure principale",
-              "Porte-oculaire": "Standard 1.25\"",
-              "Renvoi coudé": "Avec prisme",
-              "Oculaire": "Inclus"
-            }
-          },
-          {
-            "title": "Caractéristiques",
-            "specs": {
-              "Type": "Lunette astronomique",
-              "Usage": "Éducatif/Initiation",
-              "Montage": "Intuitif, un seul sens",
-              "Observations": "Lune, amas, galaxies",
-              "Âge recommandé": "8 ans et plus",
-              "Matériau": "PLA imprimé 3D"
-            }
-          },
-          {
-            "title": "Pédagogie",
-            "specs": {
-              "Objectif": "Découverte optique",
-              "Apprentissage": "Assemblage télescope",
-              "Compréhension": "Fonctionnement optique",
-              "Pratique": "Observation directe",
-              "Support": "Documentation incluse",
-              "Évolution": "Vers instruments avancés"
+              "Masque étoile Newton": "Masque qui permet d'avoir des étoiles type Newton",
+              "Masque étoile JWST": "Masque qui permet d'avoir des étoiles type JWST",
+              "Masque de Bathinov": "Masque qui permet d'avoir de faire la mise au point"
             }
           }
         ]
@@ -165,14 +132,10 @@
         "features": [
           {
             "icon": "strategy",
-            "title": "Apprentissage par l'expérience",
-            "description": "Montage intuitif qui permet de comprendre le fonctionnement d'une lunette astronomique."
+            "title": "Utilisation",
+            "description": "Montage intuitif par système de clips"
           },
-          {
-            "icon": "rocket-launch",
-            "title": "Observations réelles",
-            "description": "Permet d'observer la lune, les amas d'étoiles et les galaxies lumineuses."
-          },
+         
           {
             "icon": "terminal-window",
             "title": "Design modulaire",
@@ -189,8 +152,7 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
-    { "id": "video", "label": "Montage" },
-    { "id": "specs", "label": "Modules" },
+    { "id": "specs", "label": "Contenu" },
     { "id": "gallery", "label": "Galerie" },
     { "id": "features", "label": "Avantages" }
   ],
