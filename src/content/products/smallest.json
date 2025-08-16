@@ -210,9 +210,14 @@
             "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire"
           },
           {
-            "src": "/assets/c2.jpeg",
+            "src": "/assets/Moon_smallest.jpg",
+            "alt": "Photo de la lune",
+            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 1er août 2025 lors de l'observation avec le Smallest"
+          },
+          {
+            "src": "/assets/Moon_smallest_2.jpg",
             "alt": "Astro-dessin de la comète",
-            "caption": "Astro-dessin de la comète C/2023 A3 réalisé lors de l'observation avec le Smallest"
+            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 8 août 2025 lors de l'observation avec le Smallest"
           }
         ],
         "background": "light"
