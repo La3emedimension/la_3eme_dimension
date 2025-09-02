@@ -69,9 +69,15 @@ const { items } = Astro.props;
 			});
 		}
 		
-		// Smooth scroll to section
+		// Smooth scroll to section OR redirect for community
 		navLinks.forEach(link => {
 			link.addEventListener('click', (e) => {
+				// Special handling for community - redirect to community page
+				if (link.dataset.section === 'section-community') {
+					window.location.href = 'https://la3emedim.fr/carte-communaute';
+					return;
+				}
+				
 				e.preventDefault();
 				const targetId = `section-${link.dataset.section}`;
 				const targetElement = document.getElementById(targetId);

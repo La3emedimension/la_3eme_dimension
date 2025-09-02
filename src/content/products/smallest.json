@@ -272,10 +272,10 @@
       "type": "custom",
       "id": "section-community",
       "data": {
-        "title": "La communauté Smallest",
-        "description": "Découvrez les téléscopes Smallest construits par la communauté à travers le monde ! Des passionnés partagent leurs créations, modifications et sorties d'observation.",
-        "ctaText": "Voir la carte interactive",
-        "ctaHref": "/carte-communaute",
+        "title": "Carte de la communauté",
+        "description": "Ici vous pouvez partager vos observations et fabrications",
+        "ctaText": "Carte de la communauté",
+        "ctaHref": "https://la3emedim.fr/carte-communaute",
         "features": [
           "Constructions de la communauté",
           "Modifications et améliorations", 

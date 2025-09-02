@@ -20,7 +20,6 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
         <div class="community-features">
           {features.map(feature => (
             <div class="feature-item">
-              <span class="feature-icon">✨</span>
               <span class="feature-text">{feature}</span>
             </div>
           ))}
@@ -28,7 +27,7 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
         
         <div class="community-cta">
           <a href={ctaHref} class="cta-primary">
-            🌍 {ctaText}
+            {ctaText}
           </a>
           <p class="cta-note">
             Rejoignez la communauté et partagez votre Smallest !
@@ -39,17 +38,14 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
       <div class="community-visual">
         <div class="community-preview">
           <div class="preview-card">
-            <div class="preview-icon">🗺️</div>
             <h3>Carte interactive</h3>
             <p>Explorez les constructions à travers le monde</p>
           </div>
           <div class="preview-card">
-            <div class="preview-icon">📸</div>
             <h3>Galerie communautaire</h3>
             <p>Photos et modifications partagées</p>
           </div>
           <div class="preview-card">
-            <div class="preview-icon">🔧</div>
             <h3>Innovations</h3>
             <p>Améliorations et astuces</p>
           </div>
@@ -101,11 +97,16 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
   .feature-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    padding-left: 1rem;
+    position: relative;
   }
 
-  .feature-icon {
-    font-size: 1.2rem;
+  .feature-item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-regular);
+    font-weight: bold;
   }
 
   .feature-text {
@@ -165,15 +166,11 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
     border-color: var(--accent-regular);
   }
 
-  .preview-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
   .preview-card h3 {
     font-size: 1.2rem;
     color: var(--gray-100);
     margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   .preview-card p {
