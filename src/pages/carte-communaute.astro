@@ -113,6 +113,16 @@ const buildCount = builds.length;
 
     <ContactCTA />
   </main>
+
+  <!-- Scroll Indicator Button -->
+  <div class="scroll-indicator" id="scroll-indicator">
+    <div class="scroll-bubble">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 14L12 19L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 5L12 10L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
@@ -179,8 +189,9 @@ const buildCount = builds.length;
 
   /* Participation Section */
   .participation {
-    padding: 6rem 0;
+    padding: 2rem 0 6rem 0;
     background: var(--gray-900);
+    border-top: 1px solid var(--gray-800);
   }
 
   .participation-grid {
@@ -356,4 +367,120 @@ const buildCount = builds.length;
       font-size: 0.9rem;
     }
   }
+
+  /* Scroll Indicator Styles */
+  .scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    z-index: 1500;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+    animation: bounce 2s infinite;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .scroll-indicator.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+  }
+
+  .scroll-bubble {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .scroll-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+    background: var(--accent-dark);
+  }
+
+  .scroll-bubble svg {
+    opacity: 0.9;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-8px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-4px);
+    }
+  }
+
+  /* Responsive sizing */
+  @media (max-width: 768px) {
+    .scroll-indicator {
+      bottom: 1.5rem;
+    }
+    
+    .scroll-bubble {
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    .scroll-bubble svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Hide when map is already visible or when scrolled past hero */
+  @media (max-height: 600px) {
+    .scroll-indicator {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  // Scroll indicator functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    let isScrolled = false;
+
+    function handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+      
+      if (scrollTop > heroHeight * 0.8 && !isScrolled) {
+        isScrolled = true;
+        scrollIndicator?.classList.add('hidden');
+      } else if (scrollTop <= heroHeight * 0.8 && isScrolled) {
+        isScrolled = false;
+        scrollIndicator?.classList.remove('hidden');
+      }
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Add click handler to scroll to map section
+    scrollIndicator?.addEventListener('click', () => {
+      const mapSection = document.querySelector('.community-map-section');
+      if (mapSection) {
+        mapSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
