@@ -12,6 +12,8 @@ const builds = await getCollection('builds', ({ data }) => {
   return import.meta.env.DEV || !data.draft;
 });
 
+console.log('Builds loaded:', builds.length, builds);
+
 const buildsJson = JSON.stringify(builds.map(build => ({
   id: build.id,
   title: build.data.title,
@@ -96,6 +98,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     if (!mapElement) return;
     
     const buildsData = JSON.parse(mapElement.dataset.builds || '[]');
+    console.log('Builds data parsed:', buildsData.length, buildsData);
     
     // Initialiser la carte centrée sur la France avec options mobiles
     const map = L.map('community-map', {
@@ -149,6 +152,61 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       document.body.appendChild(toast);
       
       setTimeout(() => toast.remove(), 4000);
+    };
+    
+    // Détection mobile vs desktop
+    const isMobile = window.innerWidth <= 768;
+    
+    // Fonction pour configurer la gestion des coordonnées
+    const setupCoordinateHandling = (mapInstance) => {
+      let touchTimer;
+      let isLongPress = false;
+      let clickedCoords = null;
+      
+      mapInstance.on('click', function(e) {
+        if (!isLongPress) return;
+        isLongPress = false;
+        
+        const { lat, lng } = e.latlng;
+        const coordsText = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+        
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(coordsText).then(() => {
+            showCoordinatesMessage(`Coordonnées copiées: ${coordsText}`);
+          });
+        } else {
+          showCoordinatesMessage(`Coordonnées: ${coordsText} (copiez manuellement)`);
+        }
+        
+        // Ajouter un marqueur temporaire
+        if (clickedCoords) mapInstance.removeLayer(clickedCoords);
+        clickedCoords = L.marker([lat, lng], {
+          icon: L.divIcon({
+            className: 'temp-marker',
+            html: '<div class="temp-marker-inner">📍</div>',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+          })
+        }).addTo(mapInstance);
+        
+        setTimeout(() => {
+          if (clickedCoords) {
+            mapInstance.removeLayer(clickedCoords);
+            clickedCoords = null;
+          }
+        }, 5000);
+      });
+      
+      mapInstance.on('touchstart', function() {
+        touchTimer = setTimeout(() => {
+          isLongPress = true;
+        }, 500);
+      });
+      
+      mapInstance.on('touchend touchcancel', function() {
+        clearTimeout(touchTimer);
+        setTimeout(() => { isLongPress = false; }, 100);
+      });
     };
     
     // Sur desktop : ajouter la gestion des coordonnées par appui long
@@ -313,8 +371,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       if (e.key === 'Escape') closeBuildModal();
     });
     
-    // Détection mobile vs desktop
-    const isMobile = window.innerWidth <= 768;
+    // Variable pour la carte plein écran
     let fullscreenMap = null;
     
     // Fonction pour ouvrir la carte en plein écran (mobile)
@@ -379,58 +436,6 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         fullscreenMap.remove();
         fullscreenMap = null;
       }
-    };
-    
-    // Fonction pour configurer la gestion des coordonnées
-    const setupCoordinateHandling = (mapInstance) => {
-      let touchTimer;
-      let isLongPress = false;
-      let clickedCoords = null;
-      
-      mapInstance.on('click', function(e) {
-        if (!isLongPress) return;
-        isLongPress = false;
-        
-        const { lat, lng } = e.latlng;
-        const coordsText = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-        
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(coordsText).then(() => {
-            showCoordinatesMessage(`Coordonnées copiées: ${coordsText}`);
-          });
-        } else {
-          showCoordinatesMessage(`Coordonnées: ${coordsText} (copiez manuellement)`);
-        }
-        
-        // Ajouter un marqueur temporaire
-        if (clickedCoords) mapInstance.removeLayer(clickedCoords);
-        clickedCoords = L.marker([lat, lng], {
-          icon: L.divIcon({
-            className: 'temp-marker',
-            html: '<div class="temp-marker-inner">📍</div>',
-            iconSize: [30, 30],
-            iconAnchor: [15, 15]
-          })
-        }).addTo(mapInstance);
-        
-        setTimeout(() => {
-          if (clickedCoords) {
-            mapInstance.removeLayer(clickedCoords);
-            clickedCoords = null;
-          }
-        }, 5000);
-      });
-      
-      mapInstance.on('touchstart', function() {
-        touchTimer = setTimeout(() => {
-          isLongPress = true;
-        }, 500);
-      });
-      
-      mapInstance.on('touchend touchcancel', function() {
-        clearTimeout(touchTimer);
-        setTimeout(() => { isLongPress = false; }, 100);
-      });
     };
     
     // Gestionnaires pour la carte plein écran
