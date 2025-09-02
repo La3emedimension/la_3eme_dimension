@@ -12,8 +12,6 @@ const builds = await getCollection('builds', ({ data }) => {
   return import.meta.env.DEV || !data.draft;
 });
 
-console.log('Builds loaded:', builds.length, builds);
-
 const buildsJson = JSON.stringify(builds.map(build => ({
   id: build.id,
   title: build.data.title,
@@ -98,7 +96,6 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     if (!mapElement) return;
     
     const buildsData = JSON.parse(mapElement.dataset.builds || '[]');
-    console.log('Builds data parsed:', buildsData.length, buildsData);
     
     // Initialiser la carte centrée sur la France avec options mobiles
     const map = L.map('community-map', {
@@ -442,11 +439,16 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     if (isMobile) {
       // Ajouter un bouton "Voir en plein écran" sur mobile
       const mapContainer = document.querySelector('.map-container');
-      const fullscreenBtn = document.createElement('button');
-      fullscreenBtn.className = 'fullscreen-toggle-btn';
-      fullscreenBtn.innerHTML = '🔍 Voir en plein écran';
-      fullscreenBtn.addEventListener('click', openFullscreenMap);
-      mapContainer.appendChild(fullscreenBtn);
+      if (mapContainer) {
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'fullscreen-toggle-btn';
+        fullscreenBtn.innerHTML = '🔍 Voir en plein écran';
+        fullscreenBtn.addEventListener('click', openFullscreenMap);
+        mapContainer.appendChild(fullscreenBtn);
+        console.log('Bouton plein écran ajouté');
+      } else {
+        console.error('Container de la carte non trouvé');
+      }
     }
     
     // Gestionnaire pour fermer le plein écran
@@ -487,9 +489,14 @@ const buildsJson = JSON.stringify(builds.map(build => ({
           maxWidth: 300,
           className: 'build-popup-container'
         });
+      } else {
+        // Sur mobile : ouvrir le modal au clic sur le marqueur
+        marker.on('click', (e) => {
+          e.originalEvent.stopPropagation();
+          e.originalEvent.preventDefault();
+          openBuildModal(build);
+        });
       }
-      // Sur mobile : pas d'interaction sur la petite carte, 
-      // les utilisateurs utilisent le bouton plein écran
     });
     
     // Ajuster la vue si des builds existent
