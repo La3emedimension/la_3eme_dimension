@@ -585,9 +585,10 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   }
 
   :global(.build-marker-inner img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
   }
 
   /* Styles pour les popups */
@@ -613,8 +614,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   :global(.build-popup-image) {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0.25rem;
+    background: var(--gray-999);
   }
 
   :global(.build-popup-content h3) {
@@ -656,11 +658,12 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   :global(.build-popup-thumb) {
     width: 60px;
     height: 60px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0.25rem;
     cursor: pointer;
     border: 2px solid transparent;
     transition: border-color 0.2s ease;
+    background: var(--gray-999);
   }
 
   :global(.build-popup-thumb:hover) {
@@ -841,9 +844,10 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   .modal-main-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0.5rem;
     border: 1px solid var(--gray-800);
+    background: var(--gray-999);
   }
 
   .modal-info {
@@ -876,13 +880,14 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   .modal-gallery-thumb {
     width: 80px;
     height: 80px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0.25rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
     border: 2px solid transparent;
     transition: border-color 0.2s ease, transform 0.2s ease;
+    background: var(--gray-999);
   }
 
   .modal-gallery-thumb:hover {
