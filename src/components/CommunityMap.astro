@@ -32,6 +32,46 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       <div id="community-map" data-builds={buildsJson}></div>
     </div>
   </div>
+  
+  <!-- Modal mobile pour les détails des builds -->
+  <div id="build-modal" class="build-modal">
+    <div class="build-modal-content">
+      <div class="build-modal-header">
+        <h3 id="modal-title"></h3>
+        <button id="modal-close" class="modal-close">&times;</button>
+      </div>
+      <div class="build-modal-body">
+        <div id="modal-image-container" class="modal-image-container">
+          <img id="modal-main-image" class="modal-main-image" />
+        </div>
+        <div id="modal-info" class="modal-info">
+          <p id="modal-author"></p>
+          <p id="modal-description"></p>
+          <div id="modal-link-container"></div>
+        </div>
+        <div id="modal-gallery" class="modal-gallery"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Overlay pour fermer le modal -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+  
+  <!-- Lightbox pour voir les images en grand -->
+  <div id="image-lightbox" class="image-lightbox">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <button id="lightbox-prev" class="lightbox-nav lightbox-prev">‹</button>
+      <button id="lightbox-next" class="lightbox-nav lightbox-next">›</button>
+      <img id="lightbox-image" class="lightbox-image" />
+      <div class="lightbox-counter">
+        <span id="lightbox-current">1</span> / <span id="lightbox-total">1</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Overlay du lightbox -->
+  <div id="lightbox-overlay" class="lightbox-overlay"></div>
 </section>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -139,40 +179,199 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       setTimeout(() => { isLongPress = false; }, 100);
     });
     
+    // Variables globales pour le lightbox
+    let currentImages = [];
+    let currentImageIndex = 0;
+    
+    // Fonction pour ouvrir le lightbox
+    const openLightbox = (images, startIndex = 0) => {
+      currentImages = images;
+      currentImageIndex = startIndex;
+      
+      const lightbox = document.getElementById('image-lightbox');
+      const overlay = document.getElementById('lightbox-overlay');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const currentSpan = document.getElementById('lightbox-current');
+      const totalSpan = document.getElementById('lightbox-total');
+      
+      lightboxImage.src = currentImages[currentImageIndex];
+      currentSpan.textContent = currentImageIndex + 1;
+      totalSpan.textContent = currentImages.length;
+      
+      lightbox.classList.add('active');
+      overlay.classList.add('active');
+      
+      // Gestion des boutons de navigation
+      updateLightboxButtons();
+    };
+    
+    // Fonction pour mettre à jour les boutons du lightbox
+    const updateLightboxButtons = () => {
+      const prevBtn = document.getElementById('lightbox-prev');
+      const nextBtn = document.getElementById('lightbox-next');
+      
+      prevBtn.style.display = currentImages.length > 1 ? 'block' : 'none';
+      nextBtn.style.display = currentImages.length > 1 ? 'block' : 'none';
+    };
+    
+    // Fonction pour fermer le lightbox
+    const closeLightbox = () => {
+      const lightbox = document.getElementById('image-lightbox');
+      const overlay = document.getElementById('lightbox-overlay');
+      lightbox.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+    
+    // Navigation dans le lightbox
+    const showPrevImage = () => {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        document.getElementById('lightbox-image').src = currentImages[currentImageIndex];
+        document.getElementById('lightbox-current').textContent = currentImageIndex + 1;
+      }
+    };
+    
+    const showNextImage = () => {
+      if (currentImageIndex < currentImages.length - 1) {
+        currentImageIndex++;
+        document.getElementById('lightbox-image').src = currentImages[currentImageIndex];
+        document.getElementById('lightbox-current').textContent = currentImageIndex + 1;
+      }
+    };
+    
+    // Gestionnaires d'événements pour le lightbox
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-overlay').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', showPrevImage);
+    document.getElementById('lightbox-next').addEventListener('click', showNextImage);
+    
+    // Navigation au clavier pour le lightbox
+    document.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('image-lightbox');
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'ArrowRight') showNextImage();
+      }
+    });
+    
+    // Fonction pour ouvrir le modal mobile
+    const openBuildModal = (build) => {
+      const modal = document.getElementById('build-modal');
+      const overlay = document.getElementById('modal-overlay');
+      
+      // Créer la liste de toutes les images pour le lightbox
+      const allImages = [build.mainPhoto, ...build.additionalPhotos];
+      
+      // Remplir les données du modal
+      document.getElementById('modal-title').textContent = build.title;
+      document.getElementById('modal-author').innerHTML = `<strong>Par:</strong> ${build.author}`;
+      document.getElementById('modal-description').textContent = build.description || '';
+      
+      // Image principale cliquable
+      const mainImage = document.getElementById('modal-main-image');
+      mainImage.src = build.mainPhoto;
+      mainImage.alt = build.title;
+      mainImage.style.cursor = 'pointer';
+      mainImage.addEventListener('click', () => {
+        openLightbox(allImages, 0);
+      });
+      
+      // Lien web si disponible
+      const linkContainer = document.getElementById('modal-link-container');
+      if (build.webLink) {
+        linkContainer.innerHTML = `<a href="${build.webLink}" target="_blank" rel="noopener" class="modal-link">Voir le projet →</a>`;
+      } else {
+        linkContainer.innerHTML = '';
+      }
+      
+      // Galerie d'images supplémentaires cliquables
+      const gallery = document.getElementById('modal-gallery');
+      if (build.additionalPhotos.length > 0) {
+        gallery.innerHTML = '<h4>Photos supplémentaires (cliquez pour agrandir)</h4>';
+        build.additionalPhotos.forEach((photo, index) => {
+          const img = document.createElement('img');
+          img.src = photo;
+          img.alt = 'Photo supplémentaire';
+          img.className = 'modal-gallery-thumb';
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => {
+            openLightbox(allImages, index + 1);
+          });
+          gallery.appendChild(img);
+        });
+      } else {
+        gallery.innerHTML = '';
+      }
+      
+      // Afficher le modal
+      modal.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    
+    // Fonction pour fermer le modal
+    const closeBuildModal = () => {
+      const modal = document.getElementById('build-modal');
+      const overlay = document.getElementById('modal-overlay');
+      modal.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    };
+    
+    // Gestionnaires d'événements pour fermer le modal
+    document.getElementById('modal-close').addEventListener('click', closeBuildModal);
+    document.getElementById('modal-overlay').addEventListener('click', closeBuildModal);
+    
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBuildModal();
+    });
+    
+    // Détection mobile vs desktop
+    const isMobile = window.innerWidth <= 768;
+    
     // Ajouter les marqueurs pour chaque build
     buildsData.forEach(build => {
       const marker = L.marker([build.lat, build.lng], {
         icon: createBuildIcon(build.mainPhoto)
       }).addTo(map);
       
-      // Créer le contenu du popup optimisé pour mobile
-      let popupContent = `
-        <div class="build-popup">
-          <div class="build-popup-header">
-            <img src="${build.mainPhoto}" alt="${build.title}" class="build-popup-image" />
-          </div>
-          <div class="build-popup-content">
-            <h3>${build.title}</h3>
-            <p><strong>Par:</strong> ${build.author}</p>
-            ${build.description ? `<p class="build-description">${build.description}</p>` : ''}
-            ${build.webLink ? `<p><a href="${build.webLink}" target="_blank" rel="noopener">Voir le projet →</a></p>` : ''}
-          </div>
-        </div>
-      `;
-      
-      // Si des photos supplémentaires existent, les ajouter
-      if (build.additionalPhotos.length > 0) {
-        popupContent += '<div class="build-popup-gallery">';
-        build.additionalPhotos.forEach(photo => {
-          popupContent += `<img src="${photo}" alt="Photo supplémentaire" class="build-popup-thumb" />`;
+      if (isMobile) {
+        // Sur mobile : utiliser le modal
+        marker.on('click', () => {
+          openBuildModal(build);
         });
-        popupContent += '</div>';
+      } else {
+        // Sur desktop : utiliser le popup classique
+        let popupContent = `
+          <div class="build-popup">
+            <div class="build-popup-header">
+              <img src="${build.mainPhoto}" alt="${build.title}" class="build-popup-image" />
+            </div>
+            <div class="build-popup-content">
+              <h3>${build.title}</h3>
+              <p><strong>Par:</strong> ${build.author}</p>
+              ${build.description ? `<p class="build-description">${build.description}</p>` : ''}
+              ${build.webLink ? `<p><a href="${build.webLink}" target="_blank" rel="noopener">Voir le projet →</a></p>` : ''}
+            </div>
+          </div>
+        `;
+        
+        // Si des photos supplémentaires existent, les ajouter
+        if (build.additionalPhotos.length > 0) {
+          popupContent += '<div class="build-popup-gallery">';
+          build.additionalPhotos.forEach(photo => {
+            popupContent += `<img src="${photo}" alt="Photo supplémentaire" class="build-popup-thumb" />`;
+          });
+          popupContent += '</div>';
+        }
+        
+        marker.bindPopup(popupContent, {
+          maxWidth: 300,
+          className: 'build-popup-container'
+        });
       }
-      
-      marker.bindPopup(popupContent, {
-        maxWidth: window.innerWidth > 768 ? 300 : 250,
-        className: 'build-popup-container'
-      });
     });
     
     // Ajuster la vue si des builds existent
@@ -400,6 +599,304 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     }
   }
 
+  /* Styles pour le modal mobile */
+  .build-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem;
+  }
+
+  .build-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .build-modal-content {
+    background: var(--gray-999);
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-800);
+    position: relative;
+  }
+
+  .build-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .build-modal-header h3 {
+    color: var(--accent-regular);
+    font-size: 1.3rem;
+    margin: 0;
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .modal-close:hover {
+    color: var(--gray-100);
+    background: var(--gray-800);
+  }
+
+  .build-modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-image-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-main-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .modal-info {
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-info p {
+    color: var(--gray-300);
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .modal-link {
+    color: var(--accent-regular) !important;
+    text-decoration: none !important;
+    font-weight: 500;
+  }
+
+  .modal-link:hover {
+    text-decoration: underline !important;
+  }
+
+  .modal-gallery h4 {
+    color: var(--gray-200);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .modal-gallery-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .modal-gallery-thumb:hover {
+    border-color: var(--accent-regular);
+    transform: scale(1.05);
+  }
+
+  /* Styles pour le lightbox */
+  .image-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-prev {
+    left: -80px;
+  }
+
+  .lightbox-next {
+    right: -80px;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Indicateur visuel pour les images cliquables */
+  .modal-main-image:hover {
+    filter: brightness(1.1);
+  }
+
+  .modal-main-image::after {
+    content: '🔍';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .modal-image-container {
+    position: relative;
+  }
+
+  .modal-image-container:hover .modal-main-image::after {
+    opacity: 1;
+  }
+
   @media (max-width: 768px) {
     .community-map-section h2 {
       font-size: 2rem;
@@ -407,6 +904,69 @@ const buildsJson = JSON.stringify(builds.map(build => ({
 
     .map-container {
       height: 300px !important;
+    }
+
+    .build-modal {
+      padding: 0.5rem;
+      align-items: flex-end;
+    }
+
+    .build-modal-content {
+      max-height: 80vh;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      width: 100%;
+      max-width: none;
+    }
+
+    .modal-main-image {
+      height: 160px;
+    }
+
+    .build-modal-header {
+      padding: 1rem;
+    }
+
+    .build-modal-body {
+      padding: 1rem;
+    }
+
+    .modal-gallery-thumb {
+      width: 60px;
+      height: 60px;
+    }
+
+    /* Animation pour mobile */
+    .build-modal {
+      transform: translateY(100%);
+    }
+
+    .build-modal.active {
+      transform: translateY(0);
+    }
+
+    /* Lightbox mobile */
+    .lightbox-close {
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .lightbox-nav {
+      bottom: 2rem;
+      top: auto;
+      transform: none;
+    }
+
+    .lightbox-prev {
+      left: 2rem;
+    }
+
+    .lightbox-next {
+      right: 2rem;
+    }
+
+    .lightbox-counter {
+      bottom: 6rem;
     }
   }
 </style>
