@@ -1,0 +1,412 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title?: string;
+  height?: string;
+}
+
+const { title = "Carte de la communauté", height = "400px" } = Astro.props;
+
+const builds = await getCollection('builds', ({ data }) => {
+  return import.meta.env.DEV || !data.draft;
+});
+
+const buildsJson = JSON.stringify(builds.map(build => ({
+  id: build.id,
+  title: build.data.title,
+  author: build.data.author,
+  description: build.data.description,
+  webLink: build.data.webLink,
+  lat: build.data.latitude,
+  lng: build.data.longitude,
+  mainPhoto: build.data.mainPhoto,
+  additionalPhotos: build.data.additionalPhotos || []
+})));
+---
+
+<section class="community-map-section">
+  <div class="container">
+    <h2>{title}</h2>
+    <div class="map-container" style={`height: ${height}`}>
+      <div id="community-map" data-builds={buildsJson}></div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script>
+  import 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const mapElement = document.getElementById('community-map');
+    if (!mapElement) return;
+    
+    const buildsData = JSON.parse(mapElement.dataset.builds || '[]');
+    
+    // Initialiser la carte centrée sur la France avec options mobiles
+    const map = L.map('community-map', {
+      tap: true,
+      touchZoom: true,
+      zoomControl: true
+    }).setView([46.603354, 1.888334], 6);
+    
+    // Ajouter les tuiles OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    
+    // Créer une icône personnalisée pour les builds
+    const createBuildIcon = (photoUrl) => {
+      return L.divIcon({
+        className: 'build-marker',
+        html: `<div class="build-marker-inner">
+                 <img src="${photoUrl}" alt="Build photo" />
+               </div>`,
+        iconSize: [50, 50],
+        iconAnchor: [25, 25]
+      });
+    };
+    
+    // Variable pour stocker les coordonnées cliquées
+    let clickedCoords = null;
+    
+    // Fonction pour copier les coordonnées
+    const copyCoordinates = (lat, lng) => {
+      const coordsText = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(coordsText).then(() => {
+          showCoordinatesMessage(`Coordonnées copiées: ${coordsText}`);
+        });
+      } else {
+        showCoordinatesMessage(`Coordonnées: ${coordsText} (copiez manuellement)`);
+      }
+    };
+    
+    // Fonction pour afficher le message de coordonnées
+    const showCoordinatesMessage = (message) => {
+      const existing = document.querySelector('.coords-toast');
+      if (existing) existing.remove();
+      
+      const toast = document.createElement('div');
+      toast.className = 'coords-toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => toast.remove(), 4000);
+    };
+    
+    // Gestionnaire pour appui long / clic droit pour obtenir coordonnées
+    let touchTimer;
+    let isLongPress = false;
+    
+    map.on('click', function(e) {
+      if (!isLongPress) return;
+      isLongPress = false;
+      
+      const { lat, lng } = e.latlng;
+      copyCoordinates(lat, lng);
+      
+      // Ajouter un marqueur temporaire
+      if (clickedCoords) map.removeLayer(clickedCoords);
+      clickedCoords = L.marker([lat, lng], {
+        icon: L.divIcon({
+          className: 'temp-marker',
+          html: '<div class="temp-marker-inner">📍</div>',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15]
+        })
+      }).addTo(map);
+      
+      setTimeout(() => {
+        if (clickedCoords) {
+          map.removeLayer(clickedCoords);
+          clickedCoords = null;
+        }
+      }, 5000);
+    });
+    
+    // Gestionnaires pour appui long sur mobile
+    map.on('touchstart', function() {
+      touchTimer = setTimeout(() => {
+        isLongPress = true;
+      }, 500);
+    });
+    
+    map.on('touchend touchcancel', function() {
+      clearTimeout(touchTimer);
+      setTimeout(() => { isLongPress = false; }, 100);
+    });
+    
+    // Ajouter les marqueurs pour chaque build
+    buildsData.forEach(build => {
+      const marker = L.marker([build.lat, build.lng], {
+        icon: createBuildIcon(build.mainPhoto)
+      }).addTo(map);
+      
+      // Créer le contenu du popup optimisé pour mobile
+      let popupContent = `
+        <div class="build-popup">
+          <div class="build-popup-header">
+            <img src="${build.mainPhoto}" alt="${build.title}" class="build-popup-image" />
+          </div>
+          <div class="build-popup-content">
+            <h3>${build.title}</h3>
+            <p><strong>Par:</strong> ${build.author}</p>
+            ${build.description ? `<p class="build-description">${build.description}</p>` : ''}
+            ${build.webLink ? `<p><a href="${build.webLink}" target="_blank" rel="noopener">Voir le projet →</a></p>` : ''}
+          </div>
+        </div>
+      `;
+      
+      // Si des photos supplémentaires existent, les ajouter
+      if (build.additionalPhotos.length > 0) {
+        popupContent += '<div class="build-popup-gallery">';
+        build.additionalPhotos.forEach(photo => {
+          popupContent += `<img src="${photo}" alt="Photo supplémentaire" class="build-popup-thumb" />`;
+        });
+        popupContent += '</div>';
+      }
+      
+      marker.bindPopup(popupContent, {
+        maxWidth: window.innerWidth > 768 ? 300 : 250,
+        className: 'build-popup-container'
+      });
+    });
+    
+    // Ajuster la vue si des builds existent
+    if (buildsData.length > 0) {
+      const group = new L.featureGroup(
+        buildsData.map(build => L.marker([build.lat, build.lng]))
+      );
+      map.fitBounds(group.getBounds().pad(0.1));
+    }
+    
+    // Ajouter des instructions mobiles
+    if (window.innerWidth <= 768) {
+      const instructions = document.createElement('div');
+      instructions.className = 'mobile-instructions';
+      instructions.innerHTML = `
+        <p>📱 <strong>Appui long</strong> sur la carte pour obtenir vos coordonnées</p>
+      `;
+      mapElement.parentNode.insertBefore(instructions, mapElement);
+    }
+  });
+</script>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .community-map-section {
+    padding: 4rem 0;
+    background: var(--gray-900);
+  }
+
+  .community-map-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--gray-100);
+    margin-bottom: 2rem;
+  }
+
+  .map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-800);
+  }
+
+  #community-map {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Styles pour les marqueurs personnalisés */
+  :global(.build-marker) {
+    border: none !important;
+    background: transparent !important;
+  }
+
+  :global(.build-marker-inner) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-regular);
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  :global(.build-marker-inner:hover) {
+    transform: scale(1.1);
+  }
+
+  :global(.build-marker-inner img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Styles pour les popups */
+  :global(.build-popup-container .leaflet-popup-content-wrapper) {
+    background: var(--gray-999);
+    color: var(--gray-100);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-xl);
+  }
+
+  :global(.build-popup-container .leaflet-popup-tip) {
+    background: var(--gray-999);
+  }
+
+  :global(.build-popup) {
+    min-width: 250px;
+  }
+
+  :global(.build-popup-header) {
+    margin-bottom: 1rem;
+  }
+
+  :global(.build-popup-image) {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+
+  :global(.build-popup-content h3) {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-regular);
+    font-size: 1.2rem;
+  }
+
+  :global(.build-popup-content p) {
+    margin: 0.25rem 0;
+    color: var(--gray-300);
+    font-size: 0.9rem;
+  }
+
+  :global(.build-description) {
+    font-style: italic;
+    color: var(--gray-400) !important;
+    font-size: 0.85rem !important;
+    margin: 0.5rem 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  :global(.build-popup-content a) {
+    color: var(--accent-regular);
+    text-decoration: none;
+  }
+
+  :global(.build-popup-content a:hover) {
+    text-decoration: underline;
+  }
+
+  :global(.build-popup-gallery) {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  :global(.build-popup-thumb) {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  :global(.build-popup-thumb:hover) {
+    border-color: var(--accent-regular);
+  }
+
+  /* Styles pour les fonctionnalités mobiles */
+  :global(.temp-marker) {
+    border: none !important;
+    background: transparent !important;
+  }
+
+  :global(.temp-marker-inner) {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 0.6s ease-in-out;
+  }
+
+  :global(.coords-toast) {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    z-index: 10000;
+    box-shadow: var(--shadow-lg);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  :global(.mobile-instructions) {
+    background: var(--gray-800);
+    border: 1px solid var(--accent-regular);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  :global(.mobile-instructions p) {
+    margin: 0;
+    color: var(--gray-300);
+    font-size: 0.9rem;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .community-map-section h2 {
+      font-size: 2rem;
+    }
+
+    .map-container {
+      height: 300px !important;
+    }
+  }
+</style>

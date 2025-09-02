@@ -53,5 +53,19 @@ export const collections = {
 			showNavigation: z.boolean().optional(),
 			showLightbox: z.boolean().optional()
 		})
+	}),
+	builds: defineCollection({
+		type: 'data',
+		schema: z.object({
+			title: z.string(),
+			author: z.string(),
+			description: z.string().optional(),
+			webLink: z.string().url().optional(),
+			latitude: z.number(),
+			longitude: z.number(),
+			mainPhoto: z.string(),
+			additionalPhotos: z.array(z.string()).optional(),
+			draft: z.boolean().optional()
+		})
 	})
 };

@@ -1,0 +1,11 @@
+{
+  "title": "Mon Smallest pour l'astrophoto urbaine",
+  "author": "Alexandre M.",
+  "latitude": 48.856614,
+  "longitude": 2.3522219,
+  "mainPhoto": "https://la3emedim.fr/assets/build-paris-main.jpg",
+  "additionalPhotos": [
+    "https://la3emedim.fr/assets/build-paris-1.jpg"
+  ],
+  "draft": true
+}

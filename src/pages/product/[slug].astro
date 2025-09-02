@@ -5,6 +5,8 @@ import ProductLayout from '../../layouts/ProductLayout.astro';
 import SmallestOverview from '../../components/SmallestOverview.astro';
 import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
 import SmallestLearnMore from '../../components/SmallestLearnMore.astro';
+import CommunityMap from '../../components/CommunityMap.astro';
+import CommunitySection from '../../components/CommunitySection.astro';
 
 export async function getStaticPaths() {
   const products = await getCollection('products', ({ data }) => {
@@ -45,6 +47,19 @@ if (product.id === 'smallest') {
 
 // Insert custom sections at appropriate positions
 const allSections = [...productConfig.sections];
+
+// Process sections to add custom components
+allSections.forEach(section => {
+  // Handle CommunityMap for community-map sections
+  if (section.id === 'section-community-map' && section.type === 'custom') {
+    section.customComponent = CommunityMap;
+  }
+  // Handle CommunitySection for community sections
+  if (section.id === 'section-community' && section.type === 'custom') {
+    section.customComponent = CommunitySection;
+  }
+});
+
 if (product.id === 'smallest') {
   // Insert overview after video section
   const videoIndex = allSections.findIndex(s => s.type === 'video');

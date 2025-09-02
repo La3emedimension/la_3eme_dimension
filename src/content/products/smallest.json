@@ -65,7 +65,7 @@
       "type": "gallery",
       "id": "section-gallery",
       "data": {
-        "title": "Montage et transport",
+        "title": "Galerie complète",
         "images": [
           {
             "src": "/assets/150-750 (8).jpg",
@@ -86,9 +86,74 @@
             "src": "/assets/S1502.jpg",
             "alt": "Assemblage du télescope",
             "caption": "Étapes d'assemblage du télescope - design modulaire et intuitif"
+          },
+          {
+            "src": "/assets/Smallest.jpg",
+            "alt": "Smallest assemblé",
+            "caption": "Montage rapide sans outils - De la sacoche à l'observation en 5 minutes"
+          },
+          {
+            "src": "/assets/150 1.jpg",
+            "alt": "Smallest vue 1",
+            "caption": "Vue détaillée de la structure en aluminium et des éléments imprimés 3D"
+          },
+          {
+            "src": "/assets/150 2.jpg",
+            "alt": "Smallest vue 2",
+            "caption": "Démonstration du système de pliage innovant"
+          },
+          {
+            "src": "/assets/150 V2 2.jpg",
+            "alt": "Nouvelle version",
+            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles"
+          },
+          {
+            "src": "/assets/150 V2.jpg",
+            "alt": "Design V2",
+            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation"
+          },
+          {
+            "src": "/assets/150 V2 3.jpg",
+            "alt": "Version 2 - vue 3",
+            "caption": "Détails des connexions et du système de verrouillage rapide"
+          },
+          {
+            "src": "/assets/150 V2 4.jpg",
+            "alt": "Version 2 - vue 4",
+            "caption": "Vue d'ensemble de la structure Dobson intégrée"
+          },
+          {
+            "src": "/assets/m150.jpeg",
+            "alt": "Comparaison de taille",
+            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire"
+          },
+          {
+            "src": "/assets/POS (3).jpg",
+            "alt": "Présentation Pint of Science",
+            "caption": "Présentation du projet au festival Pint of Science 2024 à Toulouse"
+          },
+          {
+            "src": "/assets/c.jpg",
+            "alt": "Observation de la comète C/2023 A3",
+            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest"
+          },
+          {
+            "src": "/assets/c1.jpg",
+            "alt": "Photo comète à main levée",
+            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire"
+          },
+          {
+            "src": "/assets/Moon_smallest.jpg",
+            "alt": "Photo de la lune",
+            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 1er août 2025 lors de l'observation avec le Smallest"
+          },
+          {
+            "src": "/assets/Moon_smallest_2.jpg",
+            "alt": "Astro-dessin de la comète",
+            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 8 août 2025 lors de l'observation avec le Smallest"
           }
         ],
-        "background": "dark"
+        "background": "light"
       }
     },
     {
@@ -170,60 +235,6 @@
       }
     },
     {
-      "type": "gallery",
-      "data": {
-        "title": "Évolutions et observations",
-        "images": [
-          {
-            "src": "/assets/150 V2 2.jpg",
-            "alt": "Nouvelle version",
-            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles"
-          },
-          {
-            "src": "/assets/150 V2.jpg",
-            "alt": "Design V2",
-            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation"
-          },
-          {
-            "src": "/assets/150 V2 3.jpg",
-            "alt": "Version 2 - vue 3",
-            "caption": "Détails des connexions et du système de verrouillage rapide"
-          },
-          {
-            "src": "/assets/150 V2 4.jpg",
-            "alt": "Version 2 - vue 4",
-            "caption": "Vue d'ensemble de la structure Dobson intégrée"
-          },
-          {
-            "src": "/assets/m150.jpeg",
-            "alt": "Comparaison de taille",
-            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire"
-          },
-          {
-            "src": "/assets/c.jpg",
-            "alt": "Observation de la comète C/2023 A3",
-            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest"
-          },
-          {
-            "src": "/assets/c1.jpg",
-            "alt": "Photo comète à main levée",
-            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire"
-          },
-          {
-            "src": "/assets/Moon_smallest.jpg",
-            "alt": "Photo de la lune",
-            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 1er août 2025 lors de l'observation avec le Smallest"
-          },
-          {
-            "src": "/assets/Moon_smallest_2.jpg",
-            "alt": "Astro-dessin de la comète",
-            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 8 août 2025 lors de l'observation avec le Smallest"
-          }
-        ],
-        "background": "light"
-      }
-    },
-    {
       "type": "pricing",
       "id": "section-pricing",
       "data": {
@@ -256,6 +267,22 @@
           }
         ]
       }
+    },
+    {
+      "type": "custom",
+      "id": "section-community",
+      "data": {
+        "title": "🗺️ Communauté Smallest",
+        "description": "Découvrez les téléscopes Smallest construits par la communauté à travers le monde ! Des passionnés partagent leurs créations, modifications et sorties d'observation.",
+        "ctaText": "Voir la carte interactive",
+        "ctaHref": "/carte-communaute",
+        "features": [
+          "Constructions de la communauté",
+          "Modifications et améliorations", 
+          "Sorties d'observation",
+          "Partage d'expériences"
+        ]
+      }
     }
   ],
   "navigationItems": [
@@ -264,7 +291,8 @@
     { "id": "video", "label": "Démonstration" },
     { "id": "features", "label": "Avantages" },
     { "id": "specs", "label": "Spécifications" },
-    { "id": "pricing", "label": "Tarifs" }
+    { "id": "pricing", "label": "Tarifs" },
+    { "id": "section-community", "label": "Communauté" }
   ],
   "showContactCTA": true,
   "showNavigation": true,

@@ -104,6 +104,14 @@ Image réalisée avec le téléphone à mains levées devant l'oculaire du téle
 L'astro dessin de la comète réalisé avec le Smallest :
 <img src="/assets/c2.jpeg">
 
+### 🗺️ La communauté Smallest
+
+Découvrez les téléscopes Smallest construits par la communauté à travers le monde ! Des passionnés partagent leurs créations, modifications et sorties d'observation.
+
+<a class="button button-community" href="/carte-communaute">🌍 Voir la carte interactive</a>
+
+Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le vôtre ou que vous l'emmeniez en sortie, montrez-nous vos photos et inspirez d'autres astronomes.
+
 <style>
 
    .button {

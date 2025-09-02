@@ -1,0 +1,15 @@
+{
+  "title": "Smallest modifié avec focuser custom",
+  "author": "Marie Dubois",
+  "description": "Version personnalisée avec un focuser fait maison pour une mise au point ultra-précise. Parfait pour l'astrophotographie !",
+  "webLink": "https://astro-marie.blog.example.com",
+  "latitude": 45.764043,
+  "longitude": 4.835659,
+  "mainPhoto": "https://la3emedim.fr/assets/build-lyon-main.jpg",
+  "additionalPhotos": [
+    "https://la3emedim.fr/assets/build-lyon-1.jpg",
+    "https://la3emedim.fr/assets/build-lyon-2.jpg",
+    "https://la3emedim.fr/assets/build-lyon-3.jpg"
+  ],
+  "draft": true
+}

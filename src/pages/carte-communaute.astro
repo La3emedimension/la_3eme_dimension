@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CommunityMap from '../components/CommunityMap.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { getCollection } from 'astro:content';
+
+const builds = await getCollection('builds', ({ data }) => {
+  return import.meta.env.DEV || !data.draft;
+});
+
+const buildCount = builds.length;
+---
+
+<BaseLayout
+  title="Carte de la communauté Smallest | La 3ème dimension"
+  description="Découvrez les télescopes Smallest construits par la communauté à travers le monde. Partagez votre construction et vos sorties d'observation."
+  keywords="smallest communauté, télescope smallest, constructions communautaires, astronomie collaborative"
+>
+  <main class="community-page">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>La communauté Smallest</h1>
+          <p class="hero-description">
+            Découvrez les {buildCount} télescopes Smallest construits par la communauté à travers le monde. 
+            Explorez les créations, innovations et sorties d'observation de nos makers passionnés.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">{buildCount}</span>
+              <span class="stat-label">Constructions</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">12</span>
+              <span class="stat-label">Pays</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Sorties</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <CommunityMap title="Explorez les constructions" height="600px" />
+
+    <!-- Participation Section -->
+    <section class="participation">
+      <div class="container">
+        <div class="participation-grid">
+          <div class="participation-content">
+            <h2>Partagez votre Smallest !</h2>
+            <p>
+              Vous avez construit un Smallest ou vous l'avez emmené en sortie d'observation ? 
+              Rejoignez notre communauté et partagez votre expérience !
+            </p>
+            
+            <div class="participation-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <h3>Prenez des photos</h3>
+                  <p>Photographiez votre construction et vos sorties d'observation</p>
+                </div>
+              </div>
+              
+              <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <h3>Envoyez-nous vos infos</h3>
+                  <p>Titre, votre nom, localisation et vos photos</p>
+                </div>
+              </div>
+              
+              <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <h3>Apparaissez sur la carte</h3>
+                  <p>Votre construction sera ajoutée à la carte communautaire</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="participation-cta">
+              <a href="mailto:la3emedim@gmail.com?subject=Partage de construction Smallest&body=Bonjour,%0D%0A%0D%0AJe souhaite partager ma construction Smallest sur la carte communautaire.%0D%0A%0D%0ATitre de ma construction :%0D%0AMon nom/pseudo :%0D%0AVille/Région :%0D%0ALien web (optionnel) :%0D%0A%0D%0AJe joins les photos en pièce jointe.%0D%0A%0D%0AMerci !" 
+                 class="cta-primary">
+                Partager ma construction
+              </a>
+              <p class="cta-note">
+                <strong>Mobile :</strong> Appuyez longuement sur la carte pour obtenir vos coordonnées exactes
+              </p>
+            </div>
+          </div>
+          
+          <div class="participation-tips">
+            <h3>Conseils pour de belles photos</h3>
+            <ul class="tips-list">
+              <li>📸 Prenez une photo principale claire de votre Smallest</li>
+              <li>🌟 Ajoutez des photos de vos sorties d'observation</li>
+              <li>🔧 Montrez vos modifications ou améliorations</li>
+              <li>🌍 Indiquez le lieu de votre construction ou sortie</li>
+              <li>📱 Les photos prises au smartphone sont parfaites</li>
+            </ul>
+            
+            <div class="social-sharing">
+              <h4>Partagez aussi sur les réseaux</h4>
+              <p>Utilisez #SmallestTelescope #La3emeDimension pour que nous puissions voir vos créations !</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA />
+  </main>
+</BaseLayout>
+
+<style>
+  .community-page {
+    background: var(--gray-999);
+    color: var(--gray-100);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-regular);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Participation Section */
+  .participation {
+    padding: 6rem 0;
+    background: var(--gray-900);
+  }
+
+  .participation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .participation-content h2 {
+    font-size: 2.5rem;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+  }
+
+  .participation-content > p {
+    font-size: 1.1rem;
+    color: var(--gray-300);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  /* Steps */
+  .participation-steps {
+    margin-bottom: 3rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+    color: var(--gray-100);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p {
+    color: var(--gray-300);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .participation-cta {
+    text-align: center;
+  }
+
+  .cta-primary {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-regular);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .cta-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-note {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* Tips */
+  .participation-tips {
+    background: var(--gray-999);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .participation-tips h3 {
+    font-size: 1.5rem;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+  }
+
+  .tips-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .tips-list li {
+    padding: 0.75rem 0;
+    color: var(--gray-300);
+    border-bottom: 1px solid var(--gray-800);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .tips-list li:last-child {
+    border-bottom: none;
+  }
+
+  .social-sharing {
+    background: var(--gray-900);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-700);
+  }
+
+  .social-sharing h4 {
+    font-size: 1.1rem;
+    color: var(--accent-regular);
+    margin-bottom: 0.5rem;
+  }
+
+  .social-sharing p {
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .participation-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .participation-content h2 {
+      font-size: 2rem;
+    }
+
+    .step {
+      align-items: center;
+    }
+
+    .step-number {
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

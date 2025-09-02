@@ -1,0 +1,11 @@
+{
+  "title": "Sortie Causses de l'herault",
+  "author": "Raphaël Labro",
+  "latitude": 43.46317,
+  "longitude": 3.26523,
+  "mainPhoto": "https://la3emedim.fr/assets/Caussedel'heraultsmallest.jpg",
+  "additionalPhotos": [
+    "https://la3emedim.fr/assets/smallestcaussesherault.JPG"
+  ],
+  "draft": false
+}
