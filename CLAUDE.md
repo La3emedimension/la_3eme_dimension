@@ -75,7 +75,7 @@ When creating new products in `src/content/products/`, ensure the JSON structure
   "type": "features", 
   "data": {
     "title": "Features Title",
-    "features": [{"icon": "icon-name", "title": "Title", "description": "Description"}]
+    "features": [{ "title": "Title", "description": "Description"}]
   }
 }
 ```

@@ -272,7 +272,7 @@
       "type": "custom",
       "id": "section-community",
       "data": {
-        "title": "🗺️ Communauté Smallest",
+        "title": "La communauté Smallest",
         "description": "Découvrez les téléscopes Smallest construits par la communauté à travers le monde ! Des passionnés partagent leurs créations, modifications et sorties d'observation.",
         "ctaText": "Voir la carte interactive",
         "ctaHref": "/carte-communaute",
