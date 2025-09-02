@@ -72,6 +72,18 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   
   <!-- Overlay du lightbox -->
   <div id="lightbox-overlay" class="lightbox-overlay"></div>
+  
+  <!-- Carte plein écran mobile -->
+  <div id="fullscreen-map-container" class="fullscreen-map-container">
+    <div class="fullscreen-map-header">
+      <h3>Carte de la communauté</h3>
+      <button id="fullscreen-close" class="fullscreen-close">&times;</button>
+    </div>
+    <div id="fullscreen-map" class="fullscreen-map"></div>
+    <div class="fullscreen-instructions">
+      📱 Appui long sur la carte pour obtenir vos coordonnées
+    </div>
+  </div>
 </section>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -89,7 +101,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     const map = L.map('community-map', {
       tap: true,
       touchZoom: true,
-      zoomControl: true
+      zoomControl: true,
+      maxZoom: 18,
+      minZoom: 3
     }).setView([46.603354, 1.888334], 6);
     
     // Ajouter les tuiles OpenStreetMap
@@ -137,47 +151,10 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       setTimeout(() => toast.remove(), 4000);
     };
     
-    // Gestionnaire pour appui long / clic droit pour obtenir coordonnées
-    let touchTimer;
-    let isLongPress = false;
-    
-    map.on('click', function(e) {
-      if (!isLongPress) return;
-      isLongPress = false;
-      
-      const { lat, lng } = e.latlng;
-      copyCoordinates(lat, lng);
-      
-      // Ajouter un marqueur temporaire
-      if (clickedCoords) map.removeLayer(clickedCoords);
-      clickedCoords = L.marker([lat, lng], {
-        icon: L.divIcon({
-          className: 'temp-marker',
-          html: '<div class="temp-marker-inner">📍</div>',
-          iconSize: [30, 30],
-          iconAnchor: [15, 15]
-        })
-      }).addTo(map);
-      
-      setTimeout(() => {
-        if (clickedCoords) {
-          map.removeLayer(clickedCoords);
-          clickedCoords = null;
-        }
-      }, 5000);
-    });
-    
-    // Gestionnaires pour appui long sur mobile
-    map.on('touchstart', function() {
-      touchTimer = setTimeout(() => {
-        isLongPress = true;
-      }, 500);
-    });
-    
-    map.on('touchend touchcancel', function() {
-      clearTimeout(touchTimer);
-      setTimeout(() => { isLongPress = false; }, 100);
-    });
+    // Sur desktop : ajouter la gestion des coordonnées par appui long
+    if (!isMobile) {
+      setupCoordinateHandling(map);
+    }
     
     // Variables globales pour le lightbox
     let currentImages = [];
@@ -304,10 +281,12 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         gallery.innerHTML = '';
       }
       
-      // Afficher le modal
-      modal.classList.add('active');
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      // Afficher le modal avec un léger délai pour éviter les conflits
+      setTimeout(() => {
+        modal.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }, 50);
     };
     
     // Fonction pour fermer le modal
@@ -317,6 +296,12 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       modal.classList.remove('active');
       overlay.classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // Réactiver les interactions de la carte
+      map.dragging.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+      map.scrollWheelZoom.enable();
     };
     
     // Gestionnaires d'événements pour fermer le modal
@@ -330,6 +315,137 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     
     // Détection mobile vs desktop
     const isMobile = window.innerWidth <= 768;
+    let fullscreenMap = null;
+    
+    // Fonction pour ouvrir la carte en plein écran (mobile)
+    const openFullscreenMap = () => {
+      const container = document.getElementById('fullscreen-map-container');
+      const fullscreenMapDiv = document.getElementById('fullscreen-map');
+      
+      // Afficher le container plein écran
+      container.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Créer une nouvelle carte plein écran
+      setTimeout(() => {
+        fullscreenMap = L.map('fullscreen-map', {
+          tap: true,
+          touchZoom: true,
+          zoomControl: true,
+          maxZoom: 18,
+          minZoom: 3
+        }).setView([46.603354, 1.888334], 6);
+        
+        // Ajouter les tuiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(fullscreenMap);
+        
+        // Ajouter tous les marqueurs à la carte plein écran
+        buildsData.forEach(build => {
+          const marker = L.marker([build.lat, build.lng], {
+            icon: createBuildIcon(build.mainPhoto)
+          }).addTo(fullscreenMap);
+          
+          // Utiliser le modal même en plein écran
+          marker.on('click', (e) => {
+            e.originalEvent.stopPropagation();
+            e.originalEvent.preventDefault();
+            openBuildModal(build);
+          });
+        });
+        
+        // Ajuster la vue aux marqueurs
+        if (buildsData.length > 0) {
+          const group = new L.featureGroup(
+            buildsData.map(build => L.marker([build.lat, build.lng]))
+          );
+          fullscreenMap.fitBounds(group.getBounds().pad(0.1));
+        }
+        
+        // Gestion coordonnées sur carte plein écran
+        setupCoordinateHandling(fullscreenMap);
+      }, 100);
+    };
+    
+    // Fonction pour fermer la carte plein écran
+    const closeFullscreenMap = () => {
+      const container = document.getElementById('fullscreen-map-container');
+      container.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      // Détruire la carte plein écran
+      if (fullscreenMap) {
+        fullscreenMap.remove();
+        fullscreenMap = null;
+      }
+    };
+    
+    // Fonction pour configurer la gestion des coordonnées
+    const setupCoordinateHandling = (mapInstance) => {
+      let touchTimer;
+      let isLongPress = false;
+      let clickedCoords = null;
+      
+      mapInstance.on('click', function(e) {
+        if (!isLongPress) return;
+        isLongPress = false;
+        
+        const { lat, lng } = e.latlng;
+        const coordsText = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+        
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(coordsText).then(() => {
+            showCoordinatesMessage(`Coordonnées copiées: ${coordsText}`);
+          });
+        } else {
+          showCoordinatesMessage(`Coordonnées: ${coordsText} (copiez manuellement)`);
+        }
+        
+        // Ajouter un marqueur temporaire
+        if (clickedCoords) mapInstance.removeLayer(clickedCoords);
+        clickedCoords = L.marker([lat, lng], {
+          icon: L.divIcon({
+            className: 'temp-marker',
+            html: '<div class="temp-marker-inner">📍</div>',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+          })
+        }).addTo(mapInstance);
+        
+        setTimeout(() => {
+          if (clickedCoords) {
+            mapInstance.removeLayer(clickedCoords);
+            clickedCoords = null;
+          }
+        }, 5000);
+      });
+      
+      mapInstance.on('touchstart', function() {
+        touchTimer = setTimeout(() => {
+          isLongPress = true;
+        }, 500);
+      });
+      
+      mapInstance.on('touchend touchcancel', function() {
+        clearTimeout(touchTimer);
+        setTimeout(() => { isLongPress = false; }, 100);
+      });
+    };
+    
+    // Gestionnaires pour la carte plein écran
+    if (isMobile) {
+      // Ajouter un bouton "Voir en plein écran" sur mobile
+      const mapContainer = document.querySelector('.map-container');
+      const fullscreenBtn = document.createElement('button');
+      fullscreenBtn.className = 'fullscreen-toggle-btn';
+      fullscreenBtn.innerHTML = '🔍 Voir en plein écran';
+      fullscreenBtn.addEventListener('click', openFullscreenMap);
+      mapContainer.appendChild(fullscreenBtn);
+    }
+    
+    // Gestionnaire pour fermer le plein écran
+    document.getElementById('fullscreen-close').addEventListener('click', closeFullscreenMap);
     
     // Ajouter les marqueurs pour chaque build
     buildsData.forEach(build => {
@@ -337,13 +453,8 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         icon: createBuildIcon(build.mainPhoto)
       }).addTo(map);
       
-      if (isMobile) {
-        // Sur mobile : utiliser le modal
-        marker.on('click', () => {
-          openBuildModal(build);
-        });
-      } else {
-        // Sur desktop : utiliser le popup classique
+      if (!isMobile) {
+        // Sur desktop uniquement : utiliser le popup classique
         let popupContent = `
           <div class="build-popup">
             <div class="build-popup-header">
@@ -372,6 +483,8 @@ const buildsJson = JSON.stringify(builds.map(build => ({
           className: 'build-popup-container'
         });
       }
+      // Sur mobile : pas d'interaction sur la petite carte, 
+      // les utilisateurs utilisent le bouton plein écran
     });
     
     // Ajuster la vue si des builds existent
@@ -382,15 +495,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       map.fitBounds(group.getBounds().pad(0.1));
     }
     
-    // Ajouter des instructions mobiles
-    if (window.innerWidth <= 768) {
-      const instructions = document.createElement('div');
-      instructions.className = 'mobile-instructions';
-      instructions.innerHTML = `
-        <p>📱 <strong>Appui long</strong> sur la carte pour obtenir vos coordonnées</p>
-      `;
-      mapElement.parentNode.insertBefore(instructions, mapElement);
-    }
+    // Plus d'instructions mobiles nécessaires
   });
 </script>
 
@@ -614,11 +719,13 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     visibility: hidden;
     transition: all 0.3s ease;
     padding: 1rem;
+    pointer-events: none;
   }
 
   .build-modal.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .modal-overlay {
@@ -632,11 +739,13 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    pointer-events: none;
   }
 
   .modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .build-modal-content {
@@ -897,6 +1006,103 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     opacity: 1;
   }
 
+  /* Styles pour la carte plein écran mobile */
+  .fullscreen-map-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10003;
+    background: var(--gray-999);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .fullscreen-map-container.active {
+    transform: translateY(0);
+  }
+
+  .fullscreen-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--gray-900);
+    border-bottom: 1px solid var(--gray-800);
+  }
+
+  .fullscreen-map-header h3 {
+    color: var(--accent-regular);
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .fullscreen-close {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .fullscreen-close:hover {
+    color: var(--gray-100);
+    background: var(--gray-800);
+  }
+
+  .fullscreen-map {
+    flex: 1;
+    width: 100%;
+  }
+
+  .fullscreen-instructions {
+    background: var(--gray-800);
+    color: var(--gray-300);
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--gray-700);
+  }
+
+  /* Bouton pour ouvrir la carte plein écran */
+  .fullscreen-toggle-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+  }
+
+  .fullscreen-toggle-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .map-container {
+    position: relative;
+  }
+
   @media (max-width: 768px) {
     .community-map-section h2 {
       font-size: 2rem;
@@ -907,16 +1113,21 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     }
 
     .build-modal {
-      padding: 0.5rem;
+      padding: 0;
       align-items: flex-end;
+      justify-content: center;
     }
 
     .build-modal-content {
-      max-height: 80vh;
+      max-height: 85vh;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      width: 100%;
+      width: 100vw;
       max-width: none;
+      margin: 0;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
     }
 
     .modal-main-image {
