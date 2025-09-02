@@ -320,7 +320,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       // Galerie d'images supplémentaires cliquables
       const gallery = document.getElementById('modal-gallery');
       if (build.additionalPhotos.length > 0) {
-        gallery.innerHTML = '<h4>Photos supplémentaires (cliquez pour agrandir)</h4>';
+        // Texte différent selon mobile/desktop
+        const galleryTitle = isMobile ? '<h4>Photos supplémentaires</h4>' : '<h4>Photos supplémentaires (cliquez pour agrandir)</h4>';
+        gallery.innerHTML = galleryTitle;
         build.additionalPhotos.forEach((photo, index) => {
           const img = document.createElement('img');
           img.src = photo;
@@ -439,15 +441,34 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     if (isMobile) {
       // Ajouter un bouton "Voir en plein écran" sur mobile
       const mapContainer = document.querySelector('.map-container');
+      
       if (mapContainer) {
+        // S'assurer qu'il n'y a pas déjà un bouton
+        const existingBtn = mapContainer.querySelector('.fullscreen-toggle-btn');
+        if (existingBtn) {
+          existingBtn.remove();
+        }
+        
         const fullscreenBtn = document.createElement('button');
         fullscreenBtn.className = 'fullscreen-toggle-btn';
         fullscreenBtn.innerHTML = '🔍 Voir en plein écran';
+        fullscreenBtn.style.cssText = `
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: var(--accent-regular);
+          color: white;
+          border: none;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          z-index: 1000;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        `;
         fullscreenBtn.addEventListener('click', openFullscreenMap);
         mapContainer.appendChild(fullscreenBtn);
-        console.log('Bouton plein écran ajouté');
-      } else {
-        console.error('Container de la carte non trouvé');
       }
     }
     
@@ -723,7 +744,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10001;
+    z-index: 20001;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -747,7 +768,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 10000;
+    z-index: 20000;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -876,7 +897,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10002;
+    z-index: 20002;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -897,7 +918,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.95);
-    z-index: 10001;
+    z-index: 20001;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -1103,6 +1124,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     z-index: 1000;
     box-shadow: var(--shadow-md);
     transition: all 0.2s ease;
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   .fullscreen-toggle-btn:hover {

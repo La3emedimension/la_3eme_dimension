@@ -1,0 +1,14 @@
+{
+  "title": "Smallest au bord de l'océan - Bretagne",
+  "author": "Marie Océane",
+  "description": "Une soirée magique avec mon Smallest sur la côte bretonne ! Observation de Saturne et Jupiter depuis la plage de Ploumanac'h avec vue sur les célèbres rochers de granit rose. La stabilité du télescope était parfaite malgré la brise marine. Un cadre exceptionnel pour l'astronomie avec un horizon dégagé et peu de pollution lumineuse. Les reflets de la lune sur l'océan ajoutaient une ambiance féérique à cette session d'observation.",
+  "webLink": "https://astro-bretagne.blog.fr",
+  "latitude": 48.835203,
+  "longitude": -3.486328,
+  "mainPhoto": "https://la3emedim.fr/assets/build-bretagne-main.jpg",
+  "additionalPhotos": [
+    "https://la3emedim.fr/assets/build-bretagne-1.jpg",
+    "https://la3emedim.fr/assets/build-bretagne-2.jpg"
+  ],
+  "draft": true
+}
