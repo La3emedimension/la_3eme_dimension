@@ -113,7 +113,6 @@ Découvrez les téléscopes Smallest construits par la communauté à travers le
 Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le vôtre ou que vous l'emmeniez en sortie, montrez-nous vos photos et inspirez d'autres astronomes.
 
 <style>
-
    .button {
         cursor: pointer;
             text-align : center;
@@ -131,21 +130,27 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
 
   video{
     width: 100%;
-		height: 100%;
-		aspect-ratio: auto;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
     margin: auto;
     max-height: 90vh;
-    object-fit: cover;
-    display: flex;
+    object-fit: contain;
+    display: block;
     border: 2px solid var(--gray-800);
-		border-radius: 3rem;
+    border-radius: 2rem;
     box-shadow: var(--shadow-md);
-}
+  }
   img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
     margin: auto;
     max-height: 90vh;
-    object-fit: cover;
-    display: flex;
+    object-fit: contain;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
   }
 .embedresize {
     max-width: 760px;
@@ -165,6 +170,45 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
     left: 0;
     width: 100%;
     height: 100%;
-		border-radius: 2rem;
+    border-radius: 2rem;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .embedresize {
+        max-width: 100%;
+        margin: 1rem auto;
+      }
+      
+      video {
+        border-radius: 1rem;
+        max-height: 60vh;
+        width: 100%;
+      }
+      
+      img {
+        max-height: 70vh;
+        margin: 1rem auto;
+        width: auto;
+        max-width: 100%;
+        display: block;
+      }
+      
+      .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Force proper alignment on mobile */
+      body, .content {
+        text-align: center;
+      }
+      
+      /* Center all block elements */
+      p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 </style>
