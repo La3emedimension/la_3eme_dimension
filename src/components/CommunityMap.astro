@@ -632,6 +632,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     margin: 0 !important;
     overflow-y: auto !important;
     max-height: 450px !important;
+    padding: 1rem !important;
   }
 
   :global(.build-popup-container .leaflet-popup-tip) {
@@ -662,37 +663,41 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   }
 
   :global(.build-popup-content h3) {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     color: var(--accent-regular);
     font-size: 1.2rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    padding: 0 0.5rem;
   }
 
   :global(.build-popup-content p) {
-    margin: 0.25rem 0;
+    margin: 0.5rem 0;
     color: var(--gray-300);
     font-size: 0.9rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.4;
+    padding: 0 0.5rem;
   }
 
   :global(.build-description) {
     font-style: italic;
     color: var(--gray-400) !important;
     font-size: 0.85rem !important;
-    margin: 0.5rem 0 !important;
+    margin: 0.75rem 0 !important;
     line-height: 1.5 !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     white-space: pre-wrap !important;
-    max-width: 350px !important;
+    max-width: 320px !important;
+    padding: 0 0.5rem !important;
   }
 
   :global(.build-popup-content a) {
     color: var(--accent-regular);
     text-decoration: none;
+    padding: 0 0.5rem;
   }
 
   :global(.build-popup-content a:hover) {
@@ -706,7 +711,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     flex-wrap: wrap;
     max-width: 350px;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
   }
 
   :global(.build-popup-thumb) {
