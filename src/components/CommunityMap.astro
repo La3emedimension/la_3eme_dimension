@@ -507,7 +507,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         }
         
         const popup = L.popup({
-          maxWidth: 300,
+          maxWidth: 400,
+          minWidth: 300,
+          maxHeight: 500,
           className: 'build-popup-container'
         }).setContent(popupContent);
         
@@ -622,6 +624,14 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     color: var(--gray-100);
     border-radius: 0.5rem;
     box-shadow: var(--shadow-xl);
+    max-width: none !important;
+    min-width: 300px !important;
+  }
+
+  :global(.build-popup-container .leaflet-popup-content) {
+    margin: 0 !important;
+    overflow-y: auto !important;
+    max-height: 450px !important;
   }
 
   :global(.build-popup-container .leaflet-popup-tip) {
@@ -629,7 +639,8 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   }
 
   :global(.build-popup) {
-    min-width: 250px;
+    min-width: 300px;
+    max-width: 380px;
   }
 
   :global(.build-popup-header) {
@@ -638,7 +649,8 @@ const buildsJson = JSON.stringify(builds.map(build => ({
 
   :global(.build-popup-image) {
     width: 100%;
-    height: 150px;
+    height: auto;
+    max-height: 200px;
     object-fit: contain;
     border-radius: 0.25rem;
     background: var(--gray-999);
@@ -653,12 +665,17 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     margin: 0 0 0.5rem 0;
     color: var(--accent-regular);
     font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   :global(.build-popup-content p) {
     margin: 0.25rem 0;
     color: var(--gray-300);
     font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
   }
 
   :global(.build-description) {
@@ -666,7 +683,11 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     color: var(--gray-400) !important;
     font-size: 0.85rem !important;
     margin: 0.5rem 0 !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: pre-wrap !important;
+    max-width: 350px !important;
   }
 
   :global(.build-popup-content a) {
@@ -683,22 +704,27 @@ const buildsJson = JSON.stringify(builds.map(build => ({
     gap: 0.5rem;
     margin-top: 1rem;
     flex-wrap: wrap;
+    max-width: 350px;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
   }
 
   :global(.build-popup-thumb) {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     border-radius: 0.25rem;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease;
     background: var(--gray-999);
+    flex-shrink: 0;
   }
 
   :global(.build-popup-thumb:hover) {
     border-color: var(--accent-regular);
     filter: brightness(1.1);
+    transform: scale(1.05);
   }
 
   /* Styles pour les fonctionnalités mobiles */
