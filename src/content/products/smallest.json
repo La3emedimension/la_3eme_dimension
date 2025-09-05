@@ -2,7 +2,7 @@
   "seoTitle": "Smallest - Télescope Portable compact | La 3ème dimension",
   "seoDescription": "Smallest : Le télescope 150/750 est portable, Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
   "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse, Montauban",
-  "ogImage": "https://la3emedim.fr/assets/150 V2 4.jpg",
+  "ogImage": "/assets/Smallest_fullsize (2).jpg",
   "price": "550€",
   "priceNote": "Hors optiques",
   "emailContact": "la3emedim@gmail.com",
@@ -31,7 +31,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/150 V2 4.jpg",
+    "image": "/assets/Smallest_fullsize (2).jpg",
     "features": [
       "Télescope Newton 150/750",
       "Portable et compact",
@@ -56,7 +56,7 @@
         ],
         "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
         "heroImage": {
-          "src": "/assets/150 V2 4.jpg",
+          "src": "/assets/Smallest_fullsize (1).jpg",
           "alt": "Télescope Smallest portable en configuration observation"
         }
       }
@@ -68,89 +68,88 @@
         "title": "Galerie complète",
         "images": [
           {
-            "src": "/assets/150-750 (8).jpg",
-            "alt": "Smallest en configuration transport",
-            "caption": "Le Smallest replié dans sa configuration de transport ultra-compacte - tient dans une sacoche d'ordinateur ou un sac à dos"
+            "src": "/assets/smallest (3).jpg",
+            "alt": "Smallest photo 3"
           },
           {
-            "src": "/assets/150-750 (13).jpg",
-            "alt": "Smallest en observation",
-            "caption": "Configuration d'observation complète - montage en moins de 4 minutes sans outil"
+            "src": "/assets/smallest (5).jpg",
+            "alt": "Smallest photo 5"
           },
           {
-            "src": "/assets/S150.jpg",
-            "alt": "Vue détaillée du télescope",
-            "caption": "Détails de la structure imprimée en 3D et du système de fixation des optiques"
+            "src": "/assets/smallest (6).jpg",
+            "alt": "Smallest photo 6"
           },
           {
-            "src": "/assets/S1502.jpg",
-            "alt": "Assemblage du télescope",
-            "caption": "Étapes d'assemblage du télescope - design modulaire et intuitif"
+            "src": "/assets/smallest (7).jpg",
+            "alt": "Smallest photo 7"
           },
           {
-            "src": "/assets/Smallest.jpg",
-            "alt": "Smallest assemblé",
-            "caption": "Montage rapide sans outils - De la sacoche à l'observation en 5 minutes"
+            "src": "/assets/smallest (8).jpg",
+            "alt": "Smallest photo 8"
           },
           {
-            "src": "/assets/150 1.jpg",
-            "alt": "Smallest vue 1",
-            "caption": "Vue détaillée de la structure en aluminium et des éléments imprimés 3D"
+            "src": "/assets/smallest (9).jpg",
+            "alt": "Smallest photo 9"
           },
           {
-            "src": "/assets/150 2.jpg",
-            "alt": "Smallest vue 2",
-            "caption": "Démonstration du système de pliage innovant"
+            "src": "/assets/smallest (10).jpg",
+            "alt": "Smallest photo 10"
           },
           {
-            "src": "/assets/150 V2 2.jpg",
-            "alt": "Nouvelle version",
-            "caption": "Évolution V2 du Smallest - améliorations ergonomiques et optimisations structurelles"
+            "src": "/assets/smallest (11).jpg",
+            "alt": "Smallest photo 11"
           },
           {
-            "src": "/assets/150 V2.jpg",
-            "alt": "Design V2",
-            "caption": "Design épuré de la version 2 - focus sur la simplicité d'utilisation"
+            "src": "/assets/smallest (12).jpg",
+            "alt": "Smallest photo 12"
           },
           {
-            "src": "/assets/150 V2 3.jpg",
-            "alt": "Version 2 - vue 3",
-            "caption": "Détails des connexions et du système de verrouillage rapide"
+            "src": "/assets/smallest (13).jpg",
+            "alt": "Smallest photo 13"
           },
           {
-            "src": "/assets/150 V2 4.jpg",
-            "alt": "Version 2 - vue 4",
-            "caption": "Vue d'ensemble de la structure Dobson intégrée"
+            "src": "/assets/smallest (14).jpg",
+            "alt": "Smallest photo 14"
           },
           {
-            "src": "/assets/m150.jpeg",
-            "alt": "Comparaison de taille",
-            "caption": "Comparaison avec un télescope traditionnel - gain de place spectaculaire"
+            "src": "/assets/smallest (16).jpg",
+            "alt": "Smallest photo 16"
           },
           {
-            "src": "/assets/POS (3).jpg",
-            "alt": "Présentation Pint of Science",
-            "caption": "Présentation du projet au festival Pint of Science 2024 à Toulouse"
+            "src": "/assets/smallest (17).jpg",
+            "alt": "Smallest photo 17"
           },
           {
-            "src": "/assets/c.jpg",
-            "alt": "Observation de la comète C/2023 A3",
-            "caption": "Comète C/2023 A3 (Tsuchinshan-ATLAS) observée le 21 octobre 2024 avec le Smallest"
+            "src": "/assets/smallest (18).jpg",
+            "alt": "Smallest photo 18"
           },
           {
-            "src": "/assets/c1.jpg",
-            "alt": "Photo comète à main levée",
-            "caption": "Photo de la comète réalisée à main levée avec un téléphone devant l'oculaire"
+            "src": "/assets/smallest (19).jpg",
+            "alt": "Smallest photo 19"
           },
           {
-            "src": "/assets/Moon_smallest.jpg",
-            "alt": "Photo de la lune",
-            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 1er août 2025 lors de l'observation avec le Smallest"
+            "src": "/assets/smallest (20).jpg",
+            "alt": "Smallest photo 20"
           },
           {
-            "src": "/assets/Moon_smallest_2.jpg",
-            "alt": "Astro-dessin de la comète",
-            "caption": "Photo réalisée à l'iphone 14 à mains levé devant l'oculaire le 8 août 2025 lors de l'observation avec le Smallest"
+            "src": "/assets/smallest (21).jpg",
+            "alt": "Smallest photo 21"
+          },
+          {
+            "src": "/assets/smallest (22).jpg",
+            "alt": "Smallest photo 22"
+          },
+          {
+            "src": "/assets/smallest (23).jpg",
+            "alt": "Smallest photo 23"
+          },
+          {
+            "src": "/assets/smallest (24).jpg",
+            "alt": "Smallest photo 24"
+          },
+          {
+            "src": "/assets/smallest (25).jpg",
+            "alt": "Smallest photo 25"
           }
         ],
         "background": "light"
@@ -190,7 +189,7 @@
           {
             "icon": "terminal-window",
             "title": "Impression 3D",
-            "description": "Précision optimale grâce à la fabrication additive. Structure légère et résistante. Personnalisable."
+            "description": "Précision optimale grâce à la fabrication additive. Structure légère et résistante. Personnalisable et imprimé en PETG chargé en fibre de carbone."
           }
         ]
       }

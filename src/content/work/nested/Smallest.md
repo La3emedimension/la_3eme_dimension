@@ -82,16 +82,6 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
   Pour plus d'informations ou passer commande, veuillez <a class="button" href="mailto:la3emedim@gmail.com">nous contacter</a>.
 
 
----
-<img src="/assets/S150.jpg">
-<img src="/assets/S1502.jpg">
-<img src="/assets/150 V2 2.jpg">
-<img src="/assets/150 V2.jpg">
-<img src="/assets/150 V2 3.jpg">
-<img src="/assets/150 V2 4.jpg">
-<img src="/assets/Smallest.jpg">
-<img src="/assets/150 1.jpg">
-<img src="/assets/150 2.jpg">
 
 Le projet a été présenté le 14 mai 2024 lors du festival <a class="button" href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
 
@@ -103,6 +93,38 @@ Image réalisée avec le téléphone à mains levées devant l'oculaire du téle
 <img src="/assets/c1.jpg">
 L'astro dessin de la comète réalisé avec le Smallest :
 <img src="/assets/c2.jpeg">
+
+### Version commerciale
+
+<img src="/assets/Smallest_fullsize (2).jpg">
+
+La version commerciale est imprimée en PETG CF.
+
+<a class="button" href="/product/smallest">Voir la page commerciale</a>
+
+### Galerie d'images
+
+<div class="gallery">
+  <div class="gallery-grid">
+    <img src="/assets/S150.jpg" alt="Vue détaillée du télescope Smallest">
+    <img src="/assets/S1502.jpg" alt="Assemblage du télescope">
+    <img src="/assets/150 1.jpg" alt="Smallest vue 1">
+    <img src="/assets/150 2.jpg" alt="Smallest vue 2">
+    <img src="/assets/150 V2 4.jpg" alt="Version 2 - vue 4">
+    <img src="/assets/m150.jpeg" alt="Comparaison de taille">
+    <img src="/assets/150-750 (13).jpg" alt="Configuration d'observation">
+    <img src="/assets/POS (2).jpg" alt="Présentation Pint of Science">
+    <img src="/assets/Moon_smallest_2.jpg" alt="Photo de la lune avec le Smallest">
+    <img src="/assets/Moon_smallest.jpg" alt="Observation lunaire">
+    <img src="/assets/Ncn2025_4.jpeg" alt="Nuit des Chercheurs 2025">
+    <img src="/assets/Ncn2025_6.jpeg" alt="Nuit des Chercheurs 2025">
+    <img src="/assets/Ncn2025_2.JPG" alt="Nuit des Chercheurs 2025">
+    <img src="/assets/150 V2 2.jpg" alt="Version 2 - vue 2">
+    <img src="/assets/150 V2.jpg" alt="Design V2">
+    <img src="/assets/150 V2 3.jpg" alt="Version 2 - vue 3">
+  </div>
+</div>
+
 
 ### La communauté Smallest
 
@@ -211,4 +233,373 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
         margin-right: auto;
       }
     }
+
+    /* Gallery styles */
+    .gallery {
+      margin: 2rem 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0.5rem;
+      }
+      
+      .gallery-grid img {
+        height: 200px;
+      }
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lightbox-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    
+    .lightbox-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+    
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+    
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .lightbox-prev {
+      left: 2rem;
+    }
+    
+    .lightbox-next {
+      right: 2rem;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 700px;
+      padding: 1.5rem 2rem;
+      min-height: 3rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    
+    .lightbox-counter {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .lightbox-container {
+        padding: 1rem;
+      }
+      
+      .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      
+      .lightbox-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      
+      .lightbox-prev {
+        left: 1rem;
+      }
+      
+      .lightbox-next {
+        right: 1rem;
+      }
+      
+      .lightbox-caption {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+      }
+      
+      .lightbox-image {
+        max-height: 60vh;
+      }
+      
+      .lightbox-caption {
+        font-size: 1.1rem;
+        padding: 1.25rem 1.5rem;
+        max-width: 90%;
+      }
+    }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create lightbox HTML dynamically
+  const lightboxHTML = `
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-overlay" id="lightbox-overlay"></div>
+      <div class="lightbox-container">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Image précédente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Image suivante">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <div class="lightbox-content">
+          <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+          <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Add lightbox to body
+  document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+  
+  // Initialize lightbox functionality
+  class ImageLightbox {
+    constructor() {
+      this.lightbox = document.getElementById('lightbox');
+      this.overlay = document.getElementById('lightbox-overlay');
+      this.closeBtn = document.getElementById('lightbox-close');
+      this.prevBtn = document.getElementById('lightbox-prev');
+      this.nextBtn = document.getElementById('lightbox-next');
+      this.image = document.getElementById('lightbox-image');
+      this.caption = document.getElementById('lightbox-caption');
+      this.counter = document.getElementById('lightbox-counter');
+      
+      this.images = [];
+      this.currentIndex = 0;
+      
+      this.init();
+    }
+    
+    init() {
+      this.collectImages();
+      this.addEventListeners();
+    }
+    
+    collectImages() {
+      const galleryImages = document.querySelectorAll('.gallery-grid img');
+      this.images = Array.from(galleryImages).map(img => ({
+        src: img.src,
+        alt: img.alt,
+        caption: img.alt || ''
+      }));
+    }
+    
+    addEventListeners() {
+      // Gallery image clicks
+      document.addEventListener('click', (e) => {
+        if (e.target.matches('.gallery-grid img')) {
+          e.preventDefault();
+          const index = this.images.findIndex(img => img.src === e.target.src);
+          if (index !== -1) {
+            this.openLightbox(index);
+          }
+        }
+      });
+      
+      // Close lightbox
+      this.closeBtn?.addEventListener('click', () => this.closeLightbox());
+      this.overlay?.addEventListener('click', () => this.closeLightbox());
+      
+      // Navigation
+      this.prevBtn?.addEventListener('click', () => this.previousImage());
+      this.nextBtn?.addEventListener('click', () => this.nextImage());
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!this.lightbox?.classList.contains('active')) return;
+        
+        switch (e.key) {
+          case 'Escape':
+            this.closeLightbox();
+            break;
+          case 'ArrowLeft':
+            this.previousImage();
+            break;
+          case 'ArrowRight':
+            this.nextImage();
+            break;
+        }
+      });
+    }
+    
+    openLightbox(index) {
+      this.currentIndex = index;
+      this.updateImage();
+      this.lightbox?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    closeLightbox() {
+      this.lightbox?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    previousImage() {
+      this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+      this.updateImage();
+    }
+    
+    nextImage() {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      this.updateImage();
+    }
+    
+    updateImage() {
+      const currentImage = this.images[this.currentIndex];
+      if (!currentImage) return;
+      
+      if (this.image) {
+        this.image.src = currentImage.src;
+        this.image.alt = currentImage.alt;
+      }
+      
+      if (this.caption) {
+        this.caption.textContent = currentImage.caption;
+        this.caption.style.display = currentImage.caption ? 'block' : 'none';
+      }
+      
+      if (this.counter) {
+        this.counter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
+      }
+      
+      // Update navigation button visibility
+      if (this.images.length <= 1) {
+        this.prevBtn?.style.setProperty('display', 'none');
+        this.nextBtn?.style.setProperty('display', 'none');
+      } else {
+        this.prevBtn?.style.setProperty('display', 'flex');
+        this.nextBtn?.style.setProperty('display', 'flex');
+      }
+    }
+  }
+  
+  // Initialize lightbox
+  new ImageLightbox();
+});
+</script>
