@@ -195,12 +195,24 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
     border-radius: 2rem;
     }
 
-    /* Mobile responsive */
+    /* Global mobile overflow fix */
     @media (max-width: 768px) {
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+      
+      * {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      
       .embedresize {
         max-width: 100%;
         margin: 1rem 0;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
       }
       
       video {
@@ -213,10 +225,11 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
       img {
         max-height: 60vh;
         margin: 1rem auto;
-        width: auto;
-        max-width: 90%;
+        width: 100%;
+        max-width: calc(100vw - 2rem);
         display: block;
         object-fit: contain;
+        box-sizing: border-box;
       }
       
       .button {
@@ -239,8 +252,10 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
         font-size: 1rem;
         line-height: 1.6;
         margin: 1rem 0;
-        padding: 0 0.5rem;
+        padding: 0 1rem;
         text-align: left;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
       
       blockquote {
@@ -280,7 +295,9 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
         max-height: 50vh;
         border-radius: 0.5rem;
         margin: 1rem auto;
-        max-width: 85%;
+        width: 100%;
+        max-width: calc(100vw - 3rem);
+        object-fit: contain;
       }
       
       .button {
