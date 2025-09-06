@@ -279,25 +279,30 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
       }
     }
     
-    /* Very small screens */
+    /* Very small screens (iPhone) */
     @media (max-width: 480px) {
       .embedresize {
         margin: 0.5rem 0;
-        padding: 0 0.5rem;
+        padding: 0;
+        width: 100%;
       }
       
       video {
         max-height: 40vh;
         border-radius: 0.5rem;
+        width: 100%;
+        max-width: 100vw;
+        margin: 0.5rem 0;
       }
       
       img {
         max-height: 50vh;
         border-radius: 0.5rem;
-        margin: 1rem auto;
+        margin: 0.5rem 0;
         width: 100%;
-        max-width: calc(100vw - 3rem);
+        max-width: 100vw;
         object-fit: contain;
+        padding: 0;
       }
       
       .button {
@@ -579,6 +584,31 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
         font-size: 0.9rem;
         padding: 0.75rem;
         max-width: 98%;
+      }
+    }
+    
+    /* iPhone specific fixes */
+    @media screen and (max-width: 414px) {
+      * {
+        max-width: 100% !important;
+      }
+      
+      img, video, iframe {
+        width: 100% !important;
+        max-width: calc(100vw - 1rem) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        object-fit: contain !important;
+      }
+      
+      .embedresize {
+        padding: 0 0.5rem !important;
+        margin: 0.5rem 0 !important;
+      }
+      
+      body {
+        overflow-x: hidden !important;
       }
     }
 </style>
