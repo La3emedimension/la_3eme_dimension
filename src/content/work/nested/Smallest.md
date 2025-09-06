@@ -199,38 +199,108 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
     @media (max-width: 768px) {
       .embedresize {
         max-width: 100%;
-        margin: 1rem auto;
+        margin: 1rem 0;
+        padding: 0 1rem;
       }
       
       video {
         border-radius: 1rem;
-        max-height: 60vh;
+        max-height: 50vh;
         width: 100%;
+        margin: 1rem 0;
       }
       
       img {
-        max-height: 70vh;
+        max-height: 60vh;
         margin: 1rem auto;
         width: auto;
-        max-width: 100%;
+        max-width: 90%;
         display: block;
+        object-fit: contain;
       }
       
       .button {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
+        display: inline-block;
+        margin: 0.5rem auto;
+        min-width: 100px;
       }
       
-      /* Force proper alignment on mobile */
-      body, .content {
+      /* Typography adjustments for mobile */
+      h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        line-height: 1.3;
+        margin: 1.5rem 0 1rem 0;
         text-align: center;
       }
       
-      /* Center all block elements */
-      p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
+      p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 1rem 0;
+        padding: 0 0.5rem;
         text-align: left;
-        margin-left: auto;
-        margin-right: auto;
+      }
+      
+      blockquote {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        border-left: 4px solid var(--accent-regular);
+        background: rgba(var(--accent-regular-rgb), 0.1);
+        border-radius: 0.5rem;
+        font-style: italic;
+      }
+      
+      /* Better spacing for lists */
+      ul, ol {
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+      }
+      
+      li {
+        margin: 0.5rem 0;
+        padding: 0;
+      }
+    }
+    
+    /* Very small screens */
+    @media (max-width: 480px) {
+      .embedresize {
+        margin: 0.5rem 0;
+        padding: 0 0.5rem;
+      }
+      
+      video {
+        max-height: 40vh;
+        border-radius: 0.5rem;
+      }
+      
+      img {
+        max-height: 50vh;
+        border-radius: 0.5rem;
+        margin: 1rem auto;
+        max-width: 85%;
+      }
+      
+      .button {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+        max-width: 150px;
+        margin: 0.5rem auto;
+        display: block;
+        text-align: center;
+      }
+      
+      h1, h2, h3, h4 {
+        font-size: clamp(1.1rem, 5vw, 1.8rem);
+        padding: 0 0.5rem;
+      }
+      
+      p, li {
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        text-align: left;
       }
     }
 
@@ -262,13 +332,30 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
     }
 
     @media (max-width: 768px) {
+      .gallery {
+        margin: 1.5rem 0;
+        padding: 0 0.5rem;
+      }
+      
       .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 0.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
       }
       
       .gallery-grid img {
-        height: 200px;
+        height: 180px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .gallery-grid img {
+        height: 220px;
+        width: 100%;
       }
     }
 
@@ -401,7 +488,7 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
     /* Mobile adjustments */
     @media (max-width: 768px) {
       .lightbox-container {
-        padding: 1rem;
+        padding: 0.5rem;
       }
       
       .lightbox-close {
@@ -424,19 +511,57 @@ Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le
         right: 1rem;
       }
       
+      .lightbox-image {
+        max-height: 70vh;
+        max-width: 95%;
+      }
+      
       .lightbox-caption {
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+        padding: 1rem;
+        max-width: 95%;
+        line-height: 1.4;
+      }
+      
+      .lightbox-counter {
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .lightbox-container {
+        padding: 0.25rem;
+      }
+      
+      .lightbox-close {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+      }
+      
+      .lightbox-nav {
+        width: 2rem;
+        height: 2rem;
+      }
+      
+      .lightbox-prev {
+        left: 0.5rem;
+      }
+      
+      .lightbox-next {
+        right: 0.5rem;
       }
       
       .lightbox-image {
-        max-height: 60vh;
+        max-height: 65vh;
+        max-width: 98%;
       }
       
       .lightbox-caption {
-        font-size: 1.1rem;
-        padding: 1.25rem 1.5rem;
-        max-width: 90%;
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        max-width: 98%;
       }
     }
 </style>
