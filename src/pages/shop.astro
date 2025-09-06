@@ -6,8 +6,17 @@ import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 
 // Get all products (excluding drafts in production)
-const allProducts = await getCollection('products', ({ data }) => {
+const products = await getCollection('products', ({ data }) => {
 	return import.meta.env.DEV || !data.draft;
+});
+
+// Sort products to put 'sur-mesure' first, then 'smallest'
+const allProducts = products.sort((a, b) => {
+	if (a.id === 'sur-mesure') return -1;
+	if (b.id === 'sur-mesure') return 1;
+	if (a.id === 'smallest') return -1;
+	if (b.id === 'smallest') return 1;
+	return 0;
 });
 
 // Business structured data for shop page

@@ -1,0 +1,240 @@
+{
+  "seoTitle": "Pièce sur mesure - Impression 3D personnalisée | La 3ème dimension",
+  "seoDescription": "Création sur mesure en impression 3D : prototypage, pièces techniques, objets personnalisés. Devis gratuit et expertise technique à Toulouse.",
+  "seoKeywords": "impression 3d sur mesure, prototype, pièce technique, impression 3d toulouse, fabrication additive, devis gratuit, conception 3d",
+  "ogImage": "/assets/Surmesure.png",
+  "price": "Sur devis",
+  "priceNote": "Devis gratuit",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impression 3D sur mesure",
+    "description": "Service d'impression 3D personnalisée et de conception sur mesure. Prototypage rapide, pièces techniques et objets personnalisés.",
+    "provider": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr",
+      "telephone": "+33-XXX-XXX-XXX",
+      "email": "la3emedim@gmail.com"
+    },
+    "serviceType": "Impression 3D",
+    "areaServed": "France",
+    "offers": {
+      "@type": "Offer",
+      "description": "Devis gratuit pour tous projets sur mesure",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Pièce sur mesure",
+        "tagline": "Votre idée, notre expertise",
+        "description": "De l'idée à la réalisation : nous concevons et imprimons vos pièces uniques en 3D.<br><strong>Devis gratuit</strong>",
+        "features": [
+          { "icon": "lightbulb", "text": "Conception 3D incluse" },
+          { "icon": "gear", "text": "Prototypage rapide" },
+          { "icon": "chat-circle", "text": "Accompagnement personnalisé" }
+        ],
+        "primaryCta": { "text": "Demander un devis gratuit", "href": "mailto:la3emedim@gmail.com?subject=Demande de devis - Pièce sur mesure" },
+        "heroImage": {
+          "src": "/assets/Surmesure.png",
+          "alt": "Pièce sur mesure imprimée en 3D"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-services",
+      "data": {
+        "title": "Nos services sur mesure",
+        "features": [
+          {
+            "icon": "cube-transparent",
+            "title": "Prototypage",
+            "description": "Validation rapide de vos concepts avec des prototypes fonctionnels. Itérations multiples pour optimiser votre design."
+          },
+          {
+            "icon": "gear",
+            "title": "Pièces techniques",
+            "description": "Fabrication de pièces mécaniques, supports, adaptateurs et composants techniques selon vos spécifications."
+          },
+          {
+            "icon": "palette",
+            "title": "Objets personnalisés",
+            "description": "Créations artistiques, objets décoratifs, cadeaux personnalisés et pièces uniques selon vos envies."
+          },
+          {
+            "icon": "wrench-screwdriver",
+            "title": "Réparation & adaptation",
+            "description": "Reproduction de pièces cassées ou obsolètes, création d'adaptateurs pour vos équipements existants."
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-process",
+      "data": {
+        "title": "Notre processus en 4 étapes",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "1. Analyse de votre projet",
+            "description": "Discussion de vos besoins, contraintes techniques et objectifs. Conseil sur les matériaux et procédés."
+          },
+          {
+            "icon": "pencil-line", 
+            "title": "2. Conception & modélisation",
+            "description": "Création du modèle 3D selon vos spécifications. Validation avec vous avant impression."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "3. Impression & finition",
+            "description": "Fabrication avec les matériaux adaptés. Contrôle qualité et finitions si nécessaires."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "4. Livraison",
+            "description": "Emballage soigné et expédition sécurisée. Support après-vente inclus."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-examples",
+      "data": {
+        "title": "Exemples de réalisations",
+        "description": "Découvrez quelques projets que nous avons réalisés pour nos clients",
+        "images": [
+          {
+            "src": "/assets/surmesure1.jpg",
+            "alt": "Pièce sur mesure 1"
+          },
+          {
+            "src": "/assets/surmesure2.jpg", 
+            "alt": "Pièce sur mesure 2"
+          },
+          {
+            "src": "/assets/surmesure3.jpg",
+            "alt": "Pièce sur mesure 3"
+          },
+          {
+            "src": "/assets/surmesure4.jpg",
+            "alt": "Pièce sur mesure 4"
+          },
+          {
+            "src": "/assets/surmesure5.jpg",
+            "alt": "Pièce sur mesure 5"
+          },
+          {
+            "src": "/assets/Surmesure6.jpg",
+            "alt": "Pièce sur mesure 6"
+          },
+          {
+            "src": "/assets/surmesure7.jpg",
+            "alt": "Pièce sur mesure 7"
+          },
+          {
+            "src": "/assets/surmesure8.jpg",
+            "alt": "Pièce sur mesure 8"
+          },
+          {
+            "src": "/assets/Surmesure10.jpg",
+            "alt": "Pièce sur mesure 10"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-capacites",
+      "data": {
+        "title": "Nos capacités techniques",
+        "specGroups": [
+          {
+            "title": "Matériaux disponibles",
+            "specs": {
+              "PLA": "Standard, rapide, économique",
+              "PETG": "Résistant, alimentaire, transparent",
+              "PETG-CF": "Chargé fibre de carbone, ultra-résistant",
+              "ASA": "Résistant UV et intempéries, mécaniquement solide",
+              "TPU": "Flexible, élastique, résistant usure"
+            }
+          },
+          {
+            "title": "Dimensions & précision",
+            "specs": {
+              "Précision": "±0.1 mm",
+              "Épaisseur couche": "0.1 à 0.3 mm",
+              "Résolution": "Haute définition",
+              "Post-traitement": "Ponçage, peinture, assemblage"
+            }
+          },
+          {
+            "title": "Services inclus",
+            "specs": {
+              "Conception 3D": "Modélisation complète",
+              "Conseils techniques": "Choix matériaux & procédés",
+              "Prototypage itératif": "Améliorations successives",
+              "Support après-vente": "Assistance technique",
+              "Livraison": "France métropolitaine"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-tarifs",
+      "data": {
+        "title": "Tarification sur mesure",
+        "price": "Tarification adaptée",
+        "priceNote": "Selon vos besoins",
+        "included": [
+          "Analyse de vos besoins",
+          "Conseil sur les matériaux",
+          "Conception 3D si nécessaire", 
+          "Impression haute qualité",
+          "Contrôle qualité",
+          "Emballage soigné",
+          "Support technique"
+        ],
+        "ctaText": "Obtenir un devis gratuit",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Demande de devis - Pièce sur mesure&body=Bonjour,%0A%0AJe souhaiterais obtenir un devis pour :%0A%0A- Description de votre projet :%0A- Quantité souhaitée :%0A- Contraintes spécifiques :%0A- Délai souhaité :%0A%0AMerci de me recontacter rapidement.%0A%0ACordialement",
+        "optionsTitle": "Facteurs de tarification",
+        "options": [
+          {
+            "title": "Complexité du projet",
+            "description": "Temps de conception, précision requise, détails techniques"
+          },
+          {
+            "title": "Matériaux choisis",
+            "description": "Standard (PLA/PETG) ou spécialisés (PETG-CF, ASA, TPU)"
+          },
+          {
+            "title": "Quantité et finitions",
+            "description": "Pièce unique, série limitée, post-traitement spécifique"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "services", "label": "Services" },
+    { "id": "process", "label": "Processus" },
+    { "id": "examples", "label": "Exemples" },
+    { "id": "capacites", "label": "Capacités" },
+    { "id": "tarifs", "label": "Tarifs" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "draft": false
+}
