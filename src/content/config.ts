@@ -28,6 +28,9 @@ export const collections = {
 			// Draft mode
 			draft: z.boolean().optional(),
 			
+			// Category
+			category: z.enum(['services', 'telescope', 'accessoire']).optional(),
+			
 			// Product pricing and purchase
 			price: z.string().optional(),
 			priceNote: z.string().optional(),

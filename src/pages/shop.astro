@@ -10,6 +10,14 @@ const products = await getCollection('products', ({ data }) => {
 	return import.meta.env.DEV || !data.draft;
 });
 
+// Define categories
+const categories = [
+	{ id: 'all', name: 'Tous les produits' },
+	{ id: 'services', name: 'Services' },
+	{ id: 'telescope', name: 'Astronomie' },
+	{ id: 'accessoire', name: 'Accessoires' }
+];
+
 // Sort products to put 'sur-mesure' first, then 'smallest'
 const allProducts = products.sort((a, b) => {
 	if (a.id === 'sur-mesure') return -1;
@@ -50,21 +58,27 @@ const shopStructuredData = {
 	keywords="boutique impression 3d, télescope portable, accessoire voyage, instrument éducatif, smallest telescope, backpack hook, lunette astronomique, toulouse"
 	structuredData={shopStructuredData}
 >
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
+	<div class="stack gap-12 lg:gap-20">
+		<div class="wrapper stack gap-2 lg:gap-4">
 			<header class="hero">
 				<Hero
 					title="Boutique"
 					tagline="Nos produits imprimés en 3D"
 					align="start"
-				>
-					<div class="roles">
-						<span class="pill">Impression 3D</span>
-						<span class="pill">Conception</span>
-						<span class="pill">Made in France</span>
-					</div>
-				</Hero>
+				/>
 			</header>
+			
+			<!-- Category Filter -->
+			<div class="category-filter">
+				{categories.map((category) => (
+					<button 
+						class={`category-btn ${category.id === 'all' ? 'active' : ''}`}
+						data-category={category.id}
+					>
+						{category.name}
+					</button>
+				))}
+			</div>
 		</div>
 
 		<main class="wrapper">
@@ -75,7 +89,7 @@ const shopStructuredData = {
 					const heroData = heroSection?.data;
 					
 					return (
-						<article class="product-card">
+						<article class="product-card" data-category={product.data.category || 'all'}>
 							<a href={`/product/${product.id}`} class="card-link">
 								<div class="card-image">
 									<img 
@@ -203,15 +217,66 @@ const shopStructuredData = {
 		color: var(--gray-100);
 	}
 
+	/* Category Filter */
+	.category-filter {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		padding: 0 1rem;
+	}
+
+	.category-btn {
+		padding: 0.75rem 1.5rem;
+		border: 2px solid var(--gray-800);
+		background: var(--gray-900);
+		color: var(--gray-300);
+		border-radius: 2rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all var(--theme-transition);
+		font-size: var(--text-sm);
+		white-space: nowrap;
+		transform: translateY(0);
+	}
+
+	.category-btn:hover {
+		border-color: var(--accent-regular);
+		color: var(--gray-100);
+		background: var(--gray-800);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.category-btn.active {
+		border-color: var(--accent-regular);
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-md);
+	}
+
 	/* Product Grid */
 	.product-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 2rem;
 		width: 100%;
+		transition: all 0.3s ease;
 	}
 
 	.product-card {
+		transition: all 0.3s ease;
+	}
+
+	.product-card.hidden {
+		opacity: 0;
+		transform: scale(0.9);
+		pointer-events: none;
+	}
+
+	.product-card:not(.hidden) {
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		border-radius: 1rem;
@@ -407,3 +472,59 @@ const shopStructuredData = {
 		}
 	}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const categoryButtons = document.querySelectorAll('.category-btn');
+	const productCards = document.querySelectorAll('.product-card');
+	const surMesureCard = document.querySelector('.product-card[data-category="services"]');
+
+	function filterProducts(selectedCategory) {
+		// Simple show/hide logic only
+		productCards.forEach(card => {
+			const cardCategory = card.getAttribute('data-category') || 'all';
+			
+			if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+				card.style.display = 'flex';
+			} else {
+				card.style.display = 'none';
+			}
+		});
+
+		// Update active button
+		categoryButtons.forEach(btn => btn.classList.remove('active'));
+		const activeBtn = document.querySelector(`[data-category="${selectedCategory}"]`);
+		if (activeBtn) activeBtn.classList.add('active');
+		
+		// Scroll to products section
+		setTimeout(() => {
+			const productGrid = document.querySelector('.product-grid');
+			if (productGrid) {
+				productGrid.scrollIntoView({ 
+					behavior: 'smooth', 
+					block: 'start' 
+				});
+			}
+		}, 100);
+	}
+
+	// Add click event listeners
+	categoryButtons.forEach(button => {
+		button.addEventListener('click', (e) => {
+			const selectedCategory = e.target.getAttribute('data-category');
+			filterProducts(selectedCategory);
+		});
+	});
+
+	// Initialize: ensure sur-mesure is first on load
+	if (surMesureCard) {
+		surMesureCard.style.order = '-2';
+	}
+	
+	// Set smallest as second
+	const smallestCard = document.querySelector('.product-card[data-category="telescope"]');
+	if (smallestCard) {
+		smallestCard.style.order = '-1';
+	}
+});
+</script>

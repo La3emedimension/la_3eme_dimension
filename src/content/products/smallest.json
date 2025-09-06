@@ -295,5 +295,6 @@
   ],
   "showContactCTA": true,
   "showNavigation": true,
-  "showLightbox": true
+  "showLightbox": true,
+  "category": "telescope"
 }
