@@ -28,6 +28,7 @@ const formatDate = (date: Date) => {
   title={entry.data.title}
   description={`Article de blog : ${entry.data.title}`}
   keywords={`blog, impression 3d, ${entry.data.title.toLowerCase()}`}
+  ogImage={entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png"}
 >
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper">

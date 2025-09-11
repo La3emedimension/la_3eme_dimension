@@ -23,6 +23,7 @@ const formatDate = (date: Date) => {
   title="Le billet de blog - La 3ème dimension"
   description="Articles et actualités de La 3ème dimension - impression 3D, télescopes et innovations"
   keywords="blog impression 3d, actualités télescope, innovations 3d, la 3eme dimension"
+  ogImage={sortedPosts.length > 0 && sortedPosts[0].data.img ? `https://la3emedim.fr${sortedPosts[0].data.img}` : "https://la3emedim.fr/assets/smallest (16).jpg"}
 >
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">

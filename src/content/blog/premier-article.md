@@ -1,12 +1,12 @@
 ---
 title: "Bienvenue sur notre blog !"
-publishDate: 2024-01-15
+publishDate: 2025-09-11
 img: "/assets/smallest (16).jpg"
 ---
 
 # Et Bonjour !
 
-Nous sommes ravis de lancer notre nouveau blog ! Ici, nous partagerons nos dernières créations, nos projets et nos idées/pensées dans le domaine de l'impression 3D et le design.
+Nous sommes ravis de lancer notre nouveau blog ! Ici, nous partagerons nos dernières créations, nos projets et nos idées/pensées dans le domaine de l'impression 3D et du  design.
 
 ## Ce que vous trouverez ici
 
