@@ -1,0 +1,258 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/Icon.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Formatter la date
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long", 
+    day: "numeric"
+  });
+};
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={`Article de blog : ${entry.data.title}`}
+  keywords={`blog, impression 3d, ${entry.data.title.toLowerCase()}`}
+>
+  <div class="stack gap-20 lg:gap-48">
+    <div class="wrapper">
+      <header class="blog-header">
+        <nav class="breadcrumb">
+          <a href="/blog">
+            <Icon icon="arrow-left" size="1em" />
+            Retour au blog
+          </a>
+        </nav>
+        
+        <div class="article-meta">
+          <time datetime={entry.data.publishDate.toISOString()}>
+            {formatDate(entry.data.publishDate)}
+          </time>
+          <h1>{entry.data.title}</h1>
+        </div>
+
+        {entry.data.img && (
+          <img
+            src={entry.data.img}
+            alt={entry.data.title}
+            class="hero-image"
+            loading="eager"
+            decoding="async"
+          />
+        )}
+      </header>
+
+      <main class="blog-content">
+        <Content />
+      </main>
+
+      <footer class="blog-footer">
+        <nav class="back-to-blog">
+          <a href="/blog">
+            <Icon icon="arrow-left" size="1em" />
+            Voir tous les articles
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-header {
+    margin-bottom: 3rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-regular);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: color var(--theme-transition);
+  }
+
+  .breadcrumb a:hover {
+    color: var(--accent-light);
+  }
+
+  .article-meta {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .article-meta time {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .article-meta h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .blog-content {
+    max-width: 65ch;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .blog-content :global(h2) {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gray-100);
+  }
+
+  .blog-content :global(h3) {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--gray-200);
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1.5rem;
+    color: var(--gray-300);
+  }
+
+  .blog-content :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .blog-content :global(blockquote) {
+    border-left: 4px solid var(--accent-regular);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--gray-400);
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 0.5rem;
+    color: var(--gray-300);
+  }
+
+  .blog-content :global(a) {
+    color: var(--accent-regular);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    transition: color var(--theme-transition);
+  }
+
+  .blog-content :global(a:hover) {
+    color: var(--accent-light);
+  }
+
+  .blog-content :global(code) {
+    background: var(--gray-800);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    color: var(--gray-100);
+  }
+
+  .blog-content :global(pre) {
+    background: var(--gray-800);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .blog-content :global(pre code) {
+    background: transparent;
+    padding: 0;
+  }
+
+  .blog-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-800);
+    text-align: center;
+  }
+
+  .back-to-blog a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-regular);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent-regular);
+    border-radius: 2rem;
+    transition: all var(--theme-transition);
+  }
+
+  .back-to-blog a:hover {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+  }
+
+  @media (max-width: 50em) {
+    .article-meta h1 {
+      font-size: var(--text-3xl);
+    }
+
+    .blog-content {
+      max-width: none;
+    }
+
+    .hero-image {
+      max-height: 300px;
+    }
+  }
+</style>

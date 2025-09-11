@@ -56,7 +56,7 @@
         ],
         "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
         "heroImage": {
-          "src": "/assets/Smallest_fullsize (1).jpg",
+          "src": "/assets/Smallest_fullsize(1).jpg",
           "alt": "Télescope Smallest portable en configuration observation"
         }
       }

@@ -15,6 +15,15 @@ export const collections = {
 			seoKeywords: z.string().optional(),
 		}),
 	}),
+	blog: defineCollection({
+		type: 'content',
+		schema: z.object({
+			title: z.string(),
+			publishDate: z.coerce.date(),
+			img: z.string().optional(),
+			img_alt: z.string().optional(),
+		}),
+	}),
 	products: defineCollection({
 		type: 'data',
 		schema: z.object({
