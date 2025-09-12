@@ -6,7 +6,7 @@ img: "/assets/starparty1.jpg"
 
 # La 3eme Dimension à la Star Party de Gratentour
 
-Suite à une sortie astro avec Nicolas Lacoste et Kamal Moufakir, les organisateurs de la Star Party de Gratentour, que j’ai eu lla chance d’être invité à cet événement.
+Suite à une sortie astro avec Nicolas Lacoste et Kamal Moufakir, les organisateurs de la Star Party de Gratentour, j’ai eu la chance d’être invité. 
 
 Le 11 octobre, rendez-vous à la Salle des Fêtes de Gratentour pour une journée et une soirée placées sous le signe de l’astronomie, de l’environnement et de la découverte du ciel.
 
