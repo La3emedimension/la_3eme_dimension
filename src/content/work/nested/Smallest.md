@@ -96,7 +96,7 @@ L'astro dessin de la comète réalisé avec le Smallest :
 
 ### Version commerciale
 
-<img src="/assets/Smallest_fullsize (2).jpg">
+<img src="/assets/Smallest_fullsize(2).jpg">
 
 La version commerciale est imprimée en PETG CF.
 
