@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
+import FocalCalculator from "../../components/FocalCalculator.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -13,6 +14,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Vérifier si c'est l'article OEP qui nécessite le calculateur
+console.log('Entry slug:', entry.slug);
+const needsCalculator = entry.slug === 'oep';
+
+// Pour l'article OEP, diviser le contenu au marqueur
+let contentParts = null;
+if (needsCalculator) {
+  const contentHTML = await entry.render().then(result => result.Content);
+  // On va traiter cela côté client avec JavaScript
+}
 
 // Formatter la date
 const formatDate = (date: Date) => {
@@ -61,6 +73,12 @@ const formatDate = (date: Date) => {
       <main class="blog-content">
         <Content />
       </main>
+
+      {needsCalculator && (
+        <div id="calculator-template" style="display: none;">
+          <FocalCalculator />
+        </div>
+      )}
 
       <footer class="blog-footer">
         <nav class="back-to-blog">
@@ -256,4 +274,243 @@ const formatDate = (date: Date) => {
       max-height: 300px;
     }
   }
+
+  /* Styles pour le calculateur de focale */
+  .focal-calculator-wrapper {
+    margin: 2rem 0;
+  }
+
+  .focal-calculator {
+    padding: 2rem;
+    background: var(--gradient-subtle);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .calculator-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--gray-200);
+    font-weight: 500;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 0.5rem;
+    background: var(--gray-900);
+    color: var(--gray-100);
+    font-size: var(--text-base);
+    transition: border-color var(--theme-transition);
+    box-sizing: border-box;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--accent-regular);
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+  }
+
+  .input-group input::placeholder {
+    color: var(--gray-500);
+  }
+
+  #calculate-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--theme-transition);
+    margin-bottom: 1.5rem;
+  }
+
+  #calculate-btn:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .focal-calculator .result {
+    background: var(--gray-800);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--theme-transition);
+    border: 1px solid var(--gray-700);
+  }
+
+  .focal-calculator .result p {
+    margin: 0;
+    font-size: var(--text-lg);
+    color: var(--gray-200);
+  }
+
+  .focal-calculator .result span {
+    color: var(--accent-regular);
+    font-weight: 700;
+    font-size: var(--text-xl);
+  }
+
+  .recommendations {
+    background: var(--gray-950);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .recommendations h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--gray-100);
+    font-size: var(--text-lg);
+  }
+
+  .recommendations ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .recommendations li {
+    margin-bottom: 0.75rem;
+    color: var(--gray-300);
+    line-height: 1.5;
+  }
+
+  .recommendations strong {
+    color: var(--accent-regular);
+  }
+
+  @media (max-width: 50em) {
+    .focal-calculator {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .recommendations {
+      padding: 1rem;
+    }
+    
+    .recommendations ul {
+      padding-left: 1rem;
+    }
+  }
 </style>
+
+<script>
+  // Fonction pour configurer les événements du calculateur
+  function setupCalculatorEvents() {
+    console.log('Setting up calculator events');
+    const f1Input = document.getElementById('f1');
+    const f2Input = document.getElementById('f2');
+    const distanceInput = document.getElementById('distance');
+    const result = document.getElementById('result');
+    const eyepieceFocal = document.getElementById('eyepiece-focal');
+
+    console.log('Calculator elements after injection:', {
+      f1Input: !!f1Input,
+      f2Input: !!f2Input,
+      distanceInput: !!distanceInput,
+      result: !!result,
+      eyepieceFocal: !!eyepieceFocal
+    });
+
+    if (f1Input && f2Input && distanceInput && result && eyepieceFocal) {
+      function calculate() {
+        console.log('Calculate function called');
+        const f1 = parseFloat(f1Input.value);
+        const f2 = parseFloat(f2Input.value);
+        const d = parseFloat(distanceInput.value);
+
+        console.log('Values:', {f1, f2, d});
+
+        if (!f1 || !f2 || !d || f1 <= 0 || f2 <= 0 || d < 0) {
+          console.log('Invalid values');
+          alert('Veuillez entrer des valeurs valides');
+          return;
+        }
+
+        // Formule : F = (f1*f2) / (f1+f2-d)
+        const denominator = f1 + f2 - d;
+        console.log('Denominator:', denominator);
+        
+        if (denominator === 0) {
+          alert('Erreur: f1 + f2 - d = 0, calcul impossible');
+          return;
+        }
+
+        const eyepieceFocalLength = (f1 * f2) / denominator;
+        console.log('Result:', eyepieceFocalLength);
+        
+        eyepieceFocal.textContent = eyepieceFocalLength.toFixed(1);
+        result.style.opacity = '1';
+        result.style.transform = 'translateY(0)';
+        console.log('Result displayed');
+      }
+
+      // Calcul en temps réel quand on tape
+      [f1Input, f2Input, distanceInput].forEach(input => {
+        input.addEventListener('input', function() {
+          if (f1Input.value && f2Input.value && distanceInput.value) {
+            calculate();
+          }
+        });
+      });
+
+      console.log('Calculator events attached successfully');
+    } else {
+      console.error('Some calculator elements not found after injection');
+    }
+  }
+
+  // Injecter le calculateur au bon endroit dans l'article OEP
+  document.addEventListener('DOMContentLoaded', function() {
+    const blogContent = document.querySelector('.blog-content');
+    const calculatorTemplate = document.getElementById('calculator-template');
+    
+    console.log('needsCalculator from server:', window.location.pathname);
+    console.log('Elements found:', {blogContent: !!blogContent, calculatorTemplate: !!calculatorTemplate});
+    
+    if (blogContent && calculatorTemplate) {
+      // Chercher le texte "---SPLIT_CONTENT_HERE---" dans le HTML
+      const htmlContent = blogContent.innerHTML;
+      
+      if (htmlContent.includes('---SPLIT_CONTENT_HERE---')) {
+        // Diviser le contenu au marqueur
+        const parts = htmlContent.split('---SPLIT_CONTENT_HERE---');
+        
+        // Recréer le contenu avec le calculateur au milieu
+        const calculatorHTML = calculatorTemplate.innerHTML;
+        const newContent = parts[0] + calculatorHTML + parts[1];
+        
+        blogContent.innerHTML = newContent;
+        
+        console.log('Calculateur injecté avec succès');
+        
+        // Maintenant attacher les événements du calculateur
+        setupCalculatorEvents();
+      } else {
+        console.log('Marqueur SPLIT_CONTENT_HERE non trouvé');
+      }
+    } else {
+      console.log('Elements non trouvés:', {blogContent, calculatorTemplate});
+    }
+  });
+</script>

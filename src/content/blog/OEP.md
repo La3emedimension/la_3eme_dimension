@@ -29,7 +29,19 @@ l est constitué de deux doublets symétriques, chacun formé de deux lentilles 
 ![OEP oculaire avec sens des lentilles visible](/assets/OEPdraw.PNG )
 
 ## Un outil ?
-En suivant ses recommandations et ses calculs, j’ai développé mon propre outil pour calculer la focale d’un oculaire, accessible en ligne : [Mon calculateur de focale](https://codepen.io/La3emedimension/pen/gONpMZo)
+
+Un oculaire Plössl est constitué de deux doublets achromatiques symétriques. Sa distance focale effective (F) peut être approchée par la formule générale des systèmes optiques composés :
+
+![Formule optique plôssl](/assets/OEPFormuleplossl.png)
+
+- **f1 et f2**  = focales des deux doublets,
+- **d** = distance séparant les deux doublets (mesurée entre leurs plans principaux).
+
+Attention : cette formule n’est qu’une approximation. Pour modéliser précisément un Plössl, il faut utiliser des méthodes de tracé de rayons ou de matrices optiques (méthode ABCD), et non se limiter à la formule des deux lentilles.
+
+En suivant ses recommandations et ses calculs, j'ai développé mon propre outil pour calculer la focale d'un oculaire, accessible en ligne : Mon calculateur de focale
+
+---SPLIT_CONTENT_HERE---
 
 Un oculaire Plössl est constitué de deux doublets achromatiques symétriques. Sa distance focale effective (F) peut être approchée par la formule générale des systèmes optiques composés :
 

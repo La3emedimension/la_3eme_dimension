@@ -1,0 +1,221 @@
+---
+// Composant calculateur de focale
+---
+
+<div class="focal-calculator">
+  <div class="calculator-container">
+    <div class="input-group">
+      <label for="f1">Focale du premier doublet (f1) en mm :</label>
+      <input type="number" id="f1" placeholder="Ex: 40" />
+    </div>
+    
+    <div class="input-group">
+      <label for="f2">Focale du second doublet (f2) en mm :</label>
+      <input type="number" id="f2" placeholder="Ex: 40" />
+    </div>
+    
+    <div class="input-group">
+      <label for="distance">Distance entre doublets (d) en mm :</label>
+      <input type="number" id="distance" placeholder="Ex: 20" />
+    </div>
+    
+    <div class="result" id="result">
+      <p>Focale effective de l'oculaire : <span id="eyepiece-focal">--</span> mm</p>
+    </div>
+    
+    <div class="recommendations">
+      <h3>À propos de la formule :</h3>
+      <ul>
+        <li><strong>F = (f1×f2) / (f1+f2-d)</strong> : Formule des systèmes optiques composés</li>
+        <li><strong>f1 et f2</strong> : Focales des deux doublets achromatiques</li>
+        <li><strong>d</strong> : Distance entre les plans principaux des doublets</li>
+        <li><strong>Pour un Plössl symétrique</strong> : f1 = f2 (même focale pour les deux doublets)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Attendre que le DOM soit chargé
+  document.addEventListener('DOMContentLoaded', function() {
+    const f1Input = document.getElementById('f1');
+    const f2Input = document.getElementById('f2');
+    const distanceInput = document.getElementById('distance');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const result = document.getElementById('result');
+    const eyepieceFocal = document.getElementById('eyepiece-focal');
+
+    console.log('Calculator elements:', {
+      f1Input: !!f1Input,
+      f2Input: !!f2Input,
+      distanceInput: !!distanceInput,
+      calculateBtn: !!calculateBtn,
+      result: !!result,
+      eyepieceFocal: !!eyepieceFocal
+    });
+
+    function calculate() {
+      console.log('Calculate function called');
+      const f1 = parseFloat(f1Input.value);
+      const f2 = parseFloat(f2Input.value);
+      const d = parseFloat(distanceInput.value);
+
+      console.log('Values:', {f1, f2, d});
+
+      if (!f1 || !f2 || !d || f1 <= 0 || f2 <= 0 || d < 0) {
+        console.log('Invalid values');
+        alert('Veuillez entrer des valeurs valides');
+        return;
+      }
+
+      // Formule : F = (f1*f2) / (f1+f2-d)
+      const denominator = f1 + f2 - d;
+      console.log('Denominator:', denominator);
+      
+      if (denominator === 0) {
+        alert('Erreur: f1 + f2 - d = 0, calcul impossible');
+        return;
+      }
+
+      const eyepieceFocalLength = (f1 * f2) / denominator;
+      console.log('Result:', eyepieceFocalLength);
+      
+      if (eyepieceFocal) {
+        eyepieceFocal.textContent = eyepieceFocalLength.toFixed(1);
+        result.style.opacity = '1';
+        result.style.transform = 'translateY(0)';
+        console.log('Result displayed');
+      } else {
+        console.error('eyepieceFocal element not found');
+      }
+    }
+
+    calculateBtn.addEventListener('click', calculate);
+
+    // Calcul en temps réel quand on tape
+    [f1Input, f2Input, distanceInput].forEach(input => {
+      input.addEventListener('input', function() {
+        if (f1Input.value && f2Input.value && distanceInput.value) {
+          calculate();
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .focal-calculator {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--gradient-subtle);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .calculator-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--gray-200);
+    font-weight: 500;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 0.5rem;
+    background: var(--gray-900);
+    color: var(--gray-100);
+    font-size: var(--text-base);
+    transition: border-color var(--theme-transition);
+    box-sizing: border-box;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--accent-regular);
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+  }
+
+  .input-group input::placeholder {
+    color: var(--gray-500);
+  }
+
+
+  .result {
+    background: var(--gray-800);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    margin: 1.5rem 0 2rem 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--theme-transition);
+    border: 1px solid var(--gray-700);
+  }
+
+  .result p {
+    margin: 0;
+    font-size: var(--text-lg);
+    color: var(--gray-200);
+  }
+
+  .result span {
+    color: var(--accent-regular);
+    font-weight: 700;
+    font-size: var(--text-xl);
+  }
+
+  .recommendations {
+    background: var(--gray-950);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .recommendations h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--gray-100);
+    font-size: var(--text-lg);
+  }
+
+  .recommendations ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .recommendations li {
+    margin-bottom: 0.75rem;
+    color: var(--gray-300);
+    line-height: 1.5;
+  }
+
+  .recommendations strong {
+    color: var(--accent-regular);
+  }
+
+  @media (max-width: 50em) {
+    .focal-calculator {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .recommendations {
+      padding: 1rem;
+    }
+    
+    .recommendations ul {
+      padding-left: 1rem;
+    }
+  }
+</style>
