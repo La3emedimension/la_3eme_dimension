@@ -24,7 +24,7 @@ Il existe même un groupe Facebook dédié à ses travaux et à ceux de la commu
 
 ## Le Schéma optique
 
-l est constitué de deux doublets symétriques, chacun formé de deux lentilles collées. Ces deux doublets sont placés face à face, séparés par un petit espace appelé spacer.
+Il est constitué de deux doublets symétriques, chacun formé de deux lentilles collées. Ces deux doublets sont placés face à face, séparés par un petit espace appelé spacer.
 
 ![OEP oculaire avec sens des lentilles visible](/assets/OEPdraw.PNG )
 
