@@ -22,15 +22,19 @@ Côté optique, je commence avec des lentilles disponibles sur AliExpress, histo
 Dans mon approche, je me suis beaucoup inspiré du travail de Red Henry, un amateur passionné basé aux États-Unis, qui fabrique lui-même ses oculaires et partage ses expériences et ses conseils.
 Il existe même un groupe Facebook dédié à ses travaux et à ceux de la communauté : [ATM Eyepieces (Red Henry)](https://www.facebook.com/groups/1484777181687589/)
 
+![OEP oculaire avec sens des lentilles visible](/assets/OEPdraw.PNG )
+
 ## Un outil ?
 En suivant ses recommandations et ses calculs, j’ai développé mon propre outil pour calculer la focale d’un oculaire, accessible en ligne : [Mon calculateur de focale](https://codepen.io/La3emedimension/pen/gONpMZo)
 
-Un oculaire Plössl est constitué de deux doublets achromatiques symétriques. Sa distance focale effective (EFL) peut être approchée par la formule générale des systèmes optiques composés :
+Un oculaire Plössl est constitué de deux doublets achromatiques symétriques. Sa distance focale effective (F) peut être approchée par la formule générale des systèmes optiques composés :
 
 ![Formule optique plôssl](/assets/OEPFormuleplossl.png)
 
 - **f1 et f2**  = focales des deux doublets,
 - **d** = distance séparant les deux doublets (mesurée entre leurs plans principaux).
+
+Attention : cette formule n’est qu’une approximation. Pour modéliser précisément un Plössl, il faut utiliser des méthodes de tracé de rayons ou de matrices optiques (méthode ABCD), et non se limiter à la formule des deux lentilles.
 
 ## Les premiers protos
 
