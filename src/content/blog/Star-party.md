@@ -35,6 +35,9 @@ l'objectif : montrer comment l’alliance de la 3D et de l’artisanat ouvre de 
 
 ![affiche de la star-party de Gratentour](/assets/starparty.jpg)
 
+Informations : [Mairie de Gratentour](https://www.gratentour.fr/agenda/le-jour-de-la-nuit/)
+
+
 N'hésitez pas à nous contacter si vous avez des questions !
 
 **Raphaël - La 3ème Dimension**
