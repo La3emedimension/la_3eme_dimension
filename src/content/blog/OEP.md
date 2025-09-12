@@ -22,6 +22,10 @@ Côté optique, je commence avec des lentilles disponibles sur AliExpress, histo
 Dans mon approche, je me suis beaucoup inspiré du travail de Red Henry, un amateur passionné basé aux États-Unis, qui fabrique lui-même ses oculaires et partage ses expériences et ses conseils.
 Il existe même un groupe Facebook dédié à ses travaux et à ceux de la communauté : [ATM Eyepieces (Red Henry)](https://www.facebook.com/groups/1484777181687589/)
 
+## Le Schéma optique
+
+l est constitué de deux doublets symétriques, chacun formé de deux lentilles collées. Ces deux doublets sont placés face à face, séparés par un petit espace appelé spacer.
+
 ![OEP oculaire avec sens des lentilles visible](/assets/OEPdraw.PNG )
 
 ## Un outil ?
