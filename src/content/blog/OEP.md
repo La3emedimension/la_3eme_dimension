@@ -43,13 +43,6 @@ En suivant ses recommandations et ses calculs, j'ai développé mon propre outil
 
 ---SPLIT_CONTENT_HERE---
 
-Un oculaire Plössl est constitué de deux doublets achromatiques symétriques. Sa distance focale effective (F) peut être approchée par la formule générale des systèmes optiques composés :
-
-![Formule optique plôssl](/assets/OEPFormuleplossl.png)
-
-- **f1 et f2**  = focales des deux doublets,
-- **d** = distance séparant les deux doublets (mesurée entre leurs plans principaux).
-
 Attention : cette formule n’est qu’une approximation. Pour modéliser précisément un Plössl, il faut utiliser des méthodes de tracé de rayons ou de matrices optiques (méthode ABCD), et non se limiter à la formule des deux lentilles.
 
 ## Les premiers protos
