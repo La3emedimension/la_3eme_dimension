@@ -82,7 +82,7 @@ ChantePierre m'a proposé de faire un test de [Ronchi](https://www.grattavetro.i
 
 ## Et un filtre ?
 
-De tous ces tests, il ressort qu’il est nécessaire de réduire au maximum le bleu résiduel causé par l’aberration chromatique de l’objectif. Il est également intéressant d’utiliser un diaphragme à 70 mm, ce qui permet de limiter les défauts optiques, tout en ajoutant des baffles internes afin d’éviter les lumières parasites et d’améliorer le contraste de l’image.
+Il ressort donc qu’il est nécessaire de réduire au maximum le bleu résiduel causé par l’aberration chromatique de l’objectif. Il est également intéressant d’utiliser un diaphragme à 70 mm, ce qui permet de limiter les défauts optiques, tout en ajoutant des baffles internes afin d’éviter les lumières parasites et d’améliorer le contraste de l’image.
 
 ![Baffle et masque 70MM](/assets/lunette22.png)
 ![Construction avec Baffle](/assets/lunette21.png)
