@@ -83,10 +83,6 @@ ChantePierre m'a proposé de faire un test de [Ronchi](https://www.grattavetro.i
 De tous ces tests, il ressort qu’il est nécessaire de réduire au maximum le bleu résiduel causé par l’aberration chromatique de l’objectif. Il est également intéressant d’utiliser un diaphragme à 70 mm, ce qui permet de limiter les défauts optiques, tout en ajoutant des baffles internes afin d’éviter les lumières parasites et d’améliorer le contraste de l’image.
 
 ![Baffle et masque 70MM](/assets/lunette22.png)
-
-De tous ces tests, il ressort qu’il est nécessaire de réduire au maximum le bleu résiduel causé par l’aberration chromatique de l’objectif. Il est également intéressant d’utiliser un diaphragme à 70 mm, ce qui permet de limiter les défauts optiques, tout en ajoutant des baffles internes afin d’éviter les lumières parasites et d’améliorer le contraste de l’image.
-N'hésitez pas à nous contacter si vous avez des questions !
-
 ![Construction avec Baffle](/assets/lunette21.png)
 
 Pour vérifier l’efficacité d’un filtre dans la réduction du bleu résiduel, j’ai décidé de faire un test simple avec le matériel que j’avais sous la main. J’ai utilisé un ancien filtre photo de couleur jaune, monté devant l’objectif. L’idée était de bloquer une partie du spectre bleu pour améliorer la netteté et le contraste, et ainsi tirer le maximum de ce que pouvait offrir l’optique.
