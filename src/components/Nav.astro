@@ -6,9 +6,9 @@ import type { iconPaths } from './IconPaths';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
 	{ label: 'Boutique', href: '/shop/' },
 	{ label: 'Réalisations', href: '/work/' },
+	{ label: 'Blog', href: '/blog/' },
 	{ label: 'A propos', href: '/about/' },
 ];
 
@@ -176,6 +176,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		line-height: 1.1;
 		color: var(--gray-0);
 		text-decoration: none;
+		font-weight: 700;
 	}
 
 	.menu-button {
@@ -186,14 +187,13 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		padding: 0.5rem;
 		font-size: 1.5rem;
 		color: var(--gray-300);
-		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+		background: var(--gray-900);
 		box-shadow: var(--shadow-md);
 	}
 
 	.menu-button[aria-expanded='true'] {
 		color: var(--gray-0);
-		background: linear-gradient(180deg, var(--gray-600), transparent),
-			radial-gradient(var(--gray-900), var(--gray-800) 150%);
+		background: var(--gray-800);
 	}
 
 	.menu-button[hidden] {
@@ -204,7 +204,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		position: absolute;
 		inset: -1px;
 		content: '';
-		background: var(--gradient-stroke);
+		background: var(--gray-800);
 		border-radius: 999rem;
 		z-index: -1;
 	}
@@ -305,7 +305,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			border-radius: 999rem;
 			border: 0;
 			padding: 0.5rem 0.5625rem;
-			background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+			background: var(--gray-900);
 			box-shadow: var(--shadow-md);
 		}
 
@@ -313,7 +313,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			position: absolute;
 			inset: -1px;
 			content: '';
-			background: var(--gradient-stroke);
+			background: var(--gray-800);
 			border-radius: 999rem;
 			z-index: -1;
 		}
@@ -321,6 +321,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.link {
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
+			font-weight: 600;
 			transition:
 				color var(--theme-transition),
 				background-color var(--theme-transition);

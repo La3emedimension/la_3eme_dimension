@@ -71,9 +71,18 @@ const {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
 />
+<style>
+/* San Francisco Pro fallback using system fonts */
+@supports (font-family: -apple-system) {
+    :root {
+        --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+        --font-brand: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+    }
+}
+</style>
 
 <script is:inline>
     // This code is inlined in the head to make dark mode instant & blocking.
