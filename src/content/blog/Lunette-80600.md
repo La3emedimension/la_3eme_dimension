@@ -17,7 +17,7 @@ L’idée était de créer une structure légère et modulable :
 
 
 - **Des cornières alu** : Elles servaient de support pour maintenir l'alignement entre l'objectif et le porte-oculaire.
-- **Une approche Strut** : La lunette avait une approche Strut avec des vis pour le démontage.
+- **Une approche Strock** : La lunette avait une approche Strock avec des vis pour le démontage.
 Le chercheur était fixé directement sur le châssis.
 - **Se monte sur toutes les montures** : Avec une queue d'aronde Vixen
 - **Objectif un peu optimiste** : Je voulais faire de la photo avec...
