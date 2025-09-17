@@ -54,7 +54,7 @@
           { "icon": "rocket-launch", "text": "150/750 Newton" },
           { "icon": "strategy", "text": "4kg avec optiques" }
         ],
-        "primaryCta": { "text": "Commander - 550€", "href": "#pricing" },
+        "primaryCta": { "text": "Commander", "href": "#pricing" },
         "heroImage": {
           "src": "/assets/Smallest_fullsize(1).jpg",
           "alt": "Télescope Smallest portable en configuration observation"
@@ -248,21 +248,21 @@
           "Monture Dobson intégrée",
           "Instructions de montage"
         ],
-        "ctaText": "Commander maintenant",
-        "ctaHref": "mailto:la3emedim@gmail.com",
+        "ctaText": "Commander",
+        "ctaHref": "https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05",
         "optionsTitle": "Options optiques",
         "options": [
           {
             "title": "Occasion",
-            "description": "Leboncoin, Webastro, forums spécialisés"
+            "description": "Leboncoin, Webastro, forums spécialisés<br><a href=\"https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05\" style=\"display: inline-block; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-top: 0.5rem; font-weight: 600;\">Commander sans optiques - 550€</a>"
           },
           {
-            "title": "GSO / Chinoise",
-            "description": "Rapport qualité/prix optimal"
+            "title": "Industriels",
+            "description": "Rapport qualité/prix optimal<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-block; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-top: 0.5rem; font-weight: 600;\">Commander avec optiques - 750€</a>"
           },
           {
             "title": "Artisanal",
-            "description": "<strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Mail : paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">site internet</a>"
+            "description": "<strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Mail : paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">site internet</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-block; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-top: 0.5rem; font-weight: 600;\">Nous contacter</a>"
           }
         ]
       }
