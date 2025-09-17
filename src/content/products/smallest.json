@@ -258,11 +258,11 @@
           },
           {
             "title": "Industrielles",
-            "description": "Rapport qualité/prix optimal<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-block; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-top: 0.5rem; font-weight: 600;\">Commander avec optiques - 750€</a>"
+            "description": "Rapport qualité/prix optimal<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Commander avec optiques - 750€</a>"
           },
           {
             "title": "Artisanal",
-            "description": "<strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Mail : paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">site internet</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-block; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-top: 0.5rem; font-weight: 600;\">Nous contacter</a>"
+            "description": "<strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Mail : paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">site internet</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Nous contacter</a>"
           }
         ]
       }

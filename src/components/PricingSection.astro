@@ -137,7 +137,7 @@ const {
     }
 
     .cta-primary {
-        background: var(--accent-regular);
+        background-color: var(--accent-regular);
         color: var(--accent-text-over);
         padding: 0.75rem 0.5rem;
         border-radius: 0.5rem;
@@ -145,13 +145,14 @@ const {
         font-weight: 600;
         font-size: 1rem;
         transition: all 0.3s ease;
-        border: 2px solid var(--accent-regular);
-        display: block;
-        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
         box-sizing: border-box;
-        line-height: 1.2;
+        text-align: center;
         width: fit-content;
-        margin: 0 auto;
+        margin: 0.5rem auto 0;
     }
 
     .cta-primary:hover {
@@ -187,24 +188,7 @@ const {
         font-size: 0.9rem;
     }
 
-    .optics-options a[style*="background-color"],
-    .cta-primary {
-        display: inline-block;
-        background-color: var(--accent-regular);
-        color: var(--accent-text-over);
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        min-height: 3rem;
-        box-sizing: border-box;
-        line-height: 1.2;
-        margin-top: 0.5rem;
-        transition: all 0.3s ease;
-    }
-
-    .optics-options a[style*="background-color"]:hover,
+    
     .cta-primary:hover {
         background-color: var(--accent-dark);
         transform: translateY(-2px);
