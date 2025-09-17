@@ -82,6 +82,7 @@ const {
         gap: 3rem;
         max-width: 900px;
         margin: 0 auto;
+        align-items: stretch;
     }
 
     .pricing-card {
@@ -90,12 +91,13 @@ const {
         border-radius: 1rem;
         border: 1px solid var(--gray-800);
         text-align: center;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
     }
 
     .main-offer {
-        border-color: var(--accent-regular);
         position: relative;
-        transform: scale(1.05);
     }
 
     .pricing-card h3 {
@@ -137,25 +139,42 @@ const {
     .cta-primary {
         background: var(--accent-regular);
         color: var(--accent-text-over);
-        padding: 1rem 2rem;
+        padding: 0.75rem 0.5rem;
         border-radius: 0.5rem;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1rem;
         transition: all 0.3s ease;
         border: 2px solid var(--accent-regular);
-        display: inline-block;
+        display: block;
+        min-height: 3rem;
+        box-sizing: border-box;
+        line-height: 1.2;
+        width: fit-content;
+        margin: 0 auto;
     }
 
     .cta-primary:hover {
         background: var(--accent-dark);
         transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
+    }
+
+    .optics-options {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .optics-options .option {
         margin-bottom: 1.5rem;
-        text-align: left;
+        text-align: center;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--gray-800);
+    }
+
+    .optics-options .option:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .optics-options h4 {
@@ -166,6 +185,29 @@ const {
     .optics-options p {
         color: var(--gray-300);
         font-size: 0.9rem;
+    }
+
+    .optics-options a[style*="background-color"],
+    .cta-primary {
+        display: inline-block;
+        background-color: var(--accent-regular);
+        color: var(--accent-text-over);
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        min-height: 3rem;
+        box-sizing: border-box;
+        line-height: 1.2;
+        margin-top: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .optics-options a[style*="background-color"]:hover,
+    .cta-primary:hover {
+        background-color: var(--accent-dark);
+        transform: translateY(-2px);
     }
 
     @media (max-width: 768px) {
