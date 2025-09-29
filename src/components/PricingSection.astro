@@ -1,6 +1,8 @@
 ---
 interface PricingOption {
     title: string;
+    priceNote?: string;
+    included?: string[];
     description: string;
 }
 
@@ -47,6 +49,12 @@ const {
                         options.map((option) => (
                             <div class="option">
                                 <h4>{option.title}</h4>
+                                {option.priceNote && <p class="option-price-note">{option.priceNote}</p>}
+                                {option.included && (
+                                    <ul class="included">
+                                        {option.included.map((item) => <li>{item}</li>)}
+                                    </ul>
+                                )}
                                 <p set:html={option.description} />
                             </div>
                         ))
@@ -181,6 +189,13 @@ const {
     .optics-options h4 {
         color: var(--accent-regular);
         margin-bottom: 0.5rem;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .option-price-note {
+        color: var(--gray-400);
+        margin-bottom: 2rem;
     }
 
     .optics-options p {
@@ -220,7 +235,7 @@ const {
         }
 
         .optics-options h4 {
-            font-size: 1rem;
+            font-size: 2rem;
         }
 
         .optics-options p {

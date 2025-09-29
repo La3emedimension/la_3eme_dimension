@@ -3,7 +3,7 @@
   "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
   "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
-  "price": "100€",
+  "price": "140€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
-        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/7sY00l63w5X5giv3ek67S04" },
+        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
         "heroImage": { "src": "/assets/ERT 4.jpg", "alt": "Lunette astronomique ERT assemblée" }
       }
     },
@@ -157,6 +157,44 @@
       }
     },
     {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Kit E.R.T",
+        "price": "140€",
+        "priceNote": "Fichiers à imprimer + kit montage",
+        "included": [
+          "Fichiers STL pour impression 3D",
+          "Lentille objectif 50mm",
+          "Oculaire 25mm",
+          "Prisme renvoi coudé",
+          "Instructions de montage détaillées",
+          "Support pédagogique",
+          "Monture à imprimer"
+        ],
+        "ctaText": "Commander fichiers + kit",
+        "ctaHref": "https://buy.stripe.com/8x228t2RkadlaYb8yE67S08",
+        "optionsTitle": "Kit complet imprimé",
+        "options": [
+          {
+            "title": "200€",
+            "priceNote": "Pièces imprimées + kit de montage",
+            "included": [
+              "Pièces imprimées en 3D",
+              "Lentille objectif 50mm",
+              "Oculaire 25mm",
+              "Prisme renvoi coudé",
+              "Instructions de montage détaillées",
+              "Support pédagogique",
+              "Quelques objets du ciel à observer",
+              "Monture intégrée"
+            ],
+            "description": "<div style=\"text-align: center;\"><a href=\"https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Commander kit complet</a></div>"
+          }
+        ]
+      }
+    },
+    {
       "type": "features",
       "id": "section-features", 
       "data": {
@@ -191,6 +229,7 @@
     { "id": "video", "label": "Montage" },
     { "id": "specs", "label": "Modules" },
     { "id": "gallery", "label": "Galerie" },
+    { "id": "pricing", "label": "Tarifs" },
     { "id": "features", "label": "Avantages" }
   ],
   "showContactCTA": true,
