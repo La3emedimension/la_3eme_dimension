@@ -3,7 +3,7 @@
   "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
   "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
-  "price": "140€",
+  "price": "150€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -161,7 +161,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Kit E.R.T",
-        "price": "140€",
+        "price": "150€",
         "priceNote": "Fichiers à imprimer + kit montage",
         "included": [
           "Fichiers STL pour impression 3D",
