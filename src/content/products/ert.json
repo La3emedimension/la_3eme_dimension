@@ -160,38 +160,23 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Kit E.R.T",
-        "price": "150€",
-        "priceNote": "Fichiers à imprimer + kit montage",
+        "title": "Kit E.R.T complet",
+        "price": "200€",
+        "priceNote": "Pièces imprimées + kit de montage",
         "included": [
-          "Fichiers STL pour impression 3D",
+          "Pièces imprimées en 3D",
           "Lentille objectif 50mm",
           "Oculaire 25mm",
           "Prisme renvoi coudé",
           "Instructions de montage détaillées",
           "Support pédagogique",
-          "Monture à imprimer"
+          "Quelques objets du ciel à observer",
+          "Monture intégrée"
         ],
-        "ctaText": "Commander fichiers + kit",
-        "ctaHref": "https://buy.stripe.com/8x228t2RkadlaYb8yE67S08",
-        "optionsTitle": "Kit complet imprimé",
-        "options": [
-          {
-            "title": "200€",
-            "priceNote": "Pièces imprimées + kit de montage",
-            "included": [
-              "Pièces imprimées en 3D",
-              "Lentille objectif 50mm",
-              "Oculaire 25mm",
-              "Prisme renvoi coudé",
-              "Instructions de montage détaillées",
-              "Support pédagogique",
-              "Quelques objets du ciel à observer",
-              "Monture intégrée"
-            ],
-            "description": "<div style=\"text-align: center;\"><a href=\"https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Commander kit complet</a></div>"
-          }
-        ]
+        "ctaText": "Commander kit complet",
+        "ctaHref": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07",
+        "optionsTitle": "",
+        "options": []
       }
     },
     {

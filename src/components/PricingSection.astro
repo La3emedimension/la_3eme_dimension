@@ -32,7 +32,7 @@ const {
 <section class="pricing-section" id="pricing">
     <div class="container">
         <h2>Tarifs et options</h2>
-        <div class="pricing-grid">
+        <div class={`pricing-grid ${options.length === 0 ? 'single-card' : ''}`}>
             <div class="pricing-card main-offer">
                 <h3>{title}</h3>
                 <div class="price">{price}</div>
@@ -42,25 +42,27 @@ const {
                 </ul>
                 <a href={ctaHref} class="cta-primary">{ctaText}</a>
             </div>
-            <div class="pricing-card">
-                <h3>{optionsTitle}</h3>
-                <div class="optics-options">
-                    {
-                        options.map((option) => (
-                            <div class="option">
-                                <h4>{option.title}</h4>
-                                {option.priceNote && <p class="option-price-note">{option.priceNote}</p>}
-                                {option.included && (
-                                    <ul class="included">
-                                        {option.included.map((item) => <li>{item}</li>)}
-                                    </ul>
-                                )}
-                                <p set:html={option.description} />
-                            </div>
-                        ))
-                    }
+            {options.length > 0 && (
+                <div class="pricing-card">
+                    <h3>{optionsTitle}</h3>
+                    <div class="optics-options">
+                        {
+                            options.map((option) => (
+                                <div class="option">
+                                    <h4>{option.title}</h4>
+                                    {option.priceNote && <p class="option-price-note">{option.priceNote}</p>}
+                                    {option.included && (
+                                        <ul class="included">
+                                            {option.included.map((item) => <li>{item}</li>)}
+                                        </ul>
+                                    )}
+                                    <p set:html={option.description} />
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     </div>
 </section>
@@ -91,6 +93,11 @@ const {
         max-width: 900px;
         margin: 0 auto;
         align-items: stretch;
+    }
+
+    .pricing-grid.single-card {
+        grid-template-columns: 1fr;
+        max-width: 450px;
     }
 
     .pricing-card {
