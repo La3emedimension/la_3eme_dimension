@@ -49,7 +49,8 @@
           { "icon": "terminal-window", "text": "facile d'utilisation" }
         ],
         "primaryCta": { "text": "Acheter", "href": "https://buy.stripe.com/6oUfZj1NgdpxaYb3ek67S01" },
-        "heroImage": { "src": "/assets/seestars50.png", "alt": "Seestar équipé d'un pare lumière et d'un capuchon" }
+        "heroImage": { "src": "/assets/seestars50.png", "alt": "Seestar équipé d'un pare lumière et d'un capuchon" },
+        "afterCtaNote": "Chaque pièce étant fabriquée artisanalement, il faut prévoir environ 7 jours pour la conception, auxquels s'ajoute le délai d'envoi."
       }
     },
     

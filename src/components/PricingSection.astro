@@ -4,6 +4,7 @@ interface PricingOption {
     priceNote?: string;
     included?: string[];
     description: string;
+    afterCtaNote?: string;
 }
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
     ctaHref: string;
     optionsTitle: string;
     options: PricingOption[];
+    afterCtaNote?: string;
 }
 
 const {
@@ -26,6 +28,7 @@ const {
     ctaHref,
     optionsTitle,
     options,
+    afterCtaNote,
 } = Astro.props;
 ---
 
@@ -41,6 +44,7 @@ const {
                     {included.map((item) => <li>{item}</li>)}
                 </ul>
                 <a href={ctaHref} class="cta-primary">{ctaText}</a>
+                {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
             </div>
             {options.length > 0 && (
                 <div class="pricing-card">
@@ -57,6 +61,7 @@ const {
                                         </ul>
                                     )}
                                     <p set:html={option.description} />
+                                    {option.afterCtaNote && <p class="after-cta-note" set:html={option.afterCtaNote} />}
                                 </div>
                             ))
                         }
@@ -131,6 +136,14 @@ const {
     .price-note {
         color: var(--gray-400);
         margin-bottom: 2rem;
+    }
+
+    .after-cta-note {
+        color: var(--gray-400);
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        font-style: italic;
     }
 
     .included {
