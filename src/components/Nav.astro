@@ -138,11 +138,21 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			};
 
 			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				setExpanded(menu.hidden);
+			});
+
+			// Close menu when clicking outside
+			document.addEventListener('click', (e) => {
+				if (!this.contains(e.target as Node) && !menu.hidden) {
+					setExpanded(false);
+				}
+			});
 
 			// Hide menu button for large screens.
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
-				setExpanded(e.matches);
+				setExpanded(false);
 				btn.hidden = e.matches;
 			};
 			const mediaQueries = window.matchMedia('(min-width: 50em)');
@@ -213,6 +223,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		position: absolute;
 		left: 0;
 		right: 0;
+		top: 100%;
+		z-index: 1000;
 	}
 
 	.nav-items {

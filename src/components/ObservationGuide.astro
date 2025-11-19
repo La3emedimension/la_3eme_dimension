@@ -1,0 +1,422 @@
+---
+interface Observation {
+  title: string;
+  description: string;
+  image?: string;
+  alt?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  observations: Observation[];
+  stellariumLink: string;
+  stellariumText: string;
+  discordLink?: string;
+  discordText?: string;
+  mapLink?: string;
+  mapText?: string;
+}
+
+const { title, description, observations, stellariumLink, stellariumText, discordLink, discordText, mapLink, mapText } = Astro.props;
+---
+
+<div class="observation-guide">
+  <div class="wrapper stack gap-8">
+    <header class="section-header stack gap-2 lg:gap-4">
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </header>
+    
+    <div class="observations-grid">
+      {observations.map((observation) => (
+        <div class="observation-card">
+          <div class="observation-content">
+            <div class="observation-text">
+              <h3>{observation.title}</h3>
+              <p>{observation.description}</p>
+            </div>
+            {observation.image && (
+              <div class="observation-image">
+                <img src={observation.image} alt={observation.alt || observation.title} />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="resources-section">
+      <div class="stellarium-card">
+        <h3>Atlas et carte du ciel</h3>
+        <p>Pour planifier vos observations et découvrir ce qui est visible depuis votre position, nous recommandons Stellarium, un logiciel gratuit et open-source de planétarium.</p>
+        <a href={stellariumLink} target="_blank" rel="noopener noreferrer" class="stellarium-link">
+          {stellariumText}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="stellarium-features">
+          <strong>Fonctionnalités :</strong> Carte du ciel en temps réel • Position des planètes • Heures de lever/coucher • Simulation du mouvement céleste
+        </p>
+      </div>
+      
+      {discordLink && discordText && (
+        <div class="discord-card">
+          <h3>Discord</h3>
+          <p>Rejoignez notre communauté d'astronomes amateurs ! Partagez vos observations, posez vos questions et échangez avec d'autres passionnés d'astronomie.</p>
+          <a href={discordLink} target="_blank" rel="noopener noreferrer" class="discord-link">
+            {discordText}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="discord-features">
+            <strong>Dans la communauté :</strong> Conseils d'observation • Photos d'astronomes • Support technique • Événements astronomiques
+          </p>
+        </div>
+      )}
+      
+      {mapLink && mapText && (
+        <div class="map-card">
+          <h3>Carte de la communauté</h3>
+          <p>Découvrer, partager vos meilleirs observations avec la communauté.</p>
+          <a href={mapLink} target="_blank" rel="noopener noreferrer" class="map-link">
+            {mapText}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="map-features">
+            <strong>Sur la carte :</strong> Localisations des membres • Spots d'observation partagés • Événements locaux • Groupes régionaux
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .observation-guide {
+    position: relative;
+    padding: 5rem var(--grid-gutter);
+    background: var(--gray-900);
+  }
+
+  .observation-guide::before {
+    --hero-bg: var(--bg-image-subtle-2);
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    left: 50%;
+    width: 100vw;
+    aspect-ratio: calc(2.25 / var(--bg-scale));
+    top: 0;
+    transform: translateY(-75%) translateX(-50%);
+    background:
+      url('/assets/backgrounds/noise.png') top center/220px repeat,
+      var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+      var(--gray-900);
+    background-blend-mode: overlay, normal, normal, normal;
+    mix-blend-mode: var(--bg-blend-mode);
+    z-index: -1;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto;
+    color: var(--gray-300);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-2xl);
+    color: var(--gray-0);
+    margin-bottom: 0.5rem;
+  }
+
+  .observations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 60rem;
+    margin: 0 auto 4rem auto;
+    align-items: stretch;
+  }
+
+  .observation-card {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .observation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .observation-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    height: 100%;
+  }
+
+  .observation-text {
+    flex: 1;
+  }
+
+  .observation-text h3 {
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+  }
+
+  .observation-text p {
+    color: var(--gray-300);
+    line-height: 1.6;
+  }
+
+  .observation-image {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .observation-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .resources-section {
+    max-width: 75rem;
+    margin: 3rem auto 4rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .stellarium-card {
+    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
+    border: 2px solid var(--gray-600);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .stellarium-card h3 {
+    font-size: var(--text-lg);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+  }
+
+  .stellarium-card > p {
+    color: var(--gray-300);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: var(--text-sm);
+  }
+
+  .stellarium-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gray-700);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gray-600);
+    margin-bottom: 1.5rem;
+  }
+
+  .stellarium-link:hover {
+    background: var(--gray-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stellarium-features {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .discord-card {
+    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
+    border: 2px solid var(--gray-600);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .discord-card h3 {
+    font-size: var(--text-lg);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+  }
+
+  .discord-card > p {
+    color: var(--gray-300);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: var(--text-sm);
+  }
+
+  .discord-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gray-700);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gray-600);
+    margin-bottom: 1.5rem;
+  }
+
+  .discord-link:hover {
+    background: var(--gray-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .discord-features {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .map-card {
+    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
+    border: 2px solid var(--gray-600);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .map-card h3 {
+    font-size: var(--text-lg);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+  }
+
+  .map-card > p {
+    color: var(--gray-300);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: var(--text-sm);
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gray-700);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gray-600);
+    margin-bottom: 1.5rem;
+  }
+
+  .map-link:hover {
+    background: var(--gray-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .map-features {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (min-width: 50em) {
+    .observation-guide {
+      padding: 7rem var(--grid-gutter);
+    }
+
+    .section-header h2 {
+      font-size: var(--text-4xl);
+    }
+
+    .observations-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 50em) {
+    .observation-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .observation-image {
+      flex: 0 0 auto;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .resources-section {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 50em) and (max-width: 75em) {
+    .resources-section {
+      grid-template-columns: 1fr 1fr;
+      max-width: 60rem;
+    }
+
+    .map-card {
+      grid-column: 1 / -1;
+    }
+  }
+
+</style>

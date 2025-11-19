@@ -58,7 +58,8 @@ const { items } = Astro.props;
 				const sectionHeight = section.offsetHeight;
 				
 				if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-					currentSection = section.id.replace('section-', '');
+					// Use the exact section ID for comparison
+					currentSection = section.id;
 				}
 			});
 			
@@ -79,7 +80,7 @@ const { items } = Astro.props;
 				}
 				
 				e.preventDefault();
-				const targetId = `section-${link.dataset.section}`;
+				const targetId = link.dataset.section;
 				const targetElement = document.getElementById(targetId);
 				
 				if (targetElement) {

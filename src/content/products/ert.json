@@ -51,7 +51,7 @@
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
         "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ERT 4.jpg", "alt": "Lunette astronomique ERT assemblée" }
+        "heroImage": { "src": "/assets/ERT2025_1.png", "alt": "Lunette astronomique ERT assemblée" }
       }
     },
     
@@ -151,6 +151,41 @@
             "src": "/assets/ERT 8.jpg", 
             "alt": "Détail objectif", 
             "caption": "Détail du barillet de lentille et du système anti-lumière parasite" 
+          },
+          { 
+            "src": "/assets/ertcolor1.jpeg", 
+            "alt": "Lunette ERT variante couleur 1", 
+            "caption": "Variante de couleur pour la lunette astronomique E.R.T" 
+          },
+          { 
+            "src": "/assets/ertcolor2.jpeg", 
+            "alt": "Lunette ERT variante couleur 2", 
+            "caption": "Personnalisation possible avec différentes couleurs d'impression" 
+          },
+          { 
+            "src": "/assets/ertcolor3.jpeg", 
+            "alt": "Lunette ERT variante couleur 3", 
+            "caption": "Exemple de customisation de couleur pour le projet éducatif" 
+          },
+          { 
+            "src": "/assets/ertcolor4.jpeg", 
+            "alt": "Lunette ERT variante couleur 4", 
+            "caption": "Diversité des options de couleurs disponibles" 
+          },
+          { 
+            "src": "/assets/ertcolor5.jpeg", 
+            "alt": "Lunette ERT variante couleur 5", 
+            "caption": "Rendu visuel avec une autre palette de couleurs" 
+          },
+          { 
+            "src": "/assets/ertcolor6.jpeg", 
+            "alt": "Lunette ERT variante couleur 6", 
+            "caption": "Possibilité d'adaptation selon les préférences éducatives" 
+          },
+          { 
+            "src": "/assets/ertcolor7.jpeg", 
+            "alt": "Lunette ERT variante couleur 7", 
+            "caption": "Dernière variante de couleur pour compléter la collection" 
           }
         ],
         "background": "light"

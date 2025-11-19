@@ -10,9 +10,10 @@ interface Props {
 	secondaryCta?: {text: string, href: string};
 	heroImage: {src: string, alt: string};
 	afterCtaNote?: string;
+	warning?: string;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning } = Astro.props;
 ---
 
 <section class="hero-product">
@@ -29,13 +30,22 @@ const { title, tagline, description, features, primaryCta, secondaryCta, heroIma
 					</div>
 				))}
 			</div>
-			<div class="hero-cta">
-				<a href={primaryCta.href} class="cta-primary">{primaryCta.text}</a>
-				{secondaryCta && (
-					<a href={secondaryCta.href} class="cta-secondary">{secondaryCta.text}</a>
-				)}
-				{afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
-			</div>
+			{warning && (
+				<div class="warning-box">
+					<p class="warning-text">{warning}</p>
+				</div>
+			)}
+			{(primaryCta || secondaryCta || afterCtaNote) && (
+				<div class="hero-cta">
+					{primaryCta && (
+						<a href={primaryCta.href} class="cta-primary">{primaryCta.text}</a>
+					)}
+					{secondaryCta && (
+						<a href={secondaryCta.href} class="cta-secondary">{secondaryCta.text}</a>
+					)}
+					{afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
+				</div>
+			)}
 		</div>
 		<div class="hero-media">
 			<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
@@ -82,6 +92,24 @@ const { title, tagline, description, features, primaryCta, secondaryCta, heroIma
 		color: var(--gray-300);
 		line-height: 1.6;
 		margin-bottom: 2rem;
+	}
+
+	.warning-box {
+		background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+		border: 2px solid #f87171;
+		border-radius: 0.75rem;
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+		box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1);
+	}
+
+	.warning-text {
+		color: #dc2626;
+		font-weight: 600;
+		font-size: 0.95rem;
+		margin: 0;
+		line-height: 1.5;
+		text-align: center;
 	}
 
 	.hero-features {

@@ -1,0 +1,363 @@
+---
+import { getCollection } from 'astro:content';
+import ProductLayout from '../layouts/ProductLayout.astro';
+import AssemblyGuide from '../components/AssemblyGuide.astro';
+import ObservationGuide from '../components/ObservationGuide.astro';
+
+// Get ERT product data
+const products = await getCollection('products');
+const ertProduct = products.find(product => product.id === 'ert');
+
+if (!ertProduct) {
+	throw new Error('ERT product not found');
+}
+
+const productConfig = ertProduct.data;
+
+// Modify for notice page - adjust title and description
+const noticeConfig = {
+	...productConfig,
+	seoTitle: "Notice E.R.T - Guide d'utilisation | La 3ème dimension",
+	seoDescription: "Notice d'utilisation complète de la lunette astronomique E.R.T. Guide de montage, conseils d'observation et informations techniques.",
+	sections: [
+		...productConfig.sections.map(section => {
+			if (section.type === 'hero') {
+				const { primaryCta, ...sectionData } = section.data;
+				return {
+					...section,
+					data: {
+						...sectionData,
+						title: "Notice E.R.T",
+						tagline: "Guide d'utilisation complet",
+						description: "Notice d'utilisation de votre lunette astronomique éducative E.R.T. Montage, réglages et conseils d'observation.",
+						warning: "⚠️ ATTENTION : Ne jamais regarder le soleil directement avec cet instrument. Risque de lésions oculaires graves et irréversibles."
+					}
+				};
+			}
+			if (section.type === 'pricing') {
+				return {
+					...section,
+					data: {
+						...section.data,
+						title: "Besoin d'aide ?",
+						price: "Support gratuit",
+						priceNote: "Assistance technique incluse",
+						included: [
+							"Guide de montage pas à pas",
+							"Conseils d'observation", 
+							"Résolution des problèmes",
+							"Entretien et maintenance",
+							"Support technique par email",
+							"Communauté d'utilisateurs"
+						],
+						ctaText: "Nous contacter",
+						ctaHref: "mailto:la3emedim@gmail.com",
+						afterCtaNote: "Notre équipe vous répond sous 24h pour toute question technique."
+					}
+				};
+			}
+			if (section.type === 'video') {
+				return section;
+			}
+			return section;
+		}).slice(0, 1), // Hero seulement
+		
+		// Ajouter la section Notice de montage après le hero
+		{
+			type: 'custom',
+			id: 'section-assembly-guide',
+			customComponent: AssemblyGuide,
+			data: {
+				title: "Notice de montage",
+				steps: [
+					{
+						number: 1,
+						title: "",
+						description: "Mettre le pare-lumière sur l'objectif et tourner en quart de tour.",
+						image: "/assets/ERT_montage_1.png",
+						alt: "Montage du pare-lumière sur l'objectif"
+					},
+					{
+						number: 2,
+						title: "",
+						description: "Assembler l'ensemble du (1) avec le Tube.",
+						image: "/assets/ERT_montage_2.png",
+						alt: "Assemblage de l'objectif avec le tube"
+					},
+					{
+						number: 3,
+						title: "",
+						description: "Assembler les roulements, avec vis et écrous. Puis l'axe de mise au point.",
+						image: "/assets/ERT_montage_3.png",
+						alt: "Assemblage des roulements et axe de mise au point"
+					},
+					{
+						number: 4,
+						title: "",
+						description: "Une fois le montage terminé.",
+						image: "/assets/ERT_montage_4.png",
+						alt: "Lunette ERT entièrement assemblée"
+					},
+					{
+						number: 5,
+						title: "",
+						description: "Tube porte-oculaire + porte-oculaire. La vis poussante doit être serrée après avoir mis le tube pour créer le frottement qui donnera le mouvement.",
+						image: "/assets/ERT_montage_5.png",
+						alt: "Montage du tube porte-oculaire et porte-oculaire"
+					},
+					{
+						number: 6,
+						title: "",
+						description: "Assemblage porte-oculaire et tube.",
+						image: "/assets/ERT_montage_6.png",
+						alt: "Assemblage porte-oculaire et tube"
+					},
+					{
+						number: 7,
+						title: "",
+						description: "Le renvoi coudé, assemblage de la plaque, du prisme et du châssis du renvoi coudé.",
+						image: "/assets/ERT_montage_7.png",
+						alt: "Assemblage du renvoi coudé avec plaque, prisme et châssis"
+					},
+					{
+						number: 8,
+						title: "",
+						description: "Renvoi coudé assemblé.",
+						image: "/assets/ERT_montage_8.png",
+						alt: "Renvoi coudé entièrement assemblé"
+					},
+					{
+						number: 9,
+						title: "",
+						description: "Et voilà vous pouvez observer !",
+						image: "/assets/ERT_montage_9.png",
+						alt: "Lunette ERT prête pour l'observation"
+					},
+					{
+						number: 10,
+						title: "",
+						description: "",
+						image: "/assets/ERT_montage_10.png",
+						alt: "Étape finale du montage ERT"
+					}
+				]
+			}
+		},
+		
+		// Ajouter la section vidéo après la notice
+		...productConfig.sections.filter(section => section.type === 'video'),
+		
+		// Ajouter la section Observation
+		{
+			type: 'custom',
+			id: 'section-observation',
+			customComponent: ObservationGuide,
+			data: {
+				title: "Quoi observer ?",
+				description: "Découvrez les merveilles du ciel nocturne avec votre lunette E.R.T. De la Lune aux galaxies lointaines, explorez l'univers qui nous entoure.",
+				observations: [
+					{
+						title: "La Lune",
+						description: "Observez les cratères lunaires, les mers et les montagnes. Le meilleur moment est pendant les phases croissantes et décroissantes.",
+						image: "/assets/Lune.png",
+						alt: "Observation de la Lune avec la lunette ERT"
+					},
+					{
+						title: "Jupiter et ses lunes",
+						description: "La plus grande planète du système solaire accompagnée de ses quatre principales lunes : Io, Europe, Ganymède et Callisto, visibles comme de petits points lumineux autour de Jupiter.",
+						image: "/assets/Jupiter.png",
+						alt: "Observation de Jupiter et ses lunes avec la lunette ERT"
+					},
+					{
+						title: "La nébuleuse d'Orion",
+						description: "Une des nébuleuses les plus brillantes et facilement observables, située dans la constellation d'Orion. Visible à l'œil nu comme une étoile floue.",
+						image: "/assets/La nébuleuse d'Orion.png",
+						alt: "Observation de la nébuleuse d'Orion avec la lunette ERT"
+					},
+					{
+						title: "L'amas d'Hercule",
+						description: "Un magnifique amas globulaire contenant des centaines de milliers d'étoiles, formant une sphère lumineuse dans la constellation d'Hercule.",
+						image: "/assets/L'amas d'Hercule.png",
+						alt: "Observation de l'amas d'Hercule avec la lunette ERT"
+					},
+					{
+						title: "La galaxie d'Andromède",
+						description: "Notre galaxie voisine la plus proche, visible comme une tache floue allongée. C'est l'objet le plus lointain observable à l'œil nu.",
+						image: "/assets/La galaxie d'Andromède.png",
+						alt: "Observation de la galaxie d'Andromède avec la lunette ERT"
+					},
+					{
+						title: "Les Pléiades",
+						description: "Un jeune amas ouvert d'étoiles bleues très lumineuses, aussi appelé les 'Sept Sœurs'. Facilement repérable dans la constellation du Taureau.",
+						image: "/assets/Les Pléiades.png",
+						alt: "Observation des Pléiades avec la lunette ERT"
+					},
+					{
+						title: "Le double amas de Persée",
+						description: "Deux amas d'étoiles rapprochés dans la constellation de Persée, offrant un spectacle magnifique avec de nombreuses étoiles brillantes.",
+						image: "/assets/Le double amas de Persée.png",
+						alt: "Observation du double amas de Persée avec la lunette ERT"
+					}
+				],
+				stellariumLink: "https://stellarium.org/fr/",
+				stellariumText: "Utilisez Stellarium pour planifier vos observations",
+				discordLink: "https://discord.gg/PmNhTSpWCt",
+				discordText: "Rejoindre la communauté",
+				mapLink: "/carte-communaute",
+				mapText: "Voir la carte"
+			}
+		},
+		
+		// Continuer avec les autres sections (sauf video qui est déjà ajoutée, et sans specs, pricing, features)
+		...productConfig.sections.slice(2).filter(section => 
+			section.type !== 'video' && 
+			section.type !== 'specs' && 
+			section.type !== 'pricing' && 
+			section.type !== 'features'
+		)
+	],
+	
+	// Mise à jour de la navigation pour inclure la section montage
+	navigationItems: [
+		{ "id": "section-hero", "label": "Présentation" },
+		{ "id": "section-assembly-guide", "label": "Notice" },
+		{ "id": "section-video", "label": "Montage" },
+		{ "id": "section-observation", "label": "Observer" },
+		{ "id": "section-gallery", "label": "Galerie" }
+	]
+};
+---
+
+<ProductLayout {...noticeConfig} />
+
+<style>
+  /* Override accent colors with gray-700 for ERT page */
+  :global(.accent-regular) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(a) {
+    color: var(--gray-300) !important;
+  }
+
+  :global(button), 
+  :global(.cta),
+  :global(.btn),
+  :global(.button) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    border-color: var(--gray-600) !important;
+  }
+
+  :global(button:hover), 
+  :global(.cta:hover),
+  :global(.btn:hover),
+  :global(.button:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+  }
+
+  /* Override specific component styles */
+  :global(.hero .cta-primary) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(.hero .cta-primary:hover) {
+    background-color: var(--gray-600) !important;
+  }
+
+  :global(.pricing-cta) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(.pricing-cta:hover) {
+    background-color: var(--gray-600) !important;
+  }
+
+  /* Additional button selectors */
+  :global(.cta-primary),
+  :global(.cta-secondary),
+  :global(.product-link),
+  :global(.boutique-link) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    border-color: var(--gray-600) !important;
+  }
+
+  :global(.cta-primary:hover),
+  :global(.cta-secondary:hover),
+  :global(.product-link:hover),
+  :global(.boutique-link:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+  }
+
+  /* Feature badges/pills */
+  :global(.feature-badge),
+  :global(.pill) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Navigation active states */
+  :global(.nav-link.active) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Feature icons and highlights */
+  :global(.feature-icon) {
+    color: var(--gray-400) !important;
+  }
+
+  /* Any other accent-colored elements */
+  :global([style*="var(--accent-regular)"]) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Title override for hero */
+  :global(.hero-product h1) {
+    color: black !important;
+  }
+
+  /* Feature badges text in black */
+  :global(.feature-badge) {
+    background-color: var(--gray-700) !important;
+    color: black !important;
+  }
+
+  /* Button text in black */
+  :global(.cta-primary) {
+    color: black !important;
+  }
+
+  /* Navigation pills - white text when active */
+  :global(.nav-link.active) {
+    background: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Hero image container - make it square */
+  :global(.hero-media) {
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+    border-radius: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: var(--shadow-xl) !important;
+  }
+
+  :global(.hero-image) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: scale(1.1) !important;
+  }
+</style>
