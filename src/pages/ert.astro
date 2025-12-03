@@ -223,6 +223,7 @@ const noticeConfig = {
 		{ "id": "section-assembly-guide", "label": "Notice" },
 		{ "id": "section-video", "label": "Montage" },
 		{ "id": "section-observation", "label": "Observer" },
+		{ "id": "section-filter", "label": "Filtres" },
 		{ "id": "section-gallery", "label": "Galerie" }
 	]
 };
@@ -322,6 +323,13 @@ const noticeConfig = {
   /* Title override for hero */
   :global(.hero-product h1) {
     color: black !important;
+  }
+
+  /* Section filter title in gray */
+  :global(#section-filter h1),
+  :global(#section-filter h2),
+  :global(#section-filter .hero-product h1) {
+    color: var(--gray-100) !important;
   }
 
   /* Feature badges text in black */

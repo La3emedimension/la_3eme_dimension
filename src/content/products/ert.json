@@ -66,6 +66,16 @@
       }
     },
     {
+      "type": "video",
+      "id": "section-video-2",
+      "data": {
+        "title": "Démonstration rapide",
+        "description": "Aperçu du montage de la lunette E.R.T en version courte.",
+        "videoId": "fL8zU5coKBg",
+        "videoTitle": "Montage rapide de la lunette ERT"
+      }
+    },
+    {
       "type": "specs",
       "id": "section-specs",
       "data": {
@@ -104,6 +114,20 @@
             }
           }
         ]
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-filter",
+      "data": {
+        "title": "L'utilisation des filtres",
+        "tagline": "",
+        "description": "Dans le pack ERT, vous disposez d'un porte-filtre vide et d'un porte-filtre avec un filtre UHC dédié à l'observation des nébuleuses. Le filtre UHC (Ultra High Contrast) est un filtre destiné à l'observation visuelle du ciel profond. Il transmet 100 % de la lumière des raies spectrales O-III et H-bêta, 96 % de la raie H-alpha (même si son utilisation est principalement réservée à l'imagerie) et bloque toutes les autres longueurs d'onde. Ainsi, l'image se trouve nettoyée des lumières parasites provoquées par la pollution lumineuse. Cela permet de rehausser le contraste des nébuleuses diffuses et planétaires, qui se détachent alors sur un fond de ciel devenu bien noir.",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/Filtreert.jpg",
+          "alt": "Porte-filtre et filtre UHC pour la lunette ERT"
+        }
       }
     },
     {
@@ -247,8 +271,10 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
-    { "id": "video", "label": "Montage" },
+    { "id": "video", "label": "Montage détaillé" },
+    { "id": "video-2", "label": "Montage rapide" },
     { "id": "specs", "label": "Modules" },
+    { "id": "filter", "label": "Porte filtre" },
     { "id": "gallery", "label": "Galerie" },
     { "id": "pricing", "label": "Tarifs" },
     { "id": "features", "label": "Avantages" }
