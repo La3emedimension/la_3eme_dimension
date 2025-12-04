@@ -368,4 +368,30 @@ const noticeConfig = {
     box-shadow: none !important;
     transform: scale(1.1) !important;
   }
+
+  /* Quantum button styling */
+  :global(.quantum-button-container) {
+    margin-top: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  :global(.quantum-button) {
+    display: inline-block !important;
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 0.5rem !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    margin-left: 1rem !important;
+    border: 2px solid var(--gray-600) !important;
+  }
+
+  :global(.quantum-button:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+    transform: translateY(-2px) !important;
+  }
 </style>
