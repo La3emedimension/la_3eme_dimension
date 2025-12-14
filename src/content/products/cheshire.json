@@ -2,11 +2,11 @@
   "seoTitle": "Cheshire - Collimateur pour miroirs de télescope | La 3ème dimension",
   "seoDescription": "Cheshire d'alignement imprimé en 3D avec mires interchangeables par système de vis. Outil indispensable pour la collimation des miroirs de télescope Newton.",
   "seoKeywords": "cheshire, collimateur télescope, alignement miroirs, collimation newton, impression 3d astronomie, mires interchangeables, oculaire de collimation, réglage miroirs",
-  "ogImage": "https://la3emedim.fr/assets/cheshire-preview.jpg",
-  "price": "45€",
+  "ogImage": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
+  "price": "25€",
   "priceNote": "Livré avec 3 mires standard",
   "emailContact": "la3emedim@gmail.com",
-  "draft": true,
+  "draft": false,
   "category": "accessoire",
   "structuredData": {
     "@context": "https://schema.org",
@@ -25,7 +25,7 @@
     "category": "Accessoires astronomiques",
     "offers": {
       "@type": "Offer",
-      "price": "45",
+      "price": "25",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -33,14 +33,14 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/cheshire-preview.jpg",
+    "image": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
     "features": [
       "Impression 3D haute précision",
       "Mires interchangeables par système de vis",
       "Compatible télescopes Newton",
       "Livré avec 3 mires standard",
       "Design ergonomique",
-      "Matériau résistant PLA+"
+      "Matériau résistant PETG"
     ]
   },
   "sections": [
@@ -50,7 +50,7 @@
       "data": {
         "title": "Cheshire",
         "tagline": "L'outil de collimation précis",
-        "description": "Collimateur Cheshire imprimé en 3D avec système innovant de mires interchangeables par vis. Idéal pour l'alignement parfait des miroirs de votre télescope Newton.",
+        "description": "Collimateur Cheshire imprimé en 3D avec système de mires interchangeables par vis. Idéal pour l'alignement parfait des miroirs de votre télescope Newton.",
         "features": [
           {
             "icon": "precision",
@@ -67,11 +67,11 @@
         ],
         "primaryCta": {
           "text": "Commander maintenant",
-          "href": "mailto:la3emedim@gmail.com?subject=Commande Cheshire&body=Bonjour, je souhaite commander un Cheshire."
+          "href": "https://buy.stripe.com/00waEZ3Vo2KT0jxaGM67S09"
         },
         "heroImage": {
-          "src": "https://la3emedim.fr/assets/cheshire-hero.jpg",
-          "alt": "Cheshire collimateur avec mires interchangeables"
+          "src": "/assets/Cheshire/chesh8.png",
+          "alt": "Principe de fonctionnement du Cheshire"
         }
       }
     },
@@ -82,20 +82,49 @@
         "title": "Galerie",
         "images": [
           {
-            "src": "https://la3emedim.fr/assets/cheshire-1.jpg",
-            "alt": "Cheshire vue d'ensemble"
+            "src": "/assets/Cheshire/chesh1.jpeg",
+            "alt": "Cheshire vue d'ensemble",
+            "caption": "Vue complète du Cheshire avec ses composants"
           },
           {
-            "src": "https://la3emedim.fr/assets/cheshire-2.jpg",
-            "alt": "Détail des mires interchangeables"
+            "src": "/assets/Cheshire/chesh2.jpeg",
+            "alt": "Détail des mires interchangeables",
+            "caption": "Système de mires interchangeables par vis"
           },
           {
-            "src": "https://la3emedim.fr/assets/cheshire-3.jpg",
-            "alt": "Système de vis pour changement de mires"
+            "src": "/assets/Cheshire/chesh3.jpeg",
+            "alt": "Cheshire assemblé",
+            "caption": "Cheshire monté et prêt à l'utilisation"
           },
           {
-            "src": "https://la3emedim.fr/assets/cheshire-4.jpg",
-            "alt": "Cheshire en utilisation"
+            "src": "/assets/Cheshire/chesh4.jpeg",
+            "alt": "Vue détaillée du mécanisme",
+            "caption": "Détail du mécanisme de changement de mires"
+          },
+          {
+            "src": "/assets/Cheshire/chesh5.jpeg",
+            "alt": "Cheshire en position d'utilisation",
+            "caption": "Positionnement correct dans le porte-oculaire"
+          },
+          {
+            "src": "/assets/Cheshire/chesh6.png",
+            "alt": "Schéma technique du Cheshire",
+            "caption": "Schéma de conception et dimensions"
+          },
+          {
+            "src": "/assets/Cheshire/chesh7.png",
+            "alt": "Vue éclatée des composants",
+            "caption": "Décomposition des différents éléments"
+          },
+          {
+            "src": "/assets/Cheshire/chesh8.png",
+            "alt": "Principe de fonctionnement",
+            "caption": "Explication visuelle du principe de collimation"
+          },
+          {
+            "src": "/assets/Cheshire/Chesh9.png",
+            "alt": "Utilisation pratique",
+            "caption": "Guide d'utilisation du Cheshire sur télescope"
           }
         ]
       }
@@ -109,7 +138,7 @@
           {
             "icon": "precision",
             "title": "Haute précision",
-            "description": "Impression 3D avec tolérance de ±0.1mm pour un alignement parfait"
+            "description": "Impression 3D de haute précision pour un alignement parfait"
           },
           {
             "icon": "modularity",
@@ -124,7 +153,7 @@
           {
             "icon": "durability",
             "title": "Matériau durable",
-            "description": "Fabriqué en PLA+ haute résistance, résistant aux chocs et à l'usure"
+            "description": "Fabriqué en PETG haute résistance, résistant aux chocs et à l'usure"
           }
         ]
       }
@@ -140,17 +169,16 @@
             "specs": {
               "Diamètre": "31.75mm (1.25\")",
               "Longueur": "120mm",
-              "Poids": "85g",
-              "Matériau": "PLA+ haute qualité",
+              "Poids": "35g",
+              "Matériau": "PETG haute qualité",
               "Couleur": "Noir mat (anti-reflet)"
             }
           },
           {
             "title": "Fonctionnalités",
             "specs": {
-              "Mires incluses": "3 mires standard (cercle, croix, points)",
-              "Précision": "±0.1mm",
-              "Compatibilité": "Télescopes Newton f/4 à f/8",
+              "Mires incluses": "3 mires standard (Voir photos)",
+              "Compatibilité": "Télescopes Newton",
               "Système de fixation": "Vis intégrées interchangeables"
             }
           }
@@ -162,24 +190,18 @@
       "id": "section-pricing",
       "data": {
         "title": "Cheshire Standard",
-        "price": "45€",
+        "price": "25€",
         "priceNote": "Kit complet avec 3 mires",
         "included": [
           "Cheshire imprimé en 3D",
           "3 mires interchangeables",
           "Système de vis intégré",
-          "Notice d'utilisation",
-          "Étui de protection"
+          "Vidéo d'utilisation"
         ],
         "ctaText": "Commander",
-        "ctaHref": "mailto:la3emedim@gmail.com?subject=Commande Cheshire Standard",
-        "optionsTitle": "Options supplémentaires",
-        "options": [
-          {
-            "title": "Mires supplémentaires",
-            "description": "Mires de rechange ou spécialisées disponibles sur demande"
-          }
-        ]
+        "ctaHref": "https://buy.stripe.com/00waEZ3Vo2KT0jxaGM67S09",
+        "optionsTitle": "",
+        "options": []
       }
     }
   ],
