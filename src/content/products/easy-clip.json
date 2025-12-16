@@ -130,6 +130,11 @@
         "title": "Galerie Easy Clip",
         "images": [
           {
+            "src": "/assets/Easy clip/Easygi.gif",
+            "alt": "Démonstration de montage Easy Clip",
+            "caption": "Démonstration du montage en action"
+          },
+          {
             "src": "/assets/Easy clip/Easyclip1.jpeg",
             "alt": "Easy Clip vue d'ensemble",
             "caption": "Vue complète du système Easy Clip avec platine aimantée"
