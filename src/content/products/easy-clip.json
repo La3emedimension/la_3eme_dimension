@@ -7,7 +7,7 @@
   "priceNote": "Pile CR2032 non incluse",
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
-  "category": "accessoire",
+  "category": "astronomie",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -168,6 +168,11 @@
             "src": "/assets/Easy clip/Easyclip7.jpeg",
             "alt": "Montage complet",
             "caption": "Système Easy Clip entièrement assemblé"
+          },
+          {
+            "src": "/assets/Easy clip/EasyclipVixen.jpg",
+            "alt": "Easy Clip sur télescope Vixen",
+            "caption": "Installation Easy Clip sur télescope Vixen"
           }
         ]
       }
