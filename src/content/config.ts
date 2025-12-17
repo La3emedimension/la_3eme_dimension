@@ -14,7 +14,7 @@ export const collections = {
 			seoDescription: z.string().optional(),
 			seoKeywords: z.string().optional(),
 		}),
-	}),
+	},
 	blog: defineCollection({
 		type: 'content',
 		schema: z.object({
@@ -24,7 +24,7 @@ export const collections = {
 			img_alt: z.string().optional(),
 			draft: z.boolean().optional(),
 		}),
-	}),
+	},
 	products: defineCollection({
 		type: 'data',
 		schema: z.object({
@@ -39,7 +39,7 @@ export const collections = {
 			draft: z.boolean().optional(),
 			
 			// Category
-			category: z.enum(['services', 'telescope', 'accessoire']).optional(),
+			category: z.enum(['services', 'telescope', 'accessoire', 'astronomie']).optional(),
 			
 			// Product pricing and purchase
 			price: z.string().optional(),

@@ -14,7 +14,7 @@ const products = await getCollection('products', ({ data }) => {
 const categories = [
 	{ id: 'all', name: 'Tous les produits' },
 	{ id: 'services', name: 'Services' },
-	{ id: 'telescope', name: 'Astronomie' },
+	{ id: 'astronomie', name: 'Astronomie' },
 	{ id: 'accessoire', name: 'Accessoires' }
 ];
 
@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	// Set smallest as second
-	const smallestCard = document.querySelector('.product-card[data-category="telescope"]');
+	const smallestCard = document.querySelector('.product-card[data-category="astronomie"]');
 	if (smallestCard) {
 		smallestCard.style.order = '-1';
 	}
