@@ -22,6 +22,7 @@ export const collections = {
 			publishDate: z.coerce.date(),
 			img: z.string().optional(),
 			img_alt: z.string().optional(),
+			draft: z.boolean().optional(),
 		}),
 	}),
 	products: defineCollection({

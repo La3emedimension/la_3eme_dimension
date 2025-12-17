@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Portrait : Galileo Galilei - La 3ème dimension"
+  description="Découvrez le portrait de Galileo Galilei, pionnier de l'observation astronomique moderne et de l'astro-dessin"
+  keywords="galileo galilei, astro-dessin, observation astronomique, télescope, histoire astronomie"
+>
+  <div class="stack gap-20 lg:gap-48">
+    <div class="wrapper stack gap-8 lg:gap-20">
+      <header class="hero">
+        <h1>Galileo Galilei (1564-1642)</h1>
+        <p class="subtitle">Le pionnier de l'observation astronomique moderne</p>
+      </header>
+
+      <main class="portrait-content">
+        <div class="content-grid">
+          <div class="text-content">
+            <section>
+              <h2>Le révolutionnaire de l'astronomie</h2>
+              <p>Galileo Galilei, physicien et astronome italien, révolutionna notre compréhension du cosmos grâce à ses observations télescopiques. Premier à pointer un télescope vers le ciel en 1609, il documenta méticuleusement ses découvertes par le dessin.</p>
+            </section>
+
+            <section>
+              <h2>Ses contributions à l'astro-dessin</h2>
+              <ul>
+                <li><strong>Les phases de Vénus</strong> : Ses croquis précis prouvèrent le modèle héliocentrique</li>
+                <li><strong>Les satellites de Jupiter</strong> : Première documentation des lunes galiléennes</li>
+                <li><strong>La surface lunaire</strong> : Révéla les cratères et montagnes lunaires</li>
+                <li><strong>Les taches solaires</strong> : Observations minutieuses du Soleil</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Technique et matériel</h2>
+              <p>Galilée utilisait un télescope rudimentaire de sa conception, avec un grossissement de seulement 20x. Ses dessins, réalisés à la plume et à l'encre, témoignent d'une précision remarquable pour l'époque.</p>
+            </section>
+
+            <section>
+              <h2>Héritage</h2>
+              <p>Ses méthodes d'observation et de documentation restent une référence pour l'astro-dessin moderne. Il démontra l'importance du dessin comme outil scientifique rigoureux.</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="navigation-back">
+          <a href="/blog/astro-dessin" class="back-link">
+            ← Retour à la découverte de l'astro-dessin
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+    color: var(--accent-regular);
+    font-weight: 600;
+  }
+
+  .portrait-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .content-grid {
+    background: var(--gray-999);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+    margin-bottom: 2rem;
+  }
+
+  .text-content section {
+    margin-bottom: 2rem;
+  }
+
+  .text-content h2 {
+    color: var(--accent-regular);
+    font-size: var(--text-2xl);
+    margin-bottom: 1rem;
+  }
+
+  .text-content p {
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .text-content ul {
+    color: var(--gray-300);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+  }
+
+  .text-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .navigation-back {
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-regular);
+    color: var(--accent-text-over);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 50em) {
+    .content-grid {
+      padding: 2rem;
+    }
+    
+    .hero h1 {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Portrait : Étienne Léopold Trouvelot - La 3ème dimension"
+  description="Découvrez le portrait d'Étienne Léopold Trouvelot, maître de l'illustration astronomique du XIXe siècle"
+  keywords="etienne leopold trouvelot, illustration astronomique, pastel astronomique, harvard observatory, art astronomique"
+>
+  <div class="stack gap-20 lg:gap-48">
+    <div class="wrapper stack gap-8 lg:gap-20">
+      <header class="hero">
+        <h1>Étienne Léopold Trouvelot (1827-1895)</h1>
+        <p class="subtitle">Le maître de l'illustration astronomique</p>
+      </header>
+
+      <main class="portrait-content">
+        <div class="content-grid">
+          <div class="text-content">
+            <section>
+              <h2>L'artiste astronome</h2>
+              <p>Étienne Léopold Trouvelot, artiste et astronome français émigré aux États-Unis, révolutionna l'art de l'illustration astronomique. Ses pastels spectaculaires de phénomènes célestes restent inégalés par leur beauté et leur précision scientifique.</p>
+            </section>
+
+            <section>
+              <h2>Son art unique</h2>
+              <ul>
+                <li><strong>Technique mixte</strong> : Pastel, craie et fusain pour capturer les nuances célestes</li>
+                <li><strong>Précision scientifique</strong> : Chaque détail était observé et vérifié minutieusement</li>
+                <li><strong>Esthétique remarquable</strong> : Ses œuvres sont de véritables chefs-d'œuvre artistiques</li>
+                <li><strong>Innovation</strong> : Premier à représenter les aurores boréales avec tant de réalisme</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>Œuvres emblématiques</h2>
+              <p>Trouvelot créa plus de 7000 illustrations astronomiques, dont ses célèbres représentations des taches solaires et protubérances, de la nébuleuse d'Orion, des aurores boréales et des phases lunaires détaillées.</p>
+            </section>
+
+            <section>
+              <h2>Méthode de travail</h2>
+              <p>Il observait depuis l'Observatoire de Harvard, utilisant des télescopes de grande qualité. Chaque illustration nécessitait plusieurs nuits d'observation pour saisir tous les détails et variations.</p>
+            </section>
+
+            <section>
+              <h2>Héritage artistique</h2>
+              <p>Ses œuvres influencèrent durablement l'iconographie astronomique. Elles ornent encore aujourd'hui de nombreux ouvrages scientifiques et inspirent les artistes contemporains. Ses illustrations furent publiées par l'Observatoire de Harvard et exposées dans le monde entier.</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="navigation-back">
+          <a href="/blog/astro-dessin" class="back-link">
+            ← Retour à la découverte de l'astro-dessin
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+    color: var(--accent-regular);
+    font-weight: 600;
+  }
+
+  .portrait-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .content-grid {
+    background: var(--gray-999);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+    margin-bottom: 2rem;
+  }
+
+  .text-content section {
+    margin-bottom: 2rem;
+  }
+
+  .text-content h2 {
+    color: var(--accent-regular);
+    font-size: var(--text-2xl);
+    margin-bottom: 1rem;
+  }
+
+  .text-content p {
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .text-content ul {
+    color: var(--gray-300);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+  }
+
+  .text-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .navigation-back {
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-regular);
+    color: var(--accent-text-over);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 50em) {
+    .content-grid {
+      padding: 2rem;
+    }
+    
+    .hero h1 {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

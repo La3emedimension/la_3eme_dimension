@@ -2,7 +2,7 @@
   "seoTitle": "Easy Clip - Platine aimantée pour chercheur astronomique | La 3ème dimension",
   "seoDescription": "Platine aimantée innovante pour changer facilement de télescope avec pile CR2032 déportée. Solution universelle pour chercheurs astronomiques.",
   "seoKeywords": "easy clip, quickfinder, chercheur télescope, platine aimantée, rigel systems, astronomie, télescope",
-  "ogImage": "https://la3emedim.fr/assets/Easy%20clip/Easyclip7.jpeg",
+  "ogImage": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
   "price": "45€",
   "priceNote": "Pile CR2032 non incluse",
   "emailContact": "la3emedim@gmail.com",
@@ -33,7 +33,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/Easy%20clip/Easyclip7.jpeg",
+    "image": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
     "features": [
       "Platine aimantée haute résistance",
       "Compatible différents chercheurs astronomiques",
@@ -70,7 +70,7 @@
           "href": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a"
         },
         "heroImage": {
-          "src": "/assets/Easy%20clip/Easyclip7.jpeg",
+          "src": "/assets/easyclip/Easyclip7.jpeg",
           "alt": "Easy Clip platine aimantée pour chercheurs astronomiques"
         }
       }
@@ -130,47 +130,47 @@
         "title": "Galerie Easy Clip",
         "images": [
           {
-            "src": "/assets/Easy%20clip/Easygi.gif",
+            "src": "/assets/easyclip/Easygi.gif",
             "alt": "Démonstration de montage Easy Clip",
             "caption": "Démonstration du montage en action"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip1.jpeg",
+            "src": "/assets/easyclip/Easyclip1.jpeg",
             "alt": "Easy Clip vue d'ensemble",
             "caption": "Vue complète du système Easy Clip avec platine aimantée"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip2.jpeg",
+            "src": "/assets/easyclip/Easyclip2.jpeg",
             "alt": "Installation sur télescope",
             "caption": "Installation facile sur différents types de télescopes"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip3.jpeg",
+            "src": "/assets/easyclip/Easyclip3.jpeg",
             "alt": "Système magnétique",
             "caption": "Détail du système magnétique haute résistance"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip4.jpeg",
+            "src": "/assets/easyclip/Easyclip4.jpeg",
             "alt": "Pile CR2032 déportée",
             "caption": "Pile CR2032 déportée pour un accès facile"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip5.jpeg",
+            "src": "/assets/easyclip/Easyclip5.jpeg",
             "alt": "Easy Clip en utilisation",
             "caption": "Easy Clip en position de fonctionnement"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip6.jpeg",
+            "src": "/assets/easyclip/Easyclip6.jpeg",
             "alt": "Détail de la platine",
             "caption": "Vue détaillée de la platine avec double face"
           },
           {
-            "src": "/assets/Easy%20clip/Easyclip7.jpeg",
+            "src": "/assets/easyclip/Easyclip7.jpeg",
             "alt": "Montage complet",
             "caption": "Système Easy Clip entièrement assemblé"
           },
           {
-            "src": "/assets/Easy%20clip/EasyclipVixen.jpg",
+            "src": "/assets/easyclip/EasyclipVixen.jpg",
             "alt": "Easy Clip sur télescope Vixen",
             "caption": "Installation Easy Clip sur télescope Vixen"
           }
