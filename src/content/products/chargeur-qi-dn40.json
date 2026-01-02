@@ -1,0 +1,218 @@
+{
+  "seoTitle": "Chargeur Qi Dn40 - Chargeur sans fil iPhone design Dieter Rams | La 3ème dimension",
+  "seoDescription": "Chargeur sans fil Qi pour iPhone inspiré du design iconique de Dieter Rams. Design minimaliste et fonctionnel pour un chargement élégant.",
+  "seoKeywords": "chargeur qi, chargeur sans fil, iphone, dieter rams, design minimaliste, dn40, braun, accessoires",
+  "ogImage": "https://la3emedim.fr/assets/dn40/dn40-hero.jpeg",
+  "price": "89€",
+  "priceNote": "Câble USB-C inclus",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "accessoire",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Chargeur Qi Dn40",
+    "description": "Chargeur sans fil Qi pour iPhone inspiré du design iconique de Dieter Rams. Design minimaliste et fonctionnel pour un chargement élégant.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Accessoires électroniques",
+    "offers": {
+      "@type": "Offer",
+      "price": "89",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/dn40/dn40-hero.jpeg",
+    "features": [
+      "Design inspiré de Dieter Rams",
+      "Chargement sans fil Qi 15W",
+      "Compatible iPhone 12 et plus récents",
+      "Matériaux premium",
+      "LED d'indication discrète",
+      "Base antidérapante"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Dn40",
+        "tagline": "Moins, mais mieux",
+        "description": "Chargeur sans fil Qi pour iPhone inspiré de l'esthétique intemporelle de Dieter Rams. Un design épuré qui honore les principes du bon design : utile, compréhensible, discret et durable.",
+        "features": [
+          {
+            "icon": "strategy",
+            "text": "Design Rams-inspired"
+          },
+          {
+            "icon": "rocket-launch",
+            "text": "Charge rapide 15W"
+          },
+          {
+            "icon": "terminal-window",
+            "text": "Compatible iPhone"
+          }
+        ],
+        "primaryCta": {
+          "text": "Précommander",
+          "href": "mailto:la3emedim@gmail.com?subject=Précommande Chargeur Qi Dn40&body=Bonjour, je souhaite précommander le chargeur Qi Dn40."
+        },
+        "heroImage": {
+          "src": "/assets/dn40/dn40-hero.jpeg",
+          "alt": "Chargeur Qi Dn40 design minimaliste inspiré Dieter Rams"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Les 10 principes du bon design",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Design intemporel",
+            "description": "Inspiré des créations emblématiques de Dieter Rams chez Braun, ce chargeur transcende les modes passagères."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Charge rapide intelligente",
+            "description": "Technologie Qi 15W avec gestion thermique optimisée pour préserver la batterie de votre iPhone."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Minimalisme fonctionnel",
+            "description": "Chaque élément a sa raison d'être. LED discrète, base stable, proportions étudiées."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Chargement et compatibilité",
+            "specs": {
+              "Puissance": "15W maximum (Qi certifié)",
+              "Compatibilité": "iPhone 12, 13, 14, 15 et plus récents",
+              "Protocole": "Qi 1.3 avec EPP",
+              "Protection": "Surchauffe, surtension, corps étranger"
+            }
+          },
+          {
+            "title": "Design et matériaux",
+            "specs": {
+              "Matériaux": "Aluminium anodisé, silicone premium",
+              "Dimensions": "100 × 100 × 15 mm",
+              "Poids": "180g",
+              "Couleurs": "Blanc cassé, Gris anthracite",
+              "LED": "Indicateur d'état discret"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie Dn40",
+        "images": [
+          {
+            "src": "/assets/dn40/dn40-hero.jpeg",
+            "alt": "Chargeur Dn40 vue principale",
+            "caption": "Design épuré inspiré de l'école allemande"
+          },
+          {
+            "src": "/assets/dn40/dn40-profile.jpeg",
+            "alt": "Profil du chargeur Dn40",
+            "caption": "Profil ultra-fin et proportions étudiées"
+          },
+          {
+            "src": "/assets/dn40/dn40-materials.jpeg",
+            "alt": "Détail des matériaux",
+            "caption": "Aluminium anodisé et finitions premium"
+          },
+          {
+            "src": "/assets/dn40/dn40-charging.jpeg",
+            "alt": "iPhone en charge sur Dn40",
+            "caption": "Chargement sans fil élégant et efficace"
+          },
+          {
+            "src": "/assets/dn40/dn40-colors.jpeg",
+            "alt": "Variantes de couleurs Dn40",
+            "caption": "Disponible en blanc cassé et gris anthracite"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Chargeur Qi Dn40",
+        "price": "89€",
+        "priceNote": "Livraison gratuite en France métropolitaine",
+        "included": [
+          "Chargeur sans fil Dn40",
+          "Câble USB-C 1,5m tressé",
+          "Manuel d'utilisation",
+          "Garantie 2 ans"
+        ],
+        "ctaText": "Précommander",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Précommande Chargeur Qi Dn40&body=Bonjour, je souhaite précommander le chargeur Qi Dn40.",
+        "optionsTitle": "Options de couleur",
+        "options": [
+          {
+            "title": "Blanc cassé",
+            "description": "Finition mate inspirée des appareils Braun historiques"
+          },
+          {
+            "title": "Gris anthracite",
+            "description": "Version contemporaine pour les intérieurs modernes"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Présentation"
+    },
+    {
+      "id": "section-features",
+      "label": "Philosophie"
+    },
+    {
+      "id": "section-specs",
+      "label": "Spécifications"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Galerie"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Commande"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Le Smallest en Bretagne",
+  "author": "Marius",
+    "description": "Petite sortie en bord de mer à Pléneuf Val-André",
+  "latitude": 48.585401,
+  "longitude": -2.561015,
+  "mainPhoto": "/assets/builds/marius1/Marius_small1.jpeg",
+  "additionalPhotos": [
+    "/assets/builds/marius1/Marius_small2.jpeg",
+    "/assets/builds/marius1/Marius_small3.jpeg",
+    "/assets/builds/marius1/Marius_small4.jpeg",
+    "/assets/builds/marius1/Marius_small5.jpeg",
+    "/assets/builds/marius1/Marius_small6.jpeg"
+  ],
+  "draft": false
+}
