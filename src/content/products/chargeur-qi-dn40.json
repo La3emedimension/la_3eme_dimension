@@ -6,7 +6,7 @@
   "price": "89€",
   "priceNote": "Câble USB-C inclus",
   "emailContact": "la3emedim@gmail.com",
-  "draft": false,
+  "draft": true,
   "category": "accessoire",
   "structuredData": {
     "@context": "https://schema.org",
