@@ -37,7 +37,7 @@ const businessStructuredData = {
     description:
         "Spécialiste en impression 3D et conception de télescopes compacts. Innovation dans l'astronomie portable avec le télescope Smallest. Service Toulouse et région.",
     url: "https://la3emedim.fr",
-    telephone: "contact via email",
+    telephone: "0760853870",
     email: "la3emedim@gmail.com",
     address: {
         "@type": "PostalAddress",
@@ -108,6 +108,10 @@ const businessStructuredData = {
                                 size="1.33em"
                             /></button
                         >
+                        <a href="tel:0760853870" class="phone-link">
+                            <Icon icon="phone" size="1.2em" />
+                            07 60 85 38 70
+                        </a>
                     </div>
                 </Hero>
 
@@ -182,7 +186,7 @@ const businessStructuredData = {
     a {
         text-decoration: none;
     }
-    button {
+    button, .phone-link {
         cursor: pointer;
         display: flex;
         text-align: center;
@@ -197,6 +201,14 @@ const businessStructuredData = {
         line-height: 1.35;
         white-space: nowrap;
         vertical-align: middle;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .phone-link:hover {
+        background-color: var(--accent-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
     }
 
     .hero {
