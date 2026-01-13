@@ -47,8 +47,8 @@
       "id": "section-hero",
       "data": {
         "title": "Smallest",
-        "tagline": "Le télescope portable",
-        "description": "\"Le meilleur télescope, c'est celui que l'on utilise souvent !\"<br>Emportez votre télescope 150/750 partout avec vous.",
+        "tagline": "\"Le meilleur télescope, c'est celui que l'on utilise souvent !\"",
+        "description": "Scruter le ciel avec simplicité. Le Smallest c'est l'innovation qui rencontre l'intuitif : un télescope si facile à utiliser que son montage vous guide naturellement. Chaque soirée d'observation devient une exploration fluide et captivante, sans réglages complexes ni barrières, pour un voyage immédiat et profond au cœur de l'univers. Compact et ultra-portable, il vous accompagne partout.",
         "features": [
           { "icon": "paper-plane-tilt", "text": "Transportable en avion" },
           { "icon": "rocket-launch", "text": "150/750 Newton" },
