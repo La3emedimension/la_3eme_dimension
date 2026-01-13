@@ -4,7 +4,7 @@ publishDate:  2020-03-04 00:00:00
 img: /assets/stock-1.jpg
 img_alt: télescope imprimé en 3D avec vue sur les pyrénées et couché de soleil.
 description: |
-  "Le meilleur télescope du monde , c'est celui que l'on utilise souvent !"
+  "Le meilleur télescope du monde , c'est celui que l'on utilise souvent !" qui par son design vous fait comprendre son fonctionnement. Avec un montage en 4min qui tient dans un sac à dos ou une sacoche.
 tags:
   - Design
   - Astronomie

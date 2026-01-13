@@ -62,6 +62,84 @@
       }
     },
     {
+      "type": "video",
+      "id": "section-video",
+      "data": {
+        "title": "Montage en 4 minutes",
+        "description": "Découvrez la simplicité du Smallest : du transport à l'observation en moins de 4 minutes. Aucun outil requis, montage intuitif pour profiter rapidement du ciel étoilé.",
+        "videoId": "-7mI89_OHzk",
+        "videoTitle": "Montage et observation avec le télescope Smallest en 4 minutes"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Pourquoi choisir Smallest ?",
+        "features": [
+          {
+            "icon": "rocket-launch",
+            "title": "Performance optique",
+            "description": "Diamètre 150mm, focale 750mm pour des observations de qualité."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Transportabilité",
+            "description": "Respecte les dimensions cabine d'avion. Optiques démontables facilement. Tient dans une sacoche d'ordinateur ou dans un sac à dos. 4 kilos prêt pour la randonnée."
+          },
+          {
+            "icon": "strategy",
+            "title": "Modulaire",
+            "description": "Kit de conversion pour vos optiques industrielles ou artisanals. Structure type Dobson. Porte-oculaire 1.25. Montage sans outils."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Impression 3D",
+            "description": "Précision optimale grâce à la fabrication additive. Structure légère et résistante. Personnalisable et imprimé en PETG chargé en fibre de carbone."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Optiques",
+            "specs": {
+              "Type": "Newton 150/750",
+              "Diamètre": "150mm",
+              "Focale": "750mm",
+              "Rapport F/D": "F/5",
+              "Porte-oculaire": "1.25\""
+            }
+          },
+          {
+            "title": "Dimensions & Poids",
+            "specs": {
+              "Transport": "25 × 25 × 20 cm",
+              "Observation": "25 × 25 × 87 cm",
+              "Poids total": "4 kg avec optiques",
+              "Structure": "Tiges aluminium",
+              "Monture": "Dobson intégrée"
+            }
+          },
+          {
+            "title": "Compatibilité",
+            "specs": {
+              "Optiques": "Standards 150/750",
+              "Chercheur": "Queue d'aronde",
+              "Transport": "Cabine avion",
+              "Montage": "Sans outils",
+              "Garantie": "2 ans"
+            }
+          }
+        ]
+      }
+    },
+    {
       "type": "gallery",
       "id": "section-gallery",
       "data": {
@@ -156,84 +234,6 @@
       }
     },
     {
-      "type": "video",
-      "id": "section-video",
-      "data": {
-        "title": "Montage en 4 minutes",
-        "description": "Découvrez la simplicité du Smallest : du transport à l'observation en moins de 4 minutes. Aucun outil requis, montage intuitif pour profiter rapidement du ciel étoilé.",
-        "videoId": "-7mI89_OHzk",
-        "videoTitle": "Montage et observation avec le télescope Smallest en 4 minutes"
-      }
-    },
-    {
-      "type": "features",
-      "id": "section-features",
-      "data": {
-        "title": "Pourquoi choisir Smallest ?",
-        "features": [
-          {
-            "icon": "rocket-launch",
-            "title": "Performance optique",
-            "description": "Diamètre 150mm, focale 750mm pour des observations de qualité."
-          },
-          {
-            "icon": "paper-plane-tilt",
-            "title": "Transportabilité",
-            "description": "Respecte les dimensions cabine d'avion. Optiques démontables facilement. Tient dans une sacoche d'ordinateur ou dans un sac à dos. 4 kilos prêt pour la randonnée."
-          },
-          {
-            "icon": "strategy",
-            "title": "Modulaire",
-            "description": "Kit de conversion pour vos optiques industrielles ou artisanals. Structure type Dobson. Porte-oculaire 1.25. Montage sans outils."
-          },
-          {
-            "icon": "terminal-window",
-            "title": "Impression 3D",
-            "description": "Précision optimale grâce à la fabrication additive. Structure légère et résistante. Personnalisable et imprimé en PETG chargé en fibre de carbone."
-          }
-        ]
-      }
-    },
-    {
-      "type": "specs",
-      "id": "section-specs",
-      "data": {
-        "title": "Spécifications techniques",
-        "specGroups": [
-          {
-            "title": "Optiques",
-            "specs": {
-              "Type": "Newton 150/750",
-              "Diamètre": "150mm",
-              "Focale": "750mm",
-              "Rapport F/D": "F/5",
-              "Porte-oculaire": "1.25\""
-            }
-          },
-          {
-            "title": "Dimensions & Poids",
-            "specs": {
-              "Transport": "25 × 25 × 20 cm",
-              "Observation": "25 × 25 × 87 cm",
-              "Poids total": "4 kg avec optiques",
-              "Structure": "Tiges aluminium",
-              "Monture": "Dobson intégrée"
-            }
-          },
-          {
-            "title": "Compatibilité",
-            "specs": {
-              "Optiques": "Standards 150/750",
-              "Chercheur": "Queue d'aronde",
-              "Transport": "Cabine avion",
-              "Montage": "Sans outils",
-              "Garantie": "2 ans"
-            }
-          }
-        ]
-      }
-    },
-    {
       "type": "pricing",
       "id": "section-pricing",
       "data": {
@@ -285,10 +285,10 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
-    { "id": "gallery", "label": "Images" },
     { "id": "video", "label": "Démonstration" },
     { "id": "features", "label": "Avantages" },
     { "id": "specs", "label": "Spécifications" },
+    { "id": "gallery", "label": "Images" },
     { "id": "pricing", "label": "Tarifs" },
     { "id": "section-community", "label": "Communauté" }
   ],
