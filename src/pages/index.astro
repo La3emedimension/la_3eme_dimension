@@ -102,23 +102,9 @@ const businessStructuredData = {
                 >
                     <div class="roles">
                         <button
-                            onclick="window.location.href = '//la3emedim.fr/work/';"
-                            >conception/impression <Icon
+                            onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });"
+                            >Nous contacter <Icon
                                 icon="pencil-line"
-                                size="1.33em"
-                            /></button
-                        >
-                        <button
-                            onclick="window.location.href = '//la3emedim.fr/shop/';"
-                            >Boutique <Icon
-                                icon="Store-logo"
-                                size="1.33em"
-                            /></button
-                        >
-                        <button
-                            onclick="window.location.href = '//www.printables.com/@La3emedimens_2102135';"
-                            >Modèles <Icon
-                                icon="printables-logo"
                                 size="1.33em"
                             /></button
                         >
@@ -184,7 +170,9 @@ const businessStructuredData = {
             </div>
         </main>
 
-        <ContactCTA />
+        <div id="contact-section">
+            <ContactCTA />
+        </div>
     </div>
 
     <ScrollIndicator />

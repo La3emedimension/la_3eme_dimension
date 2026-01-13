@@ -5,10 +5,16 @@ import Icon from './Icon.astro';
 
 <aside>
 	<h2>Vous avez un besoin lié à l'impression 3D ?</h2>
-	<CallToAction href="mailto:la3emedim@gmail.com">
-		Contactez-nous !
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
+	<div class="contact-buttons">
+		<CallToAction href="mailto:la3emedim@gmail.com">
+			Contactez-nous !
+			<Icon icon="paper-plane-tilt" size="1.2em" />
+		</CallToAction>
+		<CallToAction href="tel:0760853870">
+			07 60 85 38 70
+			<Icon icon="phone" size="1.2em" />
+		</CallToAction>
+	</div>
 </aside>
 
 <style>
@@ -30,6 +36,13 @@ import Icon from './Icon.astro';
 		max-width: 20ch;
 	}
 
+	.contact-buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: center;
+	}
+
 	@media (min-width: 50em) {
 		aside {
 			padding: 7.5rem;
@@ -41,6 +54,11 @@ import Icon from './Icon.astro';
 		h2 {
 			font-size: var(--text-3xl);
 			text-align: left;
+		}
+
+		.contact-buttons {
+			flex-direction: row;
+			gap: 2rem;
 		}
 	}
 </style>
