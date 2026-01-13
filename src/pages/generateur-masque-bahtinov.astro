@@ -786,82 +786,216 @@ class BahtinovGenerator {
       
       console.log('Creating correct Bahtinov pattern...');
 
-      // SECTEUR 1: Grand tiers avec barres HORIZONTALES (perpendiculaires à l'axe central)
-      // Limité à la partie basse et à l'intérieur du cercle
-      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
-        const x_pos = pos + step/4;
-        
-        // Calculer la hauteur maximale pour rester dans le cercle à cette position x
-        const max_y_for_circle = Math.sqrt(Math.max(0, radius * radius - x_pos * x_pos));
-        
-        // Limiter la barre à la partie basse (secteur de 240°)
-        // En gros, on veut que les barres restent dans la partie inférieure
-        const bar_height = Math.min(radius * 1.2, max_y_for_circle * 1.4); // Plus petit que le cercle
-        
-        const barGeometry = new THREE.BoxGeometry(
-          portion * step,
-          bar_height, 
-          this.params.thickness
-        );
-        const bar = new THREE.Mesh(barGeometry, material.clone());
-        
-        // Centrer la barre dans la partie basse
-        const y_offset = -bar_height * 0.3; // Décaler vers le bas
-        bar.position.set(x_pos, y_offset, this.params.thickness/2);
-        
-        // Seulement si on est dans la zone du grand secteur et dans le cercle
-        if (Math.abs(x_pos) <= radius * 0.9 && x_pos * x_pos + y_offset * y_offset <= radius * radius * 0.8) {
+      // SECTEUR 1: Moitié inférieure avec barres VERTICALES
+      // Les barres doivent couvrir toute la moitié basse (y <= 0) jusqu'aux bords du support
+      for (let i = -no_bars; i <= no_bars; i++) {
+        const x_pos = i * step;
+
+        // Calculer la hauteur maximale pour rester dans le cercle extérieur à cette position x
+        if (Math.abs(x_pos) <= radius_ext) {
+          const max_y = Math.sqrt(radius_ext * radius_ext - x_pos * x_pos);
+
+          // Calculer les limites pour la partie basse
+          // On veut que les barres aillent de y = -max_y jusqu'à y = 0
+          const y_bottom = -max_y;
+          const y_top = 0;
+          const bar_height = (y_top - y_bottom) * 0.98; // Marge de sécurité
+
+          // Centre de la barre
+          const y_center = (y_top + y_bottom) / 2;
+
+          const barGeometry = new THREE.BoxGeometry(
+            portion * step,
+            bar_height,
+            this.params.thickness
+          );
+          const bar = new THREE.Mesh(barGeometry, material.clone());
+
+          bar.position.set(x_pos, y_center, this.params.thickness/2);
+
           maskGroup.add(bar);
         }
       }
 
-      // SECTEUR 2: Petit tiers supérieur gauche avec barres DIAGONALES
+      // SECTEUR 2: Quart supérieur gauche avec barres DIAGONALES
+      // Les barres sont inclinées de +angle degrés par rapport à la verticale
       const angle_rad_left = this.params.angle * Math.PI / 180;
-      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
-        const coord = pos + step/4;
-        
-        const barGeometry = new THREE.BoxGeometry(
-          portion * step,
-          radius * 1.5, 
-          this.params.thickness
-        );
-        const bar = new THREE.Mesh(barGeometry, material.clone());
-        
-        // Position dans le quadrant supérieur gauche
-        const x_pos = -radius * 0.6 + coord * Math.cos(angle_rad_left);
-        const y_pos = radius * 0.4 + coord * Math.sin(angle_rad_left);
-        
-        bar.position.set(x_pos, y_pos, this.params.thickness/2);
-        bar.rotation.z = angle_rad_left;
-        
-        // Vérifier que c'est dans le bon secteur
-        if (x_pos <= 0 && y_pos >= 0) {
-          maskGroup.add(bar);
+
+      // Calculer le nombre de barres nécessaires pour couvrir le quart
+      const diagonal_extent = radius_ext * Math.sqrt(2); // Diagonale du quart
+      const num_bars_diag = Math.ceil(diagonal_extent / step) * 2;
+
+      for (let i = -num_bars_diag; i <= num_bars_diag; i++) {
+        // Position le long d'un axe perpendiculaire aux barres
+        const perp_offset = i * step;
+
+        // Les barres sont orientées selon angle_rad_left
+        // L'axe perpendiculaire est à 90° de cette orientation
+        const perp_dir_x = -Math.sin(angle_rad_left);
+        const perp_dir_y = Math.cos(angle_rad_left);
+
+        // Point de départ sur l'axe perpendiculaire
+        const base_x = perp_offset * perp_dir_x;
+        const base_y = perp_offset * perp_dir_y;
+
+        // Direction de la barre
+        const bar_dir_x = Math.cos(angle_rad_left);
+        const bar_dir_y = Math.sin(angle_rad_left);
+
+        // Trouver les intersections avec les limites du secteur:
+        // 1. Cercle extérieur
+        // 2. Axe y = 0 (ne pas descendre en dessous)
+        // 3. Axe x = 0 (ne pas aller à droite)
+
+        let t_values = [];
+
+        // Intersection avec le cercle: (base_x + t*bar_dir_x)² + (base_y + t*bar_dir_y)² = radius_ext²
+        const a = bar_dir_x * bar_dir_x + bar_dir_y * bar_dir_y;
+        const b = 2 * (base_x * bar_dir_x + base_y * bar_dir_y);
+        const c = base_x * base_x + base_y * base_y - radius_ext * radius_ext;
+        const discriminant = b * b - 4 * a * c;
+
+        if (discriminant >= 0) {
+          const sqrt_disc = Math.sqrt(discriminant);
+          t_values.push((-b - sqrt_disc) / (2 * a));
+          t_values.push((-b + sqrt_disc) / (2 * a));
+        }
+
+        // Intersection avec y = 0: base_y + t*bar_dir_y = 0
+        if (Math.abs(bar_dir_y) > 0.001) {
+          t_values.push(-base_y / bar_dir_y);
+        }
+
+        // Intersection avec x = 0: base_x + t*bar_dir_x = 0
+        if (Math.abs(bar_dir_x) > 0.001) {
+          t_values.push(-base_x / bar_dir_x);
+        }
+
+        // Filtrer pour ne garder que les points dans le bon quadrant
+        let valid_t = [];
+        for (let t of t_values) {
+          const x = base_x + t * bar_dir_x;
+          const y = base_y + t * bar_dir_y;
+          const dist = Math.sqrt(x * x + y * y);
+
+          if (x <= 0.1 && y >= -0.1 && dist <= radius_ext * 1.01) {
+            valid_t.push(t);
+          }
+        }
+
+        if (valid_t.length >= 2) {
+          valid_t.sort((a, b) => a - b);
+          const t_start = valid_t[0];
+          const t_end = valid_t[valid_t.length - 1];
+
+          const bar_length = (t_end - t_start) * 0.97;
+          const t_center = (t_start + t_end) / 2;
+
+          const center_x = base_x + t_center * bar_dir_x;
+          const center_y = base_y + t_center * bar_dir_y;
+
+          if (bar_length > step * 0.3 && center_y > 0.1) {
+            const barGeometry = new THREE.BoxGeometry(
+              portion * step,
+              bar_length,
+              this.params.thickness
+            );
+            const bar = new THREE.Mesh(barGeometry, material.clone());
+
+            bar.position.set(center_x, center_y, this.params.thickness/2);
+            bar.rotation.z = angle_rad_left;
+
+            maskGroup.add(bar);
+          }
         }
       }
 
-      // SECTEUR 3: Petit tiers supérieur droit avec barres DIAGONALES opposées
+      // SECTEUR 3: Quart supérieur droit avec barres DIAGONALES opposées
+      // Les barres sont inclinées de -angle degrés par rapport à la verticale
       const angle_rad_right = -this.params.angle * Math.PI / 180;
-      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
-        const coord = pos + step/4;
-        
-        const barGeometry = new THREE.BoxGeometry(
-          portion * step,
-          radius * 1.5, 
-          this.params.thickness
-        );
-        const bar = new THREE.Mesh(barGeometry, material.clone());
-        
-        // Position dans le quadrant supérieur droit
-        const x_pos = radius * 0.6 + coord * Math.cos(angle_rad_right);
-        const y_pos = radius * 0.4 + coord * Math.sin(angle_rad_right);
-        
-        bar.position.set(x_pos, y_pos, this.params.thickness/2);
-        bar.rotation.z = angle_rad_right;
-        
-        // Vérifier que c'est dans le bon secteur
-        if (x_pos >= 0 && y_pos >= 0) {
-          maskGroup.add(bar);
+
+      for (let i = -num_bars_diag; i <= num_bars_diag; i++) {
+        // Position le long d'un axe perpendiculaire aux barres
+        const perp_offset = i * step;
+
+        // Les barres sont orientées selon angle_rad_right
+        // L'axe perpendiculaire est à 90° de cette orientation
+        const perp_dir_x = -Math.sin(angle_rad_right);
+        const perp_dir_y = Math.cos(angle_rad_right);
+
+        // Point de départ sur l'axe perpendiculaire
+        const base_x = perp_offset * perp_dir_x;
+        const base_y = perp_offset * perp_dir_y;
+
+        // Direction de la barre
+        const bar_dir_x = Math.cos(angle_rad_right);
+        const bar_dir_y = Math.sin(angle_rad_right);
+
+        // Trouver les intersections avec les limites du secteur:
+        // 1. Cercle extérieur
+        // 2. Axe y = 0 (ne pas descendre en dessous)
+        // 3. Axe x = 0 (ne pas aller à gauche)
+
+        let t_values = [];
+
+        // Intersection avec le cercle: (base_x + t*bar_dir_x)² + (base_y + t*bar_dir_y)² = radius_ext²
+        const a = bar_dir_x * bar_dir_x + bar_dir_y * bar_dir_y;
+        const b = 2 * (base_x * bar_dir_x + base_y * bar_dir_y);
+        const c = base_x * base_x + base_y * base_y - radius_ext * radius_ext;
+        const discriminant = b * b - 4 * a * c;
+
+        if (discriminant >= 0) {
+          const sqrt_disc = Math.sqrt(discriminant);
+          t_values.push((-b - sqrt_disc) / (2 * a));
+          t_values.push((-b + sqrt_disc) / (2 * a));
+        }
+
+        // Intersection avec y = 0: base_y + t*bar_dir_y = 0
+        if (Math.abs(bar_dir_y) > 0.001) {
+          t_values.push(-base_y / bar_dir_y);
+        }
+
+        // Intersection avec x = 0: base_x + t*bar_dir_x = 0
+        if (Math.abs(bar_dir_x) > 0.001) {
+          t_values.push(-base_x / bar_dir_x);
+        }
+
+        // Filtrer pour ne garder que les points dans le bon quadrant
+        let valid_t = [];
+        for (let t of t_values) {
+          const x = base_x + t * bar_dir_x;
+          const y = base_y + t * bar_dir_y;
+          const dist = Math.sqrt(x * x + y * y);
+
+          if (x >= -0.1 && y >= -0.1 && dist <= radius_ext * 1.01) {
+            valid_t.push(t);
+          }
+        }
+
+        if (valid_t.length >= 2) {
+          valid_t.sort((a, b) => a - b);
+          const t_start = valid_t[0];
+          const t_end = valid_t[valid_t.length - 1];
+
+          const bar_length = (t_end - t_start) * 0.97;
+          const t_center = (t_start + t_end) / 2;
+
+          const center_x = base_x + t_center * bar_dir_x;
+          const center_y = base_y + t_center * bar_dir_y;
+
+          if (bar_length > step * 0.3 && center_y > 0.1) {
+            const barGeometry = new THREE.BoxGeometry(
+              portion * step,
+              bar_length,
+              this.params.thickness
+            );
+            const bar = new THREE.Mesh(barGeometry, material.clone());
+
+            bar.position.set(center_x, center_y, this.params.thickness/2);
+            bar.rotation.z = angle_rad_right;
+
+            maskGroup.add(bar);
+          }
         }
       }
 
@@ -934,16 +1068,16 @@ class BahtinovGenerator {
     const inner_radius_bottom = radius_ext - this.params.holder_wall;
     const inner_radius_top = radius_ext - this.params.holder_wall / this.params.holder_thinning;
 
-    // Base du cylindre
+    // Base du cylindre - collée au masque à Z=0
     const baseGeometry = new THREE.RingGeometry(inner_radius_bottom, radius_ext, 32);
     const base = new THREE.Mesh(baseGeometry, material.clone());
-    base.position.z = this.params.thickness;
+    base.position.z = 0;
     group.add(base);
 
     // Sommet du cylindre
     const topGeometry = new THREE.RingGeometry(inner_radius_top, radius_ext, 32);
     const top = new THREE.Mesh(topGeometry, material.clone());
-    top.position.z = this.params.thickness + this.params.holder_height;
+    top.position.z = this.params.holder_height;
     group.add(top);
 
     // Paroi cylindrique externe
@@ -951,7 +1085,7 @@ class BahtinovGenerator {
       radius_ext, radius_ext, this.params.holder_height, 32, 1, true
     );
     const outerWall = new THREE.Mesh(outerWallGeometry, material.clone());
-    outerWall.position.z = this.params.thickness + this.params.holder_height/2;
+    outerWall.position.z = this.params.holder_height/2;
     outerWall.rotation.x = Math.PI / 2;
     group.add(outerWall);
   }
