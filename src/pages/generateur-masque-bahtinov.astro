@@ -1,0 +1,1020 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+
+// Générateur de Masque Bahtinov - Version Three.js avec esthétique du site
+---
+
+<BaseLayout 
+  title="Générateur Masque Bahtinov - La 3ème dimension"
+  description="Générateur en ligne de masques Bahtinov pour télescopes astronomiques avec prévisualisation 3D et export STL"
+  keywords="bahtinov, masque, télescope, astronomie, impression 3d, génération"
+>
+  <div class="stack gap-6 lg:gap-8">
+    <div class="wrapper">
+      <header class="hero-section">
+        <Hero
+          title="Générateur Masque Bahtinov"
+          tagline="Créez votre masque de mise au point avec prévisualisation 3D et export STL"
+          align="start"
+        />
+      </header>
+    </div>
+
+    <main class="wrapper">
+      <div class="generator-container">
+        <aside class="sidebar">
+          <div class="controls-section">
+            <h2>Paramètres du télescope</h2>
+            
+            <div class="param-group">
+              <label for="focal_length">Focale</label>
+              <div class="input-with-unit">
+                <input type="number" id="focal_length" value="200" min="50" max="5000" step="10">
+                <select id="focal_unit">
+                  <option value="mm">mm</option>
+                  <option value="inch">inch</option>
+                </select>
+              </div>
+              <div class="param-description">Longueur focale de votre télescope</div>
+            </div>
+
+            <div class="param-group">
+              <label for="aperture_diameter">Diamètre d'ouverture</label>
+              <div class="input-with-unit">
+                <input type="number" id="aperture_diameter" value="60" min="30" max="500" step="1">
+                <select id="aperture_unit">
+                  <option value="mm">mm</option>
+                  <option value="inch">inch</option>
+                </select>
+              </div>
+              <div class="param-description">Diamètre de l'objectif ou du miroir principal</div>
+            </div>
+
+            <div class="param-group">
+              <label for="central_obstruction">Obstruction centrale (%)</label>
+              <input type="number" id="central_obstruction" value="0" min="0" max="50" step="1">
+              <div class="param-description">Pourcentage d'obstruction (0% pour réfracteur)</div>
+            </div>
+
+            <h2>Dimensions du masque</h2>
+
+            <div class="param-group">
+              <label for="dia_ext">Diamètre extérieur</label>
+              <div class="input-with-unit">
+                <input type="number" id="dia_ext" value="60" min="30" max="500" step="1">
+                <select id="mask_unit">
+                  <option value="mm">mm</option>
+                  <option value="inch">inch</option>
+                </select>
+              </div>
+              <div class="param-description">Incluant l'anneau de fixation</div>
+            </div>
+
+
+
+            <h2>Paramètres optiques</h2>
+
+            <div class="param-group">
+              <label for="angle">Angle des barres (°)</label>
+              <input type="number" id="angle" value="15" min="5" max="30" step="1">
+              <div class="param-description">Angle d'inclinaison dans la partie supérieure</div>
+            </div>
+
+            <div class="param-group">
+              <label for="bahtinov_const">Constante Bahtinov</label>
+              <input type="number" id="bahtinov_const" value="150" min="100" max="250" step="10">
+              <div class="calculated-value">Pas calculé: <span id="calculated_step">--</span> mm</div>
+            </div>
+
+            <div class="param-group">
+              <label for="bahtinov_factor">Facteur multiplicateur</label>
+              <select id="bahtinov_factor">
+                <option value="1">1x (Standard)</option>
+                <option value="3">3x (Fentes larges)</option>
+              </select>
+              <div class="param-description">Multiplie la largeur des fentes</div>
+            </div>
+
+            <h2>
+              Paramètres avancés
+              <button type="button" id="toggle-advanced" class="toggle-btn">
+                <Icon icon="chevron-down" size="1rem" />
+              </button>
+            </h2>
+
+            <div id="advanced-params" class="advanced-section collapsed">
+              <div class="param-group">
+                <label>
+                  <input type="checkbox" id="equalize_areas" checked>
+                  Égaliser les surfaces des fentes
+                </label>
+                <div class="param-description">Équilibre les zones supérieure et inférieure</div>
+              </div>
+
+              <div class="param-group">
+                <label for="slit_ratio">Ratio largeur fente (%)</label>
+                <input type="number" id="slit_ratio" value="50" min="30" max="70" step="5">
+                <div class="param-description">Pourcentage de la fente dans le pas</div>
+              </div>
+
+              <div class="param-group">
+                <label>
+                  <input type="checkbox" id="add_mounting_holes">
+                  Trous de fixation
+                </label>
+                <div class="param-description">Ajouter des trous pour la fixation</div>
+              </div>
+
+              <div class="param-group">
+                <label for="mounting_holes_count">Nombre de trous</label>
+                <input type="number" id="mounting_holes_count" value="3" min="3" max="8" step="1">
+              </div>
+
+              <div class="param-group">
+                <label for="mounting_hole_diameter">Diamètre trous (mm)</label>
+                <input type="number" id="mounting_hole_diameter" value="3" min="2" max="8" step="0.5">
+              </div>
+            </div>
+
+            <h2>Support et fixation</h2>
+
+            <div class="param-group">
+              <label for="hbar">Largeur barre horizontale (mm)</label>
+              <input type="number" id="hbar" value="3" min="1" max="10" step="0.5">
+            </div>
+
+            <div class="param-group">
+              <label for="vbar">Largeur barre verticale (mm)</label>
+              <input type="number" id="vbar" value="3" min="1" max="10" step="0.5">
+            </div>
+
+            <div class="param-group">
+              <label for="holder_height">Hauteur support (mm)</label>
+              <input type="number" id="holder_height" value="20" min="5" max="50" step="1">
+              <div class="param-description">Hauteur du cylindre de fixation</div>
+            </div>
+
+            <div class="actions">
+              <button id="generate-btn" class="btn-primary">
+                <Icon icon="refresh" size="1rem" />
+                Générer le masque
+              </button>
+              <button id="export-btn" class="btn-secondary" disabled>
+                <Icon icon="download" size="1rem" />
+                Télécharger STL
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <div class="viewer">
+          <div id="threejs-container">
+            <div class="loading-spinner">
+              <Icon icon="refresh" size="2rem" />
+              <p>Chargement de la prévisualisation 3D...</p>
+            </div>
+          </div>
+          <div class="viewer-controls">
+            <div class="control-hint">
+              <Icon icon="cursor-click" size="1rem" />
+              <span>Clic gauche: rotation • Molette: zoom • Clic droit: panoramique</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Three.js simple -->
+  <script src="https://unpkg.com/three@0.140.0/build/three.min.js"></script>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    margin-bottom: 2rem;
+  }
+
+  .generator-container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2rem;
+    min-height: 80vh;
+  }
+
+  .sidebar {
+    background: var(--gradient-subtle);
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .controls-section h2 {
+    color: var(--gray-100);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+    border-bottom: 2px solid var(--accent-regular);
+    padding-bottom: 0.5rem;
+  }
+
+  .controls-section h2:first-child {
+    margin-top: 0;
+  }
+
+  .param-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .param-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray-200);
+    font-size: var(--text-sm);
+  }
+
+  .param-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--gray-900);
+    border: 1px solid var(--gray-700);
+    border-radius: 0.5rem;
+    color: var(--gray-100);
+    font-size: var(--text-base);
+    transition: all var(--theme-transition);
+  }
+
+  .param-group input:focus {
+    outline: none;
+    border-color: var(--accent-regular);
+    box-shadow: 0 0 0 3px var(--accent-overlay);
+  }
+
+  .param-description {
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    margin-top: 0.25rem;
+    font-style: italic;
+  }
+
+  .calculated-value {
+    font-size: var(--text-xs);
+    color: var(--accent-regular);
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--theme-transition);
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--gradient-accent);
+    color: var(--accent-text-over);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-secondary {
+    background: var(--gray-800);
+    color: var(--gray-200);
+    border: 1px solid var(--gray-700);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--gray-700);
+    color: var(--gray-100);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:disabled, .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Input with unit styling */
+  .input-with-unit {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .input-with-unit input {
+    flex: 1;
+  }
+
+  .input-with-unit select {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 0.5rem;
+    color: var(--gray-200);
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    min-width: 70px;
+  }
+
+  /* Advanced parameters section */
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: var(--accent-regular);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-btn:hover {
+    color: var(--accent-light);
+  }
+
+  .advanced-section {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  .advanced-section.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .advanced-section .param-group {
+    border-left: 3px solid var(--accent-dark);
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Checkbox styling */
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    accent-color: var(--accent-regular);
+  }
+
+  label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  /* Calculated values */
+  .calculated-value {
+    background: var(--gray-900);
+    border: 1px solid var(--gray-700);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--accent-regular);
+    font-family: monospace;
+  }
+
+  .calculated-value span {
+    font-weight: bold;
+    color: var(--accent-light);
+  }
+
+  .viewer {
+    background: var(--gradient-subtle);
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #threejs-container {
+    flex: 1;
+    min-height: 500px;
+    background: var(--gray-999);
+    position: relative;
+  }
+
+  .loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gray-400);
+  }
+
+  .loading-spinner svg {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .viewer-controls {
+    background: var(--gray-900);
+    padding: 1rem;
+    border-top: 1px solid var(--gray-800);
+  }
+
+  .control-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .generator-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .sidebar {
+      max-height: none;
+      order: 2;
+    }
+
+    #threejs-container {
+      min-height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      padding: 1.5rem;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+class BahtinovGenerator {
+  constructor() {
+    console.log('Initializing Bahtinov Generator...');
+    
+    this.scene = null;
+    this.camera = null;
+    this.renderer = null;
+    this.controls = null;
+    this.maskMesh = null;
+    this.container = null;
+    
+    // Paramètres par défaut (correspondant à l'OpenSCAD)
+    this.params = {
+      dia_ext: 60,
+      dia_int: 54,
+      hbar: 3,
+      vbar: 3,
+      thickness: 3,
+      holder_height: 20,
+      holder_wall: 1.5,
+      holder_thinning: 3,
+      angle: 15,
+      focal_length: 200,
+      bahtinov_const: 150,
+      bahtinov_factor: 1,
+      portion: 0.5,
+      tolerance: 0.01
+    };
+    
+    this.init();
+  }
+
+  init() {
+    console.log('Starting init...');
+    this.container = document.getElementById('threejs-container');
+    
+    if (!this.container) {
+      console.error('Container not found!');
+      return false;
+    }
+
+    console.log('Container found, dimensions:', this.container.clientWidth, 'x', this.container.clientHeight);
+
+    try {
+      // Initialiser la scène
+      this.scene = new THREE.Scene();
+      console.log('Scene created');
+      
+      // Initialiser la caméra
+      const aspect = this.container.clientWidth / this.container.clientHeight;
+      this.camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
+      this.camera.position.set(100, 100, 100);
+      this.camera.lookAt(0, 0, 0);
+      console.log('Camera created');
+      
+      // Initialiser le renderer
+      this.renderer = new THREE.WebGLRenderer({ antialias: true });
+      this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+      this.renderer.setClearColor(0x2d2d30);
+      this.renderer.shadowMap.enabled = true;
+      this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      this.container.appendChild(this.renderer.domElement);
+      console.log('Renderer created and added');
+      
+      // Contrôles avec vérifications multiples
+      this.setupControls();
+      
+      // Éclairage simple
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
+      this.scene.add(ambientLight);
+      
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+      directionalLight.position.set(100, 100, 50);
+      this.scene.add(directionalLight);
+      console.log('Lighting added');
+      
+      // Setup des événements
+      this.setupEventListeners();
+      
+      // Démarrer la boucle de rendu
+      this.animate();
+      
+      // Cacher le spinner
+      setTimeout(() => {
+        const spinner = this.container.querySelector('.loading-spinner');
+        if (spinner) spinner.style.display = 'none';
+      }, 500);
+      
+      console.log('Three.js initialized successfully!');
+      
+      // Générer le masque après un court délai
+      setTimeout(() => {
+        this.generateMask();
+      }, 1000);
+      
+      return true;
+      
+    } catch (error) {
+      console.error('Error in init:', error);
+      return false;
+    }
+  }
+
+  setupControls() {
+    console.log('Setting up simple manual controls...');
+    
+    // Contrôles manuels ultra-simples
+    let mouseDown = false;
+    let mouseX = 0, mouseY = 0;
+    
+    this.renderer.domElement.addEventListener('mousedown', (e) => {
+      mouseDown = true;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      console.log('Mouse down on canvas');
+    });
+    
+    document.addEventListener('mouseup', () => {
+      mouseDown = false;
+    });
+    
+    this.renderer.domElement.addEventListener('mousemove', (e) => {
+      if (!mouseDown) return;
+      
+      const deltaX = e.clientX - mouseX;
+      const deltaY = e.clientY - mouseY;
+      
+      // Rotation simple autour du centre
+      const spherical = new THREE.Spherical();
+      spherical.setFromVector3(this.camera.position);
+      spherical.theta -= deltaX * 0.005;
+      spherical.phi += deltaY * 0.005;
+      spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi));
+      
+      this.camera.position.setFromSpherical(spherical);
+      this.camera.lookAt(0, 0, 0);
+      
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    this.renderer.domElement.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const scale = e.deltaY > 0 ? 1.1 : 0.9;
+      this.camera.position.multiplyScalar(scale);
+      console.log('Zoom:', scale);
+    });
+    
+    this.renderer.domElement.style.cursor = 'grab';
+    console.log('Manual controls setup complete');
+  }
+
+
+  setupEventListeners() {
+    // Toggle pour paramètres avancés
+    const toggleBtn = document.getElementById('toggle-advanced');
+    const advancedSection = document.getElementById('advanced-params');
+    
+    if (toggleBtn && advancedSection) {
+      toggleBtn.addEventListener('click', () => {
+        advancedSection.classList.toggle('collapsed');
+        const icon = toggleBtn.querySelector('svg');
+        if (icon) {
+          icon.style.transform = advancedSection.classList.contains('collapsed') 
+            ? 'rotate(-90deg)' 
+            : 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Mise à jour des paramètres avec conversion d'unités
+    const inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => this.updateParams());
+    });
+
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => {
+      select.addEventListener('change', () => this.updateParams());
+    });
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => this.updateParams());
+    });
+    
+    // Boutons
+    document.getElementById('generate-btn').addEventListener('click', () => {
+      this.generateMask();
+    });
+    
+    document.getElementById('export-btn').addEventListener('click', () => {
+      this.exportSTL();
+    });
+    
+    // Redimensionnement
+    window.addEventListener('resize', () => this.onWindowResize());
+  }
+
+  // Fonction de conversion des unités
+  convertToMM(value, unit) {
+    if (unit === 'inch') {
+      return value * 25.4; // Conversion pouces vers mm
+    }
+    return value;
+  }
+
+  updateParams() {
+    // Récupérer les valeurs des inputs avec conversion d'unités
+    const focalUnit = document.getElementById('focal_unit').value;
+    const apertureUnit = document.getElementById('aperture_unit').value;
+    const maskUnit = document.getElementById('mask_unit').value;
+    
+    this.params.focal_length = this.convertToMM(
+      parseFloat(document.getElementById('focal_length').value), 
+      focalUnit
+    );
+    this.params.aperture_diameter = this.convertToMM(
+      parseFloat(document.getElementById('aperture_diameter').value), 
+      apertureUnit
+    );
+    this.params.dia_ext = this.convertToMM(
+      parseFloat(document.getElementById('dia_ext').value), 
+      maskUnit
+    );
+    
+    // Calcul automatique du diamètre intérieur basé sur l'ouverture
+    this.params.dia_int = this.params.aperture_diameter;
+    
+    // Paramètres standard
+    this.params.angle = parseFloat(document.getElementById('angle').value);
+    this.params.bahtinov_const = parseFloat(document.getElementById('bahtinov_const').value);
+    this.params.hbar = parseFloat(document.getElementById('hbar').value);
+    this.params.vbar = parseFloat(document.getElementById('vbar').value);
+    this.params.holder_height = parseFloat(document.getElementById('holder_height').value);
+    
+    // Nouveaux paramètres avancés
+    this.params.central_obstruction = parseFloat(document.getElementById('central_obstruction').value) || 0;
+    this.params.bahtinov_factor = parseFloat(document.getElementById('bahtinov_factor').value);
+    this.params.equalize_areas = document.getElementById('equalize_areas').checked;
+    this.params.slit_ratio = parseFloat(document.getElementById('slit_ratio').value) / 100;
+    this.params.add_mounting_holes = document.getElementById('add_mounting_holes').checked;
+    this.params.mounting_holes_count = parseInt(document.getElementById('mounting_holes_count').value);
+    this.params.mounting_hole_diameter = parseFloat(document.getElementById('mounting_hole_diameter').value);
+    
+    // Calcul automatique du pas avec nouveau facteur
+    const step = Math.round(10 * this.params.focal_length / this.params.bahtinov_const * this.params.bahtinov_factor) / 10;
+    document.getElementById('calculated_step').textContent = step.toFixed(1);
+    
+    // Régénération automatique
+    this.generateMask();
+  }
+
+  generateMask() {
+    if (!this.scene) {
+      console.error('Scene not initialized');
+      return;
+    }
+
+    console.log('Generating Bahtinov mask...');
+    
+    // Supprimer l'ancien masque
+    if (this.maskMesh) {
+      this.scene.remove(this.maskMesh);
+      // Nettoyer les enfants du groupe
+      this.maskMesh.traverse((child) => {
+        if (child.geometry) child.geometry.dispose();
+        if (child.material) child.material.dispose();
+      });
+    }
+
+    try {
+      // Calculs dérivés EXACTEMENT comme dans OpenSCAD
+      const radius = this.params.dia_int / 2;
+      const radius_ext = this.params.dia_ext / 2;
+      const step = Math.round(10 * this.params.focal_length / this.params.bahtinov_const * this.params.bahtinov_factor) / 10;
+      const no_bars = Math.ceil(radius / step) + 1;
+      const portion = this.params.portion;
+      
+      console.log('OpenSCAD parameters:', { radius, radius_ext, step, no_bars, portion });
+
+      // Créer le groupe principal
+      const maskGroup = new THREE.Group();
+      const material = new THREE.MeshLambertMaterial({ 
+        color: 0x66338b,
+        side: THREE.DoubleSide 
+      });
+
+      // VRAIE logique Bahtinov : 3 secteurs avec différents patterns
+      // Secteur 1 (plus grand) : Barres horizontales 
+      // Secteur 2 (plus petit) : Barres diagonales gauche
+      // Secteur 3 (plus petit) : Barres diagonales droite
+      
+      console.log('Creating correct Bahtinov pattern...');
+
+      // SECTEUR 1: Grand tiers avec barres HORIZONTALES (perpendiculaires à l'axe central)
+      // Limité à la partie basse et à l'intérieur du cercle
+      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
+        const x_pos = pos + step/4;
+        
+        // Calculer la hauteur maximale pour rester dans le cercle à cette position x
+        const max_y_for_circle = Math.sqrt(Math.max(0, radius * radius - x_pos * x_pos));
+        
+        // Limiter la barre à la partie basse (secteur de 240°)
+        // En gros, on veut que les barres restent dans la partie inférieure
+        const bar_height = Math.min(radius * 1.2, max_y_for_circle * 1.4); // Plus petit que le cercle
+        
+        const barGeometry = new THREE.BoxGeometry(
+          portion * step,
+          bar_height, 
+          this.params.thickness
+        );
+        const bar = new THREE.Mesh(barGeometry, material.clone());
+        
+        // Centrer la barre dans la partie basse
+        const y_offset = -bar_height * 0.3; // Décaler vers le bas
+        bar.position.set(x_pos, y_offset, this.params.thickness/2);
+        
+        // Seulement si on est dans la zone du grand secteur et dans le cercle
+        if (Math.abs(x_pos) <= radius * 0.9 && x_pos * x_pos + y_offset * y_offset <= radius * radius * 0.8) {
+          maskGroup.add(bar);
+        }
+      }
+
+      // SECTEUR 2: Petit tiers supérieur gauche avec barres DIAGONALES
+      const angle_rad_left = this.params.angle * Math.PI / 180;
+      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
+        const coord = pos + step/4;
+        
+        const barGeometry = new THREE.BoxGeometry(
+          portion * step,
+          radius * 1.5, 
+          this.params.thickness
+        );
+        const bar = new THREE.Mesh(barGeometry, material.clone());
+        
+        // Position dans le quadrant supérieur gauche
+        const x_pos = -radius * 0.6 + coord * Math.cos(angle_rad_left);
+        const y_pos = radius * 0.4 + coord * Math.sin(angle_rad_left);
+        
+        bar.position.set(x_pos, y_pos, this.params.thickness/2);
+        bar.rotation.z = angle_rad_left;
+        
+        // Vérifier que c'est dans le bon secteur
+        if (x_pos <= 0 && y_pos >= 0) {
+          maskGroup.add(bar);
+        }
+      }
+
+      // SECTEUR 3: Petit tiers supérieur droit avec barres DIAGONALES opposées
+      const angle_rad_right = -this.params.angle * Math.PI / 180;
+      for (let pos = -no_bars * step; pos <= no_bars * step; pos += step) {
+        const coord = pos + step/4;
+        
+        const barGeometry = new THREE.BoxGeometry(
+          portion * step,
+          radius * 1.5, 
+          this.params.thickness
+        );
+        const bar = new THREE.Mesh(barGeometry, material.clone());
+        
+        // Position dans le quadrant supérieur droit
+        const x_pos = radius * 0.6 + coord * Math.cos(angle_rad_right);
+        const y_pos = radius * 0.4 + coord * Math.sin(angle_rad_right);
+        
+        bar.position.set(x_pos, y_pos, this.params.thickness/2);
+        bar.rotation.z = angle_rad_right;
+        
+        // Vérifier que c'est dans le bon secteur
+        if (x_pos >= 0 && y_pos >= 0) {
+          maskGroup.add(bar);
+        }
+      }
+
+      // ÉTAPE 4: Anneau de support - Step 5 du OpenSCAD
+      console.log('Creating support ring...');
+      const ringGeometry = new THREE.RingGeometry(radius, radius_ext, 64);
+      const ring = new THREE.Mesh(ringGeometry, material.clone());
+      ring.position.z = this.params.thickness / 2;
+      maskGroup.add(ring);
+
+      // ÉTAPE 5: Barre horizontale de support - Step 6 du OpenSCAD
+      console.log('Creating horizontal support bar...');
+      const hbarGeometry = new THREE.BoxGeometry(
+        this.params.hbar, 
+        this.params.dia_int + 2 * this.params.tolerance, 
+        this.params.thickness
+      );
+      const hbar = new THREE.Mesh(hbarGeometry, material.clone());
+      hbar.position.set(0, 0, this.params.thickness/2);
+
+      // ÉTAPE 6: Barre verticale de support - Step 7 du OpenSCAD  
+      console.log('Creating vertical support bar...');
+      const vbarGeometry = new THREE.BoxGeometry(
+        radius + this.params.tolerance, 
+        this.params.vbar, 
+        this.params.thickness
+      );
+      const vbar = new THREE.Mesh(vbarGeometry, material.clone());
+      vbar.position.set((radius + this.params.tolerance)/2, 0, this.params.thickness/2);
+      
+      // Groupe pour les supports (barres de soutien en forme de T)
+      const supportGroup = new THREE.Group();
+      supportGroup.add(hbar);
+      supportGroup.add(vbar);
+      
+      // ÉTAPE 7: Structure de maintien (holder/cylindre)
+      console.log('Creating holder structure...');
+      const holderGroup = new THREE.Group();
+      this.createHolderStructure(holderGroup, radius_ext, material);
+      
+      // Rotation SEULEMENT des supports et du cylindre pour orienter la barre verticale vers le bas
+      // Les réseaux de diffraction gardent leur orientation
+      supportGroup.rotation.z = Math.PI / 2; // Rotation de 90° pour mettre la barre verticale vers le bas
+      holderGroup.rotation.z = Math.PI / 2;  // Le cylindre suit la même rotation
+      
+      // Ajouter tous les éléments au masque principal
+      maskGroup.add(supportGroup);
+      maskGroup.add(holderGroup);
+
+      // Ajouter le groupe à la scène
+      this.scene.add(maskGroup);
+      this.maskMesh = maskGroup;
+
+      // Mettre à jour la valeur calculée
+      document.getElementById('calculated_step').textContent = step.toFixed(1);
+
+      // Activer l'export
+      const exportBtn = document.getElementById('export-btn');
+      if (exportBtn) exportBtn.disabled = false;
+      
+      console.log('Bahtinov mask generated successfully with', maskGroup.children.length, 'elements');
+      
+    } catch (error) {
+      console.error('Error generating mask:', error);
+    }
+  }
+
+  createHolderStructure(group, radius_ext, material) {
+    // Structure de maintien cylindrique comme dans OpenSCAD
+    const inner_radius_bottom = radius_ext - this.params.holder_wall;
+    const inner_radius_top = radius_ext - this.params.holder_wall / this.params.holder_thinning;
+
+    // Base du cylindre
+    const baseGeometry = new THREE.RingGeometry(inner_radius_bottom, radius_ext, 32);
+    const base = new THREE.Mesh(baseGeometry, material.clone());
+    base.position.z = this.params.thickness;
+    group.add(base);
+
+    // Sommet du cylindre
+    const topGeometry = new THREE.RingGeometry(inner_radius_top, radius_ext, 32);
+    const top = new THREE.Mesh(topGeometry, material.clone());
+    top.position.z = this.params.thickness + this.params.holder_height;
+    group.add(top);
+
+    // Paroi cylindrique externe
+    const outerWallGeometry = new THREE.CylinderGeometry(
+      radius_ext, radius_ext, this.params.holder_height, 32, 1, true
+    );
+    const outerWall = new THREE.Mesh(outerWallGeometry, material.clone());
+    outerWall.position.z = this.params.thickness + this.params.holder_height/2;
+    outerWall.rotation.x = Math.PI / 2;
+    group.add(outerWall);
+  }
+
+  onWindowResize() {
+    if (!this.camera || !this.renderer || !this.container) return;
+    
+    this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+  }
+
+  animate() {
+    if (!this.renderer || !this.scene || !this.camera) return;
+    
+    requestAnimationFrame(() => this.animate());
+    
+    try {
+      this.renderer.render(this.scene, this.camera);
+    } catch (error) {
+      console.error('Render error:', error);
+    }
+  }
+
+  exportSTL() {
+    if (!this.maskMesh) {
+      console.error('No mask to export');
+      return;
+    }
+
+    try {
+      if (typeof THREE.STLExporter !== 'undefined') {
+        const exporter = new THREE.STLExporter();
+        const stlString = exporter.parse(this.maskMesh);
+        
+        const blob = new Blob([stlString], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `masque_bahtinov_${this.params.dia_ext}mm.stl`;
+        link.click();
+        
+        console.log('STL exported successfully');
+      } else {
+        console.error('STLExporter not available');
+      }
+    } catch (error) {
+      console.error('Error exporting STL:', error);
+    }
+  }
+}
+
+// Initialiser le générateur après chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM loaded, checking dependencies...');
+  
+  // Vérifier que Three.js est disponible
+  if (typeof THREE === 'undefined') {
+    console.error('Three.js not loaded');
+    return;
+  }
+  
+  console.log('THREE version:', THREE.REVISION);
+  console.log('OrbitControls available:', typeof THREE.OrbitControls !== 'undefined');
+  console.log('STLExporter available:', typeof THREE.STLExporter !== 'undefined');
+  
+  // Attendre plus longtemps pour que tous les scripts soient chargés
+  setTimeout(() => {
+    try {
+      console.log('Starting Bahtinov generator...');
+      new BahtinovGenerator();
+    } catch (error) {
+      console.error('Failed to initialize generator:', error);
+    }
+  }, 500);
+});
+</script>
