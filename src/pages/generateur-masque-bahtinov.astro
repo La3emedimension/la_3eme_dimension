@@ -186,9 +186,6 @@ import Icon from '../components/Icon.astro';
       </div>
     </main>
   </div>
-
-  <!-- Three.js plus récent pour éviter les warnings Firefox -->
-  <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
 </BaseLayout>
 
 <style>
@@ -480,7 +477,14 @@ import Icon from '../components/Icon.astro';
   }
 </style>
 
-<script>
+<script type="module">
+import * as THREE from '/js/three.module.min.js';
+
+console.log('Module loaded, THREE version:', THREE.REVISION);
+
+// Exposer THREE globalement pour compatibilité
+window.THREE = THREE;
+
 class BahtinovGenerator {
   constructor() {
     console.log('Initializing Bahtinov Generator...');
@@ -516,13 +520,19 @@ class BahtinovGenerator {
   init() {
     console.log('Starting init...');
     this.container = document.getElementById('threejs-container');
-    
+
     if (!this.container) {
       console.error('Container not found!');
       return false;
     }
 
     console.log('Container found, dimensions:', this.container.clientWidth, 'x', this.container.clientHeight);
+
+    // Vérifier que le container a des dimensions
+    if (this.container.clientWidth === 0 || this.container.clientHeight === 0) {
+      console.error('Container has zero dimensions!');
+      return false;
+    }
 
     try {
       // Initialiser la scène
@@ -560,21 +570,21 @@ class BahtinovGenerator {
       // Setup des événements
       this.setupEventListeners();
       
+      // Cacher le spinner immédiatement
+      const spinner = this.container.querySelector('.loading-spinner');
+      if (spinner) {
+        spinner.style.display = 'none';
+        console.log('Spinner hidden');
+      }
+
       // Démarrer la boucle de rendu
       this.animate();
-      
-      // Cacher le spinner
-      setTimeout(() => {
-        const spinner = this.container.querySelector('.loading-spinner');
-        if (spinner) spinner.style.display = 'none';
-      }, 500);
-      
+      console.log('Animation loop started');
+
       console.log('Three.js initialized successfully!');
-      
-      // Générer le masque après un court délai
-      setTimeout(() => {
-        this.generateMask();
-      }, 1000);
+
+      // Générer le masque immédiatement
+      this.generateMask();
       
       return true;
       
@@ -993,28 +1003,32 @@ class BahtinovGenerator {
   }
 }
 
-// Initialiser le générateur après chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM loaded, checking dependencies...');
-  
-  // Vérifier que Three.js est disponible
-  if (typeof THREE === 'undefined') {
-    console.error('Three.js not loaded');
-    return;
-  }
-  
-  console.log('THREE version:', THREE.REVISION);
-  console.log('OrbitControls available:', typeof THREE.OrbitControls !== 'undefined');
-  console.log('STLExporter available:', typeof THREE.STLExporter !== 'undefined');
-  
-  // Attendre plus longtemps pour que tous les scripts soient chargés
-  setTimeout(() => {
+// Initialiser le générateur quand le DOM est prêt
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM ready, initializing generator...');
     try {
-      console.log('Starting Bahtinov generator...');
-      new BahtinovGenerator();
+      const generator = new BahtinovGenerator();
+      console.log('Generator created successfully');
     } catch (error) {
       console.error('Failed to initialize generator:', error);
+      const container = document.getElementById('threejs-container');
+      if (container) {
+        container.innerHTML = '<div style="color: red; text-align: center; padding: 2rem;">Erreur: ' + error.message + '</div>';
+      }
     }
-  }, 500);
-});
+  });
+} else {
+  console.log('DOM already ready, initializing generator...');
+  try {
+    const generator = new BahtinovGenerator();
+    console.log('Generator created successfully');
+  } catch (error) {
+    console.error('Failed to initialize generator:', error);
+    const container = document.getElementById('threejs-container');
+    if (container) {
+      container.innerHTML = '<div style="color: red; text-align: center; padding: 2rem;">Erreur: ' + error.message + '</div>';
+    }
+  }
+}
 </script>
