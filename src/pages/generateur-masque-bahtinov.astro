@@ -488,13 +488,14 @@ window.THREE = THREE;
 class BahtinovGenerator {
   constructor() {
     console.log('Initializing Bahtinov Generator...');
-    
+
     this.scene = null;
     this.camera = null;
     this.renderer = null;
     this.controls = null;
     this.maskMesh = null;
     this.container = null;
+    this.regenerateTimeout = null;
     
     // Paramètres par défaut (correspondant à l'OpenSCAD)
     this.params = {
@@ -664,17 +665,34 @@ class BahtinovGenerator {
     // Mise à jour des paramètres avec conversion d'unités
     const inputs = document.querySelectorAll('input[type="number"]');
     inputs.forEach(input => {
+      // Utiliser 'input' pour le debouncing pendant la frappe
       input.addEventListener('input', () => this.updateParams());
     });
 
     const selects = document.querySelectorAll('select');
     selects.forEach(select => {
-      select.addEventListener('change', () => this.updateParams());
+      // Les selects déclenchent une régénération immédiate
+      select.addEventListener('change', () => {
+        this.updateParams();
+        // Forcer la régénération immédiate pour les selects
+        if (this.regenerateTimeout) {
+          clearTimeout(this.regenerateTimeout);
+        }
+        this.generateMask();
+      });
     });
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', () => this.updateParams());
+      // Les checkboxes déclenchent une régénération immédiate
+      checkbox.addEventListener('change', () => {
+        this.updateParams();
+        // Forcer la régénération immédiate pour les checkboxes
+        if (this.regenerateTimeout) {
+          clearTimeout(this.regenerateTimeout);
+        }
+        this.generateMask();
+      });
     });
     
     // Boutons
@@ -739,9 +757,14 @@ class BahtinovGenerator {
     // Calcul automatique du pas avec nouveau facteur
     const step = Math.round(10 * this.params.focal_length / this.params.bahtinov_const * this.params.bahtinov_factor) / 10;
     document.getElementById('calculated_step').textContent = step.toFixed(1);
-    
-    // Régénération automatique
-    this.generateMask();
+
+    // Régénération automatique avec debouncing (attendre 500ms après la dernière modification)
+    if (this.regenerateTimeout) {
+      clearTimeout(this.regenerateTimeout);
+    }
+    this.regenerateTimeout = setTimeout(() => {
+      this.generateMask();
+    }, 500);
   }
 
   generateMask() {
@@ -818,184 +841,89 @@ class BahtinovGenerator {
       }
 
       // SECTEUR 2: Quart supérieur gauche avec barres DIAGONALES
-      // Les barres sont inclinées de +angle degrés par rapport à la verticale
+      // Approche simple: balayer le long de l'axe X négatif
       const angle_rad_left = this.params.angle * Math.PI / 180;
 
-      // Calculer le nombre de barres nécessaires pour couvrir le quart
-      const diagonal_extent = radius_ext * Math.sqrt(2); // Diagonale du quart
-      const num_bars_diag = Math.ceil(diagonal_extent / step) * 2;
+      // Balayer de -radius_ext à 0 (partie gauche)
+      for (let x = -radius_ext; x <= 0; x += step) {
+        // À cette position x, calculer les limites y dans le cercle
+        const y_circle_max = Math.sqrt(Math.max(0, radius_ext * radius_ext - x * x));
 
-      for (let i = -num_bars_diag; i <= num_bars_diag; i++) {
-        // Position le long d'un axe perpendiculaire aux barres
-        const perp_offset = i * step;
+        // On veut créer une barre verticale à cet x, qui va être tournée ensuite
+        // La barre doit aller de y=0 jusqu'au bord du cercle
+        // Mais après rotation, elle ne doit pas dépasser du cercle
 
-        // Les barres sont orientées selon angle_rad_left
-        // L'axe perpendiculaire est à 90° de cette orientation
-        const perp_dir_x = -Math.sin(angle_rad_left);
-        const perp_dir_y = Math.cos(angle_rad_left);
+        // Centre de la barre avant rotation (milieu entre 0 et y_circle_max)
+        const y_center_initial = y_circle_max / 2;
 
-        // Point de départ sur l'axe perpendiculaire
-        const base_x = perp_offset * perp_dir_x;
-        const base_y = perp_offset * perp_dir_y;
+        // Calculer la position du centre après rotation autour de l'origine
+        // (on ne tourne pas vraiment autour de l'origine, mais c'est OK pour l'estimation)
+        const center_x_rotated = x * Math.cos(angle_rad_left) - y_center_initial * Math.sin(angle_rad_left);
+        const center_y_rotated = x * Math.sin(angle_rad_left) + y_center_initial * Math.cos(angle_rad_left);
+        const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
 
-        // Direction de la barre
-        const bar_dir_x = Math.cos(angle_rad_left);
-        const bar_dir_y = Math.sin(angle_rad_left);
+        // Calculer la demi-longueur maximale pour rester dans le cercle
+        const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
 
-        // Trouver les intersections avec les limites du secteur:
-        // 1. Cercle extérieur
-        // 2. Axe y = 0 (ne pas descendre en dessous)
-        // 3. Axe x = 0 (ne pas aller à droite)
+        // La hauteur de la barre est limitée par cette longueur
+        const bar_height = Math.min(y_circle_max, max_half_length * 2) * 0.95;
 
-        let t_values = [];
+        if (bar_height > step * 0.3) {
+          const barGeometry = new THREE.BoxGeometry(
+            portion * step,
+            bar_height,
+            this.params.thickness
+          );
+          const bar = new THREE.Mesh(barGeometry, material.clone());
 
-        // Intersection avec le cercle: (base_x + t*bar_dir_x)² + (base_y + t*bar_dir_y)² = radius_ext²
-        const a = bar_dir_x * bar_dir_x + bar_dir_y * bar_dir_y;
-        const b = 2 * (base_x * bar_dir_x + base_y * bar_dir_y);
-        const c = base_x * base_x + base_y * base_y - radius_ext * radius_ext;
-        const discriminant = b * b - 4 * a * c;
+          // Position finale
+          bar.position.set(x, bar_height / 2, this.params.thickness/2);
+          bar.rotation.z = angle_rad_left;
 
-        if (discriminant >= 0) {
-          const sqrt_disc = Math.sqrt(discriminant);
-          t_values.push((-b - sqrt_disc) / (2 * a));
-          t_values.push((-b + sqrt_disc) / (2 * a));
-        }
-
-        // Intersection avec y = 0: base_y + t*bar_dir_y = 0
-        if (Math.abs(bar_dir_y) > 0.001) {
-          t_values.push(-base_y / bar_dir_y);
-        }
-
-        // Intersection avec x = 0: base_x + t*bar_dir_x = 0
-        if (Math.abs(bar_dir_x) > 0.001) {
-          t_values.push(-base_x / bar_dir_x);
-        }
-
-        // Filtrer pour ne garder que les points dans le bon quadrant
-        let valid_t = [];
-        for (let t of t_values) {
-          const x = base_x + t * bar_dir_x;
-          const y = base_y + t * bar_dir_y;
-          const dist = Math.sqrt(x * x + y * y);
-
-          if (x <= 0.1 && y >= -0.1 && dist <= radius_ext * 1.01) {
-            valid_t.push(t);
-          }
-        }
-
-        if (valid_t.length >= 2) {
-          valid_t.sort((a, b) => a - b);
-          const t_start = valid_t[0];
-          const t_end = valid_t[valid_t.length - 1];
-
-          const bar_length = (t_end - t_start) * 0.97;
-          const t_center = (t_start + t_end) / 2;
-
-          const center_x = base_x + t_center * bar_dir_x;
-          const center_y = base_y + t_center * bar_dir_y;
-
-          if (bar_length > step * 0.3 && center_y > 0.1) {
-            const barGeometry = new THREE.BoxGeometry(
-              portion * step,
-              bar_length,
-              this.params.thickness
-            );
-            const bar = new THREE.Mesh(barGeometry, material.clone());
-
-            bar.position.set(center_x, center_y, this.params.thickness/2);
-            bar.rotation.z = angle_rad_left;
-
-            maskGroup.add(bar);
-          }
+          maskGroup.add(bar);
         }
       }
 
       // SECTEUR 3: Quart supérieur droit avec barres DIAGONALES opposées
-      // Les barres sont inclinées de -angle degrés par rapport à la verticale
+      // Approche simple: balayer le long de l'axe X positif
       const angle_rad_right = -this.params.angle * Math.PI / 180;
 
-      for (let i = -num_bars_diag; i <= num_bars_diag; i++) {
-        // Position le long d'un axe perpendiculaire aux barres
-        const perp_offset = i * step;
+      // Balayer de 0 à radius_ext (partie droite)
+      for (let x = 0; x <= radius_ext; x += step) {
+        // À cette position x, calculer les limites y dans le cercle
+        const y_circle_max = Math.sqrt(Math.max(0, radius_ext * radius_ext - x * x));
 
-        // Les barres sont orientées selon angle_rad_right
-        // L'axe perpendiculaire est à 90° de cette orientation
-        const perp_dir_x = -Math.sin(angle_rad_right);
-        const perp_dir_y = Math.cos(angle_rad_right);
+        // On veut créer une barre verticale à cet x, qui va être tournée ensuite
+        // La barre doit aller de y=0 jusqu'au bord du cercle
+        // Mais après rotation, elle ne doit pas dépasser du cercle
 
-        // Point de départ sur l'axe perpendiculaire
-        const base_x = perp_offset * perp_dir_x;
-        const base_y = perp_offset * perp_dir_y;
+        // Centre de la barre avant rotation (milieu entre 0 et y_circle_max)
+        const y_center_initial = y_circle_max / 2;
 
-        // Direction de la barre
-        const bar_dir_x = Math.cos(angle_rad_right);
-        const bar_dir_y = Math.sin(angle_rad_right);
+        // Calculer la position du centre après rotation autour de l'origine
+        const center_x_rotated = x * Math.cos(angle_rad_right) - y_center_initial * Math.sin(angle_rad_right);
+        const center_y_rotated = x * Math.sin(angle_rad_right) + y_center_initial * Math.cos(angle_rad_right);
+        const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
 
-        // Trouver les intersections avec les limites du secteur:
-        // 1. Cercle extérieur
-        // 2. Axe y = 0 (ne pas descendre en dessous)
-        // 3. Axe x = 0 (ne pas aller à gauche)
+        // Calculer la demi-longueur maximale pour rester dans le cercle
+        const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
 
-        let t_values = [];
+        // La hauteur de la barre est limitée par cette longueur
+        const bar_height = Math.min(y_circle_max, max_half_length * 2) * 0.95;
 
-        // Intersection avec le cercle: (base_x + t*bar_dir_x)² + (base_y + t*bar_dir_y)² = radius_ext²
-        const a = bar_dir_x * bar_dir_x + bar_dir_y * bar_dir_y;
-        const b = 2 * (base_x * bar_dir_x + base_y * bar_dir_y);
-        const c = base_x * base_x + base_y * base_y - radius_ext * radius_ext;
-        const discriminant = b * b - 4 * a * c;
+        if (bar_height > step * 0.3) {
+          const barGeometry = new THREE.BoxGeometry(
+            portion * step,
+            bar_height,
+            this.params.thickness
+          );
+          const bar = new THREE.Mesh(barGeometry, material.clone());
 
-        if (discriminant >= 0) {
-          const sqrt_disc = Math.sqrt(discriminant);
-          t_values.push((-b - sqrt_disc) / (2 * a));
-          t_values.push((-b + sqrt_disc) / (2 * a));
-        }
+          // Position finale
+          bar.position.set(x, bar_height / 2, this.params.thickness/2);
+          bar.rotation.z = angle_rad_right;
 
-        // Intersection avec y = 0: base_y + t*bar_dir_y = 0
-        if (Math.abs(bar_dir_y) > 0.001) {
-          t_values.push(-base_y / bar_dir_y);
-        }
-
-        // Intersection avec x = 0: base_x + t*bar_dir_x = 0
-        if (Math.abs(bar_dir_x) > 0.001) {
-          t_values.push(-base_x / bar_dir_x);
-        }
-
-        // Filtrer pour ne garder que les points dans le bon quadrant
-        let valid_t = [];
-        for (let t of t_values) {
-          const x = base_x + t * bar_dir_x;
-          const y = base_y + t * bar_dir_y;
-          const dist = Math.sqrt(x * x + y * y);
-
-          if (x >= -0.1 && y >= -0.1 && dist <= radius_ext * 1.01) {
-            valid_t.push(t);
-          }
-        }
-
-        if (valid_t.length >= 2) {
-          valid_t.sort((a, b) => a - b);
-          const t_start = valid_t[0];
-          const t_end = valid_t[valid_t.length - 1];
-
-          const bar_length = (t_end - t_start) * 0.97;
-          const t_center = (t_start + t_end) / 2;
-
-          const center_x = base_x + t_center * bar_dir_x;
-          const center_y = base_y + t_center * bar_dir_y;
-
-          if (bar_length > step * 0.3 && center_y > 0.1) {
-            const barGeometry = new THREE.BoxGeometry(
-              portion * step,
-              bar_length,
-              this.params.thickness
-            );
-            const bar = new THREE.Mesh(barGeometry, material.clone());
-
-            bar.position.set(center_x, center_y, this.params.thickness/2);
-            bar.rotation.z = angle_rad_right;
-
-            maskGroup.add(bar);
-          }
+          maskGroup.add(bar);
         }
       }
 
