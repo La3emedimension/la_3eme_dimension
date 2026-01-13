@@ -97,7 +97,7 @@ const businessStructuredData = {
             <header class="hero">
                 <Hero
                     title="La 3ème dimension."
-                    tagline="Service de conception, de modélisation et d’atelier d’impression 3D"
+                    tagline="Service de conception, de modélisation et d'atelier d'impression 3D : toutes pièces et astronomie"
                     align="start"
                 >
                     <div class="roles">
@@ -216,6 +216,9 @@ const businessStructuredData = {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+        width: 100%;
+        max-width: 50vh;
+        margin: 0 auto;
     }
 
     .roles {
@@ -223,10 +226,11 @@ const businessStructuredData = {
         display: flex;
         gap: 0.5rem;
         justify-content: flex-start;
+        width: 100%;
     }
 
     .hero video {
-        width: 50vh;
+        width: 100%;
         aspect-ratio: auto;
         object-fit: cover;
         object-position: top;
@@ -234,7 +238,15 @@ const businessStructuredData = {
         box-shadow: var(--shadow-md);
     }
 
+    /* Ensure Hero component content aligns properly on mobile */
+    .hero :global(.hero) {
+        width: 100%;
+    }
+
     @media (min-width: 50em) {
+        .hero {
+            max-width: none;
+        }
         .hero {
             display: grid;
             grid-template-columns: 6fr 3fr;

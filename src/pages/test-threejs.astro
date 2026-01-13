@@ -1,0 +1,119 @@
+---
+// Page de test pour diagnostiquer Three.js
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Three.js</title>
+  <style>
+    body { margin: 0; padding: 20px; background: #2d2d30; color: white; font-family: sans-serif; }
+    #container { width: 800px; height: 600px; border: 2px solid #66338b; margin: 20px 0; }
+    .info { margin: 10px 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Test Three.js et OrbitControls</h1>
+  <div class="info" id="status">Chargement...</div>
+  <div id="container"></div>
+
+  <script src="https://unpkg.com/three@0.170.0/build/three.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const statusDiv = document.getElementById('status');
+      
+      function log(message) {
+        console.log(message);
+        statusDiv.innerHTML += message + '<br>';
+      }
+
+      try {
+        log('✓ Three.js chargé, version: ' + THREE.REVISION);
+
+        // Scène de base
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 800/600, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        
+        renderer.setSize(800, 600);
+        renderer.setClearColor(0x1a1a1a);
+        document.getElementById('container').appendChild(renderer.domElement);
+        
+        log('✓ Renderer créé');
+
+        // Cube de test
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const material = new THREE.MeshBasicMaterial({ color: 0x66338b, wireframe: true });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+        
+        camera.position.set(5, 5, 5);
+        camera.lookAt(0, 0, 0);
+        
+        log('✓ Cube ajouté');
+
+        // Test des contrôles manuels simples
+        let mouseDown = false;
+        let mouseX = 0, mouseY = 0;
+
+        renderer.domElement.addEventListener('mousedown', (e) => {
+          mouseDown = true;
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          log('✓ Mouse down détecté');
+        });
+
+        renderer.domElement.addEventListener('mouseup', () => {
+          mouseDown = false;
+          log('✓ Mouse up détecté');
+        });
+
+        renderer.domElement.addEventListener('mousemove', (e) => {
+          if (!mouseDown) return;
+          
+          const deltaX = e.clientX - mouseX;
+          const deltaY = e.clientY - mouseY;
+          
+          // Rotation simple autour de Y et X
+          const spherical = new THREE.Spherical();
+          spherical.setFromVector3(camera.position);
+          spherical.theta -= deltaX * 0.01;
+          spherical.phi += deltaY * 0.01;
+          spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi));
+          
+          camera.position.setFromSpherical(spherical);
+          camera.lookAt(0, 0, 0);
+          
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        renderer.domElement.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          const scale = e.deltaY > 0 ? 1.1 : 0.9;
+          camera.position.multiplyScalar(scale);
+          log('✓ Zoom détecté: ' + scale);
+        });
+
+        // Animation
+        function animate() {
+          requestAnimationFrame(animate);
+          cube.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        }
+        
+        animate();
+        log('✓ Animation démarrée - contrôles manuels actifs');
+        log('Clic + glisser = rotation, molette = zoom');
+
+      } catch (error) {
+        log('✗ Erreur: ' + error.message);
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
