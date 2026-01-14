@@ -214,11 +214,9 @@ const businessStructuredData = {
     .hero {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 2rem;
         width: 100%;
-        max-width: 50vh;
-        margin: 0 auto;
     }
 
     .roles {
@@ -227,20 +225,17 @@ const businessStructuredData = {
         gap: 0.5rem;
         justify-content: flex-start;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .hero video {
         width: 100%;
+        max-width: 100%;
         aspect-ratio: auto;
         object-fit: cover;
         object-position: top;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
-    }
-
-    /* Ensure Hero component content aligns properly on mobile */
-    .hero :global(.hero) {
-        width: 100%;
     }
 
     @media (min-width: 50em) {
