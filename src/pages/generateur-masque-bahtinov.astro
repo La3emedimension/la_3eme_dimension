@@ -844,43 +844,50 @@ class BahtinovGenerator {
       // Approche simple: balayer le long de l'axe X négatif
       const angle_rad_left = this.params.angle * Math.PI / 180;
 
+      // Marge pour éviter le chevauchement avec la barre centrale horizontale
+      const margin_bottom = Math.max(this.params.hbar, this.params.vbar) * 1.5;
+
       // Balayer de -radius_ext à 0 (partie gauche)
       for (let x = -radius_ext; x <= 0; x += step) {
         // À cette position x, calculer les limites y dans le cercle
         const y_circle_max = Math.sqrt(Math.max(0, radius_ext * radius_ext - x * x));
 
         // On veut créer une barre verticale à cet x, qui va être tournée ensuite
-        // La barre doit aller de y=0 jusqu'au bord du cercle
+        // La barre doit aller de y=margin_bottom jusqu'au bord du cercle (pas jusqu'à y=0 pour éviter le chevauchement)
         // Mais après rotation, elle ne doit pas dépasser du cercle
 
-        // Centre de la barre avant rotation (milieu entre 0 et y_circle_max)
-        const y_center_initial = y_circle_max / 2;
+        // Hauteur disponible (en retirant la marge du bas)
+        const available_height = y_circle_max - margin_bottom;
 
-        // Calculer la position du centre après rotation autour de l'origine
-        // (on ne tourne pas vraiment autour de l'origine, mais c'est OK pour l'estimation)
-        const center_x_rotated = x * Math.cos(angle_rad_left) - y_center_initial * Math.sin(angle_rad_left);
-        const center_y_rotated = x * Math.sin(angle_rad_left) + y_center_initial * Math.cos(angle_rad_left);
-        const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
+        if (available_height > step) {
+          // Centre de la barre avant rotation (milieu entre margin_bottom et y_circle_max)
+          const y_center_initial = margin_bottom + available_height / 2;
 
-        // Calculer la demi-longueur maximale pour rester dans le cercle
-        const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
+          // Calculer la position du centre après rotation autour de l'origine
+          const center_x_rotated = x * Math.cos(angle_rad_left) - y_center_initial * Math.sin(angle_rad_left);
+          const center_y_rotated = x * Math.sin(angle_rad_left) + y_center_initial * Math.cos(angle_rad_left);
+          const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
 
-        // La hauteur de la barre est limitée par cette longueur
-        const bar_height = Math.min(y_circle_max, max_half_length * 2) * 0.95;
+          // Calculer la demi-longueur maximale pour rester dans le cercle
+          const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
 
-        if (bar_height > step * 0.3) {
-          const barGeometry = new THREE.BoxGeometry(
-            portion * step,
-            bar_height,
-            this.params.thickness
-          );
-          const bar = new THREE.Mesh(barGeometry, material.clone());
+          // La hauteur de la barre est limitée par cette longueur
+          const bar_height = Math.min(available_height, max_half_length * 2) * 0.92;
 
-          // Position finale
-          bar.position.set(x, bar_height / 2, this.params.thickness/2);
-          bar.rotation.z = angle_rad_left;
+          if (bar_height > step * 0.3) {
+            const barGeometry = new THREE.BoxGeometry(
+              portion * step,
+              bar_height,
+              this.params.thickness
+            );
+            const bar = new THREE.Mesh(barGeometry, material.clone());
 
-          maskGroup.add(bar);
+            // Position finale
+            bar.position.set(x, margin_bottom + bar_height / 2, this.params.thickness/2);
+            bar.rotation.z = angle_rad_left;
+
+            maskGroup.add(bar);
+          }
         }
       }
 
@@ -888,42 +895,50 @@ class BahtinovGenerator {
       // Approche simple: balayer le long de l'axe X positif
       const angle_rad_right = -this.params.angle * Math.PI / 180;
 
+      // Même marge pour éviter le chevauchement avec la barre centrale horizontale
+      // (margin_bottom déjà défini plus haut)
+
       // Balayer de 0 à radius_ext (partie droite)
       for (let x = 0; x <= radius_ext; x += step) {
         // À cette position x, calculer les limites y dans le cercle
         const y_circle_max = Math.sqrt(Math.max(0, radius_ext * radius_ext - x * x));
 
         // On veut créer une barre verticale à cet x, qui va être tournée ensuite
-        // La barre doit aller de y=0 jusqu'au bord du cercle
+        // La barre doit aller de y=margin_bottom jusqu'au bord du cercle (pas jusqu'à y=0 pour éviter le chevauchement)
         // Mais après rotation, elle ne doit pas dépasser du cercle
 
-        // Centre de la barre avant rotation (milieu entre 0 et y_circle_max)
-        const y_center_initial = y_circle_max / 2;
+        // Hauteur disponible (en retirant la marge du bas)
+        const available_height = y_circle_max - margin_bottom;
 
-        // Calculer la position du centre après rotation autour de l'origine
-        const center_x_rotated = x * Math.cos(angle_rad_right) - y_center_initial * Math.sin(angle_rad_right);
-        const center_y_rotated = x * Math.sin(angle_rad_right) + y_center_initial * Math.cos(angle_rad_right);
-        const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
+        if (available_height > step) {
+          // Centre de la barre avant rotation (milieu entre margin_bottom et y_circle_max)
+          const y_center_initial = margin_bottom + available_height / 2;
 
-        // Calculer la demi-longueur maximale pour rester dans le cercle
-        const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
+          // Calculer la position du centre après rotation autour de l'origine
+          const center_x_rotated = x * Math.cos(angle_rad_right) - y_center_initial * Math.sin(angle_rad_right);
+          const center_y_rotated = x * Math.sin(angle_rad_right) + y_center_initial * Math.cos(angle_rad_right);
+          const dist_center = Math.sqrt(center_x_rotated * center_x_rotated + center_y_rotated * center_y_rotated);
 
-        // La hauteur de la barre est limitée par cette longueur
-        const bar_height = Math.min(y_circle_max, max_half_length * 2) * 0.95;
+          // Calculer la demi-longueur maximale pour rester dans le cercle
+          const max_half_length = Math.sqrt(Math.max(0, radius_ext * radius_ext - dist_center * dist_center));
 
-        if (bar_height > step * 0.3) {
-          const barGeometry = new THREE.BoxGeometry(
-            portion * step,
-            bar_height,
-            this.params.thickness
-          );
-          const bar = new THREE.Mesh(barGeometry, material.clone());
+          // La hauteur de la barre est limitée par cette longueur
+          const bar_height = Math.min(available_height, max_half_length * 2) * 0.92;
 
-          // Position finale
-          bar.position.set(x, bar_height / 2, this.params.thickness/2);
-          bar.rotation.z = angle_rad_right;
+          if (bar_height > step * 0.3) {
+            const barGeometry = new THREE.BoxGeometry(
+              portion * step,
+              bar_height,
+              this.params.thickness
+            );
+            const bar = new THREE.Mesh(barGeometry, material.clone());
 
-          maskGroup.add(bar);
+            // Position finale
+            bar.position.set(x, margin_bottom + bar_height / 2, this.params.thickness/2);
+            bar.rotation.z = angle_rad_right;
+
+            maskGroup.add(bar);
+          }
         }
       }
 
