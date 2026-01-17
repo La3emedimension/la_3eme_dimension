@@ -101,13 +101,12 @@ const businessStructuredData = {
                     align="start"
                 >
                     <div class="roles">
-                        <button
-                            onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });"
-                            >Nous contacter <Icon
+                        <a href="mailto:la3emedim@gmail.com" class="contact-link">
+                            Nous contacter <Icon
                                 icon="pencil-line"
                                 size="1.33em"
-                            /></button
-                        >
+                            />
+                        </a>
                         <a href="tel:0760853870" class="phone-link">
                             07 60 85 38 70
                             <Icon icon="phone" size="1.2em" />
@@ -186,7 +185,7 @@ const businessStructuredData = {
     a {
         text-decoration: none;
     }
-    button, .phone-link {
+    .contact-link, .phone-link {
         cursor: pointer;
         display: flex;
         text-align: center;
@@ -205,7 +204,7 @@ const businessStructuredData = {
         transition: all 0.3s ease;
     }
 
-    .phone-link:hover {
+    .contact-link:hover, .phone-link:hover {
         background-color: var(--accent-dark);
         transform: translateY(-1px);
         box-shadow: var(--shadow-md);

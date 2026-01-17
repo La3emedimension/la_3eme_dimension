@@ -30,6 +30,9 @@ const {
     options,
     afterCtaNote,
 } = Astro.props;
+
+// Helper to determine if a link is external
+const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 ---
 
 <section class="pricing-section" id="pricing">
@@ -43,7 +46,13 @@ const {
                 <ul class="included">
                     {included.map((item) => <li>{item}</li>)}
                 </ul>
-                <a href={ctaHref} class="cta-primary">{ctaText}</a>
+                <a
+                    href={ctaHref}
+                    class="cta-primary"
+                    {...isExternalLink(ctaHref) && { target: '_blank', rel: 'noopener noreferrer' }}
+                >
+                    {ctaText}
+                </a>
                 {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
             </div>
             {options.length > 0 && (
@@ -71,6 +80,22 @@ const {
         </div>
     </div>
 </section>
+
+<script>
+    // Add target="_blank" to external links in HTML content
+    document.addEventListener('DOMContentLoaded', () => {
+        const pricingSection = document.querySelector('.pricing-section');
+        if (pricingSection) {
+            const links = pricingSection.querySelectorAll('a[href^="http"]');
+            links.forEach((link) => {
+                if (!link.hasAttribute('target')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        }
+    });
+</script>
 
 <style>
     .container {

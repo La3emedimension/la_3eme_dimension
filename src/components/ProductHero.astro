@@ -14,6 +14,9 @@ interface Props {
 }
 
 const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning } = Astro.props;
+
+// Helper to determine if a link is external
+const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 ---
 
 <section class="hero-product">
@@ -38,10 +41,22 @@ const { title, tagline, description, features, primaryCta, secondaryCta, heroIma
 			{(primaryCta || secondaryCta || afterCtaNote) && (
 				<div class="hero-cta">
 					{primaryCta && (
-						<a href={primaryCta.href} class="cta-primary">{primaryCta.text}</a>
+						<a
+							href={primaryCta.href}
+							class="cta-primary"
+							{...isExternalLink(primaryCta.href) && { target: '_blank', rel: 'noopener noreferrer' }}
+						>
+							{primaryCta.text}
+						</a>
 					)}
 					{secondaryCta && (
-						<a href={secondaryCta.href} class="cta-secondary">{secondaryCta.text}</a>
+						<a
+							href={secondaryCta.href}
+							class="cta-secondary"
+							{...isExternalLink(secondaryCta.href) && { target: '_blank', rel: 'noopener noreferrer' }}
+						>
+							{secondaryCta.text}
+						</a>
 					)}
 					{afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
 				</div>

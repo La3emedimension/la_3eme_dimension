@@ -45,6 +45,22 @@ const { title, description, keywords, ogImage, structuredData } = Astro.props;
 		<script>
 			// Add “loaded” class once the document has completely loaded.
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
+
+		// Add target="_blank" to all external links site-wide
+		document.addEventListener('DOMContentLoaded', () => {
+			const allLinks = document.querySelectorAll('a[href]');
+			allLinks.forEach((link) => {
+				const href = link.getAttribute('href');
+				// Only process http/https links (exclude mailto:, tel:, #, /, etc.)
+				if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+					// Only add target if it's not already set
+					if (!link.hasAttribute('target')) {
+						link.setAttribute('target', '_blank');
+						link.setAttribute('rel', 'noopener noreferrer');
+					}
+				}
+			});
+		});
 		</script>
 
 		<style>
