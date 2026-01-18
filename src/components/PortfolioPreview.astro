@@ -1,16 +1,20 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { localePath, type Locale } from '../i18n';
+import { getSlugWithoutLocale } from '../lib/collections';
 
 interface Props {
 	project: CollectionEntry<'work'>;
 	featured?: boolean;
+	locale?: Locale;
 }
 
-const { data, slug } = Astro.props.project;
-const { featured = false } = Astro.props;
+const { project, featured = false, locale = 'fr' } = Astro.props;
+const { data, id } = project;
+const slug = getSlugWithoutLocale(id, locale);
 ---
 
-<a class={`card ${featured ? 'featured' : ''}`} href={`/work/${slug}`}>
+<a class={`card ${featured ? 'featured' : ''}`} href={localePath(`/work/${slug}/`, locale)}>
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 	{featured && <div class="featured-description">{data.description}</div>}

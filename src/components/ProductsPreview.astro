@@ -1,17 +1,29 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { localePath, type Locale } from '../i18n';
+import { getSlugWithoutLocale } from '../lib/collections';
 
 interface Props {
-	product: CollectionEntry<'shop'>;
+	products: CollectionEntry<'products'>[];
+	locale?: Locale;
 }
 
-const { data, slug } = Astro.props.product;
+const { products, locale = 'fr' } = Astro.props;
 ---
 
-<a class="card" href={`/shop/${slug}`}>
-	<span class="title">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-</a>
+{products.map((product) => {
+	const slug = getSlugWithoutLocale(product.id, locale);
+	const heroSection = product.data.sections?.find((s: any) => s.type === 'hero');
+	const title = heroSection?.data?.title || product.data.seoTitle;
+	const img = heroSection?.data?.heroImage?.src || product.data.ogImage;
+	const imgAlt = heroSection?.data?.heroImage?.alt || '';
+	return (
+		<a class="card" href={localePath(`/product/${slug}/`, locale)}>
+			<span class="title">{title}</span>
+			{img && <img src={img} alt={imgAlt} loading="lazy" decoding="async" />}
+		</a>
+	);
+})}
 
 <style>
 	.card {

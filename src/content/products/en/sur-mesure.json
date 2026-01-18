@@ -1,0 +1,241 @@
+{
+  "seoTitle": "Custom parts - Personalized 3D Printing | La 3ème dimension",
+  "seoDescription": "Custom 3D printing creation: prototyping, technical parts, personalized objects. Free quote and technical expertise in Toulouse.",
+  "seoKeywords": "custom 3d printing, prototype, technical part, 3d printing toulouse, additive manufacturing, free quote, 3d design",
+  "ogImage": "/assets/Surmesure.png",
+  "price": "Quote",
+  "priceNote": "Free quote",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom 3D Printing",
+    "description": "Personalized 3D printing and custom design service. Rapid prototyping, technical parts and personalized objects.",
+    "provider": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr",
+      "telephone": "+33-XXX-XXX-XXX",
+      "email": "la3emedim@gmail.com"
+    },
+    "serviceType": "3D Printing",
+    "areaServed": "France",
+    "offers": {
+      "@type": "Offer",
+      "description": "Free quote for all custom projects",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Custom parts",
+        "tagline": "Your idea, our expertise",
+        "description": "From idea to realization: we design and 3D print your unique parts.<br><strong>Free quote</strong>",
+        "features": [
+          { "icon": "lightbulb", "text": "3D design included" },
+          { "icon": "gear", "text": "Rapid prototyping" },
+          { "icon": "chat-circle", "text": "Personalized support" }
+        ],
+        "primaryCta": { "text": "Request a free quote", "href": "mailto:la3emedim@gmail.com?subject=Quote request - Custom part" },
+        "heroImage": {
+          "src": "/assets/Surmesure.png",
+          "alt": "Custom 3D printed part"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-services",
+      "data": {
+        "title": "Our custom services",
+        "features": [
+          {
+            "icon": "cube-transparent",
+            "title": "Prototyping",
+            "description": "Rapid validation of your concepts with functional prototypes. Multiple iterations to optimize your design."
+          },
+          {
+            "icon": "gear",
+            "title": "Technical parts",
+            "description": "Manufacturing of mechanical parts, supports, adapters and technical components according to your specifications."
+          },
+          {
+            "icon": "palette",
+            "title": "Personalized objects",
+            "description": "Artistic creations, decorative objects, personalized gifts and unique pieces according to your desires."
+          },
+          {
+            "icon": "wrench-screwdriver",
+            "title": "Repair & adaptation",
+            "description": "Reproduction of broken or obsolete parts, creation of adapters for your existing equipment."
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-process",
+      "data": {
+        "title": "Our 4-step process",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "1. Project analysis",
+            "description": "Discussion of your needs, technical constraints and objectives. Advice on materials and processes."
+          },
+          {
+            "icon": "pencil-line",
+            "title": "2. Design & modeling",
+            "description": "Creation of the 3D model according to your specifications. Validation with you before printing."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "3. Printing & finishing",
+            "description": "Manufacturing with suitable materials. Quality control and finishing if necessary."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "4. Delivery",
+            "description": "Careful packaging and secure shipping. After-sales support included."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-examples",
+      "data": {
+        "title": "Examples of achievements",
+        "description": "Discover some projects we have completed for our clients",
+        "images": [
+          {
+            "src": "/assets/surmesure1.jpg",
+            "alt": "Custom part 1"
+          },
+          {
+            "src": "/assets/surmesure2.jpg",
+            "alt": "Custom part 2"
+          },
+          {
+            "src": "/assets/surmesure3.jpg",
+            "alt": "Custom part 3"
+          },
+          {
+            "src": "/assets/surmesure4.jpg",
+            "alt": "Custom part 4"
+          },
+          {
+            "src": "/assets/surmesure5.jpg",
+            "alt": "Custom part 5"
+          },
+          {
+            "src": "/assets/Surmesure6.jpg",
+            "alt": "Custom part 6"
+          },
+          {
+            "src": "/assets/surmesure7.jpg",
+            "alt": "Custom part 7"
+          },
+          {
+            "src": "/assets/surmesure8.jpg",
+            "alt": "Custom part 8"
+          },
+          {
+            "src": "/assets/Surmesure10.jpg",
+            "alt": "Custom part 10"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-capacites",
+      "data": {
+        "title": "Our technical capabilities",
+        "specGroups": [
+          {
+            "title": "Available materials",
+            "specs": {
+              "PLA": "Standard, fast, economical",
+              "PETG": "Resistant, food-safe, transparent",
+              "PETG-CF": "Carbon fiber reinforced, ultra-resistant",
+              "ASA": "UV and weather resistant, mechanically strong",
+              "TPU": "Flexible, elastic, wear resistant"
+            }
+          },
+          {
+            "title": "Dimensions & precision",
+            "specs": {
+              "Precision": "±0.1 mm",
+              "Layer thickness": "0.1 to 0.3 mm",
+              "Resolution": "High definition",
+              "Post-processing": "Sanding, painting, assembly"
+            }
+          },
+          {
+            "title": "Included services",
+            "specs": {
+              "3D Design": "Complete modeling",
+              "Technical advice": "Material & process selection",
+              "Iterative prototyping": "Successive improvements",
+              "After-sales support": "Technical assistance",
+              "Delivery": "Metropolitan France"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-tarifs",
+      "data": {
+        "title": "Custom pricing",
+        "price": "Tailored pricing",
+        "priceNote": "According to your needs",
+        "included": [
+          "Needs analysis",
+          "Material advice",
+          "3D design if needed",
+          "High quality printing",
+          "Quality control",
+          "Careful packaging",
+          "Technical support"
+        ],
+        "ctaText": "Get a free quote",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Quote request - Custom part&body=Hello,%0A%0AI would like to get a quote for:%0A%0A- Project description:%0A- Desired quantity:%0A- Specific constraints:%0A- Desired timeline:%0A%0APlease contact me soon.%0A%0ABest regards",
+        "optionsTitle": "Pricing factors",
+        "options": [
+          {
+            "title": "Project complexity",
+            "description": "Design time, required precision, technical details"
+          },
+          {
+            "title": "Chosen materials",
+            "description": "Standard (PLA/PETG) or specialized (PETG-CF, ASA, TPU)"
+          },
+          {
+            "title": "Quantity and finishing",
+            "description": "Single piece, limited series, specific post-processing"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "services", "label": "Services" },
+    { "id": "process", "label": "Process" },
+    { "id": "examples", "label": "Examples" },
+    { "id": "capacites", "label": "Capabilities" },
+    { "id": "tarifs", "label": "Pricing" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "draft": false,
+  "category": "services"
+}

@@ -3,12 +3,15 @@ import { getCollection } from 'astro:content';
 import ProductLayout from '../layouts/ProductLayout.astro';
 import AssemblyGuide from '../components/AssemblyGuide.astro';
 import ObservationGuide from '../components/ObservationGuide.astro';
+import { type Locale } from '../i18n';
 
-// Get ERT product data
+const locale: Locale = 'fr';
+
 const products = await getCollection('products');
-const ertProduct = products.find(product => product.id === 'ert');
+const ertProduct = products.find(product => product.id.includes('ert'));
 
 if (!ertProduct) {
+	console.error('Available product IDs:', products.map(p => p.id));
 	throw new Error('ERT product not found');
 }
 
@@ -229,7 +232,7 @@ const noticeConfig = {
 };
 ---
 
-<ProductLayout {...noticeConfig} />
+<ProductLayout {...noticeConfig} locale={locale} />
 
 <style>
   /* Override accent colors with gray-700 for ERT page */

@@ -1,8 +1,27 @@
 ---
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { useTranslations, localePath, getLocaleFromPath, type Locale } from '../i18n';
+
+const locale: Locale = 'fr';
+const t = useTranslations(locale);
 ---
 
-<BaseLayout title="Not Found" description="404 Error —La page ne fonctionne plus...">
-	<Hero title="Page Not Found" tagline="Not found" />
+<BaseLayout locale={locale} title={t.notFound.title} description={t.notFound.description}>
+	<div class="wrapper stack gap-8">
+		<Hero title={t.notFound.title} tagline={t.notFound.description} />
+		<div class="cta-container">
+			<CallToAction href={localePath('/', locale)}>
+				{t.notFound.backHome}
+			</CallToAction>
+		</div>
+	</div>
 </BaseLayout>
+
+<style>
+	.cta-container {
+		display: flex;
+		justify-content: center;
+	}
+</style>

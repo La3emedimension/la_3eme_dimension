@@ -1,0 +1,286 @@
+{
+  "seoTitle": "E.R.T - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
+  "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
+  "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
+  "price": "€200",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "E.R.T - Educational Astronomical Telescope",
+    "description": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Educational instruments",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/ERT 4.jpg",
+    "features": [
+      "Modular educational design",
+      "Intuitive assembly",
+      "1.25\" focuser",
+      "Moon and bright objects observation",
+      "Perfect for learning"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "E.R.T",
+        "tagline": "Educational astronomical telescope",
+        "description": "Educational project to discover optics and some sky objects: moon, bright galaxies, star clusters...",
+        "features": [
+          { "icon": "strategy", "text": "Modular design" },
+          { "icon": "rocket-launch", "text": "1.25\" focuser" },
+          { "icon": "terminal-window", "text": "Intuitive assembly" }
+        ],
+        "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
+        "heroImage": { "src": "/assets/ERT2025_1.png", "alt": "Assembled ERT astronomical telescope" }
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video",
+      "data": {
+        "title": "Simple and educational assembly",
+        "description": "Discover how to easily assemble the E.R.T telescope. Each module has only one mounting direction for optimal learning.",
+        "videoId": "GQQfFflsZY0",
+        "videoTitle": "Assembly of the E.R.T educational astronomical telescope"
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video-2",
+      "data": {
+        "title": "Quick demonstration",
+        "description": "Overview of the E.R.T telescope assembly in short version.",
+        "videoId": "fL8zU5coKBg",
+        "videoTitle": "Quick assembly of the ERT telescope"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Modules and specifications",
+        "specGroups": [
+          {
+            "title": "Included modules",
+            "specs": {
+              "Lens barrel": "Main objective",
+              "Baffle": "Stray light blocker",
+              "Optical tube": "Main structure",
+              "Focuser": "Standard 1.25\"",
+              "Diagonal": "With prism",
+              "Eyepiece": "Included"
+            }
+          },
+          {
+            "title": "Characteristics",
+            "specs": {
+              "Type": "Astronomical telescope",
+              "Usage": "Educational/Initiation",
+              "Assembly": "Intuitive, one-way only",
+              "Observations": "Moon, clusters, galaxies",
+              "Recommended age": "8 years and older"
+            }
+          },
+          {
+            "title": "Pedagogy",
+            "specs": {
+              "Objective": "Optics discovery",
+              "Learning": "Telescope assembly",
+              "Understanding": "Optical function",
+              "Practice": "Direct observation",
+              "Support": "Documentation included",
+              "Evolution": "Towards advanced instruments"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-filter",
+      "data": {
+        "title": "Using filters",
+        "tagline": "",
+        "description": "The ERT pack includes an empty filter holder and a filter holder with a UHC filter dedicated to nebula observation. The UHC (Ultra High Contrast) filter is designed for visual deep sky observation. It transmits 100% of the light from O-III and H-beta spectral lines, 96% of the H-alpha line (although its use is mainly reserved for imaging) and blocks all other wavelengths. This cleans up the image from stray light caused by light pollution. This enhances the contrast of diffuse and planetary nebulae, which then stand out against a now very dark sky background.",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/Filtreert.jpg",
+          "alt": "Filter holder and UHC filter for the ERT telescope"
+        }
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Project gallery",
+        "images": [
+          {
+            "src": "/assets/draw ERT.png",
+            "alt": "Technical diagram of the E.R.T telescope",
+            "caption": "Detailed assembly diagram - each module has only one assembly direction"
+          },
+          {
+            "src": "/assets/ERT 7.jpg",
+            "alt": "Overall telescope view",
+            "caption": "Complete view of assembled E.R.T telescope - optimized educational design"
+          },
+          {
+            "src": "/assets/ERT 3.jpg",
+            "alt": "Module details",
+            "caption": "Detail of different modules - barrel, baffle, optical tube"
+          },
+          {
+            "src": "/assets/ERT.jpg",
+            "alt": "Telescope in observation position",
+            "caption": "Observation position - ergonomics designed for learning"
+          },
+          {
+            "src": "/assets/ERT 2.jpg",
+            "alt": "Side view",
+            "caption": "Telescope profile showing the simplicity of modular design"
+          },
+          {
+            "src": "/assets/ERT 5.jpg",
+            "alt": "Focuser and diagonal",
+            "caption": "Detail of 1.25\" focuser and prism diagonal"
+          },
+          {
+            "src": "/assets/ERT 6.jpg",
+            "alt": "Rear view",
+            "caption": "Rear view showing observation ergonomics"
+          },
+          {
+            "src": "/assets/ERT 8.jpg",
+            "alt": "Objective detail",
+            "caption": "Detail of lens barrel and stray light blocking system"
+          },
+          {
+            "src": "/assets/ertcolor1.jpeg",
+            "alt": "ERT telescope color variant 1",
+            "caption": "Color variant for the E.R.T astronomical telescope"
+          },
+          {
+            "src": "/assets/ertcolor2.jpeg",
+            "alt": "ERT telescope color variant 2",
+            "caption": "Customization possible with different print colors"
+          },
+          {
+            "src": "/assets/ertcolor3.jpeg",
+            "alt": "ERT telescope color variant 3",
+            "caption": "Color customization example for the educational project"
+          },
+          {
+            "src": "/assets/ertcolor4.jpeg",
+            "alt": "ERT telescope color variant 4",
+            "caption": "Diversity of available color options"
+          },
+          {
+            "src": "/assets/ertcolor5.jpeg",
+            "alt": "ERT telescope color variant 5",
+            "caption": "Visual rendering with another color palette"
+          },
+          {
+            "src": "/assets/ertcolor6.jpeg",
+            "alt": "ERT telescope color variant 6",
+            "caption": "Adaptation possible according to educational preferences"
+          },
+          {
+            "src": "/assets/ertcolor7.jpeg",
+            "alt": "ERT telescope color variant 7",
+            "caption": "Last color variant to complete the collection"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Complete E.R.T Kit",
+        "price": "€200",
+        "priceNote": "Printed parts + assembly kit",
+        "included": [
+          "3D printed parts",
+          "50mm objective lens",
+          "25mm eyepiece",
+          "Diagonal prism",
+          "Detailed assembly instructions",
+          "Educational support",
+          "Some sky objects to observe",
+          "Integrated mount"
+        ],
+        "ctaText": "Order complete kit",
+        "ctaHref": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07",
+        "afterCtaNote": "As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
+        "optionsTitle": "",
+        "options": []
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Educational benefits",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Learning by experience",
+            "description": "Intuitive assembly that helps understand how an astronomical telescope works."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Real observations",
+            "description": "Allows observation of the moon, star clusters and bright galaxies."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Modular design",
+            "description": "Each module has only one mounting direction to avoid assembly errors."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Scalable",
+            "description": "Excellent introduction before moving to more advanced instruments."
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "video", "label": "Detailed assembly" },
+    { "id": "video-2", "label": "Quick assembly" },
+    { "id": "specs", "label": "Modules" },
+    { "id": "filter", "label": "Filter holder" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "pricing", "label": "Pricing" },
+    { "id": "features", "label": "Benefits" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "astronomie",
+  "draft": false
+}

@@ -2,16 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CommunityMap from '../components/CommunityMap.astro';
 import ContactCTA from '../components/ContactCTA.astro';
-import { getCollection } from 'astro:content';
+import { getLocalizedDataCollection } from '../lib/collections';
+import type { Locale } from '../i18n';
 
-const builds = await getCollection('builds', ({ data }) => {
+const locale: Locale = 'fr';
+
+const builds = await getLocalizedDataCollection('builds', locale);
+const filteredBuilds = builds.filter(({ data }) => {
   return import.meta.env.DEV || !data.draft;
 });
 
-const buildCount = builds.length;
+const buildCount = filteredBuilds.length;
 ---
 
 <BaseLayout
+  locale={locale}
   title="Carte de la communauté Smallest | La 3ème dimension"
   description="Découvrez les télescopes Smallest construits par la communauté à travers le monde. Partagez votre construction et vos sorties d'observation."
   keywords="smallest communauté, télescope smallest, constructions communautaires, astronomie collaborative"
@@ -34,7 +39,7 @@ const buildCount = builds.length;
     </section>
 
     <!-- Map Section -->
-    <CommunityMap title="" height="600px" />
+    <CommunityMap title="" height="600px" locale={locale} />
 
     <!-- Participation Section -->
     <section class="participation">
@@ -111,7 +116,7 @@ const buildCount = builds.length;
       </div>
     </section>
 
-    <ContactCTA />
+    <ContactCTA locale={locale} />
   </main>
 
   <!-- Scroll Indicator Button -->

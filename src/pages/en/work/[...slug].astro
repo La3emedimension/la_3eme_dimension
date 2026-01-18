@@ -1,0 +1,101 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ContactCTA from "../../../components/ContactCTA.astro";
+import Hero from "../../../components/Hero.astro";
+import Icon from "../../../components/Icon.astro";
+import Pill from "../../../components/Pill.astro";
+import { localePath, type Locale } from '../../../i18n';
+import { getSlugWithoutLocale } from '../../../lib/collections';
+
+interface Props {
+    entry: CollectionEntry<"work">;
+}
+
+const locale: Locale = 'en';
+
+export async function getStaticPaths() {
+    const work = await getCollection("work");
+    return work
+        .filter(entry => entry.id.startsWith('en/'))
+        .map((entry) => ({
+            params: { slug: entry.id.replace('en/', '').replace(/\.md$/, '') },
+            props: { entry },
+        }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const seoTitle = entry.data.seoTitle || `${entry.data.title} - Custom 3D Printing | La 3ème dimension`;
+const seoDescription = entry.data.seoDescription || entry.data.description;
+const seoKeywords = entry.data.seoKeywords || `${entry.data.tags.join(", ")}, 3d printing, la 3eme dimension`;
+
+const entrySlug = getSlugWithoutLocale(entry.id, locale);
+const isSmallest = entrySlug === "nested/Smallest";
+
+const structuredData = isSmallest ? {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Smallest - Portable 150/750 Telescope",
+    description: "Portable and compact Newton 150/750 telescope, 3D printed, air transportable.",
+    brand: { "@type": "Brand", name: "La 3ème dimension" },
+    category: "Telescopes",
+} : null;
+---
+
+<BaseLayout
+    locale={locale}
+    title={seoTitle}
+    description={seoDescription}
+    keywords={seoKeywords}
+    structuredData={structuredData}
+>
+    <div class="stack gap-20">
+        <div class="stack gap-15">
+            <header>
+                <div class="wrapper stack gap-2">
+                    <a class="back-link" href={localePath('/work/', locale)}>
+                        <Icon icon="arrow-left" /> Work
+                    </a>
+                    <Hero title={entry.data.title} align="start">
+                        <div class="details">
+                            <div class="tags">
+                                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+                            </div>
+                            <p class="description">{entry.data.description}</p>
+                        </div>
+                    </Hero>
+                </div>
+            </header>
+            <main class="wrapper">
+                <div class="stack gap-10 content">
+                    {entry.data.img && (
+                        <img src={entry.data.img} alt={entry.data.img_alt || ""} />
+                    )}
+                    <div class="content">
+                        <Content />
+                    </div>
+                </div>
+            </main>
+        </div>
+        <ContactCTA locale={locale} />
+    </div>
+</BaseLayout>
+
+<style>
+    header { padding-bottom: 2.5rem; border-bottom: 1px solid var(--gray-800); }
+    .back-link { display: none; }
+    .details { display: flex; flex-direction: column; padding: 0.5rem; gap: 1.5rem; justify-content: space-between; align-items: center; }
+    .tags { display: flex; gap: 0.5rem; }
+    .description { font-size: var(--text-lg); max-width: 54ch; }
+    .content { max-width: 120ch; margin-inline: auto; }
+    .content > :global(* + *) { margin-top: 1rem; }
+    .content :global(img) { border-radius: 1.5rem; box-shadow: var(--shadow-sm); background: var(--gradient-subtle); border: 1px solid var(--gray-800); }
+    .back-link, .content :global(a) { text-decoration: 1px solid underline transparent; text-underline-offset: 0.25em; transition: text-decoration-color var(--theme-transition); }
+    .back-link:hover, .content :global(a:hover) { text-decoration-color: currentColor; }
+    @media (min-width: 50em) {
+        .back-link { display: block; align-self: flex-start; }
+        .details { flex-direction: row; gap: 2.5rem; }
+    }
+</style>

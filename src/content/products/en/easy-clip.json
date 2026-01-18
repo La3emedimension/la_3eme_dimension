@@ -1,0 +1,225 @@
+{
+  "seoTitle": "Easy Clip - Magnetic Finder Mount for Astronomy | La 3ème dimension",
+  "seoDescription": "Innovative magnetic mount for easy telescope finder switching with external CR2032 battery. Universal solution for astronomical finders.",
+  "seoKeywords": "easy clip, quickfinder, telescope finder, magnetic mount, rigel systems, astronomy, telescope",
+  "ogImage": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
+  "price": "€45",
+  "priceNote": "CR2032 battery not included",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Easy Clip - Magnetic Finder Mount",
+    "description": "Innovative magnetic mount for easy telescope finder switching with external CR2032 battery. Universal solution for astronomical finders.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astronomical accessories",
+    "offers": {
+      "@type": "Offer",
+      "price": "45",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
+    "features": [
+      "High-strength magnetic mount",
+      "Compatible with different astronomical finders",
+      "Quick switching between telescopes",
+      "External CR2032 battery",
+      "Easy installation",
+      "Resistant PETG material"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Easy Clip",
+        "tagline": "The evolution for your Quickfinder",
+        "description": "Innovative magnetic mount for your Quickfinder finder. Allows easy telescope switching and CR2032 battery access without dismounting the finder for optimal use.",
+        "features": [
+          {
+            "icon": "strategy",
+            "text": "Magnetic mount"
+          },
+          {
+            "icon": "rocket-launch",
+            "text": "Quick switching"
+          },
+          {
+            "icon": "terminal-window",
+            "text": "Easy installation"
+          }
+        ],
+        "primaryCta": {
+          "text": "Order now",
+          "href": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a"
+        },
+        "heroImage": {
+          "src": "/assets/easyclip/Easyclip7.jpeg",
+          "alt": "Easy Clip magnetic mount for astronomical finders"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Easy Clip system benefits",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "High-strength magnetic mount",
+            "description": "Powerful magnetic system allowing secure attachment and easy finder removal."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Quick switching between telescopes",
+            "description": "No more unscrewing or rescrewing the finder. Switch from one telescope to another in seconds."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "External CR2032 battery",
+            "description": "External power supply to avoid battery access problems with integrated finder."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical specifications",
+        "specGroups": [
+          {
+            "title": "Dimensions and design",
+            "specs": {
+              "Material": "High quality PETG",
+              "Color": "Black or white",
+              "Magnets": "High power neodymium"
+            }
+          },
+          {
+            "title": "Compatibility and power",
+            "specs": {
+              "Battery type": "CR2032 (not included)",
+              "Installation": "Plug & play, no modification"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Easy Clip Gallery",
+        "images": [
+          {
+            "src": "/assets/easyclip/Easygi.gif",
+            "alt": "Easy Clip mounting demonstration",
+            "caption": "Mounting demonstration in action"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip1.jpeg",
+            "alt": "Easy Clip overview",
+            "caption": "Complete view of Easy Clip system with magnetic mount"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip2.jpeg",
+            "alt": "Installation on telescope",
+            "caption": "Easy installation on different telescope types"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip3.jpeg",
+            "alt": "Magnetic system",
+            "caption": "Detail of high-strength magnetic system"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip4.jpeg",
+            "alt": "External CR2032 battery",
+            "caption": "External CR2032 battery for easy access"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip5.jpeg",
+            "alt": "Easy Clip in use",
+            "caption": "Easy Clip in operating position"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip6.jpeg",
+            "alt": "Mount detail",
+            "caption": "Detailed view of mount with adhesive tape"
+          },
+          {
+            "src": "/assets/easyclip/Easyclip7.jpeg",
+            "alt": "Complete assembly",
+            "caption": "Fully assembled Easy Clip system"
+          },
+          {
+            "src": "/assets/easyclip/EasyclipVixen.jpg",
+            "alt": "Easy Clip on Vixen telescope",
+            "caption": "Easy Clip installation on Vixen telescope"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Standard Easy Clip",
+        "price": "€45",
+        "priceNote": "Complete kit with 2 mounts, battery not included",
+        "included": [
+          "Easy Clip magnetic mount",
+          "External CR2032 battery holder",
+          "Mount supplied with adhesive tape",
+          "Supplied with 2 mounts"
+        ],
+        "ctaText": "Order",
+        "ctaHref": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Overview"
+    },
+    {
+      "id": "section-features",
+      "label": "Benefits"
+    },
+    {
+      "id": "section-specs",
+      "label": "Specifications"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Gallery"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Pricing"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

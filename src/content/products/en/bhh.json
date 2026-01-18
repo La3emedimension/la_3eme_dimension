@@ -1,0 +1,173 @@
+{
+  "seoTitle": "B.H.H - 3D Printed Backpack Hook | La 3ème dimension",
+  "seoDescription": "3D printed backpack hook. Supports up to 12kg, optimized design for backpackers and travelers. Free files available.",
+  "seoKeywords": "backpack hook, travel accessory, 3d printing utility, design, optimization, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
+  "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
+  "stripePublishableKey": "pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm",
+  "price": "€10",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "B.H.H - Backpack Holder Hook",
+    "description": "3D printed backpack hook. Supports up to 12kg, optimized design for backpackers and travelers.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Travel accessories",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/BHH (2).jpg",
+    "features": [
+      "Supports up to 10kg",
+      "Clean and optimized C-shaped design",
+      "Compatible with carabiners",
+      "Free files available"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "B.H.H",
+        "tagline": "Backpack Holder Hook",
+        "description": "Backpack hook, designed for backpackers.",
+        "features": [
+          { "icon": "strategy", "text": "Supports up to 10kg" },
+          { "icon": "terminal-window", "text": "Optimized 3D printing" },
+          { "icon": "paper-plane-tilt", "text": "Ultra-portable" }
+        ],
+        "primaryCta": {
+          "text": "Free files",
+          "href": "https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments"
+        },
+        "secondaryCta": {
+          "text": "Order",
+          "href": "https://buy.stripe.com/14AbJ3ajMbhp2rFbKQ67S03"
+        },
+        "heroImage": {
+          "src": "/assets/BHH (2).jpg",
+          "alt": "BHH hook installed on backpack"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Why choose the B.H.H?",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Optimized design",
+            "description": "C-shaped form and print orientation allow maximum strength with minimum material."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "10kg capacity",
+            "description": "Tested with a 10kg backpack for 8 hours. Perfect for hikers and travelers."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Versatile",
+            "description": "Can be used in many ways with a carabiner and a piece of paracord."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Open Source",
+            "description": "Free STL files available on Printables for personal printing."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "In action",
+        "images": [
+          {
+            "src": "/assets/BHH desk.gif",
+            "alt": "Hook usage animation",
+            "caption": "Demonstration of BHH hook usage - simple and effective attachment"
+          },
+          {
+            "src": "/assets/BHH (3).gif",
+            "alt": "Strength test",
+            "caption": "Strength test with loaded backpack - supports up to 12kg"
+          },
+          {
+            "src": "/assets/BHH (1).jpg",
+            "alt": "Detailed hook view",
+            "caption": "Detail of optimized shape and 3D printing finish"
+          }
+        ],
+        "background": "dark"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical specifications",
+        "specGroups": [
+          {
+            "title": "Performance",
+            "specs": {
+              "Max load": "10 kg",
+              "Test duration": "8 hours",
+              "Material": "PETG",
+              "Weight": "~15g",
+              "Dimensions": "8 × 4 × 2 cm"
+            }
+          },
+          {
+            "title": "3D Printing",
+            "specs": {
+              "Print time": "~1h",
+              "Support": "Not required",
+              "Infill": "20-30%",
+              "Orientation": "Optimized",
+              "Post-processing": "Minimal",
+              "Carabiner": "3D printable STL"
+            }
+          },
+          {
+            "title": "Compatibility",
+            "specs": {
+              "Backpacks": "Universal",
+              "Carabiners": "Standard",
+              "Paracord": "Compatible",
+              "Usage": "Indoor/Outdoor",
+              "License": "Open Source"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "features", "label": "Features" },
+    { "id": "gallery", "label": "Demo" },
+    { "id": "specs", "label": "Specifications" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "accessoire"
+}

@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import { localePath, type Locale } from '../i18n';
+
+const locale: Locale = 'fr';
 ---
 
-<BaseLayout title="A propos | La 3ème dimension" description="About La 3ème dimension">
+<BaseLayout locale={locale} title="A propos | La 3ème dimension" description="About La 3ème dimension">
 	<div class="stack gap-20">
 		<main class="about">
 			<Hero title="A propos">
@@ -17,14 +19,14 @@ import Hero from '../components/Hero.astro';
 
 					<p>Nous utilisons des imprimantes 3D de la marque Bambu Lab et avons pour objectif d’optimiser l’utilisation des matériaux en fonction de leurs contraintes. Nous privilégions les filaments d’origine européenne et/ou française afin de limiter notre impact environnemental.</p>
 				   
-					<p>Si vous souhaitez découvrir nos réalisations, vous pouvez plonger dans notre <a href="https://la3emedim.fr/work/">univers.</a></p>
+					<p>Si vous souhaitez découvrir nos réalisations, vous pouvez plonger dans notre <a href={localePath('/work/', locale)}>univers.</a></p>
 					
 			</Hero>	
 			<img src="/assets/apropos.jpg">
 		
 		</main>
 
-		<ContactCTA />
+		<ContactCTA locale={locale} />
 	</div>
 </BaseLayout>
 

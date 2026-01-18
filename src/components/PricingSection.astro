@@ -1,4 +1,6 @@
 ---
+import { useTranslations, type Locale } from '../i18n';
+
 interface PricingOption {
     title: string;
     priceNote?: string;
@@ -17,6 +19,7 @@ interface Props {
     optionsTitle: string;
     options: PricingOption[];
     afterCtaNote?: string;
+    locale?: Locale;
 }
 
 const {
@@ -29,15 +32,17 @@ const {
     optionsTitle,
     options,
     afterCtaNote,
+    locale = 'fr',
 } = Astro.props;
 
-// Helper to determine if a link is external
+const t = useTranslations(locale);
+
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 ---
 
 <section class="pricing-section" id="pricing">
     <div class="container">
-        <h2>Tarifs et options</h2>
+        <h2>{t.product.pricingTitle}</h2>
         <div class={`pricing-grid ${options.length === 0 ? 'single-card' : ''}`}>
             <div class="pricing-card main-offer">
                 <h3>{title}</h3>

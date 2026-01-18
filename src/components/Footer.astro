@@ -1,21 +1,29 @@
 ---
 import Icon from './Icon.astro';
+import { useTranslations, localePath, type Locale } from '../i18n';
+
+interface Props {
+	locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
 	<div class="group">
 		<p>
-			Conception, réalisation et atelier autour de l'impression 3D 
+			{t.footer.tagline}
 			<Icon icon='la3emedim' size="1.2em" />
 		</p>
-		<p>&copy; {currentYear} La 3eme dimension | Siret :94334362400012 | <a href="/legalmention">Mentions légales</a></p>
+		<p>&copy; {currentYear} {t.footer.copyright} | <a href={localePath('/legalmention/', locale)}>{t.footer.legalMention}</a></p>
 	</div>
 	<p class="socials">
-		<a href="https://bento.me/l3d" target="_blank" rel="noopener noreferrer"> Bento.me</a>
-		<a href="https://codepen.io/Labro-Rapha-l" target="_blank" rel="noopener noreferrer"> CodePen</a>
-		<a href="/ert"> ERT</a>
-		<a href="https://raphaellabro.itch.io/" target="_blank" rel="noopener noreferrer"> Itch.io</a>
+		<a href="https://bento.me/l3d" target="_blank" rel="noopener noreferrer">Bento.me</a>
+		<a href="https://codepen.io/Labro-Rapha-l" target="_blank" rel="noopener noreferrer">CodePen</a>
+		<a href={localePath('/ert/', locale)}>ERT</a>
+		<a href="https://raphaellabro.itch.io/" target="_blank" rel="noopener noreferrer">Itch.io</a>
 	</p>
 </footer>
 

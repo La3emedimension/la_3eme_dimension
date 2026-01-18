@@ -1,23 +1,30 @@
 ---
 import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+	locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <section class="box skills">
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Sur mesure</h2>
-		<p>A l'écoute de vos besoins pour réaliser vos projets le plus précisément possible.</p>
+		<h2>{t.skills.custom.title}</h2>
+		<p>{t.skills.custom.description}</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Conception</h2>
-		<p>Grâce aux outils de modélisation 3D nous donnons forme à vos projets et vos idées avec une large gamme de matériaux et de textures.</p>
+		<h2>{t.skills.design.title}</h2>
+		<p>{t.skills.design.description}</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Atelier</h2>
-		<p>Nous organisons des stages, formations, team-building et ateliers autour de l'impression 3D
-		</p>
+		<h2>{t.skills.workshop.title}</h2>
+		<p>{t.skills.workshop.description}</p>
 	</div>
 </section>
 

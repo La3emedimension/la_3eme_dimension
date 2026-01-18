@@ -1,0 +1,472 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityMap from '../../components/CommunityMap.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { getLocalizedDataCollection } from '../../lib/collections';
+import type { Locale } from '../../i18n';
+
+const locale: Locale = 'en';
+
+const builds = await getLocalizedDataCollection('builds', locale);
+const filteredBuilds = builds.filter(({ data }) => {
+  return import.meta.env.DEV || !data.draft;
+});
+
+const buildCount = filteredBuilds.length;
+---
+
+<BaseLayout
+  locale={locale}
+  title="Smallest Community Map | La 3ème dimension"
+  description="Discover Smallest telescopes built by the community around the world. Share your build and observation outings."
+  keywords="smallest community, smallest telescope, community builds, collaborative astronomy"
+>
+  <main class="community-page">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>The Smallest Community</h1>
+          <p class="hero-description">
+            Discover {buildCount} community interactions.
+            Explore creations and observation outings through an interactive map.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CommunityMap title="" height="600px" locale={locale} />
+
+    <section class="participation">
+      <div class="container">
+        <div class="participation-grid">
+          <div class="participation-content">
+            <h2>Share your Smallest!</h2>
+            <p>
+              Have you built a Smallest or taken it out for observation?
+              Join our community and share your experience!
+            </p>
+
+            <div class="participation-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <h3>Take photos</h3>
+                  <p>Photograph your build and observation outings</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <h3>Send us your info</h3>
+                  <p>Title, your name, location and your photos</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <h3>Appear on the map</h3>
+                  <p>Your build will be added to the community map</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                  <h3>Share your observations/builds</h3>
+                  <p>A short description of the location or your build.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="participation-cta">
+              <a href="mailto:la3emedim@gmail.com?subject=Smallest build sharing&body=Hello,%0D%0A%0D%0AI would like to share my Smallest build on the community map.%0D%0A%0D%0ATitle:%0D%0AMy name/username:%0D%0AGPS coordinates (latitude, longitude):%0D%0ADescription:%0D%0AWeb link (optional):%0D%0A%0D%0AI am attaching the photos.%0D%0A%0D%0AThank you!"
+                 class="cta-primary">
+                Share my build
+              </a>
+              <p class="cta-note">
+                <strong>Mobile:</strong> Long press on the map to get your exact coordinates
+              </p>
+            </div>
+          </div>
+
+          <div class="participation-tips">
+            <h3>Tips for great photos</h3>
+            <ul class="tips-list">
+              <li>Take a clear main photo of your Smallest</li>
+              <li>Add photos from your observation outings</li>
+              <li>Show your modifications or improvements</li>
+              <li>Indicate the location of your build or outing</li>
+              <li>Smartphone photos are perfect</li>
+            </ul>
+
+            <div class="social-sharing">
+              <h4>Share on social media too</h4>
+              <p>Use #SmallestTelescope #La3emeDimension so we can see your creations!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactCTA locale={locale} />
+  </main>
+
+  <div class="scroll-indicator" id="scroll-indicator">
+    <div class="scroll-bubble">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 14L12 19L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 5L12 10L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .community-page {
+    background: var(--gray-999);
+    color: var(--gray-100);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-regular);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .participation {
+    padding: 2rem 0 6rem 0;
+    background: var(--gray-900);
+    border-top: 1px solid var(--gray-800);
+  }
+
+  .participation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .participation-content h2 {
+    font-size: 2.5rem;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+  }
+
+  .participation-content > p {
+    font-size: 1.1rem;
+    color: var(--gray-300);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .participation-steps {
+    margin-bottom: 3rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+    color: var(--gray-100);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p {
+    color: var(--gray-300);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .participation-cta {
+    text-align: center;
+  }
+
+  .cta-primary {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-regular);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .cta-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-note {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .participation-tips {
+    background: var(--gray-999);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .participation-tips h3 {
+    font-size: 1.5rem;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+  }
+
+  .tips-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .tips-list li {
+    padding: 0.75rem 0;
+    color: var(--gray-300);
+    border-bottom: 1px solid var(--gray-800);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .tips-list li:last-child {
+    border-bottom: none;
+  }
+
+  .social-sharing {
+    background: var(--gray-900);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-700);
+  }
+
+  .social-sharing h4 {
+    font-size: 1.1rem;
+    color: var(--accent-regular);
+    margin-bottom: 0.5rem;
+  }
+
+  .social-sharing p {
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .participation-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .participation-content h2 {
+      font-size: 2rem;
+    }
+
+    .step {
+      align-items: center;
+    }
+
+    .step-number {
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    z-index: 1500;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+    animation: bounce 2s infinite;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .scroll-indicator.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+  }
+
+  .scroll-bubble {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .scroll-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+    background: var(--accent-dark);
+  }
+
+  .scroll-bubble svg {
+    opacity: 0.9;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-8px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-4px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scroll-indicator {
+      bottom: 1.5rem;
+    }
+
+    .scroll-bubble {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .scroll-bubble svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-height: 600px) {
+    .scroll-indicator {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    let isScrolled = false;
+
+    function handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+
+      if (scrollTop > heroHeight * 0.8 && !isScrolled) {
+        isScrolled = true;
+        scrollIndicator?.classList.add('hidden');
+      } else if (scrollTop <= heroHeight * 0.8 && isScrolled) {
+        isScrolled = false;
+        scrollIndicator?.classList.remove('hidden');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    scrollIndicator?.addEventListener('click', () => {
+      const mapSection = document.querySelector('.community-map-section');
+      if (mapSection) {
+        mapSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>

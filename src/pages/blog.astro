@@ -1,27 +1,29 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "../components/Icon.astro";
+import { useTranslations, localePath, type Locale } from '../i18n';
+import { getLocalizedCollection, getSlugWithoutLocale } from '../lib/collections';
 
-// Récupérer tous les articles de blog (exclure les brouillons) et les trier par date (plus récents en premier)
-const blogPosts = await getCollection("blog", ({ data }) => {
-  return data.draft !== true;
-});
-const sortedPosts = blogPosts.sort((a, b) => 
+const locale: Locale = 'fr';
+const t = useTranslations(locale);
+
+const blogPosts = await getLocalizedCollection('blog', locale);
+const filteredPosts = blogPosts.filter(({ data }) => data.draft !== true);
+const sortedPosts = filteredPosts.sort((a, b) =>
   b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
-// Formatter les dates
 const formatDate = (date: Date) => {
-  return date.toLocaleDateString("fr-FR", {
+  return date.toLocaleDateString(locale === 'fr' ? "fr-FR" : "en-GB", {
     year: "numeric",
-    month: "long", 
+    month: "long",
     day: "numeric"
   });
 };
 ---
 
 <BaseLayout
+  locale={locale}
   title="Le billet de blog - La 3ème dimension"
   description="Articles et actualités de La 3ème dimension - impression 3D, télescopes et innovations"
   keywords="blog impression 3d, actualités télescope, innovations 3d, la 3eme dimension"
@@ -38,9 +40,11 @@ const formatDate = (date: Date) => {
         {sortedPosts.length === 0 ? (
           <p class="no-posts">Aucun article pour le moment. Revenez bientôt !</p>
         ) : (
-          sortedPosts.map((post) => (
+          sortedPosts.map((post) => {
+            const postSlug = getSlugWithoutLocale(post.id, locale);
+            return (
             <article class="blog-card">
-              <a href={`/blog/${post.slug}`}>
+              <a href={localePath(`/blog/${postSlug}/`, locale)}>
                 {post.data.img && (
                   <div class="image-container">
                     <img 
@@ -67,7 +71,7 @@ const formatDate = (date: Date) => {
                 </div>
               </a>
             </article>
-          ))
+          );})
         )}
       </main>
     </div>

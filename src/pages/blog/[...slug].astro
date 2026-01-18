@@ -1,42 +1,40 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import FocalCalculator from "../../components/FocalCalculator.astro";
+import { localePath, type Locale } from '../../i18n';
+import { getSlugWithoutLocale } from '../../lib/collections';
+
+const locale: Locale = 'fr';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  return blogEntries
+    .filter(entry => entry.id.startsWith('fr/'))
+    .map((entry) => ({
+      params: { slug: entry.id.replace('fr/', '').replace(/\.md$/, '') },
+      props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
-// Vérifier si c'est l'article OEP qui nécessite le calculateur
-console.log('Entry slug:', entry.slug);
-const needsCalculator = entry.slug === 'oep';
+const entrySlug = getSlugWithoutLocale(entry.id, locale);
+const needsCalculator = entrySlug === 'OEP';
 
-// Pour l'article OEP, diviser le contenu au marqueur
-let contentParts = null;
-if (needsCalculator) {
-  const contentHTML = await entry.render().then(result => result.Content);
-  // On va traiter cela côté client avec JavaScript
-}
-
-// Formatter la date
 const formatDate = (date: Date) => {
-  return date.toLocaleDateString("fr-FR", {
+  return date.toLocaleDateString(locale === 'fr' ? "fr-FR" : "en-GB", {
     year: "numeric",
-    month: "long", 
+    month: "long",
     day: "numeric"
   });
 };
 ---
 
 <BaseLayout
+  locale={locale}
   title={entry.data.title}
   description={`Article de blog : ${entry.data.title}`}
   keywords={`blog, impression 3d, ${entry.data.title.toLowerCase()}`}
@@ -46,7 +44,7 @@ const formatDate = (date: Date) => {
     <div class="wrapper">
       <header class="blog-header">
         <nav class="breadcrumb">
-          <a href="/blog">
+          <a href={localePath('/blog/', locale)}>
             <Icon icon="arrow-left" size="1em" />
             Retour au blog
           </a>
@@ -82,7 +80,7 @@ const formatDate = (date: Date) => {
 
       <footer class="blog-footer">
         <nav class="back-to-blog">
-          <a href="/blog">
+          <a href={localePath('/blog/', locale)}>
             <Icon icon="arrow-left" size="1em" />
             Voir tous les articles
           </a>

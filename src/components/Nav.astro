@@ -1,18 +1,24 @@
 ---
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import LanguageSelector from './LanguageSelector.astro';
 import type { iconPaths } from './IconPaths';
+import { useTranslations, localePath, type Locale } from '../i18n';
 
+interface Props {
+	locale?: Locale;
+}
 
-/** Main menu items */
+const { locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
+
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Boutique', href: '/shop/' },
-	{ label: 'Réalisations', href: '/work/' },
-	{ label: 'Blog', href: '/blog/' },
-	{ label: 'A propos', href: '/about/' },
+	{ label: t.nav.shop, href: localePath('/shop/', locale) },
+	{ label: t.nav.work, href: localePath('/work/', locale) },
+	{ label: t.nav.blog, href: localePath('/blog/', locale) },
+	{ label: t.nav.about, href: localePath('/about/', locale) },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/rapha%C3%ABl-labro-204894370/', icon: 'linkedin' },
 	{ label: 'Instagram', href: 'https://www.instagram.com/la_3eme_dimension/', icon: 'Instagram-logo' },
@@ -21,10 +27,19 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	{ label: 'Printables', href: 'https://www.printables.com/@La3emedimens_2102135', icon: 'printables-logo' },
 	{ label: 'Store', href: 'https://www.ebay.fr/sch/i.html?item=405328997493&rt=nc&_trksid=p4429486.m3561.l161211&_ssn=la3emedimension', icon: 'Store-logo' },
 ];
+
+function isActivePath(href: string): boolean {
+	const path = Astro.url.pathname;
+	const rootPath = localePath('/', locale);
+	if (href === rootPath) {
+		return path === href;
+	}
+	return path === href || path.startsWith(href);
+}
 ---
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href={localePath('/', locale)} class="site-title">
 			<svg id="Calque_2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 502.07 559.34"><defs><style>.cls-1{fill:#66338b;}</style></defs><g id="Calque_1-2"><path class="cls-1" d="M501.96,104.62c.08-1.52.11-3.01.11-4.52,0-55.29-44.83-100.1-100.13-100.1s-100.1,44.81-100.1,100.1c0,1.32.03,2.65.08,3.97h-.08v355.17c0,55.29,44.81,100.1,100.1,100.1s100.13-44.81,100.13-100.1c0-1.52-.03-3.01-.11-4.52V104.62ZM402.15,526.2c-33.78,0-61.17-27.39-61.17-61.17s27.39-61.17,61.17-61.17c21.45,0,40.32,11.04,51.24,27.75,6.28,9.61,9.93,21.09,9.93,33.42,0,33.78-27.39,61.17-61.17,61.17Z"/><circle class="cls-1" cx="137.06" cy="416.74" r="137.06"/></g></svg>
 			La 3ème dimension
 		</a>
@@ -43,15 +58,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
-								'link',
-								{
-									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
-								},
-							]}
+							aria-current={isActivePath(href) ? 'page' : undefined}
+							class:list={['link', { active: isActivePath(href) }]}
 							href={href}
 						>
 							{label}
@@ -81,15 +89,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
-								'link',
-								{
-									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
-								},
-							]}
+							aria-current={isActivePath(href) ? 'page' : undefined}
+							class:list={['link', { active: isActivePath(href) }]}
 							href={href}
 						>
 							{label}
@@ -110,7 +111,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				}
 			</div>
 
-			<div class="theme-toggle">
+			<div class="controls">
+				<LanguageSelector locale={locale} />
 				<ThemeToggle />
 			</div>
 		</div>
@@ -284,9 +286,10 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		color: var(--accent-text-over);
 	}
 
-	.theme-toggle {
+	.controls {
 		display: flex;
 		align-items: center;
+		gap: 0.5rem;
 		height: calc(var(--icon-size) + 2 * var(--icon-padding));
 	}
 

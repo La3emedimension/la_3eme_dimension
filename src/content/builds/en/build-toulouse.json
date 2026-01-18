@@ -1,0 +1,13 @@
+{
+  "title": "Smallest v2 - First Build",
+  "author": "Raphaël Labro",
+  "webLink": "https://la3emedim.fr",
+  "latitude": 43.604652,
+  "longitude": 1.444209,
+  "mainPhoto": "https://la3emedim.fr/assets/build-toulouse-main.jpg",
+  "additionalPhotos": [
+    "https://la3emedim.fr/assets/build-toulouse-1.jpg",
+    "https://la3emedim.fr/assets/build-toulouse-2.jpg"
+  ],
+  "draft": true
+}

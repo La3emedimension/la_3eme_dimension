@@ -1,0 +1,299 @@
+{
+  "seoTitle": "Smallest - Compact Portable Telescope | La 3ème dimension",
+  "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €550.",
+  "seoKeywords": "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse",
+  "ogImage": "/assets/Smallest_fullsize(2).jpg",
+  "price": "€550",
+  "priceNote": "Optics not included",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Smallest - Portable Telescope 150/750",
+    "description": "Portable and compact Newton 150/750 telescope, 3D printed, air transportable. Practical solution for nomadic astronomy.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Telescopes",
+    "offers": {
+      "@type": "Offer",
+      "price": "550",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "/assets/Smallest_fullsize(2).jpg",
+    "features": [
+      "Newton 150/750 telescope",
+      "Portable and compact",
+      "Air transportable",
+      "3D printed structure",
+      "Compatible with standard optics",
+      "Weight: 4kg with optics"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Smallest",
+        "tagline": "\"The best telescope is the one you use often!\"",
+        "description": "Explore the sky with simplicity. The Smallest is where innovation meets intuition: a telescope so easy to use that assembly guides you naturally. Every observation evening becomes a smooth and captivating exploration, without complex adjustments or barriers, for an immediate and deep journey to the heart of the universe. Compact and ultra-portable, it goes everywhere with you.",
+        "features": [
+          { "icon": "paper-plane-tilt", "text": "Air transportable" },
+          { "icon": "rocket-launch", "text": "150/750 Newton" },
+          { "icon": "strategy", "text": "4kg with optics" }
+        ],
+        "primaryCta": { "text": "Order", "href": "#pricing" },
+        "heroImage": {
+          "src": "/assets/Smallest_fullsize(1).jpg",
+          "alt": "Smallest portable telescope in observation configuration"
+        }
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video",
+      "data": {
+        "title": "Assembly in 4 minutes",
+        "description": "Discover the simplicity of the Smallest: from transport to observation in less than 4 minutes. No tools required, intuitive assembly to quickly enjoy the starry sky.",
+        "videoId": "-7mI89_OHzk",
+        "videoTitle": "Assembly and observation with the Smallest telescope in 4 minutes"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Why choose Smallest?",
+        "features": [
+          {
+            "icon": "rocket-launch",
+            "title": "Optical performance",
+            "description": "150mm diameter, 750mm focal length for quality observations."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Portability",
+            "description": "Respects airplane cabin dimensions. Easily removable optics. Fits in a laptop bag or backpack. 4 kilos ready for hiking."
+          },
+          {
+            "icon": "strategy",
+            "title": "Modular",
+            "description": "Conversion kit for your industrial or artisanal optics. Dobson-type structure. 1.25 inch focuser. Tool-free assembly."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "3D Printing",
+            "description": "Optimal precision thanks to additive manufacturing. Lightweight and resistant structure. Customizable and printed in carbon fiber reinforced PETG."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical specifications",
+        "specGroups": [
+          {
+            "title": "Optics",
+            "specs": {
+              "Type": "Newton 150/750",
+              "Diameter": "150mm",
+              "Focal length": "750mm",
+              "F/D ratio": "F/5",
+              "Focuser": "1.25\""
+            }
+          },
+          {
+            "title": "Dimensions & Weight",
+            "specs": {
+              "Transport": "25 × 25 × 20 cm",
+              "Observation": "25 × 25 × 87 cm",
+              "Total weight": "4 kg with optics",
+              "Structure": "Aluminum rods",
+              "Mount": "Integrated Dobson"
+            }
+          },
+          {
+            "title": "Compatibility",
+            "specs": {
+              "Optics": "Standard 150/750",
+              "Finder": "Dovetail",
+              "Transport": "Airplane cabin",
+              "Assembly": "Tool-free",
+              "Warranty": "2 years"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Complete gallery",
+        "images": [
+          {
+            "src": "/assets/smallest (3).jpg",
+            "alt": "Smallest photo 3"
+          },
+          {
+            "src": "/assets/smallest (5).jpg",
+            "alt": "Smallest photo 5"
+          },
+          {
+            "src": "/assets/smallest (6).jpg",
+            "alt": "Smallest photo 6"
+          },
+          {
+            "src": "/assets/smallest (7).jpg",
+            "alt": "Smallest photo 7"
+          },
+          {
+            "src": "/assets/smallest (8).jpg",
+            "alt": "Smallest photo 8"
+          },
+          {
+            "src": "/assets/smallest (9).jpg",
+            "alt": "Smallest photo 9"
+          },
+          {
+            "src": "/assets/smallest (10).jpg",
+            "alt": "Smallest photo 10"
+          },
+          {
+            "src": "/assets/smallest (11).jpg",
+            "alt": "Smallest photo 11"
+          },
+          {
+            "src": "/assets/smallest (12).jpg",
+            "alt": "Smallest photo 12"
+          },
+          {
+            "src": "/assets/smallest (13).jpg",
+            "alt": "Smallest photo 13"
+          },
+          {
+            "src": "/assets/smallest (14).jpg",
+            "alt": "Smallest photo 14"
+          },
+          {
+            "src": "/assets/smallest (16).jpg",
+            "alt": "Smallest photo 16"
+          },
+          {
+            "src": "/assets/smallest (17).jpg",
+            "alt": "Smallest photo 17"
+          },
+          {
+            "src": "/assets/smallest (18).jpg",
+            "alt": "Smallest photo 18"
+          },
+          {
+            "src": "/assets/smallest (19).jpg",
+            "alt": "Smallest photo 19"
+          },
+          {
+            "src": "/assets/smallest (20).jpg",
+            "alt": "Smallest photo 20"
+          },
+          {
+            "src": "/assets/smallest (21).jpg",
+            "alt": "Smallest photo 21"
+          },
+          {
+            "src": "/assets/smallest (22).jpg",
+            "alt": "Smallest photo 22"
+          },
+          {
+            "src": "/assets/smallest (23).jpg",
+            "alt": "Smallest photo 23"
+          },
+          {
+            "src": "/assets/smallest (24).jpg",
+            "alt": "Smallest photo 24"
+          },
+          {
+            "src": "/assets/smallest (25).jpg",
+            "alt": "Smallest photo 25"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Smallest Kit",
+        "price": "€550",
+        "priceNote": "Optics not included",
+        "included": [
+          "Carbon fiber reinforced 3D printed structure (PETG-CF)",
+          "Aluminum rods",
+          "1.25\" focuser",
+          "Finder support",
+          "Integrated Dobson mount",
+          "Assembly instructions"
+        ],
+        "ctaText": "Order without optics",
+        "ctaHref": "https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05",
+        "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted.",
+        "optionsTitle": "Optical options",
+        "options": [
+          {
+            "title": "Industrial",
+            "description": "<div style=\"text-align: center;\">Optimal quality/price ratio<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Order with optics - €750</a></div>",
+            "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted."
+          },
+          {
+            "title": "Artisanal",
+            "description": "<div style=\"text-align: center;\"><strong>Gallifrey Optics</strong> (primary)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Email: paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primary/secondary)<br><a href=\"https://www.costruzioniottichezen.com/\">website</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Contact us</a></div>",
+            "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted."
+          }
+        ]
+      }
+    },
+    {
+      "type": "custom",
+      "id": "section-community",
+      "data": {
+        "title": "Community map",
+        "description": "Here you can share your observations and builds",
+        "ctaText": "Community map",
+        "ctaHref": "https://la3emedim.fr/en/community-map",
+        "features": [
+          "Community builds",
+          "Modifications and improvements",
+          "Observation outings",
+          "Experience sharing"
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "video", "label": "Demo" },
+    { "id": "features", "label": "Features" },
+    { "id": "specs", "label": "Specifications" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "pricing", "label": "Pricing" },
+    { "id": "section-community", "label": "Community" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "astronomie"
+}

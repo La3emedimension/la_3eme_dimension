@@ -1,13 +1,11 @@
 ---
-// Learn about using Astro layouts:
-// https://docs.astro.build/en/core-concepts/layouts/
-
-// Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { getAlternatePath, type Locale } from '../i18n';
 
 interface Props {
+	locale?: Locale;
 	title?: string | undefined;
 	description?: string | undefined;
 	keywords?: string | undefined;
@@ -15,31 +13,46 @@ interface Props {
 	structuredData?: object | undefined;
 }
 
-const { title, description, keywords, ogImage, structuredData } = Astro.props;
+const {
+	locale = 'fr',
+	title,
+	description,
+	keywords,
+	ogImage,
+	structuredData
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const alternatePath = getAlternatePath(currentPath, locale);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://la3emedim.fr';
 ---
 
-<html lang="fr_FR">
+<html lang={locale === 'en' ? 'en-GB' : 'fr-FR'}>
 	<head>
-		<MainHead 
-			title={title} 
+		<MainHead
+			title={title}
 			description={description}
 			keywords={keywords}
 			ogImage={ogImage}
 			structuredData={structuredData}
+			locale={locale}
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
-    rel="alternate"
-    type="application/rss+xml"
-    title="Votre titre de site"
-    href={new URL("rss.xml", Astro.site)}
-/>
+			rel="alternate"
+			type="application/rss+xml"
+			title={locale === 'fr' ? 'La 3ème dimension' : 'La 3ème dimension (English)'}
+			href={new URL(locale === 'fr' ? 'rss.xml' : 'en/rss.xml', Astro.site)}
+		/>
+		<link rel="alternate" hreflang="fr" href={`${siteUrl}${locale === 'fr' ? currentPath : alternatePath}`} />
+		<link rel="alternate" hreflang="en" href={`${siteUrl}${locale === 'en' ? currentPath : alternatePath}`} />
+		<link rel="alternate" hreflang="x-default" href={`${siteUrl}${locale === 'fr' ? currentPath : alternatePath}`} />
 	</head>
 	<body>
 		<div class="stack backgrounds">
-			<Nav />
+			<Nav locale={locale} />
 			<slot />
-			<Footer />
+			<Footer locale={locale} />
 		</div>
 
 		<script>

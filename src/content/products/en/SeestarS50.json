@@ -1,0 +1,150 @@
+{
+  "seoTitle": "Accessory Pack for ZWO Seestar S50 | La 3ème dimension",
+  "seoDescription": "The pack contains 1 baffle, 1 cap, 1 Bahtinov mask, 2 diffraction spike caps Newton and James Webb style.",
+  "seoKeywords": "ZWO, seestar, S50, accessories, astronomy, astrophotography design, toulouse",
+  "ogImage": "https://la3emedim.fr/assets/seestars50.png",
+  "price": "€30",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Accessory pack for Seestar S50",
+    "description": "Accessory pack containing 1 baffle, 1 cap, 1 Bahtinov mask, 2 diffraction spike caps Newton and James Webb style.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astrophotography",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/seestars50.png",
+    "features": [
+      "Protective cap",
+      "Light shield",
+      "Bahtinov mask",
+      "Newton and JWST style masks"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Accessory Pack for ZWO Seestar S50",
+        "tagline": "5 accessory pack for ZWO Seestar S50",
+        "features": [
+          { "icon": "strategy", "text": "5 accessories" },
+          { "icon": "rocket-launch", "text": "Adaptable filters and caps" },
+          { "icon": "terminal-window", "text": "Easy to use" }
+        ],
+        "primaryCta": { "text": "Buy", "href": "https://buy.stripe.com/6oUfZj1NgdpxaYb3ek67S01" },
+        "heroImage": { "src": "/assets/seestars50.png", "alt": "Seestar equipped with light shield and cap" },
+        "afterCtaNote": "As each part is handcrafted, please allow approximately 7 days for manufacturing, plus shipping time."
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Pack contents",
+        "specGroups": [
+          {
+            "title": "Included modules",
+            "specs": {
+              "Lens cap": "Protects lens",
+              "Baffle": "Stray light blocker",
+              "Newton star mask": "Mask for Newton-style star spikes",
+              "JWST star mask": "Mask for JWST-style star spikes",
+              "Bahtinov mask": "Mask for focusing"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Project gallery",
+        "images": [
+          {
+            "src": "/assets/S50 3D.png",
+            "alt": "Pack elements diagram",
+            "caption": "Pack contents"
+          },
+          {
+            "src": "/assets/S50 3.jpg",
+            "alt": "View with light shield",
+            "caption": "View with light shield"
+          },
+          {
+            "src": "/assets/S50 5.jpg",
+            "alt": "JWST cap",
+            "caption": "JWST cap detail"
+          },
+          {
+            "src": "/assets/S50 6.jpg",
+            "alt": "Bahtinov",
+            "caption": "Bahtinov cap detail"
+          },
+          {
+            "src": "/assets/S50 7.jpg",
+            "alt": "Front view",
+            "caption": "Front view with protective cap"
+          },
+          {
+            "src": "/assets/S50 8.jpg",
+            "alt": "Newton cap",
+            "caption": "Newton-style cap mounted on light shield detail."
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Benefits",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Usage",
+            "description": "Simple mounting with clip system"
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Modular design",
+            "description": "Each module is compatible with each other."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Scalable",
+            "description": "Allows making custom compatible accessories."
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "specs", "label": "Contents" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "features", "label": "Benefits" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "astronomie"
+}

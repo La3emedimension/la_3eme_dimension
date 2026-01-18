@@ -1,0 +1,233 @@
+{
+  "seoTitle": "Cheshire - Telescope Mirror Collimator | La 3ème dimension",
+  "seoDescription": "3D printed alignment Cheshire with interchangeable reticles via screw system. Essential tool for Newton telescope mirror collimation.",
+  "seoKeywords": "cheshire, telescope collimator, mirror alignment, newton collimation, 3d printing astronomy, interchangeable reticles, collimation eyepiece, mirror adjustment",
+  "ogImage": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
+  "price": "€25",
+  "priceNote": "Delivered with 3 standard reticles",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cheshire - Telescope Collimator",
+    "description": "3D printed alignment Cheshire with interchangeable reticle system via screws. Precise tool for Newton telescope mirror collimation.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astronomical accessories",
+    "offers": {
+      "@type": "Offer",
+      "price": "25",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
+    "features": [
+      "High precision 3D printing",
+      "Interchangeable reticles via screw system",
+      "Newton telescope compatible",
+      "Delivered with 3 standard reticles",
+      "Ergonomic design",
+      "Resistant PETG material"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Cheshire",
+        "tagline": "The precise collimation tool",
+        "description": "3D printed Cheshire collimator with interchangeable reticle system via screws. Ideal for perfect alignment of your Newton telescope mirrors.",
+        "features": [
+          {
+            "icon": "precision",
+            "text": "High precision"
+          },
+          {
+            "icon": "modularity",
+            "text": "Interchangeable reticles"
+          },
+          {
+            "icon": "compatibility",
+            "text": "Newton compatible"
+          }
+        ],
+        "primaryCta": {
+          "text": "Order now",
+          "href": "https://buy.stripe.com/00waEZ3Vo2KT0jxaGM67S09"
+        },
+        "heroImage": {
+          "src": "/assets/Cheshire/chesh8.png",
+          "alt": "Cheshire operating principle"
+        }
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Gallery",
+        "images": [
+          {
+            "src": "/assets/Cheshire/chesh1.jpeg",
+            "alt": "Cheshire overview",
+            "caption": "Complete view of the Cheshire with its components"
+          },
+          {
+            "src": "/assets/Cheshire/chesh2.jpeg",
+            "alt": "Interchangeable reticles detail",
+            "caption": "Interchangeable reticle system via screws"
+          },
+          {
+            "src": "/assets/Cheshire/chesh3.jpeg",
+            "alt": "Assembled Cheshire",
+            "caption": "Cheshire assembled and ready for use"
+          },
+          {
+            "src": "/assets/Cheshire/chesh4.jpeg",
+            "alt": "Detailed view of mechanism",
+            "caption": "Detail of reticle changing mechanism"
+          },
+          {
+            "src": "/assets/Cheshire/chesh5.jpeg",
+            "alt": "Cheshire in use position",
+            "caption": "Correct positioning in the focuser"
+          },
+          {
+            "src": "/assets/Cheshire/chesh6.png",
+            "alt": "Cheshire technical diagram",
+            "caption": "Design diagram and dimensions"
+          },
+          {
+            "src": "/assets/Cheshire/chesh7.png",
+            "alt": "Exploded view of components",
+            "caption": "Breakdown of different elements"
+          },
+          {
+            "src": "/assets/Cheshire/chesh8.png",
+            "alt": "Operating principle",
+            "caption": "Visual explanation of collimation principle"
+          },
+          {
+            "src": "/assets/Cheshire/Chesh9.png",
+            "alt": "Practical usage",
+            "caption": "Cheshire usage guide on telescope"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Features",
+        "features": [
+          {
+            "icon": "precision",
+            "title": "High precision",
+            "description": "High precision 3D printing for perfect alignment"
+          },
+          {
+            "icon": "modularity",
+            "title": "Interchangeable reticles",
+            "description": "Innovative screw system allowing easy reticle changes according to your needs"
+          },
+          {
+            "icon": "compatibility",
+            "title": "Universal compatibility",
+            "description": "Compatible with all standard Newton telescopes (31.75mm)"
+          },
+          {
+            "icon": "durability",
+            "title": "Durable material",
+            "description": "Made from high-strength PETG, shock and wear resistant"
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical specifications",
+        "specGroups": [
+          {
+            "title": "Dimensions and design",
+            "specs": {
+              "Diameter": "31.75mm (1.25\")",
+              "Length": "120mm",
+              "Weight": "35g",
+              "Material": "High quality PETG",
+              "Color": "Matte black (anti-reflective)"
+            }
+          },
+          {
+            "title": "Features",
+            "specs": {
+              "Included reticles": "3 standard reticles (See photos)",
+              "Compatibility": "Newton telescopes",
+              "Mounting system": "Interchangeable integrated screws"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Standard Cheshire",
+        "price": "€25",
+        "priceNote": "Complete kit with 3 reticles",
+        "included": [
+          "3D printed Cheshire",
+          "3 interchangeable reticles",
+          "Integrated screw system",
+          "Usage video"
+        ],
+        "ctaText": "Order",
+        "ctaHref": "https://buy.stripe.com/00waEZ3Vo2KT0jxaGM67S09",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Overview"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Gallery"
+    },
+    {
+      "id": "section-features",
+      "label": "Features"
+    },
+    {
+      "id": "section-specs",
+      "label": "Specifications"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Pricing"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

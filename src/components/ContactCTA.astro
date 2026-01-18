@@ -1,13 +1,21 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+	locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
 ---
 
 <aside>
-	<h2>Vous avez un besoin lié à l'impression 3D ?</h2>
+	<h2>{t.contact.title}</h2>
 	<div class="contact-buttons">
 		<CallToAction href="mailto:la3emedim@gmail.com">
-			Contactez-nous !
+			{t.contact.cta}
 			<Icon icon="paper-plane-tilt" size="1.2em" />
 		</CallToAction>
 		<CallToAction href="tel:0760853870">

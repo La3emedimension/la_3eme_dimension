@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import SmallestOverview from '../../../components/SmallestOverview.astro';
+import SmallestSocialProof from '../../../components/SmallestSocialProof.astro';
+import SmallestLearnMore from '../../../components/SmallestLearnMore.astro';
+import CommunityMap from '../../../components/CommunityMap.astro';
+import CommunitySection from '../../../components/CommunitySection.astro';
+import { type Locale } from '../../../i18n';
+import { getSlugWithoutLocale } from '../../../lib/collections';
+
+const locale: Locale = 'en';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products
+    .filter(product => product.id.startsWith('en/'))
+    .filter(({ data }) => import.meta.env.DEV || !data.draft)
+    .map((product) => ({
+      params: { slug: product.id.replace('en/', '').replace(/\.json$/, '') },
+      props: { product },
+    }));
+}
+
+const { product } = Astro.props;
+const productConfig = product.data;
+const productSlug = getSlugWithoutLocale(product.id, locale);
+
+const customSections = [];
+
+if (productSlug === 'smallest') {
+  customSections.push({ type: 'custom', customComponent: SmallestOverview, data: {} });
+  customSections.push({ type: 'custom', customComponent: SmallestSocialProof, data: {} });
+  customSections.push({ type: 'custom', customComponent: SmallestLearnMore, data: {} });
+}
+
+const allSections = [...productConfig.sections];
+
+allSections.forEach(section => {
+  if (section.id === 'section-community-map' && section.type === 'custom') {
+    section.customComponent = CommunityMap;
+  }
+  if (section.id === 'section-community' && section.type === 'custom') {
+    section.customComponent = CommunitySection;
+  }
+});
+
+if (productSlug === 'smallest') {
+  const videoIndex = allSections.findIndex(s => s.type === 'video');
+  if (videoIndex !== -1) {
+    allSections.splice(videoIndex + 1, 0, customSections[0]);
+  }
+  const pricingIndex = allSections.findIndex(s => s.type === 'pricing');
+  if (pricingIndex !== -1) {
+    allSections.splice(pricingIndex + 1, 0, ...customSections.slice(1));
+  }
+}
+
+const finalConfig = {
+  ...productConfig,
+  sections: allSections,
+  locale
+};
+---
+
+<ProductLayout {...finalConfig} />

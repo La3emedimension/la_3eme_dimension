@@ -1,18 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
+import { getLocalizedDataCollection } from '../lib/collections';
+import type { Locale } from '../i18n';
 
 interface Props {
   title?: string;
   height?: string;
+  locale?: Locale;
 }
 
-const { title = "Carte de la communauté", height = "400px" } = Astro.props;
+const { title = "", height = "400px", locale = 'fr' } = Astro.props;
 
-const builds = await getCollection('builds', ({ data }) => {
+const builds = await getLocalizedDataCollection('builds', locale);
+const filteredBuilds = builds.filter(({ data }) => {
   return import.meta.env.DEV || !data.draft;
 });
 
-const buildsJson = JSON.stringify(builds.map(build => ({
+const buildsJson = JSON.stringify(filteredBuilds.map(build => ({
   id: build.id,
   title: build.data.title,
   author: build.data.author,
@@ -23,13 +26,42 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   mainPhoto: build.data.mainPhoto,
   additionalPhotos: build.data.additionalPhotos || []
 })));
+
+const translations = {
+  fr: {
+    communityMap: 'Carte de la communauté',
+    coordinatesCopied: 'Coordonnées copiées',
+    coordinates: 'Coordonnées',
+    copyManually: 'copiez manuellement',
+    by: 'Par',
+    viewProject: 'Voir le projet →',
+    additionalPhotos: 'Photos supplémentaires',
+    additionalPhotosClick: 'Photos supplémentaires (cliquez pour agrandir)',
+    longPressInstructions: '📱 Appui long sur la carte pour obtenir vos coordonnées',
+    viewFullscreen: '🔍 Voir en plein écran',
+  },
+  en: {
+    communityMap: 'Community Map',
+    coordinatesCopied: 'Coordinates copied',
+    coordinates: 'Coordinates',
+    copyManually: 'copy manually',
+    by: 'By',
+    viewProject: 'View project →',
+    additionalPhotos: 'Additional photos',
+    additionalPhotosClick: 'Additional photos (click to enlarge)',
+    longPressInstructions: '📱 Long press on the map to get your coordinates',
+    viewFullscreen: '🔍 View fullscreen',
+  }
+};
+
+const t = translations[locale];
 ---
 
 <section class="community-map-section">
   <div class="container">
     <h2>{title}</h2>
     <div class="map-container" style={`height: ${height}`}>
-      <div id="community-map" data-builds={buildsJson}></div>
+      <div id="community-map" data-builds={buildsJson} data-translations={JSON.stringify(t)}></div>
     </div>
   </div>
   
@@ -76,12 +108,12 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   <!-- Carte plein écran mobile -->
   <div id="fullscreen-map-container" class="fullscreen-map-container">
     <div class="fullscreen-map-header">
-      <h3>Carte de la communauté</h3>
+      <h3>{t.communityMap}</h3>
       <button id="fullscreen-close" class="fullscreen-close">&times;</button>
     </div>
     <div id="fullscreen-map" class="fullscreen-map"></div>
     <div class="fullscreen-instructions">
-      📱 Appui long sur la carte pour obtenir vos coordonnées
+      {t.longPressInstructions}
     </div>
   </div>
 </section>
@@ -94,8 +126,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
   document.addEventListener('DOMContentLoaded', function() {
     const mapElement = document.getElementById('community-map');
     if (!mapElement) return;
-    
+
     const buildsData = JSON.parse(mapElement.dataset.builds || '[]');
+    const t = JSON.parse(mapElement.dataset.translations || '{}');
     
     // Initialiser la carte centrée sur la France avec options mobiles
     const map = L.map('community-map', {
@@ -169,10 +202,10 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(coordsText).then(() => {
-            showCoordinatesMessage(`Coordonnées copiées: ${coordsText}`);
+            showCoordinatesMessage(`${t.coordinatesCopied}: ${coordsText}`);
           });
         } else {
-          showCoordinatesMessage(`Coordonnées: ${coordsText} (copiez manuellement)`);
+          showCoordinatesMessage(`${t.coordinates}: ${coordsText} (${t.copyManually})`)
         }
         
         // Ajouter un marqueur temporaire
@@ -297,7 +330,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       
       // Remplir les données du modal
       document.getElementById('modal-title').textContent = build.title;
-      document.getElementById('modal-author').innerHTML = `<strong>Par:</strong> ${build.author}`;
+      document.getElementById('modal-author').innerHTML = `<strong>${t.by}:</strong> ${build.author}`;
       document.getElementById('modal-description').textContent = build.description || '';
       
       // Image principale cliquable
@@ -312,7 +345,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       // Lien web si disponible
       const linkContainer = document.getElementById('modal-link-container');
       if (build.webLink) {
-        linkContainer.innerHTML = `<a href="${build.webLink}" target="_blank" rel="noopener" class="modal-link">Voir le projet →</a>`;
+        linkContainer.innerHTML = `<a href="${build.webLink}" target="_blank" rel="noopener" class="modal-link">${t.viewProject}</a>`;
       } else {
         linkContainer.innerHTML = '';
       }
@@ -321,7 +354,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
       const gallery = document.getElementById('modal-gallery');
       if (build.additionalPhotos.length > 0) {
         // Texte différent selon mobile/desktop
-        const galleryTitle = isMobile ? '<h4>Photos supplémentaires</h4>' : '<h4>Photos supplémentaires (cliquez pour agrandir)</h4>';
+        const galleryTitle = isMobile ? `<h4>${t.additionalPhotos}</h4>` : `<h4>${t.additionalPhotosClick}</h4>`;
         gallery.innerHTML = galleryTitle;
         build.additionalPhotos.forEach((photo, index) => {
           const img = document.createElement('img');
@@ -451,7 +484,7 @@ const buildsJson = JSON.stringify(builds.map(build => ({
         
         const fullscreenBtn = document.createElement('button');
         fullscreenBtn.className = 'fullscreen-toggle-btn';
-        fullscreenBtn.innerHTML = '🔍 Voir en plein écran';
+        fullscreenBtn.innerHTML = t.viewFullscreen;
         fullscreenBtn.style.cssText = `
           position: absolute;
           top: 1rem;
@@ -490,9 +523,9 @@ const buildsJson = JSON.stringify(builds.map(build => ({
             </div>
             <div class="build-popup-content">
               <h3>${build.title}</h3>
-              <p><strong>Par:</strong> ${build.author}</p>
+              <p><strong>${t.by}:</strong> ${build.author}</p>
               ${build.description ? `<p class="build-description">${build.description}</p>` : ''}
-              ${build.webLink ? `<p><a href="${build.webLink}" target="_blank" rel="noopener">Voir le projet →</a></p>` : ''}
+              ${build.webLink ? `<p><a href="${build.webLink}" target="_blank" rel="noopener">${t.viewProject}</a></p>` : ''}
             </div>
           </div>
         `;

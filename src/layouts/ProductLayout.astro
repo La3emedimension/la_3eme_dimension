@@ -1,5 +1,4 @@
 ---
-// Parametric product page layout
 import BaseLayout from './BaseLayout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import ProductHero from '../components/ProductHero.astro';
@@ -10,28 +9,21 @@ import SpecsTable from '../components/SpecsTable.astro';
 import PricingSection from '../components/PricingSection.astro';
 import ProductNavigation from '../components/ProductNavigation.astro';
 import Lightbox from '../components/Lightbox.astro';
+import { useTranslations, type Locale } from '../i18n';
 
 export interface ProductConfig {
-  // SEO
   seoTitle: string;
   seoDescription: string;
   seoKeywords: string;
   ogImage?: string;
   structuredData?: any;
-  
-  // Draft mode
   draft?: boolean;
-  
-  // Sections configuration
   sections: SectionConfig[];
-  
-  // Navigation
   navigationItems?: NavigationItem[];
-  
-  // Footer
   showContactCTA?: boolean;
   showNavigation?: boolean;
   showLightbox?: boolean;
+  locale?: Locale;
 }
 
 export interface SectionConfig {
@@ -46,9 +38,9 @@ export interface NavigationItem {
   label: string;
 }
 
-const { 
+const {
   seoTitle,
-  seoDescription, 
+  seoDescription,
   seoKeywords,
   ogImage,
   structuredData,
@@ -57,22 +49,25 @@ const {
   navigationItems = [],
   showContactCTA = true,
   showNavigation = true,
-  showLightbox = true
+  showLightbox = true,
+  locale = 'fr'
 } = Astro.props as ProductConfig;
 
-// Build section components map
+const t = useTranslations(locale);
+
 const sectionComponents = {
   hero: ProductHero,
   gallery: Gallery,
-  video: VideoShowcase, 
+  video: VideoShowcase,
   features: FeatureGrid,
   specs: SpecsTable,
   pricing: PricingSection
 };
 ---
 
-<BaseLayout 
-  title={seoTitle} 
+<BaseLayout
+  locale={locale}
+  title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
   ogImage={ogImage}
@@ -81,32 +76,36 @@ const sectionComponents = {
   {import.meta.env.DEV && draft && (
     <div class="draft-banner">
       <div class="wrapper">
-        <span class="draft-text">🚧 MODE BROUILLON - Cette page n'apparaîtra pas en production</span>
+        <span class="draft-text">🚧 {t.product.draftBanner}</span>
       </div>
     </div>
   )}
   {sections.map((section) => {
     const Component = section.type === 'custom' ? section.customComponent : sectionComponents[section.type];
-    
+
     if (!Component && section.type !== 'custom') {
       console.warn(`Unknown section type: ${section.type}`);
       return null;
     }
-    
+
+    const propsWithLocale = section.type === 'pricing'
+      ? { ...section.data, locale }
+      : section.data;
+
     return (
       <section id={section.id || `section-${section.type}`}>
-        <Component {...section.data} />
+        <Component {...propsWithLocale} />
       </section>
     );
   })}
 
-  {showContactCTA && <ContactCTA />}
-  
+  {showContactCTA && <ContactCTA locale={locale} />}
+
   {showNavigation && navigationItems.length > 0 && (
     <ProductNavigation items={navigationItems} />
   )}
-  
-  {showLightbox && <Lightbox />}
+
+  {showLightbox && <Lightbox locale={locale} />}
 </BaseLayout>
 
 <style>

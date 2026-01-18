@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import type { Locale } from '../i18n';
 
 interface Props {
     title?: string | undefined;
@@ -7,6 +8,7 @@ interface Props {
     keywords?: string | undefined;
     ogImage?: string | undefined;
     structuredData?: object | undefined;
+    locale?: Locale;
 }
 
 const {
@@ -15,6 +17,7 @@ const {
     keywords = "impression 3d, télescope portable, astronomie, smallest telescope, conception 3d, toulouse",
     ogImage = "https://la3emedim.fr/assets/preview.png",
     structuredData,
+    locale = 'fr',
 } = Astro.props;
 ---
 
@@ -29,7 +32,7 @@ const {
 <meta name="keywords" content={keywords} />
 <meta name="author" content="La 3ème dimension" />
 <meta name="robots" content="index, follow" />
-<meta name="language" content="French" />
+<meta name="language" content={locale === 'en' ? 'English' : 'French'} />
 <meta name="geo.region" content="FR-31" />
 <meta name="geo.placename" content="Toulouse et région Occitanie" />
 <meta
@@ -43,7 +46,7 @@ const {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'fr_FR'} />
 <meta property="og:site_name" content="La 3ème dimension" />
 
 <!-- Twitter Meta Tags -->

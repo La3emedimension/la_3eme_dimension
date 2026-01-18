@@ -1,5 +1,4 @@
 ---
-// Dynamic product page using parametric layout
 import { getCollection } from 'astro:content';
 import ProductLayout from '../../layouts/ProductLayout.astro';
 import SmallestOverview from '../../components/SmallestOverview.astro';
@@ -7,25 +6,29 @@ import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
 import SmallestLearnMore from '../../components/SmallestLearnMore.astro';
 import CommunityMap from '../../components/CommunityMap.astro';
 import CommunitySection from '../../components/CommunitySection.astro';
+import { type Locale } from '../../i18n';
+import { getSlugWithoutLocale } from '../../lib/collections';
+
+const locale: Locale = 'fr';
 
 export async function getStaticPaths() {
-  const products = await getCollection('products', ({ data }) => {
-    return import.meta.env.DEV || !data.draft;
-  });
-  return products.map((product) => ({
-    params: { slug: product.id },
-    props: { product },
-  }));
+  const products = await getCollection('products');
+  return products
+    .filter(product => product.id.startsWith('fr/'))
+    .filter(({ data }) => import.meta.env.DEV || !data.draft)
+    .map((product) => ({
+      params: { slug: product.id.replace('fr/', '').replace(/\.json$/, '') },
+      props: { product },
+    }));
 }
 
 const { product } = Astro.props;
 const productConfig = product.data;
+const productSlug = getSlugWithoutLocale(product.id, locale);
 
-// Add custom sections content for Smallest
 const customSections = [];
 
-// Add product overview section for Smallest
-if (product.id === 'smallest') {
+if (productSlug === 'smallest') {
   customSections.push({
     type: 'custom',
     customComponent: SmallestOverview,
@@ -60,15 +63,13 @@ allSections.forEach(section => {
   }
 });
 
-if (product.id === 'smallest') {
-  // Insert overview after video section
+if (productSlug === 'smallest') {
   const videoIndex = allSections.findIndex(s => s.type === 'video');
   if (videoIndex !== -1) {
     allSections.splice(videoIndex + 1, 0, customSections[0]);
   }
-  
-  // Insert social proof and learn more after pricing
-  const pricingIndex = allSections.findIndex(s => s.type === 'pricing');  
+
+  const pricingIndex = allSections.findIndex(s => s.type === 'pricing');
   if (pricingIndex !== -1) {
     allSections.splice(pricingIndex + 1, 0, ...customSections.slice(1));
   }
@@ -76,7 +77,8 @@ if (product.id === 'smallest') {
 
 const finalConfig = {
   ...productConfig,
-  sections: allSections
+  sections: allSections,
+  locale
 };
 ---
 

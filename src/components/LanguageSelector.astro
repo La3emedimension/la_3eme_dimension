@@ -1,0 +1,44 @@
+---
+import { getAlternatePath, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+const alternatePath = getAlternatePath(currentPath, locale);
+---
+
+<a href={alternatePath} class="lang-switch" aria-label={locale === 'fr' ? 'Switch to English' : 'Passer en français'}>
+  {locale === 'fr' ? 'EN' : 'FR'}
+</a>
+
+<style>
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--gray-300);
+    background: var(--gray-999);
+    border: 1px solid var(--gray-800);
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .lang-switch:hover,
+  .lang-switch:focus {
+    color: var(--gray-100);
+    background: var(--gray-800);
+  }
+
+  @media (min-width: 50em) {
+    .lang-switch {
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>

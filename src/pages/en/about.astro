@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Hero from '../../components/Hero.astro';
+import { useTranslations, localePath, type Locale } from '../../i18n';
+
+const locale: Locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title="About | La 3ème dimension" description="About La 3ème dimension">
+	<div class="stack gap-20">
+		<main class="about">
+			<Hero title={t.about.title}>
+				<p>La 3ème Dimension was born from a passion for design, innovation and creativity. This project has its roots in various experiences, including the manufacture of the Smallest telescope and several other projects in various fields.</p>
+
+				<p>Since 2016, we have been working in the field of communication, which has enabled us to acquire skills in design and drawing, enriching our creative and visual approach in 3D design.</p>
+
+				<p>For more than 4 years, we have been dedicated to 3D printing, exploring different techniques and materials. An approach that favors a balance between design, simplicity, optimization and efficiency. Each creation is designed to meet needs in a clever, economical, functional and accessible way.</p>
+
+				<p>We use 3D printers from the Bambu Lab brand and aim to optimize the use of materials according to their constraints. We favor filaments of European and/or French origin in order to limit our environmental impact.</p>
+
+				<p>If you would like to discover our achievements, you can dive into our <a href={localePath('/work/', locale)}>universe.</a></p>
+
+			</Hero>
+			<img src="/assets/apropos.jpg">
+
+		</main>
+
+		<ContactCTA locale={locale} />
+	</div>
+</BaseLayout>
+
+<style>
+	p { text-align: left; font-size: 70%; margin-right: 15px; margin-left: 15px; }
+	.about { display: flex; flex-direction: column; gap: 3.5rem; align-items: center; margin-right: 15px; margin-left: 15px; }
+	img { max-width: 30vh; width: 40vh; margin-right: 5%; border-radius: 1.5rem; box-shadow: var(--shadow-md); }
+	@media (min-width: 50em) {
+		.about { display: flex; flex-direction: row; text-align: center; margin-left: 5%; }
+	}
+</style>

@@ -1,27 +1,22 @@
 ---
-import { getCollection } from "astro:content";
-
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-// Component Imports
-import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
-import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
-
-// Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
+import { useTranslations, localePath, type Locale } from '../i18n';
+import { getLocalizedCollection, getSlugWithoutLocale } from '../lib/collections';
 
-// Content Fetching: Get Smallest telescope and other projects
-const allProjects = await getCollection("work");
-const smallestProject = allProjects.find((p) => p.slug === "nested/smallest");
+const locale: Locale = 'fr';
+const t = useTranslations(locale);
+
+const allProjects = await getLocalizedCollection('work', locale);
+const smallestProject = allProjects.find((p) => getSlugWithoutLocale(p.id, locale) === 'nested/Smallest');
 const otherProjects = allProjects
-    .filter((p) => p.slug !== "nested/smallest")
+    .filter((p) => getSlugWithoutLocale(p.id, locale) !== 'nested/Smallest')
     .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
     .slice(0, 3);
 
@@ -87,6 +82,7 @@ const businessStructuredData = {
 ---
 
 <BaseLayout
+    locale={locale}
     title="La 3ème dimension - Impression 3D & Télescopes Astronomiques | Toulouse et région"
     description="Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable pratique pour l'astronomie nomade. Service Toulouse et région (50km)."
     keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
@@ -126,7 +122,7 @@ const businessStructuredData = {
                 </video>
             </header>
 
-            <Skills />
+            <Skills locale={locale} />
         </div>
 
         {
@@ -136,7 +132,7 @@ const businessStructuredData = {
                         <h5>Découvrez une structure de télescope compacte</h5>
                     </div>
                     <div class="gallery">
-                        <a class="card featured" href="/product/smallest">
+                        <a class="card featured" href={localePath('/product/smallest/', locale)}>
                             <span class="title">
                                 {smallestProject.data.title}
                             </span>
@@ -166,7 +162,7 @@ const businessStructuredData = {
                         projects
                             .slice(smallestProject ? 1 : 0)
                             .map((project) => (
-                                <PortfolioPreview project={project} />
+                                <PortfolioPreview project={project} locale={locale} />
                             ))
                     }
                 </Grid>
@@ -174,7 +170,7 @@ const businessStructuredData = {
         </main>
 
         <div id="contact-section">
-            <ContactCTA />
+            <ContactCTA locale={locale} />
         </div>
     </div>
 
