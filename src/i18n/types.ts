@@ -19,6 +19,7 @@ export interface Translations {
   };
   home: {
     heroTitle: string;
+    customTagline: string;
     heroTagline: string;
     selectedWork: string;
     viewAll: string;

@@ -7,6 +7,7 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
+import ProductCarousel from "../components/ProductCarousel.astro";
 import { useTranslations, localePath, type Locale } from '../i18n';
 import { getLocalizedCollection, getSlugWithoutLocale } from '../lib/collections';
 
@@ -90,12 +91,13 @@ const businessStructuredData = {
 >
     <div class="stack gap-20 lg:gap-48">
         <div class="wrapper stack gap-8 lg:gap-20">
-            <header class="hero">
+            <header class="hero homepage-hero">
                 <Hero
                     title="La 3ème dimension."
-                    tagline="Service de conception, de modélisation et d'atelier d'impression 3D : toutes pièces et astronomie"
                     align="start"
                 >
+                    <p class="custom-tagline">« Du sur-mesure pour vos besoins. »</p>
+                    <p class="service-description">Service de conception, de modélisation et d'atelier d'impression 3D : astronomie et toutes pièces</p>
                     <div class="roles">
                         <a href="mailto:la3emedim@gmail.com" class="contact-link">
                             Nous contacter <Icon
@@ -110,16 +112,7 @@ const businessStructuredData = {
                     </div>
                 </Hero>
 
-                <video autoplay loop playsinline>
-                    <source src="/assets/Homevideo(1).mp4" type="video/mp4" />
-                    <p>
-                        Votre navigateur ne prend pas en charge les vidéos
-                        HTML5. Voici
-                        <a href="/assets/homevideo.mp4"
-                            >un lien pour télécharger la vidéo</a
-                        >.
-                    </p>
-                </video>
+                <ProductCarousel locale={locale} />
             </header>
 
             <Skills locale={locale} />
@@ -214,6 +207,21 @@ const businessStructuredData = {
         width: 100%;
     }
 
+    .custom-tagline {
+        font-size: var(--text-md);
+        font-weight: 600;
+        color: var(--accent-regular);
+        margin: -1.2rem 0 0.1rem 0;
+        max-width: fit-content;
+    }
+
+    .service-description {
+        font-size: var(--text-lg);
+        color: var(--gray-300);
+        margin: 0 0 0.75rem 0;
+        max-width: 57ch;
+    }
+
     .roles {
         margin-top: 0.5rem;
         display: flex;
@@ -223,12 +231,10 @@ const businessStructuredData = {
         flex-wrap: wrap;
     }
 
-    .hero video {
+    .hero :global(.product-carousel) {
         width: 100%;
         max-width: 100%;
-        aspect-ratio: auto;
-        object-fit: cover;
-        object-position: top;
+        aspect-ratio: 16 / 9;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
     }
@@ -244,17 +250,23 @@ const businessStructuredData = {
             gap: 3.75rem;
         }
 
+        .custom-tagline {
+            font-size: var(--text-lg);
+        }
+
+        .service-description {
+            font-size: var(--text-xl);
+        }
+
         .roles {
             margin-top: 0.5rem;
             display: flex;
             gap: 0.5rem;
         }
 
-        .hero video {
-            aspect-ratio: auto;
+        .hero :global(.product-carousel) {
+            aspect-ratio: 4 / 3;
             border-radius: 1rem;
-            object-fit: cover;
-            margin: auto;
         }
     }
 

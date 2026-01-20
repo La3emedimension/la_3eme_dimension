@@ -19,7 +19,8 @@ export const en: Translations = {
   },
   home: {
     heroTitle: 'La 3ème dimension.',
-    heroTagline: '3D printing design, modeling and workshop services: all parts and astronomy',
+    customTagline: '"Custom-made, not catalog."',
+    heroTagline: '3D printing design, modeling and workshop services: astronomy and all parts',
     selectedWork: 'Selected Work',
     viewAll: 'View All',
     shopTitle: 'Shop',

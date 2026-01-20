@@ -1,0 +1,198 @@
+---
+import { getLocalizedCollection } from '../lib/collections';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+// Get specific products
+const allProducts = await getLocalizedCollection('products', locale);
+const productIds = ['smallest', 'ert', 'sur-mesure'];
+
+const products = productIds
+  .map(id => allProducts.find(p => p.id === `${locale}/${id}` || p.id === id))
+  .filter(Boolean);
+---
+
+<div class="product-carousel">
+  <div class="carousel-container">
+    {products.map((product, index) => {
+      const heroSection = product.data.sections.find(s => s.type === 'hero');
+      const heroData = heroSection?.data;
+
+      return (
+        <div class="carousel-slide" data-index={index}>
+          <a href={`/product/${product.id.replace(`${locale}/`, '')}`} class="product-card">
+            {heroData?.heroImage?.src && (
+              <img
+                src={heroData.heroImage.src}
+                alt={heroData.heroImage.alt || heroData.title}
+                loading="lazy"
+              />
+            )}
+            <div class="product-info">
+              <h3>{heroData?.title || product.id}</h3>
+              {heroData?.tagline && <p class="tagline">{heroData.tagline}</p>}
+            </div>
+          </a>
+        </div>
+      );
+    })}
+  </div>
+
+  <div class="carousel-dots">
+    {products.map((_, index) => (
+      <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={`Slide ${index + 1}`}></button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .product-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .product-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    color: white;
+  }
+
+  .product-info h3 {
+    margin: 0;
+    font-size: var(--text-xl);
+    font-weight: 600;
+  }
+
+  .product-info .tagline {
+    margin: 0.25rem 0 0 0;
+    font-size: var(--text-sm);
+    opacity: 0.9;
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: white;
+    width: 1.5rem;
+    border-radius: 0.25rem;
+  }
+
+  @media (min-width: 50em) {
+    .product-info h3 {
+      font-size: var(--text-2xl);
+    }
+
+    .product-info .tagline {
+      font-size: var(--text-md);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.product-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.dot');
+    let currentIndex = 0;
+
+    function showSlide(index: number) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    // Auto-advance every 5 seconds
+    const interval = setInterval(nextSlide, 5000);
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
+        clearInterval(interval);
+      });
+    });
+
+    // Initialize first slide
+    showSlide(0);
+  });
+</script>

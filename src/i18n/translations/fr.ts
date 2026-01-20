@@ -19,7 +19,8 @@ export const fr: Translations = {
   },
   home: {
     heroTitle: 'La 3ème dimension.',
-    heroTagline: 'Service de conception, de modélisation et d\'atelier d\'impression 3D : toutes pièces et astronomie',
+    customTagline: '« Du sur-mesure, pas du catalogue. »',
+    heroTagline: 'Service de conception, de modélisation et d\'atelier d\'impression 3D : astronomie et toutes pièces',
     selectedWork: 'Réalisations sélectionnées',
     viewAll: 'Voir toutes',
     shopTitle: 'Boutique',
