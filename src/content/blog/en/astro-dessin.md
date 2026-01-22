@@ -1,6 +1,6 @@
 ---
 title: "Discovering Astro-Drawing"
-publishDate: 2025-09-17
+publishDate: 2026-01-22
 img: "/assets/blog/astrodessin/dessinorion.jpg"
 ---
 
@@ -29,32 +29,22 @@ Through these portraits, I wanted to introduce you to people who have inspired m
 <div style="text-align: center; padding: 2rem; background: var(--gray-900); border-radius: 1rem; border: 1px solid var(--gray-800);">
 <h3 style="color: var(--accent-regular); margin-bottom: 1rem;">Caroline</h3>
 <p style="margin-bottom: 1.5rem; color: var(--gray-300);">From the visual and manual observation team</p>
-<a href="/en/blog/portrait-caro" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover her portrait</a>
+<a href="/en/blog/portrait-caro" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover her portrait</a>
 </div>
 
 <div style="text-align: center; padding: 2rem; background: var(--gray-900); border-radius: 1rem; border: 1px solid var(--gray-800);">
 <h3 style="color: var(--accent-regular); margin-bottom: 1rem;">Florian Rabiller</h3>
 <p style="margin-bottom: 1.5rem; color: var(--gray-300);">Who draws with telescopes he has built</p>
-<a href="/en/blog/portrait-webb" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover his portrait</a>
+<a href="/en/blog/portrait-webb" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover his portrait</a>
 </div>
 
 <div style="text-align: center; padding: 2rem; background: var(--gray-900); border-radius: 1rem; border: 1px solid var(--gray-800);">
 <h3 style="color: var(--accent-regular); margin-bottom: 1rem;">Serge Vieillard</h3>
 <p style="margin-bottom: 1.5rem; color: var(--gray-300);">One of the authors of "Astrodessin", one of the bibles of astronomical drawing</p>
-<a href="/en/blog/portrait-trouvelot" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover his portrait</a>
-</div>
-
-<div style="text-align: center; padding: 2rem; background: var(--gray-900); border-radius: 1rem; border: 1px solid var(--gray-800);">
-<h3 style="color: var(--accent-regular); margin-bottom: 1rem;">Harold Hill</h3>
-<p style="margin-bottom: 1.5rem; color: var(--gray-300);">Modern specialist in lunar observation</p>
-<a href="/en/blog/portrait-hill" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover his portrait</a>
+<a href="/en/blog/portrait-trouvelot" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Discover his portrait</a>
 </div>
 
 </div>
-
-## My own creations
-
-Astro-drawing has become complementary to observation for me. Here are some examples:
 
 I would like to particularly thank the people interviewed because without them I would not practice astronomy as I do today.
 

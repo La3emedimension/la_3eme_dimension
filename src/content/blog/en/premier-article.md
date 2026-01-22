@@ -1,6 +1,6 @@
 ---
 title: Welcome to Our Blog
-publishDate: 2024-01-15 00:00:00
+publishDate: 2019-10-01 00:00:00
 img: /assets/preview.png
 img_alt: La 3ème dimension logo
 draft: false

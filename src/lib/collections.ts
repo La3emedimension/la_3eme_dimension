@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 import type { Locale } from '../i18n';
 
 export async function getLocalizedCollection(
-  collection: 'work' | 'blog',
+  collection: 'blog',
   locale: Locale
 ) {
   const entries = await getCollection(collection);

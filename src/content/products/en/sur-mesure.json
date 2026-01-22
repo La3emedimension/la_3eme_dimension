@@ -31,11 +31,11 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "Custom parts",
-        "tagline": "Your idea, our expertise",
-        "description": "From idea to realization: we design and 3D print your unique parts.<br><strong>Free quote</strong>",
+        "title": "Custom made",
+        "tagline": "Do you need a specific part?",
+        "description": "",
         "features": [
-          { "icon": "lightbulb", "text": "3D design included" },
+          { "icon": "lightbulb", "text": "Eyepiece holder, Bahtinov mask, cap..." },
           { "icon": "gear", "text": "Rapid prototyping" },
           { "icon": "chat-circle", "text": "Personalized support" }
         ],
@@ -44,35 +44,6 @@
           "src": "/assets/Surmesure.png",
           "alt": "Custom 3D printed part"
         }
-      }
-    },
-    {
-      "type": "features",
-      "id": "section-services",
-      "data": {
-        "title": "Our custom services",
-        "features": [
-          {
-            "icon": "cube-transparent",
-            "title": "Prototyping",
-            "description": "Rapid validation of your concepts with functional prototypes. Multiple iterations to optimize your design."
-          },
-          {
-            "icon": "gear",
-            "title": "Technical parts",
-            "description": "Manufacturing of mechanical parts, supports, adapters and technical components according to your specifications."
-          },
-          {
-            "icon": "palette",
-            "title": "Personalized objects",
-            "description": "Artistic creations, decorative objects, personalized gifts and unique pieces according to your desires."
-          },
-          {
-            "icon": "wrench-screwdriver",
-            "title": "Repair & adaptation",
-            "description": "Reproduction of broken or obsolete parts, creation of adapters for your existing equipment."
-          }
-        ]
       }
     },
     {
@@ -103,135 +74,11 @@
           }
         ]
       }
-    },
-    {
-      "type": "gallery",
-      "id": "section-examples",
-      "data": {
-        "title": "Examples of achievements",
-        "description": "Discover some projects we have completed for our clients",
-        "images": [
-          {
-            "src": "/assets/surmesure1.jpg",
-            "alt": "Custom part 1"
-          },
-          {
-            "src": "/assets/surmesure2.jpg",
-            "alt": "Custom part 2"
-          },
-          {
-            "src": "/assets/surmesure3.jpg",
-            "alt": "Custom part 3"
-          },
-          {
-            "src": "/assets/surmesure4.jpg",
-            "alt": "Custom part 4"
-          },
-          {
-            "src": "/assets/surmesure5.jpg",
-            "alt": "Custom part 5"
-          },
-          {
-            "src": "/assets/Surmesure6.jpg",
-            "alt": "Custom part 6"
-          },
-          {
-            "src": "/assets/surmesure7.jpg",
-            "alt": "Custom part 7"
-          },
-          {
-            "src": "/assets/surmesure8.jpg",
-            "alt": "Custom part 8"
-          },
-          {
-            "src": "/assets/Surmesure10.jpg",
-            "alt": "Custom part 10"
-          }
-        ],
-        "background": "light"
-      }
-    },
-    {
-      "type": "specs",
-      "id": "section-capacites",
-      "data": {
-        "title": "Our technical capabilities",
-        "specGroups": [
-          {
-            "title": "Available materials",
-            "specs": {
-              "PLA": "Standard, fast, economical",
-              "PETG": "Resistant, food-safe, transparent",
-              "PETG-CF": "Carbon fiber reinforced, ultra-resistant",
-              "ASA": "UV and weather resistant, mechanically strong",
-              "TPU": "Flexible, elastic, wear resistant"
-            }
-          },
-          {
-            "title": "Dimensions & precision",
-            "specs": {
-              "Precision": "±0.1 mm",
-              "Layer thickness": "0.1 to 0.3 mm",
-              "Resolution": "High definition",
-              "Post-processing": "Sanding, painting, assembly"
-            }
-          },
-          {
-            "title": "Included services",
-            "specs": {
-              "3D Design": "Complete modeling",
-              "Technical advice": "Material & process selection",
-              "Iterative prototyping": "Successive improvements",
-              "After-sales support": "Technical assistance",
-              "Delivery": "Metropolitan France"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "type": "pricing",
-      "id": "section-tarifs",
-      "data": {
-        "title": "Custom pricing",
-        "price": "Tailored pricing",
-        "priceNote": "According to your needs",
-        "included": [
-          "Needs analysis",
-          "Material advice",
-          "3D design if needed",
-          "High quality printing",
-          "Quality control",
-          "Careful packaging",
-          "Technical support"
-        ],
-        "ctaText": "Get a free quote",
-        "ctaHref": "mailto:la3emedim@gmail.com?subject=Quote request - Custom part&body=Hello,%0A%0AI would like to get a quote for:%0A%0A- Project description:%0A- Desired quantity:%0A- Specific constraints:%0A- Desired timeline:%0A%0APlease contact me soon.%0A%0ABest regards",
-        "optionsTitle": "Pricing factors",
-        "options": [
-          {
-            "title": "Project complexity",
-            "description": "Design time, required precision, technical details"
-          },
-          {
-            "title": "Chosen materials",
-            "description": "Standard (PLA/PETG) or specialized (PETG-CF, ASA, TPU)"
-          },
-          {
-            "title": "Quantity and finishing",
-            "description": "Single piece, limited series, specific post-processing"
-          }
-        ]
-      }
     }
   ],
   "navigationItems": [
     { "id": "hero", "label": "Overview" },
-    { "id": "services", "label": "Services" },
-    { "id": "process", "label": "Process" },
-    { "id": "examples", "label": "Examples" },
-    { "id": "capacites", "label": "Capabilities" },
-    { "id": "tarifs", "label": "Pricing" }
+    { "id": "process", "label": "Process" }
   ],
   "showContactCTA": true,
   "showNavigation": true,

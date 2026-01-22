@@ -9,21 +9,14 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
 import { useTranslations, localePath, type Locale } from '../i18n';
-import { getLocalizedCollection, getSlugWithoutLocale } from '../lib/collections';
+import { getLocalizedCollection, getLocalizedDataCollection, getSlugWithoutLocale } from '../lib/collections';
 
 const locale: Locale = 'fr';
 const t = useTranslations(locale);
 
-const allProjects = await getLocalizedCollection('work', locale);
-const smallestProject = allProjects.find((p) => getSlugWithoutLocale(p.id, locale) === 'nested/Smallest');
-const otherProjects = allProjects
-    .filter((p) => getSlugWithoutLocale(p.id, locale) !== 'nested/Smallest')
-    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-    .slice(0, 3);
-
-const projects = smallestProject
-    ? [smallestProject, ...otherProjects]
-    : otherProjects.slice(0, 4);
+const allProducts = await getLocalizedDataCollection('products', locale);
+const smallestProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'smallest');
+const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'ert');
 
 // Business structured data for homepage
 const businessStructuredData = {
@@ -89,15 +82,13 @@ const businessStructuredData = {
     keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
     structuredData={businessStructuredData}
 >
-    <div class="stack gap-20 lg:gap-48">
-        <div class="wrapper stack gap-8 lg:gap-20">
+    <div class="stack gap-20 lg:gap-36">
+        <div class="wrapper stack gap-20 lg:gap-36">
             <header class="hero homepage-hero">
                 <Hero
-                    title="La 3ème dimension."
                     align="start"
                 >
-                    <p class="custom-tagline">« Du sur-mesure pour vos besoins. »</p>
-                    <p class="service-description">Service de conception, de modélisation et d'atelier d'impression 3D : astronomie et toutes pièces</p>
+                    <p class="service-description">Conception d'instruments et d'accessoires<br>astronomiques imprimés en 3D</p>
                     <div class="roles">
                         <a href="mailto:la3emedim@gmail.com" class="contact-link">
                             Nous contacter <Icon
@@ -119,48 +110,48 @@ const businessStructuredData = {
         </div>
 
         {
-            smallestProject && (
+            (smallestProduct || ertProduct) && (
                 <main class="wrapper section with-background bg-variant">
                     <div class="section-header stack gap-2 lg:gap-4">
-                        <h5>Découvrez une structure de télescope compacte</h5>
+                        <h5>Découvrez nos produits</h5>
                     </div>
-                    <div class="gallery">
-                        <a class="card featured" href={localePath('/product/smallest/', locale)}>
-                            <span class="title">
-                                {smallestProject.data.title}
-                            </span>
-                            <img
-                                src={smallestProject.data.img}
-                                alt={smallestProject.data.img_alt || ""}
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="featured-description">
-                                {smallestProject.data.description}
-                            </div>
-                        </a>
+                    <div class="products-grid">
+                        {smallestProduct && (
+                            <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
+                                <span class="title">
+                                    {smallestProduct.data.sections[0].data.title}
+                                </span>
+                                <img
+                                    src={smallestProduct.data.sections[0].data.heroImage.src}
+                                    alt={smallestProduct.data.sections[0].data.heroImage.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="featured-description">
+                                    {smallestProduct.data.sections[0].data.tagline}
+                                </div>
+                            </a>
+                        )}
+                        {ertProduct && (
+                            <a class="card featured product-card" href={localePath('/product/ert/', locale)}>
+                                <span class="title">
+                                    {ertProduct.data.sections[0].data.title}
+                                </span>
+                                <img
+                                    src={ertProduct.data.sections[0].data.heroImage.src}
+                                    alt={ertProduct.data.sections[0].data.heroImage.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div class="featured-description">
+                                    {ertProduct.data.sections[0].data.tagline}
+                                </div>
+                            </a>
+                        )}
                     </div>
                 </main>
             )
         }
-
-        <main class="wrapper section with-background bg-variant">
-            <div class="section-header stack gap-2 lg:gap-4">
-                <h3>Nos Réalisations</h3>
-                <p>Projets d'impression 3D et créations sur mesure</p>
-            </div>
-            <div class="gallery">
-                <Grid variant="offset">
-                    {
-                        projects
-                            .slice(smallestProject ? 1 : 0)
-                            .map((project) => (
-                                <PortfolioPreview project={project} locale={locale} />
-                            ))
-                    }
-                </Grid>
-            </div>
-        </main>
 
         <div id="contact-section">
             <ContactCTA locale={locale} />
@@ -207,6 +198,12 @@ const businessStructuredData = {
         width: 100%;
     }
 
+    .hero :global(.hero-content) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .custom-tagline {
         font-size: var(--text-md);
         font-weight: 600;
@@ -220,6 +217,7 @@ const businessStructuredData = {
         color: var(--gray-300);
         margin: 0 0 0.75rem 0;
         max-width: 57ch;
+        line-height: 1.5;
     }
 
     .roles {
@@ -242,12 +240,17 @@ const businessStructuredData = {
     @media (min-width: 50em) {
         .hero {
             max-width: none;
-        }
-        .hero {
             display: grid;
-            grid-template-columns: 6fr 3fr;
+            grid-template-columns: 5fr 4fr;
             padding-inline: 2.5rem;
             gap: 3.75rem;
+            align-items: center;
+        }
+
+        .hero :global(.hero-content) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .custom-tagline {
@@ -255,7 +258,7 @@ const businessStructuredData = {
         }
 
         .service-description {
-            font-size: var(--text-xl);
+            font-size: var(--text-2xl);
         }
 
         .roles {
@@ -349,6 +352,27 @@ const businessStructuredData = {
         .cta {
             grid-area: cta;
         }
+    }
+
+    /* ====================================================== */
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    @media (min-width: 50em) {
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            grid-area: gallery;
+        }
+    }
+
+    .product-card {
+        width: 100%;
     }
 
     /* ====================================================== */

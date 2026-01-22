@@ -13,14 +13,14 @@ export const en: Translations = {
     legalMention: 'Legal notice',
   },
   contact: {
-    title: 'Interested in working together?',
+    title: 'A question about our products?',
     subtitle: 'I am currently available for freelance projects.',
     cta: 'Contact me',
   },
   home: {
     heroTitle: 'La 3ème dimension.',
     customTagline: '"Custom-made, not catalog."',
-    heroTagline: '3D printing design, modeling and workshop services: astronomy and all parts',
+    heroTagline: 'Design of 3D printed astronomical instruments and accessories',
     selectedWork: 'Selected Work',
     viewAll: 'View All',
     shopTitle: 'Shop',
@@ -49,16 +49,16 @@ export const en: Translations = {
   },
   skills: {
     custom: {
-      title: 'Custom Made',
-      description: 'Listening to your needs to achieve your projects as precisely as possible.',
+      title: 'Observe',
+      description: 'We design instruments that are simple and intuitive in their assembly and use.',
     },
     design: {
-      title: 'Design',
-      description: 'Using 3D modeling tools, we bring your projects and ideas to life with a wide range of materials and textures.',
+      title: 'Optimize',
+      description: 'Design centered around your experience.',
     },
     workshop: {
-      title: 'Workshop',
-      description: 'We organize internships, training, team-building and workshops around 3D printing.',
+      title: 'Learn',
+      description: 'The assembly requires no manual and helps you understand how the instrument works.',
     },
   },
   common: {

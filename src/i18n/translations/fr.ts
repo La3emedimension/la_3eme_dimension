@@ -13,7 +13,7 @@ export const fr: Translations = {
     legalMention: 'Mentions légales',
   },
   contact: {
-    title: 'Intéressé par une collaboration ?',
+    title: 'Une question sur nos produits ?',
     subtitle: 'Je suis actuellement disponible pour des projets freelance.',
     cta: 'Contactez-moi',
   },
@@ -49,16 +49,16 @@ export const fr: Translations = {
   },
   skills: {
     custom: {
-      title: 'Sur mesure',
-      description: 'A l\'écoute de vos besoins pour réaliser vos projets le plus précisément possible.',
+      title: 'Observer',
+      description: 'Nous concevons des instruments simples et intuitifs par leurs montages et utilisations.',
     },
     design: {
-      title: 'Conception',
-      description: 'Grâce aux outils de modélisation 3D nous donnons forme à vos projets et vos idées avec une large gamme de matériaux et de textures.',
+      title: 'Optimiser',
+      description: 'Un design pensé autour de votre expérience.',
     },
     workshop: {
-      title: 'Atelier',
-      description: 'Nous organisons des stages, formations, team-building et ateliers autour de l\'impression 3D',
+      title: 'Apprendre',
+      description: 'Le montage se fait sans notice et permet de comprendre le fonctionnement de l\'instrument.',
     },
   },
   common: {

@@ -11,6 +11,7 @@ interface Props {
 	keywords?: string | undefined;
 	ogImage?: string | undefined;
 	structuredData?: object | undefined;
+	noIndex?: boolean;
 }
 
 const {
@@ -19,7 +20,8 @@ const {
 	description,
 	keywords,
 	ogImage,
-	structuredData
+	structuredData,
+	noIndex = false
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -36,6 +38,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://la3emedim.
 			ogImage={ogImage}
 			structuredData={structuredData}
 			locale={locale}
+			noIndex={noIndex}
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
