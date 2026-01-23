@@ -46,6 +46,30 @@ Je voulais par ces portrait vous présenter des personnes qui m'ont inspirées d
 
 </div>
 
+## Mes dessins astronomiques
+
+Voici quelques-uns de mes dessins réalisés lors de mes observations :
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
+<div style="text-align: center;">
+<img src="/assets/blog/astrodessin/AS1.JPG" alt="Dessin astronomique 1" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
+</div>
+
+<div style="text-align: center;">
+<img src="/assets/blog/astrodessin/AS2.JPG" alt="Dessin astronomique 2" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
+</div>
+
+<div style="text-align: center;">
+<img src="/assets/blog/astrodessin/AS3.JPG" alt="Dessin astronomique 3" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
+</div>
+
+<div style="text-align: center;">
+<img src="/assets/blog/astrodessin/AS4.JPG" alt="Dessin astronomique 4" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
+</div>
+
+</div>
+
 Je tiens à remercier particulièrement les personnes interviewées car sans elles je ne pratiquerais pas l'astronomie comme je le fais aujourd'hui.
 
 ---
