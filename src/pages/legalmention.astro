@@ -5,117 +5,226 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="Mentions légales | La 3ème dimension" description="Mentions légales La 3ème dimension">
+<BaseLayout title="Mentions légales & CGV | La 3ème dimension" description="Mentions légales et Conditions Générales de Vente La 3ème dimension">
 	<div class="stack gap-20">
-		<main class="mentions légale">
-			<Hero title="Mentions légales">
-				<h4>Éditeur du site :</h4>
-				<p>Nom de l'entreprise : La 3ème dimension</p>
-				<p>Forme juridique : Micro-entreprise</p>
-				<p>Numéro SIRET : 94334362400012</p>
-				<p>Responsable de la publication : Labro Raphaël</p>
-				<p>Adresse : 266 rue du commandant Bayssade, 82600 Verdun-sur-Garonne </p>
-				<p>Téléphone : En cours de création</p>
-				<p>E-mail : la3emedim@gmail.com</p>
-				<h4>Hébergement du site : </h4>
-				<p>Nom de l’hébergeur : Github</p>
-				<p>Adresse : Github France 37 QUAI DU PRESIDENT ROOSEVELT, 92130 ISSY-LES-MOULINEAUX.</p>
-				<p>Nom de domaine : OVH</p>
-				<p>Adresse : https://www.ovhcloud.com/fr/</p>
-				<h4>Activité :</h4>
-				<p>La 3ème dimension  est spécialisé dans la création et la vente de produits réalisés par impression 3D.</p>
-				<h4>Numéro d'immatriculation au registre :</h4>
-				<p>Immatriculé au Registre Chambre des métiers et de l’Artisanat 82</p>
-				<h4>TVA :</h4>
-				<p>TVA non applicable – article 293 B du CGI.</p>
-				<h4>Propriété intellectuelle :</h4>
-				<p>Tous les contenus présents sur le site (textes, images, modèles 3D, etc.) sont la propriété exclusive de La 3ème dimension, sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.</p>
-				<h4>Politique de confidentialité & cookies :</h4>
-				<p>Ce site utilise des cookies à des fins de fonctionnement et d’analyse. Les données collectées via le formulaire de contact ou les commandes sont uniquement utilisées pour le traitement des demandes et ne sont pas revendues à des tiers.</p>
-			</Hero>
+		<main class="legal-page">
+			<div class="legal-container">
+				<div class="legal-column">
+					<h2>Mentions légales</h2>
+					<h4>Éditeur du site :</h4>
+					<p>Nom de l'entreprise : La 3ème dimension</p>
+					<p>Forme juridique : Micro-entreprise</p>
+					<p>Numéro SIRET : 94334362400012</p>
+					<p>Responsable de la publication : Labro Raphaël</p>
+					<p>Adresse : 266 rue du commandant Bayssade, 82600 Verdun-sur-Garonne </p>
+					<p>Téléphone : En cours de création</p>
+					<p>E-mail : la3emedim@gmail.com</p>
+					<h4>Hébergement du site : </h4>
+					<p>Nom de l'hébergeur : Github</p>
+					<p>Adresse : Github France 37 QUAI DU PRESIDENT ROOSEVELT, 92130 ISSY-LES-MOULINEAUX.</p>
+					<p>Nom de domaine : OVH</p>
+					<p>Adresse : https://www.ovhcloud.com/fr/</p>
+					<h4>Activité :</h4>
+					<p>La 3ème dimension  est spécialisé dans la création et la vente de produits réalisés par impression 3D.</p>
+					<h4>Numéro d'immatriculation au registre :</h4>
+					<p>Immatriculé au Registre Chambre des métiers et de l'Artisanat 82</p>
+					<h4>TVA :</h4>
+					<p>TVA non applicable – article 293 B du CGI.</p>
+					<h4>Propriété intellectuelle :</h4>
+					<p>Tous les contenus présents sur le site (textes, images, modèles 3D, etc.) sont la propriété exclusive de La 3ème dimension, sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.</p>
+					<h4>Politique de confidentialité & cookies :</h4>
+					<p>Ce site utilise des cookies à des fins de fonctionnement et d'analyse. Les données collectées via le formulaire de contact ou les commandes sont uniquement utilisées pour le traitement des demandes et ne sont pas revendues à des tiers.</p>
+				</div>
+
+				<div class="legal-column">
+					<h2>Conditions Générales de Vente (CGV)</h2>
+					<p><strong>Éditeur : La 3ème dimension</strong><br>
+					SIRET : 943 343 624 00012<br>
+					Adresse : 266 rue du commandant Bayssade, 82600 Verdun-sur-Garonne<br>
+					Site web : la3emedim.fr<br>
+					E-mail : la3emedim@gmail.com</p>
+
+					<h4>1. Champ d'application</h4>
+					<p>Les présentes Conditions Générales de Vente (CGV) s'appliquent à toutes les ventes de produits réalisées par La 3ème dimension, micro-entreprise immatriculée sous le SIRET ci-dessus. Elles s'appliquent à tout acheteur, consommateur ou professionnel, souhaitant acheter un produit sur le site. Toute commande implique l'adhésion sans réserve de l'Acheteur à ces CGV.</p>
+
+					<h4>2. Produits</h4>
+					<p>Les produits proposés à la vente sont des créations réalisées par impression 3D, présentées avec leurs caractéristiques essentielles sur le site. Les produits étant fabriqués par impression 3D, de légères variations de texture, de couleur ou de finition peuvent exister par rapport aux photos présentées, sans que cela ne constitue un défaut de conformité.</p>
+
+					<h4>3. Prix</h4>
+					<p>Les prix affichés sont en euros (€), toutes taxes comprises (TTC). TVA non applicable – article 293 B du CGI (micro-entreprise). Les frais de livraison sont indiqués séparément lors du passage de commande. La 3ème dimension se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable est celui en vigueur au moment de la validation de la commande.</p>
+
+					<h4>4. Commande</h4>
+					<p>L'Acheteur passe commande via le site internet. La commande est considérée comme acceptée lorsque La 3ème dimension reçoit le paiement complet ou partiel du prix, selon modalités convenues.</p>
+
+					<h4>5. Modalités de paiement</h4>
+					<p>Le paiement s'effectue par les moyens proposés sur le site (carte bancaire, PayPal, etc.). Le paiement est sécurisé. Les produits restent la propriété de La 3ème dimension jusqu'au paiement intégral.</p>
+
+					<h4>6. Livraison</h4>
+					<p>Les produits sont livrés à l'adresse indiquée par l'Acheteur lors de la commande. Les délais de livraison sont donnés à titre indicatif. Conformément à l'article L216-1 du Code de la consommation, en l'absence de délai convenu, le vendeur livre le bien dans un délai maximal de 30 jours. En cas de dépassement de ce délai, l'Acheteur peut annuler sa commande et obtenir un remboursement intégral.</p>
+
+					<h4>7. Transfert de risques</h4>
+					<p>Les risques liés aux produits sont transférés à l'Acheteur au moment de la remise des produits au transporteur.</p>
+
+					<h4>8. Droit de rétractation, retours et remboursements</h4>
+					<p><strong>8.1 Droit de rétractation</strong><br>
+					Conformément aux articles L221-18 et suivants du Code de la consommation, le consommateur dispose d'un délai de 14 jours à compter de la réception de sa commande pour exercer son droit de rétractation, sans justification ni pénalité. Pour exercer ce droit, le consommateur doit notifier sa décision par e-mail à : la3emedim@gmail.com</p>
+
+					<p><strong>8.2 Conditions d'acceptation des retours</strong><br>
+					Pour être admissible au retour, le produit doit :</p>
+					<ul>
+						<li>être dans le même état que lors de sa réception</li>
+						<li>ne pas avoir été utilisé, modifié ou endommagé</li>
+						<li>être retourné dans son emballage d'origine, avec tous les accessoires fournis</li>
+						<li>être accompagné du reçu ou de la preuve d'achat</li>
+					</ul>
+					<p>Tout produit non conforme à ces conditions pourra faire l'objet d'un refus de remboursement ou d'un remboursement partiel.</p>
+
+					<p><strong>8.3 Procédure de retour</strong><br>
+					Avant tout retour, le consommateur doit effectuer une demande préalable par e-mail à : la3emedim@gmail.com. Les frais de retour sont à la charge du consommateur, sauf en cas d'erreur du vendeur. Les articles retournés sans demande préalable ne seront pas acceptés. Une fois accepté, le vendeur communiquera les instructions d'expédition (adresse et modalités).</p>
+
+					<p><strong>8.4 Produits endommagés, défectueux ou erreur de commande</strong><br>
+					Le consommateur doit vérifier l'état des produits à réception. En cas de produit défectueux, endommagé ou non conforme, il doit contacter La 3ème dimension dans les meilleurs délais à : la3emedim@gmail.com. Une solution appropriée (remplacement ou remboursement) sera proposée.</p>
+
+					<p><strong>8.5 Exceptions au droit de rétractation</strong><br>
+					Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne s'applique pas :</p>
+					<ul>
+						<li>aux produits fabriqués sur mesure ou personnalisés selon les spécifications du consommateur</li>
+						<li>aux produits ne pouvant être retournés pour raisons d'hygiène ou de protection de la santé si descellés après livraison</li>
+					</ul>
+
+					<p><strong>8.6 Échanges</strong><br>
+					Les échanges ne sont pas proposés. Le consommateur souhaitant un autre produit doit retourner l'article conformément aux présentes conditions puis passer une nouvelle commande.</p>
+
+					<p><strong>8.7 Remboursements</strong><br>
+					Après réception et inspection du produit retourné, le consommateur sera informé par e-mail de l'acceptation ou du refus du remboursement. En cas d'acceptation, le remboursement sera effectué sur le moyen de paiement utilisé, dans un délai maximal de 10 jours ouvrables. Les délais bancaires peuvent varier selon l'établissement financier. Si plus de 15 jours ouvrables se sont écoulés depuis l'acceptation du retour, le consommateur peut contacter : la3emedim@gmail.com</p>
+
+					<h4>9. Garanties légales</h4>
+					<p>Les produits bénéficient des garanties légales prévues par le Code de la consommation (conformité, vices cachés). Toute demande de garantie doit être accompagnée d'une preuve d'achat.</p>
+
+					<h4>10. Responsabilité</h4>
+					<p>La responsabilité de La 3ème dimension est limitée au montant de la commande. Elle ne peut être tenue responsable des dommages indirects.</p>
+
+					<h4>11. Force majeure</h4>
+					<p>Aucune des parties ne pourra être tenue responsable en cas de force majeure (article 1218 du Code civil).</p>
+
+					<h4>12. Données personnelles</h4>
+					<p>Les données collectées lors de la commande sont utilisées uniquement pour le traitement et la gestion de la commande, conformément à la politique de confidentialité.</p>
+
+					<h4>13. Propriété intellectuelle</h4>
+					<p>Les créations, textes, images, modèles 3D et autres éléments du site sont la propriété exclusive de La 3ème dimension. Toute reproduction est interdite sans autorisation préalable.</p>
+
+					<h4>14. Litiges – Loi applicable</h4>
+					<p>Les présentes CGV sont régies par le droit français. En cas de litige, une tentative de résolution amiable sera recherchée. À défaut, les tribunaux français seront compétents.</p>
+				</div>
+			</div>
 		</main>
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
+	.legal-page {
+		padding: 2rem 1rem;
+	}
 
-	
-	h4{
-		margin-right: 15px;
-		margin-left: 50px;
-	}
-	p{
-		text-align: left;
-		font-size: 70%;
-		margin-right: 15px;
-		margin-left: 40px;
-	}
-	
-	.about {
+	.legal-container {
 		display: flex;
 		flex-direction: column;
-		gap: 3.5rem;
-		align-items: center;
-		margin-right: 15px;
-		margin-left: 15px;
+		gap: 3rem;
+		max-width: 1400px;
+		margin: 0 auto;
 	}
 
-	img {
-		max-width:30vh;
-		width: 40vh;
-		margin-right: 5%;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);		
+	.legal-column {
+		flex: 1;
+		min-width: 0;
 	}
 
-	section {
-		display: flex;
-		flex-direction: row;
-		gap: 0.5rem;
-		color: var(--gray-200);		
+	.legal-column h2 {
+		color: var(--gray-0);
+		font-size: var(--text-2xl);
+		margin-bottom: 1.5rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid var(--accent-regular);
 	}
 
-	.section-title {
-		font-size: 30%;
-		grid-column-start: 1;
-		font-size: var(--text-xl);
+	h4 {
+		color: var(--gray-0);
+		font-size: var(--text-lg);
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		margin-left: 1rem;
+	}
+
+	p {
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--gray-200);
+		margin: 0.5rem 0;
+		margin-left: 1.5rem;
+		margin-right: 1rem;
+	}
+
+	ul {
+		margin-left: 3rem;
+		margin-right: 1rem;
+		color: var(--gray-200);
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	ul li {
+		margin: 0.3rem 0;
+	}
+
+	strong {
 		color: var(--gray-0);
 	}
 
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		
-		.about {
-			display: flex;
+	@media (min-width: 768px) {
+		.legal-container {
 			flex-direction: row;
-			text-align: center;
-			margin-left: 5%;
+			gap: 2rem;
+			align-items: flex-start;
 		}
 
-		.about > :global(:first-child) {
-			grid-column: 1/3;
+		.legal-column {
+			max-height: 80vh;
+			overflow-y: auto;
+			padding-right: 1rem;
 		}
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
+		.legal-column::-webkit-scrollbar {
+			width: 8px;
 		}
 
+		.legal-column::-webkit-scrollbar-track {
+			background: var(--gray-999);
+			border-radius: 4px;
+		}
+
+		.legal-column::-webkit-scrollbar-thumb {
+			background: var(--accent-regular);
+			border-radius: 4px;
+		}
+
+		.legal-column::-webkit-scrollbar-thumb:hover {
+			background: var(--accent-dark);
+		}
 	}
-	
+
+	@media (min-width: 1024px) {
+		.legal-page {
+			padding: 3rem 2rem;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		ul {
+			font-size: 1rem;
+		}
+	}
 </style>

@@ -10,7 +10,7 @@ export const en: Translations = {
   footer: {
     tagline: 'Design, manufacturing and 3D printing workshop',
     copyright: 'La 3eme dimension | Siret: 94334362400012',
-    legalMention: 'Legal notice',
+    legalMention: 'Legal notice / T&C',
   },
   contact: {
     title: 'A question about our products?',

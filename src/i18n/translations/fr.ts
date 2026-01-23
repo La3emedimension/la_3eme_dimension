@@ -10,7 +10,7 @@ export const fr: Translations = {
   footer: {
     tagline: 'Conception, réalisation et atelier autour de l\'impression 3D',
     copyright: 'La 3eme dimension | Siret : 94334362400012',
-    legalMention: 'Mentions légales',
+    legalMention: 'Mentions légales / CGV',
   },
   contact: {
     title: 'Une question sur nos produits ?',

@@ -1,6 +1,6 @@
 ---
 title: "À la découverte de l'Astro-dessin"
-publishDate: 2026-01-22
+publishDate: 2025-09-17
 img: "/assets/blog/astrodessin/dessinorion.jpg"
 ---
 
@@ -42,30 +42,6 @@ Je voulais par ces portrait vous présenter des personnes qui m'ont inspirées d
 <h3 style="color: var(--accent-regular); margin-bottom: 1rem;">Serge Vieillard</h3>
 <p style="margin-bottom: 1.5rem; color: var(--gray-300);">Un des auteurs de "Astrodessin" l'une des bibles du dessin astronomique</p>
 <a href="/blog/portrait-trouvelot" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Découvrir son portrait</a>
-</div>
-
-</div>
-
-## Mes dessins astronomiques
-
-Voici quelques-uns de mes dessins réalisés lors de mes observations :
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-
-<div style="text-align: center;">
-<img src="/assets/blog/astrodessin/AS1.JPG" alt="Dessin astronomique 1" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
-</div>
-
-<div style="text-align: center;">
-<img src="/assets/blog/astrodessin/AS2.JPG" alt="Dessin astronomique 2" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
-</div>
-
-<div style="text-align: center;">
-<img src="/assets/blog/astrodessin/AS3.JPG" alt="Dessin astronomique 3" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
-</div>
-
-<div style="text-align: center;">
-<img src="/assets/blog/astrodessin/AS4.JPG" alt="Dessin astronomique 4" style="width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-800);" />
 </div>
 
 </div>
