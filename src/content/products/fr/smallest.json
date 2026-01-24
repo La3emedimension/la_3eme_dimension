@@ -122,7 +122,7 @@
               "Transport": "25 × 25 × 20 cm",
               "Observation": "25 × 25 × 87 cm",
               "Poids total": "4 kg avec optiques",
-              "Structure": "Tiges aluminium",
+              "Structure": "Tube carbone et leste amovible",
               "Monture": "Dobson intégrée"
             }
           },
@@ -241,8 +241,8 @@
         "price": "550€",
         "priceNote": "Hors optiques",
         "included": [
-          "Structure imprimée 3D chargée en fibre de carbone (PETG-CF)",
-          "Tiges aluminium",
+          "Structure en PETG chargé en fibre de carbone",
+          "Tube carbone et leste amovible",
           "Porte-oculaire 1.25\"",
           "Support chercheur",
           "Monture Dobson intégrée",

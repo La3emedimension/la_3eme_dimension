@@ -9,7 +9,9 @@ import SpecsTable from '../components/SpecsTable.astro';
 import PricingSection from '../components/PricingSection.astro';
 import ProductNavigation from '../components/ProductNavigation.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { useTranslations, type Locale } from '../i18n';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedProducts from '../components/RelatedProducts.astro';
+import { useTranslations, localePath, type Locale } from '../i18n';
 
 export interface ProductConfig {
   seoTitle: string;
@@ -63,6 +65,24 @@ const sectionComponents = {
   specs: SpecsTable,
   pricing: PricingSection
 };
+
+// Get product name from first hero section
+const heroSection = sections.find(s => s.type === 'hero');
+const productName = heroSection?.data?.title || 'Produit';
+
+// Get product slug from URL
+const urlPath = Astro.url.pathname;
+const productSlug = urlPath.split('/').filter(Boolean).pop() || '';
+
+// Get category from structured data
+const category = structuredData?.category;
+
+// Build breadcrumbs
+const breadcrumbItems = [
+  { label: locale === 'fr' ? 'Accueil' : 'Home', href: localePath('/', locale) },
+  { label: locale === 'fr' ? 'Boutique' : 'Shop', href: localePath('/shop/', locale) },
+  { label: productName, href: Astro.url.pathname }
+];
 ---
 
 <BaseLayout
@@ -80,6 +100,9 @@ const sectionComponents = {
       </div>
     </div>
   )}
+  <div class="breadcrumb-wrapper">
+    <Breadcrumbs items={breadcrumbItems} locale={locale} />
+  </div>
   {sections.map((section) => {
     const Component = section.type === 'custom' ? section.customComponent : sectionComponents[section.type];
 
@@ -98,6 +121,13 @@ const sectionComponents = {
       </section>
     );
   })}
+
+  <RelatedProducts
+    currentProductId={productSlug}
+    category={category}
+    maxProducts={3}
+    locale={locale}
+  />
 
   {showContactCTA && <ContactCTA locale={locale} />}
 
@@ -130,5 +160,17 @@ const sectionComponents = {
     max-width: 65ch;
     margin-inline: auto;
     padding-inline: 1.5rem;
+  }
+
+  .breadcrumb-wrapper {
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  @media (max-width: 50em) {
+    .breadcrumb-wrapper {
+      padding-inline: 1rem;
+    }
   }
 </style>

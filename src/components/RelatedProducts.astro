@@ -1,0 +1,214 @@
+---
+import { localePath, useTranslations, type Locale } from '../i18n';
+import { getLocalizedDataCollection, getSlugWithoutLocale } from '../lib/collections';
+
+interface Props {
+  currentProductId: string;
+  category?: string;
+  maxProducts?: number;
+  locale?: Locale;
+}
+
+const { currentProductId, category, maxProducts = 3, locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
+
+// Get all products
+const allProducts = await getLocalizedDataCollection('products', locale);
+
+// Filter related products
+let relatedProducts = allProducts.filter(product => {
+  const slug = getSlugWithoutLocale(product.id, locale);
+  // Exclude current product and drafts
+  if (slug === currentProductId || product.data.draft) return false;
+
+  // Filter by category if specified
+  if (category) {
+    return product.data.structuredData?.category === category;
+  }
+
+  return true;
+});
+
+// Limit number of products
+relatedProducts = relatedProducts.slice(0, maxProducts);
+---
+
+{relatedProducts.length > 0 && (
+  <section class="related-products">
+    <div class="container">
+      <h2>{locale === 'fr' ? 'Produits similaires' : 'Related Products'}</h2>
+      <p class="subtitle">
+        {locale === 'fr'
+          ? 'Découvrez nos autres produits qui pourraient vous intéresser'
+          : 'Discover our other products that might interest you'}
+      </p>
+
+      <div class="products-grid">
+        {relatedProducts.map(product => {
+          const slug = getSlugWithoutLocale(product.id, locale);
+          const heroSection = product.data.sections.find((s: any) => s.type === 'hero');
+          const title = heroSection?.data?.title || slug;
+          const tagline = heroSection?.data?.tagline || '';
+          const image = heroSection?.data?.heroImage?.src || '/assets/preview.png';
+          const imageAlt = heroSection?.data?.heroImage?.alt || title;
+          const price = product.data.price || '';
+
+          return (
+            <a href={localePath(`/product/${slug}/`, locale)} class="product-card">
+              <div class="product-image">
+                <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+                {price && <span class="product-price">{price}</span>}
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">{title}</h3>
+                <p class="product-tagline">{tagline}</p>
+                <span class="cta-link">
+                  {locale === 'fr' ? 'En savoir plus' : 'Learn more'} →
+                </span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-products {
+    padding: 4rem 0;
+    background: var(--gradient-subtle);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-size: var(--text-3xl);
+    color: var(--gray-0);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--gray-300);
+    margin-bottom: 3rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--gray-999);
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    filter: grayscale(80%);
+  }
+
+  .product-card:hover {
+    border-color: var(--accent-regular);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    filter: grayscale(0%);
+  }
+
+  .product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  .product-price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    padding: 0.5rem 1rem;
+    border-radius: 999rem;
+    font-weight: 700;
+    font-size: var(--text-base);
+    box-shadow: var(--shadow-md);
+  }
+
+  .product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .product-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--gray-0);
+    margin: 0;
+  }
+
+  .product-tagline {
+    font-size: var(--text-base);
+    color: var(--gray-300);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--accent-regular);
+    transition: gap 0.3s ease;
+  }
+
+  .product-card:hover .cta-link {
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 50em) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .subtitle {
+      font-size: var(--text-base);
+      margin-bottom: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,301 @@
+---
+import Icon from './Icon.astro';
+
+interface Review {
+  author: string;
+  rating: number;
+  date: string;
+  title: string;
+  content: string;
+  verified?: boolean;
+}
+
+interface Props {
+  reviews: Review[];
+  averageRating: number;
+  totalReviews: number;
+  productName: string;
+}
+
+const { reviews, averageRating, totalReviews, productName } = Astro.props;
+
+// Generate structured data for reviews
+const reviewsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": productName,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": averageRating.toString(),
+    "reviewCount": totalReviews.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": reviews.map(review => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": review.author
+    },
+    "datePublished": review.date,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": review.content,
+    "name": review.title
+  }))
+};
+
+// Helper to render stars
+const renderStars = (rating: number) => {
+  return Array.from({ length: 5 }, (_, i) => i < rating);
+};
+---
+
+<section class="reviews-section" id="reviews">
+  <div class="reviews-container">
+    <div class="reviews-header">
+      <h2>Avis clients</h2>
+      <div class="rating-summary">
+        <div class="stars-large">
+          {renderStars(Math.round(averageRating)).map(filled => (
+            <Icon icon="star-fill" color={filled ? "#FFD700" : "#4a4a4a"} size="1.5em" />
+          ))}
+        </div>
+        <p class="rating-text">
+          <strong>{averageRating.toFixed(1)}</strong> / 5 basé sur <strong>{totalReviews}</strong> avis
+        </p>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      {reviews.map((review) => (
+        <article class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <div class="author-avatar">
+                {review.author.charAt(0).toUpperCase()}
+              </div>
+              <div class="author-info">
+                <p class="author-name">
+                  {review.author}
+                  {review.verified && <span class="verified-badge" title="Achat vérifié">✓</span>}
+                </p>
+                <p class="review-date">{new Date(review.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              </div>
+            </div>
+            <div class="review-stars">
+              {renderStars(review.rating).map(filled => (
+                <Icon icon="star-fill" color={filled ? "#FFD700" : "#4a4a4a"} size="1em" />
+              ))}
+            </div>
+          </div>
+          <h3 class="review-title">{review.title}</h3>
+          <p class="review-content">{review.content}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="reviews-cta">
+      <p>Vous avez acheté ce produit ?</p>
+      <a href="mailto:la3emedim@gmail.com?subject=Avis sur {productName}" class="cta-button">
+        Laisser un avis
+      </a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(reviewsStructuredData)} />
+
+<style>
+  .reviews-section {
+    padding: 4rem 0;
+    background: var(--gradient-subtle);
+  }
+
+  .reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .reviews-header h2 {
+    font-size: var(--text-3xl);
+    color: var(--gray-0);
+    margin-bottom: 1.5rem;
+  }
+
+  .rating-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stars-large {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .rating-text {
+    font-size: var(--text-lg);
+    color: var(--gray-300);
+  }
+
+  .rating-text strong {
+    color: var(--gray-0);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .review-card {
+    background: var(--gray-999);
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .review-card:hover {
+    border-color: var(--accent-regular);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .review-author {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .author-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-lg);
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .author-name {
+    font-weight: 600;
+    color: var(--gray-0);
+    font-size: var(--text-base);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  .review-date {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .review-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-0);
+    margin-bottom: 0.75rem;
+  }
+
+  .review-content {
+    font-size: var(--text-base);
+    color: var(--gray-300);
+    line-height: 1.6;
+  }
+
+  .reviews-cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .reviews-cta p {
+    font-size: var(--text-lg);
+    color: var(--gray-300);
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--accent-regular);
+    color: var(--accent-text-over);
+    border: 1px solid var(--accent-regular);
+    border-radius: 999rem;
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 50em) {
+    .reviews-container {
+      padding: 0 1rem;
+    }
+
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .reviews-header h2 {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>

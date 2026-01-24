@@ -1,0 +1,98 @@
+---
+import { localePath, useTranslations, type Locale } from '../i18n';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  locale?: Locale;
+}
+
+const { items, locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
+
+// Generate structured data for breadcrumbs
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": `https://la3emedim.fr${item.href}`
+  }))
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {items.map((item, index) => (
+      <li>
+        {index < items.length - 1 ? (
+          <>
+            <a href={item.href}>{item.label}</a>
+            <span class="separator" aria-hidden="true">/</span>
+          </>
+        ) : (
+          <span class="current" aria-current="page">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbStructuredData)} />
+
+<style>
+  .breadcrumbs {
+    padding: 1rem 0;
+    font-size: var(--text-sm);
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  a {
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color var(--theme-transition);
+  }
+
+  a:hover {
+    color: var(--accent-regular);
+    text-decoration: underline;
+  }
+
+  .separator {
+    color: var(--gray-600);
+    user-select: none;
+  }
+
+  .current {
+    color: var(--gray-200);
+    font-weight: 500;
+  }
+
+  @media (max-width: 50em) {
+    .breadcrumbs {
+      padding: 0.75rem 0;
+      font-size: var(--text-xs);
+    }
+  }
+</style>

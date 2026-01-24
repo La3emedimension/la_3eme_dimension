@@ -122,7 +122,7 @@
               "Transport": "25 × 25 × 20 cm",
               "Observation": "25 × 25 × 87 cm",
               "Total weight": "4 kg with optics",
-              "Structure": "Aluminum rods",
+              "Structure": "Carbon tube and removable ballast",
               "Mount": "Integrated Dobson"
             }
           },
@@ -241,8 +241,8 @@
         "price": "€550",
         "priceNote": "Optics not included",
         "included": [
-          "Carbon fiber reinforced 3D printed structure (PETG-CF)",
-          "Aluminum rods",
+          "PETG carbon fiber reinforced structure",
+          "Carbon tube and removable ballast",
           "1.25\" focuser",
           "Finder support",
           "Integrated Dobson mount",

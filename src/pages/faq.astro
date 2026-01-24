@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { type Locale } from '../i18n';
+
+const locale: Locale = 'fr';
+
+const faqs = [
+  {
+    question: "Qu'est-ce qui rend le télescope Smallest unique ?",
+    answer: "Le Smallest est le premier télescope Newton 150/750 entièrement transportable en cabine d'avion. Grâce à sa conception modulaire imprimée en 3D, il pèse seulement 4kg avec les optiques et se monte en moins de 4 minutes sans aucun outil. C'est l'alliance parfaite entre portabilité extrême et performance optique."
+  },
+  {
+    question: "Quels sont les délais de livraison ?",
+    answer: "Les délais varient selon le produit. Pour le télescope Smallest, comptez entre 2 à 4 semaines pour la fabrication sur mesure. Pour les accessoires en stock (Cheshire, Easy Clip), la livraison se fait sous 3 à 5 jours ouvrés. Nous vous tenons informé par email à chaque étape de la fabrication et de l'expédition."
+  },
+  {
+    question: "Proposez-vous une garantie sur vos produits ?",
+    answer: "Oui, tous nos produits bénéficient d'une garantie de conformité de 2 ans conformément à la législation française. Les pièces imprimées en 3D sont garanties contre les défauts de fabrication. Nous offrons également un support technique gratuit à vie pour l'utilisation et l'entretien de vos instruments."
+  },
+  {
+    question: "Puis-je personnaliser mon télescope Smallest ?",
+    answer: "Absolument ! Le Smallest est conçu pour être modulaire. Vous pouvez choisir la couleur du PETG chargé fibre de carbone, ajouter des accessoires (chercheur, porte-oculaire renforcé), ou même commander un kit de conversion pour adapter vos propres optiques. Contactez-nous pour discuter de votre projet personnalisé."
+  },
+  {
+    question: "Quelles optiques sont compatibles avec le Smallest ?",
+    answer: "Le Smallest est compatible avec un miroir primaire de 150mm (f/5) et un miroir secondaire de 42mm. Vous pouvez utiliser des optiques du commerce (GSO, Orion, Skywatcher) ou des optiques artisanales. Nous proposons également un kit complet avec optiques certifiées. Le porte-oculaire accepte tous les accessoires au standard 1.25\"."
+  },
+  {
+    question: "Le Smallest convient-il aux débutants en astronomie ?",
+    answer: "Oui ! Le Smallest est parfait pour les débutants grâce à son montage intuitif sans notice. Son système Dobson simplifié permet de pointer facilement les objets célestes. Avec un diamètre de 150mm, vous pourrez observer la Lune, les planètes (Jupiter, Saturne), les amas d'étoiles et même certaines galaxies. C'est un excellent télescope pour apprendre tout en ayant un instrument évolutif."
+  },
+  {
+    question: "Comment entretenir mon télescope imprimé en 3D ?",
+    answer: "L'entretien est minimal. Pour la structure en PETG : nettoyez avec un chiffon humide et évitez l'exposition prolongée au soleil direct (>50°C). Pour les optiques : utilisez une soufflette et un chiffon microfibre spécial optique. Évitez de toucher les miroirs avec les doigts. Nous recommandons une collimation tous les 6 mois ou après un transport. Un guide d'entretien détaillé est fourni avec chaque télescope."
+  },
+  {
+    question: "Proposez-vous des ateliers ou formations ?",
+    answer: "Oui ! Nous organisons régulièrement des ateliers d'initiation à l'astronomie et à l'impression 3D dans la région de Toulouse. Nous proposons aussi des formations personnalisées pour apprendre à utiliser votre Smallest, comprendre la collimation, et optimiser vos observations. Suivez-nous sur nos réseaux sociaux pour connaître les prochaines dates."
+  },
+  {
+    question: "Puis-je retourner mon produit si je ne suis pas satisfait ?",
+    answer: "Conformément à la législation, vous disposez de 14 jours à compter de la réception pour exercer votre droit de rétractation, sauf pour les produits personnalisés fabriqués sur mesure. Le produit doit être retourné dans son état d'origine avec tous les accessoires. Les frais de retour sont à votre charge sauf en cas d'erreur de notre part. Consultez nos CGV pour plus de détails."
+  },
+  {
+    question: "Livrez-vous en dehors de la France ?",
+    answer: "Actuellement, nous livrons principalement en France métropolitaine et en Europe (Union Européenne). Pour les destinations hors UE, contactez-nous directement à la3emedim@gmail.com pour obtenir un devis personnalisé incluant les frais de port et les formalités douanières. Nous étudions chaque demande au cas par cas."
+  },
+  {
+    question: "Quelle est la différence entre le Smallest et un télescope classique ?",
+    answer: "Contrairement aux télescopes classiques, le Smallest a été conçu spécifiquement pour la mobilité extrême. Il se démonte complètement et tient dans un bagage cabine (55x40x20cm), ce qu'aucun Newton de 150mm ne permet. Sa structure en PETG chargé fibre de carbone est 30% plus légère que l'aluminium tout en restant rigide. De plus, son montage sans outils et sa conception modulaire le rendent unique sur le marché."
+  },
+  {
+    question: "Comment se passe la collimation du Smallest ?",
+    answer: "La collimation du Smallest est simplifiée grâce à un système de réglage par vis. Nous fournissons un Cheshire (laser de collimation optionnel) et un guide vidéo détaillé. La structure imprimée en 3D maintient très bien la collimation même après transport. En moyenne, une vérification tous les 3-6 mois suffit pour un usage normal. Nous proposons aussi un service de collimation avant expédition."
+  }
+];
+
+// Structured data for FAQ page
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  locale={locale}
+  title="FAQ - Questions fréquentes | La 3ème dimension"
+  description="Toutes les réponses à vos questions sur nos télescopes imprimés en 3D, le Smallest, les délais de livraison, la garantie et la personnalisation. Guide complet pour bien choisir."
+  keywords="faq télescope, questions smallest, garantie télescope, livraison télescope, personnalisation télescope, impression 3d astronomie, télescope portable questions"
+  structuredData={faqStructuredData}
+>
+  <div class="stack gap-20">
+    <main class="faq-page">
+      <Hero title="Questions fréquentes">
+        <p>Toutes les réponses à vos questions sur nos télescopes et services.</p>
+      </Hero>
+
+      <section class="faq-container">
+        <div class="faq-intro">
+          <p>Vous ne trouvez pas la réponse à votre question ? <a href="mailto:la3emedim@gmail.com">Contactez-nous directement</a> ou appelez-nous au <a href="tel:0760853870">07 60 85 38 70</a>.</p>
+        </div>
+
+        <div class="faq-list">
+          {faqs.map((faq, index) => (
+            <details class="faq-item" open={index === 0}>
+              <summary class="faq-question">
+                <span class="question-text">{faq.question}</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="faq-cta">
+          <h3>Vous avez d'autres questions ?</h3>
+          <p>Notre équipe est là pour vous aider à choisir le télescope parfait pour vos besoins.</p>
+          <div class="cta-buttons">
+            <a href="mailto:la3emedim@gmail.com" class="cta-primary">Nous contacter</a>
+            <a href="/shop" class="cta-secondary">Voir nos produits</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <ContactCTA locale={locale} />
+  </div>
+</BaseLayout>
+
+<style>
+  .faq-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-intro {
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--gray-300);
+    padding: 2rem;
+    background: var(--gradient-subtle);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-800);
+  }
+
+  .faq-intro a {
+    color: var(--accent-regular);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .faq-intro a:hover {
+    color: var(--accent-dark);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: var(--gradient-subtle);
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    border-color: var(--accent-regular);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-item[open] {
+    border-color: var(--accent-regular);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-0);
+    user-select: none;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .question-text {
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent-regular);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--gray-300);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  .faq-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+
+  .faq-cta h3 {
+    font-size: var(--text-2xl);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+  }
+
+  .faq-cta p {
+    font-size: var(--text-lg);
+    color: var(--gray-300);
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary, .cta-secondary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 999rem;
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-primary {
+    background-color: var(--accent-regular);
+    color: var(--accent-text-over);
+    border: 1px solid var(--accent-regular);
+  }
+
+  .cta-primary:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .cta-secondary {
+    background-color: transparent;
+    color: var(--gray-0);
+    border: 1px solid var(--gray-800);
+  }
+
+  .cta-secondary:hover {
+    border-color: var(--accent-regular);
+    color: var(--accent-regular);
+  }
+
+  @media (max-width: 50em) {
+    .faq-page {
+      padding: 1rem;
+    }
+
+    .faq-question {
+      font-size: var(--text-base);
+      padding: 1rem;
+    }
+
+    .faq-answer {
+      padding: 0 1rem 1rem 1rem;
+      font-size: var(--text-sm);
+    }
+
+    .faq-intro {
+      font-size: var(--text-base);
+      padding: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>
