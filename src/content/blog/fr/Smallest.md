@@ -14,7 +14,10 @@ seoTitle: "Smallest - Télescope Portable compact | La 3ème dimension"
 seoDescription: "Smallest : Le télescope 150/750 portable. Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€."
 seoKeywords: "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse"
 ---
-Les fichiers sont disponibles sur <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. Vous trouverez le <a class="button" href="https://la3emedim.fr/assets/SMALLEST - README.pdf">README ici</a>
+
+**Version Clef en mains avec tubes carbones et leste amovible :** <a class="button" href="/product/smallest">Voir la boutique</a>
+
+**Version open source :** Les fichiers sont disponibles sur <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. Vous trouverez le <a class="button" href="https://la3emedim.fr/assets/SMALLEST - README.pdf">README ici</a>
 
 ## Smallest, pourquoi ce projet?
 
