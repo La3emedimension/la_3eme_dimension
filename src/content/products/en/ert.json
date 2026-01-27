@@ -119,13 +119,13 @@
       "type": "hero",
       "id": "section-filter",
       "data": {
-        "title": "Using filters",
+        "title": "Filter holder",
         "tagline": "",
-        "description": "The ERT pack includes an empty filter holder and a filter holder with a UHC filter dedicated to nebula observation. The UHC (Ultra High Contrast) filter is designed for visual deep sky observation. It transmits 100% of the light from O-III and H-beta spectral lines, 96% of the H-alpha line (although its use is mainly reserved for imaging) and blocks all other wavelengths. This cleans up the image from stray light caused by light pollution. This enhances the contrast of diffuse and planetary nebulae, which then stand out against a now very dark sky background.",
+        "description": "The ERT pack includes a filter holder compatible with standard 1.25\" filters. You can install different types of filters according to your observation needs: moon filter to reduce glare when observing the Moon, or UHC filter to enhance nebula contrast for example.",
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Filter holder and UHC filter for the ERT telescope"
+          "alt": "Filter holder for the ERT telescope"
         }
       }
     },
@@ -273,7 +273,7 @@
     { "id": "video", "label": "Detailed assembly" },
     { "id": "video-2", "label": "Quick assembly" },
     { "id": "specs", "label": "Modules" },
-    { "id": "filter", "label": "Filter holder" },
+    { "id": "filter", "label": "Filters" },
     { "id": "gallery", "label": "Gallery" },
     { "id": "pricing", "label": "Pricing" },
     { "id": "features", "label": "Benefits" }

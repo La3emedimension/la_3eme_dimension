@@ -120,13 +120,13 @@
       "type": "hero",
       "id": "section-filter",
       "data": {
-        "title": "L'utilisation des filtres",
+        "title": "Porte-filtre",
         "tagline": "",
-        "description": "Dans le pack ERT, vous disposez d'un porte-filtre vide et d'un porte-filtre avec un filtre UHC dédié à l'observation des nébuleuses. Le filtre UHC (Ultra High Contrast) est un filtre destiné à l'observation visuelle du ciel profond. Il transmet 100 % de la lumière des raies spectrales O-III et H-bêta, 96 % de la raie H-alpha (même si son utilisation est principalement réservée à l'imagerie) et bloque toutes les autres longueurs d'onde. Ainsi, l'image se trouve nettoyée des lumières parasites provoquées par la pollution lumineuse. Cela permet de rehausser le contraste des nébuleuses diffuses et planétaires, qui se détachent alors sur un fond de ciel devenu bien noir.",
+        "description": "Le pack ERT inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses par exemple.",
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Porte-filtre et filtre UHC pour la lunette ERT"
+          "alt": "Porte-filtre pour la lunette ERT"
         }
       }
     },
