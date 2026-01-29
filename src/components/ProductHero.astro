@@ -63,7 +63,10 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 			)}
 		</div>
 		<div class="hero-media">
-			<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
+			<div class="hero-image-wrapper">
+				<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
+				<img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />
+			</div>
 		</div>
 	</div>
 </section>
@@ -198,11 +201,32 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 		box-shadow: var(--shadow-lg);
 	}
 
+	.hero-image-wrapper {
+		position: relative;
+		width: 100%;
+	}
+
 	.hero-image {
 		width: 100%;
 		height: auto;
 		border-radius: 1rem;
 		box-shadow: var(--shadow-xl);
+	}
+
+	.fab-logo {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		width: 80px;
+		height: auto;
+		background: rgba(255, 255, 255, 0.5);
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		transition: background 0.3s ease;
+	}
+
+	.fab-logo:hover {
+		background: rgba(255, 255, 255, 0.9);
 	}
 
 	@media (max-width: 768px) {
