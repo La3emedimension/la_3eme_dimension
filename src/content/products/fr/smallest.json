@@ -228,6 +228,10 @@
           {
             "src": "/assets/smallest (25).jpg",
             "alt": "Smallest photo 25"
+          },
+          {
+            "src": "/assets/Smallest poids.jpg",
+            "alt": "Smallest - Poids et portabilité"
           }
         ],
         "background": "light"
