@@ -5,6 +5,7 @@ publishDate: 2026-01-24
 tags: ["voyage", "avion", "télescope", "transport", "astronomie"]
 img: "/assets/Smallest_fullsize(1).jpg"
 img_alt: "Télescope Smallest dans sa configuration de transport pour avion"
+draft: true
 ---
 
 # Voyager en avion avec un télescope : Guide pratique et réglementation 2026

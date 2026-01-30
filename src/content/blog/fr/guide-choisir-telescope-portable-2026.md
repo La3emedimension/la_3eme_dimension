@@ -5,6 +5,7 @@ publishDate: 2026-01-24
 tags: ["guide", "télescope", "portable", "astronomie", "voyage"]
 img: "/assets/Smallest_fullsize(1).jpg"
 img_alt: "Télescope portable Smallest en configuration de transport"
+draft: true
 ---
 
 # Comment choisir un télescope portable en 2026 : Le guide complet
