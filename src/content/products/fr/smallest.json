@@ -229,10 +229,11 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Kit Smallest",
-        "price": "550€",
-        "priceNote": "Hors optiques",
+        "title": "Smallest avec optiques industrielles",
+        "price": "750€",
+        "priceNote": "Télescope complet",
         "included": [
+          "Optiques industrielles 150/750",
           "Structure en PETG chargé en fibre de carbone",
           "Tube carbone et leste amovible",
           "Porte-oculaire 1.25\"",
@@ -240,18 +241,18 @@
           "Monture Dobson intégrée",
           "Instructions de montage"
         ],
-        "ctaText": "Commander sans optiques",
-        "ctaHref": "https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05",
+        "ctaText": "Commander avec optiques",
+        "ctaHref": "https://buy.stripe.com/9B6dRb63wcltean5ms67S06",
         "afterCtaNote": "Un délai de conception d'environ 30 jours est nécessaire avant l'expédition, le temps de fabrication étant entièrement artisanal.",
-        "optionsTitle": "Options optiques",
+        "optionsTitle": "Autres options",
         "options": [
           {
-            "title": "Industrielles",
-            "description": "<div style=\"text-align: center;\">Rapport qualité/prix optimal<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Commander avec optiques - 750€</a></div>",
+            "title": "Kit Smallest",
+            "description": "<div style=\"text-align: center;\">Structure seule sans optiques - 550€ (hors optiques)<br><a href=\"https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Commander sans optiques</a></div>",
             "afterCtaNote": "Un délai de conception d'environ 30 jours est nécessaire avant l'expédition, le temps de fabrication étant entièrement artisanal."
           },
           {
-            "title": "Artisanal",
+            "title": "Optiques artisanales",
             "description": "<div style=\"text-align: center;\"><strong>Gallifrey Optics</strong> (primaire)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Mail : paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primaire/secondaire)<br><a href=\"https://www.costruzioniottichezen.com/\">site internet</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Nous contacter</a></div>",
             "afterCtaNote": "Un délai de conception d'environ 30 jours est nécessaire avant l'expédition, le temps de fabrication étant entièrement artisanal."
           }
