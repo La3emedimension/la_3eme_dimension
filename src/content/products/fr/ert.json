@@ -136,42 +136,7 @@
       "data": {
         "title": "Galerie du projet",
         "images": [
-          { 
-            "src": "/assets/draw ERT.png", 
-            "alt": "Schéma technique de la lunette E.R.T", 
-            "caption": "Schéma de montage détaillé - chaque module a un seul sens d'assemblage" 
-          },
-          { 
-            "src": "/assets/ERT 7.jpg", 
-            "alt": "Vue d'ensemble de la lunette", 
-            "caption": "Vue complète de la lunette E.R.T assemblée - design éducatif optimisé" 
-          },
-          { 
-            "src": "/assets/ERT 3.jpg", 
-            "alt": "Détail des modules", 
-            "caption": "Détail des différents modules - barillet, baffle, tube optique" 
-          },
-          { 
-            "src": "/assets/ERT.jpg", 
-            "alt": "Lunette en position d'observation", 
-            "caption": "Position d'observation - ergonomie pensée pour l'apprentissage" 
-          },
-          { 
-            "src": "/assets/ERT 2.jpg", 
-            "alt": "Vue latérale", 
-            "caption": "Profil de la lunette montrant la simplicité du design modulaire" 
-          },
-          { 
-            "src": "/assets/ERT 5.jpg", 
-            "alt": "Porte-oculaire et renvoi coudé", 
-            "caption": "Détail du porte-oculaire 1.25\" et du renvoi coudé avec prisme" 
-          },
-          { 
-            "src": "/assets/ERT 6.jpg", 
-            "alt": "Vue arrière", 
-            "caption": "Vue arrière montrant l'ergonomie d'observation" 
-          },
-          { 
+          {
             "src": "/assets/ERT 8.jpg", 
             "alt": "Détail objectif", 
             "caption": "Détail du barillet de lentille et du système anti-lumière parasite" 
