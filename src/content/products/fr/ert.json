@@ -43,7 +43,7 @@
       "id": "section-hero",
       "data": {
         "title": "E.R.T",
-        "tagline": "Lunette astronomique éducative",
+        "tagline": "\"Le jouet qui n'en est pas un\"",
         "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
         "features": [
           { "icon": "strategy", "text": "Design modulaire" },
