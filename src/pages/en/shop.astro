@@ -23,10 +23,12 @@ const categories = [
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
-	if (aSlug === 'sur-mesure' || aSlug === 'custom') return -1;
-	if (bSlug === 'sur-mesure' || bSlug === 'custom') return 1;
 	if (aSlug === 'smallest') return -1;
 	if (bSlug === 'smallest') return 1;
+	if (aSlug === 'ert') return -1;
+	if (bSlug === 'ert') return 1;
+	if (aSlug === 'sur-mesure' || aSlug === 'custom') return -1;
+	if (bSlug === 'sur-mesure' || bSlug === 'custom') return 1;
 	return 0;
 });
 
@@ -500,13 +502,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
-	if (surMesureCard) {
-		surMesureCard.style.order = '-2';
+	const smallestCard = Array.from(productCards).find(card =>
+		card.querySelector('a')?.href.includes('/smallest')
+	);
+	if (smallestCard) {
+		smallestCard.style.order = '-3';
 	}
 
-	const smallestCard = document.querySelector('.product-card[data-category="astronomie"]');
-	if (smallestCard) {
-		smallestCard.style.order = '-1';
+	const ertCard = Array.from(productCards).find(card =>
+		card.querySelector('a')?.href.includes('/ert')
+	);
+	if (ertCard) {
+		ertCard.style.order = '-2';
+	}
+
+	if (surMesureCard) {
+		surMesureCard.style.order = '-1';
 	}
 });
 </script>

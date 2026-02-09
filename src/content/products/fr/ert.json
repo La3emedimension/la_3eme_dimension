@@ -2,7 +2,7 @@
   "seoTitle": "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension",
   "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
   "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
+  "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
   "price": "200€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
@@ -28,7 +28,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ERT 4.jpg",
+    "image": "https://la3emedim.fr/assets/ert_montauban7.jpg",
     "features": [
       "Design modulaire éducatif",
       "Montage intuitif",
@@ -51,7 +51,7 @@
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
         "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ERT2025_1.png", "alt": "Lunette astronomique ERT assemblée" }
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique ERT à Montauban" }
       }
     },
     
@@ -137,44 +137,109 @@
         "title": "Galerie du projet",
         "images": [
           {
-            "src": "/assets/ERT 8.jpg", 
-            "alt": "Détail objectif", 
-            "caption": "Détail du barillet de lentille et du système anti-lumière parasite" 
+            "src": "/assets/ert_montauban1.jpeg",
+            "alt": "ERT à Montauban 1",
+            "caption": "Observation avec la lunette ERT à Montauban"
           },
-          { 
-            "src": "/assets/ertcolor1.jpeg", 
-            "alt": "Lunette ERT variante couleur 1", 
-            "caption": "Variante de couleur pour la lunette astronomique E.R.T" 
+          {
+            "src": "/assets/ert_montauban2.jpeg",
+            "alt": "ERT à Montauban 2",
+            "caption": "Séance d'observation astronomique avec l'ERT"
           },
-          { 
-            "src": "/assets/ertcolor2.jpeg", 
-            "alt": "Lunette ERT variante couleur 2", 
-            "caption": "Personnalisation possible avec différentes couleurs d'impression" 
+          {
+            "src": "/assets/ert_montauban3.jpeg",
+            "alt": "ERT à Montauban 3",
+            "caption": "Utilisation pédagogique de la lunette ERT"
           },
-          { 
-            "src": "/assets/ertcolor3.jpeg", 
-            "alt": "Lunette ERT variante couleur 3", 
-            "caption": "Exemple de customisation de couleur pour le projet éducatif" 
+          {
+            "src": "/assets/ert_montauban4.jpeg",
+            "alt": "ERT à Montauban 4",
+            "caption": "Démonstration de l'ERT lors d'une soirée d'observation"
           },
-          { 
-            "src": "/assets/ertcolor4.jpeg", 
-            "alt": "Lunette ERT variante couleur 4", 
-            "caption": "Diversité des options de couleurs disponibles" 
+          {
+            "src": "/assets/ert_montauban5.jpeg",
+            "alt": "ERT à Montauban 5",
+            "caption": "L'ERT en action à Montauban"
           },
-          { 
-            "src": "/assets/ertcolor5.jpeg", 
-            "alt": "Lunette ERT variante couleur 5", 
-            "caption": "Rendu visuel avec une autre palette de couleurs" 
+          {
+            "src": "/assets/ert_montauban6.jpeg",
+            "alt": "ERT à Montauban 6",
+            "caption": "Observation du ciel avec la lunette éducative"
           },
-          { 
-            "src": "/assets/ertcolor6.jpeg", 
-            "alt": "Lunette ERT variante couleur 6", 
-            "caption": "Possibilité d'adaptation selon les préférences éducatives" 
+          {
+            "src": "/assets/ert_montauban7.jpg",
+            "alt": "ERT à Montauban 7",
+            "caption": "Séance d'astronomie pratique avec l'ERT"
           },
-          { 
-            "src": "/assets/ertcolor7.jpeg", 
-            "alt": "Lunette ERT variante couleur 7", 
-            "caption": "Dernière variante de couleur pour compléter la collection" 
+          {
+            "src": "/assets/ert_montauban8.jpeg",
+            "alt": "ERT à Montauban 8",
+            "caption": "La lunette ERT en situation d'observation réelle"
+          },
+          {
+            "src": "/assets/ert_montauban9.jpeg",
+            "alt": "ERT à Montauban 9",
+            "caption": "Découverte du ciel étoilé avec l'ERT"
+          },
+          {
+            "src": "/assets/ert_montauban10.jpeg",
+            "alt": "ERT à Montauban 10",
+            "caption": "Utilisation de l'ERT lors d'un événement astronomique"
+          },
+          {
+            "src": "/assets/ert_montauban11.jpeg",
+            "alt": "ERT à Montauban 11",
+            "caption": "Observation à Montauban avec la lunette pédagogique"
+          },
+          {
+            "src": "/assets/ert_montauban12.jpeg",
+            "alt": "ERT à Montauban 12",
+            "caption": "L'ERT en démonstration à Montauban"
+          },
+          {
+            "src": "/assets/ert_montauban13.jpeg",
+            "alt": "ERT à Montauban 13",
+            "caption": "Séance d'observation avec l'ERT"
+          },
+          {
+            "src": "/assets/ert_montauban14.jpeg",
+            "alt": "ERT à Montauban 14",
+            "caption": "La lunette ERT lors d'une soirée astronomique à Montauban"
+          },
+          {
+            "src": "/assets/ertcolor1.jpeg",
+            "alt": "Lunette ERT variante couleur 1",
+            "caption": "Variante de couleur pour la lunette astronomique E.R.T"
+          },
+          {
+            "src": "/assets/ertcolor2.jpeg",
+            "alt": "Lunette ERT variante couleur 2",
+            "caption": "Personnalisation possible avec différentes couleurs d'impression"
+          },
+          {
+            "src": "/assets/ertcolor3.jpeg",
+            "alt": "Lunette ERT variante couleur 3",
+            "caption": "Exemple de customisation de couleur pour le projet éducatif"
+          },
+          {
+            "src": "/assets/ertcolor4.jpeg",
+            "alt": "Lunette ERT variante couleur 4",
+            "caption": "Diversité des options de couleurs disponibles"
+          },
+          {
+            "src": "/assets/ertcolor5.jpeg",
+            "alt": "Lunette ERT variante couleur 5",
+            "caption": "Rendu visuel avec une autre palette de couleurs"
+          },
+          {
+            "src": "/assets/ertcolor6.jpeg",
+            "alt": "Lunette ERT variante couleur 6",
+            "caption": "Possibilité d'adaptation selon les préférences éducatives"
+          },
+          {
+            "src": "/assets/ertcolor7.jpeg",
+            "alt": "Lunette ERT variante couleur 7",
+            "caption": "Dernière variante de couleur pour compléter la collection"
           }
         ],
         "background": "light"

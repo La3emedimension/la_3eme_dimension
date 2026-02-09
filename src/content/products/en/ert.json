@@ -2,7 +2,7 @@
   "seoTitle": "E.R.T - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
   "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
   "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/ERT 4.jpg",
+  "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
   "price": "€200",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
@@ -28,7 +28,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ERT 4.jpg",
+    "image": "https://la3emedim.fr/assets/ert_montauban7.jpg",
     "features": [
       "Modular educational design",
       "Intuitive assembly",
@@ -51,7 +51,7 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ERT2025_1.png", "alt": "Assembled ERT astronomical telescope" }
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "ERT astronomical telescope in Montauban" }
       }
     },
     {
@@ -141,39 +141,79 @@
             "caption": "Detailed assembly diagram - each module has only one assembly direction"
           },
           {
-            "src": "/assets/ERT 7.jpg",
-            "alt": "Overall telescope view",
-            "caption": "Complete view of assembled E.R.T telescope - optimized educational design"
-          },
-          {
-            "src": "/assets/ERT 3.jpg",
-            "alt": "Module details",
-            "caption": "Detail of different modules - barrel, baffle, optical tube"
-          },
-          {
             "src": "/assets/ERT.jpg",
             "alt": "Telescope in observation position",
             "caption": "Observation position - ergonomics designed for learning"
           },
           {
-            "src": "/assets/ERT 2.jpg",
-            "alt": "Side view",
-            "caption": "Telescope profile showing the simplicity of modular design"
+            "src": "/assets/ert_montauban1.jpeg",
+            "alt": "ERT in Montauban 1",
+            "caption": "Observation with the ERT telescope in Montauban"
           },
           {
-            "src": "/assets/ERT 5.jpg",
-            "alt": "Focuser and diagonal",
-            "caption": "Detail of 1.25\" focuser and prism diagonal"
+            "src": "/assets/ert_montauban2.jpeg",
+            "alt": "ERT in Montauban 2",
+            "caption": "Astronomical observation session with the ERT"
           },
           {
-            "src": "/assets/ERT 6.jpg",
-            "alt": "Rear view",
-            "caption": "Rear view showing observation ergonomics"
+            "src": "/assets/ert_montauban3.jpeg",
+            "alt": "ERT in Montauban 3",
+            "caption": "Educational use of the ERT telescope"
           },
           {
-            "src": "/assets/ERT 8.jpg",
-            "alt": "Objective detail",
-            "caption": "Detail of lens barrel and stray light blocking system"
+            "src": "/assets/ert_montauban4.jpeg",
+            "alt": "ERT in Montauban 4",
+            "caption": "ERT demonstration during an observation evening"
+          },
+          {
+            "src": "/assets/ert_montauban5.jpeg",
+            "alt": "ERT in Montauban 5",
+            "caption": "The ERT in action in Montauban"
+          },
+          {
+            "src": "/assets/ert_montauban6.jpeg",
+            "alt": "ERT in Montauban 6",
+            "caption": "Sky observation with the educational telescope"
+          },
+          {
+            "src": "/assets/ert_montauban7.jpg",
+            "alt": "ERT in Montauban 7",
+            "caption": "Practical astronomy session with the ERT"
+          },
+          {
+            "src": "/assets/ert_montauban8.jpeg",
+            "alt": "ERT in Montauban 8",
+            "caption": "The ERT telescope in real observation situation"
+          },
+          {
+            "src": "/assets/ert_montauban9.jpeg",
+            "alt": "ERT in Montauban 9",
+            "caption": "Discovering the starry sky with the ERT"
+          },
+          {
+            "src": "/assets/ert_montauban10.jpeg",
+            "alt": "ERT in Montauban 10",
+            "caption": "Using the ERT during an astronomical event"
+          },
+          {
+            "src": "/assets/ert_montauban11.jpeg",
+            "alt": "ERT in Montauban 11",
+            "caption": "Observation in Montauban with the educational telescope"
+          },
+          {
+            "src": "/assets/ert_montauban12.jpeg",
+            "alt": "ERT in Montauban 12",
+            "caption": "The ERT in demonstration in Montauban"
+          },
+          {
+            "src": "/assets/ert_montauban13.jpeg",
+            "alt": "ERT in Montauban 13",
+            "caption": "Observation session with the ERT"
+          },
+          {
+            "src": "/assets/ert_montauban14.jpeg",
+            "alt": "ERT in Montauban 14",
+            "caption": "The ERT telescope during an astronomical evening in Montauban"
           },
           {
             "src": "/assets/ertcolor1.jpeg",
