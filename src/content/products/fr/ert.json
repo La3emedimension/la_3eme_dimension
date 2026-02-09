@@ -96,10 +96,12 @@
             "title": "Caractéristiques",
             "specs": {
               "Type": "Lunette astronomique",
+              "Optique": "Doublet achromatique 20/200",
+              "Oculaire": "20mm",
               "Usage": "Éducatif/Initiation",
               "Montage": "Intuitif, un seul sens",
               "Observations": "Lune, amas, galaxies",
-              "Âge recommandé": "8 ans et plus"
+              "Âge recommandé": "Montage à faire avec un adulte"
             }
           },
           {

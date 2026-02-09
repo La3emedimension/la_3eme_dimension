@@ -95,10 +95,12 @@
             "title": "Characteristics",
             "specs": {
               "Type": "Astronomical telescope",
+              "Optics": "Achromatic doublet 20/200",
+              "Eyepiece": "20mm",
               "Usage": "Educational/Initiation",
               "Assembly": "Intuitive, one-way only",
               "Observations": "Moon, clusters, galaxies",
-              "Recommended age": "8 years and older"
+              "Recommended age": "Assembly to be done with an adult"
             }
           },
           {
