@@ -43,7 +43,7 @@
       "id": "section-hero",
       "data": {
         "title": "E.R.T",
-        "tagline": "\"Le jouet qui n'en est pas un\"",
+        "tagline": "\"L'expérience astronomique, à portée de mains\"",
         "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
         "features": [
           { "icon": "strategy", "text": "Design modulaire" },
@@ -96,7 +96,7 @@
             "title": "Caractéristiques",
             "specs": {
               "Type": "Lunette astronomique",
-              "Optique": "Doublet achromatique 20/200",
+              "Optique": "Doublet achromatique 50/200",
               "Oculaire": "20mm",
               "Usage": "Éducatif/Initiation",
               "Montage": "Intuitif, un seul sens",
