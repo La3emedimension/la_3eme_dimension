@@ -14,13 +14,17 @@ const { items } = Astro.props;
 <nav class="product-navigation" id="product-nav">
 	<div class="nav-container">
 		<ul class="nav-list">
-			{items.map(item => (
-				<li class="nav-item">
-					<a href={`#${item.id}`} class="nav-link" data-section={item.id}>
-						{item.label}
-					</a>
-				</li>
-			))}
+			{items.map(item => {
+				// Handle both formats: "section-hero" and "hero"
+				const sectionId = item.id.startsWith('section-') ? item.id : `section-${item.id}`;
+				return (
+					<li class="nav-item">
+						<a href={`#${sectionId}`} class="nav-link" data-section={item.id}>
+							{item.label}
+						</a>
+					</li>
+				);
+			})}
 		</ul>
 	</div>
 </nav>
@@ -51,21 +55,23 @@ const { items } = Astro.props;
 		// Scroll spy - highlight current section
 		function updateActiveLink() {
 			const scrollPosition = window.scrollY + 100;
-			
+
 			let currentSection = '';
 			sections.forEach(section => {
 				const sectionTop = section.offsetTop;
 				const sectionHeight = section.offsetHeight;
-				
+
 				if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
 					// Use the exact section ID for comparison
 					currentSection = section.id;
 				}
 			});
-			
+
 			// Update active states
 			navLinks.forEach(link => {
-				const isActive = link.dataset.section === currentSection;
+				// Match both with and without "section-" prefix
+				const linkSection = link.dataset.section;
+				const isActive = linkSection === currentSection || `section-${linkSection}` === currentSection;
 				link.classList.toggle('active', isActive);
 			});
 		}
@@ -78,15 +84,19 @@ const { items } = Astro.props;
 					window.location.href = 'https://la3emedim.fr/carte-communaute';
 					return;
 				}
-				
+
 				e.preventDefault();
 				const targetId = link.dataset.section;
-				const targetElement = document.getElementById(targetId);
-				
+				// Try to find element with or without "section-" prefix
+				let targetElement = document.getElementById(targetId);
+				if (!targetElement) {
+					targetElement = document.getElementById(`section-${targetId}`);
+				}
+
 				if (targetElement) {
 					const offset = 80; // Account for fixed nav
 					const targetPosition = targetElement.offsetTop - offset;
-					
+
 					window.scrollTo({
 						top: targetPosition,
 						behavior: 'smooth'
