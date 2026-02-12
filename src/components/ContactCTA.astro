@@ -12,16 +12,27 @@ const t = useTranslations(locale);
 ---
 
 <aside>
-	<h2>{t.contact.title}</h2>
-	<div class="contact-buttons">
-		<CallToAction href="mailto:la3emedim@gmail.com">
-			{t.contact.cta}
-			<Icon icon="paper-plane-tilt" size="1.2em" />
-		</CallToAction>
-		<CallToAction href="tel:0760853870">
-			07 60 85 38 70
-			<Icon icon="phone" size="1.2em" />
-		</CallToAction>
+	<div class="contact-content">
+		<h2>{t.contact.title}</h2>
+		<div class="contact-buttons">
+			<CallToAction href="mailto:la3emedim@gmail.com">
+				{t.contact.cta}
+				<Icon icon="paper-plane-tilt" size="1.2em" />
+			</CallToAction>
+			<CallToAction href="tel:0760853870">
+				07 60 85 38 70
+				<Icon icon="phone" size="1.2em" />
+			</CallToAction>
+		</div>
+	</div>
+	<div class="fab-logo">
+		<div class="fab-main">
+			<div class="fab-text">
+				<p class="fab-title">Labellisé Fabriqué en Occitanie</p>
+				<p class="fab-description">De l'idée à l'impression, toutes nos conceptions et créations sont réalisées et produites dans le Tarn-et-Garonne.</p>
+			</div>
+			<img src="/assets/LOGO-FAB-OCC-Q.png" alt="FAB OCC" />
+		</div>
 	</div>
 </aside>
 
@@ -38,10 +49,17 @@ const t = useTranslations(locale);
 		box-shadow: var(--shadow-sm);
 	}
 
+	.contact-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+	}
+
 	h2 {
 		font-size: var(--text-xl);
 		text-align: center;
-		max-width: 20ch;
+		white-space: nowrap;
 	}
 
 	.contact-buttons {
@@ -51,22 +69,92 @@ const t = useTranslations(locale);
 		align-items: center;
 	}
 
+	.contact-buttons :global(a) {
+		font-size: var(--text-sm) !important;
+		padding: 0.5em 1.5em !important;
+	}
+
+	.fab-logo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		max-width: 600px;
+	}
+
+	.fab-main {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.fab-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.fab-title {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		color: var(--gray-200);
+		margin: 0;
+		text-align: right;
+	}
+
+	.fab-logo img {
+		max-height: 120px;
+		width: auto;
+	}
+
+	.fab-description {
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+		margin: 0;
+		text-align: right;
+		line-height: 1.5;
+	}
+
 	@media (min-width: 50em) {
 		aside {
 			padding: 7.5rem;
 			flex-direction: row;
-			flex-wrap: wrap;
 			justify-content: space-between;
+			align-items: center;
+		}
+
+		.contact-content {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
 		}
 
 		h2 {
-			font-size: var(--text-3xl);
+			font-size: var(--text-2xl);
 			text-align: left;
 		}
 
 		.contact-buttons {
 			flex-direction: row;
 			gap: 2rem;
+		}
+
+		.contact-buttons :global(a) {
+			font-size: var(--text-md) !important;
+			padding: 0.75rem 1.75rem !important;
+		}
+
+		.fab-logo {
+			align-items: flex-end;
+		}
+
+		.fab-title {
+			font-size: var(--text-xl);
+		}
+
+		.fab-logo img {
+			max-height: 150px;
 		}
 	}
 </style>
