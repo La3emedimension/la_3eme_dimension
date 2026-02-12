@@ -124,6 +124,17 @@ const shopStructuredData = {
 											))}
 										</ul>
 									)}
+
+									{product.data.price && (
+										<div class="card-footer">
+											<div class="price-section">
+												<span class="price">{product.data.price}</span>
+												{product.data.priceNote && (
+													<span class="price-note">{product.data.priceNote}</span>
+												)}
+											</div>
+										</div>
+									)}
 								</div>
 							</a>
 						</article>
