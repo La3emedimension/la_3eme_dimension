@@ -25,7 +25,7 @@ const t = useTranslations(locale);
 			</CallToAction>
 		</div>
 	</div>
-	<div class="fab-logo">
+	<a href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer" class="fab-logo">
 		<div class="fab-main">
 			<div class="fab-text">
 				<p class="fab-title">Labellisé Fabriqué en Occitanie</p>
@@ -33,7 +33,7 @@ const t = useTranslations(locale);
 			</div>
 			<img src="/assets/LOGO-FAB-OCC-Q.png" alt="FAB OCC" />
 		</div>
-	</div>
+	</a>
 </aside>
 
 <style>
@@ -80,6 +80,20 @@ const t = useTranslations(locale);
 		align-items: center;
 		justify-content: center;
 		max-width: 600px;
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.3s ease;
+		border-radius: 1rem;
+		padding: 1rem;
+	}
+
+	.fab-logo:hover {
+		background: rgba(255, 255, 255, 0.05);
+		transform: translateY(-2px);
+	}
+
+	.fab-logo:hover .fab-title {
+		color: var(--accent-regular);
 	}
 
 	.fab-main {
