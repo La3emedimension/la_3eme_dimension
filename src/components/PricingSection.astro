@@ -5,20 +5,23 @@ interface PricingOption {
     title: string;
     priceNote?: string;
     included?: string[];
-    description: string;
+    description?: string;
     afterCtaNote?: string;
+    ctaText?: string;
+    ctaHref?: string;
 }
 
 interface Props {
     title: string;
-    price: string;
-    priceNote: string;
-    included: string[];
-    ctaText: string;
-    ctaHref: string;
-    optionsTitle: string;
+    price?: string;
+    priceNote?: string;
+    included?: string[];
+    ctaText?: string;
+    ctaHref?: string;
+    optionsTitle?: string;
     options: PricingOption[];
     afterCtaNote?: string;
+    layout?: string;
     locale?: Locale;
 }
 
@@ -26,12 +29,13 @@ const {
     title,
     price,
     priceNote,
-    included,
+    included = [],
     ctaText,
     ctaHref,
     optionsTitle,
     options,
     afterCtaNote,
+    layout,
     locale = 'fr',
 } = Astro.props;
 
@@ -42,30 +46,57 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
 <section class="pricing-section" id="pricing">
     <div class="container">
-        <h2>{t.product.pricingTitle}</h2>
-        <div class={`pricing-grid ${options.length === 0 ? 'single-card' : ''}`}>
-            <div class="pricing-card main-offer">
-                <h3>{title}</h3>
-                <div class="price">{price}</div>
-                <p class="price-note">{priceNote}</p>
-                <ul class="included">
-                    {included.map((item) => <li>{item}</li>)}
-                </ul>
-                <a
-                    href={ctaHref}
-                    class="cta-primary"
-                    {...isExternalLink(ctaHref) && { target: '_blank', rel: 'noopener noreferrer' }}
-                >
-                    {ctaText}
-                </a>
-                {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
+        <h2>{title || t.product.pricingTitle}</h2>
+        {layout === 'cards' ? (
+            <div class="options-cards-grid">
+                {options.map((option) => (
+                    <div class="option-card">
+                        <h3>{option.title}</h3>
+                        {option.priceNote && <div class="price">{option.priceNote}</div>}
+                        {option.included && (
+                            <ul class="included">
+                                {option.included.map((item) => <li>{item}</li>)}
+                            </ul>
+                        )}
+                        {option.description && <p set:html={option.description} />}
+                        {option.ctaHref && (
+                            <a
+                                href={option.ctaHref}
+                                class="cta-primary"
+                                {...isExternalLink(option.ctaHref) && { target: '_blank', rel: 'noopener noreferrer' }}
+                            >
+                                {option.ctaText || 'Commander'}
+                            </a>
+                        )}
+                        {option.afterCtaNote && <p class="after-cta-note" set:html={option.afterCtaNote} />}
+                    </div>
+                ))}
             </div>
-            {options.length > 0 && (
-                <div class="pricing-card">
-                    <h3>{optionsTitle}</h3>
-                    <div class="optics-options">
-                        {
-                            options.map((option) => (
+        ) : (
+            <div class={`pricing-grid ${options.length === 0 ? 'single-card' : ''}`}>
+                <div class="pricing-card main-offer">
+                    <h3>{title}</h3>
+                    <div class="price">{price}</div>
+                    <p class="price-note">{priceNote}</p>
+                    <ul class="included">
+                        {included.map((item) => <li>{item}</li>)}
+                    </ul>
+                    {ctaHref && (
+                        <a
+                            href={ctaHref}
+                            class="cta-primary"
+                            {...isExternalLink(ctaHref) && { target: '_blank', rel: 'noopener noreferrer' }}
+                        >
+                            {ctaText}
+                        </a>
+                    )}
+                    {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
+                </div>
+                {options.length > 0 && (
+                    <div class="pricing-card">
+                        <h3>{optionsTitle}</h3>
+                        <div class="optics-options">
+                            {options.map((option) => (
                                 <div class="option">
                                     <h4>{option.title}</h4>
                                     {option.priceNote && <p class="option-price-note">{option.priceNote}</p>}
@@ -74,15 +105,15 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
                                             {option.included.map((item) => <li>{item}</li>)}
                                         </ul>
                                     )}
-                                    <p set:html={option.description} />
+                                    {option.description && <p set:html={option.description} />}
                                     {option.afterCtaNote && <p class="after-cta-note" set:html={option.afterCtaNote} />}
                                 </div>
-                            ))
-                        }
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        )}
     </div>
 </section>
 
@@ -259,7 +290,59 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
         transform: translateY(-2px);
     }
 
+    .options-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .option-card {
+        background: var(--gray-999);
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--gray-800);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .option-card h3 {
+        font-size: 1.2rem;
+        color: var(--gray-100);
+    }
+
+    .option-card .price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent-regular);
+        margin-bottom: 0;
+    }
+
+    .option-card .included {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .option-card .cta-primary {
+        margin-top: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+        .options-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
     @media (max-width: 768px) {
+        .options-cards-grid {
+            grid-template-columns: 1fr;
+        }
+
         .pricing-grid {
             grid-template-columns: 1fr;
         }

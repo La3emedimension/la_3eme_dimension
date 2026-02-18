@@ -1,0 +1,141 @@
+{
+  "seoTitle": "3D Printed Bahtinov Mask | La 3ème dimension",
+  "seoDescription": "3D printed Bahtinov masks for precise focusing. Compatible with Askar FRA500, TS 80/544, SVbony SV106, Williams Optics 50/200.",
+  "seoKeywords": "bahtinov mask, focus mask, astronomy, 3d printing, askar fra500, ts 80 544, svbony sv106, williams optics",
+  "ogImage": "/assets/Bathinov7.jpg",
+  "price": "€12.99",
+  "priceNote": "Starting from",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Bahtinov Mask",
+    "description": "3D printed Bahtinov masks for precise focusing on your astronomical instruments.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astronomy accessories",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "12.99",
+      "highPrice": "16.99",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Bahtinov Mask",
+        "tagline": "Perfect focus, every time",
+        "description": "An essential accessory for any serious astronomer. The Bahtinov mask creates a characteristic diffraction pattern that allows you to achieve optimal focus in seconds, even with the most demanding instruments.",
+        "features": [
+          { "icon": "eye", "text": "Precise and fast focusing" },
+          { "icon": "cube-3d", "text": "High quality 3D printing" },
+          { "icon": "strategy", "text": "4 models available" }
+        ],
+        "primaryCta": { "text": "Choose my model", "href": "#section-modeles" },
+        "heroImage": { "src": "/assets/Bathinov7.jpg", "alt": "3D printed Bahtinov mask" }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-pourquoi",
+      "data": {
+        "title": "Why use a Bahtinov mask?",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "Foolproof focusing",
+            "description": "The 3-spike diffraction pattern visually tells you when focus is perfect — no guesswork."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Save time",
+            "description": "No more endless back-and-forth. Achieve focus in seconds, even in the dark."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "Custom 3D printing",
+            "description": "Each mask is designed and printed specifically to fit your instrument perfectly."
+          },
+          {
+            "icon": "gear",
+            "title": "Astrophotography ready",
+            "description": "Ideal for star focusing before your astrophotography sessions."
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-modeles",
+      "data": {
+        "title": "Choose your model",
+        "layout": "cards",
+        "options": [
+          {
+            "title": "Askar FRA500",
+            "priceNote": "€16.99",
+            "ctaText": "Order",
+            "ctaHref": "https://buy.stripe.com/aFa9AV9fIadlaYbdSY67S0b"
+          },
+          {
+            "title": "TS 80/544",
+            "priceNote": "€16.99",
+            "ctaText": "Order",
+            "ctaHref": "https://buy.stripe.com/dRmfZjajMgBJ4zN4io67S0c"
+          },
+          {
+            "title": "SVbony SV106",
+            "priceNote": "€12.99",
+            "ctaText": "Order",
+            "ctaHref": "https://buy.stripe.com/00wcN7dvYetB0jx7uA67S0d"
+          },
+          {
+            "title": "Williams Optics 50/200",
+            "priceNote": "€12.99",
+            "ctaText": "Order",
+            "ctaHref": "https://buy.stripe.com/5kQ8wR77A4T1ean3ek67S0e"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Gallery",
+        "images": [
+          { "src": "/assets/Bathinov7.jpg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Bathinov8.jpeg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Bathinov9.jpeg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Bathinov10.jpeg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Bathinov11.jpeg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Bathinov12.jpg", "alt": "Bahtinov mask" },
+          { "src": "/assets/Askar FRA500.jpeg", "alt": "Bahtinov mask - Askar FRA500" },
+          { "src": "/assets/Askar FRA500.jpg", "alt": "Bahtinov mask - Askar FRA500" }
+        ],
+        "background": "light"
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "pourquoi", "label": "Why?" },
+    { "id": "modeles", "label": "Models" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "accessoire",
+  "draft": false
+}

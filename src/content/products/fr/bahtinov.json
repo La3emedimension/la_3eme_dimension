@@ -1,0 +1,141 @@
+{
+  "seoTitle": "Masque de Bahtinov imprimé 3D | La 3ème dimension",
+  "seoDescription": "Masques de Bahtinov imprimés en 3D pour une mise au point précise. Compatible Askar FRA500, TS 80/544, SVbony SV106, Williams Optics 50/200.",
+  "seoKeywords": "masque de bahtinov, mise au point, focus mask, astronomie, impression 3d, askar fra500, ts 80 544, svbony sv106, williams optics",
+  "ogImage": "/assets/Bathinov7.jpg",
+  "price": "12,99€",
+  "priceNote": "À partir de",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Masque de Bahtinov",
+    "description": "Masques de Bahtinov imprimés en 3D pour une mise au point précise sur vos instruments astronomiques.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Accessoires astronomie",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "12.99",
+      "highPrice": "16.99",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Masque de Bahtinov",
+        "tagline": "La mise au point parfaite, à coup sûr",
+        "description": "Accessoire indispensable pour tout astronome sérieux. Le masque de Bahtinov crée un patron de diffraction caractéristique qui permet d'atteindre la mise au point optimale en quelques secondes, même sur les instruments les plus exigeants.",
+        "features": [
+          { "icon": "eye", "text": "Mise au point précise et rapide" },
+          { "icon": "cube-3d", "text": "Impression 3D haute qualité" },
+          { "icon": "strategy", "text": "4 modèles disponibles" }
+        ],
+        "primaryCta": { "text": "Choisir mon modèle", "href": "#section-modeles" },
+        "heroImage": { "src": "/assets/Bathinov7.jpg", "alt": "Masque de Bahtinov imprimé en 3D" }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-pourquoi",
+      "data": {
+        "title": "Pourquoi un masque de Bahtinov ?",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "Mise au point infaillible",
+            "description": "Le patron de diffraction en 3 traits vous indique visuellement et sans ambiguïté quand la mise au point est parfaite."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Gain de temps",
+            "description": "Fini les allers-retours interminables. La mise au point est atteinte en quelques secondes, même de nuit."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "Impression 3D sur mesure",
+            "description": "Chaque masque est conçu et imprimé spécifiquement pour s'adapter parfaitement à votre instrument."
+          },
+          {
+            "icon": "gear",
+            "title": "Compatible astrophoto",
+            "description": "Idéal pour la mise au point sur les étoiles avant vos séances d'astrophotographie."
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-modeles",
+      "data": {
+        "title": "Choisissez votre modèle",
+        "layout": "cards",
+        "options": [
+          {
+            "title": "Askar FRA500",
+            "priceNote": "16,99€",
+            "ctaText": "Commander",
+            "ctaHref": "https://buy.stripe.com/aFa9AV9fIadlaYbdSY67S0b"
+          },
+          {
+            "title": "TS 80/544",
+            "priceNote": "16,99€",
+            "ctaText": "Commander",
+            "ctaHref": "https://buy.stripe.com/dRmfZjajMgBJ4zN4io67S0c"
+          },
+          {
+            "title": "SVbony SV106",
+            "priceNote": "12,99€",
+            "ctaText": "Commander",
+            "ctaHref": "https://buy.stripe.com/00wcN7dvYetB0jx7uA67S0d"
+          },
+          {
+            "title": "Williams Optics 50/200",
+            "priceNote": "12,99€",
+            "ctaText": "Commander",
+            "ctaHref": "https://buy.stripe.com/5kQ8wR77A4T1ean3ek67S0e"
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie",
+        "images": [
+          { "src": "/assets/Bathinov7.jpg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Bathinov8.jpeg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Bathinov9.jpeg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Bathinov10.jpeg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Bathinov11.jpeg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Bathinov12.jpg", "alt": "Masque de Bahtinov" },
+          { "src": "/assets/Askar FRA500.jpeg", "alt": "Masque de Bahtinov - Askar FRA500" },
+          { "src": "/assets/Askar FRA500.jpg", "alt": "Masque de Bahtinov - Askar FRA500" }
+        ],
+        "background": "light"
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "pourquoi", "label": "Pourquoi ?" },
+    { "id": "modeles", "label": "Modèles" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "accessoire",
+  "draft": false
+}

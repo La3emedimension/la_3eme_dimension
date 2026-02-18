@@ -8,7 +8,7 @@ interface Props {
 	features: Array<{icon: string, text: string}>;
 	primaryCta: {text: string, href: string};
 	secondaryCta?: {text: string, href: string};
-	heroImage: {src: string, alt: string};
+	heroImage?: {src: string, alt: string};
 	afterCtaNote?: string;
 	warning?: string;
 }
@@ -62,12 +62,14 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 				</div>
 			)}
 		</div>
-		<div class="hero-media">
-			<div class="hero-image-wrapper">
-				<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
-				<img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />
+		{heroImage && (
+			<div class="hero-media">
+				<div class="hero-image-wrapper">
+					<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
+					<img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />
+				</div>
 			</div>
-		</div>
+		)}
 	</div>
 </section>
 
