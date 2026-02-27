@@ -80,4 +80,13 @@ export interface Translations {
     previousImage: string;
     nextImage: string;
   };
+  newsletter: {
+    title: string;
+    description: string;
+    emailPlaceholder: string;
+    submitButton: string;
+    errorMessage: string;
+    successMessage: string;
+    disclaimer: string;
+  };
 }

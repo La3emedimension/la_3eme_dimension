@@ -80,4 +80,13 @@ export const en: Translations = {
     previousImage: 'Previous image',
     nextImage: 'Next image',
   },
+  newsletter: {
+    title: 'Subscribe to the Newsletter',
+    description: 'New products, events and observation tips. One newsletter every 2 months.',
+    emailPlaceholder: 'your@email.com',
+    submitButton: 'Subscribe',
+    errorMessage: 'We could not confirm your subscription.',
+    successMessage: 'Your subscription is confirmed.',
+    disclaimer: 'By subscribing, you agree to receive our newsletter. You can unsubscribe at any time.',
+  },
 };

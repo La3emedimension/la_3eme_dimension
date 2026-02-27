@@ -80,4 +80,13 @@ export const fr: Translations = {
     previousImage: 'Image précédente',
     nextImage: 'Image suivante',
   },
+  newsletter: {
+    title: 'Inscrivez-vous à la Newsletter',
+    description: 'Nouveautés produits, événements et conseils d\'observation. Une newsletter tous les 2 mois.',
+    emailPlaceholder: 'votre@email.com',
+    submitButton: 'S\'inscrire',
+    errorMessage: 'Nous n\'avons pas pu confirmer votre inscription.',
+    successMessage: 'Votre inscription est confirmée.',
+    disclaimer: 'En vous inscrivant, vous acceptez de recevoir notre newsletter. Désinscription possible à tout moment.',
+  },
 };
