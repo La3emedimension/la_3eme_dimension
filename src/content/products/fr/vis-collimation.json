@@ -1,0 +1,211 @@
+{
+  "seoTitle": "Vis moletées de collimation - Accessoire télescope Newton | La 3ème dimension",
+  "seoDescription": "Vis moletées de collimation imprimées en 3D pour télescope Newton. Remplacement facile des vis standard pour un réglage précis et confortable du miroir primaire.",
+  "seoKeywords": "vis collimation, vis moletées télescope, collimation newton, réglage miroir, accessoire télescope, impression 3d astronomie, vis de réglage, miroir primaire",
+  "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
+  "price": "15€",
+  "priceNote": "Jeu de 3 vis",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Vis moletées de collimation pour télescope Newton",
+    "description": "Vis moletées de collimation imprimées en 3D pour télescope Newton. Remplacent les vis standard pour un réglage plus facile et précis du miroir primaire.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Accessoires astronomiques",
+    "offers": {
+      "@type": "Offer",
+      "price": "15",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
+    "features": [
+      "Impression 3D haute précision",
+      "Molette ergonomique",
+      "Compatible télescopes Newton",
+      "Jeu de 3 vis",
+      "Réglage sans outil",
+      "Matériau résistant PETG"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Vis moletées de collimation",
+        "tagline": "Facilitez vos réglages de collimation",
+        "description": "Vis moletées de collimation imprimées en 3D pour remplacer les vis standard de votre télescope Newton. Réglage du miroir primaire plus facile et précis grâce aux molettes ergonomiques.",
+        "features": [
+          {
+            "icon": "precision",
+            "text": "Réglage précis"
+          },
+          {
+            "icon": "ergonomics",
+            "text": "Sans outil"
+          },
+          {
+            "icon": "compatibility",
+            "text": "Compatible Newton"
+          }
+        ],
+        "primaryCta": {
+          "text": "Commander maintenant",
+          "href": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f"
+        },
+        "heroImage": {
+          "src": "/assets/visdecollim/visdecollim0.jpeg",
+          "alt": "Vis moletées de collimation pour télescope Newton"
+        }
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie",
+        "images": [
+          {
+            "src": "/assets/visdecollim/visdecollim0.jpeg",
+            "alt": "Vis moletées de collimation - Vue d'ensemble",
+            "caption": "Jeu de 3 vis moletées de collimation"
+          },
+          {
+            "src": "/assets/visdecollim/visdecollim1.jpeg",
+            "alt": "Vis moletées de collimation - Détail",
+            "caption": "Détail de la molette ergonomique"
+          },
+          {
+            "src": "/assets/visdecollim/visdecollim2.jpeg",
+            "alt": "Vis moletées de collimation - Installation",
+            "caption": "Exemple d'installation sur télescope"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Caractéristiques",
+        "features": [
+          {
+            "icon": "precision",
+            "title": "Réglage précis et facile",
+            "description": "Molettes ergonomiques permettant un réglage fin du miroir primaire sans outil"
+          },
+          {
+            "icon": "durability",
+            "title": "Résistantes et durables",
+            "description": "Fabriquées en PETG haute résistance, ces vis supportent les manipulations répétées"
+          },
+          {
+            "icon": "compatibility",
+            "title": "Compatibilité universelle",
+            "description": "S'adaptent sur la plupart des télescopes Newton standard"
+          },
+          {
+            "icon": "easy-install",
+            "title": "Installation simple",
+            "description": "Remplacent directement les vis standard de votre télescope"
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Dimensions et conception",
+            "specs": {
+              "Diamètre molette": "30mm",
+              "Filetage": "M4 ou M5 (préciser à la commande)",
+              "Matériau": "PETG haute qualité",
+              "Couleur": "Noir",
+              "Poids unitaire": "5g"
+            }
+          },
+          {
+            "title": "Contenu du kit",
+            "specs": {
+              "Quantité": "3 vis moletées",
+              "Compatibilité": "Télescopes Newton",
+              "Installation": "Remplacement direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Vis moletées de collimation",
+        "price": "15€",
+        "priceNote": "Jeu de 3 vis",
+        "included": [
+          "3 vis moletées de collimation",
+          "Filetage au choix (M4 ou M5)",
+          "Conseils d'installation"
+        ],
+        "ctaText": "Commander",
+        "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
+        "optionsTitle": "Options de filetage",
+        "options": [
+          {
+            "title": "Filetage M4",
+            "description": "Pour la plupart des télescopes Newton standard"
+          },
+          {
+            "title": "Filetage M5",
+            "description": "Pour certains télescopes de plus grand diamètre"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Présentation"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Galerie"
+    },
+    {
+      "id": "section-features",
+      "label": "Fonctionnalités"
+    },
+    {
+      "id": "section-specs",
+      "label": "Spécifications"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Tarifs"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}
