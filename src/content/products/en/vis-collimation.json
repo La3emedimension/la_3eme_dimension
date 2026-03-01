@@ -1,0 +1,211 @@
+{
+  "seoTitle": "Collimation Knobs - Newton Telescope Accessory | La 3ème dimension",
+  "seoDescription": "3D printed collimation knobs for Newton telescope. Easy replacement of standard screws for precise and comfortable primary mirror adjustment.",
+  "seoKeywords": "collimation screws, telescope knobs, newton collimation, mirror adjustment, telescope accessory, 3d printing astronomy, adjustment screws, primary mirror",
+  "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
+  "price": "15€",
+  "priceNote": "Set of 3 knobs",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Collimation knobs for Newton telescope",
+    "description": "3D printed collimation knobs for Newton telescope. Replace standard screws for easier and more precise primary mirror adjustment.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astronomical Accessories",
+    "offers": {
+      "@type": "Offer",
+      "price": "15",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
+    "features": [
+      "High precision 3D printing",
+      "Ergonomic knobs",
+      "Compatible with Newton telescopes",
+      "Set of 3 screws",
+      "Tool-free adjustment",
+      "Resistant PETG material"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Collimation Knobs",
+        "tagline": "Simplify your collimation adjustments",
+        "description": "3D printed collimation knobs to replace the standard screws on your Newton telescope. Easier and more precise primary mirror adjustment thanks to ergonomic knobs.",
+        "features": [
+          {
+            "icon": "precision",
+            "text": "Precise adjustment"
+          },
+          {
+            "icon": "ergonomics",
+            "text": "Tool-free"
+          },
+          {
+            "icon": "compatibility",
+            "text": "Newton compatible"
+          }
+        ],
+        "primaryCta": {
+          "text": "Order now",
+          "href": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f"
+        },
+        "heroImage": {
+          "src": "/assets/visdecollim/visdecollim0.jpeg",
+          "alt": "Collimation knobs for Newton telescope"
+        }
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Gallery",
+        "images": [
+          {
+            "src": "/assets/visdecollim/visdecollim0.jpeg",
+            "alt": "Collimation knobs - Overview",
+            "caption": "Set of 3 collimation knobs"
+          },
+          {
+            "src": "/assets/visdecollim/visdecollim1.jpeg",
+            "alt": "Collimation knobs - Detail",
+            "caption": "Detail of the ergonomic knob"
+          },
+          {
+            "src": "/assets/visdecollim/visdecollim2.jpeg",
+            "alt": "Collimation knobs - Installation",
+            "caption": "Installation example on telescope"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Features",
+        "features": [
+          {
+            "icon": "precision",
+            "title": "Precise and easy adjustment",
+            "description": "Ergonomic knobs allowing fine adjustment of the primary mirror without tools"
+          },
+          {
+            "icon": "durability",
+            "title": "Resistant and durable",
+            "description": "Made from high-resistance PETG, these screws withstand repeated handling"
+          },
+          {
+            "icon": "compatibility",
+            "title": "Universal compatibility",
+            "description": "Fit most standard Newton telescopes"
+          },
+          {
+            "icon": "easy-install",
+            "title": "Simple installation",
+            "description": "Directly replace your telescope's standard screws"
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical Specifications",
+        "specGroups": [
+          {
+            "title": "Dimensions and design",
+            "specs": {
+              "Knob diameter": "30mm",
+              "Thread": "M4 or M5 (specify when ordering)",
+              "Material": "High quality PETG",
+              "Color": "Black",
+              "Unit weight": "5g"
+            }
+          },
+          {
+            "title": "Kit contents",
+            "specs": {
+              "Quantity": "3 knobs",
+              "Compatibility": "Newton telescopes",
+              "Installation": "Direct replacement"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Collimation Knobs",
+        "price": "15€",
+        "priceNote": "Set of 3 screws",
+        "included": [
+          "3 collimation knobs",
+          "Thread of your choice (M4 or M5)",
+          "Installation tips"
+        ],
+        "ctaText": "Order",
+        "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
+        "optionsTitle": "Thread options",
+        "options": [
+          {
+            "title": "M4 thread",
+            "description": "For most standard Newton telescopes"
+          },
+          {
+            "title": "M5 thread",
+            "description": "For some larger diameter telescopes"
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Presentation"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Gallery"
+    },
+    {
+      "id": "section-features",
+      "label": "Features"
+    },
+    {
+      "id": "section-specs",
+      "label": "Specifications"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Pricing"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}
