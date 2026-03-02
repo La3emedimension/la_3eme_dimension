@@ -11,9 +11,10 @@ interface Props {
 	heroImage?: {src: string, alt: string};
 	afterCtaNote?: string;
 	warning?: string;
+	ecoWarning?: string;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning, ecoWarning } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
@@ -36,6 +37,11 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 			{warning && (
 				<div class="warning-box">
 					<p class="warning-text">{warning}</p>
+				</div>
+			)}
+			{ecoWarning && (
+				<div class="eco-warning-box">
+					<p class="eco-warning-text">{ecoWarning}</p>
 				</div>
 			)}
 			{(primaryCta || secondaryCta || afterCtaNote) && (
@@ -125,6 +131,24 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
 	.warning-text {
 		color: #dc2626;
+		font-weight: 600;
+		font-size: 0.95rem;
+		margin: 0;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.eco-warning-box {
+		background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+		border: 2px solid #4ade80;
+		border-radius: 0.75rem;
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+		box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.1);
+	}
+
+	.eco-warning-text {
+		color: #15803d;
 		font-weight: 600;
 		font-size: 0.95rem;
 		margin: 0;
