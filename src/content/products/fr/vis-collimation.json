@@ -1,7 +1,7 @@
 {
   "seoTitle": "Vis moletées de collimation - Accessoire télescope Newton | La 3ème dimension",
-  "seoDescription": "Vis moletées de collimation imprimées en 3D pour télescope Newton. Remplacement facile des vis standard pour un réglage précis et confortable du miroir primaire.",
-  "seoKeywords": "vis collimation, vis moletées télescope, collimation newton, réglage miroir, accessoire télescope, impression 3d astronomie, vis de réglage, miroir primaire",
+  "seoDescription": "Vis moletées de collimation pour télescope Newton. Remplacement facile des vis standard pour un réglage précis et confortable du miroir primaire.",
+  "seoKeywords": "vis collimation, vis moletées télescope, collimation newton, réglage miroir, accessoire télescope, vis de réglage, miroir primaire",
   "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
   "price": "15€",
   "priceNote": "Jeu de 3 vis",
@@ -12,7 +12,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Vis moletées de collimation pour télescope Newton",
-    "description": "Vis moletées de collimation imprimées en 3D pour télescope Newton. Remplacent les vis standard pour un réglage plus facile et précis du miroir primaire.",
+    "description": "Vis moletées de collimation pour télescope Newton. Remplacent les vis standard pour un réglage plus facile et précis du miroir primaire.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -35,12 +35,10 @@
     },
     "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
     "features": [
-      "Impression 3D haute précision",
       "Molette ergonomique",
       "Compatible télescopes Newton",
-      "Jeu de 3 vis",
-      "Réglage sans outil",
-      "Matériau résistant PETG"
+      "Jeu de 3 vis M4 45mm",
+      "Réglage sans outil"
     ]
   },
   "sections": [
@@ -50,7 +48,7 @@
       "data": {
         "title": "Vis moletées de collimation",
         "tagline": "Facilitez vos réglages de collimation",
-        "description": "Vis moletées de collimation imprimées en 3D pour remplacer les vis standard de votre télescope Newton. Réglage du miroir primaire plus facile et précis grâce aux molettes ergonomiques.",
+        "description": "Vis moletées de collimation pour remplacer les vis standard de votre télescope Newton. Réglage du miroir primaire plus facile et précis grâce aux molettes ergonomiques.",
         "features": [
           {
             "icon": "precision",
@@ -113,7 +111,7 @@
           {
             "icon": "durability",
             "title": "Résistantes et durables",
-            "description": "Fabriquées en PETG haute résistance, ces vis supportent les manipulations répétées"
+            "description": "Ces vis supportent les manipulations répétées"
           },
           {
             "icon": "compatibility",
@@ -137,9 +135,9 @@
           {
             "title": "Dimensions et conception",
             "specs": {
-              "Diamètre molette": "30mm",
-              "Filetage": "M4 ou M5 (préciser à la commande)",
-              "Matériau": "PETG haute qualité",
+              "Diamètre molette": "13mm",
+              "Longueur": "45mm",
+              "Filetage": "M4",
               "Couleur": "Noir",
               "Poids unitaire": "5g"
             }
@@ -163,23 +161,14 @@
         "price": "15€",
         "priceNote": "Jeu de 3 vis",
         "included": [
-          "3 vis moletées de collimation",
-          "Filetage au choix (M4 ou M5)",
+          "3 vis moletées de collimation M4",
+          "Longueur 45mm",
           "Conseils d'installation"
         ],
         "ctaText": "Commander",
         "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
-        "optionsTitle": "Options de filetage",
-        "options": [
-          {
-            "title": "Filetage M4",
-            "description": "Pour la plupart des télescopes Newton standard"
-          },
-          {
-            "title": "Filetage M5",
-            "description": "Pour certains télescopes de plus grand diamètre"
-          }
-        ]
+        "optionsTitle": "",
+        "options": []
       }
     }
   ],

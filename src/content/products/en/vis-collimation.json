@@ -1,7 +1,7 @@
 {
   "seoTitle": "Collimation Knobs - Newton Telescope Accessory | La 3ème dimension",
-  "seoDescription": "3D printed collimation knobs for Newton telescope. Easy replacement of standard screws for precise and comfortable primary mirror adjustment.",
-  "seoKeywords": "collimation screws, telescope knobs, newton collimation, mirror adjustment, telescope accessory, 3d printing astronomy, adjustment screws, primary mirror",
+  "seoDescription": "Collimation knobs for Newton telescope. Easy replacement of standard screws for precise and comfortable primary mirror adjustment.",
+  "seoKeywords": "collimation screws, telescope knobs, newton collimation, mirror adjustment, telescope accessory, adjustment screws, primary mirror",
   "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
   "price": "15€",
   "priceNote": "Set of 3 knobs",
@@ -12,7 +12,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Collimation knobs for Newton telescope",
-    "description": "3D printed collimation knobs for Newton telescope. Replace standard screws for easier and more precise primary mirror adjustment.",
+    "description": "Collimation knobs for Newton telescope. Replace standard screws for easier and more precise primary mirror adjustment.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -35,12 +35,10 @@
     },
     "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
     "features": [
-      "High precision 3D printing",
       "Ergonomic knobs",
       "Compatible with Newton telescopes",
-      "Set of 3 screws",
-      "Tool-free adjustment",
-      "Resistant PETG material"
+      "Set of 3 M4 45mm screws",
+      "Tool-free adjustment"
     ]
   },
   "sections": [
@@ -50,7 +48,7 @@
       "data": {
         "title": "Collimation Knobs",
         "tagline": "Simplify your collimation adjustments",
-        "description": "3D printed collimation knobs to replace the standard screws on your Newton telescope. Easier and more precise primary mirror adjustment thanks to ergonomic knobs.",
+        "description": "Collimation knobs to replace the standard screws on your Newton telescope. Easier and more precise primary mirror adjustment thanks to ergonomic knobs.",
         "features": [
           {
             "icon": "precision",
@@ -113,7 +111,7 @@
           {
             "icon": "durability",
             "title": "Resistant and durable",
-            "description": "Made from high-resistance PETG, these screws withstand repeated handling"
+            "description": "These screws withstand repeated handling"
           },
           {
             "icon": "compatibility",
@@ -137,9 +135,9 @@
           {
             "title": "Dimensions and design",
             "specs": {
-              "Knob diameter": "30mm",
-              "Thread": "M4 or M5 (specify when ordering)",
-              "Material": "High quality PETG",
+              "Knob diameter": "13mm",
+              "Length": "45mm",
+              "Thread": "M4",
               "Color": "Black",
               "Unit weight": "5g"
             }
@@ -163,23 +161,14 @@
         "price": "15€",
         "priceNote": "Set of 3 screws",
         "included": [
-          "3 collimation knobs",
-          "Thread of your choice (M4 or M5)",
+          "3 collimation knobs M4",
+          "45mm length",
           "Installation tips"
         ],
         "ctaText": "Order",
         "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
-        "optionsTitle": "Thread options",
-        "options": [
-          {
-            "title": "M4 thread",
-            "description": "For most standard Newton telescopes"
-          },
-          {
-            "title": "M5 thread",
-            "description": "For some larger diameter telescopes"
-          }
-        ]
+        "optionsTitle": "",
+        "options": []
       }
     }
   ],
