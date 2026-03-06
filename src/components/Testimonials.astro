@@ -1,0 +1,129 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+	locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section class="testimonials-section">
+	<div class="testimonials-container">
+		<h2 class="testimonials-title">{t.testimonials.title}</h2>
+		<div class="testimonials-content">
+			{t.testimonials.reviews.map((review) => (
+				<div class="testimonial-card">
+					<div class="testimonial-stars">★★★★★</div>
+					<p class="testimonial-text">"{review.text}"</p>
+					<div class="testimonial-author">
+						<p class="author-name">{review.author}</p>
+						{review.product && <p class="author-product">{review.product}</p>}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.testimonials-section {
+		width: 100%;
+		padding: 4rem 0;
+		background: var(--gray-900);
+		overflow: hidden;
+	}
+
+	.testimonials-container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.testimonials-title {
+		text-align: center;
+		font-size: var(--text-3xl);
+		color: var(--gray-100);
+		margin-bottom: 3rem;
+	}
+
+	.testimonials-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.testimonial-card {
+		max-width: 800px;
+		background: var(--gray-999);
+		padding: 2.5rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.testimonial-stars {
+		color: #fbbf24;
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+
+	.testimonial-text {
+		color: var(--gray-200);
+		font-size: var(--text-base);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
+
+	.testimonial-author {
+		border-top: 1px solid var(--gray-700);
+		padding-top: 1rem;
+	}
+
+	.author-name {
+		color: var(--gray-100);
+		font-weight: 600;
+		font-size: var(--text-base);
+		margin-bottom: 0.25rem;
+	}
+
+	.author-product {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+	}
+
+	@media (max-width: 50em) {
+		.testimonials-section {
+			padding: 3rem 0;
+		}
+
+		.testimonials-container {
+			padding: 0 1rem;
+		}
+
+		.testimonials-title {
+			font-size: var(--text-2xl);
+			margin-bottom: 2rem;
+		}
+
+		.testimonial-card {
+			padding: 2rem;
+		}
+	}
+
+	/* Dark theme adjustments */
+	:global(.theme-dark) .testimonials-section {
+		background: var(--gray-100);
+	}
+
+	:global(.theme-dark) .testimonial-card {
+		background: var(--gray-900);
+		box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+	}
+</style>

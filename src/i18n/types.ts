@@ -89,4 +89,12 @@ export interface Translations {
     successMessage: string;
     disclaimer: string;
   };
+  testimonials: {
+    title: string;
+    reviews: Array<{
+      text: string;
+      author: string;
+      product?: string;
+    }>;
+  };
 }
