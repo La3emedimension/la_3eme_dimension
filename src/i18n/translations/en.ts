@@ -89,4 +89,14 @@ export const en: Translations = {
     successMessage: 'Your subscription is confirmed.',
     disclaimer: 'By subscribing, you agree to receive our newsletter. You can unsubscribe at any time.',
   },
+  testimonials: {
+    title: 'What our customers say',
+    reviews: [
+      {
+        text: 'I bought these 3 collimation knobs for my Orion XX14i Dobsonian. They replace my old steel screws which, although sold for this purpose, did not have rounded ends and ended up punching the back of my secondary mirror support. The ones from La 3ème dimension are nicely rounded, which makes the adjustment much smoother, without jerks and much more precise. Very satisfied, thank you!',
+        author: 'Jean-Marc C.',
+        product: 'Collimation knobs - 02/28/2026',
+      },
+    ],
+  },
 };

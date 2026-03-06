@@ -3,6 +3,7 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import Testimonials from '../components/Testimonials.astro';
 import { getAlternatePath, type Locale } from '../i18n';
 
 interface Props {
@@ -56,6 +57,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://la3emedim.
 		<div class="stack backgrounds">
 			<Nav locale={locale} />
 			<slot />
+			<Testimonials locale={locale} />
 			<NewsletterForm locale={locale} />
 			<Footer locale={locale} />
 		</div>

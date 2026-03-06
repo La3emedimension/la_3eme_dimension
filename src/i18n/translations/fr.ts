@@ -89,4 +89,14 @@ export const fr: Translations = {
     successMessage: 'Votre inscription est confirmée.',
     disclaimer: 'En vous inscrivant, vous acceptez de recevoir notre newsletter. Désinscription possible à tout moment.',
   },
+  testimonials: {
+    title: 'Ce que disent nos clients',
+    reviews: [
+      {
+        text: 'J\'ai acheté ces 3 vis moletées de collimation pour mon Dobson Orion XX14i. Elles viennent remplacer mes anciennes vis en acier qui, bien que vendues pour cet usage, n\'avaient pas d\'extrémités arrondies et finissaient par poinçonner l\'arrière du support de mon miroir secondaire. Celles de la 3ème dimension sont bien arrondies, ce qui rend le réglage beaucoup plus souple, sans accoups et beaucoup plus précis. Très satisfait, merci !',
+        author: 'Jean-Marc C.',
+        product: 'Vis de collimation - 28/02/2026',
+      },
+    ],
+  },
 };
