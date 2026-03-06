@@ -49,18 +49,20 @@ const t = useTranslations(locale);
 	}
 
 	.testimonials-content {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
 		justify-content: center;
-		align-items: center;
+		align-items: start;
 	}
 
 	.testimonial-card {
-		max-width: 800px;
 		background: var(--gray-999);
 		padding: 2.5rem;
 		border-radius: 1rem;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 		transition: transform 0.3s ease;
+		height: 100%;
 	}
 
 	.testimonial-card:hover {

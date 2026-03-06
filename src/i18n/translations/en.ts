@@ -97,6 +97,11 @@ export const en: Translations = {
         author: 'Jean-Marc C.',
         product: 'Collimation knobs - 02/28/2026',
       },
+      {
+        text: 'I asked Raphael to design several Bahtinov masks in different sizes for me. The work done is impeccable, and done with seriousness and rigor. I am fully satisfied. I will not hesitate, in the future, to call on his expertise.',
+        author: 'Salah M.',
+        product: '4 Bahtinov masks - 02/16/2026',
+      },
     ],
   },
 };

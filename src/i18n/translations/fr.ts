@@ -97,6 +97,11 @@ export const fr: Translations = {
         author: 'Jean-Marc C.',
         product: 'Vis de collimation - 28/02/2026',
       },
+      {
+        text: 'J\'ai sollicité Raphael pour me concevoir plusieurs masques de Bahtinov de différentes tailles. Le travail réalisé est impeccable, et fait avec sérieux et rigueur. Je suis pleinement satisfait. Je n\'hésiterai pas, dans l\'avenir, à faire appel à son expertise.',
+        author: 'Salah M.',
+        product: '4 masques de Bahtinov - 16/02/2026',
+      },
     ],
   },
 };
