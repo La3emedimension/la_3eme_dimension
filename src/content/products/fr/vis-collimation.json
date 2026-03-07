@@ -8,6 +8,25 @@
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
+  "timings": {
+    "installationTime": "10-15 min",
+    "deliveryTime": "3-5 jours",
+    "difficulty": "Facile"
+  },
+  "faqs": [
+    {
+      "question": "Ces vis sont-elles compatibles avec mon télescope Newton ?",
+      "answer": "Ces vis moletées M4 de 45mm sont compatibles avec la plupart des télescopes Newton standard, notamment les Dobson et Newton sur monture équatoriale. Vérifiez que votre télescope utilise des vis M4 pour la collimation du miroir primaire."
+    },
+    {
+      "question": "Pourquoi les extrémités arrondies sont-elles importantes ?",
+      "answer": "Les extrémités arrondies évitent de <strong>poinçonner et endommager le support du miroir primaire</strong> lors des réglages. Les vis standard avec extrémités plates peuvent créer des points de pression qui déforment le miroir et dégradent la qualité optique."
+    },
+    {
+      "question": "Ai-je besoin d'outils pour installer ces vis ?",
+      "answer": "Non, c'est l'avantage principal ! Les molettes ergonomiques permettent un <strong>réglage précis à la main sans outil</strong>. Plus besoin de tournevis ou clé Allen, vous pouvez collimater directement sur le terrain."
+    }
+  ],
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",

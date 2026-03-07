@@ -8,6 +8,25 @@
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
+  "timings": {
+    "installationTime": "10-15 min",
+    "deliveryTime": "3-5 days",
+    "difficulty": "Easy"
+  },
+  "faqs": [
+    {
+      "question": "Are these screws compatible with my Newton telescope?",
+      "answer": "These M4 45mm collimation knobs are compatible with most standard Newton telescopes, including Dobsonians and Newtons on equatorial mounts. Please verify that your telescope uses M4 screws for primary mirror collimation."
+    },
+    {
+      "question": "Why are rounded ends important?",
+      "answer": "Rounded ends prevent <strong>punching and damaging the primary mirror support</strong> during adjustments. Standard screws with flat ends can create pressure points that deform the mirror and degrade optical quality."
+    },
+    {
+      "question": "Do I need tools to install these screws?",
+      "answer": "No, that's the main advantage! The ergonomic knobs allow <strong>precise hand adjustment without tools</strong>. No more need for screwdrivers or Allen keys, you can collimate directly in the field."
+    }
+  ],
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",

@@ -11,6 +11,9 @@ import ProductNavigation from '../components/ProductNavigation.astro';
 import Lightbox from '../components/Lightbox.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import ProductFAQ from '../components/ProductFAQ.astro';
+import ShareButton from '../components/ShareButton.astro';
+import ProductTimings from '../components/ProductTimings.astro';
 import { useTranslations, localePath, type Locale } from '../i18n';
 
 export interface ProductConfig {
@@ -26,6 +29,15 @@ export interface ProductConfig {
   showNavigation?: boolean;
   showLightbox?: boolean;
   locale?: Locale;
+  timings?: {
+    installationTime?: string;
+    deliveryTime?: string;
+    difficulty?: string;
+  };
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 export interface SectionConfig {
@@ -52,7 +64,9 @@ const {
   showContactCTA = true,
   showNavigation = true,
   showLightbox = true,
-  locale = 'fr'
+  locale = 'fr',
+  timings,
+  faqs
 } = Astro.props as ProductConfig;
 
 const t = useTranslations(locale);
@@ -121,6 +135,20 @@ const breadcrumbItems = [
       </section>
     );
   })}
+
+  {timings && (
+    <ProductTimings
+      installationTime={timings.installationTime}
+      deliveryTime={timings.deliveryTime}
+      difficulty={timings.difficulty}
+    />
+  )}
+
+  <ShareButton title={productName} url={Astro.url.href} />
+
+  {faqs && faqs.length > 0 && (
+    <ProductFAQ faqs={faqs} productName={productName} />
+  )}
 
   <RelatedProducts
     currentProductId={productSlug}

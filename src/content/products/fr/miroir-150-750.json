@@ -8,6 +8,25 @@
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
+  "timings": {
+    "installationTime": "30-45 min",
+    "deliveryTime": "5-7 jours",
+    "difficulty": "Intermédiaire"
+  },
+  "faqs": [
+    {
+      "question": "Ce miroir est-il compatible avec mon télescope Smallest ?",
+      "answer": "Oui, ce set de miroirs (primaire 150mm f/5 + secondaire 35mm) est spécialement conçu pour le télescope Smallest. Les dimensions et spécifications sont optimisées pour une intégration parfaite."
+    },
+    {
+      "question": "Le miroir secondaire est-il aussi testé à l'interféromètre ?",
+      "answer": "<strong>Non, seul le miroir primaire est testé à l'interféromètre.</strong> Le test du primaire garantit la qualité optique principale du système. Le secondaire de 35mm est un miroir plan de qualité industrielle standard."
+    },
+    {
+      "question": "Quelle est la garantie et que faire si le miroir arrive endommagé ?",
+      "answer": "Le miroir est garanti contre les défauts de fabrication. En cas de dommage pendant le transport, contactez-nous immédiatement à <strong>la3emedim@gmail.com</strong> avec photos. Nous organiserons un remplacement ou remboursement dans les plus brefs délais."
+    }
+  ],
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
