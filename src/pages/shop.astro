@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { useTranslations, localePath, type Locale } from '../i18n';
 import { getLocalizedDataCollection, getSlugWithoutLocale } from '../lib/collections';
 
@@ -36,8 +37,8 @@ const allProducts = filteredProducts.sort((a, b) => {
 const shopStructuredData = {
 	"@context": "https://schema.org",
 	"@type": "CollectionPage",
-	"name": "Boutique La 3ème dimension",
-	"description": "Découvrez notre gamme de produits imprimés en 3D : télescopes portables, accessoires de voyage et instruments éducatifs.",
+	"name": "Boutique Astronomie La 3ème dimension",
+	"description": "Matériel astronomie : miroirs paraboliques testés interféromètre, vis moletées collimation Newton, lunettes astronomiques éducatives. Optiques de qualité pour astronomes amateurs et confirmés.",
 	"url": "https://la3emedim.fr/shop",
 	"mainEntity": {
 		"@type": "ItemList",
@@ -59,13 +60,20 @@ const shopStructuredData = {
 
 <BaseLayout
 	locale={locale}
-	title="Boutique - Produits Imprimés 3D | La 3ème dimension"
-	description="Découvrez notre gamme de produits imprimés en 3D : télescopes portables Smallest, accessoires voyage BHH, instruments éducatifs ERT. Innovation et qualité française."
-	keywords="boutique impression 3d, télescope portable, accessoire voyage, instrument éducatif, smallest telescope, backpack hook, lunette astronomique, toulouse"
+	title="Boutique Astronomie - Télescopes, Miroirs, Accessoires | La 3ème dimension"
+	description="Boutique matériel astronomie : miroirs paraboliques testés interféromètre, vis collimation Newton, lunette ERT. Optiques de qualité pour astronomes amateurs. Livraison France."
+	keywords="boutique astronomie, télescope newton, miroir parabolique, vis collimation, lunette astronomique, accessoire télescope, optique astronomique, matériel observation, ciel profond, collimation dobson, toulouse"
 	structuredData={shopStructuredData}
 >
 	<div class="stack gap-4 lg:gap-6">
 		<div class="wrapper stack gap-2 lg:gap-4">
+			<Breadcrumbs
+				items={[
+					{ label: 'Accueil', href: localePath('/', locale) },
+					{ label: 'Boutique' }
+				]}
+				locale={locale}
+			/>
 			<header class="hero">
 				<Hero
 					title={t.shop.title}
@@ -77,7 +85,7 @@ const shopStructuredData = {
 			<!-- Category Filter -->
 			<div class="category-filter">
 				{categories.map((category) => (
-					<button 
+					<button
 						class={`category-btn ${category.id === 'all' ? 'active' : ''}`}
 						data-category={category.id}
 					>
@@ -144,7 +152,33 @@ const shopStructuredData = {
 				})}
 			</div>
 		</main>
-		
+
+		<!-- SEO Rich Content -->
+		<div class="wrapper">
+			<section class="seo-content">
+				<h2>Instruments astronomiques et accessoires de précision</h2>
+				<p>
+					Découvrez notre sélection d'<strong>instruments astronomiques innovants</strong> et d'<strong>accessoires d'optique de précision</strong>.
+					De la <strong>lunette astronomique éducative E.R.T</strong> au <strong>miroir parabolique 150mm testé à l'interféromètre</strong>,
+					chaque produit est conçu pour offrir des performances optimales aux astronomes amateurs et confirmés.
+				</p>
+				<div class="seo-highlights">
+					<div class="highlight-item">
+						<h3>Optiques de qualité professionnelle</h3>
+						<p>Nos miroirs paraboliques sont testés à l'interféromètre pour garantir une qualité optique optimale. Idéal pour l'observation du ciel profond.</p>
+					</div>
+					<div class="highlight-item">
+						<h3>Instruments éducatifs</h3>
+						<p>La lunette E.R.T permet de comprendre le fonctionnement d'un télescope tout en observant la Lune, les planètes et les nébuleuses brillantes.</p>
+					</div>
+					<div class="highlight-item">
+						<h3>Accessoires de collimation</h3>
+						<p>Vis moletées ergonomiques pour un réglage précis de votre télescope Newton sans outils. Compatible avec la plupart des instruments du marché.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
 		<ContactCTA locale={locale} />
 	</div>
 </BaseLayout>
@@ -224,6 +258,74 @@ const shopStructuredData = {
 	}
 
 	/* Category Filter */
+	/* SEO Content */
+	.seo-content {
+		max-width: 900px;
+		margin: 2rem auto;
+		padding: 2rem;
+		background: var(--gradient-subtle);
+		border-radius: 1rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.seo-content h2 {
+		font-size: var(--text-2xl);
+		color: var(--gray-100);
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	.seo-content > p {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		line-height: 1.7;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.seo-highlights {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.highlight-item {
+		padding: 1.5rem;
+		background: var(--gray-900);
+		border-radius: 0.75rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.highlight-item h3 {
+		font-size: var(--text-lg);
+		color: var(--accent-regular);
+		margin-bottom: 0.75rem;
+	}
+
+	.highlight-item p {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	@media (max-width: 50em) {
+		.seo-content {
+			padding: 1.5rem;
+			margin: 1.5rem 1rem;
+		}
+
+		.seo-content h2 {
+			font-size: var(--text-xl);
+		}
+
+		.seo-highlights {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+	}
+
 	.category-filter {
 		display: flex;
 		justify-content: center;

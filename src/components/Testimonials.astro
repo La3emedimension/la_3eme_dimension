@@ -7,6 +7,35 @@ interface Props {
 
 const { locale = 'fr' } = Astro.props;
 const t = useTranslations(locale);
+
+// Structured data for reviews (rich snippets)
+const reviewsStructuredData = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "La 3ème dimension",
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": t.testimonials.reviews.length
+	},
+	"review": t.testimonials.reviews.map((review) => ({
+		"@type": "Review",
+		"author": {
+			"@type": "Person",
+			"name": review.author
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"reviewBody": review.text,
+		"itemReviewed": {
+			"@type": "Product",
+			"name": review.product || "Produit La 3ème dimension"
+		}
+	}))
+};
 ---
 
 <section class="testimonials-section">
@@ -26,6 +55,8 @@ const t = useTranslations(locale);
 		</div>
 	</div>
 </section>
+
+<script type="application/ld+json" set:html={JSON.stringify(reviewsStructuredData)} />
 
 <style>
 	.testimonials-section {

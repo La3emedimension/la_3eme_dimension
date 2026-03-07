@@ -12,9 +12,10 @@ interface Props {
 	afterCtaNote?: string;
 	warning?: string;
 	ecoWarning?: string;
+	showFabLogo?: boolean;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning, ecoWarning } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning, ecoWarning, showFabLogo = true } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
@@ -72,7 +73,7 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 			<div class="hero-media">
 				<div class="hero-image-wrapper">
 					<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
-					<img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />
+					{showFabLogo && <img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />}
 				</div>
 			</div>
 		)}

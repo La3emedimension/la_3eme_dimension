@@ -1,0 +1,228 @@
+{
+  "seoTitle": "150/750 Mirror for Smallest - Primary Tested + 35mm Secondary | La 3ème dimension",
+  "seoDescription": "150mm f/5 parabolic primary mirror tested with interferometer + 35mm secondary mirror for Smallest telescope. Bevel mask included for primary.",
+  "seoKeywords": "150mm mirror, parabolic mirror, 35mm secondary mirror, smallest, newton telescope, interferometer, bevel mask, astronomical optics",
+  "ogImage": "https://la3emedim.fr/assets/miroir150/150-750.png",
+  "price": "250€",
+  "priceNote": "Complete set",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "150/750 Parabolic Primary + 35mm Secondary Mirror for Smallest",
+    "description": "Complete set with 150mm f/5 parabolic primary mirror tested with interferometer and 35mm secondary mirror for Smallest telescope. The primary is delivered with its bevel mask.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Astronomical Optics",
+    "offers": {
+      "@type": "Offer",
+      "price": "250",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/miroir150/150-750.png",
+    "features": [
+      "150mm f/5 parabolic primary mirror",
+      "35mm secondary mirror",
+      "Primary tested with interferometer",
+      "Bevel mask for primary",
+      "Smallest compatible"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "150/750 Mirror for Smallest",
+        "tagline": "Industrial optics - Primary tested + 35mm Secondary",
+        "description": "Complete set of industrial optics for Smallest telescope: 150mm parabolic primary mirror with f/5 ratio (750mm focal length) tested with interferometer + 35mm secondary mirror. The primary mirror is delivered with its bevel mask to protect the edges during assembly. <strong>Only the primary mirror is tested with interferometer. Industrial product.</strong>",
+        "features": [
+          {
+            "icon": "precision",
+            "text": "Primary tested"
+          },
+          {
+            "icon": "mirror",
+            "text": "Secondary 35mm"
+          },
+          {
+            "icon": "quality",
+            "text": "Pro quality"
+          },
+          {
+            "icon": "compatibility",
+            "text": "Smallest"
+          }
+        ],
+        "primaryCta": {
+          "text": "Order - 250€",
+          "href": "mailto:la3emedim@gmail.com?subject=Order 150/750 mirror for Smallest"
+        },
+        "heroImage": {
+          "src": "/assets/miroir150/150-750.png",
+          "alt": "150/750 Parabolic Mirror for Smallest telescope - Interferometer tested primary and 35mm secondary"
+        },
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Gallery",
+        "images": [
+          {
+            "src": "/assets/miroir150/150-750.png",
+            "alt": "150/750 Mirror for Smallest - Complete primary and secondary set",
+            "caption": "Complete set: 150mm f/5 primary + 35mm secondary mirror"
+          },
+          {
+            "src": "/assets/miroir150/miroir150-0.jpg",
+            "alt": "150/750 Mirror - Overview",
+            "caption": "150mm f/5 parabolic mirror"
+          },
+          {
+            "src": "/assets/miroir150/miroir150-1.jpg",
+            "alt": "150/750 Mirror - Secondary mirror",
+            "caption": "35mm secondary mirror"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Features",
+        "features": [
+          {
+            "icon": "precision",
+            "title": "Primary tested with interferometer",
+            "description": "The industrially manufactured primary mirror is tested with interferometer to guarantee optical surface quality. Surface defects are measured and documented. Note: only the primary mirror is tested."
+          },
+          {
+            "icon": "quality",
+            "title": "Complete primary + secondary set",
+            "description": "Industrial optics: 150mm f/5 parabolic primary mirror + 35mm secondary mirror. The primary offers an ideal ratio for deep sky observation with aluminized surface."
+          },
+          {
+            "icon": "protection",
+            "title": "Primary protection",
+            "description": "The primary mirror is delivered with its bevel mask to protect the edges during assembly in the Smallest telescope."
+          },
+          {
+            "icon": "compatibility",
+            "title": "Designed for Smallest",
+            "description": "Dimensions and specifications of both mirrors optimized for perfect integration into the Smallest telescope."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Technical Specifications",
+        "specGroups": [
+          {
+            "title": "Primary Mirror",
+            "specs": {
+              "Diameter": "150mm",
+              "Focal length": "750mm",
+              "Focal ratio": "f/5",
+              "Type": "Parabolic",
+              "Coating": "High reflectivity aluminum",
+              "Test": "Interferometer (with report)"
+            }
+          },
+          {
+            "title": "Secondary Mirror",
+            "specs": {
+              "Diameter": "35mm",
+              "Type": "Flat",
+              "Coating": "Aluminum",
+              "Test": "Not tested with interferometer"
+            }
+          },
+          {
+            "title": "Accessories and quality",
+            "specs": {
+              "Primary protection": "Bevel mask included",
+              "Test report": "For primary only",
+              "Compatibility": "Smallest Newton"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Complete Primary + Secondary Set",
+        "price": "250€",
+        "priceNote": "Industrial optics",
+        "included": [
+          "150mm f/5 parabolic primary mirror",
+          "35mm secondary mirror",
+          "Interferometer test of primary only",
+          "Bevel mask for primary",
+          "Optical test report of primary",
+          "Assembly instructions"
+        ],
+        "ctaText": "Order",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Order 150/750 mirror for Smallest",
+        "optionsTitle": "Additional information",
+        "options": [
+          {
+            "title": "Industrial product",
+            "description": "Industrially manufactured optics. Quality controlled by interferometer testing of primary mirror."
+          },
+          {
+            "title": "Quality guarantee",
+            "description": "The primary mirror is tested and delivered with its interferometry report."
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Presentation"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Gallery"
+    },
+    {
+      "id": "section-features",
+      "label": "Features"
+    },
+    {
+      "id": "section-specs",
+      "label": "Specifications"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Pricing"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}

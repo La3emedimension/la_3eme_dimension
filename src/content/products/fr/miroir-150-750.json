@@ -1,0 +1,228 @@
+{
+  "seoTitle": "Miroir 150/750 pour Smallest - Optique Testé Interféromètre 250€ | La 3ème dimension",
+  "seoDescription": "Miroir parabolique 150mm f/5 testé interféromètre + secondaire 35mm pour télescope Newton Smallest. Optique astronomique industrielle de qualité. Masque chanfrein inclus. 250€.",
+  "seoKeywords": "miroir parabolique 150mm, miroir astronomique, télescope newton 150, optique interféromètre, miroir secondaire 35mm, smallest telescope, accessoire astronomie, observation ciel profond, miroir f/5, optique qualité",
+  "ogImage": "https://la3emedim.fr/assets/miroir150/150-750.png",
+  "price": "250€",
+  "priceNote": "Set complet",
+  "emailContact": "la3emedim@gmail.com",
+  "draft": false,
+  "category": "astronomie",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Miroir parabolique 150/750 + Secondaire 35mm pour Smallest",
+    "description": "Set complet avec miroir primaire parabolique 150mm f/5 testé à l'interféromètre et miroir secondaire 35mm pour télescope Smallest. Le primaire est livré avec son masque de chanfrein.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Optique astronomique",
+    "offers": {
+      "@type": "Offer",
+      "price": "250",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/miroir150/150-750.png",
+    "features": [
+      "Miroir primaire parabolique 150mm f/5",
+      "Miroir secondaire 35mm",
+      "Primaire testé à l'interféromètre",
+      "Masque de chanfrein pour primaire",
+      "Compatible Smallest"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Miroir 150/750 pour Smallest",
+        "tagline": "Optique industrielle - Primaire testé + Secondaire 35mm",
+        "description": "Set complet d'optiques industrielles pour télescope Smallest : miroir primaire parabolique de 150mm avec un rapport f/5 (focale 750mm) testé à l'interféromètre + miroir secondaire de 35mm. Le miroir primaire est livré avec son masque de chanfrein pour protéger les bords lors du montage. <strong>Seul le miroir primaire est testé à l'interféromètre. Produit industriel.</strong>",
+        "features": [
+          {
+            "icon": "precision",
+            "text": "Primaire testé"
+          },
+          {
+            "icon": "mirror",
+            "text": "Secondaire 35mm"
+          },
+          {
+            "icon": "quality",
+            "text": "Qualité pro"
+          },
+          {
+            "icon": "compatibility",
+            "text": "Smallest"
+          }
+        ],
+        "primaryCta": {
+          "text": "Commander - 250€",
+          "href": "mailto:la3emedim@gmail.com?subject=Commande miroir 150/750 pour Smallest"
+        },
+        "heroImage": {
+          "src": "/assets/miroir150/150-750.png",
+          "alt": "Miroir parabolique 150/750 pour télescope Smallest - Primaire testé interféromètre et secondaire 35mm"
+        },
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie",
+        "images": [
+          {
+            "src": "/assets/miroir150/150-750.png",
+            "alt": "Miroir 150/750 pour Smallest - Set complet primaire et secondaire",
+            "caption": "Set complet : miroir primaire 150mm f/5 + secondaire 35mm"
+          },
+          {
+            "src": "/assets/miroir150/miroir150-0.jpg",
+            "alt": "Miroir 150/750 - Vue d'ensemble",
+            "caption": "Miroir parabolique 150mm f/5"
+          },
+          {
+            "src": "/assets/miroir150/miroir150-1.jpg",
+            "alt": "Miroir 150/750 - Miroir secondaire",
+            "caption": "Miroir secondaire 35mm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Caractéristiques",
+        "features": [
+          {
+            "icon": "precision",
+            "title": "Primaire testé à l'interféromètre",
+            "description": "Le miroir primaire de fabrication industrielle est testé à l'interféromètre pour garantir une surface optique de qualité. Les défauts de surface sont mesurés et documentés. Note : seul le miroir primaire est testé."
+          },
+          {
+            "icon": "quality",
+            "title": "Set complet primaire + secondaire",
+            "description": "Optiques industrielles : miroir primaire parabolique de 150mm f/5 + miroir secondaire de 35mm. Le primaire offre un rapport idéal pour l'observation du ciel profond avec surface aluminisée."
+          },
+          {
+            "icon": "protection",
+            "title": "Protection du primaire",
+            "description": "Le miroir primaire est livré avec son masque de chanfrein pour protéger les bords lors du montage dans le télescope Smallest."
+          },
+          {
+            "icon": "compatibility",
+            "title": "Conçu pour Smallest",
+            "description": "Dimensions et spécifications des deux miroirs optimisées pour une intégration parfaite dans le télescope Smallest."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Spécifications techniques",
+        "specGroups": [
+          {
+            "title": "Miroir Primaire",
+            "specs": {
+              "Diamètre": "150mm",
+              "Focale": "750mm",
+              "Rapport focal": "f/5",
+              "Type": "Parabolique",
+              "Revêtement": "Aluminium haute réflectivité",
+              "Test": "Interféromètre (avec rapport)"
+            }
+          },
+          {
+            "title": "Miroir Secondaire",
+            "specs": {
+              "Diamètre": "35mm",
+              "Type": "Plan",
+              "Revêtement": "Aluminium",
+              "Test": "Non testé à l'interféromètre"
+            }
+          },
+          {
+            "title": "Accessoires et qualité",
+            "specs": {
+              "Protection primaire": "Masque de chanfrein inclus",
+              "Rapport de test": "Pour le primaire uniquement",
+              "Compatibilité": "Smallest Newton"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Set complet Primaire + Secondaire",
+        "price": "250€",
+        "priceNote": "Optiques industrielles",
+        "included": [
+          "Miroir primaire parabolique 150mm f/5",
+          "Miroir secondaire 35mm",
+          "Test interféromètre du primaire uniquement",
+          "Masque de chanfrein pour le primaire",
+          "Rapport de test optique du primaire",
+          "Conseils de montage"
+        ],
+        "ctaText": "Commander",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Commande miroir 150/750 pour Smallest",
+        "optionsTitle": "Informations complémentaires",
+        "options": [
+          {
+            "title": "Produit industriel",
+            "description": "Optiques de fabrication industrielle. Qualité contrôlée par test interféromètre du primaire."
+          },
+          {
+            "title": "Garantie qualité",
+            "description": "Le miroir primaire est testé et livré avec son rapport d'interférométrie."
+          }
+        ]
+      }
+    }
+  ],
+  "navigationItems": [
+    {
+      "id": "section-hero",
+      "label": "Présentation"
+    },
+    {
+      "id": "section-gallery",
+      "label": "Galerie"
+    },
+    {
+      "id": "section-features",
+      "label": "Fonctionnalités"
+    },
+    {
+      "id": "section-specs",
+      "label": "Spécifications"
+    },
+    {
+      "id": "section-pricing",
+      "label": "Tarifs"
+    }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true
+}
