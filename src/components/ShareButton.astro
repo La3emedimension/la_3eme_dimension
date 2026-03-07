@@ -1,0 +1,147 @@
+---
+interface Props {
+	title: string;
+	url?: string;
+}
+
+const { title, url } = Astro.props;
+---
+
+<div class="share-container">
+	<p class="share-label">Partager ce produit :</p>
+	<div class="share-buttons">
+		<button class="share-btn" data-share="copy" title="Copier le lien">
+			<span class="share-text">Copier le lien</span>
+		</button>
+		<button class="share-btn" data-share="email" title="Partager par email">
+			<span class="share-text">Email</span>
+		</button>
+		<button class="share-btn" data-share="whatsapp" title="Partager sur WhatsApp">
+			<span class="share-text">WhatsApp</span>
+		</button>
+	</div>
+	<div class="share-feedback" id="share-feedback"></div>
+</div>
+
+<script define:vars={{ title, url }}>
+	document.addEventListener('DOMContentLoaded', function() {
+		const shareButtons = document.querySelectorAll('.share-btn');
+		const feedback = document.getElementById('share-feedback');
+		const currentUrl = url || window.location.href;
+		const shareTitle = title;
+
+		shareButtons.forEach(button => {
+			button.addEventListener('click', function() {
+				const shareType = this.getAttribute('data-share');
+
+				if (shareType === 'copy') {
+					navigator.clipboard.writeText(currentUrl).then(() => {
+						showFeedback('Lien copié !');
+					});
+				} else if (shareType === 'email') {
+					const emailUrl = 'mailto:?subject=' + encodeURIComponent(shareTitle) + '&body=' + encodeURIComponent('Découvre ce produit : ' + currentUrl);
+					window.location.href = emailUrl;
+				} else if (shareType === 'whatsapp') {
+					const whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(shareTitle + ' - ' + currentUrl);
+					window.open(whatsappUrl, '_blank');
+				}
+			});
+		});
+
+		function showFeedback(message) {
+			if (feedback) {
+				feedback.textContent = message;
+				feedback.style.display = 'block';
+				setTimeout(() => {
+					feedback.style.display = 'none';
+				}, 3000);
+			}
+		}
+	});
+</script>
+
+<style>
+	.share-container {
+		padding: 1.5rem;
+		background: var(--gray-900);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		margin: 2rem 0;
+	}
+
+	.share-label {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		margin-bottom: 1rem;
+		font-weight: 500;
+	}
+
+	.share-buttons {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.share-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.625rem 1rem;
+		background: var(--gray-800);
+		border: 1px solid var(--gray-700);
+		border-radius: 0.5rem;
+		color: var(--gray-200);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		transition: all var(--theme-transition);
+		font-family: var(--font-body);
+	}
+
+	.share-btn:hover {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-color: var(--accent-regular);
+		transform: translateY(-2px);
+	}
+
+	.share-feedback {
+		display: none;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-radius: 0.5rem;
+		font-size: var(--text-sm);
+		text-align: center;
+	}
+
+	@media (max-width: 50em) {
+		.share-container {
+			padding: 1rem;
+		}
+
+		.share-buttons {
+			gap: 0.5rem;
+		}
+
+		.share-btn {
+			padding: 0.5rem 0.75rem;
+			font-size: var(--text-xs);
+		}
+	}
+
+	:global(.theme-dark) .share-container {
+		background: var(--gray-100);
+		border-color: var(--gray-200);
+	}
+
+	:global(.theme-dark) .share-btn {
+		background: var(--gray-200);
+		border-color: var(--gray-300);
+	}
+
+	:global(.theme-dark) .share-btn:hover {
+		background: var(--accent-regular);
+		border-color: var(--accent-regular);
+	}
+</style>

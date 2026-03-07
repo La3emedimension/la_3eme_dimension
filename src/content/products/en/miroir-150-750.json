@@ -8,6 +8,25 @@
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
+  "timings": {
+    "installationTime": "30-45 min",
+    "deliveryTime": "5-7 days",
+    "difficulty": "Intermediate"
+  },
+  "faqs": [
+    {
+      "question": "Is this mirror compatible with my Smallest telescope?",
+      "answer": "Yes, this mirror set (150mm f/5 primary + 35mm secondary) is specially designed for the Smallest telescope. Dimensions and specifications are optimized for perfect integration."
+    },
+    {
+      "question": "Is the secondary mirror also tested with interferometer?",
+      "answer": "<strong>No, only the primary mirror is tested with interferometer.</strong> The primary test guarantees the main optical quality of the system. The 35mm secondary is a standard industrial quality flat mirror."
+    },
+    {
+      "question": "What is the warranty and what to do if the mirror arrives damaged?",
+      "answer": "The mirror is guaranteed against manufacturing defects. In case of damage during transport, contact us immediately at <strong>la3emedim@gmail.com</strong> with photos. We will arrange a replacement or refund as soon as possible."
+    }
+  ],
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",

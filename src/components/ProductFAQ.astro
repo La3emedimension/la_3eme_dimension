@@ -1,0 +1,158 @@
+---
+interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+interface Props {
+	faqs: FAQItem[];
+	productName?: string;
+}
+
+const { faqs, productName = "ce produit" } = Astro.props;
+
+// Structured data for FAQ
+const faqStructuredData = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map(faq => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": faq.answer
+		}
+	}))
+};
+---
+
+<section class="product-faq">
+	<h2>Questions fréquentes</h2>
+	<div class="faq-list">
+		{faqs.map((faq, index) => (
+			<details class="faq-item" open={index === 0}>
+				<summary class="faq-question">{faq.question}</summary>
+				<div class="faq-answer" set:html={faq.answer} />
+			</details>
+		))}
+	</div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+
+<style>
+	.product-faq {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 3rem 2rem;
+	}
+
+	.product-faq h2 {
+		font-size: var(--text-2xl);
+		color: var(--gray-100);
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.faq-item {
+		background: var(--gray-900);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		overflow: hidden;
+		transition: all var(--theme-transition);
+	}
+
+	.faq-item[open] {
+		border-color: var(--accent-regular);
+	}
+
+	.faq-question {
+		padding: 1.25rem 1.5rem;
+		font-size: var(--text-base);
+		font-weight: 600;
+		color: var(--gray-100);
+		cursor: pointer;
+		list-style: none;
+		user-select: none;
+		transition: all var(--theme-transition);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-question::after {
+		content: '+';
+		font-size: var(--text-xl);
+		color: var(--accent-regular);
+		transition: transform var(--theme-transition);
+		flex-shrink: 0;
+		margin-left: 1rem;
+	}
+
+	.faq-item[open] .faq-question::after {
+		transform: rotate(45deg);
+	}
+
+	.faq-question:hover {
+		color: var(--accent-regular);
+		background: var(--gray-800);
+	}
+
+	.faq-answer {
+		padding: 0 1.5rem 1.25rem;
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.7;
+	}
+
+	.faq-answer p {
+		margin: 0 0 0.75rem 0;
+	}
+
+	.faq-answer p:last-child {
+		margin-bottom: 0;
+	}
+
+	.faq-answer strong {
+		color: var(--gray-200);
+	}
+
+	@media (max-width: 50em) {
+		.product-faq {
+			padding: 2rem 1rem;
+		}
+
+		.product-faq h2 {
+			font-size: var(--text-xl);
+		}
+
+		.faq-question {
+			padding: 1rem;
+			font-size: var(--text-sm);
+		}
+
+		.faq-answer {
+			padding: 0 1rem 1rem;
+		}
+	}
+
+	:global(.theme-dark) .faq-item {
+		background: var(--gray-100);
+		border-color: var(--gray-200);
+	}
+
+	:global(.theme-dark) .faq-question:hover {
+		background: var(--gray-200);
+	}
+</style>

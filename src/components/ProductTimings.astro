@@ -1,0 +1,111 @@
+---
+interface Props {
+	installationTime?: string;
+	deliveryTime?: string;
+	difficulty?: string;
+}
+
+const { installationTime, deliveryTime, difficulty } = Astro.props;
+---
+
+{(installationTime || deliveryTime || difficulty) && (
+	<div class="product-timings">
+		{installationTime && (
+			<div class="timing-item">
+				<span class="timing-icon">⏱</span>
+				<div class="timing-content">
+					<span class="timing-label">Installation</span>
+					<span class="timing-value">{installationTime}</span>
+				</div>
+			</div>
+		)}
+		{deliveryTime && (
+			<div class="timing-item">
+				<span class="timing-icon">📦</span>
+				<div class="timing-content">
+					<span class="timing-label">Livraison</span>
+					<span class="timing-value">{deliveryTime}</span>
+				</div>
+			</div>
+		)}
+		{difficulty && (
+			<div class="timing-item">
+				<span class="timing-icon">🔧</span>
+				<div class="timing-content">
+					<span class="timing-label">Difficulté</span>
+					<span class="timing-value">{difficulty}</span>
+				</div>
+			</div>
+		)}
+	</div>
+)}
+
+<style>
+	.product-timings {
+		display: flex;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		padding: 1.5rem;
+		background: var(--gray-900);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		margin: 2rem 0;
+	}
+
+	.timing-item {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex: 1;
+		min-width: 150px;
+	}
+
+	.timing-icon {
+		font-size: 1.5rem;
+		opacity: 0.8;
+	}
+
+	.timing-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.timing-label {
+		font-size: var(--text-xs);
+		color: var(--gray-500);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.timing-value {
+		font-size: var(--text-base);
+		color: var(--gray-100);
+		font-weight: 600;
+	}
+
+	@media (max-width: 50em) {
+		.product-timings {
+			padding: 1rem;
+			gap: 1rem;
+		}
+
+		.timing-item {
+			min-width: 120px;
+		}
+
+		.timing-icon {
+			font-size: 1.25rem;
+		}
+
+		.timing-value {
+			font-size: var(--text-sm);
+		}
+	}
+
+	:global(.theme-dark) .product-timings {
+		background: var(--gray-100);
+		border-color: var(--gray-200);
+	}
+</style>
