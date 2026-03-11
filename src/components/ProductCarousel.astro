@@ -8,13 +8,28 @@ interface Props {
 
 const { locale } = Astro.props;
 
-// Get specific products
+// Get all products (excluding drafts and specific products)
 const allProducts = await getLocalizedCollection('products', locale);
-const productIds = ['smallest', 'ert', 'sur-mesure'];
 
-const products = productIds
-  .map(id => allProducts.find(p => p.id === `${locale}/${id}` || p.id === id))
-  .filter(Boolean);
+const excludedProducts = ['bhh', 'seestar-accessoires', 'vis-collimation'];
+
+const filteredProducts = allProducts.filter(p => {
+  const productId = p.id.replace(`${locale}/`, '');
+  return !p.data.draft && !excludedProducts.includes(productId);
+});
+
+// Sort products: smallest first, ert second, then others
+const products = filteredProducts.sort((a, b) => {
+  const aId = a.id.replace(`${locale}/`, '');
+  const bId = b.id.replace(`${locale}/`, '');
+
+  if (aId === 'smallest') return -1;
+  if (bId === 'smallest') return 1;
+  if (aId === 'ert') return -1;
+  if (bId === 'ert') return 1;
+
+  return 0;
+});
 ---
 
 <div class="product-carousel">
