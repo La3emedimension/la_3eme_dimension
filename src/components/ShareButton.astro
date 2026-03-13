@@ -131,17 +131,23 @@ const { title, url } = Astro.props;
 	}
 
 	:global(.theme-dark) .share-container {
-		background: var(--gray-100);
-		border-color: var(--gray-200);
+		background: var(--gray-900);
+		border-color: var(--gray-800);
+	}
+
+	:global(.theme-dark) .share-label {
+		color: var(--gray-400);
 	}
 
 	:global(.theme-dark) .share-btn {
-		background: var(--gray-200);
-		border-color: var(--gray-300);
+		background: var(--gray-800);
+		border-color: var(--gray-700);
+		color: var(--gray-300);
 	}
 
 	:global(.theme-dark) .share-btn:hover {
 		background: var(--accent-regular);
 		border-color: var(--accent-regular);
+		color: var(--accent-text-over);
 	}
 </style>
