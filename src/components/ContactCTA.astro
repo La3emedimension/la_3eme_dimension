@@ -25,15 +25,22 @@ const t = useTranslations(locale);
 			</CallToAction>
 		</div>
 	</div>
-	<a href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer" class="fab-logo">
-		<div class="fab-main">
-			<div class="fab-text">
-				<p class="fab-title">Labellisé Fabriqué en Occitanie</p>
-				<p class="fab-description">De l'idée à l'impression, toutes nos conceptions et créations sont réalisées et produites dans le Tarn-et-Garonne.</p>
+	<div class="fab-logos">
+		<a href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer" class="fab-card">
+			<img src="/assets/LOGO-FAB-OCC-Q.png" alt="FAB OCC" class="fab-logo" />
+			<div class="fab-content">
+				<p class="fab-title">Fabriqué en Occitanie</p>
+				<p class="fab-description">De l'idée à l'impression, toutes nos créations sont réalisées dans le Tarn-et-Garonne.</p>
 			</div>
-			<img src="/assets/LOGO-FAB-OCC-Q.png" alt="FAB OCC" />
-		</div>
-	</a>
+		</a>
+		<a href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer" class="fab-card">
+			<img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="fab-logo" />
+			<div class="fab-content">
+				<p class="fab-title">French Fab</p>
+				<p class="fab-description">Membre du réseau French Fab, vitrine de l'industrie française.</p>
+			</div>
+		</a>
+	</div>
 </aside>
 
 <style>
@@ -74,60 +81,66 @@ const t = useTranslations(locale);
 		padding: 0.5em 1.5em !important;
 	}
 
-	.fab-logo {
+	.fab-logos {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		align-items: stretch;
+		width: 100%;
+		max-width: 500px;
+	}
+
+	.fab-card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		max-width: 600px;
+		gap: 1rem;
+		padding: 1.5rem;
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
 		text-decoration: none;
 		color: inherit;
 		transition: all 0.3s ease;
-		border-radius: 1rem;
-		padding: 1rem;
 	}
 
-	.fab-logo:hover {
+	.fab-card:hover {
 		background: rgba(255, 255, 255, 0.05);
+		border-color: var(--gray-700);
 		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	}
 
-	.fab-logo:hover .fab-title {
+	.fab-card:hover .fab-title {
 		color: var(--accent-regular);
 	}
 
-	.fab-main {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 1.5rem;
+	.fab-logo {
+		height: 60px;
+		width: auto;
+		object-fit: contain;
 	}
 
-	.fab-text {
+	.fab-content {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		text-align: center;
 	}
 
 	.fab-title {
-		font-size: var(--text-lg);
+		font-size: var(--text-md);
 		font-weight: 600;
 		color: var(--gray-200);
 		margin: 0;
-		text-align: right;
-	}
-
-	.fab-logo img {
-		max-height: 120px;
-		width: auto;
+		transition: color 0.3s ease;
 	}
 
 	.fab-description {
 		font-size: var(--text-xs);
 		color: var(--gray-400);
 		margin: 0;
-		text-align: right;
-		line-height: 1.5;
+		line-height: 1.6;
 	}
 
 	@media (min-width: 50em) {
@@ -159,16 +172,23 @@ const t = useTranslations(locale);
 			padding: 0.75rem 1.75rem !important;
 		}
 
+		.fab-logos {
+			flex-direction: row;
+			gap: 1.5rem;
+			max-width: none;
+		}
+
+		.fab-card {
+			flex: 1;
+			max-width: 280px;
+		}
+
 		.fab-logo {
-			align-items: flex-end;
+			height: 80px;
 		}
 
 		.fab-title {
-			font-size: var(--text-xl);
-		}
-
-		.fab-logo img {
-			max-height: 150px;
+			font-size: var(--text-lg);
 		}
 	}
 </style>
