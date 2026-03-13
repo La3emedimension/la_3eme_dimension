@@ -93,6 +93,11 @@ export const en: Translations = {
     title: 'What our customers say',
     reviews: [
       {
+        text: 'Happy owner of a Seestar S50, I ordered the accessories that Raphael offers (baffle, dust cover, etc.). All these accessories attach perfectly to the Seestar, without forcing, and hold really well! An essential addition to this little machine. Raphael perfectly masters his designs, the dimensions, and his printing! 100% approved!!',
+        author: 'Darry.N',
+        product: 'Seestar S50 Accessories - 05/30/2025',
+      },
+      {
         text: 'I bought these 3 collimation knobs for my Orion XX14i Dobsonian. They replace my old steel screws which, although sold for this purpose, did not have rounded ends and ended up punching the back of my secondary mirror support. The ones from La 3ème dimension are nicely rounded, which makes the adjustment much smoother, without jerks and much more precise. Very satisfied, thank you!',
         author: 'Jean-Marc C.',
         product: 'Collimation knobs - 02/28/2026',
