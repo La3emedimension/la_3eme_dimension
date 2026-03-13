@@ -24,7 +24,7 @@ const businessStructuredData = {
     "@type": "LocalBusiness",
     name: "La 3ème dimension",
     description:
-        "Spécialiste en impression 3D et conception de télescopes compacts. Innovation dans l'astronomie portable avec le télescope Smallest. Service Toulouse et région.",
+        "Télescopes compacts et accessoires d'astronomie pour débutants. Fabrication française par impression 3D. Parfait pour débuter l'observation des planètes et du ciel profond. Simple, portable et abordable. Toulouse et toute la France.",
     url: "https://la3emedim.fr",
     telephone: "0760853870",
     email: "la3emedim@gmail.com",
@@ -51,20 +51,22 @@ const businessStructuredData = {
     },
     hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Services d'impression 3D et télescopes",
+        name: "Télescopes et accessoires pour débutants en astronomie",
         itemListElement: [
             {
                 "@type": "Offer",
                 itemOffered: {
-                    "@type": "Service",
-                    name: "Impression 3D sur mesure",
+                    "@type": "Product",
+                    name: "Télescope Smallest - Parfait pour débuter",
+                    description: "Télescope compact portable, facile à utiliser, idéal pour observer la Lune et les planètes",
                 },
             },
             {
                 "@type": "Offer",
                 itemOffered: {
-                    "@type": "Product",
-                    name: "Télescope Smallest portable",
+                    "@type": "Service",
+                    name: "Accessoires astronomie sur mesure en impression 3D",
+                    description: "Masques de Bahtinov, vis de collimation, accessoires pour télescopes débutants et confirmés",
                 },
             },
         ],
@@ -77,9 +79,9 @@ const businessStructuredData = {
 
 <BaseLayout
     locale={locale}
-    title="La 3ème dimension - Impression 3D & Télescopes Astronomiques | Toulouse et région"
-    description="Spécialiste en impression 3D et conception de télescopes compacts. Découvrez le Smallest, télescope portable pratique pour l'astronomie nomade. Service Toulouse et région (50km)."
-    keywords="impression 3d toulouse, télescope portable, smallest telescope, astronomie nomade, conception 3d, telescope compact, haute-garonne, occitanie"
+    title="Télescopes pour Débutants - Simple, Compact et Français | La 3ème dimension Toulouse"
+    description="Découvrez l'astronomie facilement avec nos télescopes compacts fabriqués en France. Parfait pour débuter : simple à monter, portable, abordable. Observez la Lune, Saturne, Jupiter dès ce soir ! Accessoires 3D sur mesure. Toulouse et toute la France."
+    keywords="télescope débutant, premier télescope, débuter astronomie, télescope facile, observer lune planètes, télescope portable débutant, astronomie simple, télescope compact français, accessoires astronomie débutant, telescope pas cher qualité, toulouse, occitanie"
     structuredData={businessStructuredData}
 >
     <div class="stack gap-20 lg:gap-36">
