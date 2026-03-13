@@ -93,6 +93,11 @@ export const fr: Translations = {
     title: 'Ce que disent nos clients',
     reviews: [
       {
+        text: 'Heureux possesseur d\'une Seestar S50, j\'ai commandé à Raphael les accessoires qu\'il propose (baffle, cache anti poussière etc.). Tous ces accessoires s\'attachent parfaitement à la Seestar, sans forcer, et tiennent vraiment très bien ! Un ajout indispensable à cette petite machine. Raphael maîtrise parfaitement ses designs, les dimensions, et son impression ! Approuvé à 100% !!',
+        author: 'Darry.N',
+        product: 'Accessoires Seestar S50 - 30/05/2025',
+      },
+      {
         text: 'J\'ai acheté ces 3 vis moletées de collimation pour mon Dobson Orion XX14i. Elles viennent remplacer mes anciennes vis en acier qui, bien que vendues pour cet usage, n\'avaient pas d\'extrémités arrondies et finissaient par poinçonner l\'arrière du support de mon miroir secondaire. Celles de la 3ème dimension sont bien arrondies, ce qui rend le réglage beaucoup plus souple, sans accoups et beaucoup plus précis. Très satisfait, merci !',
         author: 'Jean-Marc C.',
         product: 'Vis de collimation - 28/02/2026',
