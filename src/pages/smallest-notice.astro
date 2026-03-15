@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import ProductLayout from '../layouts/ProductLayout.astro';
+import AssemblyGuide from '../components/AssemblyGuide.astro';
+import TravelSection from '../components/TravelSection.astro';
+import { type Locale } from '../i18n';
+
+const locale: Locale = 'fr';
+
+const products = await getCollection('products');
+const smallestProduct = products.find(product => product.id.includes('smallest'));
+
+if (!smallestProduct) {
+	console.error('Available product IDs:', products.map(p => p.id));
+	throw new Error('Smallest product not found');
+}
+
+const productConfig = smallestProduct.data;
+
+// Modify for notice page - adjust title and description
+const noticeConfig = {
+	...productConfig,
+	seoTitle: "Notice Smallest - Guide de montage | La 3ème dimension",
+	seoDescription: "Notice de montage complète du télescope Smallest. Guide pas à pas, conseils d'observation et informations techniques.",
+	sections: [
+		...productConfig.sections.map(section => {
+			if (section.type === 'hero') {
+				const { primaryCta, ...sectionData } = section.data;
+				return {
+					...section,
+					data: {
+						...sectionData,
+						title: "Notice Smallest",
+						tagline: "Guide de montage complet",
+						description: "Notice de montage de votre télescope Smallest. Suivez les étapes pour assembler votre télescope en quelques minutes et profiter du ciel étoilé.",
+						warning: "⚠️ Ne jamais regarder le soleil, Risque de lésions oculaires graves et irréversibles.",
+						primaryCta: { "text": "Télécharger la notice PDF", "href": "/assets/Smallest assembly-1.pdf" }
+					}
+				};
+			}
+			return section;
+		}).slice(0, 1), // Hero seulement
+
+		// Ajouter la section Notice de montage après le hero
+		{
+			type: 'custom',
+			id: 'section-assembly-guide',
+			customComponent: AssemblyGuide,
+			data: {
+				title: "Notice de montage",
+				steps: [
+					{
+						number: 1,
+						title: "",
+						description: "Fixer l'ensemble avec les 4 vis A (M4x25) pour maintenir la structure.",
+						image: "/assets/smallestmontage3.png",
+						alt: "Fixation avec vis M4x25"
+					},
+					{
+						number: 2,
+						title: "",
+						description: "Fixer le miroir primaire sur son support avec les vis B (M4x40).",
+						image: "/assets/smallestmontage4.png",
+						alt: "Fixation du miroir primaire"
+					},
+					{
+						number: 3,
+						title: "",
+						description: "Assembler les deux demi-cercles (arcs) avec les vis E (M4x25).",
+						image: "/assets/smallestmontage5.png",
+						alt: "Assemblage des demi-cercles"
+					},
+					{
+						number: 4,
+						title: "",
+						description: "Assembler le porte-oculaire et fixer les arcs sur la structure avec les vis C, D et F (M4x25).",
+						image: "/assets/smallestmontage6.png",
+						alt: "Assemblage du porte-oculaire et fixation des arcs"
+					},
+					{
+						number: 5,
+						title: "",
+						description: "Positionner l'ensemble sur la base Dobson (monture altazimutale).",
+						image: "/assets/smallestmontage7.png",
+						alt: "Montage sur la base Dobson"
+					},
+					{
+						number: 6,
+						title: "",
+						description: "Fixer définitivement le miroir primaire. Votre télescope Smallest est prêt pour l'observation !",
+						image: "/assets/smallestmontage8.png",
+						alt: "Fixation finale du miroir - télescope assemblé"
+					}
+				]
+			}
+		},
+
+		// Ajouter la section vidéo après la notice
+		...productConfig.sections.filter(section => section.type === 'video'),
+
+		// Ajouter la section voyage après la vidéo
+		{
+			type: 'custom',
+			id: 'section-voyage',
+			customComponent: TravelSection,
+			data: {
+				title: "Vous avez besoin de voyager ? Le leste est amovible.",
+				description: "Pour faciliter le transport de votre télescope Smallest, le leste peut être retiré. Découvrez comment dans cette section."
+			}
+		}
+	],
+
+	// Mise à jour de la navigation pour inclure la section montage
+	navigationItems: [
+		{ "id": "section-hero", "label": "Présentation" },
+		{ "id": "section-assembly-guide", "label": "Notice" },
+		{ "id": "section-video", "label": "Montage" },
+		{ "id": "section-voyage", "label": "Transport" }
+	]
+};
+---
+
+<ProductLayout {...noticeConfig} locale={locale} />
