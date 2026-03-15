@@ -221,7 +221,8 @@ Même vos enfants peuvent l'utiliser sans problème.
 
 #### Différence n°4 : Fabriqué en France (et personnalisable)
 
-- Imprimé en 3D avec un plastique ultra-résistant (plus solide que les tubes en aluminium classiques)
+- Imprimé en 3D avec un plastique ultra-résistant
+- Liaison entre cage primaire et secondaire en tubes carbone
 - Vous choisissez la couleur
 - Vous pouvez ajouter des accessoires au fur et à mesure
 - Si vous avez déjà des pièces d'un vieux télescope, on peut les adapter
@@ -422,7 +423,7 @@ Le Smallest rentre dans un placard normal. C'est con, mais ça change tout.
 Non. Si vous savez monter un meuble IKEA simple, vous savez monter le Smallest. La première fois ça prend 10 minutes, après c'est 4 minutes chrono. Et bonus : vous pouvez le laisser partiellement monté dans son sac, ce qui réduit le montage à 30 secondes pour les sorties rapides en semaine.
 
 **"C'est solide le plastique ?"**
-C'est pas du plastique normal, c'est du PETG renforcé fibre de carbone. Plus solide que les tubes en aluminium. Garanti 2 ans.
+C'est pas du plastique normal, c'est du PETG renforcé fibre de carbone. Très résistant et durable. Garanti 2 ans.
 
 **"Je peux l'utiliser en ville ?"**
 Pour la Lune et les planètes, oui sans problème. Pour voir les nébuleuses et galaxies, faut aller à la campagne (mais justement, c'est facile de l'emmener).
