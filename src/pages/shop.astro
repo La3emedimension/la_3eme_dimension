@@ -143,6 +143,9 @@ const shopStructuredData = {
 													<span class="price-note">{product.data.priceNote}</span>
 												)}
 											</div>
+											<div class="commander-btn">
+												Commander — {product.data.price}
+											</div>
 										</div>
 									)}
 								</div>
@@ -506,6 +509,9 @@ const shopStructuredData = {
 		margin-top: auto;
 		padding-top: 0.5rem;
 		border-top: 1px solid var(--gray-800);
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
 	}
 
 	.price-section {
@@ -513,6 +519,22 @@ const shopStructuredData = {
 		align-items: baseline;
 		gap: 0.5rem;
 		justify-content: center;
+	}
+
+	.commander-btn {
+		display: block;
+		text-align: center;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		padding: 0.6rem 1rem;
+		border-radius: 0.5rem;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		transition: opacity var(--theme-transition);
+	}
+
+	.product-card:hover .commander-btn {
+		opacity: 0.9;
 	}
 
 	.price {

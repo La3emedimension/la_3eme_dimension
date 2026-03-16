@@ -23,6 +23,8 @@ interface Props {
     afterCtaNote?: string;
     layout?: string;
     locale?: Locale;
+    contactText?: string;
+    contactHref?: string;
 }
 
 const {
@@ -37,6 +39,8 @@ const {
     afterCtaNote,
     layout,
     locale = 'fr',
+    contactText,
+    contactHref,
 } = Astro.props;
 
 const t = useTranslations(locale);
@@ -73,7 +77,7 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
                 ))}
             </div>
         ) : (
-            <div class={`pricing-grid ${options.length === 0 ? 'single-card' : ''}`}>
+            <div class="pricing-stack">
                 <div class="pricing-card main-offer">
                     <h3>{title}</h3>
                     <div class="price">{price}</div>
@@ -93,23 +97,24 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
                     {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
                 </div>
                 {options.length > 0 && (
-                    <div class="pricing-card">
-                        <h3>{optionsTitle}</h3>
-                        <div class="optics-options">
+                    <div class="options-below">
+                        <h4 class="options-title">{optionsTitle}</h4>
+                        <div class="options-list">
                             {options.map((option) => (
-                                <div class="option">
-                                    <h4>{option.title}</h4>
-                                    {option.priceNote && <p class="option-price-note">{option.priceNote}</p>}
-                                    {option.included && (
-                                        <ul class="included">
-                                            {option.included.map((item) => <li>{item}</li>)}
-                                        </ul>
-                                    )}
-                                    {option.description && <p set:html={option.description} />}
-                                    {option.afterCtaNote && <p class="after-cta-note" set:html={option.afterCtaNote} />}
+                                <div class="option-item">
+                                    <span class="option-name">{option.title}</span>
+                                    {option.description && <span class="option-desc" set:html={option.description} />}
                                 </div>
                             ))}
                         </div>
+                        {contactHref && (
+                            <a
+                                href={contactHref}
+                                class="cta-contact"
+                            >
+                                {contactText || 'Nous contacter'}
+                            </a>
+                        )}
                     </div>
                 )}
             </div>
@@ -152,6 +157,16 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
         margin-bottom: 4rem;
     }
 
+    .pricing-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    /* legacy grid kept for other pages using layout=cards */
     .pricing-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -249,39 +264,70 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
         transform: translateY(-2px);
     }
 
+    /* ── Options en dessous ── */
+    .options-below {
+        width: 100%;
+        text-align: center;
+    }
+
+    .options-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gray-500);
+        margin-bottom: 0.75rem;
+    }
+
+    .options-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .option-item {
+        font-size: 0.82rem;
+        color: var(--gray-400);
+    }
+
+    .option-name {
+        font-weight: 600;
+        color: var(--gray-300);
+    }
+
+    .option-name::after {
+        content: ' — ';
+    }
+
+    .option-desc {
+        color: var(--gray-500);
+    }
+
+    .cta-contact {
+        display: inline-block;
+        background: transparent;
+        border: 1px solid var(--gray-700);
+        color: var(--gray-300);
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .cta-contact:hover {
+        border-color: var(--accent-regular);
+        color: var(--accent-regular);
+    }
+
+    /* legacy */
     .optics-options {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-    }
-
-    .optics-options .option {
-        margin-bottom: 1.5rem;
-        text-align: center;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid var(--gray-800);
-    }
-
-    .optics-options .option:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .optics-options h4 {
-        color: var(--accent-regular);
-        margin-bottom: 0.5rem;
-        font-size: 3rem;
-        font-weight: 700;
-    }
-
-    .option-price-note {
-        color: var(--gray-400);
-        margin-bottom: 2rem;
-    }
-
-    .optics-options p {
-        color: var(--gray-300);
-        font-size: 0.9rem;
     }
 
     

@@ -205,24 +205,13 @@ const { title, steps } = Astro.props;
   }
 
   .images-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .image-with-text {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .image-description {
-    color: var(--gray-300);
-    line-height: 1.6;
-    font-size: var(--text-md);
-    margin: 0;
-    text-align: left;
+    width: 100%;
   }
 
   .image-with-text img {
@@ -231,19 +220,11 @@ const { title, steps } = Astro.props;
     display: block;
     cursor: pointer;
     transition: transform 0.2s ease, opacity 0.2s ease;
-    border-radius: 1rem;
   }
 
   .image-with-text img:hover {
     transform: scale(1.02);
     opacity: 0.9;
-  }
-
-  @media (max-width: 50em) {
-    .image-with-text {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
   }
 
   @media (min-width: 50em) {
