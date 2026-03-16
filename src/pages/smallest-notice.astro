@@ -122,19 +122,36 @@ const noticeConfig = {
 
 <ProductLayout {...noticeConfig} locale={locale} />
 
-<div id="sn-badge" style="display:none;position:fixed;bottom:1.25rem;right:1.25rem;z-index:9999;background:#1a1a2e;border:1px solid #6366f1;border-radius:0.6rem;padding:0.6rem 1rem;font-family:monospace;font-size:0.85rem;color:#a5b4fc;box-shadow:0 4px 20px rgba(99,102,241,0.25);pointer-events:none;">
-  📟 <span id="sn-value"></span>
+<div id="sn-card" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;background:#0f0f1a;border:1px solid #6366f1;border-radius:1rem;padding:1.25rem 1.5rem;box-shadow:0 8px 32px rgba(99,102,241,0.3);max-width:280px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6366f1;margin-bottom:0.75rem;">🔭 Carte produit</div>
+  <div style="margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#666;margin-bottom:0.15rem;">Produit</div>
+    <div style="font-size:0.95rem;font-weight:600;color:#fff;">Télescope Smallest</div>
+  </div>
+  <div style="margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#666;margin-bottom:0.15rem;">Numéro de série</div>
+    <div id="sn-value" style="font-size:1rem;font-weight:700;font-family:monospace;color:#a5b4fc;letter-spacing:0.1em;"></div>
+  </div>
+  <div id="sn-date-row" style="display:none;margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#666;margin-bottom:0.15rem;">Date d'achat</div>
+    <div id="sn-date" style="font-size:0.9rem;font-weight:500;color:#e2e8f0;"></div>
+  </div>
+  <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #1e1e3a;font-size:0.7rem;color:#555;">La 3ème Dimension — la3emedim.fr</div>
 </div>
 
-<script>
+<script is:inline>
   (function () {
     const params = new URLSearchParams(window.location.search);
     const sn = params.get('sn');
     if (!sn) return;
-    // Valider le format SMA + 5 chiffres + 2 chiffres
-    if (!/^SMA\d{5}\d{2}$/.test(sn)) return;
-    const badge = document.getElementById('sn-badge');
-    document.getElementById('sn-value').textContent = 'N° ' + sn;
-    badge.style.display = 'block';
+    if (!/^SMA\d{7}$/.test(sn)) return;
+    document.getElementById('sn-value').textContent = sn;
+    const d = params.get('d');
+    if (d && d.length === 8) {
+      const dateStr = d.slice(6,8) + '/' + d.slice(4,6) + '/' + d.slice(0,4);
+      document.getElementById('sn-date').textContent = dateStr;
+      document.getElementById('sn-date-row').style.display = 'block';
+    }
+    document.getElementById('sn-card').style.display = 'block';
   })();
 </script>

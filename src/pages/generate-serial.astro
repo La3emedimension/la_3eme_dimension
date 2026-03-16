@@ -418,7 +418,8 @@
 
     var seq = counters[currentPrefix];
     var sn  = buildSN(currentPrefix, seq, year);
-    var url = NOTICE_URLS[currentPrefix] + '?sn=' + sn;
+    var dateCompact = date.replace(/-/g, '');
+    var url = NOTICE_URLS[currentPrefix] + '?sn=' + sn + '&d=' + dateCompact;
 
     document.getElementById('result-sn').textContent  = sn;
     document.getElementById('result-url').textContent = url;
