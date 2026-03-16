@@ -1,0 +1,587 @@
+---
+// Page admin - accès via /generate-serial/?pw=VOTRE_MOT_DE_PASSE
+// Programmez cette URL sur une puce NFC pour un accès rapide
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de N° de série — Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e5e5e5;
+      min-height: 100vh;
+    }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+    .login-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+    .login-card h1 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #fff; }
+    .login-card p  { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
+    .login-card input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .login-card input:focus { outline: none; border-color: #555; }
+    #login-error { color: #f87171; font-size: 0.85rem; margin-bottom: 1rem; display: none; }
+
+    /* ── LAYOUT ── */
+    #admin-interface { display: none; max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+
+    header { margin-bottom: 2rem; }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: #fff; }
+    header p  { font-size: 0.9rem; color: #888; margin-top: 0.3rem; }
+
+    /* ── CARDS ── */
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 { font-size: 1rem; font-weight: 600; color: #ccc; margin-bottom: 1.25rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* ── FORM ── */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label { font-size: 0.8rem; color: #888; font-weight: 500; }
+    .form-group input, .form-group select {
+      padding: 0.65rem 0.9rem;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #555; }
+    .form-group select option { background: #1a1a1a; }
+
+    /* Prefix badges */
+    .prefix-select { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .prefix-btn {
+      flex: 1;
+      padding: 0.75rem;
+      border: 2px solid #333;
+      border-radius: 0.5rem;
+      background: #111;
+      color: #aaa;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.1em;
+    }
+    .prefix-btn:hover { border-color: #555; color: #fff; }
+    .prefix-btn.active { border-color: #6366f1; color: #6366f1; background: #1e1e2e; }
+
+    /* Counter */
+    .counter-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .counter-display {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: monospace;
+      color: #fff;
+      letter-spacing: 0.05em;
+      flex: 1;
+    }
+    .counter-display span { color: #6366f1; }
+    .counter-controls { display: flex; gap: 0.5rem; }
+    .counter-controls button {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid #333;
+      background: #111;
+      color: #aaa;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .counter-controls button:hover { border-color: #555; color: #fff; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f52d4; }
+    .btn-secondary { background: #222; color: #ccc; border: 1px solid #333; }
+    .btn-secondary:hover { background: #2a2a2a; color: #fff; }
+    .btn-danger { background: #2a1a1a; color: #f87171; border: 1px solid #4a2020; }
+    .btn-danger:hover { background: #3a2020; }
+    .btn-full { width: 100%; }
+
+    /* ── RESULT ── */
+    #result-section { display: none; }
+    .sn-display {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: monospace;
+      color: #6366f1;
+      letter-spacing: 0.15em;
+      text-align: center;
+      padding: 1.25rem;
+      background: #111;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .url-box {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .url-box code { flex: 1; font-size: 0.85rem; color: #a3e635; word-break: break-all; }
+    .copy-btn {
+      padding: 0.4rem 0.8rem;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 0.4rem;
+      color: #ccc;
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: #2a2a2a; color: #fff; }
+    .copy-btn.copied { background: #14532d; color: #86efac; border-color: #16a34a; }
+
+    /* ── TABLE ── */
+    .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .table-header h2 { margin: 0; }
+    .registry-count { font-size: 0.8rem; color: #666; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    thead th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      color: #666;
+      font-weight: 500;
+      border-bottom: 1px solid #222;
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid #1e1e1e; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 0.6rem 0.75rem; color: #ccc; }
+    tbody td.sn-cell { font-family: monospace; color: #6366f1; font-weight: 600; }
+    .empty-state { text-align: center; padding: 2rem; color: #555; }
+
+    .table-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+
+    /* ── NFC SIZE INFO ── */
+    .nfc-info {
+      font-size: 0.75rem;
+      color: #555;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .nfc-info span { color: #a3e635; }
+  </style>
+</head>
+<body>
+
+<!-- ══ ÉCRAN DE CONNEXION ══ -->
+<div id="login-screen">
+  <div class="login-card">
+    <h1>🔐 Admin</h1>
+    <p>Générateur de numéros de série<br>La 3ème Dimension</p>
+    <div id="login-error">Mot de passe incorrect</div>
+    <input type="password" id="pw-input" placeholder="Mot de passe" autocomplete="current-password" />
+    <button class="btn btn-primary btn-full" onclick="checkPassword()">Accéder</button>
+  </div>
+</div>
+
+<!-- ══ INTERFACE ADMIN ══ -->
+<div id="admin-interface">
+
+  <header>
+    <h1>Générateur de N° de série</h1>
+    <p>La 3ème Dimension — Outil admin</p>
+  </header>
+
+  <!-- Génération -->
+  <div class="card">
+    <h2>Nouveau numéro</h2>
+
+    <!-- Choix préfixe -->
+    <div class="prefix-select">
+      <button class="prefix-btn active" id="btn-sma" onclick="setPrefix('SMA')">SMA — Smallest</button>
+      <button class="prefix-btn" id="btn-ert" onclick="setPrefix('ERT')">ERT — E.R.T</button>
+    </div>
+
+    <!-- Compteur -->
+    <div class="counter-row">
+      <div class="counter-display" id="counter-display">
+        <span id="prefix-label">SMA</span><span id="seq-label">00001</span><span id="year-label">26</span>
+      </div>
+      <div class="counter-controls">
+        <button onclick="adjustCounter(-1)" title="Reculer">−</button>
+        <button onclick="adjustCounter(1)" title="Avancer">+</button>
+      </div>
+    </div>
+
+    <!-- Infos client -->
+    <div class="form-row" style="margin-bottom:1rem">
+      <div class="form-group">
+        <label>Prénom</label>
+        <input type="text" id="field-prenom" placeholder="Jean" />
+      </div>
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" id="field-nom" placeholder="Dupont" />
+      </div>
+      <div class="form-group">
+        <label>Date d'achat</label>
+        <input type="date" id="field-date" />
+      </div>
+      <div class="form-group">
+        <label>Année (2 chiffres)</label>
+        <input type="text" id="field-year" value="26" maxlength="2" placeholder="26" />
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-full" onclick="generateSerial()">Générer le numéro de série</button>
+  </div>
+
+  <!-- Résultat -->
+  <div class="card" id="result-section">
+    <h2>Résultat</h2>
+    <div class="sn-display" id="result-sn">SMA0000126</div>
+
+    <div class="url-box">
+      <code id="result-url"></code>
+      <button class="copy-btn" id="copy-url-btn" onclick="copyUrl()">Copier</button>
+    </div>
+    <div class="nfc-info">
+      Taille URL : <span id="url-size">0</span> octets / 504 octets disponibles sur la puce NFC
+    </div>
+  </div>
+
+  <!-- Registre -->
+  <div class="card">
+    <div class="table-header">
+      <h2>Registre <span class="registry-count" id="registry-count"></span></h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>N° de série</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date d'achat</th>
+            <th>Lien notice</th>
+          </tr>
+        </thead>
+        <tbody id="registry-body">
+          <tr><td colspan="5" class="empty-state">Aucun numéro généré</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-actions">
+      <button class="btn btn-secondary" onclick="exportCSV()">Exporter CSV</button>
+      <button class="btn btn-danger" onclick="clearRegistry()">Vider le registre</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ══════════════════════════════════════════════
+  // CONFIG — Changer le mot de passe ici
+  // ══════════════════════════════════════════════
+  const ADMIN_PASSWORD = 'Seriall3d*';
+
+  const NOTICE_URLS = {
+    SMA: 'https://la3emedim.fr/smallest-notice/',
+    ERT: 'https://la3emedim.fr/ert/',
+  };
+
+  // ══ État courant ══
+  let currentPrefix = 'SMA';
+  let counters = { SMA: 1, ERT: 1 };
+  let registry = [];
+
+  // ══ AUTHENTIFICATION ══
+
+  function checkPassword() {
+    const input = document.getElementById('pw-input').value;
+    // Accepter le mot de passe depuis le champ OU depuis l'URL
+    if (input === ADMIN_PASSWORD) {
+      showAdmin();
+    } else {
+      document.getElementById('login-error').style.display = 'block';
+    }
+  }
+
+  document.getElementById('pw-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  function showAdmin() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-interface').style.display = 'block';
+    loadFromStorage();
+    setTodayDate();
+  }
+
+  // Vérification auto via URL ?pw=
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const pw = params.get('pw');
+    if (pw === ADMIN_PASSWORD) {
+      showAdmin();
+    }
+  });
+
+  // ══ STOCKAGE ══
+
+  function saveToStorage() {
+    localStorage.setItem('l3d_counters', JSON.stringify(counters));
+    localStorage.setItem('l3d_registry', JSON.stringify(registry));
+  }
+
+  function loadFromStorage() {
+    const savedCounters = localStorage.getItem('l3d_counters');
+    const savedRegistry = localStorage.getItem('l3d_registry');
+    if (savedCounters) counters = JSON.parse(savedCounters);
+    if (savedRegistry) registry = JSON.parse(savedRegistry);
+    updateCounterDisplay();
+    renderRegistry();
+  }
+
+  // ══ PRÉFIXE ══
+
+  function setPrefix(prefix) {
+    currentPrefix = prefix;
+    document.getElementById('btn-sma').classList.toggle('active', prefix === 'SMA');
+    document.getElementById('btn-ert').classList.toggle('active', prefix === 'ERT');
+    updateCounterDisplay();
+    document.getElementById('result-section').style.display = 'none';
+  }
+
+  // ══ COMPTEUR ══
+
+  function padSeq(n) {
+    return String(n).padStart(5, '0');
+  }
+
+  function buildSN(prefix, seq, year) {
+    return `${prefix}${padSeq(seq)}${year}`;
+  }
+
+  function updateCounterDisplay() {
+    const year = document.getElementById('field-year')?.value || '26';
+    const seq = counters[currentPrefix];
+    document.getElementById('prefix-label').textContent = currentPrefix;
+    document.getElementById('seq-label').textContent = padSeq(seq);
+    document.getElementById('year-label').textContent = year;
+  }
+
+  function adjustCounter(delta) {
+    counters[currentPrefix] = Math.max(1, counters[currentPrefix] + delta);
+    saveToStorage();
+    updateCounterDisplay();
+  }
+
+  document.addEventListener('input', (e) => {
+    if (e.target.id === 'field-year') updateCounterDisplay();
+  });
+
+  // ══ GÉNÉRATION ══
+
+  function generateSerial() {
+    const prenom = document.getElementById('field-prenom').value.trim();
+    const nom = document.getElementById('field-nom').value.trim();
+    const date = document.getElementById('field-date').value;
+    const year = document.getElementById('field-year').value.trim();
+
+    if (!prenom || !nom || !date) {
+      alert('Merci de remplir Prénom, Nom et Date d\'achat.');
+      return;
+    }
+    if (year.length !== 2) {
+      alert('L\'année doit faire 2 chiffres (ex: 26).');
+      return;
+    }
+
+    const seq = counters[currentPrefix];
+    const sn = buildSN(currentPrefix, seq, year);
+    const noticeUrl = `${NOTICE_URLS[currentPrefix]}?sn=${sn}`;
+
+    // Affichage
+    document.getElementById('result-sn').textContent = sn;
+    document.getElementById('result-url').textContent = noticeUrl;
+    document.getElementById('result-section').style.display = 'block';
+
+    const urlBytes = new TextEncoder().encode(noticeUrl).length;
+    document.getElementById('url-size').textContent = urlBytes;
+
+    // Réinitialiser le bouton copier
+    const btn = document.getElementById('copy-url-btn');
+    btn.textContent = 'Copier';
+    btn.className = 'copy-btn';
+
+    // Sauvegarder dans le registre
+    registry.push({
+      sn,
+      prefix: currentPrefix,
+      prenom,
+      nom,
+      dateAchat: date,
+      lien: noticeUrl,
+    });
+
+    // Incrémenter le compteur pour la prochaine génération
+    counters[currentPrefix]++;
+    saveToStorage();
+    updateCounterDisplay();
+    renderRegistry();
+
+    // Scroll vers le résultat
+    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ══ COPIER URL ══
+
+  function copyUrl() {
+    const url = document.getElementById('result-url').textContent;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('copy-url-btn');
+      btn.textContent = 'Copié !';
+      btn.className = 'copy-btn copied';
+      setTimeout(() => {
+        btn.textContent = 'Copier';
+        btn.className = 'copy-btn';
+      }, 2000);
+    });
+  }
+
+  // ══ REGISTRE ══
+
+  function renderRegistry() {
+    const tbody = document.getElementById('registry-body');
+    const count = document.getElementById('registry-count');
+
+    count.textContent = `(${registry.length} entrée${registry.length > 1 ? 's' : ''})`;
+
+    if (registry.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Aucun numéro généré</td></tr>';
+      return;
+    }
+
+    // Afficher du plus récent au plus ancien
+    tbody.innerHTML = [...registry].reverse().map(row => `
+      <tr>
+        <td class="sn-cell">${row.sn}</td>
+        <td>${escapeHtml(row.prenom)}</td>
+        <td>${escapeHtml(row.nom)}</td>
+        <td>${formatDate(row.dateAchat)}</td>
+        <td><a href="${row.lien}" target="_blank" style="color:#6366f1;font-size:0.8rem">Notice ↗</a></td>
+      </tr>
+    `).join('');
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '—';
+    const [y, m, d] = iso.split('-');
+    return `${d}/${m}/${y}`;
+  }
+
+  // ══ EXPORT CSV ══
+
+  function exportCSV() {
+    if (registry.length === 0) {
+      alert('Le registre est vide.');
+      return;
+    }
+
+    const header = ['N° de série', 'Produit', 'Prénom', 'Nom', 'Date d\'achat', 'Lien notice'];
+    const rows = registry.map(r => [
+      r.sn,
+      r.prefix === 'SMA' ? 'Smallest' : 'E.R.T',
+      r.prenom,
+      r.nom,
+      formatDate(r.dateAchat),
+      r.lien,
+    ]);
+
+    const csv = [header, ...rows]
+      .map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
+      .join('\n');
+
+    // BOM UTF-8 pour Excel
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `registre-serie-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ══ VIDER ══
+
+  function clearRegistry() {
+    if (!confirm('Supprimer toutes les entrées du registre ? Cette action est irréversible.')) return;
+    registry = [];
+    saveToStorage();
+    renderRegistry();
+  }
+
+  // ══ DATE PAR DÉFAUT ══
+
+  function setTodayDate() {
+    const today = new Date().toISOString().slice(0, 10);
+    document.getElementById('field-date').value = today;
+  }
+</script>
+</body>
+</html>

@@ -235,6 +235,23 @@ const noticeConfig = {
 
 <ProductLayout {...noticeConfig} locale={locale} />
 
+<div id="sn-badge" style="display:none;position:fixed;bottom:1.25rem;right:1.25rem;z-index:9999;background:#1a1a1a;border:1px solid #4b5563;border-radius:0.6rem;padding:0.6rem 1rem;font-family:monospace;font-size:0.85rem;color:#9ca3af;box-shadow:0 4px 20px rgba(75,85,99,0.3);pointer-events:none;">
+  📟 <span id="sn-value"></span>
+</div>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const sn = params.get('sn');
+    if (!sn) return;
+    // Valider le format ERT + 5 chiffres + 2 chiffres
+    if (!/^ERT\d{5}\d{2}$/.test(sn)) return;
+    const badge = document.getElementById('sn-badge');
+    document.getElementById('sn-value').textContent = 'N° ' + sn;
+    badge.style.display = 'block';
+  })();
+</script>
+
 <style>
   /* Override accent colors with gray-700 for ERT page */
   :global(.accent-regular) {
