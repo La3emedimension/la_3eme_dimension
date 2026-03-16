@@ -228,7 +228,7 @@
     <p>Générateur de numéros de série<br>La 3ème Dimension</p>
     <div id="login-error">Mot de passe incorrect</div>
     <input type="password" id="pw-input" placeholder="Mot de passe" autocomplete="current-password" />
-    <button class="btn btn-primary btn-full" onclick="checkPassword()">Accéder</button>
+    <button class="btn btn-primary btn-full">Accéder</button>
   </div>
 </div>
 
@@ -246,8 +246,8 @@
 
     <!-- Choix préfixe -->
     <div class="prefix-select">
-      <button class="prefix-btn active" id="btn-sma" onclick="setPrefix('SMA')">SMA — Smallest</button>
-      <button class="prefix-btn" id="btn-ert" onclick="setPrefix('ERT')">ERT — E.R.T</button>
+      <button class="prefix-btn active" id="btn-sma">SMA — Smallest</button>
+      <button class="prefix-btn" id="btn-ert">ERT — E.R.T</button>
     </div>
 
     <!-- Compteur -->
@@ -256,8 +256,8 @@
         <span id="prefix-label">SMA</span><span id="seq-label">00001</span><span id="year-label">26</span>
       </div>
       <div class="counter-controls">
-        <button onclick="adjustCounter(-1)" title="Reculer">−</button>
-        <button onclick="adjustCounter(1)" title="Avancer">+</button>
+        <button title="Reculer">−</button>
+        <button title="Avancer">+</button>
       </div>
     </div>
 
@@ -281,17 +281,18 @@
       </div>
     </div>
 
-    <button class="btn btn-primary btn-full" onclick="generateSerial()">Générer le numéro de série</button>
+    <div id="form-error" style="display:none;color:#f87171;font-size:0.85rem;margin-bottom:0.75rem;padding:0.5rem 0.75rem;background:#2a1a1a;border-radius:0.4rem;border:1px solid #4a2020;"></div>
+    <button class="btn btn-primary btn-full" id="btn-generate">Générer le numéro de série</button>
   </div>
 
   <!-- Résultat -->
-  <div class="card" id="result-section">
+  <div class="card" id="result-section" style="display:none">
     <h2>Résultat</h2>
-    <div class="sn-display" id="result-sn">SMA0000126</div>
+    <div class="sn-display" id="result-sn"></div>
 
     <div class="url-box">
       <code id="result-url"></code>
-      <button class="copy-btn" id="copy-url-btn" onclick="copyUrl()">Copier</button>
+      <button class="copy-btn" id="copy-url-btn">Copier</button>
     </div>
     <div class="nfc-info">
       Taille URL : <span id="url-size">0</span> octets / 504 octets disponibles sur la puce NFC
@@ -322,266 +323,207 @@
     </div>
 
     <div class="table-actions">
-      <button class="btn btn-secondary" onclick="exportCSV()">Exporter CSV</button>
-      <button class="btn btn-danger" onclick="clearRegistry()">Vider le registre</button>
+      <button class="btn btn-secondary" id="btn-export">Exporter CSV</button>
+      <button class="btn btn-danger" id="btn-clear">Vider le registre</button>
     </div>
   </div>
 
 </div>
 
 <script is:inline>
-  // ══════════════════════════════════════════════
-  // CONFIG — Changer le mot de passe ici
-  // ══════════════════════════════════════════════
-  const ADMIN_PASSWORD = 'Seriall3d*';
-
-  const NOTICE_URLS = {
+(function () {
+  // ══ CONFIG ══
+  var ADMIN_PASSWORD = 'Seriall3d*';
+  var NOTICE_URLS = {
     SMA: 'https://la3emedim.fr/smallest-notice/',
     ERT: 'https://la3emedim.fr/ert/',
   };
 
-  // ══ État courant ══
-  let currentPrefix = 'SMA';
-  let counters = { SMA: 1, ERT: 1 };
-  let registry = [];
+  // ══ ÉTAT ══
+  var currentPrefix = 'SMA';
+  var counters = { SMA: 1, ERT: 1 };
+  var registry = [];
 
-  // ══ AUTHENTIFICATION ══
-
-  function checkPassword() {
-    const input = document.getElementById('pw-input').value;
-    // Accepter le mot de passe depuis le champ OU depuis l'URL
-    if (input === ADMIN_PASSWORD) {
-      showAdmin();
-    } else {
-      document.getElementById('login-error').style.display = 'block';
-    }
-  }
-
-  document.getElementById('pw-input').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') checkPassword();
-  });
-
-  function showAdmin() {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('admin-interface').style.display = 'block';
-    loadFromStorage();
-    setTodayDate();
-  }
-
-  // Vérification auto via URL ?pw=
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const pw = params.get('pw');
-    if (pw === ADMIN_PASSWORD) {
-      showAdmin();
-    }
-  });
-
-  // ══ STOCKAGE ══
-
-  function saveToStorage() {
-    localStorage.setItem('l3d_counters', JSON.stringify(counters));
-    localStorage.setItem('l3d_registry', JSON.stringify(registry));
-  }
-
-  function loadFromStorage() {
-    const savedCounters = localStorage.getItem('l3d_counters');
-    const savedRegistry = localStorage.getItem('l3d_registry');
-    if (savedCounters) counters = JSON.parse(savedCounters);
-    if (savedRegistry) registry = JSON.parse(savedRegistry);
-    updateCounterDisplay();
-    renderRegistry();
-  }
-
-  // ══ PRÉFIXE ══
-
-  function setPrefix(prefix) {
-    currentPrefix = prefix;
-    document.getElementById('btn-sma').classList.toggle('active', prefix === 'SMA');
-    document.getElementById('btn-ert').classList.toggle('active', prefix === 'ERT');
-    updateCounterDisplay();
-    document.getElementById('result-section').style.display = 'none';
-  }
-
-  // ══ COMPTEUR ══
-
-  function padSeq(n) {
-    return String(n).padStart(5, '0');
-  }
-
-  function buildSN(prefix, seq, year) {
-    return `${prefix}${padSeq(seq)}${year}`;
-  }
-
-  function updateCounterDisplay() {
-    const year = document.getElementById('field-year')?.value || '26';
-    const seq = counters[currentPrefix];
-    document.getElementById('prefix-label').textContent = currentPrefix;
-    document.getElementById('seq-label').textContent = padSeq(seq);
-    document.getElementById('year-label').textContent = year;
-  }
-
-  function adjustCounter(delta) {
-    counters[currentPrefix] = Math.max(1, counters[currentPrefix] + delta);
-    saveToStorage();
-    updateCounterDisplay();
-  }
-
-  document.addEventListener('input', (e) => {
-    if (e.target.id === 'field-year') updateCounterDisplay();
-  });
-
-  // ══ GÉNÉRATION ══
-
-  function generateSerial() {
-    const prenom = document.getElementById('field-prenom').value.trim();
-    const nom = document.getElementById('field-nom').value.trim();
-    const date = document.getElementById('field-date').value;
-    const year = document.getElementById('field-year').value.trim();
-
-    if (!prenom || !nom || !date) {
-      alert('Merci de remplir Prénom, Nom et Date d\'achat.');
-      return;
-    }
-    if (year.length !== 2) {
-      alert('L\'année doit faire 2 chiffres (ex: 26).');
-      return;
-    }
-
-    const seq = counters[currentPrefix];
-    const sn = buildSN(currentPrefix, seq, year);
-    const noticeUrl = `${NOTICE_URLS[currentPrefix]}?sn=${sn}`;
-
-    // Affichage
-    document.getElementById('result-sn').textContent = sn;
-    document.getElementById('result-url').textContent = noticeUrl;
-    document.getElementById('result-section').style.display = 'block';
-
-    const urlBytes = new TextEncoder().encode(noticeUrl).length;
-    document.getElementById('url-size').textContent = urlBytes;
-
-    // Réinitialiser le bouton copier
-    const btn = document.getElementById('copy-url-btn');
-    btn.textContent = 'Copier';
-    btn.className = 'copy-btn';
-
-    // Sauvegarder dans le registre
-    registry.push({
-      sn,
-      prefix: currentPrefix,
-      prenom,
-      nom,
-      dateAchat: date,
-      lien: noticeUrl,
-    });
-
-    // Incrémenter le compteur pour la prochaine génération
-    counters[currentPrefix]++;
-    saveToStorage();
-    updateCounterDisplay();
-    renderRegistry();
-
-    // Scroll vers le résultat
-    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  // ══ COPIER URL ══
-
-  function copyUrl() {
-    const url = document.getElementById('result-url').textContent;
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copy-url-btn');
-      btn.textContent = 'Copié !';
-      btn.className = 'copy-btn copied';
-      setTimeout(() => {
-        btn.textContent = 'Copier';
-        btn.className = 'copy-btn';
-      }, 2000);
-    });
-  }
-
-  // ══ REGISTRE ══
-
-  function renderRegistry() {
-    const tbody = document.getElementById('registry-body');
-    const count = document.getElementById('registry-count');
-
-    count.textContent = `(${registry.length} entrée${registry.length > 1 ? 's' : ''})`;
-
-    if (registry.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Aucun numéro généré</td></tr>';
-      return;
-    }
-
-    // Afficher du plus récent au plus ancien
-    tbody.innerHTML = [...registry].reverse().map(row => `
-      <tr>
-        <td class="sn-cell">${row.sn}</td>
-        <td>${escapeHtml(row.prenom)}</td>
-        <td>${escapeHtml(row.nom)}</td>
-        <td>${formatDate(row.dateAchat)}</td>
-        <td><a href="${row.lien}" target="_blank" style="color:#6366f1;font-size:0.8rem">Notice ↗</a></td>
-      </tr>
-    `).join('');
-  }
+  // ══ HELPERS ══
+  function padSeq(n) { return String(n).padStart(5, '0'); }
+  function buildSN(p, s, y) { return p + padSeq(s) + y; }
 
   function escapeHtml(str) {
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
-
   function formatDate(iso) {
     if (!iso) return '—';
-    const [y, m, d] = iso.split('-');
-    return `${d}/${m}/${y}`;
+    var parts = iso.split('-');
+    return parts[2] + '/' + parts[1] + '/' + parts[0];
+  }
+  function showError(msg) {
+    var el = document.getElementById('form-error');
+    el.textContent = msg;
+    el.style.display = msg ? 'block' : 'none';
   }
 
-  // ══ EXPORT CSV ══
-
-  function exportCSV() {
-    if (registry.length === 0) {
-      alert('Le registre est vide.');
-      return;
-    }
-
-    const header = ['N° de série', 'Produit', 'Prénom', 'Nom', 'Date d\'achat', 'Lien notice'];
-    const rows = registry.map(r => [
-      r.sn,
-      r.prefix === 'SMA' ? 'Smallest' : 'E.R.T',
-      r.prenom,
-      r.nom,
-      formatDate(r.dateAchat),
-      r.lien,
-    ]);
-
-    const csv = [header, ...rows]
-      .map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
-      .join('\n');
-
-    // BOM UTF-8 pour Excel
-    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `registre-serie-${new Date().toISOString().slice(0,10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
+  // ══ STOCKAGE ══
+  function saveToStorage() {
+    localStorage.setItem('l3d_counters', JSON.stringify(counters));
+    localStorage.setItem('l3d_registry', JSON.stringify(registry));
   }
-
-  // ══ VIDER ══
-
-  function clearRegistry() {
-    if (!confirm('Supprimer toutes les entrées du registre ? Cette action est irréversible.')) return;
-    registry = [];
-    saveToStorage();
+  function loadFromStorage() {
+    try {
+      var c = localStorage.getItem('l3d_counters');
+      var r = localStorage.getItem('l3d_registry');
+      if (c) counters = JSON.parse(c);
+      if (r) registry = JSON.parse(r);
+    } catch(e) {}
+    updateCounterDisplay();
     renderRegistry();
   }
 
-  // ══ DATE PAR DÉFAUT ══
-
-  function setTodayDate() {
-    const today = new Date().toISOString().slice(0, 10);
-    document.getElementById('field-date').value = today;
+  // ══ AUTH ══
+  function showAdmin() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-interface').style.display = 'block';
+    document.getElementById('field-date').value = new Date().toISOString().slice(0, 10);
+    loadFromStorage();
   }
+
+  // ══ PRÉFIXE ══
+  function setPrefix(prefix) {
+    currentPrefix = prefix;
+    document.getElementById('btn-sma').className = 'prefix-btn' + (prefix === 'SMA' ? ' active' : '');
+    document.getElementById('btn-ert').className = 'prefix-btn' + (prefix === 'ERT' ? ' active' : '');
+    document.getElementById('result-section').style.display = 'none';
+    updateCounterDisplay();
+  }
+
+  // ══ COMPTEUR ══
+  function updateCounterDisplay() {
+    var yearEl = document.getElementById('field-year');
+    var year = yearEl ? yearEl.value : '26';
+    document.getElementById('prefix-label').textContent = currentPrefix;
+    document.getElementById('seq-label').textContent = padSeq(counters[currentPrefix]);
+    document.getElementById('year-label').textContent = year;
+  }
+
+  // ══ GÉNÉRATION ══
+  function generateSerial() {
+    showError('');
+    var prenom = document.getElementById('field-prenom').value.trim();
+    var nom    = document.getElementById('field-nom').value.trim();
+    var date   = document.getElementById('field-date').value;
+    var year   = document.getElementById('field-year').value.trim();
+
+    if (!prenom || !nom) { showError('Merci de remplir Prénom et Nom.'); return; }
+    if (!date)           { showError('Merci de renseigner la date d\'achat.'); return; }
+    if (year.length !== 2) { showError('L\'année doit faire 2 chiffres (ex: 26).'); return; }
+
+    var seq = counters[currentPrefix];
+    var sn  = buildSN(currentPrefix, seq, year);
+    var url = NOTICE_URLS[currentPrefix] + '?sn=' + sn;
+
+    document.getElementById('result-sn').textContent  = sn;
+    document.getElementById('result-url').textContent = url;
+    document.getElementById('url-size').textContent   = new TextEncoder().encode(url).length;
+    document.getElementById('copy-url-btn').textContent = 'Copier';
+    document.getElementById('copy-url-btn').className  = 'copy-btn';
+    document.getElementById('result-section').style.display = 'block';
+
+    registry.push({ sn: sn, prefix: currentPrefix, prenom: prenom, nom: nom, dateAchat: date, lien: url });
+    counters[currentPrefix]++;
+    saveToStorage();
+    updateCounterDisplay();
+    renderRegistry();
+    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ══ COPIER ══
+  function copyUrl() {
+    var url = document.getElementById('result-url').textContent;
+    var btn = document.getElementById('copy-url-btn');
+    navigator.clipboard.writeText(url).then(function() {
+      btn.textContent = 'Copié !';
+      btn.className   = 'copy-btn copied';
+      setTimeout(function() { btn.textContent = 'Copier'; btn.className = 'copy-btn'; }, 2000);
+    });
+  }
+
+  // ══ REGISTRE ══
+  function renderRegistry() {
+    var tbody = document.getElementById('registry-body');
+    var count = document.getElementById('registry-count');
+    count.textContent = '(' + registry.length + ' entrée' + (registry.length > 1 ? 's' : '') + ')';
+    if (registry.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Aucun numéro généré</td></tr>';
+      return;
+    }
+    tbody.innerHTML = registry.slice().reverse().map(function(row) {
+      return '<tr>' +
+        '<td class="sn-cell">' + row.sn + '</td>' +
+        '<td>' + escapeHtml(row.prenom) + '</td>' +
+        '<td>' + escapeHtml(row.nom) + '</td>' +
+        '<td>' + formatDate(row.dateAchat) + '</td>' +
+        '<td><a href="' + row.lien + '" target="_blank" style="color:#6366f1;font-size:0.8rem">Notice ↗</a></td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  // ══ EXPORT CSV ══
+  function exportCSV() {
+    if (registry.length === 0) { showError('Le registre est vide.'); return; }
+    var header = ['N° de série','Produit','Prénom','Nom',"Date d'achat",'Lien notice'];
+    var rows = registry.map(function(r) {
+      return [r.sn, r.prefix === 'SMA' ? 'Smallest' : 'E.R.T', r.prenom, r.nom, formatDate(r.dateAchat), r.lien];
+    });
+    var csv = [header].concat(rows).map(function(row) {
+      return row.map(function(cell) { return '"' + String(cell).replace(/"/g,'""') + '"'; }).join(',');
+    }).join('\n');
+    var blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'registre-serie-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  }
+
+  // ══ INIT — bind tous les événements ══
+  document.getElementById('pw-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      if (document.getElementById('pw-input').value === ADMIN_PASSWORD) showAdmin();
+      else document.getElementById('login-error').style.display = 'block';
+    }
+  });
+
+  // Bouton login
+  document.querySelector('.login-card .btn-primary').addEventListener('click', function() {
+    if (document.getElementById('pw-input').value === ADMIN_PASSWORD) showAdmin();
+    else document.getElementById('login-error').style.display = 'block';
+  });
+
+  document.getElementById('btn-sma').addEventListener('click', function() { setPrefix('SMA'); });
+  document.getElementById('btn-ert').addEventListener('click', function() { setPrefix('ERT'); });
+  document.getElementById('btn-generate').addEventListener('click', generateSerial);
+  document.getElementById('copy-url-btn').addEventListener('click', copyUrl);
+  document.getElementById('btn-export').addEventListener('click', exportCSV);
+  document.getElementById('btn-clear').addEventListener('click', function() {
+    if (confirm('Supprimer toutes les entrées ? Cette action est irréversible.')) {
+      registry = []; saveToStorage(); renderRegistry();
+    }
+  });
+
+  document.querySelector('.counter-controls').addEventListener('click', function(e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    var delta = btn.title === 'Reculer' ? -1 : 1;
+    counters[currentPrefix] = Math.max(1, counters[currentPrefix] + delta);
+    saveToStorage();
+    updateCounterDisplay();
+  });
+
+  document.getElementById('field-year').addEventListener('input', updateCounterDisplay);
+
+  // Vérification URL ?pw= au chargement
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('pw') === ADMIN_PASSWORD) showAdmin();
+
+})();
 </script>
 </body>
 </html>
