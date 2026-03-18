@@ -2,9 +2,10 @@
 interface Props {
 	title: string;
 	description?: string;
+	image?: { src: string; alt: string };
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <section class="travel-section">
@@ -15,10 +16,15 @@ const { title, description } = Astro.props;
 		</div>
 
 		<div class="travel-content">
-			<!-- Zone pour photos et vidéos - à compléter -->
-			<div class="media-placeholder">
-				<p>Photos et vidéos à venir</p>
-			</div>
+			{image ? (
+				<div class="image-container">
+					<img src={image.src} alt={image.alt} class="travel-image" />
+				</div>
+			) : (
+				<div class="media-placeholder">
+					<p>Photos et vidéos à venir</p>
+				</div>
+			)}
 		</div>
 	</div>
 </section>
@@ -50,6 +56,18 @@ const { title, description } = Astro.props;
 
 	.travel-content {
 		margin-top: 2rem;
+	}
+
+	.image-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.travel-image {
+		max-width: 600px;
+		width: 100%;
+		border-radius: 1rem;
+		box-shadow: var(--shadow-lg);
 	}
 
 	.media-placeholder {

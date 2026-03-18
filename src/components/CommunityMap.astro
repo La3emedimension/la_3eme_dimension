@@ -39,6 +39,15 @@ const translations = {
     additionalPhotosClick: 'Photos supplémentaires (cliquez pour agrandir)',
     longPressInstructions: '📱 Appui long sur la carte pour obtenir vos coordonnées',
     viewFullscreen: '🔍 Voir en plein écran',
+    howToPostTitle: 'Apparaître sur la carte',
+    howToPostSteps: [
+      { icon: '📸', text: 'Prenez une photo de votre instrument sous un ciel étoilé' },
+      { icon: '📍', text: 'Notez vos coordonnées GPS (appui long sur la carte ci-dessous)' },
+      { icon: '✉️', text: 'Envoyez-nous le tout par email' },
+    ],
+    emailButtonText: '✉️ Envoyer ma candidature',
+    emailSubject: 'Ajout sur la carte de la communauté',
+    emailBody: `Bonjour,\n\nJe souhaite apparaître sur la carte de la communauté.\n\nMon prénom / pseudo : \nMes coordonnées GPS : \nDescription de mon instrument : \n\nJe joins mes photos en pièce jointe.\n\nCordialement`,
   },
   en: {
     communityMap: 'Community Map',
@@ -51,15 +60,39 @@ const translations = {
     additionalPhotosClick: 'Additional photos (click to enlarge)',
     longPressInstructions: '📱 Long press on the map to get your coordinates',
     viewFullscreen: '🔍 View fullscreen',
+    howToPostTitle: 'Appear on the map',
+    howToPostSteps: [
+      { icon: '📸', text: 'Take a photo of your instrument under a starry sky' },
+      { icon: '📍', text: 'Note your GPS coordinates (long press on the map below)' },
+      { icon: '✉️', text: 'Send everything to us by email' },
+    ],
+    emailButtonText: '✉️ Send my submission',
+    emailSubject: 'Add me to the community map',
+    emailBody: `Hello,\n\nI would like to appear on the community map.\n\nMy name / username: \nMy GPS coordinates: \nDescription of my instrument: \n\nI am attaching my photos.\n\nBest regards`,
   }
 };
 
 const t = translations[locale];
+const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.emailSubject)}&body=${encodeURIComponent(t.emailBody)}`;
 ---
 
 <section class="community-map-section">
   <div class="container">
     <h2>{title}</h2>
+
+    <div class="how-to-post">
+      <h3>{t.howToPostTitle}</h3>
+      <ul class="how-to-steps">
+        {t.howToPostSteps.map(step => (
+          <li>
+            <span class="step-icon">{step.icon}</span>
+            <span>{step.text}</span>
+          </li>
+        ))}
+      </ul>
+      <a href={mailtoHref} class="email-button">{t.emailButtonText}</a>
+    </div>
+
     <div class="map-container" style={`height: ${height}`}>
       <div id="community-map" data-builds={buildsJson} data-translations={JSON.stringify(t)}></div>
     </div>
@@ -609,6 +642,63 @@ const t = translations[locale];
     font-size: 2.5rem;
     color: var(--gray-100);
     margin-bottom: 2rem;
+  }
+
+  .how-to-post {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .how-to-post h3 {
+    color: var(--accent-regular);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  .how-to-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .how-to-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--gray-300);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .step-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .email-button {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .email-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
   }
 
   .map-container {

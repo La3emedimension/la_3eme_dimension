@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import ProductLayout from '../layouts/ProductLayout.astro';
 import AssemblyGuide from '../components/AssemblyGuide.astro';
 import TravelSection from '../components/TravelSection.astro';
+import CommunityMap from '../components/CommunityMap.astro';
 import { type Locale } from '../i18n';
 
 const locale: Locale = 'fr';
@@ -105,7 +106,19 @@ const noticeConfig = {
 			customComponent: TravelSection,
 			data: {
 				title: "Vous avez besoin de voyager ? Le leste est amovible.",
-				description: "Pour faciliter le transport de votre télescope Smallest, le leste peut être retiré. Découvrez comment dans cette section."
+				description: "Pour faciliter le transport de votre télescope Smallest, le leste peut être retiré. Découvrez comment dans cette section.",
+				image: { src: "/assets/Smallest poids.jpg", alt: "Smallest - Poids et portabilité" }
+			}
+		},
+
+		// Ajouter la carte de la communauté
+		{
+			type: 'custom',
+			id: 'section-community',
+			customComponent: CommunityMap,
+			data: {
+				title: "Carte de la communauté",
+				locale: 'fr'
 			}
 		}
 	],
@@ -115,7 +128,8 @@ const noticeConfig = {
 		{ "id": "section-hero", "label": "Présentation" },
 		{ "id": "section-assembly-guide", "label": "Notice" },
 		{ "id": "section-video", "label": "Montage" },
-		{ "id": "section-voyage", "label": "Transport" }
+		{ "id": "section-voyage", "label": "Transport" },
+		{ "id": "section-community", "label": "Communauté" }
 	]
 };
 ---
