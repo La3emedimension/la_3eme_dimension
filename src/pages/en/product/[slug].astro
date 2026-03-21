@@ -6,6 +6,7 @@ import SmallestSocialProof from '../../../components/SmallestSocialProof.astro';
 import SmallestLearnMore from '../../../components/SmallestLearnMore.astro';
 import CommunityMap from '../../../components/CommunityMap.astro';
 import CommunitySection from '../../../components/CommunitySection.astro';
+import ClefEtoilesSection from '../../../components/ClefEtoilesSection.astro';
 import { type Locale } from '../../../i18n';
 import { getSlugWithoutLocale } from '../../../lib/collections';
 
@@ -44,7 +45,7 @@ allSections.forEach(section => {
     section.customComponent = CommunitySection;
   }
   if (section.id === 'section-clef-etoiles' && section.type === 'custom') {
-    section.customComponent = CommunitySection;
+    section.customComponent = ClefEtoilesSection;
   }
 });
 

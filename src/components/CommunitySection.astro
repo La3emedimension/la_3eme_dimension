@@ -5,9 +5,11 @@ interface Props {
   ctaText: string;
   ctaHref: string;
   features: string[];
+  discordText?: string;
+  discordHref?: string;
 }
 
-const { title, description, ctaText, ctaHref, features } = Astro.props;
+const { title, description, ctaText, ctaHref, features, discordText, discordHref } = Astro.props;
 ---
 
 <section class="community-section">
@@ -29,9 +31,11 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
           <a href={ctaHref} class="cta-primary">
             {ctaText}
           </a>
-          <p class="cta-note">
-            Rejoignez la communauté et partagez votre Smallest !
-          </p>
+          {discordHref && discordText && (
+            <a href={discordHref} class="cta-discord" target="_blank" rel="noopener noreferrer">
+              {discordText}
+            </a>
+          )}
         </div>
       </div>
       
@@ -138,11 +142,24 @@ const { title, description, ctaText, ctaHref, features } = Astro.props;
     box-shadow: var(--shadow-lg);
   }
 
-  .cta-note {
-    color: var(--gray-400);
-    font-size: 0.9rem;
-    font-style: italic;
-    margin: 0;
+  .cta-discord {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #5865F2;
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #5865F2;
+  }
+
+  .cta-discord:hover {
+    background: #4752c4;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
   }
 
   /* Visual Preview */

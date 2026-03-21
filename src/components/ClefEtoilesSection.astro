@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+  features: string[];
+}
+
+const { title, description, ctaText, ctaHref, features } = Astro.props;
+---
+
+<section class="clef-etoiles-section">
+  <div class="container">
+    <div class="content">
+      <h2>{title}</h2>
+      <p class="description">{description}</p>
+
+      <div class="features">
+        {features.map(feature => (
+          <div class="feature-item">
+            <span class="feature-text">{feature}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta">
+        <a href={ctaHref} class="cta-primary" target="_blank" rel="noopener noreferrer">
+          {ctaText}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clef-etoiles-section {
+    padding: 6rem 0;
+    background: var(--gray-900);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .content h2 {
+    font-size: 2.5rem;
+    color: var(--accent-regular);
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: var(--gray-300);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .feature-item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-regular);
+    font-weight: bold;
+  }
+
+  .feature-text {
+    color: var(--gray-300);
+    font-size: 0.95rem;
+  }
+
+  .cta {
+    text-align: center;
+  }
+
+  .cta-primary {
+    background: var(--accent-regular);
+    color: var(--accent-text-over);
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-regular);
+    display: inline-block;
+  }
+
+  .cta-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 768px) {
+    .content h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .cta {
+      text-align: center;
+    }
+  }
+</style>

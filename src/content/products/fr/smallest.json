@@ -261,6 +261,24 @@
     },
     {
       "type": "custom",
+      "id": "section-community",
+      "data": {
+        "title": "Communauté",
+        "description": "Ici vous pouvez partager vos observations et fabrications",
+        "ctaText": "Carte de la communauté",
+        "ctaHref": "https://la3emedim.fr/carte-communaute",
+        "discordText": "Rejoindre le Discord",
+        "discordHref": "https://discord.gg/PmNhTSpWCt",
+        "features": [
+          "Constructions de la communauté",
+          "Modifications et améliorations",
+          "Sorties d'observation",
+          "Partage d'expériences"
+        ]
+      }
+    },
+    {
+      "type": "custom",
       "id": "section-clef-etoiles",
       "data": {
         "title": "Visible à La Clef des Étoiles",
@@ -273,22 +291,6 @@
           "Conseils d'experts en astronomie"
         ]
       }
-    },
-    {
-      "type": "custom",
-      "id": "section-community",
-      "data": {
-        "title": "Carte de la communauté",
-        "description": "Ici vous pouvez partager vos observations et fabrications",
-        "ctaText": "Carte de la communauté",
-        "ctaHref": "https://la3emedim.fr/carte-communaute",
-        "features": [
-          "Constructions de la communauté",
-          "Modifications et améliorations", 
-          "Sorties d'observation",
-          "Partage d'expériences"
-        ]
-      }
     }
   ],
   "navigationItems": [
@@ -298,8 +300,8 @@
     { "id": "specs", "label": "Spécifications" },
     { "id": "gallery", "label": "Images" },
     { "id": "pricing", "label": "Tarifs" },
-    { "id": "section-clef-etoiles", "label": "Où le voir" },
-    { "id": "section-community", "label": "Communauté" }
+    { "id": "section-community", "label": "Communauté" },
+    { "id": "section-clef-etoiles", "label": "Où le voir" }
   ],
   "showContactCTA": true,
   "showNavigation": true,
