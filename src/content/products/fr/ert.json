@@ -3,7 +3,7 @@
   "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
   "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
-  "price": "200€",
+  "price": "219€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
-        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
+        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
         "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique ERT à Montauban" }
       }
     },
@@ -248,11 +248,26 @@
       }
     },
     {
+      "type": "custom",
+      "id": "section-clef-etoiles",
+      "data": {
+        "title": "Visible à La Clef des Étoiles",
+        "description": "Vous pouvez voir et tester la lunette E.R.T en vrai à la boutique La Clef des Étoiles.",
+        "ctaText": "Visiter La Clef des Étoiles",
+        "ctaHref": "https://laclefdesetoiles.com/",
+        "features": [
+          "Exposition permanente de l'E.R.T",
+          "Essai et démonstration possibles",
+          "Conseils d'experts en astronomie"
+        ]
+      }
+    },
+    {
       "type": "pricing",
       "id": "section-pricing",
       "data": {
         "title": "Kit E.R.T complet",
-        "price": "200€",
+        "price": "219€",
         "priceNote": "Pièces imprimées + kit de montage",
         "included": [
           "Pièces imprimées en 3D",
@@ -265,7 +280,7 @@
           "Monture intégrée"
         ],
         "ctaText": "Commander kit complet",
-        "ctaHref": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07",
+        "ctaHref": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g",
         "afterCtaNote": "Chaque pièce étant fabriquée artisanalement, il faut prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
         "optionsTitle": "",
         "options": []
@@ -308,6 +323,7 @@
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Porte filtre" },
     { "id": "gallery", "label": "Galerie" },
+    { "id": "clef-etoiles", "label": "Où le voir" },
     { "id": "pricing", "label": "Tarifs" },
     { "id": "features", "label": "Avantages" }
   ],

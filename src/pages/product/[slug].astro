@@ -61,6 +61,10 @@ allSections.forEach(section => {
   if (section.id === 'section-community' && section.type === 'custom') {
     section.customComponent = CommunitySection;
   }
+  // Handle CommunitySection for clef-etoiles sections
+  if (section.id === 'section-clef-etoiles' && section.type === 'custom') {
+    section.customComponent = CommunitySection;
+  }
 });
 
 if (productSlug === 'smallest') {

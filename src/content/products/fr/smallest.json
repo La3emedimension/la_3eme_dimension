@@ -3,7 +3,7 @@
   "seoDescription": "Smallest : Le télescope 150/750 est portable, Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
   "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse, Montauban",
   "ogImage": "/assets/Smallest_fullsize(2).jpg",
-  "price": "750€",
+  "price": "790€",
   "priceNote": "Avec optiques",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
@@ -230,7 +230,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Smallest avec optiques industrielles",
-        "price": "750€",
+        "price": "790€",
         "priceNote": "Télescope complet",
         "included": [
           "Structure en PETG chargé en fibre de carbone",
@@ -242,7 +242,7 @@
           "Optiques industrielles vérifiées"
         ],
         "ctaText": "Commander avec optiques",
-        "ctaHref": "https://buy.stripe.com/9B6dRb63wcltean5ms67S06",
+        "ctaHref": "https://buy.stripe.com/bJe4gB8bEetB1nB02867S0h",
         "afterCtaNote": "Un délai de conception d'environ 30 jours est nécessaire avant l'expédition, le temps de fabrication étant entièrement artisanal.",
         "optionsTitle": "Autres options",
         "options": [
@@ -257,6 +257,21 @@
         ],
         "contactText": "Nous contacter",
         "contactHref": "mailto:la3emedim@gmail.com"
+      }
+    },
+    {
+      "type": "custom",
+      "id": "section-clef-etoiles",
+      "data": {
+        "title": "Visible à La Clef des Étoiles",
+        "description": "Vous pouvez voir et tester le Smallest en vrai à la boutique La Clef des Étoiles.",
+        "ctaText": "Visiter La Clef des Étoiles",
+        "ctaHref": "https://laclefdesetoiles.com/",
+        "features": [
+          "Exposition permanente du Smallest",
+          "Essai et démonstration possibles",
+          "Conseils d'experts en astronomie"
+        ]
       }
     },
     {
@@ -283,6 +298,7 @@
     { "id": "specs", "label": "Spécifications" },
     { "id": "gallery", "label": "Images" },
     { "id": "pricing", "label": "Tarifs" },
+    { "id": "section-clef-etoiles", "label": "Où le voir" },
     { "id": "section-community", "label": "Communauté" }
   ],
   "showContactCTA": true,
