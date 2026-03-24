@@ -1,7 +1,7 @@
 {
-  "seoTitle": "Smallest - Télescope Portable compact | La 3ème dimension",
-  "seoDescription": "Smallest : Le télescope 150/750 est portable, Compact, transportable en avion, parfait pour l'astronomie nomade. Kit conversion disponible 550€.",
-  "seoKeywords": "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse, Montauban",
+  "seoTitle": "Smallest - Télescope Compact, Fiable et Fabriqué en France | La 3ème dimension",
+  "seoDescription": "Smallest : un télescope 150/750 facile à utiliser, fiable et fabriqué en France. Compact, transportable en avion, prêt à observer en 4 minutes. Kit 550€.",
+  "seoKeywords": "smallest telescope, télescope facile utilisation, télescope fiable, télescope made in france, télescope portable, astronomie nomade, télescope compact, 150/750, toulouse",
   "ogImage": "/assets/Smallest_fullsize(2).jpg",
   "price": "790€",
   "priceNote": "Avec optiques",
@@ -10,7 +10,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Smallest - Télescope Portable 150/750",
-    "description": "Télescope Newton 150/750 portable et compact, imprimé en 3D, transportable en avion. Solution pratique pour l'astronomie nomade.",
+    "description": "Télescope Newton 150/750 facile à utiliser, fiable et fabriqué en France. Compact, transportable en avion, prêt à observer en 4 minutes.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"

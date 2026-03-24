@@ -1,7 +1,7 @@
 {
-  "seoTitle": "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension",
-  "seoDescription": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.",
-  "seoKeywords": "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse",
+  "seoTitle": "E.R.T - Lunette Astronomique Facile, Fiable et Fabriquée en France | La 3ème dimension",
+  "seoDescription": "Lunette astronomique E.R.T : facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille. 219€.",
+  "seoKeywords": "lunette astronomique facile, telescope éducatif, télescope fiable france, optique telescope, initiation astronomie, made in france, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
   "price": "219€",
   "emailContact": "la3emedim@gmail.com",
@@ -9,7 +9,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "E.R.T - Lunette Astronomique Éducative",
-    "description": "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles.",
+    "description": "Lunette astronomique facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
