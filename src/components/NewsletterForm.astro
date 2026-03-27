@@ -21,6 +21,10 @@ const t = useTranslations(locale);
 			method="POST"
 			class="newsletter-form"
 		>
+			{/* Honeypot : champ invisible pour les humains, rempli par les bots */}
+			<div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+				<input type="text" name="website" id="newsletter-honeypot" tabindex="-1" autocomplete="off" />
+			</div>
 			<div id="form-content">
 				<div class="form-group">
 					<input
@@ -53,10 +57,18 @@ const t = useTranslations(locale);
 		var formContent = document.getElementById('form-content');
 		var successMessage = document.getElementById('success-message');
 		var errorMessage = document.getElementById('error-message');
+		var loadedAt = Date.now();
 
 		if (form) {
 			form.addEventListener('submit', function(e) {
 				e.preventDefault();
+
+				// Anti-bot : honeypot
+				var honeypot = document.getElementById('newsletter-honeypot');
+				if (honeypot && honeypot.value !== '') return;
+
+				// Anti-bot : délai minimum de 3 secondes
+				if (Date.now() - loadedAt < 10000) return;
 
 				var email = document.getElementById('newsletter-email').value;
 				var formData = new FormData();
