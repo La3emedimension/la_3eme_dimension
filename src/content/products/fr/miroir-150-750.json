@@ -89,7 +89,7 @@
         ],
         "primaryCta": {
           "text": "Commander - 250€",
-          "href": "mailto:la3emedim@gmail.com?subject=Commande miroir 150/750 pour Smallest"
+          "href": "#section-pricing"
         },
         "heroImage": {
           "src": "/assets/miroir150/150-750.png",
@@ -204,7 +204,7 @@
           "Conseils de montage"
         ],
         "ctaText": "Commander",
-        "ctaHref": "mailto:la3emedim@gmail.com?subject=Commande miroir 150/750 pour Smallest",
+        "ctaHref": "https://buy.stripe.com/8x2cN72Rkadlgiv02867S0j",
         "optionsTitle": "Informations complémentaires",
         "options": [
           {
