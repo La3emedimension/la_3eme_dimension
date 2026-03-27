@@ -102,14 +102,14 @@
             "priceNote": "15€",
             "description": "Grand champ — Lune, amas, nébuleuses",
             "ctaText": "Commander",
-            "ctaHref": "mailto:la3emedim@gmail.com?subject=Commande oculaire 20mm&body=Bonjour, je souhaite commander un oculaire 20mm."
+            "ctaHref": "https://buy.stripe.com/14AbJ31Ng719c2fcOU67S0k"
           },
           {
             "title": "Oculaire 10mm",
             "priceNote": "15€",
             "description": "Fort grossissement — planètes, détails lunaires",
             "ctaText": "Commander",
-            "ctaHref": "mailto:la3emedim@gmail.com?subject=Commande oculaire 10mm&body=Bonjour, je souhaite commander un oculaire 10mm."
+            "ctaHref": "https://buy.stripe.com/fZueVf3Vo85dferbKQ67S0l"
           },
           {
             "title": "Pack 20mm + 10mm",
