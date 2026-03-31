@@ -73,11 +73,27 @@ const t = useTranslations(locale);
 
 		if (robotCheck) {
 			robotCheck.addEventListener('change', function() {
-				var checked = robotCheck.checked;
-				emailInput && (emailInput.disabled = !checked);
-				submitButton && (submitButton.disabled = !checked);
-				robotCheck.closest('.robot-check').classList.toggle('robot-check--active', checked);
-				robotCheck.closest('.robot-check').classList.remove('robot-check--error');
+				if (!robotCheck.checked) {
+					emailInput && (emailInput.disabled = true);
+					submitButton && (submitButton.disabled = true);
+					robotCheck.closest('.robot-check').classList.remove('robot-check--active', 'robot-check--loading');
+					return;
+				}
+
+				// Empêche de re-cliquer pendant la vérification
+				robotCheck.disabled = true;
+				var label = robotCheck.closest('.robot-check');
+				label.classList.add('robot-check--loading');
+				label.classList.remove('robot-check--error');
+
+				setTimeout(function() {
+					robotCheck.disabled = false;
+					label.classList.remove('robot-check--loading');
+					label.classList.add('robot-check--active');
+					emailInput && (emailInput.disabled = false);
+					submitButton && (submitButton.disabled = false);
+					emailInput && emailInput.focus();
+				}, 1500);
 			});
 		}
 
@@ -237,6 +253,20 @@ const t = useTranslations(locale);
 	.robot-check--error {
 		border-color: #f87171;
 		animation: shake 0.3s ease;
+	}
+
+	.robot-check--loading {
+		cursor: wait;
+	}
+
+	.robot-check--loading .robot-checkmark {
+		border-color: transparent;
+		border-top-color: var(--accent-regular, #7c3aed);
+		animation: spin 0.8s linear infinite;
+	}
+
+	@keyframes spin {
+		to { transform: rotate(360deg); }
 	}
 
 	@keyframes shake {
