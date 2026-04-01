@@ -35,7 +35,7 @@ const noticeConfig = {
 						tagline: "Guide d'utilisation complet",
 						description: "Notice d'utilisation de votre lunette astronomique éducative E.R.T. Montage, réglages et conseils d'observation.",
 						warning: "⚠️ ATTENTION : Ne jamais regarder le soleil directement avec cet instrument. Risque de lésions oculaires graves et irréversibles.",
-						ecoWarning: "🌿 L'ERT est conçu en bioplastique, un matériau écologique et durable, mais comme tout plastique, il a ses limites face à la chaleur. Évitez de le laisser dans un véhicule en plein soleil par exemple, les pièces risquent de se déformer. Un simple sac ou une pochette suffit à la protéger."
+						ecoWarning: "🌿 L'ERT est conçu en bioplastique, un matériau écologique et durable, mais comme tout plastique, il a ses limites face à la chaleur. Évitez de le laisser dans un véhicule en plein soleil par exemple, les pièces risquent de se déformer."
 					}
 				};
 			}
@@ -432,5 +432,35 @@ const noticeConfig = {
     background-color: var(--gray-600) !important;
     border-color: var(--gray-500) !important;
     transform: translateY(-2px) !important;
+  }
+
+  /* Light theme : forcer des gris foncés sur tous les boutons */
+  :global(.theme-light) :global(button),
+  :global(.theme-light) :global(.cta),
+  :global(.theme-light) :global(.btn),
+  :global(.theme-light) :global(.button),
+  :global(.theme-light) :global(.cta-primary),
+  :global(.theme-light) :global(.cta-secondary),
+  :global(.theme-light) :global(.product-link),
+  :global(.theme-light) :global(.boutique-link),
+  :global(.theme-light) :global(.pricing-cta),
+  :global(.theme-light) :global(.quantum-button) {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #1f2937 !important;
+  }
+
+  :global(.theme-light) :global(button:hover),
+  :global(.theme-light) :global(.cta:hover),
+  :global(.theme-light) :global(.btn:hover),
+  :global(.theme-light) :global(.button:hover),
+  :global(.theme-light) :global(.cta-primary:hover),
+  :global(.theme-light) :global(.cta-secondary:hover),
+  :global(.theme-light) :global(.product-link:hover),
+  :global(.theme-light) :global(.boutique-link:hover),
+  :global(.theme-light) :global(.pricing-cta:hover),
+  :global(.theme-light) :global(.quantum-button:hover) {
+    background-color: #1f2937 !important;
+    border-color: #111827 !important;
   }
 </style>

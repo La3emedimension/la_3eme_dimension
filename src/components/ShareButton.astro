@@ -130,6 +130,16 @@ const { title, url } = Astro.props;
 		}
 	}
 
+	:global(.theme-light) .share-btn {
+		background: var(--gray-500);
+		border-color: var(--gray-400);
+		color: var(--gray-0);
+	}
+
+	:global(.theme-light) .share-label {
+		color: var(--gray-500);
+	}
+
 	:global(.theme-dark) .share-container {
 		background: var(--gray-900);
 		border-color: var(--gray-800);
