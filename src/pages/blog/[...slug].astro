@@ -26,6 +26,91 @@ const needsCalculator = entrySlug === 'OEP';
 const isSergePortrait = entrySlug === 'portrait-trouvelot';
 const isFlorianPortrait = entrySlug === 'portrait-webb';
 
+const pageUrl = `https://la3emedim.fr/blog/${entrySlug}/`;
+const blogPostSchema = {
+  "@type": "BlogPosting",
+  "headline": entry.data.title,
+  "author": {
+    "@type": "Person",
+    "name": "Raphaël Labro"
+  },
+  "datePublished": entry.data.publishDate.toISOString(),
+  "image": entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "La 3ème dimension",
+    "url": "https://la3emedim.fr"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": pageUrl
+  }
+};
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://la3emedim.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://la3emedim.fr/blog/" },
+    { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": pageUrl }
+  ]
+};
+
+const faqSchema = entrySlug === 'choisir-telescope-debutant-2026' ? {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "C'est pas trop compliqué à monter ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Si vous savez monter un meuble IKEA simple, vous savez monter le Smallest. La première fois ça prend 10 minutes, après c'est 4 minutes chrono. Et bonus : vous pouvez le laisser partiellement monté dans son sac, ce qui réduit le montage à 30 secondes pour les sorties rapides en semaine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "C'est solide le plastique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est pas du plastique normal, c'est du PETG renforcé fibre de carbone. Très résistant et durable. Garanti 2 ans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je peux l'utiliser en ville ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour la Lune et les planètes, oui sans problème. Pour voir les nébuleuses et galaxies, faut aller à la campagne (mais justement, c'est facile de l'emmener)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ça marche vraiment en avion ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Plein de gens le prennent en vacances. Vous le mettez dans un sac à dos normal, ça passe en cabine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Et si je casse quelque chose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comme vous comprenez comment c'est monté, vous savez quoi faire. Et sinon, je suis dispo par email ou téléphone, à vie."
+      }
+    }
+  ]
+} : null;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPostSchema,
+    breadcrumbSchema,
+    ...(faqSchema ? [faqSchema] : [])
+  ]
+};
+
 const formatDate = (date: Date) => {
   return date.toLocaleDateString(locale === 'fr' ? "fr-FR" : "en-GB", {
     year: "numeric",
@@ -41,6 +126,7 @@ const formatDate = (date: Date) => {
   description={`Article de blog : ${entry.data.title}`}
   keywords={`blog, impression 3d, ${entry.data.title.toLowerCase()}`}
   ogImage={entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png"}
+  structuredData={structuredData}
 >
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper">

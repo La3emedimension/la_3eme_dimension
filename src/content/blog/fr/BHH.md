@@ -1,7 +1,7 @@
 ---
 title: B.H.H
 publishDate: 2019-10-02 00:00:00
-img: /assets/BHH (2).jpg
+img: /assets/bhh-02.jpg
 img_alt: adatation du crochet de sac à main sur un sac à dos en jean sur un sac à dos Herschel
 description: |
   Crochet  pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.
@@ -20,16 +20,16 @@ Le Backpack Holder Hook
 
 Le Backpack Holder Hook est une adaptation du crochet de sac à main à destination des baroudeurs, il est conçu et designé pour avoir un maximum d'éfficacité avec le moins de matière possible.
 
-<img src="/assets/BHH desk.gif">
+<img src="/assets/bhh-desk.gif">
 
 La forme proche de la lettre C et le sens d'impression permets au crochet de maintenir jusqu'à 12 kilos (test effectué avec un sac à dos de 12 kilos sur 8 heures). Il peut aussi servir de crochet universel avec un mousqueton et un bout de paracorde.
 
- <img src="/assets/BHH (3).gif">
+ <img src="/assets/bhh-03.gif">
 
 
 Vous pouvez retrouver le Réel <a  class="button" href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a class="button" href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>
 
-<img src="/assets/BHH (1).jpg">
+<img src="/assets/bhh-01.jpg">
 
 
 <style>

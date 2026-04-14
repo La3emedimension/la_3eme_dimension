@@ -14,17 +14,17 @@ seoTitle: "Smallest - Compact Portable Telescope | La 3ème dimension"
 seoDescription: "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €550."
 seoKeywords: "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse"
 ---
-Files are available on <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. You can find the <a class="button" href="https://la3emedim.fr/assets/SMALLEST - README.pdf">README here</a>
+Files are available on <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. You can find the <a class="button" href="https://la3emedim.fr/assets/smallest-readme.pdf">README here</a>
 
 ## Smallest, why this project?
 
 > The goal is to always have a telescope with you while hiking, in the car, in your backpack, on vacation, etc. It's compact, modular, and offers a good compromise between aperture and portability.
 ---
-<img src="/assets/150-750 (8).jpg">
+<img src="/assets/150-750-08.jpg">
 
 The Smallest aims to solve a problem faced by amateur astronomers: always having a small telescope powerful enough to observe the sky. It allows you to chase the sky in the most remote places or take it with you on a plane while respecting current regulations. It fits in a laptop bag and the optics can be easily removed.
 
-<img src="/assets/150-750 (13).jpg">
+<img src="/assets/150-750-13.jpg">
 
 
 ### How?
@@ -32,10 +32,10 @@ The Smallest aims to solve a problem faced by amateur astronomers: always having
 Using 3D printing is obvious—it provides the precision required to build a structure that meets optical requirements. We used Autodesk Fusion 360 as our design tool.
 
 <video autoplay loop playsinline>
-  <source src="/assets/tp 150750.mp4" type="video/mp4" />
+  <source src="/assets/tp-150750.mp4" type="video/mp4" />
   <p>
     Your browser does not support HTML5 videos. Here is
-    <a href="/assets/tp 150750.mp4">a link to download the video</a>.
+    <a href="/assets/tp-150750.mp4">a link to download the video</a>.
   </p>
 </video>
 
@@ -85,7 +85,7 @@ The Smallest adapts perfectly to industrial optics from major commercial brands.
 
 The project was presented on May 14, 2024 at the <a class="button" href="https://pintofscience.fr/">Pint of Science</a> festival in Toulouse.
 
-<img src="/assets/POS (3).jpg">
+<img src="/assets/pos-03.jpg">
 
 ### Observation night of October 21, 2024 for comet C/2023 A3 (Tsuchinshan-ATLAS).
 <img src="/assets/c.jpg">
@@ -96,7 +96,7 @@ Astronomical sketch of the comet made with the Smallest:
 
 ### Commercial version
 
-<img src="/assets/Smallest_fullsize(2).jpg">
+<img src="/assets/smallest-fullsize-02.jpg">
 
 The commercial version is printed in PETG CF.
 
@@ -108,20 +108,20 @@ The commercial version is printed in PETG CF.
   <div class="gallery-grid">
     <img src="/assets/S150.jpg" alt="Detailed view of the Smallest telescope">
     <img src="/assets/S1502.jpg" alt="Telescope assembly">
-    <img src="/assets/150 1.jpg" alt="Smallest view 1">
-    <img src="/assets/150 2.jpg" alt="Smallest view 2">
-    <img src="/assets/150 V2 4.jpg" alt="Version 2 - view 4">
+    <img src="/assets/150-1.jpg" alt="Smallest view 1">
+    <img src="/assets/150-2.jpg" alt="Smallest view 2">
+    <img src="/assets/150-v2-4.jpg" alt="Version 2 - view 4">
     <img src="/assets/m150.jpeg" alt="Size comparison">
-    <img src="/assets/150-750 (13).jpg" alt="Observation setup">
-    <img src="/assets/POS (2).jpg" alt="Pint of Science presentation">
+    <img src="/assets/150-750-13.jpg" alt="Observation setup">
+    <img src="/assets/pos-02.jpg" alt="Pint of Science presentation">
     <img src="/assets/Moon_smallest_2.jpg" alt="Moon photo with the Smallest">
     <img src="/assets/Moon_smallest.jpg" alt="Lunar observation">
     <img src="/assets/Ncn2025_4.jpeg" alt="Researchers' Night 2025">
     <img src="/assets/Ncn2025_6.jpeg" alt="Researchers' Night 2025">
     <img src="/assets/Ncn2025_2.JPG" alt="Researchers' Night 2025">
-    <img src="/assets/150 V2 2.jpg" alt="Version 2 - view 2">
-    <img src="/assets/150 V2.jpg" alt="Design V2">
-    <img src="/assets/150 V2 3.jpg" alt="Version 2 - view 3">
+    <img src="/assets/150-v2-2.jpg" alt="Version 2 - view 2">
+    <img src="/assets/150-v2.jpg" alt="Design V2">
+    <img src="/assets/150-v2-3.jpg" alt="Version 2 - view 3">
   </div>
 </div>
 

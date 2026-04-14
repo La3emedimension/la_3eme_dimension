@@ -2,7 +2,7 @@
   "seoTitle": "B.H.H - 3D Printed Backpack Hook | La 3ème dimension",
   "seoDescription": "3D printed backpack hook. Supports up to 12kg, optimized design for backpackers and travelers. Free files available.",
   "seoKeywords": "backpack hook, travel accessory, 3d printing utility, design, optimization, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
+  "ogImage": "https://la3emedim.fr/assets/bhh-02.jpg",
   "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
   "stripePublishableKey": "pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm",
   "price": "€10",
@@ -30,7 +30,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/BHH (2).jpg",
+    "image": "https://la3emedim.fr/assets/bhh-02.jpg",
     "features": [
       "Supports up to 10kg",
       "Clean and optimized C-shaped design",
@@ -60,7 +60,7 @@
           "href": "https://buy.stripe.com/14AbJ3ajMbhp2rFbKQ67S03"
         },
         "heroImage": {
-          "src": "/assets/BHH (2).jpg",
+          "src": "/assets/bhh-02.jpg",
           "alt": "BHH hook installed on backpack"
         }
       }
@@ -101,17 +101,17 @@
         "title": "In action",
         "images": [
           {
-            "src": "/assets/BHH desk.gif",
+            "src": "/assets/bhh-desk.gif",
             "alt": "Hook usage animation",
             "caption": "Demonstration of BHH hook usage - simple and effective attachment"
           },
           {
-            "src": "/assets/BHH (3).gif",
+            "src": "/assets/bhh-03.gif",
             "alt": "Strength test",
             "caption": "Strength test with loaded backpack - supports up to 12kg"
           },
           {
-            "src": "/assets/BHH (1).jpg",
+            "src": "/assets/bhh-01.jpg",
             "alt": "Detailed hook view",
             "caption": "Detail of optimized shape and 3D printing finish"
           }

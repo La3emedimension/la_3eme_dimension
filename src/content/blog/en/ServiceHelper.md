@@ -25,12 +25,12 @@ The pots are designed to receive napkins, cutlery and glasses of different diame
 
 ---
 
-<img src="/assets/pdc (2).jpg">
-<img src="/assets/pdc (3).jpg">
-<img src="/assets/pdc (4).jpg">
-<img src="/assets/pdc (5).jpg">
-<img src="/assets/pdc (6).jpg">
-<img src="/assets/pdc (7).jpg">
+<img src="/assets/pdc-02.jpg">
+<img src="/assets/pdc-03.jpg">
+<img src="/assets/pdc-04.jpg">
+<img src="/assets/pdc-05.jpg">
+<img src="/assets/pdc-06.jpg">
+<img src="/assets/pdc-07.jpg">
 
 ---
 <style>

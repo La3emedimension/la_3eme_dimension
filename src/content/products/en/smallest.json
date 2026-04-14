@@ -2,7 +2,7 @@
   "seoTitle": "Smallest - Compact Portable Telescope | La 3ème dimension",
   "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €550.",
   "seoKeywords": "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse",
-  "ogImage": "/assets/Smallest_fullsize(2).jpg",
+  "ogImage": "/assets/smallest-fullsize-02.jpg",
   "price": "€550",
   "priceNote": "Optics not included",
   "emailContact": "la3emedim@gmail.com",
@@ -31,7 +31,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "/assets/Smallest_fullsize(2).jpg",
+    "image": "/assets/smallest-fullsize-02.jpg",
     "features": [
       "Newton 150/750 telescope",
       "Portable and compact",
@@ -56,7 +56,7 @@
         ],
         "primaryCta": { "text": "Order", "href": "#pricing" },
         "heroImage": {
-          "src": "/assets/Smallest_fullsize(1).jpg",
+          "src": "/assets/smallest-fullsize-01.jpg",
           "alt": "Smallest portable telescope in observation configuration"
         }
       }
@@ -146,91 +146,91 @@
         "title": "Complete gallery",
         "images": [
           {
-            "src": "/assets/smallest (3).jpg",
+            "src": "/assets/smallest-03.jpg",
             "alt": "Smallest photo 3"
           },
           {
-            "src": "/assets/smallest (5).jpg",
+            "src": "/assets/smallest-05.jpg",
             "alt": "Smallest photo 5"
           },
           {
-            "src": "/assets/smallest (6).jpg",
+            "src": "/assets/smallest-06.jpg",
             "alt": "Smallest photo 6"
           },
           {
-            "src": "/assets/smallest (7).jpg",
+            "src": "/assets/smallest-07.jpg",
             "alt": "Smallest photo 7"
           },
           {
-            "src": "/assets/smallest (8).jpg",
+            "src": "/assets/smallest-08.jpg",
             "alt": "Smallest photo 8"
           },
           {
-            "src": "/assets/smallest (9).jpg",
+            "src": "/assets/smallest-09.jpg",
             "alt": "Smallest photo 9"
           },
           {
-            "src": "/assets/smallest (10).jpg",
+            "src": "/assets/smallest-10.jpg",
             "alt": "Smallest photo 10"
           },
           {
-            "src": "/assets/smallest (11).jpg",
+            "src": "/assets/smallest-11.jpg",
             "alt": "Smallest photo 11"
           },
           {
-            "src": "/assets/smallest (12).jpg",
+            "src": "/assets/smallest-12.jpg",
             "alt": "Smallest photo 12"
           },
           {
-            "src": "/assets/smallest (13).jpg",
+            "src": "/assets/smallest-13.jpg",
             "alt": "Smallest photo 13"
           },
           {
-            "src": "/assets/smallest (14).jpg",
+            "src": "/assets/smallest-14.jpg",
             "alt": "Smallest photo 14"
           },
           {
-            "src": "/assets/smallest (16).jpg",
+            "src": "/assets/smallest-16.jpg",
             "alt": "Smallest photo 16"
           },
           {
-            "src": "/assets/smallest (17).jpg",
+            "src": "/assets/smallest-17.jpg",
             "alt": "Smallest photo 17"
           },
           {
-            "src": "/assets/smallest (18).jpg",
+            "src": "/assets/smallest-18.jpg",
             "alt": "Smallest photo 18"
           },
           {
-            "src": "/assets/smallest (19).jpg",
+            "src": "/assets/smallest-19.jpg",
             "alt": "Smallest photo 19"
           },
           {
-            "src": "/assets/smallest (20).jpg",
+            "src": "/assets/smallest-20.jpg",
             "alt": "Smallest photo 20"
           },
           {
-            "src": "/assets/smallest (21).jpg",
+            "src": "/assets/smallest-21.jpg",
             "alt": "Smallest photo 21"
           },
           {
-            "src": "/assets/smallest (22).jpg",
+            "src": "/assets/smallest-22.jpg",
             "alt": "Smallest photo 22"
           },
           {
-            "src": "/assets/smallest (23).jpg",
+            "src": "/assets/smallest-23.jpg",
             "alt": "Smallest photo 23"
           },
           {
-            "src": "/assets/smallest (24).jpg",
+            "src": "/assets/smallest-24.jpg",
             "alt": "Smallest photo 24"
           },
           {
-            "src": "/assets/smallest (25).jpg",
+            "src": "/assets/smallest-25.jpg",
             "alt": "Smallest photo 25"
           },
           {
-            "src": "/assets/Smallest poids.jpg",
+            "src": "/assets/smallest-poids.jpg",
             "alt": "Smallest - Weight and portability"
           }
         ],

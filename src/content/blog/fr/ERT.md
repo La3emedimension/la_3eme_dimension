@@ -1,7 +1,7 @@
 ---
 title: E.R.T
 publishDate: 2019-12-01 00:00:00
-img: /assets/ERT 4.jpg
+img: /assets/ert-04.jpg
 img_alt: Petite lunette pédagogique pour faire de l'astronomie et comprendre son fonctionne optique.
 description: |
   Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design modulaire facile à assembler.
@@ -33,18 +33,18 @@ L'ensemble de ces éléments n'ont qu'un seul sens de montage et se fait facilem
 </div>
 </div>
 
-<img src="/assets/draw ERT.png">
+<img src="/assets/draw-ert.png">
 ---
 
 Voici quelques images du projet : 
 
-<img src="/assets/ERT 7.jpg">
-<img src="/assets/ERT 3.jpg"> 
+<img src="/assets/ert-07.jpg">
+<img src="/assets/ert-03.jpg"> 
 <img src="/assets/ERT.jpg">
-<img src="/assets/ERT 2.jpg">
-<img src="/assets/ERT 5.jpg">
-<img src="/assets/ERT 6.jpg">
-<img src="/assets/ERT 8.jpg">
+<img src="/assets/ert-02.jpg">
+<img src="/assets/ert-05.jpg">
+<img src="/assets/ert-06.jpg">
+<img src="/assets/ert-08.jpg">
 
 Si le projet vous intéresse n'hésitez pas à me contacter par mail ! 
 

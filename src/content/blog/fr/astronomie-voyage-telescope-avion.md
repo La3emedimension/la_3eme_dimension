@@ -3,7 +3,7 @@ title: "Voyager en avion avec un télescope : Guide pratique et réglementation 
 description: "Tout savoir pour voyager en avion avec votre télescope. Réglementation cabine et soute, astuces pratiques, et solutions pour l'astronomie en voyage."
 publishDate: 2026-01-24
 tags: ["voyage", "avion", "télescope", "transport", "astronomie"]
-img: "/assets/Smallest_fullsize(1).jpg"
+img: "/assets/smallest-fullsize-01.jpg"
 img_alt: "Télescope Smallest dans sa configuration de transport pour avion"
 draft: true
 ---

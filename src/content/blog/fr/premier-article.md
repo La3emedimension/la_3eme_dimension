@@ -1,7 +1,7 @@
 ---
 title: "Bienvenue sur notre blog !"
 publishDate: 2019-10-01
-img: "/assets/smallest (16).jpg"
+img: "/assets/smallest-16.jpg"
 ---
 
 # Et Bonjour !
@@ -19,7 +19,7 @@ Nous sommes ravis de lancer notre nouveau blog ! Ici, nous partagerons nos derni
 
 L'objectif c'est publier régulièrement du contenu, des pensées et des projet pour vous tenir informés de nos avancées et partager notre passion pour l'impression 3D.
 
-![Télescope Smallest](/assets/Smallest_fullsize(1).jpg)
+![Télescope Smallest](/assets/smallest-fullsize-01.jpg)
 
 N'hésitez pas à nous contacter si vous avez des questions !
 

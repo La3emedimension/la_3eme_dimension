@@ -3,7 +3,7 @@ title: "Comment choisir un télescope portable en 2026 : Le guide complet"
 description: "Guide complet pour choisir le meilleur télescope portable pour vos observations astronomiques en voyage. Comparatif, critères essentiels et conseils d'expert."
 publishDate: 2026-01-24
 tags: ["guide", "télescope", "portable", "astronomie", "voyage"]
-img: "/assets/Smallest_fullsize(1).jpg"
+img: "/assets/smallest-fullsize-01.jpg"
 img_alt: "Télescope portable Smallest en configuration de transport"
 draft: true
 ---

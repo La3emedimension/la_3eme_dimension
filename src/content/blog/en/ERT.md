@@ -1,7 +1,7 @@
 ---
 title: E.R.T
 publishDate: 2019-12-01 00:00:00
-img: /assets/ERT 4.jpg
+img: /assets/ert-04.jpg
 img_alt: Small educational telescope for astronomy and understanding optical function.
 description: |
   3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.
@@ -33,18 +33,18 @@ All these elements have only one mounting direction and assembly is easy as show
 </div>
 </div>
 
-<img src="/assets/draw ERT.png">
+<img src="/assets/draw-ert.png">
 ---
 
 Here are some images of the project:
 
-<img src="/assets/ERT 7.jpg">
-<img src="/assets/ERT 3.jpg">
+<img src="/assets/ert-07.jpg">
+<img src="/assets/ert-03.jpg">
 <img src="/assets/ERT.jpg">
-<img src="/assets/ERT 2.jpg">
-<img src="/assets/ERT 5.jpg">
-<img src="/assets/ERT 6.jpg">
-<img src="/assets/ERT 8.jpg">
+<img src="/assets/ert-02.jpg">
+<img src="/assets/ert-05.jpg">
+<img src="/assets/ert-06.jpg">
+<img src="/assets/ert-08.jpg">
 
 If you're interested in the project, feel free to contact me by email!
 

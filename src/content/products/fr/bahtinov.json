@@ -121,8 +121,8 @@
           { "src": "/assets/Bathinov10.jpeg", "alt": "Masque de Bahtinov" },
           { "src": "/assets/Bathinov11.jpeg", "alt": "Masque de Bahtinov" },
           { "src": "/assets/Bathinov12.jpg", "alt": "Masque de Bahtinov" },
-          { "src": "/assets/Askar FRA500.jpeg", "alt": "Masque de Bahtinov - Askar FRA500" },
-          { "src": "/assets/Askar FRA500.jpg", "alt": "Masque de Bahtinov - Askar FRA500" }
+          { "src": "/assets/askar-fra500.jpeg", "alt": "Masque de Bahtinov - Askar FRA500" },
+          { "src": "/assets/askar-fra500.jpg", "alt": "Masque de Bahtinov - Askar FRA500" }
         ],
         "background": "light"
       }

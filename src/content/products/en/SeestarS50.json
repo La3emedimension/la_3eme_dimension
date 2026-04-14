@@ -79,32 +79,32 @@
         "title": "Project gallery",
         "images": [
           {
-            "src": "/assets/S50 3D.png",
+            "src": "/assets/s50-3d.png",
             "alt": "Pack elements diagram",
             "caption": "Pack contents"
           },
           {
-            "src": "/assets/S50 3.jpg",
+            "src": "/assets/s50-03.jpg",
             "alt": "View with light shield",
             "caption": "View with light shield"
           },
           {
-            "src": "/assets/S50 5.jpg",
+            "src": "/assets/s50-05.jpg",
             "alt": "JWST cap",
             "caption": "JWST cap detail"
           },
           {
-            "src": "/assets/S50 6.jpg",
+            "src": "/assets/s50-06.jpg",
             "alt": "Bahtinov",
             "caption": "Bahtinov cap detail"
           },
           {
-            "src": "/assets/S50 7.jpg",
+            "src": "/assets/s50-07.jpg",
             "alt": "Front view",
             "caption": "Front view with protective cap"
           },
           {
-            "src": "/assets/S50 8.jpg",
+            "src": "/assets/s50-08.jpg",
             "alt": "Newton cap",
             "caption": "Newton-style cap mounted on light shield detail."
           }

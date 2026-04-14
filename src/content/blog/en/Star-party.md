@@ -23,7 +23,7 @@ On October 11, meet at the Salle des Fêtes de Gratentour for a day and evening 
 
 - **The Smallest**, a fast and compact telescope developed in collaboration with Gallifrey for the optics (specialist in mirror manufacturing).
 
-![Smallest Telescope](/assets/Smallest_fullsize(1).jpg)
+![Smallest Telescope](/assets/smallest-fullsize-01.jpg)
 
 - **The ERT**, another of my creations, which illustrates the potential of 3D printing in the design of high-performance, lightweight and accessible optical instruments.
 

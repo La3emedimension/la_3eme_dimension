@@ -2,7 +2,7 @@
 "seoTitle": "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension",
   "seoDescription": "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles.",
   "seoKeywords": "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/BHH (2).jpg",
+  "ogImage": "https://la3emedim.fr/assets/bhh-02.jpg",
   "stripeBuyButtonId": "buy_btn_1RQYYxRqkfolIfPm8pbumRkk",
   "stripePublishableKey": "pk_live_51RLrzsRqkfolIfPmn2Uh2uCGHNf9avog1UqlRynKaccpYt5K0H4NqPLUe4UId42yHtBX90i5IojQZI1Gq5ZOZuzb00weToQ6jm",
   "price": "10€",
@@ -30,7 +30,7 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/BHH (2).jpg",
+    "image": "https://la3emedim.fr/assets/bhh-02.jpg",
     "features": [
       "Supporte jusqu'à 10kg",
       "Design épuré et optimisé forme C",
@@ -60,7 +60,7 @@
           "href": "https://buy.stripe.com/14AbJ3ajMbhp2rFbKQ67S03"
         },
         "heroImage": {
-          "src": "/assets/BHH (2).jpg",
+          "src": "/assets/bhh-02.jpg",
           "alt": "Crochet BHH installé sur sac à dos"
         }
       }
@@ -101,17 +101,17 @@
         "title": "En action",
         "images": [
           {
-            "src": "/assets/BHH desk.gif",
+            "src": "/assets/bhh-desk.gif",
             "alt": "Animation du crochet en utilisation",
             "caption": "Démonstration de l'utilisation du crochet BHH - accrochage simple et efficace"
           },
           {
-            "src": "/assets/BHH (3).gif",
+            "src": "/assets/bhh-03.gif",
             "alt": "Test de résistance",
             "caption": "Test de résistance avec sac à dos chargé - supporte jusqu'à 12kg"
           },
           {
-            "src": "/assets/BHH (1).jpg",
+            "src": "/assets/bhh-01.jpg",
             "alt": "Vue détaillée du crochet",
             "caption": "Détail de la forme optimisée et de la finition d'impression 3D"
           }

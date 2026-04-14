@@ -80,32 +80,32 @@
         "title": "Galerie du projet",
         "images": [
           { 
-            "src": "/assets/S50 3D.png", 
+            "src": "/assets/s50-3d.png", 
             "alt": "Schéma des éléments du pack", 
             "caption": "Contenu du pack" 
           },
           { 
-            "src": "/assets/S50 3.jpg", 
+            "src": "/assets/s50-03.jpg", 
             "alt": "Vue avec pare-lumière", 
             "caption": "Vue avec pare-lumière" 
           },
           { 
-            "src": "/assets/S50 5.jpg", 
+            "src": "/assets/s50-05.jpg", 
             "alt": "Capuchon JWST", 
             "caption": "Détail du capuchon JWST" 
           },
           { 
-            "src": "/assets/S50 6.jpg", 
+            "src": "/assets/s50-06.jpg", 
             "alt": "Bathinov", 
             "caption": "Détail du capuchon Bathinov" 
           },
           { 
-            "src": "/assets/S50 7.jpg", 
+            "src": "/assets/s50-07.jpg", 
             "alt": "Vue de face", 
             "caption": "Vue de face avec le cache de protection" 
           },
           { 
-            "src": "/assets/S50 8.jpg", 
+            "src": "/assets/s50-08.jpg", 
             "alt": "capuchon newton", 
             "caption": "Détail du capuchon type newton monté sur le pare-lumière." 
           }

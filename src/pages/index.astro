@@ -73,6 +73,19 @@ const businessStructuredData = {
     },
 };
 
+const homepageStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        businessStructuredData,
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://la3emedim.fr/" }
+            ]
+        }
+    ]
+};
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -82,7 +95,7 @@ const businessStructuredData = {
     title="Télescopes Faciles & Fiables, Fabriqués en France | La 3ème Dimension"
     description="Des télescopes simples à utiliser, fiables et fabriqués en France. Observez la Lune, Saturne et Jupiter dès ce soir — sans prise de tête. Instruments et accessoires astronomiques par impression 3D. Toulouse et toute la France."
     keywords="télescope facile utilisation, télescope fiable, télescope made in france, télescope français, premier télescope, débuter astronomie, observer lune planètes, télescope compact portable, accessoires astronomie, impression 3D astronomie, toulouse, occitanie"
-    structuredData={businessStructuredData}
+    structuredData={homepageStructuredData}
 >
     <div class="stack gap-20 lg:gap-36">
         <div class="wrapper stack gap-20 lg:gap-36">
@@ -90,7 +103,7 @@ const businessStructuredData = {
                 <Hero
                     align="start"
                 >
-                    <p class="service-description">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</p>
+                    <h1 class="service-description">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</h1>
                     <div class="roles">
                         <a href="mailto:la3emedim@gmail.com" class="contact-link">
                             Nous contacter <Icon

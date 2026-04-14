@@ -138,7 +138,7 @@
         "title": "Project gallery",
         "images": [
           {
-            "src": "/assets/draw ERT.png",
+            "src": "/assets/draw-ert.png",
             "alt": "Technical diagram of the E.R.T telescope",
             "caption": "Detailed assembly diagram - each module has only one assembly direction"
           },

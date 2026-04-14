@@ -1,7 +1,7 @@
 ---
 title: B.H.H
 publishDate: 2019-10-02 00:00:00
-img: /assets/BHH (2).jpg
+img: /assets/bhh-02.jpg
 img_alt: adaptation of handbag hook on a denim backpack on a Herschel backpack
 description: |
   3D printed backpack hook. Supports up to 12kg, optimized design for backpackers and travelers. Free files available.
@@ -20,16 +20,16 @@ The Backpack Holder Hook
 
 The Backpack Holder Hook is an adaptation of the handbag hook designed for backpackers, it is designed and styled to have maximum efficiency with minimum material.
 
-<img src="/assets/BHH desk.gif">
+<img src="/assets/bhh-desk.gif">
 
 The C-shaped form and print orientation allow the hook to hold up to 12 kilos (tested with a 12-kilo backpack for 8 hours). It can also serve as a universal hook with a carabiner and a piece of paracord.
 
- <img src="/assets/BHH (3).gif">
+ <img src="/assets/bhh-03.gif">
 
 
 You can find the Reel <a class="button" href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">here</a> and the files for free on <a class="button" href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">Printables</a>
 
-<img src="/assets/BHH (1).jpg">
+<img src="/assets/bhh-01.jpg">
 
 
 <style>

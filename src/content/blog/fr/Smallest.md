@@ -17,17 +17,17 @@ seoKeywords: "smallest telescope, télescope portable, astronomie nomade, téles
 
 **Version Clef en mains avec tubes carbones et leste amovible :** <a class="button" href="/product/smallest">Voir la boutique</a>
 
-**Version open source :** Les fichiers sont disponibles sur <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. Vous trouverez le <a class="button" href="https://la3emedim.fr/assets/SMALLEST - README.pdf">README ici</a>
+**Version open source :** Les fichiers sont disponibles sur <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. Vous trouverez le <a class="button" href="https://la3emedim.fr/assets/smallest-readme.pdf">README ici</a>
 
 ## Smallest, pourquoi ce projet?
 
 > L'objectif c'est de toujours avoir un télescope avec soi en randonnée, dans la voiture, dans le sac à dos, en vacances etc... il est compact, modulaire et permet d'avoir un bon compromis entre diamètre et portabilité.
 ---
-<img src="/assets/150-750 (8).jpg">
+<img src="/assets/150-750-08.jpg">
 
 Le Smallest a pour but de répondre à une problématique rencontrée en tant qu'astronome amateur: toujours avoir un petit telescope suffisament puissant pour observer le ciel. Il permet d'aller chercher le ciel dans les lieux les plus reculés ou l'avoir avec soi en avion dans le respect des règles en vigueur. Il tient dans une sacoche d'ordinateur et on peut facilement retirer les optiques.
 
-<img src="/assets/150-750 (13).jpg">
+<img src="/assets/150-750-13.jpg">
 
 
 ### Comment ?
@@ -35,10 +35,10 @@ Le Smallest a pour but de répondre à une problématique rencontrée en tant qu
 L'utilisation de l'impression 3d est une évidence, elle permet d'avoir la précision requise pour faire une structure qui réponde aux problèmatiques optiques. Nous avons utilisé fusion 360 d'autodesk comme outils de dessin.
 
 <video autoplay loop playsinline>
-  <source src="/assets/tp 150750.mp4" type="video/mp4" />
+  <source src="/assets/tp-150750.mp4" type="video/mp4" />
   <p>
     Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
-    <a href="/assets/tp 150750.mp4">un lien pour télécharger la vidéo</a>.
+    <a href="/assets/tp-150750.mp4">un lien pour télécharger la vidéo</a>.
   </p>
 </video>
 
@@ -88,7 +88,7 @@ Le Smallest s'adapte parfaitement aux optiques industrielles des grandes marques
 
 Le projet a été présenté le 14 mai 2024 lors du festival <a class="button" href="https://pintofscience.fr/">Pint of Science</a> à Toulouse.
 
-<img src="/assets/POS (3).jpg">
+<img src="/assets/pos-03.jpg">
 
 ### Soirée d'observation du 21 octobre 2024 pour la cométe C/2023 A3 (Tsuchinshan-ATLAS).
 <img src="/assets/c.jpg">
@@ -99,7 +99,7 @@ L'astro dessin de la comète réalisé avec le Smallest :
 
 ### Version commerciale
 
-<img src="/assets/Smallest_fullsize(2).jpg">
+<img src="/assets/smallest-fullsize-02.jpg">
 
 La version commerciale est imprimée en PETG CF.
 
@@ -111,20 +111,20 @@ La version commerciale est imprimée en PETG CF.
   <div class="gallery-grid">
     <img src="/assets/S150.jpg" alt="Vue détaillée du télescope Smallest">
     <img src="/assets/S1502.jpg" alt="Assemblage du télescope">
-    <img src="/assets/150 1.jpg" alt="Smallest vue 1">
-    <img src="/assets/150 2.jpg" alt="Smallest vue 2">
-    <img src="/assets/150 V2 4.jpg" alt="Version 2 - vue 4">
+    <img src="/assets/150-1.jpg" alt="Smallest vue 1">
+    <img src="/assets/150-2.jpg" alt="Smallest vue 2">
+    <img src="/assets/150-v2-4.jpg" alt="Version 2 - vue 4">
     <img src="/assets/m150.jpeg" alt="Comparaison de taille">
-    <img src="/assets/150-750 (13).jpg" alt="Configuration d'observation">
-    <img src="/assets/POS (2).jpg" alt="Présentation Pint of Science">
+    <img src="/assets/150-750-13.jpg" alt="Configuration d'observation">
+    <img src="/assets/pos-02.jpg" alt="Présentation Pint of Science">
     <img src="/assets/Moon_smallest_2.jpg" alt="Photo de la lune avec le Smallest">
     <img src="/assets/Moon_smallest.jpg" alt="Observation lunaire">
     <img src="/assets/Ncn2025_4.jpeg" alt="Nuit des Chercheurs 2025">
     <img src="/assets/Ncn2025_6.jpeg" alt="Nuit des Chercheurs 2025">
     <img src="/assets/Ncn2025_2.JPG" alt="Nuit des Chercheurs 2025">
-    <img src="/assets/150 V2 2.jpg" alt="Version 2 - vue 2">
-    <img src="/assets/150 V2.jpg" alt="Design V2">
-    <img src="/assets/150 V2 3.jpg" alt="Version 2 - vue 3">
+    <img src="/assets/150-v2-2.jpg" alt="Version 2 - vue 2">
+    <img src="/assets/150-v2.jpg" alt="Design V2">
+    <img src="/assets/150-v2-3.jpg" alt="Version 2 - vue 3">
   </div>
 </div>
 

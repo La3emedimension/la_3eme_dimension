@@ -23,7 +23,7 @@ Le 11 octobre, rendez-vous à la Salle des Fêtes de Gratentour pour une journé
 
 - **Le Smallest**, un télescope rapide et compact développé en collaboration avec Gallifrey pour la partie optique (spécialiste dans la fabrication de miroirs).
 
-![Télescope Smallest](/assets/Smallest_fullsize(1).jpg)
+![Télescope Smallest](/assets/smallest-fullsize-01.jpg)
 
 - **L’ERT**, une autre de mes réalisations, qui illustre le potentiel de l’impression 3D dans la conception d’instruments optiques performants, légers et accessibles.
 
