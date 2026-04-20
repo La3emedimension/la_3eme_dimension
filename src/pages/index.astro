@@ -98,16 +98,16 @@ const homepageStructuredData = {
     structuredData={homepageStructuredData}
 >
     <div class="stack gap-20 lg:gap-36">
-        <div class="wrapper stack gap-20 lg:gap-36">
+        <div class="wrapper stack gap-20 lg:gap-36 hero-section">
             <header class="hero homepage-hero">
                 <Hero
                     align="start"
                 >
                     <h1 class="service-description">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</h1>
                     <div class="roles">
-                        <a href="mailto:la3emedim@gmail.com" class="contact-link">
-                            Nous contacter <Icon
-                                icon="pencil-line"
+                        <a href="#products" class="contact-link">
+                            Nos produits <Icon
+                                icon="star"
                                 size="1.33em"
                             />
                         </a>
@@ -119,6 +119,13 @@ const homepageStructuredData = {
                 </Hero>
 
                 <ProductCarousel locale={locale} />
+
+                <div class="hero-labels">
+                    <a class="hero-label" href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="label-logo" /></a>
+                    <a class="hero-label" href="https://www.fabriquenenfrance.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/fab_bloc_rvb.png" alt="Fabriqué en France" class="label-logo" /></a>
+                    <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Fabriqué en Occitanie" class="label-logo" /></a>
+                    <a class="hero-label" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/laclef.png" alt="La Clef des Étoiles" class="label-logo" /></a>
+                </div>
             </header>
 
             <Skills locale={locale} />
@@ -126,42 +133,46 @@ const homepageStructuredData = {
 
         {
             (smallestProduct || ertProduct) && (
-                <main class="wrapper section with-background bg-variant">
+                <main id="products" class="wrapper section with-background bg-variant">
                     <div class="section-header stack gap-2 lg:gap-4">
                         <h5>Découvrez nos produits</h5>
                     </div>
                     <div class="products-grid">
                         {smallestProduct && (
-                            <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
-                                <span class="title">
-                                    {smallestProduct.data.sections[0].data.title}
-                                </span>
-                                <img
-                                    src={smallestProduct.data.sections[0].data.heroImage.src}
-                                    alt="Télescope Smallest 150/750 portable et compact, imprimé en 3D, transportable en avion - Innovation pour l'astronomie nomade"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="featured-description">
-                                    {smallestProduct.data.sections[0].data.tagline}
-                                </div>
-                            </a>
+                            <div class="product-card-wrapper">
+                                <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
+                                    <span class="title">
+                                        {smallestProduct.data.sections[0].data.title}
+                                    </span>
+                                    <img
+                                        src={smallestProduct.data.sections[0].data.heroImage.src}
+                                        alt="Télescope Smallest 150/750 portable et compact, imprimé en 3D, transportable en avion - Innovation pour l'astronomie nomade"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div class="featured-description">
+                                        {smallestProduct.data.sections[0].data.tagline}
+                                    </div>
+                                </a>
+                            </div>
                         )}
                         {ertProduct && (
-                            <a class="card featured product-card" href={localePath('/product/ert/', locale)}>
-                                <span class="title">
-                                    {ertProduct.data.sections[0].data.title}
-                                </span>
-                                <img
-                                    src={ertProduct.data.sections[0].data.heroImage.src}
-                                    alt="Lunette astronomique E.R.T éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="featured-description">
-                                    {ertProduct.data.sections[0].data.tagline}
-                                </div>
-                            </a>
+                            <div class="product-card-wrapper">
+                                <a class="card featured product-card" href={localePath('/product/ert/', locale)}>
+                                    <span class="title">
+                                        {ertProduct.data.sections[0].data.title}
+                                    </span>
+                                    <img
+                                        src={ertProduct.data.sections[0].data.heroImage.src}
+                                        alt="Lunette astronomique E.R.T éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div class="featured-description">
+                                        {ertProduct.data.sections[0].data.tagline}
+                                    </div>
+                                </a>
+                            </div>
                         )}
                     </div>
                 </main>
@@ -179,6 +190,51 @@ const homepageStructuredData = {
 <style>
     a {
         text-decoration: none;
+    }
+
+    .hero-section {
+        gap: 1rem !important;
+    }
+
+    .hero-labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        justify-content: flex-end;
+    }
+
+    @media (min-width: 50em) {
+        .hero-labels {
+            grid-column: 2;
+            margin-top: -3rem;
+            align-self: start;
+        }
+    }
+
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--gray-700);
+        background: white;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .hero-label:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .label-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
     }
     .contact-link, .phone-link {
         cursor: pointer;
@@ -386,9 +442,16 @@ const homepageStructuredData = {
         }
     }
 
+    .product-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
     .product-card {
         width: 100%;
     }
+
 
     /* ====================================================== */
 
