@@ -37,14 +37,15 @@ const products = filteredProducts.sort((a, b) => {
     {products.map((product, index) => {
       const heroSection = product.data.sections.find(s => s.type === 'hero');
       const heroData = heroSection?.data;
+      const carouselImage = product.data.carouselImage ?? heroData?.heroImage;
 
       return (
         <div class="carousel-slide" data-index={index}>
           <a href={`/product/${product.id.replace(`${locale}/`, '')}`} class="product-card">
-            {heroData?.heroImage?.src && (
+            {carouselImage?.src && (
               <img
-                src={heroData.heroImage.src}
-                alt={heroData.heroImage.alt || heroData.title}
+                src={carouselImage.src}
+                alt={carouselImage.alt || heroData?.title}
                 loading="lazy"
               />
             )}
@@ -106,6 +107,7 @@ const products = filteredProducts.sort((a, b) => {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 60%;
     transition: transform 0.3s ease;
   }
 
@@ -127,12 +129,14 @@ const products = filteredProducts.sort((a, b) => {
     margin: 0;
     font-size: var(--text-xl);
     font-weight: 600;
+    color: white;
   }
 
   .product-info .tagline {
     margin: 0.25rem 0 0 0;
     font-size: var(--text-sm);
     opacity: 0.9;
+    color: white;
   }
 
   .carousel-dots {

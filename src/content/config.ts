@@ -21,6 +21,9 @@ export const collections = {
 			ogImage: z.string().optional(),
 			structuredData: z.any().optional(),
 			
+			// Carousel override image
+			carouselImage: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
+
 			// Draft mode
 			draft: z.boolean().optional(),
 			
