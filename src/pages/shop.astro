@@ -26,8 +26,8 @@ const allProducts = filteredProducts.sort((a, b) => {
 	const bSlug = getSlugWithoutLocale(b.id, locale);
 	if (aSlug === 'smallest') return -1;
 	if (bSlug === 'smallest') return 1;
-	if (aSlug === 'ert') return -1;
-	if (bSlug === 'ert') return 1;
+	if (aSlug === 'lumi') return -1;
+	if (bSlug === 'lumi') return 1;
 	if (aSlug === 'sur-mesure') return -1;
 	if (bSlug === 'sur-mesure') return 1;
 	return 0;
@@ -162,7 +162,7 @@ const shopStructuredData = {
 				<h2>Instruments astronomiques et accessoires de précision</h2>
 				<p>
 					Découvrez notre sélection d'<strong>instruments astronomiques innovants</strong> et d'<strong>accessoires d'optique de précision</strong>.
-					De la <strong>lunette astronomique éducative E.R.T</strong> au <strong>miroir parabolique 150mm testé à l'interféromètre</strong>,
+					De la <strong>lunette astronomique éducative Lumi</strong> au <strong>miroir parabolique 150mm testé à l'interféromètre</strong>,
 					chaque produit est conçu pour offrir des performances optimales aux astronomes amateurs et confirmés.
 				</p>
 				<div class="seo-highlights">
@@ -172,7 +172,7 @@ const shopStructuredData = {
 					</div>
 					<div class="highlight-item">
 						<h3>Instruments éducatifs</h3>
-						<p>La lunette E.R.T permet de comprendre le fonctionnement d'un télescope tout en observant la Lune, les planètes et les nébuleuses brillantes.</p>
+						<p>La lunette Lumi permet de comprendre le fonctionnement d'un télescope tout en observant la Lune, les planètes et les nébuleuses brillantes.</p>
 					</div>
 					<div class="highlight-item">
 						<h3>Accessoires de collimation</h3>
@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	const ertCard = Array.from(productCards).find(card =>
-		card.querySelector('a')?.href.includes('/ert')
+		card.querySelector('a')?.href.includes('/lumi')
 	);
 	if (ertCard) {
 		ertCard.style.order = '-2';

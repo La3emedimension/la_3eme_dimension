@@ -1,7 +1,7 @@
 {
-  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "E.R.T à Montauban" },
-  "seoTitle": "E.R.T - Lunette Astronomique Facile, Fiable et Fabriquée en France | La 3ème dimension",
-  "seoDescription": "Lunette astronomique E.R.T : facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille. 219€.",
+  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi à Montauban" },
+  "seoTitle": "Lumi - Lunette Astronomique Facile, Fiable et Fabriquée en France | La 3ème dimension",
+  "seoDescription": "Lunette astronomique Lumi : facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille. 219€.",
   "seoKeywords": "lunette astronomique facile, telescope éducatif, télescope fiable france, optique telescope, initiation astronomie, made in france, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
   "price": "219€",
@@ -9,7 +9,7 @@
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "E.R.T - Lunette Astronomique Éducative",
+    "name": "Lumi - Lunette Astronomique Éducative",
     "description": "Lunette astronomique facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille.",
     "brand": {
       "@type": "Brand",
@@ -43,8 +43,8 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "E.R.T",
-        "tagline": "\"L'expérience astronomique, à portée de mains\"",
+        "title": "Lumi",
+        "tagline": "Assemblez votre lunette pédagogique",
         "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
         "features": [
           { "icon": "strategy", "text": "Design modulaire" },
@@ -52,18 +52,18 @@
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
         "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique ERT à Montauban" }
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique Lumi à Montauban" }
       }
     },
-    
+
     {
       "type": "video",
       "id": "section-video",
       "data": {
         "title": "Montage simple et éducatif",
-        "description": "Découvrez comment assembler facilement la lunette E.R.T. Chaque module n'a qu'un seul sens de montage pour un apprentissage optimal.",
+        "description": "Découvrez comment assembler facilement la lunette Lumi. Chaque module n'a qu'un seul sens de montage pour un apprentissage optimal.",
         "videoId": "GQQfFflsZY0",
-        "videoTitle": "Assemblage de la lunette astronomique éducative E.R.T"
+        "videoTitle": "Assemblage de la lunette astronomique éducative Lumi"
       }
     },
     {
@@ -71,9 +71,9 @@
       "id": "section-video-2",
       "data": {
         "title": "Démonstration rapide",
-        "description": "Aperçu du montage de la lunette E.R.T en version courte.",
+        "description": "Aperçu du montage de la lunette Lumi en version courte.",
         "videoId": "fL8zU5coKBg",
-        "videoTitle": "Montage rapide de la lunette ERT"
+        "videoTitle": "Montage rapide de la lunette Lumi"
       }
     },
     {
@@ -125,11 +125,11 @@
       "data": {
         "title": "Porte-filtre",
         "tagline": "",
-        "description": "Le pack ERT inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses par exemple.",
+        "description": "Le pack Lumi inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses par exemple.",
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Porte-filtre pour la lunette ERT"
+          "alt": "Porte-filtre pour la lunette Lumi"
         }
       }
     },
@@ -141,107 +141,107 @@
         "images": [
           {
             "src": "/assets/ert_montauban1.jpeg",
-            "alt": "ERT à Montauban 1",
-            "caption": "Observation avec la lunette ERT à Montauban"
+            "alt": "Lumi à Montauban 1",
+            "caption": "Observation avec la lunette Lumi à Montauban"
           },
           {
             "src": "/assets/ert_montauban2.jpeg",
-            "alt": "ERT à Montauban 2",
-            "caption": "Séance d'observation astronomique avec l'ERT"
+            "alt": "Lumi à Montauban 2",
+            "caption": "Séance d'observation astronomique avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban3.jpeg",
-            "alt": "ERT à Montauban 3",
-            "caption": "Utilisation pédagogique de la lunette ERT"
+            "alt": "Lumi à Montauban 3",
+            "caption": "Utilisation pédagogique de la lunette Lumi"
           },
           {
             "src": "/assets/ert_montauban4.jpeg",
-            "alt": "ERT à Montauban 4",
-            "caption": "Démonstration de l'ERT lors d'une soirée d'observation"
+            "alt": "Lumi à Montauban 4",
+            "caption": "Démonstration de la Lumi lors d'une soirée d'observation"
           },
           {
             "src": "/assets/ert_montauban5.jpeg",
-            "alt": "ERT à Montauban 5",
-            "caption": "L'ERT en action à Montauban"
+            "alt": "Lumi à Montauban 5",
+            "caption": "La Lumi en action à Montauban"
           },
           {
             "src": "/assets/ert_montauban6.jpeg",
-            "alt": "ERT à Montauban 6",
+            "alt": "Lumi à Montauban 6",
             "caption": "Observation du ciel avec la lunette éducative"
           },
           {
             "src": "/assets/ert_montauban7.jpg",
-            "alt": "ERT à Montauban 7",
-            "caption": "Séance d'astronomie pratique avec l'ERT"
+            "alt": "Lumi à Montauban 7",
+            "caption": "Séance d'astronomie pratique avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban8.jpeg",
-            "alt": "ERT à Montauban 8",
-            "caption": "La lunette ERT en situation d'observation réelle"
+            "alt": "Lumi à Montauban 8",
+            "caption": "La lunette Lumi en situation d'observation réelle"
           },
           {
             "src": "/assets/ert_montauban9.jpeg",
-            "alt": "ERT à Montauban 9",
-            "caption": "Découverte du ciel étoilé avec l'ERT"
+            "alt": "Lumi à Montauban 9",
+            "caption": "Découverte du ciel étoilé avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban10.jpeg",
-            "alt": "ERT à Montauban 10",
-            "caption": "Utilisation de l'ERT lors d'un événement astronomique"
+            "alt": "Lumi à Montauban 10",
+            "caption": "Utilisation de la Lumi lors d'un événement astronomique"
           },
           {
             "src": "/assets/ert_montauban11.jpeg",
-            "alt": "ERT à Montauban 11",
+            "alt": "Lumi à Montauban 11",
             "caption": "Observation à Montauban avec la lunette pédagogique"
           },
           {
             "src": "/assets/ert_montauban12.jpeg",
-            "alt": "ERT à Montauban 12",
-            "caption": "L'ERT en démonstration à Montauban"
+            "alt": "Lumi à Montauban 12",
+            "caption": "La Lumi en démonstration à Montauban"
           },
           {
             "src": "/assets/ert_montauban13.jpeg",
-            "alt": "ERT à Montauban 13",
-            "caption": "Séance d'observation avec l'ERT"
+            "alt": "Lumi à Montauban 13",
+            "caption": "Séance d'observation avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban14.jpeg",
-            "alt": "ERT à Montauban 14",
-            "caption": "La lunette ERT lors d'une soirée astronomique à Montauban"
+            "alt": "Lumi à Montauban 14",
+            "caption": "La lunette Lumi lors d'une soirée astronomique à Montauban"
           },
           {
             "src": "/assets/ertcolor1.jpeg",
-            "alt": "Lunette ERT variante couleur 1",
-            "caption": "Variante de couleur pour la lunette astronomique E.R.T"
+            "alt": "Lunette Lumi variante couleur 1",
+            "caption": "Variante de couleur pour la lunette astronomique Lumi"
           },
           {
             "src": "/assets/ertcolor2.jpeg",
-            "alt": "Lunette ERT variante couleur 2",
+            "alt": "Lunette Lumi variante couleur 2",
             "caption": "Personnalisation possible avec différentes couleurs d'impression"
           },
           {
             "src": "/assets/ertcolor3.jpeg",
-            "alt": "Lunette ERT variante couleur 3",
+            "alt": "Lunette Lumi variante couleur 3",
             "caption": "Exemple de customisation de couleur pour le projet éducatif"
           },
           {
             "src": "/assets/ertcolor4.jpeg",
-            "alt": "Lunette ERT variante couleur 4",
+            "alt": "Lunette Lumi variante couleur 4",
             "caption": "Diversité des options de couleurs disponibles"
           },
           {
             "src": "/assets/ertcolor5.jpeg",
-            "alt": "Lunette ERT variante couleur 5",
+            "alt": "Lunette Lumi variante couleur 5",
             "caption": "Rendu visuel avec une autre palette de couleurs"
           },
           {
             "src": "/assets/ertcolor6.jpeg",
-            "alt": "Lunette ERT variante couleur 6",
+            "alt": "Lunette Lumi variante couleur 6",
             "caption": "Possibilité d'adaptation selon les préférences éducatives"
           },
           {
             "src": "/assets/ertcolor7.jpeg",
-            "alt": "Lunette ERT variante couleur 7",
+            "alt": "Lunette Lumi variante couleur 7",
             "caption": "Dernière variante de couleur pour compléter la collection"
           }
         ],
@@ -253,11 +253,11 @@
       "id": "section-clef-etoiles",
       "data": {
         "title": "Visible à La Clef des Étoiles",
-        "description": "Vous pouvez voir et tester la lunette E.R.T en vrai à la boutique La Clef des Étoiles.",
+        "description": "Vous pouvez voir et tester la lunette Lumi en vrai à la boutique La Clef des Étoiles.",
         "ctaText": "Visiter La Clef des Étoiles",
         "ctaHref": "https://laclefdesetoiles.com/",
         "features": [
-          "Exposition permanente de l'E.R.T",
+          "Exposition permanente de la Lumi",
           "Essai et démonstration possibles",
           "Conseils d'experts en astronomie"
         ]
@@ -267,7 +267,7 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Kit E.R.T complet",
+        "title": "Kit Lumi complet",
         "price": "219€",
         "priceNote": "Pièces imprimées + kit de montage",
         "included": [
@@ -289,7 +289,7 @@
     },
     {
       "type": "features",
-      "id": "section-features", 
+      "id": "section-features",
       "data": {
         "title": "Avantages éducatifs",
         "features": [

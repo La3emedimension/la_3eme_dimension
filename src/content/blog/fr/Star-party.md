@@ -25,9 +25,9 @@ Le 11 octobre, rendez-vous à la Salle des Fêtes de Gratentour pour une journé
 
 ![Télescope Smallest](/assets/smallest-fullsize-01.jpg)
 
-- **L’ERT**, une autre de mes réalisations, qui illustre le potentiel de l’impression 3D dans la conception d’instruments optiques performants, légers et accessibles.
+- **La Lumi**, une autre de mes réalisations, qui illustre le potentiel de l’impression 3D dans la conception d’instruments optiques performants, légers et accessibles.
 
-![image de L'ERT](/assets/ERT.jpg)
+![image de la Lumi](/assets/ERT.jpg)
 
 - **Impression sur place**, l'imprimante sera elle aussi de la partie (Star-party?)
 

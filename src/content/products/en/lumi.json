@@ -1,5 +1,5 @@
 {
-  "seoTitle": "E.R.T - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
+  "seoTitle": "Lumi - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
   "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
   "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
@@ -8,7 +8,7 @@
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "E.R.T - Educational Astronomical Telescope",
+    "name": "Lumi - Educational Astronomical Telescope",
     "description": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters.",
     "brand": {
       "@type": "Brand",
@@ -42,7 +42,7 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "E.R.T",
+        "title": "Lumi",
         "tagline": "\"The astronomical experience, at your fingertips\"",
         "description": "Educational project to discover optics and some sky objects: moon, bright galaxies, star clusters...",
         "features": [
@@ -51,7 +51,7 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "ERT astronomical telescope in Montauban" }
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi astronomical telescope in Montauban" }
       }
     },
     {
@@ -59,9 +59,9 @@
       "id": "section-video",
       "data": {
         "title": "Simple and educational assembly",
-        "description": "Discover how to easily assemble the E.R.T telescope. Each module has only one mounting direction for optimal learning.",
+        "description": "Discover how to easily assemble the Lumi telescope. Each module has only one mounting direction for optimal learning.",
         "videoId": "GQQfFflsZY0",
-        "videoTitle": "Assembly of the E.R.T educational astronomical telescope"
+        "videoTitle": "Assembly of the Lumi educational astronomical telescope"
       }
     },
     {
@@ -69,9 +69,9 @@
       "id": "section-video-2",
       "data": {
         "title": "Quick demonstration",
-        "description": "Overview of the E.R.T telescope assembly in short version.",
+        "description": "Overview of the Lumi telescope assembly in short version.",
         "videoId": "fL8zU5coKBg",
-        "videoTitle": "Quick assembly of the ERT telescope"
+        "videoTitle": "Quick assembly of the Lumi telescope"
       }
     },
     {
@@ -123,11 +123,11 @@
       "data": {
         "title": "Filter holder",
         "tagline": "",
-        "description": "The ERT pack includes a filter holder compatible with standard 1.25\" filters. You can install different types of filters according to your observation needs: moon filter to reduce glare when observing the Moon, or UHC filter to enhance nebula contrast for example.",
+        "description": "The Lumi pack includes a filter holder compatible with standard 1.25\" filters. You can install different types of filters according to your observation needs: moon filter to reduce glare when observing the Moon, or UHC filter to enhance nebula contrast for example.",
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Filter holder for the ERT telescope"
+          "alt": "Filter holder for the Lumi telescope"
         }
       }
     },
@@ -139,7 +139,7 @@
         "images": [
           {
             "src": "/assets/draw-ert.png",
-            "alt": "Technical diagram of the E.R.T telescope",
+            "alt": "Technical diagram of the Lumi telescope",
             "caption": "Detailed assembly diagram - each module has only one assembly direction"
           },
           {
@@ -149,107 +149,107 @@
           },
           {
             "src": "/assets/ert_montauban1.jpeg",
-            "alt": "ERT in Montauban 1",
-            "caption": "Observation with the ERT telescope in Montauban"
+            "alt": "Lumi in Montauban 1",
+            "caption": "Observation with the Lumi telescope in Montauban"
           },
           {
             "src": "/assets/ert_montauban2.jpeg",
-            "alt": "ERT in Montauban 2",
-            "caption": "Astronomical observation session with the ERT"
+            "alt": "Lumi in Montauban 2",
+            "caption": "Astronomical observation session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban3.jpeg",
-            "alt": "ERT in Montauban 3",
-            "caption": "Educational use of the ERT telescope"
+            "alt": "Lumi in Montauban 3",
+            "caption": "Educational use of the Lumi telescope"
           },
           {
             "src": "/assets/ert_montauban4.jpeg",
-            "alt": "ERT in Montauban 4",
-            "caption": "ERT demonstration during an observation evening"
+            "alt": "Lumi in Montauban 4",
+            "caption": "Lumi demonstration during an observation evening"
           },
           {
             "src": "/assets/ert_montauban5.jpeg",
-            "alt": "ERT in Montauban 5",
-            "caption": "The ERT in action in Montauban"
+            "alt": "Lumi in Montauban 5",
+            "caption": "The Lumi in action in Montauban"
           },
           {
             "src": "/assets/ert_montauban6.jpeg",
-            "alt": "ERT in Montauban 6",
+            "alt": "Lumi in Montauban 6",
             "caption": "Sky observation with the educational telescope"
           },
           {
             "src": "/assets/ert_montauban7.jpg",
-            "alt": "ERT in Montauban 7",
-            "caption": "Practical astronomy session with the ERT"
+            "alt": "Lumi in Montauban 7",
+            "caption": "Practical astronomy session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban8.jpeg",
-            "alt": "ERT in Montauban 8",
-            "caption": "The ERT telescope in real observation situation"
+            "alt": "Lumi in Montauban 8",
+            "caption": "The Lumi telescope in real observation situation"
           },
           {
             "src": "/assets/ert_montauban9.jpeg",
-            "alt": "ERT in Montauban 9",
-            "caption": "Discovering the starry sky with the ERT"
+            "alt": "Lumi in Montauban 9",
+            "caption": "Discovering the starry sky with the Lumi"
           },
           {
             "src": "/assets/ert_montauban10.jpeg",
-            "alt": "ERT in Montauban 10",
-            "caption": "Using the ERT during an astronomical event"
+            "alt": "Lumi in Montauban 10",
+            "caption": "Using the Lumi during an astronomical event"
           },
           {
             "src": "/assets/ert_montauban11.jpeg",
-            "alt": "ERT in Montauban 11",
+            "alt": "Lumi in Montauban 11",
             "caption": "Observation in Montauban with the educational telescope"
           },
           {
             "src": "/assets/ert_montauban12.jpeg",
-            "alt": "ERT in Montauban 12",
-            "caption": "The ERT in demonstration in Montauban"
+            "alt": "Lumi in Montauban 12",
+            "caption": "The Lumi in demonstration in Montauban"
           },
           {
             "src": "/assets/ert_montauban13.jpeg",
-            "alt": "ERT in Montauban 13",
-            "caption": "Observation session with the ERT"
+            "alt": "Lumi in Montauban 13",
+            "caption": "Observation session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban14.jpeg",
-            "alt": "ERT in Montauban 14",
-            "caption": "The ERT telescope during an astronomical evening in Montauban"
+            "alt": "Lumi in Montauban 14",
+            "caption": "The Lumi telescope during an astronomical evening in Montauban"
           },
           {
             "src": "/assets/ertcolor1.jpeg",
-            "alt": "ERT telescope color variant 1",
-            "caption": "Color variant for the E.R.T astronomical telescope"
+            "alt": "Lumi telescope color variant 1",
+            "caption": "Color variant for the Lumi astronomical telescope"
           },
           {
             "src": "/assets/ertcolor2.jpeg",
-            "alt": "ERT telescope color variant 2",
+            "alt": "Lumi telescope color variant 2",
             "caption": "Customization possible with different print colors"
           },
           {
             "src": "/assets/ertcolor3.jpeg",
-            "alt": "ERT telescope color variant 3",
+            "alt": "Lumi telescope color variant 3",
             "caption": "Color customization example for the educational project"
           },
           {
             "src": "/assets/ertcolor4.jpeg",
-            "alt": "ERT telescope color variant 4",
+            "alt": "Lumi telescope color variant 4",
             "caption": "Diversity of available color options"
           },
           {
             "src": "/assets/ertcolor5.jpeg",
-            "alt": "ERT telescope color variant 5",
+            "alt": "Lumi telescope color variant 5",
             "caption": "Visual rendering with another color palette"
           },
           {
             "src": "/assets/ertcolor6.jpeg",
-            "alt": "ERT telescope color variant 6",
+            "alt": "Lumi telescope color variant 6",
             "caption": "Adaptation possible according to educational preferences"
           },
           {
             "src": "/assets/ertcolor7.jpeg",
-            "alt": "ERT telescope color variant 7",
+            "alt": "Lumi telescope color variant 7",
             "caption": "Last color variant to complete the collection"
           }
         ],
@@ -260,7 +260,7 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Complete E.R.T Kit",
+        "title": "Complete Lumi Kit",
         "price": "€200",
         "priceNote": "Printed parts + assembly kit",
         "included": [

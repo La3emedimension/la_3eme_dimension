@@ -1,7 +1,7 @@
 {
   "seoTitle": "Oculaires Plossl 1.25\" pour Télescope - 20mm & 10mm | La 3ème dimension",
-  "seoDescription": "Oculaires Plossl 1.25\" compatibles Smallest et E.R.T. Disponibles en 20mm (grand champ, Lune et amas) et 10mm (fort grossissement, planètes). À partir de 15€.",
-  "seoKeywords": "oculaire plossl, oculaire télescope, oculaire 1.25, oculaire 20mm plossl, oculaire 10mm plossl, accessoire télescope, smallest, ert, astronomie, toulouse",
+  "seoDescription": "Oculaires Plossl 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm (grand champ, Lune et amas) et 10mm (fort grossissement, planètes). À partir de 15€.",
+  "seoKeywords": "oculaire plossl, oculaire télescope, oculaire 1.25, oculaire 20mm plossl, oculaire 10mm plossl, accessoire télescope, smallest, lumi, astronomie, toulouse",
   "ogImage": "/assets/preview.png",
   "price": "15€",
   "priceNote": "À partir de",
@@ -10,7 +10,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Oculaires Plossl 1.25\" pour télescope",
-    "description": "Oculaires Plossl 1.25\" compatibles Smallest et E.R.T. Disponibles en 20mm et 10mm, seuls ou en pack.",
+    "description": "Oculaires Plossl 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm et 10mm, seuls ou en pack.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -36,16 +36,16 @@
       "data": {
         "title": "Oculaires Plossl 1.25\"",
         "tagline": "Le bon oculaire pour chaque observation",
-        "description": "Des oculaires Plossl soigneusement choisis pour tirer le meilleur de votre Smallest ou E.R.T. Le 20mm pour les grands espaces — Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails — cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
+        "description": "Des oculaires Plossl soigneusement choisis pour tirer le meilleur de votre Smallest ou Lumi. Le 20mm pour les grands espaces — Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails — cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
         "features": [
-          { "icon": "eye", "text": "Compatible Smallest & E.R.T" },
+          { "icon": "eye", "text": "Compatible Smallest & Lumi" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
           { "icon": "strategy", "text": "À partir de 15€" }
         ],
         "primaryCta": { "text": "Choisir mon oculaire", "href": "#section-choix" },
         "heroImage": {
           "src": "/assets/oculaire3.jpeg",
-          "alt": "Oculaires 1.25 pouces pour télescope Smallest et ERT"
+          "alt": "Oculaires 1.25 pouces pour télescope Smallest et Lumi"
         }
       }
     },
@@ -85,7 +85,7 @@
           {
             "icon": "cube-3d",
             "title": "Format Plossl 1.25\"",
-            "description": "La conception Plossl (4 lentilles en 2 groupes) offre un excellent rapport qualité/prix : image nette, contraste élevé et champ de 52°. Standard 1.25\", compatible Smallest et E.R.T sans adaptation."
+            "description": "La conception Plossl (4 lentilles en 2 groupes) offre un excellent rapport qualité/prix : image nette, contraste élevé et champ de 52°. Standard 1.25\", compatible Smallest et Lumi sans adaptation."
           }
         ]
       }

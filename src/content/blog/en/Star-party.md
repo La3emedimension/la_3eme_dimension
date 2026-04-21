@@ -25,9 +25,9 @@ On October 11, meet at the Salle des Fêtes de Gratentour for a day and evening 
 
 ![Smallest Telescope](/assets/smallest-fullsize-01.jpg)
 
-- **The ERT**, another of my creations, which illustrates the potential of 3D printing in the design of high-performance, lightweight and accessible optical instruments.
+- **The Lumi**, another of my creations, which illustrates the potential of 3D printing in the design of high-performance, lightweight and accessible optical instruments.
 
-![image of The ERT](/assets/ERT.jpg)
+![image of the Lumi](/assets/ERT.jpg)
 
 - **Printing on site**, the printer will also be part of it (Star-party?)
 

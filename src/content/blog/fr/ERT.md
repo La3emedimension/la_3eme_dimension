@@ -1,5 +1,5 @@
 ---
-title: E.R.T
+title: Lumi
 publishDate: 2019-12-01 00:00:00
 img: /assets/ert-04.jpg
 img_alt: Petite lunette pédagogique pour faire de l'astronomie et comprendre son fonctionne optique.
@@ -9,12 +9,12 @@ tags:
   - Design
   - Éducation
   - Astronomie
-seoTitle: "E.R.T - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension"
+seoTitle: "Lumi - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension"
 seoDescription: "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design éducatif et facile à assembler."
 seoKeywords: "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse"
 ---
 
-E.R.T est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles... 
+Lumi est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles... 
 
 ---
 Elle est constituée de plusieurs modules : 

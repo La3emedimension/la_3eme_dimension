@@ -1,5 +1,5 @@
 ---
-title: E.R.T
+title: Lumi
 publishDate: 2019-12-01 00:00:00
 img: /assets/ert-04.jpg
 img_alt: Small educational telescope for astronomy and understanding optical function.
@@ -9,12 +9,12 @@ tags:
   - Design
   - Education
   - Astronomy
-seoTitle: "E.R.T - 3D Printed Educational Astronomical Telescope | La 3ème dimension"
+seoTitle: "Lumi - 3D Printed Educational Astronomical Telescope | La 3ème dimension"
 seoDescription: "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Educational design easy to assemble."
 seoKeywords: "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse"
 ---
 
-E.R.T is an educational project to discover optics and some sky objects, moon, bright galaxies, star clusters...
+Lumi is an educational project to discover optics and some sky objects, moon, bright galaxies, star clusters...
 
 ---
 It consists of several modules:

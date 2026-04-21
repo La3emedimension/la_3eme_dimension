@@ -9,20 +9,20 @@ import { type Locale } from '../i18n';
 const locale: Locale = 'fr';
 
 const products = await getCollection('products');
-const ertProduct = products.find(product => product.id.includes('ert'));
+const lumiProduct = products.find(product => product.id.includes('lumi'));
 
-if (!ertProduct) {
+if (!lumiProduct) {
 	console.error('Available product IDs:', products.map(p => p.id));
-	throw new Error('ERT product not found');
+	throw new Error('Lumi product not found');
 }
 
-const productConfig = ertProduct.data;
+const productConfig = lumiProduct.data;
 
 // Modify for notice page - adjust title and description
 const noticeConfig = {
 	...productConfig,
-	seoTitle: "Notice E.R.T - Guide d'utilisation | La 3ème dimension",
-	seoDescription: "Notice d'utilisation complète de la lunette astronomique E.R.T. Guide de montage, conseils d'observation et informations techniques.",
+	seoTitle: "Notice Lumi - Guide d'utilisation | La 3ème dimension",
+	seoDescription: "Notice d'utilisation complète de la lunette astronomique Lumi. Guide de montage, conseils d'observation et informations techniques.",
 	sections: [
 		...productConfig.sections.map(section => {
 			if (section.type === 'hero') {
@@ -31,11 +31,11 @@ const noticeConfig = {
 					...section,
 					data: {
 						...sectionData,
-						title: "Notice E.R.T",
+						title: "Notice Lumi",
 						tagline: "Guide d'utilisation complet",
-						description: "Notice d'utilisation de votre lunette astronomique éducative E.R.T. Montage, réglages et conseils d'observation.",
+						description: "Notice d'utilisation de votre lunette astronomique éducative Lumi. Montage, réglages et conseils d'observation.",
 						warning: "⚠️ ATTENTION : Ne jamais regarder le soleil directement avec cet instrument. Risque de lésions oculaires graves et irréversibles.",
-						ecoWarning: "🌿 L'ERT est conçu en bioplastique, un matériau écologique et durable, mais comme tout plastique, il a ses limites face à la chaleur. Évitez de le laisser dans un véhicule en plein soleil par exemple, les pièces risquent de se déformer."
+						ecoWarning: "🌿 La Lumi est conçue en bioplastique, un matériau écologique et durable, mais comme tout plastique, il a ses limites face à la chaleur. Évitez de le laisser dans un véhicule en plein soleil par exemple, les pièces risquent de se déformer."
 					}
 				};
 			}
@@ -49,7 +49,7 @@ const noticeConfig = {
 						priceNote: "Assistance technique incluse",
 						included: [
 							"Guide de montage pas à pas",
-							"Conseils d'observation", 
+							"Conseils d'observation",
 							"Résolution des problèmes",
 							"Entretien et maintenance",
 							"Support technique par email",
@@ -66,7 +66,7 @@ const noticeConfig = {
 			}
 			return section;
 		}).slice(0, 1), // Hero seulement
-		
+
 		// Ajouter la section Notice de montage après le hero
 		{
 			type: 'custom',
@@ -124,22 +124,22 @@ const noticeConfig = {
 						title: "",
 						description: "Et voilà vous pouvez observer !",
 						image: "/assets/ERT_montage_9.png",
-						alt: "Lunette ERT prête pour l'observation"
+						alt: "Lunette Lumi prête pour l'observation"
 					},
 					{
 						number: 8,
 						title: "",
 						description: "",
 						image: "/assets/ERT_montage_10.png",
-						alt: "Étape finale du montage ERT"
+						alt: "Étape finale du montage Lumi"
 					}
 				]
 			}
 		},
-		
+
 		// Ajouter la section vidéo après la notice
 		...productConfig.sections.filter(section => section.type === 'video'),
-		
+
 		// Ajouter la section Observation
 		{
 			type: 'custom',
@@ -147,49 +147,49 @@ const noticeConfig = {
 			customComponent: ObservationGuide,
 			data: {
 				title: "Quoi observer ?",
-				description: "Découvrez les merveilles du ciel nocturne avec votre lunette E.R.T. De la Lune aux galaxies lointaines, explorez l'univers qui nous entoure.",
+				description: "Découvrez les merveilles du ciel nocturne avec votre lunette Lumi. De la Lune aux galaxies lointaines, explorez l'univers qui nous entoure.",
 				observations: [
 					{
 						title: "La Lune",
 						description: "Observez les cratères lunaires, les mers et les montagnes. Le meilleur moment est pendant les phases croissantes et décroissantes.",
 						image: "/assets/Lune.png",
-						alt: "Observation de la Lune avec la lunette ERT"
+						alt: "Observation de la Lune avec la lunette Lumi"
 					},
 					{
 						title: "Jupiter et ses lunes",
 						description: "La plus grande planète du système solaire accompagnée de ses quatre principales lunes : Io, Europe, Ganymède et Callisto, visibles comme de petits points lumineux autour de Jupiter.",
 						image: "/assets/Jupiter.png",
-						alt: "Observation de Jupiter et ses lunes avec la lunette ERT"
+						alt: "Observation de Jupiter et ses lunes avec la lunette Lumi"
 					},
 					{
 						title: "La nébuleuse d'Orion",
 						description: "Une des nébuleuses les plus brillantes et facilement observables, située dans la constellation d'Orion. Visible à l'œil nu comme une étoile floue.",
-						image: "/assets/La nébuleuse d'Orion.png",
-						alt: "Observation de la nébuleuse d'Orion avec la lunette ERT"
+						image: "/assets/la-nebuleuse-d-orion.png",
+						alt: "Observation de la nébuleuse d'Orion avec la lunette Lumi"
 					},
 					{
 						title: "L'amas d'Hercule",
 						description: "Un magnifique amas globulaire contenant des centaines de milliers d'étoiles, formant une sphère lumineuse dans la constellation d'Hercule.",
-						image: "/assets/L'amas d'Hercule.png",
-						alt: "Observation de l'amas d'Hercule avec la lunette ERT"
+						image: "/assets/l-amas-d-hercule.png",
+						alt: "Observation de l'amas d'Hercule avec la lunette Lumi"
 					},
 					{
 						title: "La galaxie d'Andromède",
 						description: "Notre galaxie voisine la plus proche, visible comme une tache floue allongée. C'est l'objet le plus lointain observable à l'œil nu.",
-						image: "/assets/La galaxie d'Andromède.png",
-						alt: "Observation de la galaxie d'Andromède avec la lunette ERT"
+						image: "/assets/la-galaxie-d-andromede.png",
+						alt: "Observation de la galaxie d'Andromède avec la lunette Lumi"
 					},
 					{
 						title: "Les Pléiades",
 						description: "Un jeune amas ouvert d'étoiles bleues très lumineuses, aussi appelé les 'Sept Sœurs'. Facilement repérable dans la constellation du Taureau.",
-						image: "/assets/Les Pléiades.png",
-						alt: "Observation des Pléiades avec la lunette ERT"
+						image: "/assets/les-pleiades.png",
+						alt: "Observation des Pléiades avec la lunette Lumi"
 					},
 					{
 						title: "Le double amas de Persée",
 						description: "Deux amas d'étoiles rapprochés dans la constellation de Persée, offrant un spectacle magnifique avec de nombreuses étoiles brillantes.",
-						image: "/assets/Le double amas de Persée.png",
-						alt: "Observation du double amas de Persée avec la lunette ERT"
+						image: "/assets/le-double-amas-de-persee.png",
+						alt: "Observation du double amas de Persée avec la lunette Lumi"
 					}
 				],
 				stellariumLink: "https://stellarium.org/fr/",
@@ -200,7 +200,7 @@ const noticeConfig = {
 				mapText: "Voir la carte"
 			}
 		},
-		
+
 		// Continuer avec les autres sections (sauf video qui est déjà ajoutée, et sans specs, pricing, features)
 		...productConfig.sections.slice(2).filter(section =>
 			section.type !== 'video' &&
@@ -240,7 +240,7 @@ const noticeConfig = {
   <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:0.75rem;">🔭 Carte produit</div>
   <div style="margin-bottom:0.5rem;">
     <div style="font-size:0.7rem;color:#555;margin-bottom:0.15rem;">Produit</div>
-    <div style="font-size:0.95rem;font-weight:600;color:#fff;">Lunette E.R.T</div>
+    <div style="font-size:0.95rem;font-weight:600;color:#fff;">Lunette Lumi</div>
   </div>
   <div style="margin-bottom:0.5rem;">
     <div style="font-size:0.7rem;color:#555;margin-bottom:0.15rem;">Numéro de série</div>
@@ -258,7 +258,7 @@ const noticeConfig = {
     const params = new URLSearchParams(window.location.search);
     const sn = params.get('sn');
     if (!sn) return;
-    if (!/^ERT\d{7}$/.test(sn)) return;
+    if (!/^LUMI\d{7}$/.test(sn)) return;
     document.getElementById('sn-value').textContent = sn;
     const d = params.get('d');
     if (d && d.length === 8) {
@@ -271,7 +271,7 @@ const noticeConfig = {
 </script>
 
 <style>
-  /* Override accent colors with gray-700 for ERT page */
+  /* Override accent colors with gray-700 for Lumi page */
   :global(.accent-regular) {
     background-color: var(--gray-700) !important;
     color: white !important;
@@ -281,7 +281,7 @@ const noticeConfig = {
     color: var(--gray-300) !important;
   }
 
-  :global(button), 
+  :global(button),
   :global(.cta),
   :global(.btn),
   :global(.button) {
@@ -290,7 +290,7 @@ const noticeConfig = {
     border-color: var(--gray-600) !important;
   }
 
-  :global(button:hover), 
+  :global(button:hover),
   :global(.cta:hover),
   :global(.btn:hover),
   :global(.button:hover) {

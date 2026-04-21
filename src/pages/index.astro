@@ -16,7 +16,7 @@ const t = useTranslations(locale);
 
 const allProducts = await getLocalizedDataCollection('products', locale);
 const smallestProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'smallest');
-const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'ert');
+const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'lumi');
 
 // Business structured data for homepage
 const businessStructuredData = {
@@ -158,13 +158,13 @@ const homepageStructuredData = {
                         )}
                         {ertProduct && (
                             <div class="product-card-wrapper">
-                                <a class="card featured product-card" href={localePath('/product/ert/', locale)}>
+                                <a class="card featured product-card" href={localePath('/product/lumi/', locale)}>
                                     <span class="title">
                                         {ertProduct.data.sections[0].data.title}
                                     </span>
                                     <img
                                         src={ertProduct.data.sections[0].data.heroImage.src}
-                                        alt="Lunette astronomique E.R.T éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
+                                        alt="Lunette astronomique Lumi éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
                                         loading="lazy"
                                         decoding="async"
                                     />

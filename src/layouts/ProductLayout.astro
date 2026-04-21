@@ -135,8 +135,8 @@ const finalStructuredData = structuredData ? {
   {sections.map((section) => {
     const Component = section.type === 'custom' ? section.customComponent : sectionComponents[section.type];
 
-    if (!Component && section.type !== 'custom') {
-      console.warn(`Unknown section type: ${section.type}`);
+    if (!Component) {
+      console.warn(`No component for section: ${section.id || section.type}`);
       return null;
     }
 

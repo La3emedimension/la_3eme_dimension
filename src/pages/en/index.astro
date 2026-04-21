@@ -16,7 +16,7 @@ const t = useTranslations(locale);
 
 const allProducts = await getLocalizedDataCollection('products', locale);
 const smallestProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'smallest');
-const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'ert');
+const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'lumi');
 
 const businessStructuredData = {
     "@context": "https://schema.org",
@@ -85,7 +85,7 @@ const businessStructuredData = {
                         </a>
                     )}
                     {ertProduct && (
-                        <a class="card featured product-card" href={localePath('/product/ert/', locale)}>
+                        <a class="card featured product-card" href={localePath('/product/lumi/', locale)}>
                             <span class="title">{ertProduct.data.sections[0].data.title}</span>
                             <img
                                 src={ertProduct.data.sections[0].data.heroImage.src}

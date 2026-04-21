@@ -247,7 +247,7 @@
     <!-- Choix préfixe -->
     <div class="prefix-select">
       <button class="prefix-btn active" id="btn-sma">SMA — Smallest</button>
-      <button class="prefix-btn" id="btn-ert">ERT — E.R.T</button>
+      <button class="prefix-btn" id="btn-ert">LUMI — Lumi</button>
     </div>
 
     <!-- Compteur -->
@@ -336,12 +336,12 @@
   var ADMIN_PASSWORD = 'Seriall3d*';
   var NOTICE_URLS = {
     SMA: 'https://la3emedim.fr/smallest-notice/',
-    ERT: 'https://la3emedim.fr/ert/',
+    LUMI: 'https://la3emedim.fr/lumi/',
   };
 
   // ══ ÉTAT ══
   var currentPrefix = 'SMA';
-  var counters = { SMA: 1, ERT: 1 };
+  var counters = { SMA: 1, LUMI: 1 };
   var registry = [];
 
   // ══ HELPERS ══
@@ -390,7 +390,7 @@
   function setPrefix(prefix) {
     currentPrefix = prefix;
     document.getElementById('btn-sma').className = 'prefix-btn' + (prefix === 'SMA' ? ' active' : '');
-    document.getElementById('btn-ert').className = 'prefix-btn' + (prefix === 'ERT' ? ' active' : '');
+    document.getElementById('btn-ert').className = 'prefix-btn' + (prefix === 'LUMI' ? ' active' : '');
     document.getElementById('result-section').style.display = 'none';
     updateCounterDisplay();
   }
@@ -472,7 +472,7 @@
     if (registry.length === 0) { showError('Le registre est vide.'); return; }
     var header = ['N° de série','Produit','Prénom','Nom',"Date d'achat",'Lien notice'];
     var rows = registry.map(function(r) {
-      return [r.sn, r.prefix === 'SMA' ? 'Smallest' : 'E.R.T', r.prenom, r.nom, formatDate(r.dateAchat), r.lien];
+      return [r.sn, r.prefix === 'SMA' ? 'Smallest' : 'Lumi', r.prenom, r.nom, formatDate(r.dateAchat), r.lien];
     });
     var csv = [header].concat(rows).map(function(row) {
       return row.map(function(cell) { return '"' + String(cell).replace(/"/g,'""') + '"'; }).join(',');
@@ -499,7 +499,7 @@
   });
 
   document.getElementById('btn-sma').addEventListener('click', function() { setPrefix('SMA'); });
-  document.getElementById('btn-ert').addEventListener('click', function() { setPrefix('ERT'); });
+  document.getElementById('btn-ert').addEventListener('click', function() { setPrefix('LUMI'); });
   document.getElementById('btn-generate').addEventListener('click', generateSerial);
   document.getElementById('copy-url-btn').addEventListener('click', copyUrl);
   document.getElementById('btn-export').addEventListener('click', exportCSV);

@@ -25,8 +25,8 @@ const products = filteredProducts.sort((a, b) => {
 
   if (aId === 'smallest') return -1;
   if (bId === 'smallest') return 1;
-  if (aId === 'ert') return -1;
-  if (bId === 'ert') return 1;
+  if (aId === 'lumi') return -1;
+  if (bId === 'lumi') return 1;
 
   return 0;
 });
@@ -39,9 +39,12 @@ const products = filteredProducts.sort((a, b) => {
       const heroData = heroSection?.data;
       const carouselImage = product.data.carouselImage ?? heroData?.heroImage;
 
+      const productSlug = product.id.replace(`${locale}/`, '');
+      const isLumi = productSlug === 'lumi';
+
       return (
         <div class="carousel-slide" data-index={index}>
-          <a href={`/product/${product.id.replace(`${locale}/`, '')}`} class="product-card">
+          <a href={`/product/${productSlug}`} class="product-card">
             {carouselImage?.src && (
               <img
                 src={carouselImage.src}
@@ -50,7 +53,13 @@ const products = filteredProducts.sort((a, b) => {
               />
             )}
             <div class="product-info">
-              <h3>{heroData?.title || product.id}</h3>
+              <h3>
+                {isLumi ? (
+                  <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></>
+                ) : (
+                  heroData?.title || product.id
+                )}
+              </h3>
               {heroData?.tagline && <p class="tagline">{heroData.tagline}</p>}
             </div>
           </a>
