@@ -24,7 +24,9 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 <section class="hero-product">
 	<div class="hero-content">
 		<div class="hero-text">
-			<h1>{title}</h1>
+			<h1>
+				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></> : title}
+			</h1>
 			<p class="hero-tagline">{tagline}</p>
 			<p class="hero-description" set:html={description} />
 			<div class="hero-features">

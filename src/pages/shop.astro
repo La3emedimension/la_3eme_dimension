@@ -118,7 +118,10 @@ const shopStructuredData = {
 								</div>
 								<div class="card-content">
 									<h3 class="product-title">
-										{heroData?.title || product.id}
+										{heroData?.title === 'Lumi'
+											? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></>
+											: (heroData?.title || product.id)
+										}
 										{import.meta.env.DEV && product.data.draft && (
 											<span class="draft-badge">DRAFT</span>
 										)}
