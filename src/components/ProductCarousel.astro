@@ -23,10 +23,10 @@ const products = filteredProducts.sort((a, b) => {
   const aId = a.id.replace(`${locale}/`, '');
   const bId = b.id.replace(`${locale}/`, '');
 
-  if (aId === 'smallest') return -1;
-  if (bId === 'smallest') return 1;
   if (aId === 'lumi') return -1;
   if (bId === 'lumi') return 1;
+  if (aId === 'smallest') return -1;
+  if (bId === 'smallest') return 1;
 
   return 0;
 });

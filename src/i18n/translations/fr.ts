@@ -49,15 +49,15 @@ export const fr: Translations = {
   },
   skills: {
     custom: {
-      title: 'Observer',
-      description: 'Nous concevons des instruments simples et intuitifs par leurs montages et utilisations.',
+      title: 'Ludique',
+      description: 'Nous concevons des instruments simples par leurs montages et utilisations.',
     },
     design: {
-      title: 'Optimiser',
+      title: 'Intuitif',
       description: 'Un design pensé autour de votre expérience.',
     },
     workshop: {
-      title: 'Apprendre',
+      title: 'Pédagogique',
       description: 'Le montage se fait sans notice et permet de comprendre le fonctionnement de l\'instrument.',
     },
   },

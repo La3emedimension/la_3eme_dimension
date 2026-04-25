@@ -51,14 +51,22 @@ const businessStructuredData = {
     },
     hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Télescopes et accessoires pour débutants en astronomie",
+        name: "Instruments astronomiques fabriqués en France",
         itemListElement: [
             {
                 "@type": "Offer",
                 itemOffered: {
                     "@type": "Product",
-                    name: "Télescope Smallest - Parfait pour débuter",
-                    description: "Télescope compact portable, facile à utiliser, idéal pour observer la Lune et les planètes",
+                    name: "Smallest - Télescope compact fabriqué en France",
+                    description: "Télescope Newton 150/750 compact portable, prêt en 4 minutes, transportable en avion. Idéal pour observer la Lune et les planètes.",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Product",
+                    name: "Lumi - Lunette astronomique pédagogique",
+                    description: "Lunette astronomique à assembler sans notice. Le montage enseigne l'optique. Kit complet 219€, fabriqué en France.",
                 },
             },
             {
@@ -66,7 +74,7 @@ const businessStructuredData = {
                 itemOffered: {
                     "@type": "Service",
                     name: "Accessoires astronomie sur mesure en impression 3D",
-                    description: "Masques de Bahtinov, vis de collimation, accessoires pour télescopes débutants et confirmés",
+                    description: "Masques de Bahtinov, vis de collimation, accessoires pour télescopes débutants et confirmés.",
                 },
             },
         ],
@@ -92,9 +100,9 @@ const homepageStructuredData = {
 
 <BaseLayout
     locale={locale}
-    title="Télescopes Faciles & Fiables, Fabriqués en France | La 3ème Dimension"
-    description="Des télescopes simples à utiliser, fiables et fabriqués en France. Observez la Lune, Saturne et Jupiter dès ce soir — sans prise de tête. Instruments et accessoires astronomiques par impression 3D. Toulouse et toute la France."
-    keywords="télescope facile utilisation, télescope fiable, télescope made in france, télescope français, premier télescope, débuter astronomie, observer lune planètes, télescope compact portable, accessoires astronomie, impression 3D astronomie, toulouse, occitanie"
+    title="Télescopes & Lunettes Astronomiques Fabriqués en France | La 3ème Dimension"
+    description="Smallest et Lumi : télescope compact et lunette pédagogique fabriqués en France. Assemblez, comprenez, observez — sans prise de tête. Instruments astronomiques par impression 3D. Toulouse, Occitanie."
+    keywords="télescope facile utilisation, télescope made in france, lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, télescope compact portable, Lumi lunette éducative, Smallest télescope, débuter astronomie, impression 3D astronomie, toulouse, occitanie"
     structuredData={homepageStructuredData}
 >
     <div class="stack gap-20 lg:gap-36">
@@ -124,11 +132,42 @@ const homepageStructuredData = {
                     <a class="hero-label" href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="label-logo" /></a>
                     <a class="hero-label" href="https://www.fabriquenenfrance.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/fab_bloc_rvb.png" alt="Fabriqué en France" class="label-logo" /></a>
                     <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Fabriqué en Occitanie" class="label-logo" /></a>
-                    <a class="hero-label" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/laclef.png" alt="La Clef des Étoiles" class="label-logo" /></a>
                 </div>
             </header>
 
             <Skills locale={locale} />
+
+            <div class="partners-section wrapper">
+                <div class="section-header stack gap-2 lg:gap-4">
+                    <h5>Ils nous font confiance</h5>
+                </div>
+                <div class="partners-grid">
+                    <a class="partner-card" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/laclef.png" alt="La Clef des Étoiles" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="https://neptunion31.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/neptunion31.jpg" alt="Neptunion 31" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="https://www.gapra.fr/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/gapra.jpeg" alt="GAPRA" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="https://roselab.fab-manager.com/#!/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/Logo_RoseLab_Noir.png" alt="Roselab" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="https://www.fairefestival.fr/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/faire festival.png" alt="Faire Festival" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="http://gallifrey-optics.fr/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/gallifreyoptics.jpg" alt="Gallifrey Optics" class="partner-logo" />
+                    </a>
+                    <a class="partner-card" href="https://rgt-lab.fr/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/rgtlab.png" alt="RGT Lab" class="partner-logo" style="object-position: center 60%;" />
+                    </a>
+                    <a class="partner-card" href="https://escalesouslesetoiles.fr/" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/escalesouslesetoiles.jpg" alt="Escale sous les étoiles" class="partner-logo" />
+                    </a>
+                </div>
+            </div>
         </div>
 
         {
@@ -440,6 +479,56 @@ const homepageStructuredData = {
             gap: 2rem;
             grid-area: gallery;
         }
+    }
+
+    .partners-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+
+    .partners-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .partner-card {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.4rem;
+        border: 1px solid var(--gray-700);
+        border-radius: 0.5rem;
+        background: white;
+        text-decoration: none;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .partner-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .partner-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .partner-name {
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--gray-700);
+        white-space: nowrap;
+        text-align: center;
     }
 
     .product-card-wrapper {

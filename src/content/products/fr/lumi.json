@@ -1,16 +1,16 @@
 {
   "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi à Montauban" },
-  "seoTitle": "Lumi - Lunette Astronomique Facile, Fiable et Fabriquée en France | La 3ème dimension",
-  "seoDescription": "Lunette astronomique Lumi : facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille. 219€.",
-  "seoKeywords": "lunette astronomique facile, telescope éducatif, télescope fiable france, optique telescope, initiation astronomie, made in france, toulouse",
-  "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
+  "seoTitle": "Lumi - Lunette Astronomique Pédagogique à Assembler Soi-Même | La 3ème dimension",
+  "seoDescription": "Lumi : lunette astronomique pédagogique fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles. Kit complet 219€.",
+  "seoKeywords": "lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, lunette astronomique éducative, initiation astronomie famille, lunette 3D impression, lunette made in france, optique telescope débutant, lunette sans notice, astronomie toulouse occitanie",
+  "ogImage": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
   "price": "219€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Lumi - Lunette Astronomique Éducative",
-    "description": "Lunette astronomique facile à assembler, fiable et fabriquée en France. Montage intuitif, idéale pour découvrir l'astronomie en famille.",
+    "name": "Lumi - Lunette Astronomique Pédagogique",
+    "description": "Lunette astronomique pédagogique fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -29,13 +29,13 @@
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ert_montauban7.jpg",
+    "image": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
     "features": [
-      "Design modulaire éducatif",
-      "Montage intuitif",
-      "Porte-oculaire 1.25\"",
-      "Observation lune et objets brillants",
-      "Parfait pour l'apprentissage"
+      "Assemblage sans notice",
+      "Comprendre l'optique en la montant",
+      "Fabriquée en France, impression 3D",
+      "Observation Lune, planètes et amas d'étoiles",
+      "Kit complet prêt à assembler"
     ]
   },
   "sections": [
@@ -74,6 +74,16 @@
         "description": "Aperçu du montage de la lunette Lumi en version courte.",
         "videoId": "fL8zU5coKBg",
         "videoTitle": "Montage rapide de la lunette Lumi"
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video-3",
+      "data": {
+        "title": "Ciel et Espace en parle",
+        "description": "Les nouveautés astro 2026 ch.1",
+        "videoId": "ocNVXNSKH3g",
+        "videoTitle": "La lunette Lumi en observation"
       }
     },
     {
@@ -321,6 +331,7 @@
     { "id": "hero", "label": "Présentation" },
     { "id": "video", "label": "Montage détaillé" },
     { "id": "video-2", "label": "Montage rapide" },
+    { "id": "video-3", "label": "Ciel et Espace" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Porte filtre" },
     { "id": "gallery", "label": "Galerie" },

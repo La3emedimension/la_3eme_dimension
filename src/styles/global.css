@@ -117,6 +117,10 @@ body {
 
 body {
 	background-color: var(--gray-999);
+	background-image: url('/assets/fondtest.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
