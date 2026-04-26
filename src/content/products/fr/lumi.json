@@ -51,7 +51,7 @@
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
-        "primaryCta": { "text": "Commander", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
+        "primaryCta": { "text": "Commander — 219€", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
         "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique Lumi à Montauban" }
       }
     },

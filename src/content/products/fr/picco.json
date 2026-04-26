@@ -1,0 +1,149 @@
+{
+  "seoTitle": "Picco - Télescope Newtonien 114/450 Ultra-Compact 1,5 kg | La 3ème dimension",
+  "seoDescription": "Picco : télescope newtonien 114/450 ultra-compact de 1,5 kg, fabriqué en France par impression 3D. Le télescope portable idéal pour l'astronomie nomade.",
+  "seoKeywords": "télescope compact, newtonien 114/450, télescope portable, télescope 1.5 kg, télescope impression 3D, télescope made in france, astronomie nomade, télescope léger, picco telescope",
+  "ogImage": "https://la3emedim.fr/assets/picco.jpg",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Picco - Télescope Newtonien 114/450",
+    "description": "Télescope newtonien 114/450 ultra-compact de 1,5 kg, fabriqué en France par impression 3D. Le compagnon idéal pour l'astronomie nomade.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Télescopes"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Picco",
+        "tagline": "Télescope de Newton 114/450 — 1,5 kg",
+        "description": "Un télescope newtonien ultra-compact conçu pour l'astronomie nomade. Seulement 1,5 kg pour un instrument de 114 mm d'ouverture et 450 mm de focale, fabriqué en France par impression 3D. Vendu avec 2 oculaires Plössl : un 20mm et un 10mm.<br><br><em>Produit en cours de développement — la couleur présentée n'est pas définitive.</em>",
+        "features": [
+          { "icon": "rocket-launch", "text": "114/450 — F/D 3.9" },
+          { "icon": "strategy", "text": "1,5 kg" },
+          { "icon": "terminal-window", "text": "Impression 3D France" }
+        ],
+        "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
+        "secondaryCta": { "text": "Plus d'information", "href": "#section-specs" },
+        "heroImage": { "src": "/assets/114_7.jpeg", "alt": "Télescope Picco 114/450" },
+        "imageOverlayText": "Produit en cours de développement",
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Galerie",
+        "images": [
+          { "src": "/assets/114_1.jpeg", "alt": "Picco 114/450 - vue 1" },
+          { "src": "/assets/114_2.jpeg", "alt": "Picco 114/450 - vue 2" },
+          { "src": "/assets/114_3.jpeg", "alt": "Picco 114/450 - vue 3" },
+          { "src": "/assets/114_4.jpeg", "alt": "Picco 114/450 - vue 4" },
+          { "src": "/assets/114_5.jpeg", "alt": "Picco 114/450 - vue 5" },
+          { "src": "/assets/114_6.jpeg", "alt": "Picco 114/450 - vue 6" },
+          { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 - vue 7" }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Caractéristiques",
+        "specGroups": [
+          {
+            "title": "Optique",
+            "specs": {
+              "Type": "Télescope de Newton",
+              "Diamètre": "114 mm",
+              "Focale": "450 mm",
+              "Rapport F/D": "3,9",
+              "Porte-oculaire": "1,25\""
+            }
+          },
+          {
+            "title": "Mécanique",
+            "specs": {
+              "Poids total": "1,5 kg",
+              "Fabrication": "Impression 3D, France",
+              "Finition": "Personnalisable"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Points forts",
+        "features": [
+          {
+            "icon": "rocket-launch",
+            "title": "Ultra-portable",
+            "description": "1,5 kg seulement : emportez-le partout, en randonnée, en voyage ou sur un balcon."
+          },
+          {
+            "icon": "strategy",
+            "title": "Ouverture généreuse",
+            "description": "114 mm de diamètre pour observer les nébuleuses, amas d'étoiles et planètes lumineuses."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Fabriqué en France",
+            "description": "Chaque pièce est imprimée en 3D dans notre atelier, avec des matériaux durables et recyclables."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Rapide — F/D 3,9",
+            "description": "Un rapport F/D court idéal pour le ciel profond et la photographie grand champ."
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Picco 114/450",
+        "price": "Nous contacter",
+        "priceNote": "Produit en cours de développement — tarif à venir",
+        "included": [
+          "Tube optique imprimé en 3D",
+          "Miroir principal 114 mm",
+          "Miroir secondaire",
+          "Porte-oculaire 1,25\"",
+          "Support de secondaire",
+          "Chercheur"
+        ],
+        "ctaText": "Nous contacter",
+        "ctaHref": "mailto:la3emedim@gmail.com",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "gallery", "label": "Galerie" },
+    { "id": "specs", "label": "Caractéristiques" },
+    { "id": "features", "label": "Points forts" },
+    { "id": "pricing", "label": "Tarifs" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "telescope",
+  "draft": false
+}

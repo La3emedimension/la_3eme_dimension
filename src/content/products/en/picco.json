@@ -1,0 +1,148 @@
+{
+  "seoTitle": "Picco - Ultra-Compact 114/450 Newtonian Telescope 1.5 kg | La 3ème dimension",
+  "seoDescription": "Picco: a 114/450 ultra-compact Newtonian telescope weighing only 1.5 kg, 3D-printed in France. The ideal portable telescope for nomadic astronomy.",
+  "seoKeywords": "compact telescope, 114/450 newtonian, portable telescope, lightweight telescope, 3d printed telescope, made in france telescope, nomadic astronomy, picco telescope",
+  "ogImage": "https://la3emedim.fr/assets/picco.jpg",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Picco - 114/450 Newtonian Telescope",
+    "description": "Ultra-compact 114/450 Newtonian telescope weighing 1.5 kg, 3D-printed in France. The ideal companion for nomadic astronomy.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Telescopes"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Picco",
+        "tagline": "Newtonian 114/450 — 1.5 kg",
+        "description": "An ultra-compact Newtonian telescope designed for nomadic astronomy. Only 1.5 kg for a 114 mm aperture and 450 mm focal length instrument, 3D-printed in France.<br><br><em>Note: the colour shown is not final.</em>",
+        "features": [
+          { "icon": "rocket-launch", "text": "114/450 — F/D 3.9" },
+          { "icon": "strategy", "text": "1.5 kg" },
+          { "icon": "terminal-window", "text": "3D Printed in France" }
+        ],
+        "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
+        "heroImage": { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 telescope" },
+        "imageOverlayText": "Product under development",
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "Gallery",
+        "images": [
+          { "src": "/assets/114_1.jpeg", "alt": "Picco 114/450 - view 1" },
+          { "src": "/assets/114_2.jpeg", "alt": "Picco 114/450 - view 2" },
+          { "src": "/assets/114_3.jpeg", "alt": "Picco 114/450 - view 3" },
+          { "src": "/assets/114_4.jpeg", "alt": "Picco 114/450 - view 4" },
+          { "src": "/assets/114_5.jpeg", "alt": "Picco 114/450 - view 5" },
+          { "src": "/assets/114_6.jpeg", "alt": "Picco 114/450 - view 6" },
+          { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 - view 7" }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Specifications",
+        "specGroups": [
+          {
+            "title": "Optics",
+            "specs": {
+              "Type": "Newtonian",
+              "Aperture": "114 mm",
+              "Focal length": "450 mm",
+              "F/D ratio": "3.9",
+              "Focuser": "1.25\""
+            }
+          },
+          {
+            "title": "Mechanics",
+            "specs": {
+              "Total weight": "1.5 kg",
+              "Manufacturing": "3D printed, France",
+              "Finish": "Customisable"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features",
+      "data": {
+        "title": "Key features",
+        "features": [
+          {
+            "icon": "rocket-launch",
+            "title": "Ultra-portable",
+            "description": "Only 1.5 kg — take it hiking, travelling, or on a balcony."
+          },
+          {
+            "icon": "strategy",
+            "title": "Generous aperture",
+            "description": "114 mm aperture to observe nebulae, star clusters and bright planets."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Made in France",
+            "description": "Every part is 3D printed in our workshop using durable, recyclable materials."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Fast — F/D 3.9",
+            "description": "A short focal ratio ideal for deep-sky observing and wide-field astrophotography."
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Picco 114/450",
+        "price": "Contact us",
+        "priceNote": "Product under development — price coming soon",
+        "included": [
+          "3D-printed optical tube",
+          "114 mm primary mirror",
+          "Secondary mirror",
+          "1.25\" focuser",
+          "Secondary mirror holder",
+          "Finder scope"
+        ],
+        "ctaText": "Contact us",
+        "ctaHref": "mailto:la3emedim@gmail.com",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "specs", "label": "Specifications" },
+    { "id": "features", "label": "Key features" },
+    { "id": "pricing", "label": "Pricing" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "telescope",
+  "draft": false
+}

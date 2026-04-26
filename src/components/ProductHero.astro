@@ -9,13 +9,14 @@ interface Props {
 	primaryCta: {text: string, href: string};
 	secondaryCta?: {text: string, href: string};
 	heroImage?: {src: string, alt: string};
+	imageOverlayText?: string;
 	afterCtaNote?: string;
 	warning?: string;
 	ecoWarning?: string;
 	showFabLogo?: boolean;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, afterCtaNote, warning, ecoWarning, showFabLogo = true } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
@@ -256,6 +257,32 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
 	.fab-logo:hover {
 		background: rgba(255, 255, 255, 0.9);
+	}
+
+	.hero-image-placeholder {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		border-radius: 1rem;
+		background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+		border: 2px dashed var(--gray-600);
+	}
+
+	.image-overlay-badge {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: rgba(0, 0, 0, 0.72);
+		color: #fff;
+		font-weight: 700;
+		font-size: 1.1rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		text-align: center;
+		border: 2px solid rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(4px);
+		pointer-events: none;
+		white-space: nowrap;
 	}
 
 	@media (max-width: 768px) {

@@ -24,12 +24,12 @@ const categories = [
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
-	if (aSlug === 'smallest') return -1;
-	if (bSlug === 'smallest') return 1;
-	if (aSlug === 'lumi') return -1;
-	if (bSlug === 'lumi') return 1;
-	if (aSlug === 'sur-mesure') return -1;
-	if (bSlug === 'sur-mesure') return 1;
+	const order = ['smallest', 'lumi', 'picco', 'sur-mesure'];
+	const aIdx = order.indexOf(aSlug);
+	const bIdx = order.indexOf(bSlug);
+	if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+	if (aIdx !== -1) return -1;
+	if (bIdx !== -1) return 1;
 	return 0;
 });
 
@@ -112,6 +112,9 @@ const shopStructuredData = {
 										loading="lazy"
 										decoding="async"
 									/>
+									{heroData?.imageOverlayText && (
+										<div class="dev-badge">{heroData.imageOverlayText}</div>
+									)}
 									<div class="card-overlay">
 										<span class="view-product">Voir le produit</span>
 									</div>
@@ -138,19 +141,25 @@ const shopStructuredData = {
 										</ul>
 									)}
 
-									{product.data.price && (
-										<div class="card-footer">
-											<div class="price-section">
-												<span class="price">{product.data.price}</span>
-												{product.data.priceNote && (
-													<span class="price-note">{product.data.priceNote}</span>
-												)}
-											</div>
+									<div class="card-footer">
+										{product.data.price ? (
+											<>
+												<div class="price-section">
+													<span class="price">{product.data.price}</span>
+													{product.data.priceNote && (
+														<span class="price-note">{product.data.priceNote}</span>
+													)}
+												</div>
+												<div class="commander-btn">
+													Commander — {product.data.price}
+												</div>
+											</>
+										) : (
 											<div class="commander-btn">
-												Commander — {product.data.price}
+												Plus d'information
 											</div>
-										</div>
-									)}
+										)}
+									</div>
 								</div>
 							</a>
 						</article>
@@ -432,6 +441,25 @@ const shopStructuredData = {
 
 	.product-card:hover .card-image img {
 		transform: scale(1.05);
+	}
+
+	.dev-badge {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: rgba(0, 0, 0, 0.72);
+		color: #fff;
+		font-weight: 700;
+		font-size: 0.8rem;
+		padding: 0.5rem 1rem;
+		border-radius: 0.4rem;
+		text-align: center;
+		border: 2px solid rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(4px);
+		pointer-events: none;
+		white-space: nowrap;
+		z-index: 1;
 	}
 
 	.card-overlay {
