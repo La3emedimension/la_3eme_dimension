@@ -682,14 +682,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		card.querySelector('a')?.href.includes('/smallest')
 	);
 	if (smallestCard) {
-		smallestCard.style.order = '-3';
+		smallestCard.style.order = '-4';
 	}
 
 	const ertCard = Array.from(productCards).find(card =>
 		card.querySelector('a')?.href.includes('/lumi')
 	);
 	if (ertCard) {
-		ertCard.style.order = '-2';
+		ertCard.style.order = '-3';
+	}
+
+	const piccoCard = Array.from(productCards).find(card =>
+		card.querySelector('a')?.href.includes('/picco')
+	);
+	if (piccoCard) {
+		piccoCard.style.order = '-2';
 	}
 
 	if (surMesureCard) {
