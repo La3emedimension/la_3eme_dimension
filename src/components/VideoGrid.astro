@@ -1,0 +1,96 @@
+---
+interface Video {
+  videoId: string;
+  videoTitle: string;
+  short?: boolean;
+}
+
+interface Props {
+  videos: Video[];
+  title?: string;
+}
+
+const { videos, title } = Astro.props;
+
+const gridCols = videos.map(v => v.short ? '1fr' : '2fr').join(' ');
+---
+
+<section class="video-grid-section">
+  <div class="container">
+    {title && <h2>{title}</h2>}
+    <div class="video-grid" style={`grid-template-columns: ${gridCols}`}>
+      {videos.map((video) => (
+        <div class={`video-item ${video.short ? 'short' : 'landscape'}`}>
+          <iframe
+            src={`https://www.youtube.com/embed/${video.videoId}`}
+            title={video.videoTitle}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-grid-section {
+    padding: 3rem 0;
+    background: var(--gray-900);
+  }
+
+  .container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gray-100);
+    margin-bottom: 1.5rem;
+  }
+
+  .video-grid {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .video-item {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .video-item.landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-item.short {
+    aspect-ratio: 9 / 16;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .video-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .video-item.landscape {
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-item.short {
+      aspect-ratio: 9 / 16;
+    }
+  }
+</style>

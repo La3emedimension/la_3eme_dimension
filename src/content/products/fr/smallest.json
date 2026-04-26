@@ -55,7 +55,7 @@
           { "icon": "rocket-launch", "text": "150/750 Newton" },
           { "icon": "strategy", "text": "4kg avec optiques" }
         ],
-        "primaryCta": { "text": "Commander", "href": "#pricing" },
+        "primaryCta": { "text": "Commander — 790€", "href": "#pricing" },
         "heroImage": {
           "src": "/assets/smallest-fullsize-01.jpg",
           "alt": "Télescope Smallest portable en configuration observation"
@@ -70,6 +70,18 @@
         "description": "Découvrez la simplicité du Smallest : du transport à l'observation en moins de 4 minutes. Aucun outil requis, montage intuitif pour profiter rapidement du ciel étoilé.",
         "videoId": "-7mI89_OHzk",
         "videoTitle": "Montage et observation avec le télescope Smallest en 4 minutes"
+      }
+    },
+    {
+      "type": "custom",
+      "id": "section-video-grid",
+      "data": {
+        "title": "Le Smallest en vidéo",
+        "videos": [
+          { "videoId": "Lar00Vi2tGs", "videoTitle": "Smallest en observation", "short": false },
+          { "videoId": "Eu9Z0DcZp2I", "videoTitle": "Smallest en action", "short": true },
+          { "videoId": "h5n0gV7nYz8", "videoTitle": "Smallest en action", "short": true }
+        ]
       }
     },
     {
@@ -297,6 +309,7 @@
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
     { "id": "video", "label": "Démonstration" },
+    { "id": "video-grid", "label": "Le Smallest en vidéo" },
     { "id": "features", "label": "Avantages" },
     { "id": "specs", "label": "Spécifications" },
     { "id": "gallery", "label": "Images" },

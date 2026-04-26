@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ProductLayout from '../../layouts/ProductLayout.astro';
 import SmallestOverview from '../../components/SmallestOverview.astro';
+import VideoGrid from '../../components/VideoGrid.astro';
 import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
 import SmallestLearnMore from '../../components/SmallestLearnMore.astro';
 import CommunityMap from '../../components/CommunityMap.astro';
@@ -59,6 +60,9 @@ allSections.forEach(section => {
     section.customComponent = CommunityMap;
   }
   // Handle CommunitySection for community sections
+  if (section.id === 'section-video-grid' && section.type === 'custom') {
+    section.customComponent = VideoGrid;
+  }
   if (section.id === 'section-community' && section.type === 'custom') {
     section.customComponent = CommunitySection;
   }
@@ -69,9 +73,10 @@ allSections.forEach(section => {
 });
 
 if (productSlug === 'smallest') {
-  const videoIndex = allSections.findIndex(s => s.type === 'video');
-  if (videoIndex !== -1) {
-    allSections.splice(videoIndex + 1, 0, customSections[0]);
+  const videoGridIndex = allSections.findIndex(s => s.id === 'section-video-grid');
+  const lastVideoIndex = videoGridIndex !== -1 ? videoGridIndex : allSections.reduce((last, s, i) => s.type === 'video' ? i : last, -1);
+  if (lastVideoIndex !== -1) {
+    allSections.splice(lastVideoIndex + 1, 0, customSections[0]);
   }
 
   const pricingIndex = allSections.findIndex(s => s.type === 'pricing');
