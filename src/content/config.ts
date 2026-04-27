@@ -22,7 +22,10 @@ export const collections = {
 			structuredData: z.any().optional(),
 			
 			// Carousel override image
-			carouselImage: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
+			carouselImage: z.object({ src: z.string(), alt: z.string().optional(), zoom: z.number().optional() }).optional(),
+
+			// Shop page preview image override
+			shopImage: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
 
 			// Draft mode
 			draft: z.boolean().optional(),

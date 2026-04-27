@@ -50,6 +50,8 @@ const products = filteredProducts.sort((a, b) => {
                 src={carouselImage.src}
                 alt={carouselImage.alt || heroData?.title}
                 loading="lazy"
+                style={carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : ''}
+                class={carouselImage.zoom ? 'zoomed' : ''}
               />
             )}
             <div class="product-info">
@@ -120,8 +122,16 @@ const products = filteredProducts.sort((a, b) => {
     transition: transform 0.3s ease;
   }
 
+  .product-card img.zoomed {
+    transform: scale(var(--img-zoom, 1.25));
+  }
+
   .product-card:hover img {
     transform: scale(1.05);
+  }
+
+  .product-card:hover img.zoomed {
+    transform: scale(calc(var(--img-zoom, 1.25) + 0.05));
   }
 
   .product-info {

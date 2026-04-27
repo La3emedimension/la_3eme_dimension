@@ -1,5 +1,6 @@
 {
-  "carouselImage": { "src": "/assets/smallestetoile.jpg", "alt": "Smallest sous les étoiles" },
+  "carouselImage": { "src": "/assets/smallestnuit_10.jpg", "alt": "Smallest - Observation nocturne", "zoom": 1.25 },
+  "shopImage": { "src": "/assets/smallestnuit_1.jpg", "alt": "Smallest - Observation nocturne" },
   "seoTitle": "Smallest - Télescope Compact, Fiable et Fabriqué en France | La 3ème dimension",
   "seoDescription": "Smallest : un télescope 150/750 facile à utiliser, fiable et fabriqué en France. Compact, transportable en avion, prêt à observer en 4 minutes. Kit 550€.",
   "seoKeywords": "smallest telescope, télescope facile utilisation, télescope fiable, télescope made in france, télescope portable, astronomie nomade, télescope compact, 150/750, toulouse",
@@ -233,7 +234,17 @@
           {
             "src": "/assets/smallest-poids.jpg",
             "alt": "Smallest - Poids et portabilité"
-          }
+          },
+          { "src": "/assets/smallestnuit_1.jpg", "alt": "Smallest - Observation nocturne 1" },
+          { "src": "/assets/smallestnuit_2.jpg", "alt": "Smallest - Observation nocturne 2" },
+          { "src": "/assets/smallestnuit_3.jpg", "alt": "Smallest - Observation nocturne 3" },
+          { "src": "/assets/smallestnuit_4.jpg", "alt": "Smallest - Observation nocturne 4" },
+          { "src": "/assets/smallestnuit_5.jpg", "alt": "Smallest - Observation nocturne 5" },
+          { "src": "/assets/smallestnuit_6.jpg", "alt": "Smallest - Observation nocturne 6" },
+          { "src": "/assets/smallestnuit_7.jpg", "alt": "Smallest - Observation nocturne 7" },
+          { "src": "/assets/smallestnuit_8.jpg", "alt": "Smallest - Observation nocturne 8" },
+          { "src": "/assets/smallestnuit_9.jpg", "alt": "Smallest - Observation nocturne 9" },
+          { "src": "/assets/smallestnuit_10.jpg", "alt": "Smallest - Observation nocturne 10" }
         ],
         "background": "light"
       }

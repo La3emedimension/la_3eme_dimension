@@ -107,8 +107,8 @@ const shopStructuredData = {
 							<a href={localePath(`/product/${productSlug}/`, locale)} class="card-link">
 								<div class="card-image">
 									<img
-										src={heroData?.heroImage?.src || '/assets/placeholder.jpg'}
-										alt={heroData?.heroImage?.alt || product.id}
+										src={product.data.shopImage?.src || heroData?.heroImage?.src || '/assets/placeholder.jpg'}
+										alt={product.data.shopImage?.alt || heroData?.heroImage?.alt || product.id}
 										loading="lazy"
 										decoding="async"
 									/>
