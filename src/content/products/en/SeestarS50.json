@@ -22,6 +22,8 @@
     "category": "Astrophotography",
     "offers": {
       "@type": "Offer",
+      "price": "30",
+      "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",

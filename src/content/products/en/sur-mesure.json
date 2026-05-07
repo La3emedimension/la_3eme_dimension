@@ -19,12 +19,7 @@
       "email": "la3emedim@gmail.com"
     },
     "serviceType": "3D Printing",
-    "areaServed": "France",
-    "offers": {
-      "@type": "Offer",
-      "description": "Free quote for all custom projects",
-      "availability": "https://schema.org/InStock"
-    }
+    "areaServed": "France"
   },
   "sections": [
     {

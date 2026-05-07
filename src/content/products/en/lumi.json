@@ -22,6 +22,8 @@
     "category": "Educational instruments",
     "offers": {
       "@type": "Offer",
+      "price": "219",
+      "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",

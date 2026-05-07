@@ -24,6 +24,8 @@
     "category": "Travel accessories",
     "offers": {
       "@type": "Offer",
+      "price": "10",
+      "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",

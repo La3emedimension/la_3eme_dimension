@@ -4,22 +4,6 @@
   "seoKeywords": "télescope compact, newtonien 114/450, télescope portable, télescope 1.5 kg, télescope impression 3D, télescope made in france, astronomie nomade, télescope léger, picco telescope",
   "ogImage": "https://la3emedim.fr/assets/114_7.jpeg",
   "emailContact": "la3emedim@gmail.com",
-  "structuredData": {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Picco - Télescope Newtonien 114/450",
-    "description": "Télescope newtonien 114/450 ultra-compact de 1,5 kg, fabriqué en France par impression 3D. Le compagnon idéal pour l'astronomie nomade.",
-    "brand": {
-      "@type": "Brand",
-      "name": "La 3ème dimension"
-    },
-    "manufacturer": {
-      "@type": "Organization",
-      "name": "La 3ème dimension",
-      "url": "https://la3emedim.fr"
-    },
-    "category": "Télescopes"
-  },
   "sections": [
     {
       "type": "hero",

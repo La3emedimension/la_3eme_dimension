@@ -19,12 +19,7 @@
       "email": "la3emedim@gmail.com"
     },
     "serviceType": "Impression 3D",
-    "areaServed": "France",
-    "offers": {
-      "@type": "Offer",
-      "description": "Devis gratuit pour tous projets sur mesure",
-      "availability": "https://schema.org/InStock"
-    }
+    "areaServed": "France"
   },
   "sections": [
     {

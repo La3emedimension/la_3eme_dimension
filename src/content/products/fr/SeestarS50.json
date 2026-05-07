@@ -15,16 +15,18 @@
       "name": "La 3ème dimension"
     },
     "manufacturer": {
-      "@type": "astronomie",
+      "@type": "Organization",
       "name": "La 3ème dimension",
       "url": "https://la3emedim.fr"
     },
-    "category": "astrophotographie",
+    "category": "Accessoires astronomiques",
     "offers": {
       "@type": "Offer",
+      "price": "30",
+      "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
-        "@type": "accesories",
+        "@type": "Organization",
         "name": "La 3ème dimension"
       }
     },
