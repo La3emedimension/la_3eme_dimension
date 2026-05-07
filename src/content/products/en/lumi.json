@@ -77,6 +77,16 @@
       }
     },
     {
+      "type": "video",
+      "id": "section-video-3",
+      "data": {
+        "title": "Montage par Rgt Lab",
+        "description": "",
+        "videoId": "YG80mhXsRSU",
+        "videoTitle": "Lumi telescope assembly by Rgt Lab"
+      }
+    },
+    {
       "type": "specs",
       "id": "section-specs",
       "data": {
@@ -316,6 +326,7 @@
     { "id": "hero", "label": "Overview" },
     { "id": "video", "label": "Detailed assembly" },
     { "id": "video-2", "label": "Quick assembly" },
+    { "id": "video-3", "label": "Field test" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Filters" },
     { "id": "gallery", "label": "Gallery" },

@@ -89,6 +89,16 @@
       }
     },
     {
+      "type": "video",
+      "id": "section-video-4",
+      "data": {
+        "title": "Montage par Rgt Lab",
+        "description": "",
+        "videoId": "YG80mhXsRSU",
+        "videoTitle": "Montage de la lunette Lumi par Rgt Lab"
+      }
+    },
+    {
       "type": "specs",
       "id": "section-specs",
       "data": {
@@ -334,6 +344,7 @@
     { "id": "video", "label": "Montage détaillé" },
     { "id": "video-2", "label": "Montage rapide" },
     { "id": "video-3", "label": "Ciel et Espace" },
+    { "id": "video-4", "label": "Test terrain" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Porte filtre" },
     { "id": "gallery", "label": "Galerie" },
