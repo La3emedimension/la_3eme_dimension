@@ -32,6 +32,20 @@ Over 50 events are planned on Thursday alone.
 
 This is exactly the kind of event that fits the spirit of the project: instruments made in Toulouse, 3D printed, designed to be accessible and understandable. We'll be there to talk, show our work and connect with other makers.
 
+Three instruments will be on show:
+
+**Lumi** — the educational astronomical telescope, shown for the first time under its new name. You may have known it as ERT — it's now Lumi.
+
+![Lumi telescope](/assets/ert_montauban7.jpg)
+
+**Smallest** — the compact, fast telescope, already well known to regulars.
+
+![Smallest telescope](/assets/smallest-fullsize-01.jpg)
+
+**Picco** — the ultra-compact 114/450 Newtonian weighing 1.5 kg, currently in development.
+
+![Picco 114/450](/assets/114_7.jpeg)
+
 ## A special edition for the occasion
 
 For the festival, I created a special **BHH (Backpack Holder Hook)** in the Faire Festival colors. The hook clips under a table, desk or in a tent to keep your bag off the ground — the perfect companion for a maker festival.

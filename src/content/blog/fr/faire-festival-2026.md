@@ -32,6 +32,20 @@ Plus de 50 événements sont prévus sur la seule journée du jeudi.
 
 C'est le genre d'événement qui colle parfaitement à l'esprit du projet : des instruments fabriqués à Toulouse, en impression 3D, conçus pour être accessibles et compréhensibles. On sera présents pour échanger, montrer les réalisations et discuter avec d'autres makers.
 
+Trois instruments seront exposés :
+
+**La Lumi** — lunette astronomique pédagogique, pour la première fois présentée sous son nouveau nom. Vous la connaissiez peut-être sous le nom ERT, c'est désormais Lumi.
+
+![La lunette Lumi à Montauban](/assets/ert_montauban7.jpg)
+
+**Le Smallest** — le télescope compact et rapide, déjà bien connu des habitués.
+
+![Le Smallest](/assets/smallest-fullsize-01.jpg)
+
+**Le Picco** — le newtonien 114/450 ultra-compact de 1,5 kg, en cours de développement.
+
+![Le Picco 114/450](/assets/114_7.jpeg)
+
 ## Une édition spéciale pour l'occasion
 
 Pour le festival, j'ai créé une version du **BHH (Backpack Holder Hook)** aux couleurs du Faire Festival. Le crochet se glisse sous une table, un bureau ou dans une tente pour poser son sac à dos sans le mettre par terre — le compagnon idéal pour un festival maker.
