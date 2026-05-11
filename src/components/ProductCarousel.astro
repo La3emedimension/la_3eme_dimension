@@ -54,13 +54,12 @@ const products = filteredProducts.sort((a, b) => {
                 class={carouselImage.zoom ? 'zoomed' : ''}
               />
             )}
+            {isLumi && (
+              <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />
+            )}
             <div class="product-info">
               <h3>
-                {isLumi ? (
-                  <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></>
-                ) : (
-                  heroData?.title || product.id
-                )}
+                {!isLumi && (heroData?.title || product.id)}
               </h3>
               {heroData?.tagline && <p class="tagline">{heroData.tagline}</p>}
             </div>
@@ -142,6 +141,17 @@ const products = filteredProducts.sort((a, b) => {
     padding: 1.5rem;
     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
     color: white;
+  }
+
+  .lumi-logo-carousel {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    max-height: 120px;
+    width: auto !important;
+    height: auto !important;
+    object-fit: unset !important;
+    z-index: 5;
   }
 
   .product-info h3 {

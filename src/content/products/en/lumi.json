@@ -53,7 +53,8 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi astronomical telescope in Montauban" }
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi astronomical telescope in Montauban" },
+        "logoImage": "/assets/logolumi.png"
       }
     },
     {

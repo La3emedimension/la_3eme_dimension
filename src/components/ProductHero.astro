@@ -14,9 +14,10 @@ interface Props {
 	warning?: string;
 	ecoWarning?: string;
 	showFabLogo?: boolean;
+	logoImage?: string;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true, logoImage } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
@@ -25,7 +26,10 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 <section class="hero-product">
 	<div class="hero-content">
 		<div class="hero-text">
-			<h1>
+			{logoImage && (
+				<img src={logoImage} alt={`Logo ${title}`} class="product-logo" />
+			)}
+			<h1 class={logoImage ? 'visually-hidden' : ''}>
 				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></> : title}
 			</h1>
 			<p class="hero-tagline">{tagline}</p>
@@ -102,6 +106,28 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 		align-items: center;
 	}
 
+	.product-logo {
+		max-height: 300px;
+		width: auto;
+		max-width: 100%;
+		margin-bottom: -60px;
+		display: block;
+		position: relative;
+		z-index: 0;
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.hero-text h1 {
 		font-size: 4rem;
 		font-weight: 700;
@@ -115,11 +141,15 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 		color: var(--gray-200);
 		margin-bottom: 1rem;
 		font-weight: 500;
+		position: relative;
+		z-index: 1;
 	}
 
 	.hero-description {
 		font-size: 1.1rem;
 		color: var(--gray-300);
+		position: relative;
+		z-index: 1;
 		line-height: 1.6;
 		margin-bottom: 2rem;
 	}
@@ -163,6 +193,8 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 	.hero-features {
 		display: flex;
 		gap: 0.7rem;
+		position: relative;
+		z-index: 1;
 		margin-bottom: 2rem;
 		flex-wrap: wrap;
 	}
@@ -182,6 +214,8 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 	.hero-cta {
 		display: flex;
 		gap: 1rem;
+		position: relative;
+		z-index: 1;
 		flex-wrap: wrap;
 		align-items: flex-start;
 	}
