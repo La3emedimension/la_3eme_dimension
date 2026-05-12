@@ -4,6 +4,7 @@ import ProductLayout from '../layouts/ProductLayout.astro';
 import AssemblyGuide from '../components/AssemblyGuide.astro';
 import ObservationGuide from '../components/ObservationGuide.astro';
 import CommunityMap from '../components/CommunityMap.astro';
+import StarMap from '../components/StarMap.astro';
 import { type Locale } from '../i18n';
 
 const locale: Locale = 'fr';
@@ -210,6 +211,17 @@ const noticeConfig = {
 			section.type !== 'features'
 		),
 
+		// Carte du ciel interactive
+		{
+			type: 'custom',
+			id: 'section-starmap',
+			customComponent: StarMap,
+			data: {
+				title: "Observe ce soir",
+				description: "Génère ta carte du ciel personnalisée : entre une date et ton lieu d'observation pour savoir ce qui est visible cette nuit-là."
+			}
+		},
+
 		// Carte de la communauté
 		{
 			type: 'custom',
@@ -228,6 +240,7 @@ const noticeConfig = {
 		{ "id": "section-assembly-guide", "label": "Notice" },
 		{ "id": "section-video", "label": "Montage" },
 		{ "id": "section-observation", "label": "Observer" },
+		{ "id": "section-starmap", "label": "Carte du ciel" },
 		{ "id": "section-filter", "label": "Filtres" },
 		{ "id": "section-gallery", "label": "Galerie" },
 		{ "id": "section-community", "label": "Communauté" }
