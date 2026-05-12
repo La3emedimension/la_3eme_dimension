@@ -58,7 +58,8 @@
         "heroImage": {
           "src": "/assets/smallest-fullsize-01.jpg",
           "alt": "Smallest portable telescope in observation configuration"
-        }
+        },
+        "logoImage": "/assets/smallestlogo.png"
       }
     },
     {

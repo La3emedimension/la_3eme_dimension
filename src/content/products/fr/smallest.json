@@ -1,5 +1,5 @@
 {
-  "carouselImage": { "src": "/assets/smallestnuit_10.jpg", "alt": "Smallest - Observation nocturne", "zoom": 1.25 },
+  "carouselImage": { "src": "/assets/smallestcarroussel.png", "alt": "Smallest - Observation nocturne" },
   "shopImage": { "src": "/assets/smallestnuit_1.jpg", "alt": "Smallest - Observation nocturne" },
   "seoTitle": "Smallest - Télescope Compact, Fiable et Fabriqué en France | La 3ème dimension",
   "seoDescription": "Smallest : un télescope 150/750 facile à utiliser, fiable et fabriqué en France. Compact, transportable en avion, prêt à observer en 4 minutes. Kit 550€.",
@@ -60,7 +60,8 @@
         "heroImage": {
           "src": "/assets/smallest-fullsize-01.jpg",
           "alt": "Télescope Smallest portable en configuration observation"
-        }
+        },
+        "logoImage": "/assets/smallestlogo.png"
       }
     },
     {

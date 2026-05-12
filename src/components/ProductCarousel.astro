@@ -41,6 +41,7 @@ const products = filteredProducts.sort((a, b) => {
 
       const productSlug = product.id.replace(`${locale}/`, '');
       const isLumi = productSlug === 'lumi';
+      const isSmallest = productSlug === 'smallest';
 
       return (
         <div class="carousel-slide" data-index={index}>
@@ -50,18 +51,27 @@ const products = filteredProducts.sort((a, b) => {
                 src={carouselImage.src}
                 alt={carouselImage.alt || heroData?.title}
                 loading="lazy"
-                style={carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : ''}
+                style={[carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : '', carouselImage.position ? `object-position: ${carouselImage.position}` : ''].filter(Boolean).join('; ')}
                 class={carouselImage.zoom ? 'zoomed' : ''}
               />
             )}
-            {isLumi && (
-              <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />
-            )}
             <div class="product-info">
               <h3>
-                {!isLumi && (heroData?.title || product.id)}
+                {!isLumi && !isSmallest && (heroData?.title || product.id)}
               </h3>
-              {heroData?.tagline && <p class="tagline">{heroData.tagline}</p>}
+              {isLumi && (
+                <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />
+              )}
+              {isSmallest && (
+                <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" />
+              )}
+              {isSmallest && (
+                <p class="smallest-subtitle">Le Télescope de 150 le plus transportable au monde</p>
+              )}
+              {heroData?.tagline && <p class={`tagline${isLumi ? ' lumi-tagline' : ''}`}>{heroData.tagline}</p>}
+              {isLumi && (
+                <p class="sagan-quote">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br/><span class="sagan-author">— Carl Sagan</span></p>
+              )}
             </div>
           </a>
         </div>
@@ -144,14 +154,23 @@ const products = filteredProducts.sort((a, b) => {
   }
 
   .lumi-logo-carousel {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    max-height: 120px;
+    display: block;
+    max-height: 200px;
     width: auto !important;
     height: auto !important;
     object-fit: unset !important;
-    z-index: 5;
+    margin-bottom: 0.5rem;
+    transform: translateY(3.5rem);
+  }
+
+  .smallest-logo-carousel {
+    display: block;
+    max-height: 200px;
+    width: auto !important;
+    height: auto !important;
+    object-fit: unset !important;
+    margin-bottom: 0.5rem;
+    transform: translateY(3.5rem);
   }
 
   .product-info h3 {
@@ -166,6 +185,35 @@ const products = filteredProducts.sort((a, b) => {
     font-size: var(--text-sm);
     opacity: 0.9;
     color: white;
+    font-style: italic;
+  }
+
+  .product-info .lumi-tagline {
+    transform: translateY(-1rem);
+  }
+
+  .smallest-subtitle {
+    margin: 0.25rem 0 0 0;
+    font-size: var(--text-sm);
+    opacity: 0.9;
+    color: white;
+    font-style: italic;
+  }
+
+  .sagan-quote {
+    margin: 0.5rem 0 0 0;
+    transform: translateY(-1rem);
+    font-size: var(--text-xs, 0.75rem);
+    font-style: italic;
+    opacity: 0.8;
+    color: white;
+    line-height: 1.4;
+  }
+
+  .sagan-author {
+    font-style: normal;
+    opacity: 0.7;
+    font-size: 0.7em;
   }
 
   .carousel-dots {
