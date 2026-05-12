@@ -157,22 +157,28 @@ const products = filteredProducts.sort((a, b) => {
 
   .lumi-logo-carousel {
     display: block;
-    max-height: 200px;
+    max-height: 120px;
     width: auto !important;
     height: auto !important;
     object-fit: unset !important;
     margin-bottom: 0.5rem;
-    transform: translateY(3.5rem);
   }
 
   .smallest-logo-carousel {
     display: block;
-    max-height: 200px;
+    max-height: 120px;
     width: auto !important;
     height: auto !important;
     object-fit: unset !important;
     margin-bottom: 0.5rem;
-    transform: translateY(3.5rem);
+  }
+
+  @media (min-width: 50em) {
+    .lumi-logo-carousel,
+    .smallest-logo-carousel {
+      max-height: 200px;
+      transform: translateY(3.5rem);
+    }
   }
 
   .product-info h3 {
@@ -189,7 +195,6 @@ const products = filteredProducts.sort((a, b) => {
     opacity: 0.9;
     color: white;
     line-height: 1.4;
-    transform: translateY(-0.4rem);
   }
 
   .carousel-subtitle {
@@ -200,7 +205,13 @@ const products = filteredProducts.sort((a, b) => {
     opacity: 0.9;
     color: white;
     line-height: 1.4;
-    transform: translateY(-0.4rem);
+  }
+
+  @media (min-width: 50em) {
+    .carousel-text,
+    .carousel-subtitle {
+      transform: translateY(-0.4rem);
+    }
   }
 
   .carousel-dots {
