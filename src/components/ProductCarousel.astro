@@ -66,11 +66,11 @@ const products = filteredProducts.sort((a, b) => {
                 <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" />
               )}
               {isSmallest && (
-                <p class="smallest-subtitle">Le Télescope de 150 le plus transportable au monde</p>
+                <p class="carousel-subtitle">Le Télescope de 150mm le plus transportable au monde</p>
               )}
-              {heroData?.tagline && <p class={`tagline${isLumi ? ' lumi-tagline' : ''}`}>{heroData.tagline}</p>}
+              {heroData?.tagline && <p class={isLumi ? 'carousel-subtitle' : 'carousel-text'}>{heroData.tagline}</p>}
               {isLumi && (
-                <p class="sagan-quote">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br/><span class="sagan-author">— Carl Sagan</span></p>
+                <p class="carousel-text">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. » — Carl Sagan</p>
               )}
             </div>
           </a>
@@ -180,40 +180,25 @@ const products = filteredProducts.sort((a, b) => {
     color: white;
   }
 
-  .product-info .tagline {
+  .carousel-text {
     margin: 0.25rem 0 0 0;
-    font-size: var(--text-sm);
+    font-size: 0.875rem;
+    font-style: italic;
     opacity: 0.9;
-    color: white;
-    font-style: italic;
-  }
-
-  .product-info .lumi-tagline {
-    transform: translateY(-1rem);
-  }
-
-  .smallest-subtitle {
-    margin: 0.25rem 0 0 0;
-    font-size: var(--text-sm);
-    opacity: 0.9;
-    color: white;
-    font-style: italic;
-  }
-
-  .sagan-quote {
-    margin: 0.5rem 0 0 0;
-    transform: translateY(-1rem);
-    font-size: var(--text-xs, 0.75rem);
-    font-style: italic;
-    opacity: 0.8;
     color: white;
     line-height: 1.4;
+    transform: translateY(-0.4rem);
   }
 
-  .sagan-author {
+  .carousel-subtitle {
+    margin: 0.25rem 0 0 0;
+    font-size: 1.05rem;
     font-style: normal;
-    opacity: 0.7;
-    font-size: 0.7em;
+    font-weight: 700;
+    opacity: 0.9;
+    color: white;
+    line-height: 1.4;
+    transform: translateY(-0.4rem);
   }
 
   .carousel-dots {
