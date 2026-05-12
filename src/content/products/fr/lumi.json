@@ -47,7 +47,7 @@
       "data": {
         "title": "Lumi",
         "tagline": "Assemblez votre lunette pédagogique",
-        "description": "Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
+        "description": "<blockquote>« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br><cite>— Carl Sagan</cite></blockquote><br>Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
         "features": [
           { "icon": "strategy", "text": "Design modulaire" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
