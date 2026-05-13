@@ -1402,7 +1402,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tb = document.getElementById('sm-fs-toolbar')!;
     tb.classList.add('visible');
     if (fsHideTimer) clearTimeout(fsHideTimer);
-    fsHideTimer = setTimeout(() => tb.classList.remove('visible'), 3000);
+    fsHideTimer = setTimeout(() => {
+      if (document.activeElement !== fsSearchInput) tb.classList.remove('visible');
+    }, 3000);
   }
 
   function openFullscreen() {
@@ -1557,13 +1559,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   fsSearchInput.addEventListener('keydown', (e) => {
+    showToolbar(); // empêche la toolbar de se cacher pendant la saisie
+    e.stopPropagation(); // empêche les raccourcis clavier (flèches, +/-…) de se déclencher
     if (e.key === 'Enter') {
       const first = fsSearchResults.querySelector('li');
       if (first) (first as HTMLElement).dispatchEvent(new MouseEvent('mousedown'));
-      e.stopPropagation();
     }
     if (e.key === 'Escape') { fsSearchResults.style.display = 'none'; fsSearchInput.blur(); }
-    e.stopPropagation();
   });
 
   document.getElementById('starmap-canvas')!.addEventListener('click', openFullscreen);
