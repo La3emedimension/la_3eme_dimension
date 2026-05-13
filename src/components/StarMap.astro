@@ -218,6 +218,7 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
     </div>
   </div>
 
+  <div id="sm-fs-tooltip" class="sm-fs-tooltip"></div>
   <p class="sm-fs-hint">Déplacez la souris pour afficher les contrôles · <kbd>Échap</kbd> pour fermer</p>
 </div>
 
@@ -1157,6 +1158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── État de la caméra plein écran
   let fsAzC = 180, fsAltC = 30, fsFov = 90;
+  type FsCelPos = { x: number; y: number; name: string; desc: string; r: number };
+  let fsCelestialPositions: FsCelPos[] = [];
 
   // ─── Rendu plein écran — projection gnomonique
   function drawFullscreen(fsCanvas: HTMLCanvasElement, date: Date, lat: number, lon: number) {
@@ -1164,6 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const W = fsCanvas.width, H = fsCanvas.height;
     const jd = julianDate(date);
     const altAz = STARS.map(s => toAltAz(s[0] * 15, s[1], lat, lon, jd));
+    fsCelestialPositions = [];
 
     function proj(alt: number, az: number) {
       return projectGnomonic(alt, az, fsAzC, fsAltC, fsFov, W, H);
@@ -1293,6 +1297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText(name, p.x+r+4, p.y);
       }
+      if (name) fsCelestialPositions.push({ x: p.x, y: p.y, name, desc: `Magnitude ${mag.toFixed(1)} · Az ${Math.round(az)}° Alt ${Math.round(alt)}°`, r: Math.max(10, r * 3) });
     }
 
     // ── Soleil
@@ -1305,6 +1310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle='#ffee44'; ctx.beginPath(); ctx.arc(p.x,p.y,7,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#ffee44'; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText('Soleil', p.x+12, p.y);
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Soleil', desc: 'Notre étoile. Ne jamais observer à l\'œil nu ou avec un instrument sans filtre solaire adapté.', r: 28 });
       }
     }
 
@@ -1318,6 +1324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle='#dde4ff'; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#dde4ff'; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText('Lune', p.x+10, p.y);
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', r: 18 });
       }
     }
 
@@ -1334,7 +1341,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle=color; ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle=color; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText(label, p.x+8, p.y);
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: label, desc: PLANET_DESC[pname] || '', r: 14 });
       } catch(_) {}
+    }
+
+    // ── Objets du ciel profond
+    const fsoDsoColor: Record<string,string> = { neb:'#44ffcc', oc:'#ffdd44', gc:'#88ccff', gal:'#ff88cc', db:'rgba(220,240,255,0.85)' };
+    for (const [ra, dec, name, type, desc] of DSO) {
+      const aa = toAltAz(ra * 15, dec, lat, lon, jd);
+      if (aa.alt < 0) continue;
+      const p = proj(aa.alt, aa.az);
+      if (!p || p.x < -20 || p.x > W+20 || p.y < -20 || p.y > H+20) continue;
+      const col = fsoDsoColor[type] || '#ffffff';
+      ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = 1.2; ctx.setLineDash([]);
+      const s = 7;
+      ctx.save(); ctx.globalAlpha = 0.8;
+      ctx.translate(p.x, p.y);
+      if (type === 'neb') { ctx.setLineDash([3,2]); ctx.strokeRect(-s,-s,s*2,s*2); ctx.setLineDash([]); }
+      else if (type === 'oc') { ctx.beginPath(); ctx.arc(0,0,s,0,Math.PI*2); ctx.stroke(); ctx.globalAlpha=0.2; ctx.fill(); ctx.globalAlpha=0.8; }
+      else if (type === 'gc') { ctx.beginPath(); ctx.arc(0,0,s,0,Math.PI*2); ctx.stroke(); ctx.beginPath(); ctx.moveTo(-s,0); ctx.lineTo(s,0); ctx.moveTo(0,-s); ctx.lineTo(0,s); ctx.stroke(); }
+      else if (type === 'gal') { ctx.save(); ctx.scale(1.6,0.6); ctx.beginPath(); ctx.arc(0,0,s,0,Math.PI*2); ctx.restore(); ctx.stroke(); }
+      else if (type === 'db') { ctx.beginPath(); ctx.arc(-3,0,3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(3,0,3,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+      const parts = name.split(' — ');
+      ctx.font='9px sans-serif'; ctx.fillStyle=col+'cc'; ctx.textAlign='left'; ctx.textBaseline='middle';
+      ctx.fillText(parts.length > 1 ? parts[1] : parts[0], p.x+s+4, p.y);
+      fsCelestialPositions.push({ x: p.x, y: p.y, name, desc, r: s + 6 });
     }
 
     // ── Points cardinaux projetés à l'horizon
@@ -1662,6 +1694,37 @@ document.addEventListener('DOMContentLoaded', () => {
     fsCanvas.height = window.innerHeight;
     redrawFs();
   });
+
+  // ── Fullscreen : hover + click sur les objets
+  const fsTip = document.getElementById('sm-fs-tooltip')!;
+  let fsDragMoved = false;
+
+  fsCvs.addEventListener('mousemove', (e) => {
+    if (fsDragging) { fsDragMoved = true; fsTip.style.display = 'none'; return; }
+    const rect = fsCvs.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    let found: FsCelPos | null = null;
+    for (const obj of fsCelestialPositions) {
+      if (Math.hypot(mx - obj.x, my - obj.y) < obj.r) { found = obj; break; }
+    }
+    if (found) {
+      fsCvs.style.cursor = 'pointer';
+      fsTip.innerHTML = `<strong>${found.name}</strong><br>${found.desc}`;
+      fsTip.style.display = 'block';
+      const tipX = Math.min(e.clientX - rect.left + 16, rect.width - 230);
+      const tipY = Math.max(e.clientY - rect.top - 10, 10);
+      fsTip.style.left = tipX + 'px';
+      fsTip.style.top  = tipY + 'px';
+    } else {
+      fsCvs.style.cursor = fsDragging ? 'grabbing' : 'grab';
+      fsTip.style.display = 'none';
+    }
+  });
+
+  fsCvs.addEventListener('mouseleave', () => { fsTip.style.display = 'none'; });
+
+  fsOverlay.addEventListener('mousedown', () => { fsDragMoved = false; });
 
   // Hover tooltip for DSOs
   const canvas2 = document.getElementById('starmap-canvas') as HTMLCanvasElement;
@@ -2258,6 +2321,28 @@ document.addEventListener('DOMContentLoaded', () => {
     line-height: 1.4;
     z-index: 10;
     box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  }
+
+  .sm-fs-tooltip {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    background: rgba(8, 10, 28, 0.94);
+    border: 1px solid rgba(100,140,220,0.45);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    color: rgba(220, 230, 255, 0.95);
+    max-width: 240px;
+    line-height: 1.45;
+    z-index: 15;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  }
+
+  .sm-fs-tooltip strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #fff;
   }
 
   .dso-legend {
