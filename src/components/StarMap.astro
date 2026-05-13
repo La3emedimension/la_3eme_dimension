@@ -63,6 +63,13 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
       <div class="canvas-container">
         <canvas id="starmap-canvas" width="700" height="700" aria-label="Carte du ciel"></canvas>
         <div id="sm-tooltip" class="sm-tooltip"></div>
+        <div class="sm-expand-hint">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+            <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+          </svg>
+          Plein écran
+        </div>
       </div>
 
       <div class="sm-sidebar">
@@ -132,15 +139,86 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
     </details>
 
     <div class="starmap-footer">
-      <button id="sm-download" class="download-btn">
+      <button id="sm-print-a4" class="download-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
         </svg>
-        Télécharger PNG
+        Imprimer A4 N&amp;B
       </button>
       <p class="starmap-note">N = Nord · E = Est · S = Sud · O = Ouest — vue depuis le sol, Nord en haut</p>
     </div>
   </div>
+</div>
+
+<!-- Overlay plein écran -->
+<div id="sm-fullscreen" class="sm-fullscreen-overlay" aria-hidden="true">
+  <canvas id="sm-fs-canvas" aria-label="Carte du ciel plein écran"></canvas>
+
+  <!-- Toolbar Stellarium -->
+  <div id="sm-fs-toolbar" class="sm-fs-toolbar">
+    <div class="sm-fs-toolbar-inner">
+
+      <div class="fs-ctrl-group">
+        <label for="sm-fs-datetime">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Date &amp; heure
+        </label>
+        <input type="datetime-local" id="sm-fs-datetime" />
+      </div>
+
+      <div class="fs-ctrl-group">
+        <label for="sm-fs-city">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+          Lieu
+        </label>
+        <div class="fs-city-row">
+          <select id="sm-fs-city"></select>
+          <button id="sm-fs-geolocate" title="Ma position GPS">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+              <circle cx="12" cy="12" r="8" opacity="0.35"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button id="sm-fs-now" class="fs-btn">Maintenant</button>
+
+      <div class="fs-time-nav">
+        <button class="fs-step-btn" data-step="-3600">−1h</button>
+        <button class="fs-step-btn" data-step="-600">−10m</button>
+        <button class="fs-step-btn" data-step="600">+10m</button>
+        <button class="fs-step-btn" data-step="3600">+1h</button>
+        <button class="fs-step-btn" data-step="86400">+1j</button>
+      </div>
+
+      <div class="fs-ctrl-group fs-search-group">
+        <label for="sm-fs-search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          Recherche
+        </label>
+        <div class="fs-search-wrap">
+          <input type="text" id="sm-fs-search" placeholder="Étoile, planète, objet…" autocomplete="off" />
+          <ul id="sm-fs-search-results" class="fs-search-results"></ul>
+        </div>
+      </div>
+
+      <button id="sm-fs-close" class="sm-fs-close" aria-label="Fermer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <p class="sm-fs-hint">Déplacez la souris pour afficher les contrôles · <kbd>Échap</kbd> pour fermer</p>
 </div>
 
 <script>
@@ -512,8 +590,8 @@ const starIdx = new Map<string, number>();
 STARS.forEach((s, i) => starIdx.set(s[4], i));
 
 // ─── Draw
-function draw(date: Date, lat: number, lon: number) {
-  const canvas = document.getElementById('starmap-canvas') as HTMLCanvasElement;
+function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: HTMLCanvasElement) {
+  const canvas = targetCanvas ?? (document.getElementById('starmap-canvas') as HTMLCanvasElement);
   if (!canvas) return;
   const ctx = canvas.getContext('2d')!;
   const W = canvas.width, H = canvas.height;
@@ -529,9 +607,14 @@ function draw(date: Date, lat: number, lon: number) {
 
   // Sky background
   const bg = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
-  bg.addColorStop(0, '#0d1030');
-  bg.addColorStop(0.6, '#07091e');
-  bg.addColorStop(1, '#020310');
+  if (bw) {
+    bg.addColorStop(0, '#ffffff');
+    bg.addColorStop(1, '#f0f0f0');
+  } else {
+    bg.addColorStop(0, '#0d1030');
+    bg.addColorStop(0.6, '#07091e');
+    bg.addColorStop(1, '#020310');
+  }
   ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2);
   ctx.fillStyle = bg; ctx.fill();
 
@@ -542,12 +625,12 @@ function draw(date: Date, lat: number, lon: number) {
   // Altitude circles
   ctx.lineWidth = 1;
   [0, 30, 60].forEach(a => {
-    ctx.strokeStyle = a === 0 ? 'rgba(120,160,220,0.35)' : 'rgba(80,110,180,0.18)';
+    ctx.strokeStyle = bw ? (a === 0 ? 'rgba(0,0,0,0.22)' : 'rgba(0,0,0,0.10)') : (a === 0 ? 'rgba(120,160,220,0.35)' : 'rgba(80,110,180,0.18)');
     ctx.beginPath(); ctx.arc(cx, cy, (90-a)/90*R, 0, Math.PI*2); ctx.stroke();
   });
 
   // Azimuth lines
-  ctx.strokeStyle = 'rgba(80,110,180,0.10)';
+  ctx.strokeStyle = bw ? 'rgba(0,0,0,0.06)' : 'rgba(80,110,180,0.10)';
   for (let az = 0; az < 360; az += 30) {
     const r = rad(az);
     ctx.beginPath();
@@ -557,7 +640,7 @@ function draw(date: Date, lat: number, lon: number) {
   }
 
   // Constellation lines
-  ctx.strokeStyle = 'rgba(100,140,220,0.28)';
+  ctx.strokeStyle = bw ? 'rgba(0,0,0,0.18)' : 'rgba(100,140,220,0.28)';
   ctx.lineWidth = 0.8;
   for (const [a, b] of CONST_LINES) {
     const ia = starIdx.get(a), ib = starIdx.get(b);
@@ -579,19 +662,19 @@ function draw(date: Date, lat: number, lon: number) {
     // Glow for bright stars
     if (mag < 1.5) {
       const g = ctx.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, r*3.5);
-      g.addColorStop(0, STAR_COLORS[ci] + '88');
+      g.addColorStop(0, bw ? 'rgba(0,0,0,0.12)' : STAR_COLORS[ci] + '88');
       g.addColorStop(1, 'transparent');
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(pt.x, pt.y, r*3.5, 0, Math.PI*2); ctx.fill();
     }
 
-    ctx.fillStyle = STAR_COLORS[ci];
+    ctx.fillStyle = bw ? '#000000' : STAR_COLORS[ci];
     ctx.beginPath(); ctx.arc(pt.x, pt.y, r, 0, Math.PI*2); ctx.fill();
 
     // Label bright stars
     if (mag < 1.0 || name === 'Polaris') {
       ctx.font = '10px sans-serif';
-      ctx.fillStyle = 'rgba(200,220,255,0.75)';
+      ctx.fillStyle = bw ? 'rgba(0,0,0,0.75)' : 'rgba(200,220,255,0.75)';
       ctx.textAlign = 'left';
       ctx.fillText(name, pt.x + r + 3, pt.y + 3);
     }
@@ -606,14 +689,14 @@ function draw(date: Date, lat: number, lon: number) {
   const sunPt = project(sunAA.alt, sunAA.az, R, cx, cy);
   if (sunPt) {
     const g = ctx.createRadialGradient(sunPt.x, sunPt.y, 0, sunPt.x, sunPt.y, 20);
-    g.addColorStop(0, '#ffffc0');
-    g.addColorStop(0.3, '#ffcc40aa');
+    g.addColorStop(0, bw ? 'rgba(0,0,0,0.2)' : '#ffffc0');
+    g.addColorStop(0.3, bw ? 'rgba(0,0,0,0.08)' : '#ffcc40aa');
     g.addColorStop(1, 'transparent');
     ctx.fillStyle = g;
     ctx.beginPath(); ctx.arc(sunPt.x, sunPt.y, 20, 0, Math.PI*2); ctx.fill();
-    ctx.fillStyle = '#ffee44';
+    ctx.fillStyle = bw ? '#333333' : '#ffee44';
     ctx.beginPath(); ctx.arc(sunPt.x, sunPt.y, 6, 0, Math.PI*2); ctx.fill();
-    ctx.font = '10px sans-serif'; ctx.fillStyle = '#ffee44'; ctx.textAlign = 'left';
+    ctx.font = '10px sans-serif'; ctx.fillStyle = bw ? '#333333' : '#ffee44'; ctx.textAlign = 'left';
     ctx.fillText('Soleil', sunPt.x+8, sunPt.y+3);
   }
 
@@ -623,14 +706,14 @@ function draw(date: Date, lat: number, lon: number) {
   const moonPt = project(moonAA.alt, moonAA.az, R, cx, cy);
   if (moonPt) {
     const g = ctx.createRadialGradient(moonPt.x, moonPt.y, 0, moonPt.x, moonPt.y, 14);
-    g.addColorStop(0, '#ffffff');
-    g.addColorStop(0.4, '#ccccee88');
+    g.addColorStop(0, bw ? 'rgba(0,0,0,0.15)' : '#ffffff');
+    g.addColorStop(0.4, bw ? 'rgba(0,0,0,0.06)' : '#ccccee88');
     g.addColorStop(1, 'transparent');
     ctx.fillStyle = g;
     ctx.beginPath(); ctx.arc(moonPt.x, moonPt.y, 14, 0, Math.PI*2); ctx.fill();
-    ctx.fillStyle = '#dde4ff';
+    ctx.fillStyle = bw ? '#444444' : '#dde4ff';
     ctx.beginPath(); ctx.arc(moonPt.x, moonPt.y, 5, 0, Math.PI*2); ctx.fill();
-    ctx.font = '10px sans-serif'; ctx.fillStyle = '#dde4ff'; ctx.textAlign = 'left';
+    ctx.font = '10px sans-serif'; ctx.fillStyle = bw ? '#444444' : '#dde4ff'; ctx.textAlign = 'left';
     ctx.fillText('Lune', moonPt.x+8, moonPt.y+3);
     visibleObjects.push({ x: moonPt.x, y: moonPt.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', type: 'moon', alt: moonAA.alt });
   }
@@ -643,13 +726,13 @@ function draw(date: Date, lat: number, lon: number) {
       if (aa.alt < 0) continue;
       const pt = project(aa.alt, aa.az, R, cx, cy)!;
       const g = ctx.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, 10);
-      g.addColorStop(0, color);
+      g.addColorStop(0, bw ? 'rgba(0,0,0,0.15)' : color);
       g.addColorStop(1, 'transparent');
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(pt.x, pt.y, 10, 0, Math.PI*2); ctx.fill();
-      ctx.fillStyle = color;
+      ctx.fillStyle = bw ? '#333333' : color;
       ctx.beginPath(); ctx.arc(pt.x, pt.y, 4, 0, Math.PI*2); ctx.fill();
-      ctx.font = '10px sans-serif'; ctx.fillStyle = color; ctx.textAlign = 'left';
+      ctx.font = '10px sans-serif'; ctx.fillStyle = bw ? '#333333' : color; ctx.textAlign = 'left';
       ctx.fillText(label, pt.x+7, pt.y+3);
       visibleObjects.push({ x: pt.x, y: pt.y, name: label, desc: PLANET_DESC[pname] || '', type: 'planet', alt: aa.alt });
     } catch(_) {}
@@ -657,7 +740,9 @@ function draw(date: Date, lat: number, lon: number) {
 
   // Deep Sky Objects
   dsoPositions = [];
-  const dsoColor: Record<string,string> = { neb:'#44ffcc', oc:'#ffdd44', gc:'#88ccff', gal:'#ff88cc', db:'rgba(220,240,255,0.85)' };
+  const dsoColor: Record<string,string> = bw
+    ? { neb:'#333333', oc:'#333333', gc:'#444444', gal:'#555555', db:'#333333' }
+    : { neb:'#44ffcc', oc:'#ffdd44', gc:'#88ccff', gal:'#ff88cc', db:'rgba(220,240,255,0.85)' };
 
   function drawDSOSymbol(cx2: number, cy2: number, type: string) {
     const s = 8;
@@ -710,7 +795,7 @@ function draw(date: Date, lat: number, lon: number) {
   // Highlight ring for selected object
   if (highlightIdx >= 0 && highlightIdx < visibleObjects.length) {
     const h = visibleObjects[highlightIdx];
-    ctx.strokeStyle = 'rgba(255,60,60,0.95)';
+    ctx.strokeStyle = bw ? 'rgba(120,0,0,0.85)' : 'rgba(255,60,60,0.95)';
     ctx.lineWidth = 2;
     ctx.setLineDash([5,3]);
     ctx.beginPath(); ctx.arc(h.x, h.y, 20, 0, Math.PI*2); ctx.stroke();
@@ -720,7 +805,7 @@ function draw(date: Date, lat: number, lon: number) {
   ctx.restore();
 
   // Horizon ring
-  ctx.strokeStyle = 'rgba(120,160,220,0.5)';
+  ctx.strokeStyle = bw ? 'rgba(0,0,0,0.45)' : 'rgba(120,160,220,0.5)';
   ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.stroke();
 
@@ -730,13 +815,13 @@ function draw(date: Date, lat: number, lon: number) {
     const r2 = rad(az);
     const x = cx - (R+28)*Math.sin(r2);
     const y = cy - (R+28)*Math.cos(r2);
-    ctx.fillStyle = 'rgba(10,15,45,0.8)';
+    ctx.fillStyle = bw ? 'rgba(245,245,245,0.97)' : 'rgba(10,15,45,0.8)';
     ctx.beginPath(); ctx.arc(x, y, 15, 0, Math.PI*2); ctx.fill();
-    ctx.strokeStyle = 'rgba(100,130,200,0.4)';
+    ctx.strokeStyle = bw ? 'rgba(0,0,0,0.28)' : 'rgba(100,130,200,0.4)';
     ctx.lineWidth = 1;
     ctx.beginPath(); ctx.arc(x, y, 15, 0, Math.PI*2); ctx.stroke();
     ctx.font = 'bold 17px sans-serif';
-    ctx.fillStyle = '#aabbee';
+    ctx.fillStyle = bw ? '#111111' : '#aabbee';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText(lbl, x, y);
   }
@@ -744,7 +829,7 @@ function draw(date: Date, lat: number, lon: number) {
   // Date/time label
   const dateLabel = date.toLocaleDateString('fr-FR', {weekday:'long',day:'numeric',month:'long',year:'numeric'})
     + ' — ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
-  ctx.font = '11px sans-serif'; ctx.fillStyle = 'rgba(160,180,220,0.7)';
+  ctx.font = '11px sans-serif'; ctx.fillStyle = bw ? 'rgba(0,0,0,0.5)' : 'rgba(160,180,220,0.7)';
   ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
   ctx.fillText(dateLabel, cx, H - 6);
 }
@@ -889,13 +974,691 @@ document.addEventListener('DOMContentLoaded', () => {
     }, () => { btn.textContent = 'Ma position'; });
   });
 
-  // Download
-  document.getElementById('sm-download')!.addEventListener('click', () => {
-    const canvas = document.getElementById('starmap-canvas') as HTMLCanvasElement;
+  // Export A4 N&B pour impression
+  document.getElementById('sm-print-a4')!.addEventListener('click', async () => {
+    const btn = document.getElementById('sm-print-a4') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Génération…';
+
+    const { date, lat, lon } = getParams();
+    const citySelect = document.getElementById('sm-city') as HTMLSelectElement;
+    const cityName = citySelect.options[citySelect.selectedIndex]?.text ?? '';
+
+    // 1. Dessiner la carte en N&B sur le canvas existant (haute résolution via upscale)
+    const mapCanvas = document.getElementById('starmap-canvas') as HTMLCanvasElement;
+    const origW = mapCanvas.width, origH = mapCanvas.height;
+    mapCanvas.width = 1100; mapCanvas.height = 1100;
+    draw(date, lat, lon, true);
+
+    // 2. Canvas A4 à 150 DPI (210mm × 297mm)
+    const A4W = 1240, A4H = 1754;
+    const off = document.createElement('canvas');
+    off.width = A4W; off.height = A4H;
+    const ctx = off.getContext('2d')!;
+
+    // Fond blanc
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, A4W, A4H);
+
+    const margin = 70;
+    let y = margin;
+
+    // --- Logo ---
+    const logo = new Image();
+    logo.src = '/assets/logolumi.png';
+    await new Promise<void>(res => { logo.onload = () => res(); logo.onerror = () => res(); });
+    if (logo.naturalWidth > 0) {
+      const logoH = 56;
+      const logoW = Math.round(logo.naturalWidth * (logoH / logo.naturalHeight));
+      ctx.drawImage(logo, margin, y, logoW, logoH);
+    }
+
+    // Titre aligné à droite du logo
+    ctx.font = 'bold 30px Georgia, serif';
+    ctx.fillStyle = '#111111';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'top';
+    ctx.fillText('Carte du ciel', A4W - margin, y + 4);
+    ctx.font = '16px sans-serif';
+    ctx.fillStyle = '#555555';
+    const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+      + ' — ' + date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    ctx.fillText(dateStr, A4W - margin, y + 40);
+    ctx.fillText(cityName, A4W - margin, y + 62);
+
+    y += 80;
+
+    // Ligne de séparation
+    ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(A4W - margin, y); ctx.stroke();
+    y += 24;
+
+    // --- Carte du ciel ---
+    const mapSize = 1100;
+    const mapX = Math.round((A4W - mapSize) / 2);
+    ctx.drawImage(mapCanvas, mapX, y);
+    y += mapSize + 20;
+
+    // Ligne de séparation
+    ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+    ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(A4W - margin, y); ctx.stroke();
+    y += 18;
+
+    // --- Légende orientations ---
+    ctx.font = '13px sans-serif';
+    ctx.fillStyle = '#444444';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillText('N = Nord  ·  E = Est  ·  S = Sud  ·  O = Ouest  —  vue depuis le sol, Nord en haut', A4W / 2, y);
+    y += 22;
+
+    // --- Légende objets DSO (dessinés au trait) ---
+    const dsoItems: [string, (cx: number, cy: number) => void][] = [
+      ['Nébuleuse', (cx, cy) => {
+        ctx.setLineDash([3, 2]); ctx.strokeRect(cx - 7, cy - 7, 14, 14); ctx.setLineDash([]);
+      }],
+      ['Amas ouvert', (cx, cy) => {
+        ctx.setLineDash([3, 2]); ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+      }],
+      ['Amas globulaire', (cx, cy) => {
+        ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx - 7, cy); ctx.lineTo(cx + 7, cy); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx, cy - 7); ctx.lineTo(cx, cy + 7); ctx.stroke();
+      }],
+      ['Galaxie', (cx, cy) => {
+        ctx.beginPath(); ctx.ellipse(cx, cy, 11, 4, 0, 0, Math.PI * 2); ctx.stroke();
+      }],
+      ['Étoile double', (cx, cy) => {
+        ctx.beginPath(); ctx.arc(cx - 4, cy, 4, 0, Math.PI * 2); ctx.stroke();
+        ctx.beginPath(); ctx.arc(cx + 4, cy, 4, 0, Math.PI * 2); ctx.stroke();
+      }],
+    ];
+    ctx.strokeStyle = '#333333';
+    ctx.lineWidth = 1.2;
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = '#444444';
+    ctx.textAlign = 'left';
+    const colW = (A4W - 2 * margin) / dsoItems.length;
+    dsoItems.forEach(([label, drawFn], i) => {
+      const ix = margin + i * colW + colW / 2 - 40;
+      drawFn(ix + 8, y + 8);
+      ctx.fillText(label, ix + 20, y + 3);
+    });
+    y += 30;
+
+    // Ligne finale
+    ctx.strokeStyle = 'rgba(0,0,0,0.10)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(A4W - margin, y); ctx.stroke();
+    y += 14;
+
+    // --- Footer ---
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = '#999999';
+    ctx.textAlign = 'center';
+    ctx.fillText('la3emedim.fr — Lunette astronomique Lumi', A4W / 2, y);
+
+    // 3. Télécharger
     const link = document.createElement('a');
-    link.download = 'carte-du-ciel.png';
-    link.href = canvas.toDataURL('image/png');
+    link.download = 'carte-du-ciel-lumi.png';
+    link.href = off.toDataURL('image/png');
     link.click();
+
+    // 4. Restaurer le canvas normal
+    mapCanvas.width = origW; mapCanvas.height = origH;
+    draw(date, lat, lon, false);
+
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Imprimer A4 N&B`;
+  });
+
+  // ─── Voie Lactée : waypoints [RA_deg, Dec_deg] le long du plan galactique
+  const MILKY_WAY: [number,number][] = [
+    [266.4,-28.9],[280,-15],[295,0],[310,18],[325,35],[340,50],[355,60],
+    [15,65],[35,60],[55,50],[75,35],[90,20],[100,7],[115,-6],[130,-20],
+    [145,-36],[160,-48],[175,-55],[190,-57],[210,-55],[225,-50],
+    [240,-43],[253,-35],[266.4,-28.9],
+  ];
+
+  // ─── Projection gnomonique (perspective réelle, comme Stellarium)
+  function projectGnomonic(
+    altDeg: number, azDeg: number,
+    azCDeg: number, altCDeg: number,
+    fovDeg: number, W: number, H: number
+  ): {x: number, y: number} | null {
+    const r = Math.PI / 180;
+    const altR = altDeg * r, azR = azDeg * r;
+    const px = Math.cos(altR) * Math.sin(azR);
+    const py = Math.sin(altR);
+    const pz = Math.cos(altR) * Math.cos(azR);
+    const altCR = altCDeg * r, azCR = azCDeg * r;
+    const fx = Math.cos(altCR) * Math.sin(azCR);
+    const fy = Math.sin(altCR);
+    const fz = Math.cos(altCR) * Math.cos(azCR);
+    const depth = px*fx + py*fy + pz*fz;
+    if (depth <= 0.001) return null;
+    // Up = world Y projeté perpendiculaire au forward
+    let ux = -fy*fx, uy = 1 - fy*fy, uz = -fy*fz;
+    let uLen = Math.sqrt(ux*ux + uy*uy + uz*uz);
+    if (uLen < 0.001) { // gimbal (zénith/nadir) : utilise Nord
+      ux = -fz*fx; uy = -fz*fy; uz = 1 - fz*fz;
+      uLen = Math.sqrt(ux*ux + uy*uy + uz*uz);
+    }
+    ux /= uLen; uy /= uLen; uz /= uLen;
+    // Right = fwd × up
+    const rx = fy*uz - fz*uy, ry = fz*ux - fx*uz, rz = fx*uy - fy*ux;
+    const scale = (W / 2) / Math.tan(fovDeg * r / 2);
+    return {
+      x: (px*rx + py*ry + pz*rz) / depth * scale + W / 2,
+      y: -(px*ux + py*uy + pz*uz) / depth * scale + H / 2,
+    };
+  }
+
+  // ─── État de la caméra plein écran
+  let fsAzC = 180, fsAltC = 30, fsFov = 90;
+
+  // ─── Rendu plein écran — projection gnomonique
+  function drawFullscreen(fsCanvas: HTMLCanvasElement, date: Date, lat: number, lon: number) {
+    const ctx = fsCanvas.getContext('2d')!;
+    const W = fsCanvas.width, H = fsCanvas.height;
+    const jd = julianDate(date);
+    const altAz = STARS.map(s => toAltAz(s[0] * 15, s[1], lat, lon, jd));
+
+    function proj(alt: number, az: number) {
+      return projectGnomonic(alt, az, fsAzC, fsAltC, fsFov, W, H);
+    }
+
+    // Fond ciel
+    ctx.fillStyle = '#010208';
+    ctx.fillRect(0, 0, W, H);
+
+    // ── Sol : polygone sous l'horizon projeté
+    {
+      const hpts: {x:number,y:number}[] = [];
+      for (let az = 0; az <= 358; az += 2) {
+        const p = proj(0, az);
+        if (p && p.x > -W && p.x < 2*W && p.y > -H && p.y < 2*H) hpts.push(p);
+      }
+      if (hpts.length >= 2) {
+        hpts.sort((a, b) => a.x - b.x);
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(hpts[0].x, H + 10);
+        ctx.lineTo(hpts[0].x, hpts[0].y);
+        for (let i = 1; i < hpts.length; i++) ctx.lineTo(hpts[i].x, hpts[i].y);
+        ctx.lineTo(hpts[hpts.length - 1].x, H + 10);
+        ctx.closePath();
+        const gGrad = ctx.createLinearGradient(0, H * 0.55, 0, H);
+        gGrad.addColorStop(0, '#0b1607'); gGrad.addColorStop(1, '#020803');
+        ctx.fillStyle = gGrad; ctx.fill();
+        ctx.restore();
+      } else if (fsAltC < 0) {
+        ctx.fillStyle = '#040c02'; ctx.fillRect(0, 0, W, H);
+      }
+    }
+
+    // Lueur atmosphérique autour de l'horizon
+    {
+      const p0 = proj(0, fsAzC);
+      if (p0) {
+        const atmo = ctx.createRadialGradient(W/2, p0.y, 0, W/2, p0.y, H * 0.4);
+        atmo.addColorStop(0, 'rgba(30,60,140,0.10)');
+        atmo.addColorStop(0.5, 'rgba(15,45,15,0.08)');
+        atmo.addColorStop(1, 'transparent');
+        ctx.fillStyle = atmo; ctx.fillRect(0, 0, W, H);
+      }
+    }
+
+    // ── Voie Lactée
+    ctx.save();
+    ctx.lineWidth = 50; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const mwPts = MILKY_WAY.map(([ra, dec]) => {
+      const aa = toAltAz(ra, dec, lat, lon, jd);
+      return { pt: proj(aa.alt, aa.az), alt: aa.alt };
+    });
+    for (let i = 0; i < mwPts.length - 1; i++) {
+      const a = mwPts[i], b = mwPts[i + 1];
+      if (!a.pt || !b.pt) continue;
+      if (Math.hypot(a.pt.x - b.pt.x, a.pt.y - b.pt.y) > W * 0.8) continue;
+      const grad = ctx.createLinearGradient(a.pt.x, a.pt.y, b.pt.x, b.pt.y);
+      grad.addColorStop(0, 'rgba(170,195,255,0.07)');
+      grad.addColorStop(1, 'rgba(200,215,255,0.05)');
+      ctx.strokeStyle = grad;
+      ctx.beginPath(); ctx.moveTo(a.pt.x, a.pt.y); ctx.lineTo(b.pt.x, b.pt.y); ctx.stroke();
+    }
+    ctx.restore();
+
+    // ── Grille altitude (cercles projetés en courbes)
+    ctx.lineWidth = 1;
+    for (const alt of [10, 20, 30, 45, 60, 75]) {
+      const pts: {x:number,y:number}[] = [];
+      for (let az = 0; az < 360; az += 3) { const p = proj(alt, az); if (p) pts.push(p); }
+      if (pts.length < 3) continue;
+      ctx.strokeStyle = 'rgba(70,95,200,0.09)';
+      ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+      pts.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.closePath(); ctx.stroke();
+      ctx.fillStyle = 'rgba(100,120,200,0.32)'; ctx.font = '10px sans-serif';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'bottom';
+      ctx.fillText(`${alt}°`, pts[0].x + 3, pts[0].y - 2);
+    }
+
+    // ── Grille azimut (méridiens)
+    ctx.strokeStyle = 'rgba(70,95,180,0.06)'; ctx.lineWidth = 1;
+    for (let az = 0; az < 360; az += 30) {
+      const pts: {x:number,y:number}[] = [];
+      for (let alt = 0; alt <= 88; alt += 4) { const p = proj(alt, az); if (p) pts.push(p); }
+      if (pts.length < 2) continue;
+      ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+      pts.slice(1).forEach(p => ctx.lineTo(p.x, p.y)); ctx.stroke();
+    }
+
+    // ── Constellations
+    ctx.lineWidth = 0.9;
+    for (const [a, b] of CONST_LINES) {
+      const ia = starIdx.get(a), ib = starIdx.get(b);
+      if (ia == null || ib == null) continue;
+      const pa = proj(altAz[ia].alt, altAz[ia].az);
+      const pb = proj(altAz[ib].alt, altAz[ib].az);
+      if (!pa || !pb) continue;
+      if (Math.hypot(pa.x - pb.x, pa.y - pb.y) > W * 0.7) continue;
+      ctx.strokeStyle = 'rgba(75,110,210,0.30)';
+      ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
+    }
+
+    // ── Étoiles
+    for (let i = 0; i < STARS.length; i++) {
+      const [,, mag, ci, name] = STARS[i];
+      const { alt, az } = altAz[i];
+      if (alt < 0) continue;
+      const p = proj(alt, az);
+      if (!p || p.x < -150 || p.x > W+150 || p.y < -150 || p.y > H+150) continue;
+      const r = Math.max(0.7, 4.6 - mag * 0.78);
+      if (mag < 2.8) {
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*4.5);
+        g.addColorStop(0, STAR_COLORS[ci]+'aa'); g.addColorStop(1,'transparent');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,r*4.5,0,Math.PI*2); ctx.fill();
+      }
+      if (mag < 1.2) {
+        ctx.strokeStyle=STAR_COLORS[ci]+'55'; ctx.lineWidth=0.9;
+        const sp=r*7;
+        ctx.beginPath(); ctx.moveTo(p.x-sp,p.y); ctx.lineTo(p.x+sp,p.y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(p.x,p.y-sp); ctx.lineTo(p.x,p.y+sp); ctx.stroke();
+      }
+      ctx.fillStyle=STAR_COLORS[ci];
+      ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fill();
+      if (mag < 1.6 || name === 'Polaris') {
+        ctx.font='11px sans-serif'; ctx.fillStyle='rgba(200,215,255,0.72)';
+        ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText(name, p.x+r+4, p.y);
+      }
+    }
+
+    // ── Soleil
+    { const sun = sunRaDec(jd); const sunAA = toAltAz(sun.ra, sun.dec, lat, lon, jd);
+      const p = proj(sunAA.alt, sunAA.az);
+      if (p && sunAA.alt > 0) {
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,28);
+        g.addColorStop(0,'#ffffc0'); g.addColorStop(0.35,'#ffcc40aa'); g.addColorStop(1,'transparent');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,28,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle='#ffee44'; ctx.beginPath(); ctx.arc(p.x,p.y,7,0,Math.PI*2); ctx.fill();
+        ctx.font='11px sans-serif'; ctx.fillStyle='#ffee44'; ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText('Soleil', p.x+12, p.y);
+      }
+    }
+
+    // ── Lune
+    { const moon = moonRaDec(jd); const moonAA = toAltAz(moon.ra, moon.dec, lat, lon, jd);
+      const p = proj(moonAA.alt, moonAA.az);
+      if (p && moonAA.alt > 0) {
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,18);
+        g.addColorStop(0,'#ffffff'); g.addColorStop(0.4,'#ccccee88'); g.addColorStop(1,'transparent');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,18,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle='#dde4ff'; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,Math.PI*2); ctx.fill();
+        ctx.font='11px sans-serif'; ctx.fillStyle='#dde4ff'; ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText('Lune', p.x+10, p.y);
+      }
+    }
+
+    // ── Planètes
+    for (const [pname,[color,label]] of Object.entries(PLANET_DISPLAY)) {
+      try {
+        const pos = planetRaDec(pname, jd);
+        const aa = toAltAz(pos.ra, pos.dec, lat, lon, jd);
+        if (aa.alt < 0) continue;
+        const p = proj(aa.alt, aa.az); if (!p) continue;
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,12);
+        g.addColorStop(0,color); g.addColorStop(1,'transparent');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,12,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle=color; ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
+        ctx.font='11px sans-serif'; ctx.fillStyle=color; ctx.textAlign='left'; ctx.textBaseline='middle';
+        ctx.fillText(label, p.x+8, p.y);
+      } catch(_) {}
+    }
+
+    // ── Points cardinaux projetés à l'horizon
+    for (const [lbl, az] of [['N',0],['NE',45],['E',90],['SE',135],['S',180],['SO',225],['O',270],['NO',315]] as [string,number][]) {
+      const p = proj(0, az);
+      if (!p || p.x < -30 || p.x > W+30 || p.y < -30 || p.y > H+60) continue;
+      ctx.strokeStyle='rgba(70,120,50,0.55)'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(p.x,p.y-14); ctx.lineTo(p.x,p.y+6); ctx.stroke();
+      ctx.fillStyle = lbl.length===1 ? 'rgba(130,200,90,0.9)' : 'rgba(95,160,70,0.72)';
+      ctx.font=`bold ${lbl.length===1?16:12}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='top';
+      ctx.fillText(lbl, p.x, p.y+8);
+    }
+
+    // ── HUD
+    const fsCityEl = document.getElementById('sm-fs-city') as HTMLSelectElement;
+    const cityName = fsCityEl?.options[fsCityEl.selectedIndex]?.text ?? '';
+    const dateStr = date.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'})
+      + '  ·  ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    const dirStr = `Az ${Math.round(((fsAzC%360)+360)%360)}°  ·  Alt ${Math.round(fsAltC)}°  ·  FOV ${Math.round(fsFov)}°`;
+    ctx.save();
+    ctx.fillStyle='rgba(4,6,22,0.70)';
+    (ctx as any).roundRect?.(16,16,340,90,10); ctx.fill();
+    ctx.strokeStyle='rgba(90,120,220,0.18)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle='rgba(210,220,255,0.92)'; ctx.font='bold 13px sans-serif';
+    ctx.textAlign='left'; ctx.textBaseline='top'; ctx.fillText(dateStr,28,24);
+    ctx.fillStyle='rgba(140,165,220,0.72)'; ctx.font='12px sans-serif'; ctx.fillText('📍 '+cityName,28,46);
+    ctx.fillStyle='rgba(100,125,195,0.50)'; ctx.font='11px sans-serif'; ctx.fillText(dirStr,28,68);
+    ctx.restore();
+  }
+
+  // ─── Plein écran — état et contrôles
+  let fsOpen = false;
+  let fsHideTimer: ReturnType<typeof setTimeout> | null = null;
+  let fsDragging = false;
+  let fsDragAz0 = 180, fsDragAlt0 = 30, fsDragX0 = 0, fsDragY0 = 0;
+  let fsPinchDist0 = 0, fsFov0 = 90;
+
+  // Copie les options de la ville dans le select FS au premier appel
+  function syncFsCity() {
+    const src = document.getElementById('sm-city') as HTMLSelectElement;
+    const dst = document.getElementById('sm-fs-city') as HTMLSelectElement;
+    if (dst.options.length > 0) return;
+    Array.from(src.options).forEach(o => {
+      const opt = new Option(o.text, o.value, o.defaultSelected, o.selected);
+      dst.add(opt);
+    });
+  }
+
+  function getFsParams(): { date: Date; lat: number; lon: number } {
+    const dtInput = document.getElementById('sm-fs-datetime') as HTMLInputElement;
+    const citySelect = document.getElementById('sm-fs-city') as HTMLSelectElement;
+    const [lat, lon] = citySelect.value.split(',').map(Number);
+    const date = dtInput.value ? new Date(dtInput.value) : new Date();
+    return { date, lat, lon };
+  }
+
+  function redrawFs() {
+    const fsCanvas = document.getElementById('sm-fs-canvas') as HTMLCanvasElement;
+    const { date, lat, lon } = getFsParams();
+    drawFullscreen(fsCanvas, date, lat, lon);
+  }
+
+  function showToolbar() {
+    const tb = document.getElementById('sm-fs-toolbar')!;
+    tb.classList.add('visible');
+    if (fsHideTimer) clearTimeout(fsHideTimer);
+    fsHideTimer = setTimeout(() => tb.classList.remove('visible'), 3000);
+  }
+
+  function openFullscreen() {
+    syncFsCity();
+    // Synchronise les valeurs depuis le formulaire principal
+    const mainDt = document.getElementById('sm-datetime') as HTMLInputElement;
+    const mainCity = document.getElementById('sm-city') as HTMLSelectElement;
+    const fsDt = document.getElementById('sm-fs-datetime') as HTMLInputElement;
+    const fsCity = document.getElementById('sm-fs-city') as HTMLSelectElement;
+    fsDt.value = mainDt.value;
+    fsCity.value = mainCity.value;
+
+    const overlay = document.getElementById('sm-fullscreen')!;
+    const fsCanvas = document.getElementById('sm-fs-canvas') as HTMLCanvasElement;
+    fsCanvas.width = window.innerWidth;
+    fsCanvas.height = window.innerHeight;
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    fsOpen = true;
+    redrawFs();
+    showToolbar();
+  }
+
+  function closeFullscreen() {
+    // Répercute les valeurs FS → formulaire principal
+    const mainDt = document.getElementById('sm-datetime') as HTMLInputElement;
+    const mainCity = document.getElementById('sm-city') as HTMLSelectElement;
+    const fsDt = document.getElementById('sm-fs-datetime') as HTMLInputElement;
+    const fsCity = document.getElementById('sm-fs-city') as HTMLSelectElement;
+    mainDt.value = fsDt.value;
+    mainCity.value = fsCity.value;
+
+    document.getElementById('sm-fullscreen')!.classList.remove('is-open');
+    document.getElementById('sm-fullscreen')!.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    fsOpen = false;
+    if (fsHideTimer) clearTimeout(fsHideTimer);
+  }
+
+  // Mouvement souris → affiche toolbar
+  document.getElementById('sm-fullscreen')!.addEventListener('mousemove', () => {
+    if (fsOpen) showToolbar();
+  });
+
+  // Changement de date/heure ou lieu → redessine
+  document.getElementById('sm-fs-datetime')!.addEventListener('change', redrawFs);
+  document.getElementById('sm-fs-city')!.addEventListener('change', redrawFs);
+
+  // Boutons ±temps
+  document.querySelectorAll('.fs-step-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fsDt = document.getElementById('sm-fs-datetime') as HTMLInputElement;
+      const step = parseInt((btn as HTMLElement).dataset.step ?? '0', 10);
+      const current = fsDt.value ? new Date(fsDt.value) : new Date();
+      current.setSeconds(current.getSeconds() + step);
+      // Format datetime-local : YYYY-MM-DDTHH:MM
+      const pad = (n: number) => String(n).padStart(2, '0');
+      fsDt.value = `${current.getFullYear()}-${pad(current.getMonth()+1)}-${pad(current.getDate())}T${pad(current.getHours())}:${pad(current.getMinutes())}`;
+      redrawFs();
+    });
+  });
+
+  // Bouton Maintenant
+  document.getElementById('sm-fs-now')!.addEventListener('click', () => {
+    const fsDt = document.getElementById('sm-fs-datetime') as HTMLInputElement;
+    const now = new Date();
+    const pad = (n: number) => String(n).padStart(2, '0');
+    fsDt.value = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    redrawFs();
+  });
+
+  // Géolocalisation FS
+  document.getElementById('sm-fs-geolocate')!.addEventListener('click', () => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(pos => {
+      const fsCity = document.getElementById('sm-fs-city') as HTMLSelectElement;
+      const customVal = `${pos.coords.latitude.toFixed(4)},${pos.coords.longitude.toFixed(4)}`;
+      // Ajoute ou réutilise une option "Ma position"
+      let opt = Array.from(fsCity.options).find(o => o.text === 'Ma position');
+      if (!opt) { opt = new Option('Ma position', customVal); fsCity.add(opt); }
+      else opt.value = customVal;
+      fsCity.value = customVal;
+      redrawFs();
+    });
+  });
+
+  // ── Recherche d'objets
+  const fsSearchInput = document.getElementById('sm-fs-search') as HTMLInputElement;
+  const fsSearchResults = document.getElementById('sm-fs-search-results')!;
+
+  function buildSearchCatalog(): { label: string; ra: number; dec: number }[] {
+    const items: { label: string; ra: number; dec: number }[] = [];
+    for (const s of STARS) {
+      if (s[4]) items.push({ label: s[4], ra: s[0] * 15, dec: s[1] });
+    }
+    for (const d of DSO) {
+      items.push({ label: d[2], ra: d[0] * 15, dec: d[1] });
+    }
+    items.push({ label: 'Soleil', ra: -1, dec: -1 });
+    items.push({ label: 'Lune', ra: -2, dec: -2 });
+    for (const [pname, [, plabel]] of Object.entries(PLANET_DISPLAY)) {
+      items.push({ label: plabel, ra: -10, dec: Number(Object.keys(PLANET_DISPLAY).indexOf(pname)) });
+    }
+    return items;
+  }
+
+  const searchCatalog = buildSearchCatalog();
+
+  function pointCameraAt(ra: number, dec: number) {
+    const { date, lat, lon } = getFsParams();
+    const jd = julianDate(date);
+    let aa: { alt: number; az: number };
+    if (ra === -1) {
+      aa = toAltAz(sunRaDec(jd).ra, sunRaDec(jd).dec, lat, lon, jd);
+    } else if (ra === -2) {
+      aa = toAltAz(moonRaDec(jd).ra, moonRaDec(jd).dec, lat, lon, jd);
+    } else if (ra === -10) {
+      const pnames = Object.keys(PLANET_DISPLAY);
+      const pos = planetRaDec(pnames[dec], jd);
+      aa = toAltAz(pos.ra, pos.dec, lat, lon, jd);
+    } else {
+      aa = toAltAz(ra, dec, lat, lon, jd);
+    }
+    fsAzC = (aa.az + 360) % 360;
+    fsAltC = Math.max(-89, Math.min(89, aa.alt));
+    redrawFs();
+  }
+
+  fsSearchInput.addEventListener('input', () => {
+    const q = fsSearchInput.value.trim().toLowerCase();
+    fsSearchResults.innerHTML = '';
+    if (q.length < 2) { fsSearchResults.style.display = 'none'; return; }
+    const matches = searchCatalog.filter(o => o.label.toLowerCase().includes(q)).slice(0, 8);
+    if (!matches.length) { fsSearchResults.style.display = 'none'; return; }
+    for (const m of matches) {
+      const li = document.createElement('li');
+      li.textContent = m.label;
+      li.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        fsSearchInput.value = m.label;
+        fsSearchResults.style.display = 'none';
+        pointCameraAt(m.ra, m.dec);
+      });
+      fsSearchResults.appendChild(li);
+    }
+    fsSearchResults.style.display = 'block';
+  });
+
+  fsSearchInput.addEventListener('blur', () => {
+    setTimeout(() => { fsSearchResults.style.display = 'none'; }, 150);
+  });
+
+  fsSearchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = fsSearchResults.querySelector('li');
+      if (first) (first as HTMLElement).dispatchEvent(new MouseEvent('mousedown'));
+      e.stopPropagation();
+    }
+    if (e.key === 'Escape') { fsSearchResults.style.display = 'none'; fsSearchInput.blur(); }
+    e.stopPropagation();
+  });
+
+  document.getElementById('starmap-canvas')!.addEventListener('click', openFullscreen);
+  document.getElementById('sm-fs-close')!.addEventListener('click', closeFullscreen);
+
+  // ── Clavier : flèches (pan) · +/- (zoom) · Échap (fermer)
+  document.addEventListener('keydown', (e) => {
+    if (!fsOpen) { if (e.key === 'Escape') closeFullscreen(); return; }
+    const step = fsFov / 8;
+    switch (e.key) {
+      case 'ArrowLeft':  fsAzC = (fsAzC - step + 360) % 360; redrawFs(); e.preventDefault(); break;
+      case 'ArrowRight': fsAzC = (fsAzC + step) % 360;       redrawFs(); e.preventDefault(); break;
+      case 'ArrowUp':    fsAltC = Math.min(89, fsAltC + step); redrawFs(); e.preventDefault(); break;
+      case 'ArrowDown':  fsAltC = Math.max(-89, fsAltC - step); redrawFs(); e.preventDefault(); break;
+      case '+': case '=': fsFov = Math.max(10, fsFov * 0.85); redrawFs(); break;
+      case '-': case '_': fsFov = Math.min(150, fsFov * 1.18); redrawFs(); break;
+      case 'Escape': closeFullscreen(); break;
+    }
+  });
+
+  // ── Souris : drag pour pivoter
+  const fsOverlay = document.getElementById('sm-fullscreen')!;
+  const fsCvs = document.getElementById('sm-fs-canvas') as HTMLCanvasElement;
+
+  fsOverlay.addEventListener('mousedown', (e) => {
+    const tgt = e.target as HTMLElement;
+    // Ne pas lancer le drag si on clique sur la toolbar
+    if (tgt.closest('#sm-fs-toolbar') || tgt.closest('#sm-fs-close')) return;
+    fsDragging = true;
+    fsDragX0 = e.clientX; fsDragY0 = e.clientY;
+    fsDragAz0 = fsAzC; fsDragAlt0 = fsAltC;
+    fsCvs.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!fsDragging) return;
+    const dx = e.clientX - fsDragX0;
+    const dy = e.clientY - fsDragY0;
+    const sens = fsFov / Math.min(window.innerWidth, window.innerHeight);
+    fsAzC = (fsDragAz0 + dx * sens + 360) % 360;
+    fsAltC = Math.max(-89, Math.min(89, fsDragAlt0 - dy * sens));
+    redrawFs();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!fsDragging) return;
+    fsDragging = false;
+    fsCvs.style.cursor = 'grab';
+  });
+
+  // ── Molette : zoom
+  fsOverlay.addEventListener('wheel', (e) => {
+    if (!fsOpen) return;
+    e.preventDefault();
+    const factor = e.deltaY > 0 ? 1.12 : 0.89;
+    fsFov = Math.max(10, Math.min(150, fsFov * factor));
+    redrawFs();
+  }, { passive: false });
+
+  // ── Tactile : drag + pinch
+  let fsLastTouches: Touch[] = [];
+  fsCvs.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    fsLastTouches = Array.from(e.touches);
+    if (e.touches.length === 1) {
+      fsDragX0 = e.touches[0].clientX; fsDragY0 = e.touches[0].clientY;
+      fsDragAz0 = fsAzC; fsDragAlt0 = fsAltC;
+    } else if (e.touches.length === 2) {
+      fsPinchDist0 = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      fsFov0 = fsFov;
+    }
+  }, { passive: false });
+
+  fsCvs.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (e.touches.length === 1) {
+      const dx = e.touches[0].clientX - fsDragX0;
+      const dy = e.touches[0].clientY - fsDragY0;
+      const sens = fsFov / Math.min(window.innerWidth, window.innerHeight);
+      fsAzC = (fsDragAz0 + dx * sens + 360) % 360;
+      fsAltC = Math.max(-89, Math.min(89, fsDragAlt0 - dy * sens));
+      redrawFs();
+    } else if (e.touches.length === 2) {
+      const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      fsFov = Math.max(10, Math.min(150, fsFov0 * (fsPinchDist0 / dist)));
+      redrawFs();
+    }
+  }, { passive: false });
+
+  window.addEventListener('resize', () => {
+    if (!fsOpen) return;
+    const fsCanvas = document.getElementById('sm-fs-canvas') as HTMLCanvasElement;
+    fsCanvas.width = window.innerWidth;
+    fsCanvas.height = window.innerHeight;
+    redrawFs();
   });
 
   // Hover tooltip for DSOs
@@ -1198,6 +1961,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gap: 0.75rem;
   }
 
+
   .download-btn {
     display: inline-flex;
     align-items: center;
@@ -1224,6 +1988,258 @@ document.addEventListener('DOMContentLoaded', () => {
   .canvas-container {
     position: relative;
     display: inline-block;
+    cursor: pointer;
+  }
+
+  .sm-expand-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(4, 6, 20, 0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    color: rgba(200,215,255,0.65);
+    font-size: 0.7rem;
+    padding: 4px 9px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .canvas-container:hover .sm-expand-hint {
+    opacity: 1;
+  }
+
+  /* ─── Overlay plein écran */
+  .sm-fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+  }
+
+  .sm-fullscreen-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  #sm-fs-canvas {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+  }
+
+  /* ── Toolbar Stellarium */
+  .sm-fs-toolbar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+
+  .sm-fs-toolbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .sm-fs-toolbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(3,5,18,0.82);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(80,110,220,0.18);
+    flex-wrap: wrap;
+  }
+
+  .fs-ctrl-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .fs-ctrl-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.68rem;
+    color: rgba(140,165,220,0.65);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .fs-ctrl-group input,
+  .fs-ctrl-group select {
+    background: rgba(10,14,40,0.85);
+    border: 1px solid rgba(80,110,220,0.25);
+    border-radius: 6px;
+    color: rgba(210,220,255,0.92);
+    padding: 0.4rem 0.6rem;
+    font-size: 0.82rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .fs-ctrl-group input:focus,
+  .fs-ctrl-group select:focus {
+    border-color: rgba(100,140,255,0.55);
+  }
+
+  .fs-city-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  #sm-fs-geolocate {
+    background: rgba(10,14,40,0.85);
+    border: 1px solid rgba(80,110,220,0.25);
+    border-radius: 6px;
+    color: rgba(180,200,255,0.8);
+    padding: 0.4rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.15s;
+  }
+
+  #sm-fs-geolocate:hover { background: rgba(20,30,80,0.9); }
+
+  .fs-btn {
+    background: rgba(10,14,40,0.85);
+    border: 1px solid rgba(80,110,220,0.25);
+    border-radius: 6px;
+    color: rgba(190,210,255,0.85);
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .fs-btn:hover { background: rgba(20,30,80,0.9); border-color: rgba(100,140,255,0.4); }
+
+  .fs-time-nav {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+
+  .fs-step-btn {
+    background: rgba(10,14,40,0.85);
+    border: 1px solid rgba(80,110,220,0.2);
+    border-radius: 5px;
+    color: rgba(170,195,255,0.8);
+    padding: 0.4rem 0.55rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .fs-step-btn:hover { background: rgba(20,30,80,0.9); }
+
+  .fs-search-group { position: relative; }
+
+  .fs-search-wrap { position: relative; }
+
+  #sm-fs-search {
+    width: 160px;
+    background: rgba(10,14,40,0.9);
+    border: 1px solid rgba(80,110,220,0.3);
+    border-radius: 6px;
+    color: rgba(200,210,255,0.9);
+    font-size: 0.72rem;
+    padding: 0.3rem 0.5rem;
+    outline: none;
+  }
+
+  #sm-fs-search::placeholder { color: rgba(140,160,220,0.5); }
+  #sm-fs-search:focus { border-color: rgba(100,140,255,0.55); }
+
+  .fs-search-results {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: rgba(8,12,35,0.97);
+    border: 1px solid rgba(80,110,220,0.35);
+    border-radius: 6px;
+    list-style: none;
+    margin: 0; padding: 0.25rem 0;
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+
+  .fs-search-results li {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.72rem;
+    color: rgba(200,210,255,0.9);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fs-search-results li:hover { background: rgba(80,110,220,0.25); }
+
+  .sm-fs-close {
+    background: rgba(10,14,40,0.85);
+    border: 1px solid rgba(80,110,220,0.22);
+    border-radius: 8px;
+    color: rgba(190,210,255,0.75);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .sm-fs-close:hover {
+    background: rgba(180,30,30,0.4);
+    border-color: rgba(255,80,80,0.3);
+    color: rgba(255,180,180,0.95);
+  }
+
+  .sm-fs-hint {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 1rem;
+    font-size: 0.68rem;
+    color: rgba(120,145,200,0.32);
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .sm-fs-hint kbd {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-family: monospace;
+    font-size: 0.66rem;
   }
 
   .sm-tooltip {
