@@ -2,7 +2,7 @@
   "seoTitle": "Picco - Télescope Newtonien 114/450 Ultra-Compact 1,5 kg | La 3ème dimension",
   "seoDescription": "Picco : télescope newtonien 114/450 ultra-compact de 1,5 kg, fabriqué en France par impression 3D. Le télescope portable idéal pour l'astronomie nomade.",
   "seoKeywords": "télescope compact, newtonien 114/450, télescope portable, télescope 1.5 kg, télescope impression 3D, télescope made in france, astronomie nomade, télescope léger, picco telescope",
-  "ogImage": "https://la3emedim.fr/assets/114_7.jpeg",
+  "ogImage": "https://la3emedim.fr/assets/Piccov2_4.jpeg",
   "emailContact": "la3emedim@gmail.com",
   "sections": [
     {
@@ -19,7 +19,7 @@
         ],
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
         "secondaryCta": { "text": "Plus d'information", "href": "#section-specs" },
-        "heroImage": { "src": "/assets/114_7.jpeg", "alt": "Télescope Picco 114/450" },
+        "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Télescope Picco 114/450" },
         "imageOverlayText": "Produit en cours de développement",
         "showFabLogo": false
       }
@@ -30,13 +30,12 @@
       "data": {
         "title": "Galerie",
         "images": [
-          { "src": "/assets/114_1.jpeg", "alt": "Picco 114/450 - vue 1" },
-          { "src": "/assets/114_2.jpeg", "alt": "Picco 114/450 - vue 2" },
-          { "src": "/assets/114_3.jpeg", "alt": "Picco 114/450 - vue 3" },
-          { "src": "/assets/114_4.jpeg", "alt": "Picco 114/450 - vue 4" },
-          { "src": "/assets/114_5.jpeg", "alt": "Picco 114/450 - vue 5" },
-          { "src": "/assets/114_6.jpeg", "alt": "Picco 114/450 - vue 6" },
-          { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 - vue 7" }
+          { "src": "/assets/Piccov2_1.JPG",  "alt": "Picco 114/450 - vue 1" },
+          { "src": "/assets/Piccov2_2.JPG",  "alt": "Picco 114/450 - vue 2" },
+          { "src": "/assets/Piccov2_3.jpeg", "alt": "Picco 114/450 - vue 3" },
+          { "src": "/assets/Piccov2_4.jpeg", "alt": "Picco 114/450 - vue 4" },
+          { "src": "/assets/Piccov2_5.jpeg", "alt": "Picco 114/450 - vue 5" },
+          { "src": "/assets/Piccov2_6.jpeg", "alt": "Picco 114/450 - vue 6" }
         ]
       }
     },

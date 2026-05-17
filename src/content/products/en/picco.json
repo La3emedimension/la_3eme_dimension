@@ -2,7 +2,7 @@
   "seoTitle": "Picco - Ultra-Compact 114/450 Newtonian Telescope 1.5 kg | La 3ème dimension",
   "seoDescription": "Picco: a 114/450 ultra-compact Newtonian telescope weighing only 1.5 kg, 3D-printed in France. The ideal portable telescope for nomadic astronomy.",
   "seoKeywords": "compact telescope, 114/450 newtonian, portable telescope, lightweight telescope, 3d printed telescope, made in france telescope, nomadic astronomy, picco telescope",
-  "ogImage": "https://la3emedim.fr/assets/114_7.jpeg",
+  "ogImage": "https://la3emedim.fr/assets/Piccov2_4.jpeg",
   "emailContact": "la3emedim@gmail.com",
   "sections": [
     {
@@ -18,7 +18,7 @@
           { "icon": "terminal-window", "text": "3D Printed in France" }
         ],
         "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
-        "heroImage": { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 telescope" },
+        "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Picco 114/450 telescope" },
         "imageOverlayText": "Product under development",
         "showFabLogo": false
       }
@@ -29,13 +29,12 @@
       "data": {
         "title": "Gallery",
         "images": [
-          { "src": "/assets/114_1.jpeg", "alt": "Picco 114/450 - view 1" },
-          { "src": "/assets/114_2.jpeg", "alt": "Picco 114/450 - view 2" },
-          { "src": "/assets/114_3.jpeg", "alt": "Picco 114/450 - view 3" },
-          { "src": "/assets/114_4.jpeg", "alt": "Picco 114/450 - view 4" },
-          { "src": "/assets/114_5.jpeg", "alt": "Picco 114/450 - view 5" },
-          { "src": "/assets/114_6.jpeg", "alt": "Picco 114/450 - view 6" },
-          { "src": "/assets/114_7.jpeg", "alt": "Picco 114/450 - view 7" }
+          { "src": "/assets/Piccov2_1.JPG",  "alt": "Picco 114/450 - view 1" },
+          { "src": "/assets/Piccov2_2.JPG",  "alt": "Picco 114/450 - view 2" },
+          { "src": "/assets/Piccov2_3.jpeg", "alt": "Picco 114/450 - view 3" },
+          { "src": "/assets/Piccov2_4.jpeg", "alt": "Picco 114/450 - view 4" },
+          { "src": "/assets/Piccov2_5.jpeg", "alt": "Picco 114/450 - view 5" },
+          { "src": "/assets/Piccov2_6.jpeg", "alt": "Picco 114/450 - view 6" }
         ]
       }
     },
