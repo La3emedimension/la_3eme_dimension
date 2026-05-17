@@ -219,6 +219,12 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
   </div>
 
   <div id="sm-fs-tooltip" class="sm-fs-tooltip"></div>
+  <div id="sm-fs-card" class="sm-fs-card" aria-hidden="true">
+    <button id="sm-fs-card-close" class="sm-fs-card-close" aria-label="Fermer">×</button>
+    <div id="sm-fs-card-badge" class="sm-fs-card-badge"></div>
+    <div id="sm-fs-card-name" class="sm-fs-card-name"></div>
+    <div id="sm-fs-card-desc" class="sm-fs-card-desc"></div>
+  </div>
   <p class="sm-fs-hint">Déplacez la souris pour afficher les contrôles · <kbd>Échap</kbd> pour fermer</p>
 </div>
 
@@ -1158,7 +1164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── État de la caméra plein écran
   let fsAzC = 180, fsAltC = 30, fsFov = 90;
-  type FsCelPos = { x: number; y: number; name: string; desc: string; r: number };
+  type FsCelPos = { x: number; y: number; name: string; desc: string; r: number; type: string };
   let fsCelestialPositions: FsCelPos[] = [];
 
   // ─── Rendu plein écran — projection gnomonique
@@ -1297,7 +1303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText(name, p.x+r+4, p.y);
       }
-      if (name) fsCelestialPositions.push({ x: p.x, y: p.y, name, desc: `Magnitude ${mag.toFixed(1)} · Az ${Math.round(az)}° Alt ${Math.round(alt)}°`, r: Math.max(10, r * 3) });
+      if (name) fsCelestialPositions.push({ x: p.x, y: p.y, name, desc: `Magnitude ${mag.toFixed(1)} · Az ${Math.round(az)}° Alt ${Math.round(alt)}°`, r: Math.max(10, r * 3), type: 'star' });
     }
 
     // ── Soleil
@@ -1310,7 +1316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle='#ffee44'; ctx.beginPath(); ctx.arc(p.x,p.y,7,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#ffee44'; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText('Soleil', p.x+12, p.y);
-        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Soleil', desc: 'Notre étoile. Ne jamais observer à l\'œil nu ou avec un instrument sans filtre solaire adapté.', r: 28 });
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Soleil', desc: 'Notre étoile. Ne jamais observer à l\'œil nu ou avec un instrument sans filtre solaire adapté.', r: 28, type: 'sun' });
       }
     }
 
@@ -1324,7 +1330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle='#dde4ff'; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#dde4ff'; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText('Lune', p.x+10, p.y);
-        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', r: 18 });
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', r: 18, type: 'moon' });
       }
     }
 
@@ -1341,7 +1347,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle=color; ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle=color; ctx.textAlign='left'; ctx.textBaseline='middle';
         ctx.fillText(label, p.x+8, p.y);
-        fsCelestialPositions.push({ x: p.x, y: p.y, name: label, desc: PLANET_DESC[pname] || '', r: 14 });
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: label, desc: PLANET_DESC[pname] || '', r: 14, type: 'planet' });
       } catch(_) {}
     }
 
@@ -1366,7 +1372,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const parts = name.split(' — ');
       ctx.font='9px sans-serif'; ctx.fillStyle=col+'cc'; ctx.textAlign='left'; ctx.textBaseline='middle';
       ctx.fillText(parts.length > 1 ? parts[1] : parts[0], p.x+s+4, p.y);
-      fsCelestialPositions.push({ x: p.x, y: p.y, name, desc, r: s + 6 });
+      fsCelestialPositions.push({ x: p.x, y: p.y, name, desc, r: s + 6, type });
     }
 
     // ── Points cardinaux projetés à l'horizon
