@@ -22,6 +22,7 @@ export interface ProductConfig {
   seoKeywords: string;
   ogImage?: string;
   structuredData?: any;
+  category?: string;
   draft?: boolean;
   sections: SectionConfig[];
   navigationItems?: NavigationItem[];
@@ -58,6 +59,7 @@ const {
   seoKeywords,
   ogImage,
   structuredData,
+  category,
   draft,
   sections,
   navigationItems = [],
@@ -88,8 +90,7 @@ const productName = heroSection?.data?.title || 'Produit';
 const urlPath = Astro.url.pathname;
 const productSlug = urlPath.split('/').filter(Boolean).pop() || '';
 
-// Get category from structured data
-const category = structuredData?.category;
+// category comes from product JSON top-level field
 
 // Build breadcrumbs
 const breadcrumbItems = [

@@ -71,7 +71,9 @@ const { title, images, background = 'light' } = Astro.props;
 		cursor: pointer;
 	}
 
-	.gallery-grid img:hover {
-		transform: scale(1.05);
+	@media (hover: hover) {
+		.gallery-grid img:hover {
+			transform: scale(1.05);
+		}
 	}
 </style>

@@ -81,6 +81,7 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 				<div class="hero-image-wrapper">
 					<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
 					{showFabLogo && <img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />}
+					{imageOverlayText && <div class="image-overlay-badge">{imageOverlayText}</div>}
 				</div>
 			</div>
 		)}
@@ -91,9 +92,14 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 	.hero-product {
 		padding: 4rem 0;
 		background: linear-gradient(135deg, var(--gray-999) 0%, var(--gray-900) 100%);
-		min-height: 80vh;
 		display: flex;
 		align-items: center;
+	}
+
+	@media (min-width: 769px) {
+		.hero-product {
+			min-height: 80vh;
+		}
 	}
 
 	.hero-content {

@@ -23,7 +23,7 @@ let relatedProducts = allProducts.filter(product => {
 
   // Filter by category if specified
   if (category) {
-    return product.data.structuredData?.category === category;
+    return product.data.category === category;
   }
 
   return true;

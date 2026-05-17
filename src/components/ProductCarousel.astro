@@ -137,12 +137,14 @@ const products = filteredProducts.sort((a, b) => {
     transform: scale(var(--img-zoom, 1.25));
   }
 
-  .product-card:hover img {
-    transform: scale(1.05);
-  }
+  @media (hover: hover) {
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
 
-  .product-card:hover img.zoomed {
-    transform: scale(calc(var(--img-zoom, 1.25) + 0.05));
+    .product-card:hover img.zoomed {
+      transform: scale(calc(var(--img-zoom, 1.25) + 0.05));
+    }
   }
 
   .product-info {
@@ -259,14 +261,11 @@ const products = filteredProducts.sort((a, b) => {
     const slides = carousel.querySelectorAll('.carousel-slide');
     const dots = carousel.querySelectorAll('.dot');
     let currentIndex = 0;
+    let autoInterval: ReturnType<typeof setInterval> | null = null;
 
     function showSlide(index: number) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
     }
 
     function nextSlide() {
@@ -274,19 +273,45 @@ const products = filteredProducts.sort((a, b) => {
       showSlide(currentIndex);
     }
 
-    // Auto-advance every 5 seconds
-    const interval = setInterval(nextSlide, 5000);
+    function startAuto() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(nextSlide, 5000);
+    }
 
-    // Dot click handlers
+    // Dot click handlers — restart auto-advance after 8s
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         currentIndex = index;
         showSlide(currentIndex);
-        clearInterval(interval);
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setTimeout(startAuto, 8000) as unknown as ReturnType<typeof setInterval>;
       });
     });
 
-    // Initialize first slide
+    // Swipe / touch support
+    const container = carousel.querySelector('.carousel-container') as HTMLElement;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    container.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      // Only trigger if horizontal swipe dominates
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        currentIndex = dx < 0
+          ? (currentIndex + 1) % slides.length
+          : (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+        startAuto();
+      }
+    }, { passive: true });
+
     showSlide(0);
+    startAuto();
   });
 </script>

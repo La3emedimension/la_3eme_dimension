@@ -37,19 +37,14 @@ const { items } = Astro.props;
 	
 	if (navigation && navLinks.length > 0) {
 		// Hide/show navigation based on scroll
-		let lastScrollY = window.scrollY;
 		let isNavVisible = false;
-		
+
 		function updateNavVisibility() {
-			const currentScrollY = window.scrollY;
-			const shouldShow = currentScrollY > 400; // Show after hero section
-			
+			const shouldShow = window.scrollY > 400;
 			if (shouldShow !== isNavVisible) {
 				isNavVisible = shouldShow;
 				navigation.classList.toggle('visible', shouldShow);
 			}
-			
-			lastScrollY = currentScrollY;
 		}
 		
 		// Scroll spy - highlight current section
@@ -80,7 +75,7 @@ const { items } = Astro.props;
 		navLinks.forEach(link => {
 			link.addEventListener('click', (e) => {
 				// Special handling for community - redirect to community page
-				if (link.dataset.section === 'section-community') {
+				if (link.dataset.section === 'community') {
 					window.location.href = 'https://la3emedim.fr/carte-communaute';
 					return;
 				}
@@ -182,21 +177,9 @@ const { items } = Astro.props;
 	
 	
 	/* Only show on desktop */
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		.product-navigation {
 			display: block;
-		}
-	}
-	
-	/* Adjust for smaller desktop screens */
-	@media (max-width: 1200px) {
-		.product-navigation {
-			right: 1rem;
-		}
-		
-		.nav-link {
-			font-size: 0.8rem;
-			padding: 0.6rem 0.8rem;
 		}
 	}
 </style>
