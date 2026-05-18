@@ -1,9 +1,9 @@
 {
-  "seoTitle": "Miroir 150/750 pour Smallest - Optique Testé Interféromètre 250€ | La 3ème dimension",
-  "seoDescription": "Miroir parabolique 150mm f/5 testé interféromètre + secondaire 35mm pour télescope Newton Smallest. Optique astronomique industrielle de qualité. Masque chanfrein inclus. 250€.",
+  "seoTitle": "Miroir 150/750 pour Smallest - Optique Testé Interféromètre 299€ | La 3ème dimension",
+  "seoDescription": "Miroir parabolique 150mm f/5 testé interféromètre + secondaire 35mm pour télescope Newton Smallest. Optique astronomique industrielle de qualité. Masque chanfrein inclus. 299€.",
   "seoKeywords": "miroir parabolique 150mm, miroir astronomique, télescope newton 150, optique interféromètre, miroir secondaire 35mm, smallest telescope, accessoire astronomie, observation ciel profond, miroir f/5, optique qualité",
   "ogImage": "https://la3emedim.fr/assets/miroir150/150-750.png",
-  "price": "250€",
+  "price": "299€",
   "priceNote": "Set complet",
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
@@ -44,7 +44,7 @@
     "category": "Optique astronomique",
     "offers": {
       "@type": "Offer",
-      "price": "250",
+      "price": "299",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -88,7 +88,7 @@
           }
         ],
         "primaryCta": {
-          "text": "Commander - 250€",
+          "text": "Commander - 299€",
           "href": "#section-pricing"
         },
         "heroImage": {
@@ -193,7 +193,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Set complet Primaire + Secondaire",
-        "price": "250€",
+        "price": "299€",
         "priceNote": "Optiques industrielles",
         "included": [
           "Miroir primaire parabolique 150mm f/5",
@@ -204,7 +204,7 @@
           "Conseils de montage"
         ],
         "ctaText": "Commander",
-        "ctaHref": "https://buy.stripe.com/8x2cN72Rkadlgiv02867S0j",
+        "ctaHref": "https://buy.stripe.com/9B628t2RkgBJean8yE67S0m",
         "optionsTitle": "Informations complémentaires",
         "options": [
           {

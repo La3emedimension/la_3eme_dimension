@@ -3,7 +3,7 @@
   "seoDescription": "150mm f/5 parabolic primary mirror tested with interferometer + 35mm secondary mirror for Smallest telescope. Bevel mask included for primary.",
   "seoKeywords": "150mm mirror, parabolic mirror, 35mm secondary mirror, smallest, newton telescope, interferometer, bevel mask, astronomical optics",
   "ogImage": "https://la3emedim.fr/assets/miroir150/150-750.png",
-  "price": "250€",
+  "price": "299€",
   "priceNote": "Complete set",
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
@@ -44,7 +44,7 @@
     "category": "Astronomical Optics",
     "offers": {
       "@type": "Offer",
-      "price": "250",
+      "price": "299",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -88,7 +88,7 @@
           }
         ],
         "primaryCta": {
-          "text": "Order - 250€",
+          "text": "Order - 299€",
           "href": "mailto:la3emedim@gmail.com?subject=Order 150/750 mirror for Smallest"
         },
         "heroImage": {
@@ -193,7 +193,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Complete Primary + Secondary Set",
-        "price": "250€",
+        "price": "299€",
         "priceNote": "Industrial optics",
         "included": [
           "150mm f/5 parabolic primary mirror",
