@@ -42,7 +42,7 @@ export const collections = {
 			
 			// Product sections configuration
 			sections: z.array(z.object({
-				type: z.enum(['hero', 'gallery', 'video', 'features', 'specs', 'pricing', 'custom']),
+				type: z.enum(['hero', 'gallery', 'video', 'features', 'specs', 'pricing', 'custom', 'reviews']),
 				id: z.string().optional(),
 				data: z.any()
 			})),

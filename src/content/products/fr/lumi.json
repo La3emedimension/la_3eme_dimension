@@ -61,16 +61,6 @@
 
     {
       "type": "video",
-      "id": "section-video",
-      "data": {
-        "title": "Montage simple et éducatif",
-        "description": "Découvrez comment assembler facilement la lunette Lumi. Chaque module n'a qu'un seul sens de montage pour un apprentissage optimal.",
-        "videoId": "GQQfFflsZY0",
-        "videoTitle": "Assemblage de la lunette astronomique éducative Lumi"
-      }
-    },
-    {
-      "type": "video",
       "id": "section-video-2",
       "data": {
         "title": "Démonstration rapide",
@@ -154,6 +144,26 @@
           "src": "/assets/Filtreert.jpg",
           "alt": "Porte-filtre pour la lunette Lumi"
         }
+      }
+    },
+    {
+      "type": "reviews",
+      "id": "section-reviews",
+      "data": {
+        "productName": "Lumi",
+        "averageRating": 5,
+        "totalReviews": 1,
+        "reviews": [
+          {
+            "author": "Maxime G.",
+            "rating": 5,
+            "date": "2026-05-12",
+            "title": "Un superbe cadeau d'anniversaire pour ma fille… et un peu pour moi aussi !",
+            "content": "Un superbe cadeau d'anniversaire pour ma fille… et un peu pour moi aussi, je l'avoue ! Le montage est très bien pensé et permet de comprendre facilement le fonctionnement du télescope. Le monter en famille a été un vrai moment de partage. Les images sont magnifiques, très nettes, et le design est vraiment superbe. À la fois éducatif et élégant, il donne immédiatement envie d'observer le ciel. On a hâte de profiter des prochaines nuits étoilées !",
+            "verified": true,
+            "images": ["/assets/MG1.JPG", "/assets/MG2.JPG", "/assets/MG3.JPG", "/assets/MG4.JPG"]
+          }
+        ]
       }
     },
     {
@@ -342,12 +352,12 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
-    { "id": "video", "label": "Montage détaillé" },
     { "id": "video-2", "label": "Montage rapide" },
     { "id": "video-3", "label": "Ciel et Espace" },
     { "id": "video-4", "label": "Test terrain" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Porte filtre" },
+    { "id": "reviews", "label": "Avis clients" },
     { "id": "gallery", "label": "Galerie" },
     { "id": "clef-etoiles", "label": "Où le voir" },
     { "id": "pricing", "label": "Tarifs" },

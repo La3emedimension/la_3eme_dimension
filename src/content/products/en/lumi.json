@@ -59,16 +59,6 @@
     },
     {
       "type": "video",
-      "id": "section-video",
-      "data": {
-        "title": "Simple and educational assembly",
-        "description": "Discover how to easily assemble the Lumi telescope. Each module has only one mounting direction for optimal learning.",
-        "videoId": "GQQfFflsZY0",
-        "videoTitle": "Assembly of the Lumi educational astronomical telescope"
-      }
-    },
-    {
-      "type": "video",
       "id": "section-video-2",
       "data": {
         "title": "Quick demonstration",
@@ -142,6 +132,26 @@
           "src": "/assets/Filtreert.jpg",
           "alt": "Filter holder for the Lumi telescope"
         }
+      }
+    },
+    {
+      "type": "reviews",
+      "id": "section-reviews",
+      "data": {
+        "productName": "Lumi",
+        "averageRating": 5,
+        "totalReviews": 1,
+        "reviews": [
+          {
+            "author": "Maxime G.",
+            "rating": 5,
+            "date": "2026-05-12",
+            "title": "A wonderful birthday gift for my daughter… and a little for me too!",
+            "content": "A wonderful birthday gift for my daughter… and a little for me too, I'll admit! The assembly is very well thought out and makes it easy to understand how the telescope works. Assembling it as a family was a real moment of togetherness. The images are magnificent, very sharp, and the design is truly superb. Both educational and elegant, it immediately makes you want to observe the sky. We can't wait for the next starry nights!",
+            "verified": true,
+            "images": ["/assets/MG1.JPG", "/assets/MG2.JPG", "/assets/MG3.JPG", "/assets/MG4.JPG"]
+          }
+        ]
       }
     },
     {
@@ -325,11 +335,11 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Overview" },
-    { "id": "video", "label": "Detailed assembly" },
     { "id": "video-2", "label": "Quick assembly" },
     { "id": "video-3", "label": "Field test" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Filters" },
+    { "id": "reviews", "label": "Reviews" },
     { "id": "gallery", "label": "Gallery" },
     { "id": "pricing", "label": "Pricing" },
     { "id": "features", "label": "Benefits" }
