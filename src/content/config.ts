@@ -24,6 +24,10 @@ export const collections = {
 			// Carousel override image
 			carouselImage: z.object({ src: z.string(), alt: z.string().optional(), zoom: z.number().optional() }).optional(),
 
+			// Carousel video — local file path (prioritaire) ou ID YouTube
+			carouselVideoSrc: z.string().optional(),
+			carouselVideo: z.string().optional(),
+
 			// Shop page preview image override
 			shopImage: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
 

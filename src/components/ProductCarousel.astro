@@ -40,10 +40,54 @@ const products = filteredProducts.sort((a, b) => {
       const heroSection = product.data.sections.find(s => s.type === 'hero');
       const heroData = heroSection?.data;
       const carouselImage = product.data.carouselImage ?? heroData?.heroImage;
+      const carouselVideoSrc = product.data.carouselVideoSrc;
+      const carouselVideo = product.data.carouselVideo;
 
       const productSlug = product.id.replace(`${locale}/`, '');
       const isLumi = productSlug === 'lumi';
       const isSmallest = productSlug === 'smallest';
+
+      const productInfoContent = (
+        <div class="product-info">
+          <h3>{!isLumi && !isSmallest && (heroData?.title || product.id)}</h3>
+          {isLumi && <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />}
+          {isSmallest && <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" />}
+          {isSmallest && <p class="carousel-subtitle">Le Télescope de 150mm le plus transportable au monde</p>}
+          {heroData?.tagline && <p class={isLumi ? 'carousel-subtitle' : 'carousel-text'}>{heroData.tagline}</p>}
+          {isLumi && <p class="carousel-text">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. » — Carl Sagan</p>}
+        </div>
+      );
+
+      if (carouselVideoSrc) {
+        return (
+          <div class="carousel-slide" data-index={index} data-video="true">
+            <div class="video-fill">
+              <video autoplay muted playsinline>
+                <source src={carouselVideoSrc} type="video/webm" />
+              </video>
+            </div>
+            <a href={`/product/${productSlug}`} class="slide-link-overlay"></a>
+            {productInfoContent}
+          </div>
+        );
+      }
+
+      if (carouselVideo) {
+        return (
+          <div class="carousel-slide" data-index={index} data-video="true">
+            <div class="video-fill">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${carouselVideo}?autoplay=1&mute=1&loop=1&playlist=${carouselVideo}&controls=0&rel=0&playsinline=1`}
+                title={heroData?.title || 'Vidéo produit'}
+                allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a href={`/product/${productSlug}`} class="slide-link-overlay"></a>
+            {productInfoContent}
+          </div>
+        );
+      }
 
       return (
         <div class="carousel-slide" data-index={index}>
@@ -57,24 +101,7 @@ const products = filteredProducts.sort((a, b) => {
                 class={carouselImage.zoom ? 'zoomed' : ''}
               />
             )}
-            <div class="product-info">
-              <h3>
-                {!isLumi && !isSmallest && (heroData?.title || product.id)}
-              </h3>
-              {isLumi && (
-                <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />
-              )}
-              {isSmallest && (
-                <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" />
-              )}
-              {isSmallest && (
-                <p class="carousel-subtitle">Le Télescope de 150mm le plus transportable au monde</p>
-              )}
-              {heroData?.tagline && <p class={isLumi ? 'carousel-subtitle' : 'carousel-text'}>{heroData.tagline}</p>}
-              {isLumi && (
-                <p class="carousel-text">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. » — Carl Sagan</p>
-              )}
-            </div>
+            {productInfoContent}
           </a>
         </div>
       );
@@ -216,6 +243,46 @@ const products = filteredProducts.sort((a, b) => {
     }
   }
 
+  /* Video slide */
+  .video-fill {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-fill video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .video-fill iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    min-height: 100%;
+    border: none;
+    pointer-events: none;
+  }
+
+  .slide-link-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .carousel-slide[data-video] .product-info {
+    position: absolute;
+    z-index: 2;
+  }
+
   .carousel-dots {
     position: absolute;
     bottom: 1rem;
@@ -263,9 +330,23 @@ const products = filteredProducts.sort((a, b) => {
     let currentIndex = 0;
     let autoInterval: ReturnType<typeof setInterval> | null = null;
 
+    function isVideoSlide(index: number) {
+      return (slides[index] as HTMLElement)?.dataset.video === 'true';
+    }
+
     function showSlide(index: number) {
       slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
       dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      // Pause auto-advance sur les slides vidéo et relancer la vidéo
+      if (isVideoSlide(index)) {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = null;
+        const video = (slides[index] as HTMLElement).querySelector('video');
+        if (video) {
+          video.currentTime = 0;
+          video.play();
+        }
+      }
     }
 
     function nextSlide() {
@@ -275,16 +356,20 @@ const products = filteredProducts.sort((a, b) => {
 
     function startAuto() {
       if (autoInterval) clearInterval(autoInterval);
-      autoInterval = setInterval(nextSlide, 5000);
+      if (!isVideoSlide(currentIndex)) {
+        autoInterval = setInterval(nextSlide, 5000);
+      }
     }
 
-    // Dot click handlers — restart auto-advance after 8s
+    // Dot click handlers — restart auto-advance after 8s (sauf sur slide vidéo)
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         currentIndex = index;
         showSlide(currentIndex);
         if (autoInterval) clearInterval(autoInterval);
-        autoInterval = setTimeout(startAuto, 8000) as unknown as ReturnType<typeof setInterval>;
+        if (!isVideoSlide(currentIndex)) {
+          autoInterval = setTimeout(startAuto, 8000) as unknown as ReturnType<typeof setInterval>;
+        }
       });
     });
 
@@ -310,6 +395,19 @@ const products = filteredProducts.sort((a, b) => {
         startAuto();
       }
     }, { passive: true });
+
+    // Avancer au slide suivant à la fin de chaque vidéo
+    slides.forEach((slide) => {
+      const video = slide.querySelector('video');
+      if (video) {
+        video.addEventListener('ended', () => {
+          video.loop = false;
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+          startAuto();
+        });
+      }
+    });
 
     showSlide(0);
     startAuto();
