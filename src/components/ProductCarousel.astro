@@ -210,12 +210,19 @@ const products = filteredProducts.sort((a, b) => {
   }
 
   .carousel-text {
-    margin: 0.25rem 0 0 0;
-    font-size: 0.875rem;
-    font-style: italic;
-    opacity: 0.9;
-    color: white;
-    line-height: 1.4;
+    display: none;
+  }
+
+  @media (min-width: 50em) {
+    .carousel-text {
+      display: block;
+      margin: 0.25rem 0 0 0;
+      font-size: 0.875rem;
+      font-style: italic;
+      opacity: 0.9;
+      color: white;
+      line-height: 1.4;
+    }
   }
 
   .carousel-subtitle {
