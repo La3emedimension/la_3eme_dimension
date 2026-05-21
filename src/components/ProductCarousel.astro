@@ -399,11 +399,29 @@ const products = filteredProducts.sort((a, b) => {
     slides.forEach((slide) => {
       const video = slide.querySelector('video');
       if (video) {
-        video.addEventListener('ended', () => {
-          video.loop = false;
+        let advanced = false;
+
+        function advanceFromVideo() {
+          if (advanced) return;
+          advanced = true;
           currentIndex = (currentIndex + 1) % slides.length;
           showSlide(currentIndex);
           startAuto();
+        }
+
+        // Méthode principale
+        video.addEventListener('ended', advanceFromVideo);
+
+        // Filet de sécurité : avance si on est à moins de 0.3s de la fin
+        video.addEventListener('timeupdate', () => {
+          if (video.duration && video.currentTime >= video.duration - 0.3) {
+            advanceFromVideo();
+          }
+        });
+
+        // Réinitialise le flag quand la vidéo repart depuis le début
+        video.addEventListener('play', () => {
+          if (video.currentTime < 0.5) advanced = false;
         });
       }
     });
