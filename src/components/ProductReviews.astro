@@ -18,7 +18,11 @@ interface Props {
 
 const { reviews, averageRating, totalReviews, productName } = Astro.props;
 
-// Generate structured data for reviews
+const groups: Review[][] = [];
+for (let i = 0; i < reviews.length; i += 2) {
+  groups.push(reviews.slice(i, i + 2));
+}
+
 const reviewsStructuredData = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -32,10 +36,7 @@ const reviewsStructuredData = {
   },
   "review": reviews.map(review => ({
     "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": review.author
-    },
+    "author": { "@type": "Person", "name": review.author },
     "datePublished": review.date,
     "reviewRating": {
       "@type": "Rating",
@@ -48,10 +49,7 @@ const reviewsStructuredData = {
   }))
 };
 
-// Helper to render stars
-const renderStars = (rating: number) => {
-  return Array.from({ length: 5 }, (_, i) => i < rating);
-};
+const renderStars = (rating: number) => Array.from({ length: 5 }, (_, i) => i < rating);
 ---
 
 <section class="reviews-section" id="reviews">
@@ -70,51 +68,67 @@ const renderStars = (rating: number) => {
       </div>
     </div>
 
-    <div class="reviews-grid">
-      {reviews.map((review) => (
-        <article class="review-card">
-          <div class="review-header">
-            <div class="review-author">
-              <div class="author-avatar">
-                {review.author.charAt(0).toUpperCase()}
+    <div class="reviews-carousel">
+      {groups.map((group, gi) => (
+        <div class={`reviews-slide${gi === 0 ? ' active' : ''}`}>
+          {group.map((review) => (
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-author">
+                  <div class="author-avatar">
+                    {review.author.charAt(0).toUpperCase()}
+                  </div>
+                  <div class="author-info">
+                    <p class="author-name">
+                      {review.author}
+                      {review.verified && <span class="verified-badge" title="Achat vérifié">✓</span>}
+                    </p>
+                    <p class="review-date">{new Date(review.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  </div>
+                </div>
+                <div class="review-stars">
+                  {renderStars(review.rating).map(filled => (
+                    <span class={filled ? "star filled" : "star empty"}>★</span>
+                  ))}
+                </div>
               </div>
-              <div class="author-info">
-                <p class="author-name">
-                  {review.author}
-                  {review.verified && <span class="verified-badge" title="Achat vérifié">✓</span>}
-                </p>
-                <p class="review-date">{new Date(review.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              </div>
-            </div>
-            <div class="review-stars">
-              {renderStars(review.rating).map(filled => (
-                <span class={filled ? "star filled" : "star empty"}>★</span>
-              ))}
-            </div>
-          </div>
-          <h3 class="review-title">{review.title}</h3>
-          <p class="review-content">{review.content}</p>
-          {review.images && review.images.length > 0 && (
-            <div class="review-images">
-              {review.images.map((src, i) => (
-                <img
-                  src={src}
-                  alt={`Photo de ${review.author} ${i + 1}`}
-                  class="review-image lightbox-trigger"
-                  data-src={src}
-                  data-caption={`Photo de ${review.author}`}
-                  loading="lazy"
-                />
-              ))}
-            </div>
-          )}
-        </article>
+              <h3 class="review-title">{review.title}</h3>
+              <p class="review-content">{review.content}</p>
+              {review.images && review.images.length > 0 && (
+                <div class="review-images">
+                  {review.images.map((src, i) => (
+                    <img
+                      src={src}
+                      alt={`Photo de ${review.author} ${i + 1}`}
+                      class="review-image lightbox-trigger"
+                      data-src={src}
+                      data-caption={`Photo de ${review.author}`}
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
       ))}
+
+      {groups.length > 1 && (
+        <div class="carousel-nav">
+          <button class="carousel-btn carousel-prev" aria-label="Précédent">&#8593;</button>
+          <div class="carousel-dots">
+            {groups.map((_, i) => (
+              <button class={`dot ${i === 0 ? 'active' : ''}`} data-index={i}></button>
+            ))}
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Suivant">&#8595;</button>
+        </div>
+      )}
     </div>
 
     <div class="reviews-cta">
       <p>Vous avez acheté ce produit ?</p>
-      <a href="mailto:la3emedim@gmail.com?subject=Avis sur {productName}" class="cta-button">
+      <a href={`mailto:la3emedim@gmail.com?subject=Avis sur ${productName}`} class="cta-button">
         Laisser un avis
       </a>
     </div>
@@ -122,6 +136,27 @@ const renderStars = (rating: number) => {
 </section>
 
 <script type="application/ld+json" set:html={JSON.stringify(reviewsStructuredData)} />
+
+<script>
+  document.querySelectorAll('.reviews-carousel').forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('.reviews-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.dot'));
+    const total = slides.length;
+    let current = 0;
+
+    function goTo(index: number) {
+      slides[current].classList.remove('active');
+      current = (index + total) % total;
+      slides[current].classList.add('active');
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    carousel.querySelector('.carousel-prev')?.addEventListener('click', () => goTo(current - 1));
+    carousel.querySelector('.carousel-next')?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  });
+</script>
+
 
 <style>
   .reviews-section {
@@ -158,43 +193,83 @@ const renderStars = (rating: number) => {
     gap: 0.25rem;
   }
 
-  .star {
-    font-style: normal;
-    line-height: 1;
-  }
-
-  .stars-large .star {
-    font-size: 1.75rem;
-  }
-
-  .review-stars .star {
-    font-size: 1.1rem;
-  }
-
-  .star.filled {
-    color: #FFD700;
-  }
-
-  .star.empty {
-    color: #4a4a4a;
-  }
+  .star { font-style: normal; line-height: 1; }
+  .stars-large .star { font-size: 1.75rem; }
+  .review-stars .star { font-size: 1.1rem; }
+  .star.filled { color: #FFD700; }
+  .star.empty { color: #4a4a4a; }
 
   .rating-text {
     font-size: var(--text-lg);
     color: var(--gray-300);
   }
 
-  .rating-text strong {
-    color: var(--gray-0);
-  }
+  .rating-text strong { color: var(--gray-0); }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .reviews-carousel {
     margin-bottom: 3rem;
   }
 
+  .reviews-slide {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .reviews-slide.active {
+    display: flex;
+  }
+
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .carousel-btn {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    color: var(--gray-0);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: var(--accent-regular);
+    border-color: var(--accent-regular);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--gray-600);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: var(--accent-regular);
+    width: 1.5rem;
+    border-radius: 0.25rem;
+  }
+
+  /* Cards */
   .review-card {
     background: var(--gray-999);
     border: 1px solid var(--gray-800);
@@ -233,6 +308,7 @@ const renderStars = (rating: number) => {
     justify-content: center;
     font-weight: 700;
     font-size: var(--text-lg);
+    flex-shrink: 0;
   }
 
   .author-info {
@@ -307,6 +383,7 @@ const renderStars = (rating: number) => {
     box-shadow: var(--shadow-md);
   }
 
+  /* CTA */
   .reviews-cta {
     text-align: center;
     padding: 2rem;
@@ -343,10 +420,6 @@ const renderStars = (rating: number) => {
   @media (max-width: 50em) {
     .reviews-container {
       padding: 0 1rem;
-    }
-
-    .reviews-grid {
-      grid-template-columns: 1fr;
     }
 
     .reviews-header h2 {
