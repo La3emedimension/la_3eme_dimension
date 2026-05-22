@@ -91,18 +91,17 @@ const products = filteredProducts.sort((a, b) => {
 
       return (
         <div class="carousel-slide" data-index={index}>
-          <a href={`/product/${productSlug}`} class="product-card">
-            {carouselImage?.src && (
-              <img
-                src={carouselImage.src}
-                alt={carouselImage.alt || heroData?.title}
-                loading="lazy"
-                style={[carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : '', carouselImage.position ? `object-position: ${carouselImage.position}` : ''].filter(Boolean).join('; ')}
-                class={carouselImage.zoom ? 'zoomed' : ''}
-              />
-            )}
-            {productInfoContent}
-          </a>
+          {carouselImage?.src && (
+            <img
+              src={carouselImage.src}
+              alt={carouselImage.alt || heroData?.title}
+              loading="lazy"
+              class={`slide-img${carouselImage.zoom ? ' zoomed' : ''}`}
+              style={[carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : '', carouselImage.position ? `object-position: ${carouselImage.position}` : ''].filter(Boolean).join('; ')}
+            />
+          )}
+          <a href={`/product/${productSlug}`} class="slide-link-overlay"></a>
+          {productInfoContent}
         </div>
       );
     })}
@@ -143,35 +142,17 @@ const products = filteredProducts.sort((a, b) => {
     pointer-events: auto;
   }
 
-  .product-card {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    text-decoration: none;
-    overflow: hidden;
-  }
-
-  .product-card img {
+  .slide-img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 60%;
-    transition: transform 0.3s ease;
   }
 
-  .product-card img.zoomed {
+  .slide-img.zoomed {
     transform: scale(var(--img-zoom, 1.25));
-  }
-
-  @media (hover: hover) {
-    .product-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .product-card:hover img.zoomed {
-      transform: scale(calc(var(--img-zoom, 1.25) + 0.05));
-    }
   }
 
   .product-info {

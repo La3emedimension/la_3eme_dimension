@@ -64,16 +64,6 @@
       "type": "video",
       "id": "section-video-2",
       "data": {
-        "title": "Démonstration rapide",
-        "description": "Aperçu du montage de la lunette Lumi en version courte.",
-        "videoId": "fL8zU5coKBg",
-        "videoTitle": "Montage rapide de la lunette Lumi"
-      }
-    },
-    {
-      "type": "video",
-      "id": "section-video-3",
-      "data": {
         "title": "Ciel et Espace en parle",
         "description": "Les nouveautés astro 2026 ch.1",
         "videoId": "ocNVXNSKH3g",
@@ -82,12 +72,32 @@
     },
     {
       "type": "video",
-      "id": "section-video-4",
+      "id": "section-video-3",
       "data": {
         "title": "Montage par Rgt Lab",
         "description": "",
         "videoId": "YG80mhXsRSU",
         "videoTitle": "Montage de la lunette Lumi par Rgt Lab"
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video-4",
+      "data": {
+        "title": "La Lumi en action",
+        "description": "",
+        "videoId": "PJvhkdXDBHQ",
+        "videoTitle": "La lunette Lumi en démonstration"
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video-5",
+      "data": {
+        "title": "Démonstration rapide",
+        "description": "Aperçu du montage de la lunette Lumi en version courte.",
+        "videoId": "fL8zU5coKBg",
+        "videoTitle": "Montage rapide de la lunette Lumi"
       }
     },
     {
@@ -353,9 +363,10 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Présentation" },
-    { "id": "video-2", "label": "Montage rapide" },
-    { "id": "video-3", "label": "Ciel et Espace" },
-    { "id": "video-4", "label": "Test terrain" },
+    { "id": "video-2", "label": "Ciel et Espace" },
+    { "id": "video-3", "label": "Rgt Lab" },
+    { "id": "video-4", "label": "En action" },
+    { "id": "video-5", "label": "Montage rapide" },
     { "id": "specs", "label": "Modules" },
     { "id": "filter", "label": "Porte filtre" },
     { "id": "reviews", "label": "Avis clients" },
