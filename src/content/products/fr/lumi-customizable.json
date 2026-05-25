@@ -1,0 +1,220 @@
+{
+  "carouselImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - couleurs personnalisées" },
+  "carouselVideoSrc": "/assets/Carroussel.webm",
+  "seoTitle": "Lumi Customizable - Lunette Astronomique Personnalisée | La 3ème dimension",
+  "seoDescription": "Lumi Customizable : la lunette astronomique pédagogique avec votre prénom gravé sur le tube bleu. Un cadeau unique fabriqué en France, à assembler soi-même.",
+  "seoKeywords": "lunette astronomique personnalisée, prénom gravé lunette, cadeau astronomie original, kit astronomie personnalisable, lunette 3D impression, astronomie toulouse, lunette pédagogique unique",
+  "ogImage": "https://la3emedim.fr/assets/ertcolor1.jpeg",
+  "price": "259€",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Lumi Customizable - Lunette Astronomique Personnalisée",
+    "description": "Lunette astronomique pédagogique avec le prénom du destinataire gravé sur le tube bleu. Un cadeau unique et mémorable, fabriqué en France.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Instruments éducatifs",
+    "offers": {
+      "@type": "Offer",
+      "price": "259",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/ertcolor1.jpeg",
+    "features": [
+      "Couleurs d'impression personnalisables",
+      "Assemblage sans notice",
+      "Fabriquée en France, impression 3D",
+      "Observation Lune, planètes et amas d'étoiles",
+      "Kit complet prêt à assembler"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Lumi Customizable",
+        "tagline": "Votre lunette, votre prénom",
+        "description": "La Lumi que vous connaissez, avec le prénom du destinataire gravé sur le tube bleu. Un cadeau astronomique unique, fabriqué à la main en France.",
+        "features": [
+          { "icon": "strategy", "text": "Prénom gravé sur le tube" },
+          { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
+          { "icon": "terminal-window", "text": "Montage intuitif" }
+        ],
+        "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
+        "heroImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - lunette astronomique personnalisée" },
+        "logoImage": "/assets/logolumi.png"
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery-colors",
+      "data": {
+        "title": "Exemples de personnalisation",
+        "images": [
+          {
+            "src": "/assets/ertcolor1.jpeg",
+            "alt": "Lumi couleur variante 1",
+            "caption": "Variante de couleur pour la lunette astronomique Lumi"
+          },
+          {
+            "src": "/assets/ertcolor2.jpeg",
+            "alt": "Lumi couleur variante 2",
+            "caption": "Personnalisation avec différentes couleurs d'impression"
+          },
+          {
+            "src": "/assets/ertcolor3.jpeg",
+            "alt": "Lumi couleur variante 3",
+            "caption": "Exemple de customisation de couleur"
+          },
+          {
+            "src": "/assets/ertcolor4.jpeg",
+            "alt": "Lumi couleur variante 4",
+            "caption": "Diversité des options de couleurs disponibles"
+          },
+          {
+            "src": "/assets/ertcolor5.jpeg",
+            "alt": "Lumi couleur variante 5",
+            "caption": "Rendu visuel avec une autre palette de couleurs"
+          },
+          {
+            "src": "/assets/ertcolor6.jpeg",
+            "alt": "Lumi couleur variante 6",
+            "caption": "Adaptation selon vos préférences"
+          },
+          {
+            "src": "/assets/ertcolor7.jpeg",
+            "alt": "Lumi couleur variante 7",
+            "caption": "Dernière variante de couleur"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features-custom",
+      "data": {
+        "title": "Pourquoi choisir la Customizable ?",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "Un prénom gravé pour toujours",
+            "description": "Le prénom du destinataire est inscrit sur le tube bleu de la lunette. Un détail qui transforme un instrument en souvenir."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "Le cadeau astronomique idéal",
+            "description": "Offrez une lunette vraiment unique — pour un anniversaire, Noël, ou simplement pour transmettre la passion du ciel."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Même qualité optique",
+            "description": "Mêmes lentilles, même mécanique, même montage intuitif que la Lumi standard — juste en plus mémorable."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Fabriquée en France",
+            "description": "Impression 3D artisanale à Toulouse. Chaque pièce est fabriquée à la commande."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Modules et spécifications",
+        "specGroups": [
+          {
+            "title": "Modules inclus",
+            "specs": {
+              "Barillet lentille": "Objectif principal",
+              "Baffle": "Anti-lumière parasite",
+              "Tube optique": "Structure principale",
+              "Porte-oculaire": "Standard 1.25\"",
+              "Renvoi coudé": "Avec prisme",
+              "Oculaire": "Inclus"
+            }
+          },
+          {
+            "title": "Caractéristiques",
+            "specs": {
+              "Type": "Lunette astronomique",
+              "Optique": "Doublet achromatique 50/200",
+              "Oculaire": "20mm",
+              "Usage": "Éducatif/Initiation",
+              "Montage": "Intuitif, un seul sens",
+              "Observations": "Lune, amas, galaxies",
+              "Personnalisation": "Prénom gravé sur le tube bleu"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-filter",
+      "data": {
+        "title": "Porte-filtre inclus",
+        "tagline": "",
+        "description": "Le pack Lumi Customizable inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses.",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/Filtreert.jpg",
+          "alt": "Porte-filtre pour la lunette Lumi"
+        }
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Kit Lumi Customizable",
+        "price": "259€",
+        "priceNote": "Kit de montage + prénom gravé sur le tube bleu",
+        "included": [
+          "Prénom gravé sur le tube bleu",
+          "Lentille objectif 50mm",
+          "Oculaire 25mm",
+          "Prisme renvoi coudé",
+          "Instructions de montage détaillées",
+          "Support pédagogique",
+          "Quelques objets du ciel à observer",
+          "Monture intégrée"
+        ],
+        "ctaText": "Nous contacter",
+        "ctaHref": "mailto:la3emedim@gmail.com",
+        "afterCtaNote": "Précisez le prénom à graver dans votre message. Chaque pièce étant fabriquée artisanalement, prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "gallery-colors", "label": "Couleurs" },
+    { "id": "features-custom", "label": "Avantages" },
+    { "id": "specs", "label": "Modules" },
+    { "id": "filter", "label": "Porte-filtre" },
+    { "id": "pricing", "label": "Tarifs" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "astronomie",
+  "draft": true
+}

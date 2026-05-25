@@ -1,0 +1,220 @@
+{
+  "carouselImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - custom colors" },
+  "carouselVideoSrc": "/assets/Carroussel.webm",
+  "seoTitle": "Lumi Customizable - Personalized Astronomical Telescope | La 3ème dimension",
+  "seoDescription": "Lumi Customizable: the educational astronomical telescope with your first name engraved on the blue tube. A unique gift made in France, to assemble yourself.",
+  "seoKeywords": "personalized astronomical telescope, engraved name telescope, original astronomy gift, customizable astronomy kit, 3D printed telescope, astronomy toulouse, unique educational telescope",
+  "ogImage": "https://la3emedim.fr/assets/ertcolor1.jpeg",
+  "price": "€259",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Lumi Customizable - Personalized Astronomical Telescope",
+    "description": "Educational astronomical telescope with the recipient's first name engraved on the blue tube. A unique and memorable gift, made in France.",
+    "brand": {
+      "@type": "Brand",
+      "name": "La 3ème dimension"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr"
+    },
+    "category": "Educational instruments",
+    "offers": {
+      "@type": "Offer",
+      "price": "259",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "La 3ème dimension"
+      }
+    },
+    "image": "https://la3emedim.fr/assets/ertcolor1.jpeg",
+    "features": [
+      "Customizable print colors",
+      "Assembly without instructions",
+      "Made in France, 3D printed",
+      "Moon, planets and star clusters observation",
+      "Complete ready-to-assemble kit"
+    ]
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Lumi Customizable",
+        "tagline": "Your telescope, your name",
+        "description": "The Lumi you know, with the recipient's first name engraved on the blue tube. A unique astronomical gift, handmade in France.",
+        "features": [
+          { "icon": "strategy", "text": "Name engraved on the tube" },
+          { "icon": "rocket-launch", "text": "1.25\" focuser" },
+          { "icon": "terminal-window", "text": "Intuitive assembly" }
+        ],
+        "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
+        "heroImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - personalized astronomical telescope" },
+        "logoImage": "/assets/logolumi.png"
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery-colors",
+      "data": {
+        "title": "Customization examples",
+        "images": [
+          {
+            "src": "/assets/ertcolor1.jpeg",
+            "alt": "Lumi color variant 1",
+            "caption": "Color variant for the Lumi astronomical telescope"
+          },
+          {
+            "src": "/assets/ertcolor2.jpeg",
+            "alt": "Lumi color variant 2",
+            "caption": "Customization with different print colors"
+          },
+          {
+            "src": "/assets/ertcolor3.jpeg",
+            "alt": "Lumi color variant 3",
+            "caption": "Color customization example"
+          },
+          {
+            "src": "/assets/ertcolor4.jpeg",
+            "alt": "Lumi color variant 4",
+            "caption": "Diversity of available color options"
+          },
+          {
+            "src": "/assets/ertcolor5.jpeg",
+            "alt": "Lumi color variant 5",
+            "caption": "Visual rendering with another color palette"
+          },
+          {
+            "src": "/assets/ertcolor6.jpeg",
+            "alt": "Lumi color variant 6",
+            "caption": "Adaptation to your preferences"
+          },
+          {
+            "src": "/assets/ertcolor7.jpeg",
+            "alt": "Lumi color variant 7",
+            "caption": "Last color variant"
+          }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-features-custom",
+      "data": {
+        "title": "Why choose the Customizable?",
+        "features": [
+          {
+            "icon": "strategy",
+            "title": "A name engraved forever",
+            "description": "The recipient's first name is inscribed on the blue tube of the telescope. A detail that turns an instrument into a keepsake."
+          },
+          {
+            "icon": "rocket-launch",
+            "title": "The perfect astronomy gift",
+            "description": "Give a truly unique telescope — for a birthday, Christmas, or simply to pass on a passion for the sky."
+          },
+          {
+            "icon": "terminal-window",
+            "title": "Same optical quality",
+            "description": "Same lenses, same mechanics, same intuitive assembly as the standard Lumi — just more memorable."
+          },
+          {
+            "icon": "paper-plane-tilt",
+            "title": "Made in France",
+            "description": "Handcrafted 3D printing in Toulouse. Every part is made to order."
+          }
+        ]
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-specs",
+      "data": {
+        "title": "Modules and specifications",
+        "specGroups": [
+          {
+            "title": "Included modules",
+            "specs": {
+              "Lens barrel": "Main objective",
+              "Baffle": "Stray light blocker",
+              "Optical tube": "Main structure",
+              "Focuser": "Standard 1.25\"",
+              "Diagonal": "With prism",
+              "Eyepiece": "Included"
+            }
+          },
+          {
+            "title": "Characteristics",
+            "specs": {
+              "Type": "Astronomical telescope",
+              "Optics": "Achromatic doublet 50/200",
+              "Eyepiece": "20mm",
+              "Usage": "Educational/Initiation",
+              "Assembly": "Intuitive, one-way only",
+              "Observations": "Moon, clusters, galaxies",
+              "Customization": "First name engraved on the blue tube"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-filter",
+      "data": {
+        "title": "Filter holder included",
+        "tagline": "",
+        "description": "The Lumi Customizable pack includes a filter holder compatible with standard 1.25\" filters. You can install different types of filters according to your observation needs: moon filter to reduce glare when observing the Moon, or UHC filter to enhance nebula contrast for example.",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/Filtreert.jpg",
+          "alt": "Filter holder for the Lumi telescope"
+        }
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Lumi Customizable Kit",
+        "price": "€259",
+        "priceNote": "Assembly kit + first name engraved on the blue tube",
+        "included": [
+          "First name engraved on the blue tube",
+          "50mm objective lens",
+          "25mm eyepiece",
+          "Diagonal prism",
+          "Detailed assembly instructions",
+          "Educational support",
+          "Some sky objects to observe",
+          "Integrated mount"
+        ],
+        "ctaText": "Contact us",
+        "ctaHref": "mailto:la3emedim@gmail.com",
+        "afterCtaNote": "Please specify the name to engrave in your message. As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
+        "optionsTitle": "",
+        "options": []
+      }
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "gallery-colors", "label": "Colors" },
+    { "id": "features-custom", "label": "Benefits" },
+    { "id": "specs", "label": "Modules" },
+    { "id": "filter", "label": "Filter holder" },
+    { "id": "pricing", "label": "Pricing" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "astronomie",
+  "draft": true
+}
