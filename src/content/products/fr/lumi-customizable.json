@@ -1,8 +1,8 @@
 {
-  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - couleurs personnalisées" },
+  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Personnalisable - couleurs personnalisées" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "seoTitle": "Lumi Customizable - Lunette Astronomique Personnalisée | La 3ème dimension",
-  "seoDescription": "Lumi Customizable : la lunette astronomique pédagogique avec votre prénom gravé sur le tube bleu. Un cadeau unique fabriqué en France, à assembler soi-même.",
+  "seoTitle": "Lumi Personnalisable - Lunette Astronomique Personnalisée | La 3ème dimension",
+  "seoDescription": "Lumi Personnalisable : la lunette astronomique pédagogique avec votre prénom gravé sur le tube bleu. Un cadeau unique fabriqué en France, à assembler soi-même.",
   "seoKeywords": "lunette astronomique personnalisée, prénom gravé lunette, cadeau astronomie original, kit astronomie personnalisable, lunette 3D impression, astronomie toulouse, lunette pédagogique unique",
   "ogImage": "https://la3emedim.fr/assets/lumiperso_4.jpg",
   "price": "300€",
@@ -10,7 +10,7 @@
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Lumi Customizable - Lunette Astronomique Personnalisée",
+    "name": "Lumi Personnalisable - Lunette Astronomique Personnalisée",
     "description": "Lunette astronomique pédagogique avec le prénom du destinataire gravé sur le tube bleu. Un cadeau unique et mémorable, fabriqué en France.",
     "brand": {
       "@type": "Brand",
@@ -46,7 +46,7 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "Lumi Customizable",
+        "title": "Lumi Personnalisable",
         "tagline": "Votre lunette, votre prénom/logo",
         "description": "La Lumi que vous connaissez, avec le prénom du destinataire gravé sur le tube bleu. Un cadeau astronomique unique, fabriqué à la main en France.",
         "features": [
@@ -55,7 +55,7 @@
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
-        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - lunette astronomique personnalisée" },
+        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Personnalisable - lunette astronomique personnalisée" },
         "logoImage": "/assets/logolumi.png"
       }
     },
@@ -98,7 +98,7 @@
       "type": "features",
       "id": "section-features-custom",
       "data": {
-        "title": "Pourquoi choisir la Customizable ?",
+        "title": "Pourquoi choisir la Personnalisable ?",
         "features": [
           {
             "icon": "strategy",
@@ -161,7 +161,7 @@
       "data": {
         "title": "Porte-filtre inclus",
         "tagline": "",
-        "description": "Le pack Lumi Customizable inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses.",
+        "description": "Le pack Lumi Personnalisable inclut un porte-filtre compatible avec les filtres standards 1.25\". Vous pouvez y installer différents types de filtres selon vos besoins d'observation : filtre lunaire pour réduire l'éblouissement lors de l'observation de la Lune, ou filtre UHC pour améliorer le contraste des nébuleuses.",
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
@@ -173,7 +173,7 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Kit Lumi Customizable",
+        "title": "Kit Lumi Personnalisable",
         "price": "300€",
         "priceNote": "Kit de montage + prénom gravé sur le tube bleu",
         "included": [
