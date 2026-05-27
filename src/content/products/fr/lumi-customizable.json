@@ -1,11 +1,11 @@
 {
-  "carouselImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - couleurs personnalisées" },
+  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - couleurs personnalisées" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
   "seoTitle": "Lumi Customizable - Lunette Astronomique Personnalisée | La 3ème dimension",
   "seoDescription": "Lumi Customizable : la lunette astronomique pédagogique avec votre prénom gravé sur le tube bleu. Un cadeau unique fabriqué en France, à assembler soi-même.",
   "seoKeywords": "lunette astronomique personnalisée, prénom gravé lunette, cadeau astronomie original, kit astronomie personnalisable, lunette 3D impression, astronomie toulouse, lunette pédagogique unique",
-  "ogImage": "https://la3emedim.fr/assets/ertcolor1.jpeg",
-  "price": "259€",
+  "ogImage": "https://la3emedim.fr/assets/lumiperso_4.jpg",
+  "price": "300€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -24,7 +24,7 @@
     "category": "Instruments éducatifs",
     "offers": {
       "@type": "Offer",
-      "price": "259",
+      "price": "300",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -47,15 +47,15 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi Customizable",
-        "tagline": "Votre lunette, votre prénom",
+        "tagline": "Votre lunette, votre prénom/logo",
         "description": "La Lumi que vous connaissez, avec le prénom du destinataire gravé sur le tube bleu. Un cadeau astronomique unique, fabriqué à la main en France.",
         "features": [
-          { "icon": "strategy", "text": "Prénom gravé sur le tube" },
+          { "icon": "strategy", "text": "Prénom ou logo gravé sur le tube" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
           { "icon": "terminal-window", "text": "Montage intuitif" }
         ],
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
-        "heroImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - lunette astronomique personnalisée" },
+        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - lunette astronomique personnalisée" },
         "logoImage": "/assets/logolumi.png"
       }
     },
@@ -66,39 +66,29 @@
         "title": "Exemples de personnalisation",
         "images": [
           {
-            "src": "/assets/ertcolor1.jpeg",
-            "alt": "Lumi couleur variante 1",
-            "caption": "Variante de couleur pour la lunette astronomique Lumi"
+            "src": "/assets/lumiperso_1.png",
+            "alt": "Lumi personnalisée avec logo 1",
+            "caption": "Exemple de personnalisation avec logo"
           },
           {
-            "src": "/assets/ertcolor2.jpeg",
-            "alt": "Lumi couleur variante 2",
-            "caption": "Personnalisation avec différentes couleurs d'impression"
+            "src": "/assets/lumiperso_2.png",
+            "alt": "Lumi personnalisée avec logo 2",
+            "caption": "Exemple de personnalisation avec logo"
           },
           {
-            "src": "/assets/ertcolor3.jpeg",
-            "alt": "Lumi couleur variante 3",
-            "caption": "Exemple de customisation de couleur"
+            "src": "/assets/lumiperso_3.png",
+            "alt": "Lumi personnalisée avec logo 3",
+            "caption": "Exemple de personnalisation avec logo"
           },
           {
-            "src": "/assets/ertcolor4.jpeg",
-            "alt": "Lumi couleur variante 4",
-            "caption": "Diversité des options de couleurs disponibles"
+            "src": "/assets/lumiperso_3.jpg",
+            "alt": "Lumi personnalisée avec logo 4",
+            "caption": "Exemple de personnalisation avec logo"
           },
           {
-            "src": "/assets/ertcolor5.jpeg",
-            "alt": "Lumi couleur variante 5",
-            "caption": "Rendu visuel avec une autre palette de couleurs"
-          },
-          {
-            "src": "/assets/ertcolor6.jpeg",
-            "alt": "Lumi couleur variante 6",
-            "caption": "Adaptation selon vos préférences"
-          },
-          {
-            "src": "/assets/ertcolor7.jpeg",
-            "alt": "Lumi couleur variante 7",
-            "caption": "Dernière variante de couleur"
+            "src": "/assets/lumiperso_4.jpg",
+            "alt": "Lumi personnalisée avec logo 5",
+            "caption": "Exemple de personnalisation avec logo"
           }
         ],
         "background": "light"
@@ -112,8 +102,8 @@
         "features": [
           {
             "icon": "strategy",
-            "title": "Un prénom gravé pour toujours",
-            "description": "Le prénom du destinataire est inscrit sur le tube bleu de la lunette. Un détail qui transforme un instrument en souvenir."
+            "title": "Un prénom ou logo gravé pour toujours",
+            "description": "Le prénom ou le logo du destinataire est inscrit sur le tube bleu de la lunette. Pour un logo, fournissez un fichier SVG — selon la précision du dessin, une adaptation peut être nécessaire."
           },
           {
             "icon": "rocket-launch",
@@ -184,7 +174,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Kit Lumi Customizable",
-        "price": "259€",
+        "price": "300€",
         "priceNote": "Kit de montage + prénom gravé sur le tube bleu",
         "included": [
           "Prénom gravé sur le tube bleu",
@@ -198,7 +188,7 @@
         ],
         "ctaText": "Nous contacter",
         "ctaHref": "mailto:la3emedim@gmail.com",
-        "afterCtaNote": "Précisez le prénom à graver dans votre message. Chaque pièce étant fabriquée artisanalement, prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
+        "afterCtaNote": "Précisez le prénom à graver dans votre message, ou joignez votre logo au format SVG. Suivant la précision du logo, une modification préalable peut être nécessaire. Chaque pièce étant fabriquée artisanalement, prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
         "optionsTitle": "",
         "options": []
       }
@@ -216,5 +206,5 @@
   "showNavigation": true,
   "showLightbox": true,
   "category": "astronomie",
-  "draft": true
+  "draft": false
 }

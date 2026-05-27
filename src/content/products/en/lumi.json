@@ -299,6 +299,8 @@
         "ctaText": "Order complete kit",
         "ctaHref": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07",
         "afterCtaNote": "As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
+        "secondaryCtaText": "Want to personalize your Lumi?",
+        "secondaryCtaHref": "/en/product/lumi-customizable",
         "optionsTitle": "",
         "options": []
       }

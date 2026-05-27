@@ -1,11 +1,11 @@
 {
-  "carouselImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - custom colors" },
+  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - custom colors" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
   "seoTitle": "Lumi Customizable - Personalized Astronomical Telescope | La 3ème dimension",
   "seoDescription": "Lumi Customizable: the educational astronomical telescope with your first name engraved on the blue tube. A unique gift made in France, to assemble yourself.",
   "seoKeywords": "personalized astronomical telescope, engraved name telescope, original astronomy gift, customizable astronomy kit, 3D printed telescope, astronomy toulouse, unique educational telescope",
-  "ogImage": "https://la3emedim.fr/assets/ertcolor1.jpeg",
-  "price": "€259",
+  "ogImage": "https://la3emedim.fr/assets/lumiperso_4.jpg",
+  "price": "€300",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -24,7 +24,7 @@
     "category": "Educational instruments",
     "offers": {
       "@type": "Offer",
-      "price": "259",
+      "price": "300",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -47,15 +47,15 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi Customizable",
-        "tagline": "Your telescope, your name",
+        "tagline": "Your telescope, your name/logo",
         "description": "The Lumi you know, with the recipient's first name engraved on the blue tube. A unique astronomical gift, handmade in France.",
         "features": [
-          { "icon": "strategy", "text": "Name engraved on the tube" },
+          { "icon": "strategy", "text": "Name or logo engraved on the tube" },
           { "icon": "rocket-launch", "text": "1.25\" focuser" },
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
-        "heroImage": { "src": "/assets/ertcolor1.jpeg", "alt": "Lumi Customizable - personalized astronomical telescope" },
+        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - personalized astronomical telescope" },
         "logoImage": "/assets/logolumi.png"
       }
     },
@@ -66,39 +66,29 @@
         "title": "Customization examples",
         "images": [
           {
-            "src": "/assets/ertcolor1.jpeg",
-            "alt": "Lumi color variant 1",
-            "caption": "Color variant for the Lumi astronomical telescope"
+            "src": "/assets/lumiperso_1.png",
+            "alt": "Custom Lumi with logo 1",
+            "caption": "Logo customization example"
           },
           {
-            "src": "/assets/ertcolor2.jpeg",
-            "alt": "Lumi color variant 2",
-            "caption": "Customization with different print colors"
+            "src": "/assets/lumiperso_2.png",
+            "alt": "Custom Lumi with logo 2",
+            "caption": "Logo customization example"
           },
           {
-            "src": "/assets/ertcolor3.jpeg",
-            "alt": "Lumi color variant 3",
-            "caption": "Color customization example"
+            "src": "/assets/lumiperso_3.png",
+            "alt": "Custom Lumi with logo 3",
+            "caption": "Logo customization example"
           },
           {
-            "src": "/assets/ertcolor4.jpeg",
-            "alt": "Lumi color variant 4",
-            "caption": "Diversity of available color options"
+            "src": "/assets/lumiperso_3.jpg",
+            "alt": "Custom Lumi with logo 4",
+            "caption": "Logo customization example"
           },
           {
-            "src": "/assets/ertcolor5.jpeg",
-            "alt": "Lumi color variant 5",
-            "caption": "Visual rendering with another color palette"
-          },
-          {
-            "src": "/assets/ertcolor6.jpeg",
-            "alt": "Lumi color variant 6",
-            "caption": "Adaptation to your preferences"
-          },
-          {
-            "src": "/assets/ertcolor7.jpeg",
-            "alt": "Lumi color variant 7",
-            "caption": "Last color variant"
+            "src": "/assets/lumiperso_4.jpg",
+            "alt": "Custom Lumi with logo 5",
+            "caption": "Logo customization example"
           }
         ],
         "background": "light"
@@ -112,8 +102,8 @@
         "features": [
           {
             "icon": "strategy",
-            "title": "A name engraved forever",
-            "description": "The recipient's first name is inscribed on the blue tube of the telescope. A detail that turns an instrument into a keepsake."
+            "title": "A name or logo engraved forever",
+            "description": "The recipient's first name or logo is inscribed on the blue tube of the telescope. For a logo, provide an SVG file — depending on the level of detail, some adaptation may be required."
           },
           {
             "icon": "rocket-launch",
@@ -184,7 +174,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Lumi Customizable Kit",
-        "price": "€259",
+        "price": "€300",
         "priceNote": "Assembly kit + first name engraved on the blue tube",
         "included": [
           "First name engraved on the blue tube",
@@ -198,7 +188,7 @@
         ],
         "ctaText": "Contact us",
         "ctaHref": "mailto:la3emedim@gmail.com",
-        "afterCtaNote": "Please specify the name to engrave in your message. As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
+        "afterCtaNote": "Please specify the name to engrave in your message, or attach your logo as an SVG file. Depending on the level of detail, some modification may be required beforehand. As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
         "optionsTitle": "",
         "options": []
       }
@@ -216,5 +206,5 @@
   "showNavigation": true,
   "showLightbox": true,
   "category": "astronomie",
-  "draft": true
+  "draft": false
 }

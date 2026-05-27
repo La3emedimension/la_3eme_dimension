@@ -25,6 +25,8 @@ interface Props {
     locale?: Locale;
     contactText?: string;
     contactHref?: string;
+    secondaryCtaText?: string;
+    secondaryCtaHref?: string;
 }
 
 const {
@@ -41,6 +43,8 @@ const {
     locale = 'fr',
     contactText,
     contactHref,
+    secondaryCtaText,
+    secondaryCtaHref,
 } = Astro.props;
 
 const t = useTranslations(locale);
@@ -95,6 +99,11 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
                         </a>
                     )}
                     {afterCtaNote && <p class="after-cta-note" set:html={afterCtaNote} />}
+                    {secondaryCtaHref && (
+                        <a href={secondaryCtaHref} class="cta-secondary">
+                            {secondaryCtaText}
+                        </a>
+                    )}
                 </div>
                 {options.length > 0 && (
                     <div class="options-below">
@@ -262,6 +271,23 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
     .cta-primary:hover {
         background: var(--accent-dark);
         transform: translateY(-2px);
+    }
+
+    .cta-secondary {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.6rem 1.25rem;
+        border: 1px solid var(--gray-600);
+        border-radius: 0.5rem;
+        color: var(--gray-300);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+    }
+
+    .cta-secondary:hover {
+        border-color: var(--accent-regular);
+        color: var(--accent-regular);
     }
 
     /* ── Options en dessous ── */

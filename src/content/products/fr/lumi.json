@@ -327,6 +327,8 @@
         "ctaText": "Commander kit complet",
         "ctaHref": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g",
         "afterCtaNote": "Chaque pièce étant fabriquée artisanalement, il faut prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
+        "secondaryCtaText": "Vous voulez personnaliser votre Lumi ?",
+        "secondaryCtaHref": "/product/lumi-customizable",
         "optionsTitle": "",
         "options": []
       }

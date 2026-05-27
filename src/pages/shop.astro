@@ -24,7 +24,7 @@ const categories = [
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
-	const order = ['smallest', 'lumi', 'picco', 'sur-mesure'];
+	const order = ['smallest', 'lumi', 'lumi-customizable', 'picco', 'sur-mesure'];
 	const aIdx = order.indexOf(aSlug);
 	const bIdx = order.indexOf(bSlug);
 	if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
@@ -682,14 +682,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		card.querySelector('a')?.href.includes('/smallest')
 	);
 	if (smallestCard) {
-		smallestCard.style.order = '-4';
+		smallestCard.style.order = '-5';
 	}
 
-	const ertCard = Array.from(productCards).find(card =>
-		card.querySelector('a')?.href.includes('/lumi')
-	);
+	const ertCard = Array.from(productCards).find(card => {
+		const href = card.querySelector('a')?.href ?? '';
+		return href.includes('/lumi') && !href.includes('/lumi-customizable');
+	});
 	if (ertCard) {
-		ertCard.style.order = '-3';
+		ertCard.style.order = '-4';
+	}
+
+	const lumiCustomCard = Array.from(productCards).find(card =>
+		card.querySelector('a')?.href.includes('/lumi-customizable')
+	);
+	if (lumiCustomCard) {
+		lumiCustomCard.style.order = '-3';
 	}
 
 	const piccoCard = Array.from(productCards).find(card =>
