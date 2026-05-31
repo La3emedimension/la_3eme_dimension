@@ -25,9 +25,9 @@ const {
 
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link rel="canonical" href={Astro.url} />
+<link rel="canonical" href={Astro.url.href} />
 
 <!-- HTML Meta Tags -->
 <title>{title}</title>
@@ -36,8 +36,8 @@ const {
 <meta name="author" content="La 3ème dimension" />
 <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
 <meta name="language" content={locale === 'en' ? 'English' : 'French'} />
-<meta name="geo.region" content="FR-31" />
-<meta name="geo.placename" content="Toulouse et région Occitanie" />
+<meta name="geo.region" content="FR-82" />
+<meta name="geo.placename" content="Verdun-sur-Garonne, Tarn-et-Garonne, Occitanie" />
 <meta
     name="coverage"
     content="Toulouse, Blagnac, Colomiers, Balma, L'Union, Tournefeuille, Cugnaux, Muret"
@@ -76,10 +76,10 @@ const {
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-/>
+<link rel="dns-prefetch" href="https://stats.documents.design" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" /></noscript>
 <style>
 /* San Francisco Pro fallback using system fonts */
 @supports (font-family: -apple-system) {

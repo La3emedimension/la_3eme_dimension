@@ -30,16 +30,27 @@ const pageUrl = `https://la3emedim.fr/blog/${entrySlug}/`;
 const blogPostSchema = {
   "@type": "BlogPosting",
   "headline": entry.data.title,
+  "url": pageUrl,
+  "description": entry.data.seoDescription || entry.data.description || entry.data.title,
   "author": {
     "@type": "Person",
-    "name": "Raphaël Labro"
+    "name": "Raphaël Labro",
+    "url": "https://la3emedim.fr/about/"
   },
   "datePublished": entry.data.publishDate.toISOString(),
+  "dateModified": entry.data.publishDate.toISOString(),
   "image": entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png",
   "publisher": {
     "@type": "Organization",
+    "@id": "https://la3emedim.fr/#organization",
     "name": "La 3ème dimension",
-    "url": "https://la3emedim.fr"
+    "url": "https://la3emedim.fr",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://la3emedim.fr/favicon.svg",
+      "width": 512,
+      "height": 512
+    }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -122,9 +133,9 @@ const formatDate = (date: Date) => {
 
 <BaseLayout
   locale={locale}
-  title={entry.data.title}
-  description={`Article de blog : ${entry.data.title}`}
-  keywords={`blog, impression 3d, ${entry.data.title.toLowerCase()}`}
+  title={entry.data.seoTitle || entry.data.title}
+  description={entry.data.seoDescription || entry.data.description || `Article : ${entry.data.title}`}
+  keywords={entry.data.seoKeywords || `blog, impression 3d, ${entry.data.title.toLowerCase()}`}
   ogImage={entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png"}
   structuredData={structuredData}
 >

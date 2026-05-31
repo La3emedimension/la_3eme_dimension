@@ -10,31 +10,36 @@
   "priceNote": "Avec optiques",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
-    "@context": "https://schema.org",
     "@type": "Product",
+    "@id": "https://la3emedim.fr/product/smallest/#product",
     "name": "Smallest - Télescope Portable 150/750",
     "description": "Télescope Newton 150/750 facile à utiliser, fiable et fabriqué en France. Compact, transportable en avion, prêt à observer en 4 minutes.",
+    "url": "https://la3emedim.fr/product/smallest/",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
     },
     "manufacturer": {
       "@type": "Organization",
+      "@id": "https://la3emedim.fr/#organization",
       "name": "La 3ème dimension",
       "url": "https://la3emedim.fr"
     },
     "category": "Télescopes",
     "offers": {
       "@type": "Offer",
-      "price": "550",
+      "url": "https://la3emedim.fr/product/smallest/",
+      "price": "790",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31",
       "seller": {
         "@type": "Organization",
+        "@id": "https://la3emedim.fr/#organization",
         "name": "La 3ème dimension"
       }
     },
-    "image": "/assets/smallest-fullsize-02.jpg",
+    "image": "https://la3emedim.fr/assets/smallest-fullsize-02.jpg",
     "features": [
       "Télescope Newton 150/750",
       "Portable et compact",

@@ -1,7 +1,7 @@
 ---
 title: "La Collimation : Pourquoi votre télescope montre des images floues"
 publishDate: 2026-03-15 00:00:00
-draft: true
+draft: false
 img: /assets/cheshire.jpg
 img_alt: Outil de collimation pour télescope
 description: |

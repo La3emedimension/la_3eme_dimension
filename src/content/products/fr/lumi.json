@@ -8,8 +8,8 @@
   "price": "219€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
-    "@context": "https://schema.org",
     "@type": "Product",
+    "@id": "https://la3emedim.fr/product/lumi/#product",
     "name": "Lumi - Lunette Astronomique Pédagogique",
     "description": "Lunette astronomique pédagogique fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles.",
     "brand": {

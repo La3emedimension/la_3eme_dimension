@@ -26,6 +26,7 @@ for (let i = 0; i < reviews.length; i += 2) {
 const reviewsStructuredData = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": `https://la3emedim.fr/product/${productName.toLowerCase().replace(/\s+/g, '-')}/#product`,
   "name": productName,
   "aggregateRating": {
     "@type": "AggregateRating",

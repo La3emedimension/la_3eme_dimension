@@ -21,34 +21,37 @@ const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) ==
 
 // Business structured data for homepage
 const businessStructuredData = {
-    "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://la3emedim.fr/#organization",
     name: "La 3ème dimension",
     description:
         "Télescopes faciles à utiliser, fiables et fabriqués en France. Instruments et accessoires d'astronomie par impression 3D. Observez la Lune et les planètes sans prise de tête. Toulouse et toute la France.",
     url: "https://la3emedim.fr",
-    telephone: "0760853870",
+    image: "https://la3emedim.fr/assets/lumi.jpg",
+    telephone: "+33760853870",
     email: "la3emedim@gmail.com",
     address: {
         "@type": "PostalAddress",
-        addressLocality: "Toulouse",
+        streetAddress: "266 rue du commandant Bayssade",
+        postalCode: "82600",
+        addressLocality: "Verdun-sur-Garonne",
         addressRegion: "Occitanie",
         addressCountry: "FR",
     },
     geo: {
         "@type": "GeoCoordinates",
-        latitude: "43.6045",
-        longitude: "1.4442",
+        latitude: "44.02800",
+        longitude: "1.23700",
     },
     priceRange: "€€",
     serviceArea: {
         "@type": "GeoCircle",
         geoMidpoint: {
             "@type": "GeoCoordinates",
-            latitude: "43.6045",
-            longitude: "1.4442",
+            latitude: "44.02800",
+            longitude: "1.23700",
         },
-        geoRadius: "50000",
+        geoRadius: "100000",
     },
     hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -140,7 +143,7 @@ const homepageStructuredData = {
 
             <div class="partners-section wrapper">
                 <div class="section-header stack gap-2 lg:gap-4">
-                    <h5>Ils nous font confiance</h5>
+                    <h2>Nos partenaires</h2>
                 </div>
                 <div class="partners-grid">
                     <a class="partner-card" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer">
@@ -184,7 +187,7 @@ const homepageStructuredData = {
             (smallestProduct || ertProduct) && (
                 <main id="products" class="wrapper section with-background bg-variant">
                     <div class="section-header stack gap-2 lg:gap-4">
-                        <h5>Découvrez nos produits</h5>
+                        <h2>Découvrez nos produits</h2>
                     </div>
                     <div class="products-grid">
                         {smallestProduct && (
@@ -196,7 +199,8 @@ const homepageStructuredData = {
                                     <img
                                         src={smallestProduct.data.sections[0].data.heroImage.src}
                                         alt="Télescope Smallest 150/750 portable et compact, imprimé en 3D, transportable en avion - Innovation pour l'astronomie nomade"
-                                        loading="lazy"
+                                        loading="eager"
+                                        fetchpriority="high"
                                         decoding="async"
                                     />
                                     <div class="featured-description">
@@ -214,7 +218,7 @@ const homepageStructuredData = {
                                     <img
                                         src={ertProduct.data.sections[0].data.heroImage.src}
                                         alt="Lunette astronomique Lumi éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
-                                        loading="lazy"
+                                        loading="eager"
                                         decoding="async"
                                     />
                                     <div class="featured-description">

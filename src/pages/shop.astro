@@ -50,7 +50,7 @@ const shopStructuredData = {
 				"@type": "Product",
 				"name": product.data.structuredData?.name || product.id,
 				"description": product.data.seoDescription,
-				"url": `https://la3emedim.fr/product/${product.id}`,
+				"url": `https://la3emedim.fr/product/${getSlugWithoutLocale(product.id, locale)}/`,
 				"image": product.data.ogImage
 			}
 		}))

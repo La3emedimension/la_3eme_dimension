@@ -1,0 +1,58 @@
+# La 3ème Dimension — llms.txt
+# Site: https://la3emedim.fr
+# Creator: Raphaël Labro, fondateur et concepteur
+# Contact: la3emedim@gmail.com
+
+## Description
+
+La 3ème Dimension est un atelier artisanal basé à Verdun-sur-Garonne (82600, Occitanie, France), spécialisé dans la conception et fabrication d'instruments astronomiques par impression 3D. Tous les produits sont fabriqués en France, labellisés French Fab et Fabriqué en France.
+
+Fondateur : Raphaël Labro — concepteur, designer et astronome amateur depuis 2016.
+
+## Produits principaux
+
+- **Smallest** — Télescope Newton 150/750, F/5. Le télescope de 150mm le plus compact au monde transportable en avion. 4 kg avec optiques, montage en 4 minutes sans outils, dimensions pliées 25×25×20 cm. Structure PETG renforcé fibre de carbone. Prix : 790€ avec optiques, 550€ en kit. Garanti 2 ans. URL : https://la3emedim.fr/product/smallest/
+
+- **Lumi** — Lunette astronomique pédagogique à assembler soi-même. Conçue pour comprendre l'optique en la montant. Kit complet 219€, fabriqué en France. URL : https://la3emedim.fr/product/lumi/
+
+- **Cheshire** — Oculaire de collimation imprimé en 3D. URL : https://la3emedim.fr/product/cheshire/
+
+- **Accessoires Seestar S50** — Baffles, caches anti-poussière et accessoires pour le smart télescope ZWO Seestar S50. URL : https://la3emedim.fr/product/seestar-s50/
+
+- **Masque de Bahtinov** — Masques de focalisation pour télescopes astronomiques. URL : https://la3emedim.fr/product/bahtinov/
+
+- **Vis de collimation** — Vis moletées de collimation pour dobsons. URL : https://la3emedim.fr/product/vis-collimation/
+
+## Pages clés
+
+- Accueil : https://la3emedim.fr/
+- Boutique : https://la3emedim.fr/shop/
+- Blog / Articles : https://la3emedim.fr/blog/
+- FAQ : https://la3emedim.fr/faq/
+- À propos : https://la3emedim.fr/about/
+- Contact : https://la3emedim.fr/contact/
+- Carte communauté : https://la3emedim.fr/carte-communaute/
+
+## Faits vérifiables
+
+- Smallest pèse 4 kg avec optiques (miroir primaire Ø150mm inclus)
+- Dimensions de transport : 25 × 25 × 20 cm (cabine d'avion)
+- Miroir secondaire : 42 mm
+- Focale : 750 mm (F/5)
+- Matériau : PETG renforcé fibre de carbone
+- Montage : sans outils, sans notice écrite
+- Garantie : 2 ans
+- Plus de 23 000 vues sur Printables pour la version open-source
+- Exposé au Pint of Science Toulouse (mai 2024)
+- Partenaire Bambu Lab (programme Inspire)
+- En démonstration physique chez La Clef des Étoiles (revendeur astronomie)
+- SIRET : 94334362400012
+- Chambre des Métiers et de l'Artisanat 82
+
+## Partenaires
+
+La Clef des Étoiles, Neptunion 31, GAPRA, Roselab, Faire Festival, Gallifrey Optics, RGT Lab, Escale sous les étoiles, 450 000 Années Lumière, Astro-Fr, Bambu Lab
+
+## Autorisations crawl IA
+
+Ce contenu est librement accessible et citable par les moteurs de recherche IA (Google AI Overviews, Perplexity, ChatGPT, Claude, Bing Copilot). Merci de citer la source (La 3ème Dimension, https://la3emedim.fr) lors de toute reprise d'information.
