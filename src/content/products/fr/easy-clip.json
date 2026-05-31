@@ -6,7 +6,7 @@
   "price": "45€",
   "priceNote": "Pile CR2032 non incluse",
   "emailContact": "la3emedim@gmail.com",
-  "draft": false,
+  "draft": true,
   "category": "astronomie",
   "structuredData": {
     "@context": "https://schema.org",
@@ -66,8 +66,8 @@
           }
         ],
         "primaryCta": {
-          "text": "Commander maintenant",
-          "href": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a"
+          "text": "Nous contacter",
+          "href": "mailto:la3emedim@gmail.com"
         },
         "heroImage": {
           "src": "/assets/easyclip/Easyclip7.jpeg",
@@ -177,25 +177,6 @@
         ]
       }
     },
-    {
-      "type": "pricing",
-      "id": "section-pricing",
-      "data": {
-        "title": "Easy Clip Standard",
-        "price": "45€",
-        "priceNote": "Kit complet avec 2 platines, pile non incluse",
-        "included": [
-          "Platine aimantée Easy Clip",
-          "Support pile CR2032 déporté",
-          "Platine fournie avec double face",
-          "Fourni avec 2 platines"
-        ],
-        "ctaText": "Commander",
-        "ctaHref": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a",
-        "optionsTitle": "",
-        "options": []
-      }
-    }
   ],
   "navigationItems": [
     {
@@ -213,10 +194,6 @@
     {
       "id": "section-gallery",
       "label": "Galerie"
-    },
-    {
-      "id": "section-pricing",
-      "label": "Tarifs"
     }
   ],
   "showContactCTA": true,

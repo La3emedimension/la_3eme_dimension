@@ -6,7 +6,7 @@
   "price": "€45",
   "priceNote": "CR2032 battery not included",
   "emailContact": "la3emedim@gmail.com",
-  "draft": false,
+  "draft": true,
   "category": "astronomie",
   "structuredData": {
     "@context": "https://schema.org",
@@ -66,8 +66,8 @@
           }
         ],
         "primaryCta": {
-          "text": "Order now",
-          "href": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a"
+          "text": "Contact us",
+          "href": "mailto:la3emedim@gmail.com"
         },
         "heroImage": {
           "src": "/assets/easyclip/Easyclip7.jpeg",
@@ -177,25 +177,6 @@
         ]
       }
     },
-    {
-      "type": "pricing",
-      "id": "section-pricing",
-      "data": {
-        "title": "Standard Easy Clip",
-        "price": "€45",
-        "priceNote": "Complete kit with 2 mounts, battery not included",
-        "included": [
-          "Easy Clip magnetic mount",
-          "External CR2032 battery holder",
-          "Mount supplied with adhesive tape",
-          "Supplied with 2 mounts"
-        ],
-        "ctaText": "Order",
-        "ctaHref": "https://buy.stripe.com/cNi5kFfE6bhpc2f8yE67S0a",
-        "optionsTitle": "",
-        "options": []
-      }
-    }
   ],
   "navigationItems": [
     {
@@ -213,10 +194,6 @@
     {
       "id": "section-gallery",
       "label": "Gallery"
-    },
-    {
-      "id": "section-pricing",
-      "label": "Pricing"
     }
   ],
   "showContactCTA": true,
