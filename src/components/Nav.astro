@@ -162,6 +162,7 @@ function isActivePath(href: string): boolean {
 		}
 	}
 	customElements.define('menu-button', MenuButton);
+
 </script>
 
 <style>
@@ -329,8 +330,23 @@ function isActivePath(href: string): boolean {
 
 		.link:hover,
 		.link:focus {
-			color: var(--gray-100);
+			color: #1a1a1a;
 			background-color: var(--accent-subtle-overlay);
+		}
+
+		li:nth-child(1) .link:hover,
+		li:nth-child(1) .link:focus {
+			background-color: #FF69B4;
+		}
+
+		li:nth-child(2) .link:hover,
+		li:nth-child(2) .link:focus {
+			background-color: #5B9BD5;
+		}
+
+		li:nth-child(3) .link:hover,
+		li:nth-child(3) .link:focus {
+			background-color: #FFD700;
 		}
 
 		.link.active {
@@ -365,4 +381,5 @@ function isActivePath(href: string): boolean {
 			color: SelectedItem;
 		}
 	}
+
 </style>
