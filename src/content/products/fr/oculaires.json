@@ -1,7 +1,7 @@
 {
-  "seoTitle": "Oculaires Plossl 1.25\" pour Télescope - 20mm & 10mm | La 3ème dimension",
-  "seoDescription": "Oculaires Plossl 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm (grand champ, Lune et amas) et 10mm (fort grossissement, planètes). À partir de 15€.",
-  "seoKeywords": "oculaire plossl, oculaire télescope, oculaire 1.25, oculaire 20mm plossl, oculaire 10mm plossl, accessoire télescope, smallest, lumi, astronomie, toulouse",
+  "seoTitle": "Oculaires 1.25\" pour Télescope - 20mm & 10mm | La 3ème dimension",
+  "seoDescription": "Oculaires 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm (grand champ, Lune et amas) et 10mm (fort grossissement, planètes). À partir de 15€.",
+  "seoKeywords": "oculaire, oculaire télescope, oculaire 1.25, oculaire 20mm, oculaire 10mm, accessoire télescope, smallest, lumi, astronomie, toulouse",
   "ogImage": "/assets/preview.png",
   "price": "15€",
   "priceNote": "À partir de",
@@ -9,8 +9,8 @@
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Oculaires Plossl 1.25\" pour télescope",
-    "description": "Oculaires Plossl 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm et 10mm, seuls ou en pack.",
+    "name": "Oculaires 1.25\" pour télescope",
+    "description": "Oculaires 1.25\" compatibles Smallest et Lumi. Disponibles en 20mm et 10mm, seuls ou en pack.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -34,9 +34,9 @@
       "type": "hero",
       "id": "section-hero",
       "data": {
-        "title": "Oculaires Plossl 1.25\"",
+        "title": "Oculaires 1.25\"",
         "tagline": "Le bon oculaire pour chaque observation",
-        "description": "Des oculaires Plossl soigneusement choisis pour tirer le meilleur de votre Smallest ou Lumi. Le 20mm pour les grands espaces — Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails — cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
+        "description": "Des oculaires soigneusement choisis pour tirer le meilleur de votre Smallest ou Lumi. Le 20mm pour les grands espaces — Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails — cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
         "features": [
           { "icon": "eye", "text": "Compatible Smallest & Lumi" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
@@ -55,9 +55,9 @@
       "data": {
         "title": "Photos",
         "images": [
-          { "src": "/assets/oculaire1.jpeg", "alt": "Oculaire Plossl 1.25\" pour télescope" },
-          { "src": "/assets/oculaire2.jpeg", "alt": "Oculaire Plossl 1.25\" pour télescope" },
-          { "src": "/assets/oculaire3.jpeg", "alt": "Oculaire Plossl 1.25\" pour télescope" }
+          { "src": "/assets/oculaire1.jpeg", "alt": "Oculaire 1.25\" pour télescope" },
+          { "src": "/assets/oculaire2.jpeg", "alt": "Oculaire 1.25\" pour télescope" },
+          { "src": "/assets/oculaire3.jpeg", "alt": "Oculaire 1.25\" pour télescope" }
         ]
       }
     },
@@ -84,8 +84,8 @@
           },
           {
             "icon": "cube-3d",
-            "title": "Format Plossl 1.25\"",
-            "description": "La conception Plossl (4 lentilles en 2 groupes) offre un excellent rapport qualité/prix : image nette, contraste élevé et champ de 52°. Standard 1.25\", compatible Smallest et Lumi sans adaptation."
+            "title": "Format 1.25\"",
+            "description": "La conception (4 lentilles en 2 groupes) offre un excellent rapport qualité/prix : image nette, contraste élevé et champ de 52°. Standard 1.25\", compatible Smallest et Lumi sans adaptation."
           }
         ]
       }

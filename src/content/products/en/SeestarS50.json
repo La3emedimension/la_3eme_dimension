@@ -3,7 +3,6 @@
   "seoDescription": "The pack contains 1 baffle, 1 cap, 1 Bahtinov mask, 2 diffraction spike caps Newton and James Webb style.",
   "seoKeywords": "ZWO, seestar, S50, accessories, astronomy, astrophotography design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/seestars50.png",
-  "price": "€30",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -50,7 +49,7 @@
           { "icon": "rocket-launch", "text": "Adaptable filters and caps" },
           { "icon": "terminal-window", "text": "Easy to use" }
         ],
-        "primaryCta": { "text": "Buy", "href": "https://buy.stripe.com/6oUfZj1NgdpxaYb3ek67S01" },
+        "primaryCta": { "text": "Contact me", "href": "mailto:la3emedim@gmail.com" },
         "heroImage": { "src": "/assets/seestars50.png", "alt": "Seestar equipped with light shield and cap" },
         "afterCtaNote": "As each part is handcrafted, please allow approximately 7 days for manufacturing, plus shipping time."
       }

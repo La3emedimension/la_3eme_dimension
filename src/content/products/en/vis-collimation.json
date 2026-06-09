@@ -3,8 +3,6 @@
   "seoDescription": "Collimation knobs for Newton telescope. Easy replacement of standard screws for precise and comfortable primary mirror adjustment.",
   "seoKeywords": "collimation screws, telescope knobs, newton collimation, mirror adjustment, telescope accessory, adjustment screws, primary mirror",
   "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
-  "price": "15€",
-  "priceNote": "Set of 3 knobs",
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
@@ -83,8 +81,8 @@
           }
         ],
         "primaryCta": {
-          "text": "Order now",
-          "href": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f"
+          "text": "Contact me",
+          "href": "mailto:la3emedim@gmail.com"
         },
         "heroImage": {
           "src": "/assets/visdecollim/visdecollim0.jpeg",
@@ -177,15 +175,13 @@
       "id": "section-pricing",
       "data": {
         "title": "Collimation Knobs",
-        "price": "15€",
-        "priceNote": "Set of 3 screws",
         "included": [
           "3 collimation knobs M4",
           "45mm length",
           "Installation tips"
         ],
-        "ctaText": "Order",
-        "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
+        "ctaText": "Contact me",
+        "ctaHref": "mailto:la3emedim@gmail.com",
         "optionsTitle": "",
         "options": []
       }

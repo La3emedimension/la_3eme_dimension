@@ -3,8 +3,6 @@
   "seoDescription": "Vis moletées collimation télescope Newton M4 45mm. Réglage précis miroir primaire sans outil. Compatible Dobson, Newton. Extrémités arrondies. Jeu de 3 vis 15€.",
   "seoKeywords": "vis collimation newton, vis moletées télescope, collimation dobson, réglage miroir primaire, accessoire télescope newton, vis M4 collimation, vis réglage optique, collimation sans outil, vis ergonomiques astronomie",
   "ogImage": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
-  "price": "15€",
-  "priceNote": "Jeu de 3 vis",
   "emailContact": "la3emedim@gmail.com",
   "draft": false,
   "category": "astronomie",
@@ -83,8 +81,8 @@
           }
         ],
         "primaryCta": {
-          "text": "Commander maintenant",
-          "href": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f"
+          "text": "Me contacter",
+          "href": "mailto:la3emedim@gmail.com"
         },
         "heroImage": {
           "src": "/assets/visdecollim/visdecollim0.jpeg",
@@ -177,15 +175,13 @@
       "id": "section-pricing",
       "data": {
         "title": "Vis moletées de collimation",
-        "price": "15€",
-        "priceNote": "Jeu de 3 vis",
         "included": [
           "3 vis moletées de collimation M4",
           "Longueur 45mm",
           "Conseils d'installation"
         ],
-        "ctaText": "Commander",
-        "ctaHref": "https://buy.stripe.com/7sY5kF1Ng719givdSY67S0f",
+        "ctaText": "Me contacter",
+        "ctaHref": "mailto:la3emedim@gmail.com",
         "optionsTitle": "",
         "options": []
       }

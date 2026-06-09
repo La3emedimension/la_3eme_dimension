@@ -3,8 +3,6 @@
   "seoDescription": "Masques de Bahtinov imprimés en 3D pour une mise au point précise. Compatible Askar FRA500, TS 80/544, SVbony SV106, Williams Optics 50/200.",
   "seoKeywords": "masque de bahtinov, mise au point, focus mask, astronomie, impression 3d, askar fra500, ts 80 544, svbony sv106, williams optics",
   "ogImage": "/assets/Bathinov7.jpg",
-  "price": "12,99€",
-  "priceNote": "À partir de",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -42,7 +40,7 @@
           { "icon": "cube-3d", "text": "Impression 3D haute qualité" },
           { "icon": "strategy", "text": "4 modèles disponibles" }
         ],
-        "primaryCta": { "text": "Choisir mon modèle", "href": "#section-modeles" },
+        "primaryCta": { "text": "Me contacter", "href": "mailto:la3emedim@gmail.com" },
         "heroImage": { "src": "/assets/Bathinov7.jpg", "alt": "Masque de Bahtinov imprimé en 3D" }
       }
     },
@@ -84,27 +82,23 @@
         "options": [
           {
             "title": "Askar FRA500",
-            "priceNote": "16,99€",
-            "ctaText": "Commander",
-            "ctaHref": "https://buy.stripe.com/aFa9AV9fIadlaYbdSY67S0b"
+            "ctaText": "Me contacter",
+            "ctaHref": "mailto:la3emedim@gmail.com"
           },
           {
             "title": "TS 80/544",
-            "priceNote": "16,99€",
-            "ctaText": "Commander",
-            "ctaHref": "https://buy.stripe.com/dRmfZjajMgBJ4zN4io67S0c"
+            "ctaText": "Me contacter",
+            "ctaHref": "mailto:la3emedim@gmail.com"
           },
           {
             "title": "SVbony SV106",
-            "priceNote": "12,99€",
-            "ctaText": "Commander",
-            "ctaHref": "https://buy.stripe.com/00wcN7dvYetB0jx7uA67S0d"
+            "ctaText": "Me contacter",
+            "ctaHref": "mailto:la3emedim@gmail.com"
           },
           {
             "title": "Williams Optics 50/200",
-            "priceNote": "12,99€",
-            "ctaText": "Commander",
-            "ctaHref": "https://buy.stripe.com/5kQ8wR77A4T1ean3ek67S0e"
+            "ctaText": "Me contacter",
+            "ctaHref": "mailto:la3emedim@gmail.com"
           }
         ]
       }
