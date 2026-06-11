@@ -168,6 +168,24 @@ const shopStructuredData = {
 			</div>
 		</main>
 
+		<!-- Avis client Lumi -->
+		<div class="wrapper">
+			<section class="testimonial-section">
+				<h2 class="testimonial-title">Avis clients</h2>
+				<blockquote class="testimonial-card">
+					<div class="testimonial-stars">★★★★★</div>
+					<p class="testimonial-text">« Télescope coloré et robuste avec une vue parfaite de la Lune. Ma fille de 8 ans et demi est conquise. On a partagé en famille des moments d'étude et de beauté sous les étoiles. Le meilleur cadeau pour rêver ensemble. Qualité top ! »</p>
+					<footer class="testimonial-author">
+						<div class="testimonial-avatar">A</div>
+						<div>
+							<strong>Alessandra L.</strong>
+							<span>— Lumi 🌙</span>
+						</div>
+					</footer>
+				</blockquote>
+			</section>
+		</div>
+
 		<!-- SEO Rich Content -->
 		<div class="wrapper">
 			<section class="seo-content">
@@ -631,6 +649,74 @@ const shopStructuredData = {
 		.product-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
+
+	.testimonial-section {
+		max-width: 700px;
+		margin: 1rem auto 0;
+		text-align: center;
+	}
+
+	.testimonial-title {
+		font-size: var(--text-2xl);
+		color: var(--gray-100);
+		margin-bottom: 1.5rem;
+	}
+
+	.testimonial-card {
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 2rem;
+		margin: 0;
+	}
+
+	.testimonial-stars {
+		font-size: 1.5rem;
+		color: #FFD700;
+		margin-bottom: 1rem;
+		letter-spacing: 0.1em;
+	}
+
+	.testimonial-text {
+		font-size: var(--text-md);
+		color: var(--gray-300);
+		line-height: 1.7;
+		font-style: italic;
+		margin-bottom: 1.5rem;
+	}
+
+	.testimonial-author {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		font-style: normal;
+	}
+
+	.testimonial-avatar {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: var(--text-lg);
+		flex-shrink: 0;
+	}
+
+	.testimonial-author strong {
+		display: block;
+		color: var(--gray-0);
+		font-size: var(--text-base);
+	}
+
+	.testimonial-author span {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
 	}
 </style>
 
