@@ -227,7 +227,7 @@ Même vos enfants peuvent l'utiliser sans problème.
 - Vous pouvez ajouter des accessoires au fur et à mesure
 - Si vous avez déjà des pièces d'un vieux télescope, on peut les adapter
 
-**Prix : 550€ (juste la structure) ou 750€ (kit complet prêt à observer)**
+**Prix : 550€ (juste la structure) ou 790€ (kit complet prêt à observer)**
 
 Oui, c'est un peu plus cher que le télescope classique. **Mais vous allez vraiment l'utiliser.**
 
@@ -382,7 +382,7 @@ Faisons un calcul simple et honnête.
 - Vous l'utilisez 5 fois la première année (soyons optimistes)
 - **Coût par utilisation : 90€**
 
-**Smallest à 750€ :**
+**Smallest à 790€ :**
 - C'est léger, compact, rapide à monter
 - Vous l'utilisez 30 fois la première année (week-ends, vacances, etc.)
 - **Coût par utilisation : 25€**
