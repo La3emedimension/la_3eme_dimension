@@ -73,3 +73,67 @@ const finalConfig = {
 ---
 
 <ProductLayout {...finalConfig} />
+
+<style is:global>
+  /* ===== LUMI — section colors: pink, blue, yellow ===== */
+
+  /* BLUE (#5B9BD5) */
+  #section-video-2 .video-showcase,
+  #section-video-5 .video-showcase,
+  #section-reviews .reviews-section {
+    background: #5B9BD5 !important;
+  }
+
+  /* YELLOW (#FFD700) */
+  #section-video-3 .video-showcase,
+  #section-specs .specs-section,
+  #section-pricing .pricing-section,
+  #section-features .features-section {
+    background: #FFD700 !important;
+  }
+
+  /* PINK (#FF69B4) */
+  #section-video-4 .video-showcase,
+  #section-clef-etoiles .clef-etoiles-section {
+    background: #FF69B4 !important;
+  }
+  #section-filter .hero-product {
+    background: linear-gradient(135deg, #FF69B4 0%, #ff4da6 100%) !important;
+  }
+
+  #section-specs .specs-table {
+    background: #ffffff !important;
+  }
+  #section-reviews .review-card {
+    background: #ffffff !important;
+  }
+
+  /* Dark mode */
+  :root.theme-dark #section-video-2 .video-showcase,
+  :root.theme-dark #section-video-5 .video-showcase,
+  :root.theme-dark #section-reviews .reviews-section {
+    background: #2a6aa0 !important;
+  }
+
+  :root.theme-dark #section-video-3 .video-showcase,
+  :root.theme-dark #section-specs .specs-section,
+  :root.theme-dark #section-pricing .pricing-section,
+  :root.theme-dark #section-features .features-section {
+    background: #a08000 !important;
+  }
+
+  :root.theme-dark #section-video-4 .video-showcase,
+  :root.theme-dark #section-clef-etoiles .clef-etoiles-section {
+    background: #b0006e !important;
+  }
+  :root.theme-dark #section-filter .hero-product {
+    background: linear-gradient(135deg, #b0006e 0%, #cc0080 100%) !important;
+  }
+
+  :root.theme-dark #section-specs .specs-table {
+    background: #7a6200 !important;
+  }
+  :root.theme-dark #section-reviews .review-card {
+    background: #1e5280 !important;
+  }
+</style>

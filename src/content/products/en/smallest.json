@@ -1,9 +1,9 @@
 {
   "seoTitle": "Smallest - Compact Portable Telescope | La 3ème dimension",
-  "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €550.",
+  "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €790.",
   "seoKeywords": "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse",
   "ogImage": "/assets/smallest-fullsize-02.jpg",
-  "price": "€550",
+  "price": "€790",
   "priceNote": "Optics not included",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
@@ -26,7 +26,7 @@
     "offers": {
       "@type": "Offer",
       "url": "https://la3emedim.fr/en/product/smallest/",
-      "price": "550",
+      "price": "790",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2026-12-31",
@@ -258,7 +258,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Smallest Kit",
-        "price": "€550",
+        "price": "€790",
         "priceNote": "Optics not included",
         "included": [
           "PETG carbon fiber reinforced structure",
