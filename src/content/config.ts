@@ -61,7 +61,20 @@ export const collections = {
 				id: z.string(),
 				label: z.string()
 			})).optional(),
-			
+
+			// FAQ
+			faqs: z.array(z.object({
+				question: z.string(),
+				answer: z.string()
+			})).optional(),
+
+			// Installation/delivery timings
+			timings: z.object({
+				installationTime: z.string().optional(),
+				deliveryTime: z.string().optional(),
+				difficulty: z.string().optional()
+			}).optional(),
+
 			// Footer options
 			showContactCTA: z.boolean().optional(),
 			showNavigation: z.boolean().optional(),

@@ -283,6 +283,14 @@ Voici ma réponse honnête :
 
 **Mon conseil ?** Si vous hésitez entre les trois, c'est que le Smallest est fait pour vous.
 
+### Budget serré ou premier télescope pour un enfant ? Regardez plutôt Lumi
+
+Les trois télescopes ci-dessus sont excellents, mais représentent un budget de 400 à 790€. Si vous cherchez un **premier télescope vraiment pédagogique**, pour un enfant ou pour découvrir l'astronomie en famille sans se ruiner, on a conçu **Lumi** : une lunette astronomique à assembler soi-même, sans notice, à 219€.
+
+L'idée est différente du Smallest : ici, l'objectif n'est pas la puissance d'observation mais la **compréhension**. En montant Lumi pièce par pièce, on comprend concrètement comment fonctionne un télescope (l'optique, le porte-oculaire, la mise au point), avant d'observer la Lune et quelques amas d'étoiles. C'est le télescope débutant le plus accessible qu'on propose, pensé comme une vraie porte d'entrée pédagogique avant de passer, plus tard, à un instrument comme le Smallest.
+
+👉 [Découvrir Lumi, le télescope pédagogique pour débutant](/product/lumi)
+
 ---
 
 ## Qu'est-ce que vous allez pouvoir voir concrètement ?

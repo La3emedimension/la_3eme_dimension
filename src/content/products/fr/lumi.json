@@ -1,17 +1,17 @@
 {
-  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi à Montauban" },
+  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Télescope pédagogique Lumi en observation à Montauban" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "seoTitle": "Lumi - Lunette Astronomique Pédagogique à Assembler Soi-Même | La 3ème dimension",
-  "seoDescription": "Lumi : lunette astronomique pédagogique fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles. Kit complet 219€.",
-  "seoKeywords": "lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, lunette astronomique éducative, initiation astronomie famille, lunette 3D impression, lunette made in france, optique telescope débutant, lunette sans notice, astronomie toulouse occitanie",
+  "seoTitle": "Lumi – Télescope Pédagogique pour Débutant | La 3ème dimension",
+  "seoDescription": "Lumi, télescope pédagogique pour débutant : à assembler soi-même sans notice, pour apprendre l'optique en observant Lune et étoiles. Fabriqué en France, 219€.",
+  "seoKeywords": "télescope débutant, télescope pédagogique, lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, initiation astronomie famille, premier télescope enfant, lunette made in france, astronomie toulouse occitanie",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
   "price": "219€",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@type": "Product",
     "@id": "https://la3emedim.fr/product/lumi/#product",
-    "name": "Lumi - Lunette Astronomique Pédagogique",
-    "description": "Lunette astronomique pédagogique fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles.",
+    "name": "Lumi - Télescope Pédagogique pour Débutant",
+    "description": "Télescope pédagogique (lunette astronomique) pour débutant, fabriqué en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les étoiles.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -47,15 +47,16 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi",
-        "tagline": "Assemblez votre lunette pédagogique",
-        "description": "<blockquote>« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br><cite>— Carl Sagan</cite></blockquote><br>Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles...",
+        "tagline": "Le télescope pédagogique idéal pour débutant, à assembler soi-même",
+        "description": "<blockquote>« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br><cite>— Carl Sagan</cite></blockquote><br>Projet éducatif pour découvrir l'optique et quelques objets du ciel : lune, galaxies lumineuses, amas d'étoiles... Un télescope pédagogique pensé pour les débutants, à monter en famille sans aucune connaissance préalable.",
         "features": [
           { "icon": "strategy", "text": "Design modulaire" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
-          { "icon": "terminal-window", "text": "Montage intuitif" }
+          { "icon": "terminal-window", "text": "Montage intuitif" },
+          { "icon": "moon-stars", "text": "Idéal pour débutants" }
         ],
         "primaryCta": { "text": "Commander — 219€", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique Lumi à Montauban" },
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation à Montauban" },
         "logoImage": "/assets/logolumi.png"
       }
     },
@@ -124,6 +125,7 @@
               "Optique": "Doublet achromatique 50/200",
               "Oculaire": "20mm",
               "Usage": "Éducatif/Initiation",
+              "Niveau": "Débutant, aucune expérience requise",
               "Montage": "Intuitif, un seul sens",
               "Observations": "Lune, amas, galaxies",
               "Âge recommandé": "Montage à faire avec un adulte"
@@ -350,8 +352,8 @@
         "features": [
           {
             "icon": "strategy",
-            "title": "Apprentissage par l'expérience",
-            "description": "Montage intuitif qui permet de comprendre le fonctionnement d'une lunette astronomique."
+            "title": "Le télescope pédagogique pour débutant",
+            "description": "Montage intuitif qui permet de comprendre le fonctionnement d'une lunette astronomique, sans aucune expérience préalable."
           },
           {
             "icon": "rocket-launch",
@@ -370,6 +372,24 @@
           }
         ]
       }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Lumi est-elle adaptée à un vrai débutant en astronomie ?",
+      "answer": "Oui, Lumi est conçue comme <strong>premier télescope pédagogique pour débutant</strong> : aucune connaissance en optique n'est nécessaire, le montage sans notice guide naturellement vers la compréhension de l'instrument, à faire en famille avec un adulte."
+    },
+    {
+      "question": "Quelle différence entre Lumi et un télescope classique pour débutant ?",
+      "answer": "Techniquement, Lumi est une <strong>lunette astronomique</strong> (elle utilise des lentilles), alors qu'un télescope utilise des miroirs. Dans le langage courant, les deux sont souvent regroupés sous le terme « télescope débutant ». L'avantage de Lumi est de rendre ce fonctionnement optique visible et compréhensible pendant le montage."
+    },
+    {
+      "question": "Que peut-on observer avec ce télescope pédagogique ?",
+      "answer": "Avec Lumi, un débutant peut observer la Lune en détail, ainsi que certains amas d'étoiles et galaxies lumineuses selon les conditions d'observation."
+    },
+    {
+      "question": "Après Lumi, quel télescope choisir pour progresser ?",
+      "answer": "Lumi est une excellente introduction avant de passer à un instrument plus avancé comme notre télescope <a href=\"/product/smallest\">Smallest</a>, compact et fabriqué en France, pour aller plus loin dans l'observation du ciel."
     }
   ],
   "navigationItems": [

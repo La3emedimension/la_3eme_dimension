@@ -30,7 +30,7 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 				<img src={logoImage} alt={`Logo ${title}`} class="product-logo" />
 			)}
 			<h1 class={logoImage ? 'visually-hidden' : ''}>
-				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></> : title}
+				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span> – Télescope Pédagogique pour Débutant</> : title}
 			</h1>
 			<p class="hero-tagline">{tagline}</p>
 			<div class="hero-description" set:html={description} />
