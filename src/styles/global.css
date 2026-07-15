@@ -16,10 +16,10 @@
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
 	--gray-999: #ffffff;
 
-	--accent-light: #8A4FBE;
-	--accent-regular: #66338b;
-	--accent-dark: #4A2463;
-	--accent-overlay: hsla(271, 45%, 46%, 0.33);
+	--accent-light: #4CBAF0;
+	--accent-regular: #129DE2;
+	--accent-dark: #0B628E;
+	--accent-overlay: hsla(200, 85%, 48%, 0.33);
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-999);
 
@@ -85,11 +85,11 @@
 	--gray-999-basis: 225, 31%, 5%;
 	--gray-999: #000000;
 
-	--accent-light: #4A2463;
-	--accent-regular: #66338b;
-	--accent-dark: #8A4FBE;
-	--accent-overlay: hsla(271, 45%, 46%, 0.33);
-	--accent-subtle-overlay: hsla(271, 35%, 35%, 0.33);
+	--accent-light: #0B628E;
+	--accent-regular: #129DE2;
+	--accent-dark: #4CBAF0;
+	--accent-overlay: hsla(200, 85%, 48%, 0.33);
+	--accent-subtle-overlay: hsla(200, 75%, 40%, 0.33);
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
@@ -117,21 +117,15 @@ body {
 
 body {
 	background-color: var(--gray-999);
-	background-image: url('/assets/fondtest.jpg');
-	background-size: 400px auto;
-	background-repeat: repeat;
-	background-attachment: scroll;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/fond.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
-}
-
-@media (min-width: 50em) {
-	body {
-		background-size: 600px auto;
-		background-attachment: fixed;
-	}
 }
 
 *,

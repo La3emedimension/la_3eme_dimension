@@ -2,12 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Grid from "../../components/Grid.astro";
 import Hero from "../../components/Hero.astro";
-import Icon from "../../components/Icon.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 import ScrollIndicator from "../../components/ScrollIndicator.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
-import Skills from "../../components/Skills.astro";
 import ProductCarousel from "../../components/ProductCarousel.astro";
+import ProductReviews from "../../components/ProductReviews.astro";
 import { useTranslations, localePath, type Locale } from '../../i18n';
 import { getLocalizedCollection, getLocalizedDataCollection, getSlugWithoutLocale } from '../../lib/collections';
 
@@ -18,87 +17,249 @@ const allProducts = await getLocalizedDataCollection('products', locale);
 const smallestProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'smallest');
 const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'lumi');
 
+// Business structured data for homepage
 const businessStructuredData = {
-    "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://la3emedim.fr/#organization",
     name: "La 3ème dimension",
-    description: "3D printing specialist and compact telescope design. Innovation in portable astronomy with the Smallest telescope.",
+    description:
+        "Easy-to-use, reliable telescopes made in France. Astronomy instruments and accessories made through 3D printing. Observe the Moon and planets without the hassle. Toulouse and all across France.",
     url: "https://la3emedim.fr/en",
-    telephone: "0760853870",
+    image: "https://la3emedim.fr/assets/lumi.jpg",
+    telephone: "+33760853870",
     email: "la3emedim@gmail.com",
     address: {
         "@type": "PostalAddress",
-        addressLocality: "Toulouse",
+        streetAddress: "266 rue du commandant Bayssade",
+        postalCode: "82600",
+        addressLocality: "Verdun-sur-Garonne",
         addressRegion: "Occitanie",
         addressCountry: "FR",
     },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: "44.02800",
+        longitude: "1.23700",
+    },
+    priceRange: "€€",
+    serviceArea: {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: "44.02800",
+            longitude: "1.23700",
+        },
+        geoRadius: "100000",
+    },
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Astronomical instruments made in France",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Product",
+                    name: "Smallest - Compact telescope made in France",
+                    description: "Compact, portable 150/750 Newtonian telescope, ready in 4 minutes, airline-friendly. Ideal for observing the Moon and planets.",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Product",
+                    name: "Lumi - Educational astronomical refractor",
+                    description: "An astronomical refractor you assemble without instructions. Building it teaches you optics. Complete kit €219, made in France.",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Custom 3D-printed astronomy accessories",
+                    description: "Bahtinov masks, collimation screws, accessories for beginner and experienced telescope users.",
+                },
+            },
+        ],
+    },
 };
+
+const homepageStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        businessStructuredData,
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://la3emedim.fr/en/" }
+            ]
+        }
+    ]
+};
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
 ---
 
 <BaseLayout
     locale={locale}
-    title="La 3ème dimension - 3D Printing & Astronomical Telescopes"
-    description="3D printing specialist and compact telescope design. Discover the Smallest, a practical portable telescope for nomadic astronomy."
-    keywords="3d printing, portable telescope, smallest telescope, nomadic astronomy, 3d design"
-    structuredData={businessStructuredData}
+    title="Telescopes & Astronomical Refractors Made in France | La 3ème Dimension"
+    description="Smallest and Lumi: compact telescope and educational refractor made in France. Assemble, understand, observe — without the hassle. Astronomical instruments via 3D printing. Toulouse, France."
+    keywords="easy to use telescope, telescope made in france, educational astronomical refractor, refractor to assemble, kids astronomy kit, compact portable telescope, Lumi educational refractor, Smallest telescope, beginner astronomy, 3d printed astronomy, toulouse, france"
+    structuredData={homepageStructuredData}
 >
     <div class="stack gap-20 lg:gap-36">
-        <div class="wrapper stack gap-20 lg:gap-36">
+        <div class="wrapper stack gap-20 lg:gap-36 hero-section">
             <header class="hero homepage-hero">
                 <Hero
                     align="start"
                 >
-                    <p class="service-description">Design of astronomical instruments and accessories by additive manufacturing</p>
+                    <h1 class="service-description">Compact, playful, and easy-to-use astronomical instruments</h1>
                     <div class="roles">
-                        <a href="mailto:la3emedim@gmail.com" class="contact-link">
-                            {t.contact.cta} <Icon icon="pencil-line" size="1.33em" />
-                        </a>
-                        <a href="tel:0760853870" class="phone-link">
-                            07 60 85 38 70
-                            <Icon icon="phone" size="1.2em" />
-                        </a>
+                        <a href={localePath('/product/lumi/', locale)} class="product-pill pill-lumi">Lumi</a>
+                        <a href={localePath('/product/picco/', locale)} class="product-pill pill-picco">Picco</a>
+                        <a href={localePath('/product/smallest/', locale)} class="product-pill pill-smallest">Smallest</a>
                     </div>
                 </Hero>
 
                 <ProductCarousel locale={locale} />
+
+                <div class="hero-labels">
+                    <a class="hero-label" href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="label-logo" /></a>
+                    <a class="hero-label" href="https://www.fabriquenenfrance.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/fab_bloc_rvb.png" alt="Made in France" class="label-logo" /></a>
+                    <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Made in Occitanie" class="label-logo" /></a>
+                </div>
             </header>
 
-            <Skills locale={locale} />
+            <div class="partners-section wrapper">
+                <div class="section-header stack gap-2 lg:gap-4">
+                    <h2>Our partners</h2>
+                </div>
+                <div class="partners-ticker">
+                    <div class="partners-track">
+                        <a class="partner-card" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/laclef.png" alt="La Clef des Étoiles" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://neptunion31.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/neptunion31.jpg" alt="Neptunion 31" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://www.gapra.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/gapra.jpeg" alt="GAPRA" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://roselab.fab-manager.com/#!/" target="_blank" rel="noopener noreferrer"><img src="/assets/Logo_RoseLab_Noir.png" alt="Roselab" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://www.fairefestival.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/faire festival.png" alt="Faire Festival" class="partner-logo" /></a>
+                        <a class="partner-card" href="http://gallifrey-optics.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/gallifreyoptics.jpg" alt="Gallifrey Optics" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://rgt-lab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/rgtlab.png" alt="RGT Lab" class="partner-logo" style="object-position: center 60%;" /></a>
+                        <a class="partner-card" href="https://escalesouslesetoiles.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/escalesouslesetoiles.jpg" alt="Escale sous les étoiles" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://www.afastronomie.fr/structures/450-000-annees-lumiere" target="_blank" rel="noopener noreferrer"><img src="/assets/logo450 000.jpg" alt="450 000 Années Lumière" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://www.astro-fr.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/afrlogo.png" alt="Astro-Fr" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://bambulab.com/fr-fr" target="_blank" rel="noopener noreferrer"><img src="/assets/bambulab.png" alt="Bambu Lab" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://www.futurfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/futurfab.png" alt="Futur Fab" class="partner-logo" /></a>
+                        <a class="partner-card" href="https://turing-express.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/turing-express..PNG" alt="Turing Express" class="partner-logo" /></a>
+                        <!-- Duplicate for seamless loop -->
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://laclefdesetoiles.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/laclef.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://neptunion31.com/" target="_blank" rel="noopener noreferrer"><img src="/assets/neptunion31.jpg" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://www.gapra.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/gapra.jpeg" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://roselab.fab-manager.com/#!/" target="_blank" rel="noopener noreferrer"><img src="/assets/Logo_RoseLab_Noir.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://www.fairefestival.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/faire festival.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="http://gallifrey-optics.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/gallifreyoptics.jpg" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://rgt-lab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/rgtlab.png" alt="" class="partner-logo" style="object-position: center 60%;" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://escalesouslesetoiles.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/escalesouslesetoiles.jpg" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://www.afastronomie.fr/structures/450-000-annees-lumiere" target="_blank" rel="noopener noreferrer"><img src="/assets/logo450 000.jpg" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://www.astro-fr.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/afrlogo.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://bambulab.com/fr-fr" target="_blank" rel="noopener noreferrer"><img src="/assets/bambulab.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://www.futurfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/futurfab.png" alt="" class="partner-logo" /></a>
+                        <a class="partner-card" aria-hidden="true" tabindex="-1" href="https://turing-express.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/turing-express..PNG" alt="" class="partner-logo" /></a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        {(smallestProduct || ertProduct) && (
-            <main class="wrapper section with-background bg-variant">
-                <div class="section-header stack gap-2 lg:gap-4">
-                    <h5>Discover our products</h5>
-                </div>
-                <div class="products-grid">
-                    {smallestProduct && (
-                        <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
-                            <span class="title">{smallestProduct.data.sections[0].data.title}</span>
-                            <img
-                                src={smallestProduct.data.sections[0].data.heroImage.src}
-                                alt={smallestProduct.data.sections[0].data.heroImage.alt}
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="featured-description">{smallestProduct.data.sections[0].data.tagline}</div>
-                        </a>
-                    )}
-                    {ertProduct && (
-                        <a class="card featured product-card" href={localePath('/product/lumi/', locale)}>
-                            <span class="title">{ertProduct.data.sections[0].data.title}</span>
-                            <img
-                                src={ertProduct.data.sections[0].data.heroImage.src}
-                                alt={ertProduct.data.sections[0].data.heroImage.alt}
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <div class="featured-description">{ertProduct.data.sections[0].data.tagline}</div>
-                        </a>
-                    )}
-                </div>
-            </main>
-        )}
+        {
+            (smallestProduct || ertProduct) && (
+                <main id="products" class="wrapper section with-background bg-variant">
+                    <div class="section-header stack gap-2 lg:gap-4">
+                        <h2>Discover our products</h2>
+                    </div>
+                    <div class="products-grid">
+                        {smallestProduct && (
+                            <div class="product-card-wrapper">
+                                <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
+                                    <span class="title">
+                                        {smallestProduct.data.sections[0].data.title}
+                                    </span>
+                                    <img
+                                        src={smallestProduct.data.sections[0].data.heroImage.src}
+                                        alt="Smallest 150/750 telescope, portable and compact, 3D printed, airline-friendly - Innovation for nomadic astronomy"
+                                        loading="eager"
+                                        fetchpriority="high"
+                                        decoding="async"
+                                    />
+                                    <div class="featured-description">
+                                        {smallestProduct.data.sections[0].data.tagline}
+                                    </div>
+                                </a>
+                            </div>
+                        )}
+                        {ertProduct && (
+                            <div class="product-card-wrapper">
+                                <a class="card featured product-card" href={localePath('/product/lumi/', locale)}>
+                                    <span class="title">
+                                        {ertProduct.data.sections[0].data.title}
+                                    </span>
+                                    <img
+                                        src={ertProduct.data.sections[0].data.heroImage.src}
+                                        alt="Lumi educational astronomical refractor, 3D printed - Perfect for discovering optics and observing the Moon and star clusters"
+                                        loading="eager"
+                                        decoding="async"
+                                    />
+                                    <div class="featured-description">
+                                        {ertProduct.data.sections[0].data.tagline}
+                                    </div>
+                                </a>
+                            </div>
+                        )}
+                    </div>
+                </main>
+            )
+        }
+
+        <ProductReviews
+            productName="La 3ème dimension"
+            averageRating={5}
+            totalReviews={5}
+            reviews={[{
+                author: "Alessandra L.",
+                rating: 5,
+                date: "2026-06-07",
+                title: "Magical! 🌙",
+                content: "A colorful, sturdy telescope with a perfect view of the Moon. My 8-and-a-half-year-old daughter is hooked. We've shared family moments of learning and wonder under the stars. The best gift to dream together. Top quality!",
+                verified: true,
+                images: ["/assets/Alavis_1.jpg", "/assets/Alavis_2.jpg"]
+            }, {
+                author: "Maxime G.",
+                rating: 5,
+                date: "2026-05-12",
+                title: "A wonderful birthday gift for my daughter… and a little for me too!",
+                content: "A wonderful birthday gift for my daughter — and I'll admit, a little for me too! The assembly is really well thought out and makes it easy to understand how the telescope works. Building it together as a family was a real bonding moment. The images are beautiful and sharp, and the design is genuinely gorgeous. Both educational and elegant, it immediately makes you want to observe the sky. We can't wait to enjoy the next starry nights!",
+                verified: true,
+                images: ["/assets/MG1.JPG", "/assets/MG2.JPG", "/assets/MG3.JPG"]
+            }, {
+                author: "Darry N.",
+                rating: 5,
+                date: "2025-05-30",
+                title: "100% approved!",
+                content: "As a happy Seestar S50 owner, I ordered the accessories Raphael offers (baffle, dust cover, etc.). All of these accessories fit the Seestar perfectly, without forcing, and hold up really well! An essential addition to this little machine. Raphael has a perfect command of his designs, dimensions, and printing!",
+                verified: true
+            }, {
+                author: "Jean-Marc C.",
+                rating: 5,
+                date: "2026-02-28",
+                title: "Much smoother and more precise adjustment",
+                content: "I bought these 3 knurled collimation screws for my Orion XX14i Dobsonian. They replace my old steel screws, which were starting to dent the back of my secondary mirror mount. The ones from La 3ème Dimension are nicely rounded, which makes adjustment much smoother, free of jerks, and far more precise. Very satisfied, thank you!",
+                verified: true
+            }, {
+                author: "Salah M.",
+                rating: 5,
+                date: "2026-02-16",
+                title: "Flawless, serious, and rigorous work",
+                content: "I asked Raphael to design several Bahtinov masks in different sizes for me. The work is flawless, done with great care and rigor. I'm fully satisfied. I won't hesitate to call on his expertise again in the future.",
+                verified: true
+            }]}
+        />
 
         <div id="contact-section">
             <ContactCTA locale={locale} />
@@ -109,41 +270,106 @@ const businessStructuredData = {
 </BaseLayout>
 
 <style>
-    a { text-decoration: none; }
-    .contact-link, .phone-link {
+    a {
+        text-decoration: none;
+    }
+
+    .hero-section {
+        gap: 1rem !important;
+    }
+
+    .hero-labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        justify-content: flex-end;
+    }
+
+    @media (min-width: 50em) {
+        .hero-labels {
+            grid-column: 2;
+            margin-top: -3rem;
+            align-self: start;
+        }
+    }
+
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--gray-700);
+        background: white;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .hero-label:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .label-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .product-pill {
         cursor: pointer;
         display: flex;
         text-align: center;
         align-items: center;
-        padding: 0.5rem 1rem;
-        gap: 0.5rem;
-        color: var(--accent-text-over);
-        border: 1px solid var(--accent-regular);
-        background-color: var(--accent-regular);
+        padding: 0.5rem 1.25rem;
+        color: white;
+        border: none;
         border-radius: 999rem;
         font-size: var(--text-md);
+        font-weight: 600;
         line-height: 1.35;
         white-space: nowrap;
+        vertical-align: middle;
         text-decoration: none;
         transition: all 0.3s ease;
     }
-    .contact-link:hover, .phone-link:hover {
-        background-color: var(--accent-dark);
+
+    .product-pill:hover {
         transform: translateY(-1px);
         box-shadow: var(--shadow-md);
+        filter: brightness(1.08);
     }
+
+    .pill-lumi {
+        background-color: #FF69B4;
+    }
+
+    .pill-picco {
+        background-color: #FFD700;
+        color: #1d1d1f;
+    }
+
+    .pill-smallest {
+        background-color: #129DE2;
+    }
+
     .hero {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 2rem;
+        gap: 1.25rem;
         width: 100%;
     }
+
     .hero :global(.hero-content) {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     .custom-tagline {
         font-size: var(--text-md);
         font-weight: 600;
@@ -151,6 +377,7 @@ const businessStructuredData = {
         margin: -1.2rem 0 0.1rem 0;
         max-width: fit-content;
     }
+
     .service-description {
         font-size: var(--text-lg);
         color: var(--gray-300);
@@ -158,6 +385,7 @@ const businessStructuredData = {
         max-width: 57ch;
         line-height: 1.5;
     }
+
     .roles {
         margin-top: 0.5rem;
         display: flex;
@@ -166,13 +394,26 @@ const businessStructuredData = {
         width: 100%;
         flex-wrap: wrap;
     }
+
     .hero :global(.product-carousel) {
         width: 100%;
         max-width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 2 / 1;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
     }
+
+    @media (max-width: 49.99em) {
+        .hero-label {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        .hero-labels {
+            margin-top: 0.5rem;
+        }
+    }
+
     @media (min-width: 50em) {
         .hero {
             max-width: none;
@@ -182,48 +423,47 @@ const businessStructuredData = {
             gap: 3.75rem;
             align-items: center;
         }
+
         .hero :global(.hero-content) {
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+
         .custom-tagline {
             font-size: var(--text-lg);
         }
+
         .service-description {
             font-size: var(--text-2xl);
         }
+
+        .roles {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
         .hero :global(.product-carousel) {
             aspect-ratio: 4 / 3;
             border-radius: 1rem;
         }
     }
-    .philosophy-text {
-        text-align: center;
-        max-width: 80ch;
-        margin: 4rem auto 0 auto;
-        padding: 0;
-    }
-    .products-grid {
+
+    /* ====================================================== */
+
+    .section {
         display: grid;
-        grid-template-columns: 1fr;
         gap: 2rem;
-        width: 100%;
     }
-    @media (min-width: 50em) {
-        .products-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            grid-area: gallery;
-        }
+
+    .with-background {
+        position: relative;
     }
-    .product-card {
-        width: 100%;
-    }
-    .section { display: grid; gap: 2rem; }
-    .with-background { position: relative; }
+
     .with-background::before {
         --hero-bg: var(--bg-image-subtle-2);
+
         content: "";
         position: absolute;
         pointer-events: none;
@@ -240,7 +480,11 @@ const businessStructuredData = {
         mix-blend-mode: var(--bg-blend-mode);
         z-index: -1;
     }
-    .with-background.bg-variant::before { --hero-bg: var(--bg-image-subtle-1); }
+
+    .with-background.bg-variant::before {
+        --hero-bg: var(--bg-image-subtle-1);
+    }
+
     .section-header {
         justify-self: center;
         text-align: center;
@@ -248,17 +492,141 @@ const businessStructuredData = {
         font-size: var(--text-md);
         color: var(--gray-300);
     }
-    .section-header h3 { font-size: var(--text-2xl); }
+
+    .section-header h3 {
+        font-size: var(--text-2xl);
+    }
+
     @media (min-width: 50em) {
         .section {
             grid-template-columns: repeat(4, 1fr);
             grid-template-areas: "header header header header" "gallery gallery gallery gallery";
             gap: 5rem;
         }
-        .section-header { grid-area: header; font-size: var(--text-lg); }
-        .section-header h3 { font-size: var(--text-4xl); }
-        .gallery { grid-area: gallery; }
+
+        .section.with-cta {
+            grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+        }
+
+        .section-header {
+            grid-area: header;
+            font-size: var(--text-lg);
+        }
+
+        .section-header h3 {
+            font-size: var(--text-4xl);
+        }
+
+        .with-cta .section-header {
+            justify-self: flex-start;
+            text-align: left;
+        }
+
+        .gallery {
+            grid-area: gallery;
+        }
+
+        .cta {
+            grid-area: cta;
+        }
     }
+
+    /* ====================================================== */
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    @media (min-width: 50em) {
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            grid-area: gallery;
+        }
+    }
+
+    .partners-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .partners-ticker {
+        width: 100%;
+        overflow: hidden;
+        mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .partners-track {
+        display: flex;
+        gap: 1rem;
+        width: max-content;
+        animation: scroll-partners 35s linear infinite;
+    }
+
+    .partners-ticker:hover .partners-track {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-partners {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    .partner-card {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.4rem;
+        border: 1px solid var(--gray-700);
+        border-radius: 0.5rem;
+        background: white;
+        text-decoration: none;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .partner-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .partner-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .partner-name {
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--gray-700);
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .product-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+
+    /* ====================================================== */
+
+    /* Featured Card Styles */
     .card {
         display: grid;
         grid-template: auto 1fr / auto 1fr;
@@ -275,7 +643,12 @@ const businessStructuredData = {
         transition: box-shadow var(--theme-transition);
         filter: grayscale(100%);
     }
-    .card:hover { box-shadow: var(--shadow-md); filter: grayscale(0%); }
+
+    .card:hover {
+        box-shadow: var(--shadow-md);
+        filter: grayscale(0%);
+    }
+
     .card .title {
         grid-area: 1 / 1 / 2 / 2;
         z-index: 1;
@@ -285,20 +658,33 @@ const businessStructuredData = {
         color: var(--gray-200);
         border-radius: 0.375rem;
     }
-    .card img { grid-area: 1 / 1 / 3 / 3; width: 100%; height: 100%; object-fit: cover; }
+
+    .card img {
+        grid-area: 1 / 1 / 3 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .card.featured {
         height: 28rem;
         min-height: 28rem;
-        transform: scale(1.02);
+        grid-template: auto 1fr / auto 1fr;
         transition: all var(--theme-transition);
     }
-    .card.featured:hover { transform: scale(1.05); box-shadow: var(--shadow-xl); }
+
+    .card.featured:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-xl);
+    }
+
     .card.featured .title {
         font-size: var(--text-xl);
         font-weight: 600;
         background: var(--accent-regular);
         color: var(--accent-text-over);
     }
+
     .featured-description {
         grid-area: 2 / 1 / 3 / 3;
         z-index: 2;
@@ -315,16 +701,51 @@ const businessStructuredData = {
         font-weight: 500;
         align-self: end;
     }
+
     @media (min-width: 50em) {
-        .card { height: 22rem; border-radius: 1.5rem; }
-        .card.featured { height: 32rem; min-height: 32rem; }
-        .card .title { border-radius: 0.9375rem; }
-        .card.featured .title { font-size: var(--text-2xl); }
+        .card {
+            height: 22rem;
+            border-radius: 1.5rem;
+        }
+
+        .card.featured {
+            height: 32rem;
+            min-height: 32rem;
+        }
+
+        .card .title {
+            border-radius: 0.9375rem;
+        }
+
+        .card.featured .title {
+            font-size: var(--text-2xl);
+        }
+
         .featured-description {
             font-size: var(--text-lg);
             margin: 1.5rem;
             padding: 1.5rem;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+        }
+    }
+
+    .mention-card {
+        display: flex;
+        height: 7rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid var(--gray-800);
+        border-radius: 1.5rem;
+        color: var(--gray-300);
+        background: var(--gradient-subtle);
+        box-shadow: var(--shadow-sm);
+    }
+
+    @media (min-width: 50em) {
+        .mention-card {
+            border-radius: 1.5rem;
+            height: 9.5rem;
         }
     }
 </style>

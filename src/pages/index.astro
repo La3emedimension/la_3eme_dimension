@@ -2,11 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import Skills from "../components/Skills.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
 import ProductReviews from "../components/ProductReviews.astro";
 import { useTranslations, localePath, type Locale } from '../i18n';
@@ -117,16 +115,9 @@ const homepageStructuredData = {
                 >
                     <h1 class="service-description">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</h1>
                     <div class="roles">
-                        <a href="#products" class="contact-link">
-                            Nos produits <Icon
-                                icon="star"
-                                size="1.33em"
-                            />
-                        </a>
-                        <a href="tel:0760853870" class="phone-link">
-                            07 60 85 38 70
-                            <Icon icon="phone" size="1.2em" />
-                        </a>
+                        <a href={localePath('/product/lumi/', locale)} class="product-pill pill-lumi">Lumi</a>
+                        <a href={localePath('/product/picco/', locale)} class="product-pill pill-picco">Picco</a>
+                        <a href={localePath('/product/smallest/', locale)} class="product-pill pill-smallest">Smallest</a>
                     </div>
                 </Hero>
 
@@ -138,8 +129,6 @@ const homepageStructuredData = {
                     <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Fabriqué en Occitanie" class="label-logo" /></a>
                 </div>
             </header>
-
-            <Skills locale={locale} />
 
             <div class="partners-section wrapper">
                 <div class="section-header stack gap-2 lg:gap-4">
@@ -329,18 +318,17 @@ const homepageStructuredData = {
         object-fit: contain;
         display: block;
     }
-    .contact-link, .phone-link {
+    .product-pill {
         cursor: pointer;
         display: flex;
         text-align: center;
         align-items: center;
-        padding: 0.5rem 1rem;
-        gap: 0.5rem;
-        color: var(--accent-text-over);
-        border: 1px solid var(--accent-regular);
-        background-color: var(--accent-regular);
+        padding: 0.5rem 1.25rem;
+        color: white;
+        border: none;
         border-radius: 999rem;
         font-size: var(--text-md);
+        font-weight: 600;
         line-height: 1.35;
         white-space: nowrap;
         vertical-align: middle;
@@ -348,17 +336,30 @@ const homepageStructuredData = {
         transition: all 0.3s ease;
     }
 
-    .contact-link:hover, .phone-link:hover {
-        background-color: var(--accent-dark);
+    .product-pill:hover {
         transform: translateY(-1px);
         box-shadow: var(--shadow-md);
+        filter: brightness(1.08);
+    }
+
+    .pill-lumi {
+        background-color: #FF69B4;
+    }
+
+    .pill-picco {
+        background-color: #FFD700;
+        color: #1d1d1f;
+    }
+
+    .pill-smallest {
+        background-color: #129DE2;
     }
 
     .hero {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 2rem;
+        gap: 1.25rem;
         width: 100%;
     }
 
@@ -396,9 +397,20 @@ const homepageStructuredData = {
     .hero :global(.product-carousel) {
         width: 100%;
         max-width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 2 / 1;
         border-radius: 1.5rem;
         box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 49.99em) {
+        .hero-label {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        .hero-labels {
+            margin-top: 0.5rem;
+        }
     }
 
     @media (min-width: 50em) {
