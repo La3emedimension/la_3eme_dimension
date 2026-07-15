@@ -8,14 +8,9 @@ import ContactCTA from "../components/ContactCTA.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
 import ProductReviews from "../components/ProductReviews.astro";
 import { useTranslations, localePath, type Locale } from '../i18n';
-import { getLocalizedCollection, getLocalizedDataCollection, getSlugWithoutLocale } from '../lib/collections';
 
 const locale: Locale = 'fr';
 const t = useTranslations(locale);
-
-const allProducts = await getLocalizedDataCollection('products', locale);
-const smallestProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'smallest');
-const ertProduct = allProducts.find((p) => getSlugWithoutLocale(p.id, locale) === 'lumi');
 
 // Business structured data for homepage
 const businessStructuredData = {
@@ -168,55 +163,6 @@ const homepageStructuredData = {
             </div>
         </div>
 
-        {
-            (smallestProduct || ertProduct) && (
-                <main id="products" class="wrapper section with-background bg-variant">
-                    <div class="section-header stack gap-2 lg:gap-4">
-                        <h2>Découvrez nos produits</h2>
-                    </div>
-                    <div class="products-grid">
-                        {smallestProduct && (
-                            <div class="product-card-wrapper">
-                                <a class="card featured product-card" href={localePath('/product/smallest/', locale)}>
-                                    <span class="title">
-                                        {smallestProduct.data.sections[0].data.title}
-                                    </span>
-                                    <img
-                                        src={smallestProduct.data.sections[0].data.heroImage.src}
-                                        alt="Télescope Smallest 150/750 portable et compact, imprimé en 3D, transportable en avion - Innovation pour l'astronomie nomade"
-                                        loading="eager"
-                                        fetchpriority="high"
-                                        decoding="async"
-                                    />
-                                    <div class="featured-description">
-                                        {smallestProduct.data.sections[0].data.tagline}
-                                    </div>
-                                </a>
-                            </div>
-                        )}
-                        {ertProduct && (
-                            <div class="product-card-wrapper">
-                                <a class="card featured product-card" href={localePath('/product/lumi/', locale)}>
-                                    <span class="title">
-                                        {ertProduct.data.sections[0].data.title}
-                                    </span>
-                                    <img
-                                        src={ertProduct.data.sections[0].data.heroImage.src}
-                                        alt="Lunette astronomique Lumi éducative imprimée en 3D - Parfaite pour découvrir l'optique et observer lune et amas d'étoiles"
-                                        loading="eager"
-                                        decoding="async"
-                                    />
-                                    <div class="featured-description">
-                                        {ertProduct.data.sections[0].data.tagline}
-                                    </div>
-                                </a>
-                            </div>
-                        )}
-                    </div>
-                </main>
-            )
-        }
-
         <ProductReviews
             productName="La 3ème dimension"
             averageRating={5}
@@ -298,8 +244,8 @@ const homepageStructuredData = {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         padding: 0.4rem;
         border-radius: 0.5rem;
         border: 1px solid var(--gray-700);
@@ -379,7 +325,7 @@ const homepageStructuredData = {
 
     .service-description {
         font-size: var(--text-lg);
-        color: var(--gray-300);
+        color: white;
         margin: 0 0 0.75rem 0;
         max-width: 57ch;
         line-height: 1.5;
@@ -404,12 +350,17 @@ const homepageStructuredData = {
 
     @media (max-width: 49.99em) {
         .hero-label {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 2.75rem;
+            height: 2.75rem;
         }
 
         .hero-labels {
             margin-top: 0.5rem;
+        }
+
+        .partner-card {
+            width: 2.75rem;
+            height: 2.75rem;
         }
     }
 
@@ -496,6 +447,10 @@ const homepageStructuredData = {
         font-size: var(--text-2xl);
     }
 
+    .partners-section .section-header h2 {
+        font-size: var(--text-lg);
+    }
+
     @media (min-width: 50em) {
         .section {
             grid-template-columns: repeat(4, 1fr);
@@ -510,6 +465,10 @@ const homepageStructuredData = {
         .section-header {
             grid-area: header;
             font-size: var(--text-lg);
+        }
+
+        .partners-section .section-header h2 {
+            font-size: var(--text-xl);
         }
 
         .section-header h3 {
@@ -582,8 +541,8 @@ const homepageStructuredData = {
         flex-shrink: 0;
         align-items: center;
         justify-content: center;
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         padding: 0.4rem;
         border: 1px solid var(--gray-700);
         border-radius: 0.5rem;
