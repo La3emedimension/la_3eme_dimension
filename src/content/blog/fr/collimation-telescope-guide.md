@@ -2,7 +2,7 @@
 title: "La Collimation : Pourquoi votre télescope montre des images floues"
 publishDate: 2026-03-15 00:00:00
 draft: false
-img: /assets/cheshire.jpg
+img: /assets/Cheshire/chesh1.jpeg
 img_alt: Outil de collimation pour télescope
 description: |
   Votre télescope montre des images floues ou déformées ? Le problème vient probablement de la collimation. Ce guide simple vous explique ce que c'est, comment vérifier si votre télescope est bien réglé, et comment le corriger facilement.

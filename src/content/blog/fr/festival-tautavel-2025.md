@@ -1,7 +1,7 @@
 ---
 title: "La 3ème Dimension au Festival d'Astronomie de Tautavel"
 publishDate: 2026-05-21
-img: "https://scontent.ftls1-1.fna.fbcdn.net/v/t39.30808-6/683625407_1417304277097596_8658973920116540172_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=UzFEOcIaxGQQ7kNvwF_SMFN&_nc_oc=AdqW30oLeu0TfYnauucv6XLQqqX9LN93C3ZGqk7hGy3mxyDV0AZAa9Mtn-U7Zh114V8&_nc_zt=23&_nc_ht=scontent.ftls1-1.fna&_nc_gid=b8d-6y7ZAyUpGsqWxjHiTg&_nc_ss=7b2a8&oh=00_Af4Ir7MRlQjvKjnRhYp19BoqKi7G4f_F88CnoTIlE3RhjQ&oe=6A14C997"
+img: "/assets/ert_montauban1.jpeg"
 img_alt: "La 3ème Dimension au 19e Festival d'Astronomie de Tautavel"
 ---
 
