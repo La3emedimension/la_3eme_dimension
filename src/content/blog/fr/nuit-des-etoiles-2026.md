@@ -41,5 +41,3 @@ Certaines séances (IMAX, Planétarium, Stellarium) nécessitent une inscription
 Toute la programmation et les inscriptions sont disponibles sur la page officielle de l'événement : [cite-espace.com](https://www.cite-espace.com/a-la-une/la-nuit-des-etoiles-2026/).
 
 Si vous êtes à Toulouse ce soir-là, venez assembler votre lunette avec nous sur le Belvédère d'Ariane !
-
-![Les nocturnes de la Cité de l'espace, Toulouse](/assets/nocturnes-cite-espace.jpg)
