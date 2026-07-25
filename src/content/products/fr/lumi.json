@@ -1,6 +1,7 @@
 {
   "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Télescope pédagogique Lumi en observation à Montauban" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
+  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation dans les Pyrénées", "objectPosition": "center 80%" },
   "seoTitle": "Lumi – Télescope Pédagogique pour Débutant | La 3ème dimension",
   "seoDescription": "Lumi, télescope pédagogique pour débutant : à assembler soi-même sans notice, pour apprendre l'optique en observant Lune et étoiles. Fabriqué en France, 219€.",
   "seoKeywords": "télescope débutant, télescope pédagogique, lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, initiation astronomie famille, premier télescope enfant, lunette made in france, astronomie toulouse occitanie",
@@ -56,7 +57,7 @@
           { "icon": "moon-stars", "text": "Idéal pour débutants" }
         ],
         "primaryCta": { "text": "Commander — 219€", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation à Montauban" },
+        "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation dans les Pyrénées" },
         "logoImage": "/assets/logolumi.png"
       }
     },

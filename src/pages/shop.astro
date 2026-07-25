@@ -109,6 +109,7 @@ const shopStructuredData = {
 									<img
 										src={product.data.shopImage?.src || heroData?.heroImage?.src || '/assets/placeholder.jpg'}
 										alt={product.data.shopImage?.alt || heroData?.heroImage?.alt || product.id}
+										style={product.data.shopImage?.objectPosition ? `object-position: ${product.data.shopImage.objectPosition}` : undefined}
 										loading="lazy"
 										decoding="async"
 									/>

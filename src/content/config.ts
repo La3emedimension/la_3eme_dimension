@@ -34,7 +34,7 @@ export const collections = {
 			carouselVideo: z.string().optional(),
 
 			// Shop page preview image override
-			shopImage: z.object({ src: z.string(), alt: z.string().optional() }).optional(),
+			shopImage: z.object({ src: z.string(), alt: z.string().optional(), objectPosition: z.string().optional() }).optional(),
 
 			// Draft mode
 			draft: z.boolean().optional(),
