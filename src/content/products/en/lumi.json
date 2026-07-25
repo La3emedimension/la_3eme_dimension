@@ -3,6 +3,7 @@
   "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
   "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
+  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees", "objectPosition": "center 80%" },
   "price": "€200",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
@@ -53,7 +54,7 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi astronomical telescope in Montauban" },
+        "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees" },
         "logoImage": "/assets/logolumi.png"
       }
     },

@@ -3,8 +3,9 @@
   "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €790.",
   "seoKeywords": "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse",
   "ogImage": "/assets/smallest-fullsize-02.jpg",
+  "shopImage": { "src": "/assets/smallestnuit_1.jpg", "alt": "Smallest - Night observation" },
   "price": "€790",
-  "priceNote": "Optics not included",
+  "priceNote": "With optics",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@type": "Product",
@@ -75,6 +76,18 @@
         "description": "Discover the simplicity of the Smallest: from transport to observation in less than 4 minutes. No tools required, intuitive assembly to quickly enjoy the starry sky.",
         "videoId": "-7mI89_OHzk",
         "videoTitle": "Assembly and observation with the Smallest telescope in 4 minutes"
+      }
+    },
+    {
+      "type": "custom",
+      "id": "section-video-grid",
+      "data": {
+        "title": "Smallest in video",
+        "videos": [
+          { "videoId": "Lar00Vi2tGs", "videoTitle": "Smallest in observation", "short": false },
+          { "videoId": "Eu9Z0DcZp2I", "videoTitle": "Smallest in action", "short": true },
+          { "videoId": "h5n0gV7nYz8", "videoTitle": "Smallest in action", "short": true }
+        ]
       }
     },
     {
@@ -257,33 +270,34 @@
       "type": "pricing",
       "id": "section-pricing",
       "data": {
-        "title": "Smallest Kit",
+        "title": "Smallest with industrial optics",
         "price": "€790",
-        "priceNote": "Optics not included",
+        "priceNote": "Complete telescope",
         "included": [
           "PETG carbon fiber reinforced structure",
           "Carbon tube and removable ballast",
           "1.25\" focuser",
           "Finder support",
           "Integrated Dobson mount",
-          "Assembly instructions"
+          "Assembly instructions",
+          "Verified industrial optics"
         ],
-        "ctaText": "Order without optics",
-        "ctaHref": "https://buy.stripe.com/4gM14p1Ng7197LZbKQ67S05",
+        "ctaText": "Order with optics",
+        "ctaHref": "https://buy.stripe.com/bJe4gB8bEetB1nB02867S0h",
         "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted.",
-        "optionsTitle": "Optical options",
+        "optionsTitle": "Other options",
         "options": [
           {
-            "title": "Industrial",
-            "description": "<div style=\"text-align: center;\">Optimal quality/price ratio<br><a href=\"https://buy.stripe.com/9B6dRb63wcltean5ms67S06\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Order with optics - €790</a></div>",
-            "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted."
+            "title": "Smallest Kit",
+            "description": "Structure only, without optics — €550"
           },
           {
-            "title": "Artisanal",
-            "description": "<div style=\"text-align: center;\"><strong>Gallifrey Optics</strong> (primary)<br><a href=\"mailto:paul.fays@gallifrey-optics.fr\">Email: paul.fays@gallifrey-optics.fr</a><br><a href=\"https://www.facebook.com/profile.php?id=61576880595400\">Facebook</a><br><strong>Zen Optics</strong> (primary/secondary)<br><a href=\"https://www.costruzioniottichezen.com/\">website</a><br><a href=\"mailto:la3emedim@gmail.com\" style=\"display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-regular); color: var(--accent-text-over); padding: 0.75rem 1rem; border-radius: 0.5rem; text-decoration: none; margin: 0.5rem auto 0; font-weight: 600; height: 3rem; box-sizing: border-box; text-align: center; width: auto;\">Contact us</a></div>",
-            "afterCtaNote": "A design period of approximately 30 days is required before shipping, as manufacturing is entirely handcrafted."
+            "title": "Artisanal optics",
+            "description": "Gallifrey Optics (primary) · Zen Optics (primary/secondary)"
           }
-        ]
+        ],
+        "contactText": "Contact us",
+        "contactHref": "mailto:la3emedim@gmail.com"
       }
     },
     {
@@ -294,6 +308,8 @@
         "description": "Here you can share your observations and builds",
         "ctaText": "Community map",
         "ctaHref": "https://la3emedim.fr/en/community-map",
+        "discordText": "Join the Discord",
+        "discordHref": "https://discord.gg/PmNhTSpWCt",
         "features": [
           "Community builds",
           "Modifications and improvements",
@@ -301,16 +317,33 @@
           "Experience sharing"
         ]
       }
+    },
+    {
+      "type": "custom",
+      "id": "section-clef-etoiles",
+      "data": {
+        "title": "See it at La Clef des Étoiles",
+        "description": "You can see and try the Smallest in person at the La Clef des Étoiles shop.",
+        "ctaText": "Visit La Clef des Étoiles",
+        "ctaHref": "https://laclefdesetoiles.com/",
+        "features": [
+          "Permanent Smallest display",
+          "Hands-on trial and demonstration",
+          "Expert astronomy advice"
+        ]
+      }
     }
   ],
   "navigationItems": [
     { "id": "hero", "label": "Overview" },
     { "id": "video", "label": "Demo" },
+    { "id": "video-grid", "label": "Smallest in video" },
     { "id": "features", "label": "Features" },
     { "id": "specs", "label": "Specifications" },
     { "id": "gallery", "label": "Gallery" },
     { "id": "pricing", "label": "Pricing" },
-    { "id": "section-community", "label": "Community" }
+    { "id": "section-community", "label": "Community" },
+    { "id": "section-clef-etoiles", "label": "Where to see it" }
   ],
   "showContactCTA": true,
   "showNavigation": true,
