@@ -1,10 +1,12 @@
 {
+  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi educational telescope observing in Montauban" },
+  "carouselVideoSrc": "/assets/Carroussel.webm",
   "seoTitle": "Lumi - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
   "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
   "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
   "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees", "objectPosition": "center 80%" },
-  "price": "€200",
+  "price": "€219",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
@@ -53,9 +55,10 @@
           { "icon": "rocket-launch", "text": "1.25\" focuser" },
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
-        "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07" },
+        "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
         "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees" },
-        "logoImage": "/assets/logolumi.png"
+        "logoImage": "/assets/logolumi.png",
+        "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope."
       }
     },
     {
@@ -285,7 +288,7 @@
       "id": "section-pricing",
       "data": {
         "title": "Complete Lumi Kit",
-        "price": "€200",
+        "price": "€219",
         "priceNote": "Printed parts + assembly kit",
         "included": [
           "3D printed parts",
@@ -298,7 +301,7 @@
           "Integrated mount"
         ],
         "ctaText": "Order complete kit",
-        "ctaHref": "https://buy.stripe.com/3cIdRb0Jcadld6j7uA67S07",
+        "ctaHref": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g",
         "afterCtaNote": "As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
         "secondaryCtaText": "Want to personalize your Lumi?",
         "secondaryCtaHref": "/en/product/lumi-customizable",

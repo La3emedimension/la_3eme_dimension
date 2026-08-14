@@ -1,4 +1,6 @@
 {
+  "carouselVideoSrc": "/assets/carroussel2.webm",
+  "carouselImage": { "src": "/assets/smallestcarroussel.png", "alt": "Smallest - Night observation" },
   "seoTitle": "Smallest - Compact Portable Telescope | La 3ème dimension",
   "seoDescription": "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €790.",
   "seoKeywords": "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse",
