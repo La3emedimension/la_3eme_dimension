@@ -3,6 +3,7 @@
   "seoDescription": "Picco : télescope newtonien 114/450 ultra-compact de 1,5 kg, fabriqué en France par impression 3D. Le télescope portable idéal pour l'astronomie nomade.",
   "seoKeywords": "télescope compact, newtonien 114/450, télescope portable, télescope 1.5 kg, télescope impression 3D, télescope made in france, astronomie nomade, télescope léger, picco telescope",
   "ogImage": "https://la3emedim.fr/assets/Piccov2_4.jpeg",
+  "shopImage": { "src": "/assets/CDL_8.jpeg", "alt": "Télescope Picco 114/450", "objectPosition": "center 70%" },
   "emailContact": "la3emedim@gmail.com",
   "sections": [
     {
@@ -11,7 +12,7 @@
       "data": {
         "title": "Picco",
         "tagline": "Télescope de Newton 114/450 — 1,5 kg",
-        "description": "Un télescope newtonien ultra-compact conçu pour l'astronomie nomade. Seulement 1,5 kg pour un instrument de 114 mm d'ouverture et 450 mm de focale, fabriqué en France par impression 3D. Vendu avec 2 oculaires Plössl : un 20mm et un 10mm.<br><br><em>Produit en cours de développement — la couleur présentée n'est pas définitive.</em>",
+        "description": "Un télescope newtonien ultra-compact conçu pour l'astronomie nomade. Seulement 1,5 kg pour un instrument de 114 mm d'ouverture et 450 mm de focale, fabriqué en France par impression 3D. Vendu avec 2 oculaires Plössl : un 20mm et un 10mm.<br><br><em>Produit en cours de développement, sortie prévue début 2026 — la couleur présentée n'est pas définitive.</em>",
         "features": [
           { "icon": "rocket-launch", "text": "114/450 — F/D 3.9" },
           { "icon": "strategy", "text": "1,5 kg" },
@@ -20,7 +21,7 @@
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
         "secondaryCta": { "text": "Plus d'information", "href": "#section-specs" },
         "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Télescope Picco 114/450" },
-        "imageOverlayText": "Produit en cours de développement",
+        "imageOverlayText": "Sortie prévue début 2026",
         "showFabLogo": false
       }
     },
@@ -101,7 +102,7 @@
       "data": {
         "title": "Picco 114/450",
         "price": "Nous contacter",
-        "priceNote": "Produit en cours de développement — tarif à venir",
+        "priceNote": "Produit en cours de développement, sortie prévue début 2026 — tarif à venir",
         "included": [
           "Tube optique imprimé en 3D",
           "Miroir principal 114 mm",
