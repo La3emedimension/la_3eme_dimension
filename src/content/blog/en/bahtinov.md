@@ -15,7 +15,7 @@ seoDescription: "Custom 3D-printed Bahtinov masks. Compatible with Askar FRA500,
 seoKeywords: "bahtinov mask, telescope focusing, 3d print focus mask, askar fra500 bahtinov, astrophotography accessory, toulouse"
 ---
 
-**See the product page:** <a class="button" href="/product/bahtinov">Order</a>
+**See the product page:** <a class="button" href="/en/product/bahtinov/">Order</a>
 
 ## The project
 

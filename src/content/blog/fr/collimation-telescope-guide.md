@@ -220,7 +220,7 @@ Si vous avez un télescope Smallest, je suis disponible pour vous aider :
 
 Et si vous voulez un outil de collimation de qualité, on fabrique des **Cheshire imprimés en 3D** parfaitement calibrés.
 
-👉 [Voir le Cheshire sur la boutique](/product/cheshire)
+👉 [Voir le Cheshire sur la boutique](/product/cheshire/)
 
 ---
 

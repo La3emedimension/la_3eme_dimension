@@ -6,12 +6,13 @@ interface NavItem {
 
 interface Props {
 	items: NavItem[];
+	locale?: 'fr' | 'en';
 }
 
-const { items } = Astro.props;
+const { items, locale = 'fr' } = Astro.props;
 ---
 
-<nav class="product-navigation" id="product-nav">
+<nav class="product-navigation" id="product-nav" data-locale={locale}>
 	<div class="nav-container">
 		<ul class="nav-list">
 			{items.map(item => {
@@ -76,7 +77,8 @@ const { items } = Astro.props;
 			link.addEventListener('click', (e) => {
 				// Special handling for community - redirect to community page
 				if (link.dataset.section === 'community') {
-					window.location.href = 'https://la3emedim.fr/carte-communaute';
+					const locale = navigation?.dataset.locale;
+					window.location.href = locale === 'en' ? '/en/carte-communaute/' : '/carte-communaute/';
 					return;
 				}
 

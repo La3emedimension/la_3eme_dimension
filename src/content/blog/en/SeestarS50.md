@@ -15,7 +15,7 @@ seoDescription: "Pack of 5 3D-printed accessories for the ZWO Seestar S50: baffl
 seoKeywords: "ZWO seestar S50, 3D printed accessories, seestar baffle, bahtinov mask, newton jwst diffraction spikes, astronomy toulouse"
 ---
 
-**See the product page:** <a class="button" href="/product/SeestarS50">Order</a>
+**See the product page:** <a class="button" href="/en/product/SeestarS50/">Order</a>
 
 ## The project
 

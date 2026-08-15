@@ -15,7 +15,7 @@ seoDescription: "Smallest : Le télescope 150/750 portable. Compact, transportab
 seoKeywords: "smallest telescope, télescope portable, astronomie nomade, télescope voyage, impression 3d astronomie, telescope compact, 150/750, toulouse"
 ---
 
-**Version Clef en mains avec tubes carbones et leste amovible :** <a class="button" href="/product/smallest">Voir la boutique</a>
+**Version Clef en mains avec tubes carbones et leste amovible :** <a class="button" href="/product/smallest/">Voir la boutique</a>
 
 **Version open source :** Les fichiers sont disponibles sur <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. Vous trouverez le <a class="button" href="https://la3emedim.fr/assets/smallest-readme.pdf">README ici</a>
 
@@ -103,7 +103,7 @@ L'astro dessin de la comète réalisé avec le Smallest :
 
 La version commerciale est imprimée en PETG CF.
 
-<a class="button" href="/product/smallest">Voir la page commerciale</a>
+<a class="button" href="/product/smallest/">Voir la page commerciale</a>
 
 ### Galerie d'images
 
@@ -133,7 +133,7 @@ La version commerciale est imprimée en PETG CF.
 
 Découvrez les téléscopes Smallest construits par la communauté à travers le monde ! Des passionnés partagent leurs créations, modifications et sorties d'observation.
 
-<a class="button button-community" href="/carte-communaute">Voir la carte interactive</a>
+<a class="button button-community" href="/carte-communaute/">Voir la carte interactive</a>
 
 Rejoignez la communauté et partagez votre Smallest ! Que vous ayez construit le vôtre ou que vous l'emmeniez en sortie, montrez-nous vos photos et inspirez d'autres astronomes.
 

@@ -15,7 +15,7 @@ seoDescription: "Vis moletées de collimation imprimées en 3D pour télescopes 
 seoKeywords: "vis collimation newton, vis moletées télescope, collimation dobson, réglage miroir primaire, vis M4 collimation, impression 3d astronomie toulouse"
 ---
 
-**Voir la fiche produit :** <a class="button" href="/product/vis-collimation">Commander</a>
+**Voir la fiche produit :** <a class="button" href="/product/vis-collimation/">Commander</a>
 
 ## Le projet
 

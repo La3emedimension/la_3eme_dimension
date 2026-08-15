@@ -15,7 +15,7 @@ seoDescription: "Pack de 5 accessoires imprimés en 3D pour le ZWO Seestar S50 :
 seoKeywords: "ZWO seestar S50, accessoires impression 3D, baffle seestar, masque bahtinov, aigrettes newton jwst, astronomie toulouse"
 ---
 
-**Voir la fiche produit :** <a class="button" href="/product/SeestarS50">Commander</a>
+**Voir la fiche produit :** <a class="button" href="/product/SeestarS50/">Commander</a>
 
 ## Le projet
 

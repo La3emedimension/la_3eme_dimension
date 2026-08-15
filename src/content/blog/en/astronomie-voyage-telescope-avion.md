@@ -101,7 +101,7 @@ Some **observing sites** are well worth the flight:
 4. Carry a technical spec sheet in English
 5. Be patient and courteous
 
-**Our experience**: 95% smooth passages with the [Smallest](/product/smallest), but always allow extra time.
+**Our experience**: 95% smooth passages with the [Smallest](/en/product/smallest/), but always allow extra time.
 
 ## Solutions for cabin-friendly telescopes
 
@@ -109,7 +109,7 @@ Some **observing sites** are well worth the flight:
 
 #### The Smallest: The first "airplane-compatible" telescope
 
-The [Smallest telescope](/product/smallest) was specifically designed for air travel:
+The [Smallest telescope](/en/product/smallest/) was specifically designed for air travel:
 
 **Folded dimensions**: 25 × 25 × 20 cm
 - ✅ Fits every cabin size restriction
@@ -417,7 +417,7 @@ Flying with a telescope is no longer a pipe dream. With **preparation** and the 
 
 ---
 
-➡️ [Discover the Smallest, the airplane-compatible telescope](/product/smallest)
+➡️ [Discover the Smallest, the airplane-compatible telescope](/en/product/smallest/)
 ➡️ [Our observing tips for travelers](/en/blog)
 ➡️ [Contact us for a custom project](mailto:la3emedim@gmail.com)
 

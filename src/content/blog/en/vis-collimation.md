@@ -15,7 +15,7 @@ seoDescription: "3D-printed collimation knobs for Newton telescopes. M4 45mm, to
 seoKeywords: "collimation knobs, newton telescope screws, dobson collimation, primary mirror adjustment, M4 collimation, 3d printing astronomy toulouse"
 ---
 
-**See the product page:** <a class="button" href="/product/vis-collimation">Order</a>
+**See the product page:** <a class="button" href="/en/product/vis-collimation/">Order</a>
 
 ## The project
 

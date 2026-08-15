@@ -289,7 +289,7 @@ The three telescopes above are excellent, but represent a budget of €400 to �
 
 The idea is different from the Smallest: here, the goal isn't observing power but **understanding**. By assembling Lumi piece by piece, you learn exactly how a telescope works (the optics, the focuser, focusing) before observing the Moon and a few star clusters. It's the most accessible beginner telescope we offer, designed as a genuine educational entry point before moving on, later, to an instrument like the Smallest.
 
-👉 [Discover Lumi, the educational telescope for beginners](/product/lumi)
+👉 [Discover Lumi, the educational telescope for beginners](/en/product/lumi/)
 
 ---
 
@@ -463,7 +463,7 @@ But if you want to **really enjoy the sky**, if you want to show Saturn to your 
 👉 The Smallest is made for that.
 
 ### See the Smallest in detail
-<a class="button" href="/product/smallest">Discover the Smallest telescope</a>
+<a class="button" href="/en/product/smallest/">Discover the Smallest telescope</a>
 
 ### Questions? Call me
 

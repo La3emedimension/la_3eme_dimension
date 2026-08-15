@@ -31,6 +31,7 @@ export interface ProductConfig {
   showNavigation?: boolean;
   showLightbox?: boolean;
   locale?: Locale;
+  hasAlternate?: boolean;
   timings?: {
     installationTime?: string;
     deliveryTime?: string;
@@ -68,6 +69,7 @@ const {
   showNavigation = true,
   showLightbox = true,
   locale = 'fr',
+  hasAlternate = true,
   timings,
   faqs
 } = Astro.props as ProductConfig;
@@ -124,6 +126,7 @@ const finalStructuredData = structuredData ? {
   keywords={seoKeywords}
   ogImage={ogImage}
   structuredData={finalStructuredData}
+  hasAlternate={hasAlternate}
 >
   {import.meta.env.DEV && draft && (
     <div class="draft-banner">
@@ -178,7 +181,7 @@ const finalStructuredData = structuredData ? {
   {showContactCTA && <ContactCTA locale={locale} />}
 
   {showNavigation && navigationItems.length > 0 && (
-    <ProductNavigation items={navigationItems} />
+    <ProductNavigation items={navigationItems} locale={locale} />
   )}
 
   {showLightbox && <Lightbox locale={locale} />}

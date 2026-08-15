@@ -69,7 +69,7 @@ Adding **carbon fiber** to PETG multiplies its performance:
 - Excellent dimensional stability
 - Superior stress resistance
 
-**Our use case**: The [Smallest](/product/smallest) uses exclusively carbon-reinforced PETG for:
+**Our use case**: The [Smallest](/en/product/smallest/) uses exclusively carbon-reinforced PETG for:
 - The telescope's main structure
 - Optics mounts (stable collimation)
 - Dobsonian base (maximum rigidity)
@@ -98,7 +98,7 @@ Adding **carbon fiber** to PETG multiplies its performance:
 
 #### Portable Newtonian: the Smallest case study
 
-The [Smallest telescope](/product/smallest) is a perfect illustration of the potential:
+The [Smallest telescope](/en/product/smallest/) is a perfect illustration of the potential:
 
 **Features**:
 - Fully functional 150/750 Newtonian
@@ -188,7 +188,7 @@ The [Smallest telescope](/product/smallest) is a perfect illustration of the pot
 
 #### Printed Cheshire
 
-The [Cheshire](/product/cheshire) is the perfect tool to print:
+The [Cheshire](/en/product/cheshire/) is the perfect tool to print:
 
 **Advantages**:
 - Cost: €15 printed vs. €40-60 commercially

@@ -15,7 +15,7 @@ seoDescription: "Masques de Bahtinov imprimés en 3D sur mesure. Compatible Aska
 seoKeywords: "masque bahtinov, mise au point télescope, focus mask impression 3d, askar fra500 bahtinov, astrophotographie accessoire, toulouse"
 ---
 
-**Voir la fiche produit :** <a class="button" href="/product/bahtinov">Commander</a>
+**Voir la fiche produit :** <a class="button" href="/product/bahtinov/">Commander</a>
 
 ## Le projet
 

@@ -10,15 +10,23 @@ const locale: Locale = 'en';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
+  const frSlugs = new Set(
+    blogEntries
+      .filter(entry => entry.id.startsWith('fr/'))
+      .map(entry => entry.id.replace('fr/', '').replace(/\.md$/, ''))
+  );
   return blogEntries
     .filter(entry => entry.id.startsWith('en/'))
-    .map((entry) => ({
-      params: { slug: entry.id.replace('en/', '').replace(/\.md$/, '') },
-      props: { entry },
-    }));
+    .map((entry) => {
+      const slug = entry.id.replace('en/', '').replace(/\.md$/, '');
+      return {
+        params: { slug },
+        props: { entry, hasAlternate: frSlugs.has(slug) },
+      };
+    });
 }
 
-const { entry } = Astro.props;
+const { entry, hasAlternate } = Astro.props;
 const { Content } = await render(entry);
 
 const entrySlug = getSlugWithoutLocale(entry.id, locale);
@@ -40,6 +48,7 @@ const formatDate = (date: Date) => {
   description={`Blog article: ${entry.data.title}`}
   keywords={`blog, 3d printing, ${entry.data.title.toLowerCase()}`}
   ogImage={entry.data.img ? `https://la3emedim.fr${entry.data.img}` : "https://la3emedim.fr/assets/preview.png"}
+  hasAlternate={hasAlternate}
 >
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper">

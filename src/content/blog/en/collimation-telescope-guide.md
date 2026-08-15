@@ -220,7 +220,7 @@ If you have a Smallest telescope, I'm available to help:
 
 And if you want a quality collimation tool, we make **3D-printed Cheshires** that are perfectly calibrated.
 
-👉 [See the Cheshire in the shop](/product/cheshire)
+👉 [See the Cheshire in the shop](/en/product/cheshire/)
 
 ---
 

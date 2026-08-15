@@ -69,7 +69,7 @@ L'ajout de **fibres de carbone** au PETG multiplie les performances :
 - Excellente stabilité dimensionnelle
 - Résistance supérieure aux contraintes
 
-**Notre utilisation** : Le [Smallest](/product/smallest) utilise exclusivement du PETG chargé carbone pour :
+**Notre utilisation** : Le [Smallest](/product/smallest/) utilise exclusivement du PETG chargé carbone pour :
 - Structure principale du télescope
 - Supports d'optiques (collimation stable)
 - Base Dobson (rigidité maximale)
@@ -98,7 +98,7 @@ L'ajout de **fibres de carbone** au PETG multiplie les performances :
 
 #### Newton portable : Le cas Smallest
 
-Le [télescope Smallest](/product/smallest) illustre parfaitement le potentiel :
+Le [télescope Smallest](/product/smallest/) illustre parfaitement le potentiel :
 
 **Caractéristiques** :
 - Newton 150/750 entièrement fonctionnel
@@ -188,7 +188,7 @@ Le [télescope Smallest](/product/smallest) illustre parfaitement le potentiel :
 
 #### Cheshire imprimé
 
-Le [Cheshire](/product/cheshire) est l'outil parfait à imprimer :
+Le [Cheshire](/product/cheshire/) est l'outil parfait à imprimer :
 
 **Avantages** :
 - Coût : 15€ imprimé vs 40-60€ commerce

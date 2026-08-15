@@ -101,7 +101,7 @@ Certains **sites d'observation** justifient amplement le transport aérien :
 4. Ayez une fiche technique en anglais
 5. Soyez patient et courtois
 
-**Notre expérience** : 95% de passages sans souci avec le [Smallest](/product/smallest), mais toujours prévoir du temps.
+**Notre expérience** : 95% de passages sans souci avec le [Smallest](/product/smallest/), mais toujours prévoir du temps.
 
 ## Solutions pour télescopes en cabine
 
@@ -109,7 +109,7 @@ Certains **sites d'observation** justifient amplement le transport aérien :
 
 #### Le Smallest : Premier télescope "avion-compatible"
 
-Le [télescope Smallest](/product/smallest) a été spécifiquement conçu pour le transport aérien :
+Le [télescope Smallest](/product/smallest/) a été spécifiquement conçu pour le transport aérien :
 
 **Dimensions pliées** : 25 × 25 × 20 cm
 - ✅ Entre dans toutes les normes cabine
@@ -417,7 +417,7 @@ Voyager en avion avec un télescope n'est plus une utopie. Avec **préparation**
 
 ---
 
-➡️ [Découvrez le Smallest, télescope avion-compatible](/product/smallest)
+➡️ [Découvrez le Smallest, télescope avion-compatible](/product/smallest/)
 ➡️ [Nos conseils d'observation en voyage](/blog)
 ➡️ [Contactez-nous pour un projet sur-mesure](mailto:la3emedim@gmail.com)
 

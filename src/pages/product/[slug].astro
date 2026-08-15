@@ -15,16 +15,24 @@ const locale: Locale = 'fr';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
+  const publishedEnSlugs = new Set(
+    products
+      .filter(product => product.id.startsWith('en/') && !product.data.draft)
+      .map(product => product.id.replace('en/', '').replace(/\.json$/, ''))
+  );
   return products
     .filter(product => product.id.startsWith('fr/'))
     .filter(({ data }) => import.meta.env.DEV || !data.draft)
-    .map((product) => ({
-      params: { slug: product.id.replace('fr/', '').replace(/\.json$/, '') },
-      props: { product },
-    }));
+    .map((product) => {
+      const slug = product.id.replace('fr/', '').replace(/\.json$/, '');
+      return {
+        params: { slug },
+        props: { product, hasAlternate: publishedEnSlugs.has(slug) },
+      };
+    });
 }
 
-const { product } = Astro.props;
+const { product, hasAlternate } = Astro.props;
 const productConfig = product.data;
 const productSlug = getSlugWithoutLocale(product.id, locale);
 
@@ -88,7 +96,8 @@ if (productSlug === 'smallest') {
 const finalConfig = {
   ...productConfig,
   sections: allSections,
-  locale
+  locale,
+  hasAlternate
 };
 ---
 

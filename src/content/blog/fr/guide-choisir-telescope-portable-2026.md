@@ -46,7 +46,7 @@ Un **télescope portable** offre une liberté incomparable :
 - Privilégiez les modèles **démontables** facilement
 - Pensez au volume dans votre voiture
 
-**Notre recommandation** : Le [Smallest](/product/smallest) pèse 4kg avec optiques et tient en cabine d'avion (25×25×20cm plié).
+**Notre recommandation** : Le [Smallest](/product/smallest/) pèse 4kg avec optiques et tient en cabine d'avion (25×25×20cm plié).
 
 ### 2. Le diamètre et les performances optiques
 
@@ -139,7 +139,7 @@ Les matériaux modernes comme le **PETG chargé fibre de carbone** offrent :
 
 ### Exemples de télescopes portables innovants
 
-**Le Smallest** ([voir la fiche produit](/product/smallest)) :
+**Le Smallest** ([voir la fiche produit](/product/smallest/)) :
 - Premier Newton 150/750 transportable en avion
 - Structure imprimée 3D modulaire
 - Montage en 4 minutes sans outils

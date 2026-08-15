@@ -100,7 +100,7 @@ Astronomical sketch of the comet made with the Smallest:
 
 The commercial version is printed in PETG CF.
 
-<a class="button" href="/product/smallest">View the product page</a>
+<a class="button" href="/en/product/smallest/">View the product page</a>
 
 ### Image gallery
 
@@ -130,7 +130,7 @@ The commercial version is printed in PETG CF.
 
 Discover Smallest telescopes built by the community around the world! Enthusiasts share their creations, modifications, and observation outings.
 
-<a class="button button-community" href="/en/carte-communaute">View the interactive map</a>
+<a class="button button-community" href="/en/carte-communaute/">View the interactive map</a>
 
 Join the community and share your Smallest! Whether you built your own or take it out for observation, show us your photos and inspire other astronomers.
 

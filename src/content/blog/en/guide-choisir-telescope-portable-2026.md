@@ -46,7 +46,7 @@ A **portable telescope** offers unmatched freedom:
 - Favor models that are **easy to disassemble**
 - Consider the volume it takes up in your car
 
-**Our recommendation**: The [Smallest](/product/smallest) weighs 4kg with optics and fits in a plane's cabin (25×25×20cm folded).
+**Our recommendation**: The [Smallest](/en/product/smallest/) weighs 4kg with optics and fits in a plane's cabin (25×25×20cm folded).
 
 ### 2. Aperture and optical performance
 
@@ -139,7 +139,7 @@ Modern materials like **carbon-fiber-reinforced PETG** offer:
 
 ### Examples of innovative portable telescopes
 
-**The Smallest** ([see the product page](/product/smallest)):
+**The Smallest** ([see the product page](/en/product/smallest/)):
 - The first 150/750 Newtonian that fits in a plane's cabin
 - Modular 3D-printed structure
 - Assembles in 4 minutes with no tools
