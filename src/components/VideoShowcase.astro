@@ -4,9 +4,10 @@ interface Props {
 	description: string;
 	videoId: string;
 	videoTitle: string;
+	note?: string;
 }
 
-const { title, description, videoId, videoTitle } = Astro.props;
+const { title, description, videoId, videoTitle, note } = Astro.props;
 ---
 
 <section class="video-showcase">
@@ -15,6 +16,7 @@ const { title, description, videoId, videoTitle } = Astro.props;
 			<div class="video-text">
 				<h2>{title}</h2>
 				<p>{description}</p>
+				{note && <p class="video-note" set:html={note} />}
 			</div>
 			<div class="video-wrapper">
 				<div class="video-embed">
@@ -64,6 +66,23 @@ const { title, description, videoId, videoTitle } = Astro.props;
 		font-size: 1.2rem;
 		color: var(--gray-300);
 		line-height: 1.6;
+	}
+
+	.video-note {
+		font-size: 1rem !important;
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.video-note :global(a) {
+		color: var(--accent-regular);
+		text-decoration: underline;
+		font-weight: 600;
+	}
+
+	.video-note :global(a:hover) {
+		color: var(--accent-dark);
 	}
 
 	.video-wrapper {

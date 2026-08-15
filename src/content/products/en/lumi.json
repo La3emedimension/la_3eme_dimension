@@ -63,6 +63,17 @@
     },
     {
       "type": "video",
+      "id": "section-video-ciel-espace",
+      "data": {
+        "title": "Ciel & Espace talks about it",
+        "description": "2026 astro news, ch.1",
+        "videoId": "ocNVXNSKH3g",
+        "videoTitle": "The Lumi refractor in observation",
+        "note": "📰 <strong>Lumi in the press:</strong> reviewed in <a href=\"https://www.cieletespace.fr/edition/608\" target=\"_blank\" rel=\"noopener noreferrer\">Ciel & Espace #608</a> and featured in the special issue <a href=\"https://www.cieletespace.fr/edition/hs-55\" target=\"_blank\" rel=\"noopener noreferrer\">\"Which telescope to see the planets\" (HS-55)</a>."
+      }
+    },
+    {
+      "type": "video",
       "id": "section-video-2",
       "data": {
         "title": "Quick demonstration",
@@ -341,6 +352,7 @@
   ],
   "navigationItems": [
     { "id": "hero", "label": "Overview" },
+    { "id": "video-ciel-espace", "label": "Ciel & Espace" },
     { "id": "video-2", "label": "Quick assembly" },
     { "id": "video-3", "label": "Field test" },
     { "id": "specs", "label": "Modules" },

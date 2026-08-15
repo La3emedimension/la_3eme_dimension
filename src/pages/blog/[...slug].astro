@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import FocalCalculator from "../../components/FocalCalculator.astro";
+import Lightbox from "../../components/Lightbox.astro";
 import { localePath, type Locale } from '../../i18n';
 import { getSlugWithoutLocale } from '../../lib/collections';
 
@@ -195,6 +196,8 @@ const formatDate = (date: Date) => {
       </footer>
     </div>
   </div>
+
+  <Lightbox locale={locale} />
 </BaseLayout>
 
 <style>
