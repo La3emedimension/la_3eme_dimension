@@ -297,7 +297,6 @@ const noticeConfig = {
   }
 
   :global(button),
-  :global(.cta),
   :global(.btn),
   :global(.button) {
     background-color: var(--gray-700) !important;
@@ -306,7 +305,6 @@ const noticeConfig = {
   }
 
   :global(button:hover),
-  :global(.cta:hover),
   :global(.btn:hover),
   :global(.button:hover) {
     background-color: var(--gray-600) !important;
@@ -392,11 +390,6 @@ const noticeConfig = {
     color: black !important;
   }
 
-  /* Button text in black */
-  :global(.cta-primary) {
-    color: black !important;
-  }
-
   /* Navigation pills - white text when active */
   :global(.nav-link.active) {
     background: var(--gray-700) !important;
@@ -451,7 +444,6 @@ const noticeConfig = {
 
   /* Light theme : forcer des gris foncés sur tous les boutons */
   :global(.theme-light) :global(button),
-  :global(.theme-light) :global(.cta),
   :global(.theme-light) :global(.btn),
   :global(.theme-light) :global(.button),
   :global(.theme-light) :global(.cta-primary),
@@ -466,7 +458,6 @@ const noticeConfig = {
   }
 
   :global(.theme-light) :global(button:hover),
-  :global(.theme-light) :global(.cta:hover),
   :global(.theme-light) :global(.btn:hover),
   :global(.theme-light) :global(.button:hover),
   :global(.theme-light) :global(.cta-primary:hover),
