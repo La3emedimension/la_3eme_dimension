@@ -1,7 +1,6 @@
 ---
 title: "La 3ème Dimension dans L'Opinion : portrait d'une entreprise du Tarn-et-Garonne"
 publishDate: 2026-08-17
-draft: true
 img: "/assets/smallestnuit_1.jpg"
 img_alt: "Installation du télescope Smallest pour une observation nocturne du ciel"
 description: |

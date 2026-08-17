@@ -1,7 +1,6 @@
 ---
 title: "La 3ème Dimension featured in L'Opinion: a portrait of a Tarn-et-Garonne workshop"
 publishDate: 2026-08-17
-draft: true
 img: "/assets/smallestnuit_1.jpg"
 img_alt: "Smallest telescope set up for a night observation session"
 description: |
