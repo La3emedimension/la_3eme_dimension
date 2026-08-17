@@ -227,6 +227,6 @@ Pour l'astronomie nomade sérieuse, un **Newton 150mm optimisé** offre le meill
 
 ---
 
-**Prêt à vous lancer dans l'astronomie nomade ?** [Découvrez notre gamme de télescopes portables](/shop) ou [contactez-nous](mailto:la3emedim@gmail.com) pour un conseil personnalisé.
+**Prêt à vous lancer dans l'astronomie nomade ?** [Découvrez notre gamme de télescopes portables](/shop/) ou [contactez-nous](mailto:la3emedim@gmail.com) pour un conseil personnalisé.
 
 **Mots-clés** : télescope portable, télescope de voyage, astronomie nomade, choisir télescope, newton portable, télescope compact, impression 3D astronomie, smallest telescope

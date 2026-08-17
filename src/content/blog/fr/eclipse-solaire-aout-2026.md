@@ -43,7 +43,7 @@ Quelques rappels essentiels pour celles et ceux qui n'ont pas pu observer l'écl
 
 Deux autres éclipses majeures sont à surveiller dans les mois qui viennent : une **éclipse totale le 2 août 2027** et une **éclipse annulaire le 26 janvier 2028**, toutes deux visibles depuis l'Europe ou à proximité. De quoi donner le temps de bien préparer son matériel d'ici là.
 
-C'est justement ce que nous faisons chez **La 3ème Dimension**, depuis notre atelier de Verdun-sur-Garonne : concevoir et fabriquer, par fabrication additive, des instruments d'observation astronomique pensés pour être pris en main simplement, sans mode d'emploi. Si vous cherchez à équiper votre prochaine observation éclipse, Perséides ou ciel profond, n'hésitez pas à jeter un œil à [nos instruments](/shop).
+C'est justement ce que nous faisons chez **La 3ème Dimension**, depuis notre atelier de Verdun-sur-Garonne : concevoir et fabriquer, par fabrication additive, des instruments d'observation astronomique pensés pour être pris en main simplement, sans mode d'emploi. Si vous cherchez à équiper votre prochaine observation éclipse, Perséides ou ciel profond, n'hésitez pas à jeter un œil à [nos instruments](/shop/).
 
 ## En images
 

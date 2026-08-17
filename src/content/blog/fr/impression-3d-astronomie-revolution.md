@@ -391,9 +391,9 @@ Que vous soyez **maker**, **astronome amateur**, ou **curieux de technologie**, 
 
 **Prêt à franchir le pas ?**
 
-➡️ [Découvrez nos créations imprimées 3D](/shop)
+➡️ [Découvrez nos créations imprimées 3D](/shop/)
 ➡️ [Commandez un projet personnalisé](mailto:la3emedim@gmail.com)
-➡️ [Suivez nos tutoriels sur notre blog](/blog)
+➡️ [Suivez nos tutoriels sur notre blog](/blog/)
 
 ---
 

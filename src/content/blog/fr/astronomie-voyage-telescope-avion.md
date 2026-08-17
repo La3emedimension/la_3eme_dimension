@@ -418,7 +418,7 @@ Voyager en avion avec un télescope n'est plus une utopie. Avec **préparation**
 ---
 
 ➡️ [Découvrez le Smallest, télescope avion-compatible](/product/smallest/)
-➡️ [Nos conseils d'observation en voyage](/blog)
+➡️ [Nos conseils d'observation en voyage](/blog/)
 ➡️ [Contactez-nous pour un projet sur-mesure](mailto:la3emedim@gmail.com)
 
 **Mots-clés** : télescope avion, voyager avec télescope, transport télescope, cabine avion, astronomie voyage, télescope portable, réglementation aérienne, bagages cabine télescope

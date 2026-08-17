@@ -4,7 +4,6 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 import SmallestOverview from '../../../components/SmallestOverview.astro';
 import VideoGrid from '../../../components/VideoGrid.astro';
 import SmallestSocialProof from '../../../components/SmallestSocialProof.astro';
-import SmallestLearnMore from '../../../components/SmallestLearnMore.astro';
 import CommunityMap from '../../../components/CommunityMap.astro';
 import CommunitySection from '../../../components/CommunitySection.astro';
 import ClefEtoilesSection from '../../../components/ClefEtoilesSection.astro';
@@ -41,7 +40,6 @@ const customSections = [];
 if (productSlug === 'smallest') {
   customSections.push({ type: 'custom', customComponent: SmallestOverview, data: {} });
   customSections.push({ type: 'custom', customComponent: SmallestSocialProof, data: {} });
-  customSections.push({ type: 'custom', customComponent: SmallestLearnMore, data: {} });
 }
 
 const allSections = [...productConfig.sections];

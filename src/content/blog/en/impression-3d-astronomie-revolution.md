@@ -389,9 +389,9 @@ Whether you're a **maker**, an **amateur astronomer**, or **curious about techno
 
 **Ready to take the leap?**
 
-➡️ [Discover our 3D-printed creations](/en/shop)
+➡️ [Discover our 3D-printed creations](/en/shop/)
 ➡️ [Order a custom project](mailto:la3emedim@gmail.com)
-➡️ [Follow our tutorials on our blog](/en/blog)
+➡️ [Follow our tutorials on our blog](/en/blog/)
 
 ---
 

@@ -418,7 +418,7 @@ Flying with a telescope is no longer a pipe dream. With **preparation** and the 
 ---
 
 ➡️ [Discover the Smallest, the airplane-compatible telescope](/en/product/smallest/)
-➡️ [Our observing tips for travelers](/en/blog)
+➡️ [Our observing tips for travelers](/en/blog/)
 ➡️ [Contact us for a custom project](mailto:la3emedim@gmail.com)
 
 **Keywords**: telescope on a plane, flying with a telescope, telescope transport, airplane cabin, astronomy travel, portable telescope, air travel regulations, telescope cabin baggage

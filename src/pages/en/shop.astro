@@ -37,7 +37,7 @@ const shopStructuredData = {
 	"@type": "CollectionPage",
 	"name": "Shop La 3ème dimension",
 	"description": "Discover our range of 3D printed products: portable telescopes, travel accessories and educational instruments.",
-	"url": "https://la3emedim.fr/en/shop",
+	"url": "https://la3emedim.fr/en/shop/",
 	"mainEntity": {
 		"@type": "ItemList",
 		"numberOfItems": allProducts.length,
@@ -48,7 +48,7 @@ const shopStructuredData = {
 				"@type": "Product",
 				"name": product.data.structuredData?.name || product.id,
 				"description": product.data.seoDescription,
-				"url": `https://la3emedim.fr/en/product/${product.id}`,
+				"url": `https://la3emedim.fr/en/product/${getSlugWithoutLocale(product.id, locale)}/`,
 				"image": product.data.ogImage
 			}
 		}))

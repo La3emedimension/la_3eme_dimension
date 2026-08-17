@@ -227,6 +227,6 @@ For serious nomadic astronomy, an **optimized 150mm Newtonian** offers the best 
 
 ---
 
-**Ready to get into nomadic astronomy?** [Discover our range of portable telescopes](/en/shop) or [contact us](mailto:la3emedim@gmail.com) for personalized advice.
+**Ready to get into nomadic astronomy?** [Discover our range of portable telescopes](/en/shop/) or [contact us](mailto:la3emedim@gmail.com) for personalized advice.
 
 **Keywords**: portable telescope, travel telescope, nomadic astronomy, choosing a telescope, portable newton, compact telescope, 3d printed astronomy, smallest telescope

@@ -14,9 +14,34 @@ interface Props {
   averageRating: number;
   totalReviews: number;
   productName: string;
+  locale?: 'fr' | 'en';
 }
 
-const { reviews, averageRating, totalReviews, productName } = Astro.props;
+const { reviews, averageRating, totalReviews, productName, locale = 'fr' } = Astro.props;
+
+const t = locale === 'en' ? {
+  title: 'Customer reviews',
+  verifiedPurchase: 'Verified purchase',
+  photoAlt: (author: string, i: number) => `Photo by ${author} ${i + 1}`,
+  photoCaption: (author: string) => `Photo by ${author}`,
+  previous: 'Previous',
+  next: 'Next',
+  ctaQuestion: 'Bought this product?',
+  ctaButton: 'Leave a review',
+  mailSubject: (name: string) => `Review for ${name}`,
+  dateLocale: 'en-GB'
+} : {
+  title: 'Avis clients',
+  verifiedPurchase: 'Achat vérifié',
+  photoAlt: (author: string, i: number) => `Photo de ${author} ${i + 1}`,
+  photoCaption: (author: string) => `Photo de ${author}`,
+  previous: 'Précédent',
+  next: 'Suivant',
+  ctaQuestion: 'Vous avez acheté ce produit ?',
+  ctaButton: 'Laisser un avis',
+  mailSubject: (name: string) => `Avis sur ${name}`,
+  dateLocale: 'fr-FR'
+};
 
 const groups: Review[][] = [];
 for (let i = 0; i < reviews.length; i += 2) {
@@ -56,7 +81,7 @@ const renderStars = (rating: number) => Array.from({ length: 5 }, (_, i) => i < 
 <section class="reviews-section" id="reviews">
   <div class="reviews-container">
     <div class="reviews-header">
-      <h2>Avis clients</h2>
+      <h2>{t.title}</h2>
       <div class="rating-summary">
         <div class="stars-large">
           {renderStars(Math.round(averageRating)).map(filled => (
@@ -64,7 +89,11 @@ const renderStars = (rating: number) => Array.from({ length: 5 }, (_, i) => i < 
           ))}
         </div>
         <p class="rating-text">
-          <strong>{averageRating.toFixed(1)}</strong> / 5 basé sur <strong>{totalReviews}</strong> avis
+          {locale === 'en' ? (
+            <><strong>{averageRating.toFixed(1)}</strong> / 5 based on <strong>{totalReviews}</strong> review{totalReviews > 1 ? 's' : ''}</>
+          ) : (
+            <><strong>{averageRating.toFixed(1)}</strong> / 5 basé sur <strong>{totalReviews}</strong> avis</>
+          )}
         </p>
       </div>
     </div>

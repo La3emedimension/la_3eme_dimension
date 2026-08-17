@@ -5,8 +5,7 @@ export default defineConfig({
   site: 'https://la3emedim.fr',
   base: '/',
   redirects: {
-    '/product/ert': '/product/lumi',
-    '/product/ert/': '/product/lumi/',
+    '/product/ert': '/product/lumi/',
   },
   integrations: [
     sitemap({

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import { getAlternatePath, type Locale } from '../i18n';
 
 interface Props {
@@ -8,9 +9,34 @@ interface Props {
 const { locale } = Astro.props;
 const currentPath = Astro.url.pathname;
 const alternatePath = getAlternatePath(currentPath, locale);
+const targetLocale: Locale = locale === 'fr' ? 'en' : 'fr';
+
+// Verify the counterpart page actually exists before linking to it —
+// naive locale-prefix swapping produces 404s for asymmetric content
+// (draft-only-in-one-locale products, mismatched blog slugs, fr-only static pages).
+const routePath = alternatePath.replace(/^\/en\/?/, '').replace(/^\/|\/$/g, '');
+const segments = routePath.split('/').filter(Boolean);
+
+let alternateExists = false;
+
+if (segments[0] === 'product' && segments[1]) {
+  const products = await getCollection('products');
+  alternateExists = products.some(p => p.id.replace(/\.json$/, '') === `${targetLocale}/${segments[1]}` && !p.data.draft);
+} else if (segments[0] === 'blog' && segments[1]) {
+  const blogEntries = await getCollection('blog');
+  const slug = decodeURIComponent(segments[1]);
+  alternateExists = blogEntries.some(e => e.id.replace(/\.md$/, '') === `${targetLocale}/${slug}`);
+} else {
+  const pageModules = import.meta.glob('/src/pages/**/*.astro');
+  const routeSlug = routePath === '' ? 'index' : routePath;
+  const filePath = `/src/pages/${targetLocale === 'en' ? 'en/' : ''}${routeSlug}.astro`;
+  alternateExists = filePath in pageModules;
+}
+
+const href = alternateExists ? alternatePath : (targetLocale === 'en' ? '/en/' : '/');
 ---
 
-<a href={alternatePath} class={`lang-toggle ${locale === 'en' ? 'lang-en' : 'lang-fr'}`} aria-label={locale === 'fr' ? 'Switch to English' : 'Passer en français'}>
+<a href={href} class={`lang-toggle ${locale === 'en' ? 'lang-en' : 'lang-fr'}`} aria-label={locale === 'fr' ? 'Switch to English' : 'Passer en français'}>
   <span class="lang-icon lang-fr">FR</span>
   <span class="lang-icon lang-en">EN</span>
 </a>

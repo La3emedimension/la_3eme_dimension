@@ -2,9 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import ContactCTA from '../../components/ContactCTA.astro';
+import { type Locale } from '../../i18n';
+
+const locale: Locale = 'en';
 ---
 
-<BaseLayout title="Legal Notice & Terms and Conditions | La 3ème dimension" description="Legal Notice and Terms and Conditions La 3ème dimension">
+<BaseLayout locale={locale} title="Legal Notice & Terms and Conditions | La 3ème dimension" description="Legal Notice and Terms and Conditions La 3ème dimension">
 	<div class="stack gap-20">
 		<main class="legal-page">
 			<div class="legal-container">
@@ -117,7 +120,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 				</div>
 			</div>
 		</main>
-		<ContactCTA />
+		<ContactCTA locale={locale} />
 	</div>
 </BaseLayout>
 

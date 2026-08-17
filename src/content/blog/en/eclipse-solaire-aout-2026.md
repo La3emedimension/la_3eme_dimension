@@ -43,7 +43,7 @@ A few essential reminders for anyone who missed the August 12 eclipse, or who's 
 
 Two more major eclipses are worth watching for in the months ahead: a **total eclipse on August 2, 2027** and an **annular eclipse on January 26, 2028**, both visible from Europe or nearby. Plenty of time to properly prepare your gear before then.
 
-That's exactly what we do at **La 3ème Dimension**, from our workshop in Verdun-sur-Garonne: designing and 3D printing astronomical observation instruments built to be picked up and used simply, without an instruction manual. If you're looking to gear up for your next eclipse, Perseids, or deep-sky observation, feel free to check out [our instruments](/en/shop).
+That's exactly what we do at **La 3ème Dimension**, from our workshop in Verdun-sur-Garonne: designing and 3D printing astronomical observation instruments built to be picked up and used simply, without an instruction manual. If you're looking to gear up for your next eclipse, Perseids, or deep-sky observation, feel free to check out [our instruments](/en/shop/).
 
 ## In pictures
 
