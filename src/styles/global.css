@@ -113,6 +113,7 @@ html,
 body {
 	min-height: 100%;
 	overflow-x: hidden;
+	background-color: var(--gray-999);
 }
 
 body {
