@@ -21,7 +21,7 @@
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
         "secondaryCta": { "text": "Plus d'information", "href": "#section-specs" },
         "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Télescope Picco 114/450" },
-        "imageOverlayText": "Sortie prévue début 2027",
+        "imageOverlayText": "Précommande à 350€ — sortie début 2027",
         "showFabLogo": false
       }
     },
@@ -101,8 +101,8 @@
       "id": "section-pricing",
       "data": {
         "title": "Picco 114/450",
-        "price": "Nous contacter",
-        "priceNote": "Produit en cours de développement, sortie prévue début 2027 — tarif à venir",
+        "price": "350€",
+        "priceNote": "Prix de précommande — ouverture avant fin 2026, sortie prévue début 2027",
         "included": [
           "Tube optique imprimé en 3D",
           "Miroir principal 114 mm",

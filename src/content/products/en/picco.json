@@ -20,7 +20,7 @@
         ],
         "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
         "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Picco 114/450 telescope" },
-        "imageOverlayText": "Release planned for early 2027",
+        "imageOverlayText": "Pre-order at €350 — release early 2027",
         "showFabLogo": false
       }
     },
@@ -100,8 +100,8 @@
       "id": "section-pricing",
       "data": {
         "title": "Picco 114/450",
-        "price": "Contact us",
-        "priceNote": "Product under development, release planned for early 2027 — price coming soon",
+        "price": "€350",
+        "priceNote": "Pre-order price — opening before end of 2026, release planned for early 2027",
         "included": [
           "3D-printed optical tube",
           "114 mm primary mirror",
