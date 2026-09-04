@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import { getImageDimensions } from '../lib/imageDimensions';
 
 interface Props {
 	title: string;
@@ -21,13 +22,24 @@ const { title, tagline, description, features, primaryCta, secondaryCta, heroIma
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
+
+const heroImageDimensions = await getImageDimensions(heroImage?.src);
+const fabLogoDimensions = await getImageDimensions('/assets/fab_bloc_rvb.png');
+const logoImageDimensions = await getImageDimensions(logoImage);
 ---
 
 <section class="hero-product">
 	<div class="hero-content">
 		<div class="hero-text">
 			{logoImage && (
-				<img src={logoImage} alt={`Logo ${title}`} class="product-logo" />
+				<img
+					src={logoImage}
+					alt={`Logo ${title}`}
+					class="product-logo"
+					width={logoImageDimensions?.width}
+					height={logoImageDimensions?.height}
+					loading="eager"
+				/>
 			)}
 			<h1 class={logoImage ? 'visually-hidden' : ''}>
 				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span> – Télescope Pédagogique pour Débutant</> : title}
@@ -79,8 +91,25 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 		{heroImage && (
 			<div class="hero-media">
 				<div class="hero-image-wrapper">
-					<img src={heroImage.src} alt={heroImage.alt} class="hero-image" />
-					{showFabLogo && <img src="/assets/fab_bloc_rvb.png" alt="Logo FAB" class="fab-logo" />}
+					<img
+						src={heroImage.src}
+						alt={heroImage.alt}
+						class="hero-image"
+						width={heroImageDimensions?.width}
+						height={heroImageDimensions?.height}
+						loading="eager"
+						fetchpriority="high"
+					/>
+					{showFabLogo && (
+						<img
+							src="/assets/fab_bloc_rvb.png"
+							alt="Logo FAB"
+							class="fab-logo"
+							width={fabLogoDimensions?.width}
+							height={fabLogoDimensions?.height}
+							loading="lazy"
+						/>
+					)}
 					{imageOverlayText && <div class="image-overlay-badge">{imageOverlayText}</div>}
 				</div>
 			</div>

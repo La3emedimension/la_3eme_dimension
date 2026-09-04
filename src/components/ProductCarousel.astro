@@ -1,6 +1,7 @@
 ---
 import { getLocalizedCollection } from '../lib/collections';
 import { localePath, type Locale } from '../i18n';
+import { getImageDimensions } from '../lib/imageDimensions';
 
 interface Props {
   locale: Locale;
@@ -32,6 +33,20 @@ const products = filteredProducts.sort((a, b) => {
 
   return 0;
 });
+
+const carouselImageDimensions = new Map<string, { width: number; height: number } | null>();
+await Promise.all(
+  products.map(async (product) => {
+    const heroSection = product.data.sections.find(s => s.type === 'hero');
+    const carouselImage = product.data.carouselImage ?? heroSection?.data?.heroImage;
+    if (carouselImage?.src && !carouselImageDimensions.has(carouselImage.src)) {
+      carouselImageDimensions.set(carouselImage.src, await getImageDimensions(carouselImage.src));
+    }
+  })
+);
+
+const lumiLogoDimensions = await getImageDimensions('/assets/logolumi.png');
+const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.png');
 ---
 
 <div class="product-carousel">
@@ -50,8 +65,8 @@ const products = filteredProducts.sort((a, b) => {
       const productInfoContent = (
         <div class="product-info">
           <h3>{!isLumi && !isSmallest && (heroData?.title || product.id)}</h3>
-          {isLumi && <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" />}
-          {isSmallest && <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" />}
+          {isLumi && <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" width={lumiLogoDimensions?.width} height={lumiLogoDimensions?.height} />}
+          {isSmallest && <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" width={smallestLogoDimensions?.width} height={smallestLogoDimensions?.height} />}
           {isSmallest && <p class="carousel-subtitle">Le Télescope de 150mm le plus transportable au monde</p>}
           {heroData?.tagline && <p class={isLumi ? 'carousel-subtitle' : 'carousel-text'}>{heroData.tagline}</p>}
           {isLumi && <p class="carousel-text">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. » — Carl Sagan</p>}
@@ -97,6 +112,8 @@ const products = filteredProducts.sort((a, b) => {
               alt={carouselImage.alt || heroData?.title}
               loading={index === 0 ? 'eager' : 'lazy'}
               fetchpriority={index === 0 ? 'high' : 'auto'}
+              width={carouselImageDimensions.get(carouselImage.src)?.width}
+              height={carouselImageDimensions.get(carouselImage.src)?.height}
               class={`slide-img${carouselImage.zoom ? ' zoomed' : ''}`}
               style={[carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : '', carouselImage.position ? `object-position: ${carouselImage.position}` : ''].filter(Boolean).join('; ')}
             />

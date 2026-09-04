@@ -1,5 +1,6 @@
 ---
 import Lightbox from './Lightbox.astro';
+import { getImageDimensions } from '../lib/imageDimensions';
 
 interface Image {
   src: string;
@@ -22,6 +23,16 @@ interface Props {
 }
 
 const { title, steps } = Astro.props;
+
+const imageDimensions = new Map<string, { width: number; height: number } | null>();
+await Promise.all(
+  steps.flatMap((step) => {
+    const srcs = step.images ? step.images.map((img) => img.src) : step.image ? [step.image] : [];
+    return srcs
+      .filter((src) => !imageDimensions.has(src))
+      .map(async (src) => imageDimensions.set(src, await getImageDimensions(src)));
+  })
+);
 ---
 
 <div class="assembly-guide">
@@ -48,10 +59,12 @@ const { title, steps } = Astro.props;
                   {step.images.map((img) => (
                     <div class="image-with-text">
                       {img.description && <p class="image-description">{img.description}</p>}
-                      <img 
-                        src={img.src} 
-                        alt={img.alt} 
-                        loading="lazy" 
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        width={imageDimensions.get(img.src)?.width}
+                        height={imageDimensions.get(img.src)?.height}
                         class="lightbox-trigger"
                         data-src={img.src}
                         data-alt={img.alt}
@@ -60,10 +73,12 @@ const { title, steps } = Astro.props;
                   ))}
                 </div>
               ) : step.image && (
-                <img 
-                  src={step.image} 
-                  alt={step.alt} 
-                  loading="lazy" 
+                <img
+                  src={step.image}
+                  alt={step.alt}
+                  loading="lazy"
+                  width={imageDimensions.get(step.image)?.width}
+                  height={imageDimensions.get(step.image)?.height}
                   class="lightbox-trigger"
                   data-src={step.image}
                   data-alt={step.alt}

@@ -1,4 +1,6 @@
 ---
+import { getImageDimensions } from '../lib/imageDimensions';
+
 interface GalleryImage {
 	src: string;
 	alt: string;
@@ -12,18 +14,22 @@ interface Props {
 }
 
 const { title, images, background = 'light' } = Astro.props;
+
+const imageDimensions = await Promise.all(images.map((image) => getImageDimensions(image.src)));
 ---
 
 <section class={`gallery-section ${background}`}>
 	<div class="container">
 		<h2>{title}</h2>
 		<div class="gallery-grid">
-			{images.map(image => (
-				<img 
-					src={image.src} 
-					alt={image.alt} 
-					data-caption={image.caption || image.alt} 
-					loading="lazy" 
+			{images.map((image, i) => (
+				<img
+					src={image.src}
+					alt={image.alt}
+					data-caption={image.caption || image.alt}
+					loading="lazy"
+					width={imageDimensions[i]?.width}
+					height={imageDimensions[i]?.height}
 				/>
 			))}
 		</div>
