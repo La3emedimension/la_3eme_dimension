@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow draft pages and admin areas if they exist
+Disallow: /admin/
+Disallow: /*.json$
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://la3emedim.fr/sitemap-index.xml

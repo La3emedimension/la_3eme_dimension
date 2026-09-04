@@ -95,12 +95,13 @@ const products = filteredProducts.sort((a, b) => {
             <img
               src={carouselImage.src}
               alt={carouselImage.alt || heroData?.title}
-              loading="lazy"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : 'auto'}
               class={`slide-img${carouselImage.zoom ? ' zoomed' : ''}`}
               style={[carouselImage.zoom ? `--img-zoom: ${carouselImage.zoom}` : '', carouselImage.position ? `object-position: ${carouselImage.position}` : ''].filter(Boolean).join('; ')}
             />
           )}
-          <a href={`/product/${productSlug}`} class="slide-link-overlay"></a>
+          <a href={localePath(`/product/${productSlug}/`, locale)} class="slide-link-overlay"></a>
           {productInfoContent}
         </div>
       );
