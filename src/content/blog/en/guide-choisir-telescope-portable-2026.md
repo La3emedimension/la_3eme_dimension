@@ -5,6 +5,9 @@ publishDate: 2026-01-24
 tags: ["guide", "telescope", "portable", "astronomy", "travel"]
 img: "/assets/smallest-fullsize-01.jpg"
 img_alt: "Smallest portable telescope in its travel configuration"
+seoTitle: "How to choose a portable telescope in 2026: the complete guide | La 3ème dimension"
+seoDescription: "How to choose a portable telescope in 2026: essential criteria, comparison and expert advice for observing the sky while traveling or hiking."
+seoKeywords: "portable telescope, choose a telescope, best travel telescope, compact telescope, beginner telescope guide"
 draft: false
 ---
 

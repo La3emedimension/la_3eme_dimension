@@ -2,6 +2,14 @@
 title: "Building your astronomical telescope"
 publishDate: 2025-09-17
 img: "/assets/lunette23.png"
+img_alt: "Handmade 80/600 astronomical refractor built by Raphaël"
+description: "The story of building a handmade 80mm/600mm astronomical refractor, from an aluminum angle-bracket frame to a PVC tube, then 3D printing."
+tags:
+  - Astronomy
+  - DIY
+seoTitle: "Building a handmade 80/600 astronomical refractor | La 3ème dimension"
+seoDescription: "Follow the step-by-step build of a handmade 80mm/600mm astronomical refractor: aluminum frame, PVC tube, then 3D printing."
+seoKeywords: "build astronomical refractor, 80/600 refractor, DIY optical instrument, DIY astronomy, 3D printed telescope"
 ---
 
 # An idea!

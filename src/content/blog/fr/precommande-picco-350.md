@@ -18,13 +18,13 @@ C'est officiel : les **précommandes du Picco** ouvriront **avant la fin de l'an
 
 ## Le Picco, en bref
 
-Le Picco est notre prochain télescope Newton **114/450**, pensé pour aller encore plus loin que le Smallest sur le terrain de l'astronomie nomade : à peine **1,5 kg**, une conception ultra-compacte, et le même ADN — un instrument qui se comprend en le prenant en main, sans notice.
+Le Picco est notre prochain télescope Newton **114/450**, pensé pour aller encore plus loin que le Smallest sur le terrain de l'astronomie nomade : à peine **1,5 kg**, une conception ultra-compacte, et le même ADN, un instrument qui se comprend en le prenant en main, sans notice.
 
 Sortie prévue **début 2027**. Les précommandes qui ouvriront d'ici la fin de l'année permettront de réserver le vôtre en avance, au tarif de lancement.
 
 ## Pourquoi un tarif préférentiel
 
-Les 350€ de la précommande récompensent celles et ceux qui nous suivent depuis le début et qui font confiance au projet avant sa sortie officielle. Le tarif définitif, une fois le Picco disponible en boutique, sera annoncé plus tard — et il sera plus élevé.
+Les 350€ de la précommande récompensent celles et ceux qui nous suivent depuis le début et qui font confiance au projet avant sa sortie officielle. Le tarif définitif, une fois le Picco disponible en boutique, sera annoncé plus tard, et il sera plus élevé.
 
 ## Comment être prévenu
 

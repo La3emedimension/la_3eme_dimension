@@ -2,6 +2,11 @@
 title: "Florian Rabiller"
 publishDate: 2025-09-17
 img: "/assets/blog/astrodessin/florian1.png"
+img_alt: "Portrait of Florian Rabiller, astro-sketcher"
+description: "Portrait of Florian Rabiller, an astro-sketcher practicing visual observation with a Dobsonian, sharing his tips for getting started with astro-drawing."
+seoTitle: "Astro-sketcher portrait: Florian Rabiller | La 3ème dimension"
+seoDescription: "Portrait of Florian Rabiller, an astro-sketcher practicing visual observation with a Dobsonian, sharing his tips for getting started with astro-drawing."
+seoKeywords: "astro-sketcher portrait, Florian Rabiller, Dobsonian observation, beginner astro-drawing"
 draft: true
 ---
 

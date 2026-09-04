@@ -9,13 +9,16 @@ tags:
   - Design
   - Astronomie
   - Accessoire
+seoTitle: "Easy Clip : platine aimantée pour chercheur Quickfinder | La 3ème dimension"
+seoDescription: "Easy Clip, la platine aimantée qui permet de changer de télescope en quelques secondes avec un chercheur Quickfinder, pile CR2032 déportée."
+seoKeywords: "Easy Clip, chercheur Quickfinder, accessoire télescope, impression 3D astronomie, platine aimantée"
 ---
 
 ---
 L'Easy Clip
 ---
 
-L'Easy Clip est une platine aimantée conçue pour votre chercheur Quickfinder. Elle permet de passer d'un télescope à l'autre en quelques secondes sans dévisser quoi que ce soit — et donne accès à la pile CR2032 sans avoir à démonter le chercheur.
+L'Easy Clip est une platine aimantée conçue pour votre chercheur Quickfinder. Elle permet de passer d'un télescope à l'autre en quelques secondes sans dévisser quoi que ce soit, et donne accès à la pile CR2032 sans avoir à démonter le chercheur.
 
 <img src="/assets/easyclip/Easygi.gif">
 

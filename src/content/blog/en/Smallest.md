@@ -29,7 +29,7 @@ The Smallest aims to solve a problem faced by amateur astronomers: always having
 
 ### How?
 
-Using 3D printing is obvious—it provides the precision required to build a structure that meets optical requirements. We used Autodesk Fusion 360 as our design tool.
+Using 3D printing is obvious: it provides the precision required to build a structure that meets optical requirements. We used Autodesk Fusion 360 as our design tool.
 
 <video autoplay loop playsinline>
   <source src="/assets/tp-150750.mp4" type="video/mp4" />

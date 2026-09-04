@@ -25,7 +25,7 @@ La mise au point est l'une des étapes les plus critiques en astrophotographie. 
 
 ## Pourquoi un masque de Bahtinov ?
 
-Sans masque, juger la mise au point sur une étoile relève souvent de l'approximation. Avec le masque de Bahtinov, la confirmation est visuelle et immédiate — même dans l'obscurité totale, même avec une monture motorisée.
+Sans masque, juger la mise au point sur une étoile relève souvent de l'approximation. Avec le masque de Bahtinov, la confirmation est visuelle et immédiate, même dans l'obscurité totale, même avec une monture motorisée.
 
 <img src="/assets/Bathinov8.jpeg" alt="Patron de diffraction Bahtinov">
 <img src="/assets/Bathinov9.jpeg" alt="Masque de Bahtinov - détail">

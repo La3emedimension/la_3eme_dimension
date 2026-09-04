@@ -19,16 +19,16 @@ seoKeywords: "collimation knobs, newton telescope screws, dobson collimation, pr
 
 ## The project
 
-Collimation is a key step for any Newton or Dobson telescope owner. The standard screws that come with instruments are often impractical — too small, requiring a tool, sometimes abrasive against the mirror support. These 3D-printed collimation knobs solve all of these issues.
+Collimation is a key step for any Newton or Dobson telescope owner. The standard screws that come with instruments are often impractical: too small, requiring a tool, sometimes abrasive against the mirror support. These 3D-printed collimation knobs solve all of these issues.
 
 <img src="/assets/visdecollim/visdecollim0.jpeg" alt="Set of 3 collimation knobs">
 
 ## Features
 
-- **M4 thread, 45mm length** — direct replacement for standard screws
-- **13mm diameter knob** — comfortable grip, hand adjustment without tools
-- **Rounded ends** — prevents punching or deforming the primary mirror support
-- **PETG printed** — resistant to repeated handling in the field
+- **M4 thread, 45mm length**: direct replacement for standard screws
+- **13mm diameter knob**: comfortable grip, hand adjustment without tools
+- **Rounded ends**: prevents punching or deforming the primary mirror support
+- **PETG printed**: resistant to repeated handling in the field
 
 <img src="/assets/visdecollim/visdecollim1.jpeg" alt="Detail of the ergonomic knob">
 

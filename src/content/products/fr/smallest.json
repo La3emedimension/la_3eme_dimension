@@ -62,7 +62,7 @@
           { "icon": "rocket-launch", "text": "150/750 Newton" },
           { "icon": "strategy", "text": "4kg avec optiques" }
         ],
-        "primaryCta": { "text": "Commander — 790€", "href": "#pricing" },
+        "primaryCta": { "text": "Commander (790€)", "href": "#pricing" },
         "heroImage": {
           "src": "/assets/smallest-fullsize-01.jpg",
           "alt": "Télescope Smallest portable en configuration observation"
@@ -291,7 +291,7 @@
         "options": [
           {
             "title": "Kit Smallest",
-            "description": "Structure seule sans optiques — 550€"
+            "description": "Structure seule sans optiques (550€)"
           },
           {
             "title": "Optiques artisanales",

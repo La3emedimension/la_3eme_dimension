@@ -100,13 +100,13 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
             <div class="tuto-icon">🔵</div>
             <h4>Orientation de la carte</h4>
             <p>Le <strong>centre</strong> représente le point juste au-dessus de ta tête (le zénith). Le <strong>bord</strong> représente l'horizon. Plus un objet est proche du centre, plus il est haut dans le ciel.</p>
-            <p>Les directions sont : <strong>N</strong> en haut, <strong>E</strong> à gauche, <strong>S</strong> en bas, <strong>O</strong> à droite — comme si tu regardais le ciel en te couchant sur le dos, la tête vers le Nord.</p>
+            <p>Les directions sont : <strong>N</strong> en haut, <strong>E</strong> à gauche, <strong>S</strong> en bas, <strong>O</strong> à droite, comme si tu regardais le ciel en te couchant sur le dos, la tête vers le Nord.</p>
           </div>
 
           <div class="tuto-card">
             <div class="tuto-icon">⭐</div>
             <h4>Les étoiles et constellations</h4>
-            <p>Les points blancs sont les étoiles — plus ils sont gros, plus l'étoile est brillante. Les lignes bleues relient les étoiles pour former les <strong>constellations</strong>, comme Orion ou la Grande Ourse.</p>
+            <p>Les points blancs sont les étoiles : plus ils sont gros, plus l'étoile est brillante. Les lignes bleues relient les étoiles pour former les <strong>constellations</strong>, comme Orion ou la Grande Ourse.</p>
             <p>Les couleurs indiquent la température : bleu = très chaud, blanc = chaud, jaune-orange = plus froid.</p>
           </div>
 
@@ -114,11 +114,11 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
             <div class="tuto-icon">🔭</div>
             <h4>Les symboles d'objets</h4>
             <ul class="tuto-symbols">
-              <li><span class="sym-neb">□ pointillé cyan</span> Nébuleuse — nuage de gaz</li>
-              <li><span class="sym-oc">○ pointillé jaune</span> Amas ouvert — groupe d'étoiles</li>
-              <li><span class="sym-gc">⊕ bleu clair</span> Amas globulaire — sphère d'étoiles</li>
-              <li><span class="sym-gal">⬭ rose</span> Galaxie — système d'étoiles lointain</li>
-              <li><span class="sym-db">◎ blanc</span> Étoile double — deux étoiles liées</li>
+              <li><span class="sym-neb">□ pointillé cyan</span> Nébuleuse : nuage de gaz</li>
+              <li><span class="sym-oc">○ pointillé jaune</span> Amas ouvert : groupe d'étoiles</li>
+              <li><span class="sym-gc">⊕ bleu clair</span> Amas globulaire : sphère d'étoiles</li>
+              <li><span class="sym-gal">⬭ rose</span> Galaxie : système d'étoiles lointain</li>
+              <li><span class="sym-db">◎ blanc</span> Étoile double : deux étoiles liées</li>
             </ul>
           </div>
 
@@ -127,10 +127,10 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
             <h4>Utiliser la carte avec ta Lumi</h4>
             <ol class="tuto-steps">
               <li>Génère la carte pour <strong>ce soir</strong> à ton lieu d'observation.</li>
-              <li>Repère un objet dans la liste à droite — commence par la <strong>Lune</strong> ou une planète brillante.</li>
+              <li>Repère un objet dans la liste à droite, en commençant par la <strong>Lune</strong> ou une planète brillante.</li>
               <li>Oriente-toi avec une boussole ou en repérant l'Étoile Polaire (toujours au Nord).</li>
               <li>Pointe ta lunette dans la bonne direction et cherche l'objet dans le champ.</li>
-              <li>Attends <strong>20 minutes dans le noir</strong> pour que tes yeux s'adaptent — tu verras beaucoup plus !</li>
+              <li>Attends <strong>20 minutes dans le noir</strong> pour que tes yeux s'adaptent, tu verras beaucoup plus !</li>
             </ol>
           </div>
 
@@ -145,7 +145,7 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
         </svg>
         Imprimer A4 N&amp;B
       </button>
-      <p class="starmap-note">N = Nord · E = Est · S = Sud · O = Ouest — vue depuis le sol, Nord en haut</p>
+      <p class="starmap-note">N = Nord · E = Est · S = Sud · O = Ouest (vue depuis le sol, Nord en haut)</p>
     </div>
   </div>
 </div>
@@ -431,30 +431,30 @@ const PLANET_DISPLAY: Record<string,[string,string]> = {
 // types: 'neb'=nebula 'oc'=open cluster 'gc'=globular 'gal'=galaxy 'db'=double star
 const DSO: [number,number,string,string,string][] = [
   // Nébuleuses
-  [5.5900, -5.4500, 'M42 — Nébuleuse d\'Orion', 'neb', 'Grande nébuleuse où naissent des étoiles. Magnifique, même à faible grossissement.'],
-  [19.9933, 22.7167, 'M27 — Nébuleuse Haltère', 'neb', 'Grande nébuleuse planétaire dans le Petit Renard, visible comme une tache floue ovale.'],
+  [5.5900, -5.4500, 'M42: Nébuleuse d\'Orion', 'neb', 'Grande nébuleuse où naissent des étoiles. Magnifique, même à faible grossissement.'],
+  [19.9933, 22.7167, 'M27: Nébuleuse Haltère', 'neb', 'Grande nébuleuse planétaire dans le Petit Renard, visible comme une tache floue ovale.'],
   // Amas ouverts
-  [3.7914, 24.1050, 'M45 — Les Pléiades', 'oc', 'Bel amas de jeunes étoiles bleues. Le meilleur objet pour un premier instrument !'],
-  [8.6700, 19.9833, 'M44 — Praesepe (Ruche)', 'oc', 'L\'Essaim d\'Abeilles dans le Cancer. Bien résolu à 10×.'],
-  [2.3183, 57.1333, 'NGC 869/884 — Double Amas de Persée', 'oc', 'Deux amas jumeaux côte à côte dans Persée, superbes dans le même champ.'],
+  [3.7914, 24.1050, 'M45: Les Pléiades', 'oc', 'Bel amas de jeunes étoiles bleues. Le meilleur objet pour un premier instrument !'],
+  [8.6700, 19.9833, 'M44: Praesepe (Ruche)', 'oc', 'L\'Essaim d\'Abeilles dans le Cancer. Bien résolu à 10×.'],
+  [2.3183, 57.1333, 'NGC 869/884: Double Amas de Persée', 'oc', 'Deux amas jumeaux côte à côte dans Persée, superbes dans le même champ.'],
   [5.6033, 34.1333, 'M36', 'oc', 'Amas ouvert brillant dans le Cocher.'],
   [5.8733, 32.5500, 'M37', 'oc', 'Le plus riche des trois amas du Cocher.'],
   [5.4783, 35.8333, 'M38', 'oc', 'Amas ouvert dans le Cocher. Chercher M36 et M38 dans le même champ !'],
   [6.1483, 24.3333, 'M35', 'oc', 'Bel amas ouvert dans les Gémeaux.'],
-  [17.6692, -32.2167, 'M6 — Papillon', 'oc', 'Amas en forme de papillon dans le Scorpion.'],
-  [17.8983, -34.8167, 'M7 — Amas de Ptolémée', 'oc', 'Grand amas du Scorpion, connu depuis l\'Antiquité. Spectaculaire.'],
-  [18.8517, -6.2667, 'M11 — Canard Sauvage', 'oc', 'Dense amas ouvert de l\'Écu de Sobieski. Des centaines d\'étoiles dans un petit champ.'],
+  [17.6692, -32.2167, 'M6: Papillon', 'oc', 'Amas en forme de papillon dans le Scorpion.'],
+  [17.8983, -34.8167, 'M7: Amas de Ptolémée', 'oc', 'Grand amas du Scorpion, connu depuis l\'Antiquité. Spectaculaire.'],
+  [18.8517, -6.2667, 'M11: Canard Sauvage', 'oc', 'Dense amas ouvert de l\'Écu de Sobieski. Des centaines d\'étoiles dans un petit champ.'],
   // Amas globulaires
-  [16.6950, 36.4608, 'M13 — Grand Amas d\'Hercule', 'gc', 'Le plus beau globulaire du ciel boréal. Des centaines de milliers d\'étoiles.'],
+  [16.6950, 36.4608, 'M13: Grand Amas d\'Hercule', 'gc', 'Le plus beau globulaire du ciel boréal. Des centaines de milliers d\'étoiles.'],
   [15.3100, 2.0833, 'M5', 'gc', 'Splendide amas globulaire dans le Serpent, rival de M13.'],
   [13.7033, 28.3767, 'M3', 'gc', 'Magnifique amas globulaire dans les Chiens de Chasse.'],
   [17.2833, 43.1333, 'M92', 'gc', 'Second globulaire d\'Hercule, souvent négligé mais très beau.'],
   // Galaxies
-  [0.7117, 41.2692, 'M31 — Galaxie d\'Andromède', 'gal', 'Notre voisine à 2,5 millions d\'a.l. Visible comme une tache floue allongée. Chercher aussi M32 et M110 à côté.'],
-  [3.5400, 41.2700, 'M33 — Galaxie du Triangle', 'gal', 'Grande galaxie spirale de face. Requiert une nuit très noire.'],
+  [0.7117, 41.2692, 'M31: Galaxie d\'Andromède', 'gal', 'Notre voisine à 2,5 millions d\'a.l. Visible comme une tache floue allongée. Chercher aussi M32 et M110 à côté.'],
+  [3.5400, 41.2700, 'M33: Galaxie du Triangle', 'gal', 'Grande galaxie spirale de face. Requiert une nuit très noire.'],
   // Étoiles doubles
-  [19.5120, 27.9597, 'Albireo — Étoile double', 'db', 'Le plus beau couple du ciel : une étoile dorée et une étoile bleu-turquoise.'],
-  [13.3988, 54.9253, 'Mizar & Alcor — Étoiles doubles', 'db', 'Célèbre couple de la Grande Ourse, facilement séparé à l\'œil nu ou à la lunette.'],
+  [19.5120, 27.9597, 'Albireo: Étoile double', 'db', 'Le plus beau couple du ciel : une étoile dorée et une étoile bleu-turquoise.'],
+  [13.3988, 54.9253, 'Mizar & Alcor: Étoiles doubles', 'db', 'Célèbre couple de la Grande Ourse, facilement séparé à l\'œil nu ou à la lunette.'],
 ];
 
 // Module-level state
@@ -468,7 +468,7 @@ const PLANET_DESC: Record<string,string> = {
   venus:   'La plus brillante des planètes ! Trop éblouissante pour voir des détails, mais magnifique à l\'œil nu et à la lunette.',
   mars:    'Reconnaissable à sa teinte rouge-orangée. En période d\'opposition, on peut deviner ses calottes polaires.',
   jupiter: 'La plus grande planète du système solaire ! Avec la Lumi, cherchez les 4 lunes galiléennes (petits points alignés).',
-  saturn:  'Les anneaux sont visibles même à 10× — une découverte mémorable pour tout débutant !',
+  saturn:  'Les anneaux sont visibles même à 10×, une découverte mémorable pour tout débutant !',
 };
 
 // ─── Math helpers
@@ -789,7 +789,7 @@ function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: H
     if (aa.alt < 0) continue;
     const pt = project(aa.alt, aa.az, R, cx, cy)!;
     drawDSOSymbol(pt.x, pt.y, type);
-    const parts = name.split(' — ');
+    const parts = name.split(': ');
     const canvasLabel = parts.length > 1 ? parts[1] : parts[0];
     ctx.font = '9px sans-serif';
     ctx.fillStyle = dsoColor[type] || '#ffffff';
@@ -835,7 +835,7 @@ function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: H
 
   // Date/time label
   const dateLabel = date.toLocaleDateString('fr-FR', {weekday:'long',day:'numeric',month:'long',year:'numeric'})
-    + ' — ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    + ', ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
   ctx.font = '11px sans-serif'; ctx.fillStyle = bw ? 'rgba(0,0,0,0.5)' : 'rgba(160,180,220,0.7)';
   ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
   ctx.fillText(dateLabel, cx, H - 6);
@@ -876,7 +876,7 @@ function populateSidebar() {
     html += `<div class="sidebar-group"><div class="sidebar-group-label" style="color:${TYPE_COLOR[t]}">${TYPE_LABELS[t] || t}</div>`;
     for (const obj of objs) {
       const idx = visibleObjects.indexOf(obj);
-      const nameParts = obj.name.split(' — ');
+      const nameParts = obj.name.split(': ');
       const shortName = nameParts.length > 1 ? nameParts[1] : nameParts[0];
       const isActive = idx === highlightIdx;
       html += `<button class="sidebar-item${isActive ? ' active' : ''}" data-idx="${idx}" style="--ic:${TYPE_COLOR[obj.type]}">
@@ -934,13 +934,13 @@ function updateInfo(date: Date, lat: number, lon: number) {
     info.textContent = `Le Soleil est encore au-dessus de l'horizon (${sunAlt.toFixed(0)}°). Les étoiles ne sont pas encore visibles.`;
     info.style.color = '#ffcc44';
   } else if (sunAlt > -6) {
-    info.textContent = `Crépuscule civil — le ciel commence à s'assombrir.`;
+    info.textContent = `Crépuscule civil : le ciel commence à s'assombrir.`;
     info.style.color = '#aabbff';
   } else if (sunAlt > -12) {
-    info.textContent = `Crépuscule nautique — bonnes conditions pour les étoiles brillantes.`;
+    info.textContent = `Crépuscule nautique : bonnes conditions pour les étoiles brillantes.`;
     info.style.color = '#aabbff';
   } else {
-    info.textContent = `Nuit astronomique — toutes les étoiles sont visibles.`;
+    info.textContent = `Nuit astronomique : toutes les étoiles sont visibles.`;
     info.style.color = '#88aaff';
   }
 }
@@ -1029,7 +1029,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.font = '16px sans-serif';
     ctx.fillStyle = '#555555';
     const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-      + ' — ' + date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+      + ', ' + date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
     ctx.fillText(dateStr, A4W - margin, y + 40);
     ctx.fillText(cityName, A4W - margin, y + 62);
 
@@ -1057,7 +1057,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillStyle = '#444444';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    ctx.fillText('N = Nord  ·  E = Est  ·  S = Sud  ·  O = Ouest  —  vue depuis le sol, Nord en haut', A4W / 2, y);
+    ctx.fillText('N = Nord  ·  E = Est  ·  S = Sud  ·  O = Ouest  (vue depuis le sol, Nord en haut)', A4W / 2, y);
     y += 22;
 
     // --- Légende objets DSO (dessinés au trait) ---
@@ -1104,7 +1104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.font = '12px sans-serif';
     ctx.fillStyle = '#999999';
     ctx.textAlign = 'center';
-    ctx.fillText('la3emedim.fr — Lunette astronomique Lumi', A4W / 2, y);
+    ctx.fillText('la3emedim.fr · Lunette astronomique Lumi', A4W / 2, y);
 
     // 3. Télécharger
     const link = document.createElement('a');
@@ -1369,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (type === 'gal') { ctx.save(); ctx.scale(1.6,0.6); ctx.beginPath(); ctx.arc(0,0,s,0,Math.PI*2); ctx.restore(); ctx.stroke(); }
       else if (type === 'db') { ctx.beginPath(); ctx.arc(-3,0,3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(3,0,3,0,Math.PI*2); ctx.fill(); }
       ctx.restore();
-      const parts = name.split(' — ');
+      const parts = name.split(': ');
       ctx.font='9px sans-serif'; ctx.fillStyle=col+'cc'; ctx.textAlign='left'; ctx.textBaseline='middle';
       ctx.fillText(parts.length > 1 ? parts[1] : parts[0], p.x+s+4, p.y);
       fsCelestialPositions.push({ x: p.x, y: p.y, name, desc, r: s + 6, type });

@@ -2,6 +2,14 @@
 title: "Discovering Astro-Drawing"
 publishDate: 2026-01-22
 img: "/assets/blog/astrodessin/dessinorion.jpg"
+img_alt: "Astronomical observation drawing of the Orion nebula"
+description: "Astro-drawing, an age-old practice combining astronomical observation and drawing, with testimonials from several passionate astro-sketchers."
+tags:
+  - Astronomy
+  - Astro-drawing
+seoTitle: "Astro-drawing: sketching what you observe through a telescope | La 3ème dimension"
+seoDescription: "What is astro-drawing? Discover this age-old practice combining astronomical observation and drawing, between technique, patience and wonder."
+seoKeywords: "astro-drawing, astronomical sketching, telescope observation, astronomy sketch, deep sky drawing"
 ---
 
 # What is astro-drawing?

@@ -3,6 +3,10 @@ title: "La 3ème Dimension au Festival d'Astronomie de Tautavel"
 publishDate: 2026-05-21
 img: "/assets/ert_montauban1.jpeg"
 img_alt: "La 3ème Dimension au 19e Festival d'Astronomie de Tautavel"
+description: "Raphaël Labro et La 3ème Dimension au 19e Festival d'Astronomie de Tautavel, du 16 au 19 juillet, avec un atelier pour construire sa lunette Lumi."
+seoTitle: "La 3ème Dimension au Festival d'Astronomie de Tautavel | La 3ème dimension"
+seoDescription: "Raphaël Labro et La 3ème Dimension au 19e Festival d'Astronomie de Tautavel, du 16 au 19 juillet, avec un atelier pour construire sa lunette Lumi."
+seoKeywords: "Festival Astronomie Tautavel, Astrotavel, atelier Lumi, télescope impression 3D, événement astronomie"
 ---
 
 # La 3ème Dimension au 19e Festival d'Astronomie de Tautavel
@@ -17,7 +21,7 @@ L'atelier phare de cette participation : **assembler la lunette Lumi en famille*
 
 En 45 minutes, petits et grands montent leur propre instrument optique, comprennent le principe d'une lunette astronomique, et repartent avec la fierté d'avoir construit quelque chose de leurs mains.
 
-Les groupes sont limités à **4 personnes maximum** pour garantir un suivi de qualité. Pas de prérequis, pas de notice — juste de la curiosité.
+Les groupes sont limités à **4 personnes maximum** pour garantir un suivi de qualité. Pas de prérequis, pas de notice, juste de la curiosité.
 
 ![La lunette Lumi assemblée par une famille](/assets/ert_montauban1.jpeg)
 
@@ -34,12 +38,12 @@ Une plongée dans les coulisses d'un atelier de fabrication artisanale, entre de
 ## Les instruments exposés
 
 ### Le Smallest
-Télescope Newton 150/750 ultra-compact, prêt en 4 minutes, transportable en avion. Conçu pour observer sans contrainte — depuis un balcon, un jardin ou au sommet d'une montagne.
+Télescope Newton 150/750 ultra-compact, prêt en 4 minutes, transportable en avion. Conçu pour observer sans contrainte, depuis un balcon, un jardin ou au sommet d'une montagne.
 
 ![Le télescope Smallest](/assets/smallest-fullsize-01.jpg)
 
 ### La Lumi
-Lunette astronomique pédagogique à assembler soi-même. Chaque module ne peut s'emboîter que dans le bon sens — le montage enseigne l'optique avant même la première observation.
+Lunette astronomique pédagogique à assembler soi-même. Chaque module ne peut s'emboîter que dans le bon sens, le montage enseigne l'optique avant même la première observation.
 
 ![La lunette Lumi](/assets/ert_montauban7.jpg)
 
@@ -55,4 +59,4 @@ Organisé par [Astrotavel](https://www.facebook.com/astrotavel)
 
 ---
 
-Si vous êtes dans le coin cet été, c'est un rendez-vous à ne pas manquer. L'entrée, le ciel et la curiosité — c'est tout ce qu'il faut.
+Si vous êtes dans le coin cet été, c'est un rendez-vous à ne pas manquer. L'entrée, le ciel et la curiosité : c'est tout ce qu'il faut.

@@ -2,6 +2,11 @@
 title: "Portrait : Harold Hill"
 publishDate: 2025-09-17
 img: "/assets/hill-portrait.jpg"
+img_alt: "Portrait de Harold Hill, astronome amateur britannique"
+description: "Portrait de Harold Hill (1920-2005), astronome amateur britannique de référence en sélénographie, spécialiste du dessin et de la cartographie lunaire."
+seoTitle: "Portrait d'astronome : Harold Hill, spécialiste de la Lune | La 3ème dimension"
+seoDescription: "Portrait de Harold Hill (1920-2005), astronome amateur britannique de référence en sélénographie, spécialiste du dessin et de la cartographie lunaire."
+seoKeywords: "Harold Hill astronome, sélénographie, dessin lunaire, cartographie Lune, portrait astronome"
 draft: true
 ---
 

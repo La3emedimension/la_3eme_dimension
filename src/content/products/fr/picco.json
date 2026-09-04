@@ -11,17 +11,17 @@
       "id": "section-hero",
       "data": {
         "title": "Picco",
-        "tagline": "Télescope de Newton 114/450 — 1,5 kg",
-        "description": "Un télescope newtonien ultra-compact conçu pour l'astronomie nomade. Seulement 1,5 kg pour un instrument de 114 mm d'ouverture et 450 mm de focale, fabriqué en France par impression 3D. Vendu avec 2 oculaires Plössl : un 20mm et un 10mm.<br><br><em>Produit en cours de développement, sortie prévue début 2027 — la couleur présentée n'est pas définitive.</em>",
+        "tagline": "Télescope de Newton 114/450, 1,5 kg",
+        "description": "Un télescope newtonien ultra-compact conçu pour l'astronomie nomade. Seulement 1,5 kg pour un instrument de 114 mm d'ouverture et 450 mm de focale, fabriqué en France par impression 3D. Vendu avec 2 oculaires Plössl : un 20mm et un 10mm.<br><br><em>Produit en cours de développement, sortie prévue début 2027. La couleur présentée n'est pas définitive.</em>",
         "features": [
-          { "icon": "rocket-launch", "text": "114/450 — F/D 3.9" },
+          { "icon": "rocket-launch", "text": "114/450, F/D 3.9" },
           { "icon": "strategy", "text": "1,5 kg" },
           { "icon": "terminal-window", "text": "Impression 3D France" }
         ],
         "primaryCta": { "text": "Nous contacter", "href": "mailto:la3emedim@gmail.com" },
         "secondaryCta": { "text": "Plus d'information", "href": "#section-specs" },
         "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Télescope Picco 114/450" },
-        "imageOverlayText": "Précommande à 350€ — sortie début 2027",
+        "imageOverlayText": "Précommande à 350€ (sortie début 2027)",
         "showFabLogo": false
       }
     },
@@ -90,7 +90,7 @@
           },
           {
             "icon": "paper-plane-tilt",
-            "title": "Rapide — F/D 3,9",
+            "title": "Rapide (F/D 3,9)",
             "description": "Un rapport F/D court idéal pour le ciel profond et la photographie grand champ."
           }
         ]
@@ -102,7 +102,7 @@
       "data": {
         "title": "Picco 114/450",
         "price": "350€",
-        "priceNote": "Prix de précommande — ouverture avant fin 2026, sortie prévue début 2027",
+        "priceNote": "Prix de précommande (ouverture avant fin 2026, sortie prévue début 2027)",
         "included": [
           "Tube optique imprimé en 3D",
           "Miroir principal 114 mm",

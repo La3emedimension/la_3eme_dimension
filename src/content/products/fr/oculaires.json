@@ -36,7 +36,7 @@
       "data": {
         "title": "Oculaires 1.25\"",
         "tagline": "Le bon oculaire pour chaque observation",
-        "description": "Des oculaires soigneusement choisis pour tirer le meilleur de votre Smallest ou Lumi. Le 20mm pour les grands espaces — Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails — cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
+        "description": "Des oculaires soigneusement choisis pour tirer le meilleur de votre Smallest ou Lumi. Le 20mm pour les grands espaces : Lune, amas d'étoiles, nébuleuses. Le 10mm pour aller chercher les détails : cratères lunaires, anneaux de Saturne, bandes de Jupiter.",
         "features": [
           { "icon": "eye", "text": "Compatible Smallest & Lumi" },
           { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
@@ -69,17 +69,17 @@
         "features": [
           {
             "icon": "eye",
-            "title": "20mm — Grand champ",
+            "title": "20mm : Grand champ",
             "description": "Idéal pour débuter. Large champ de vision, image lumineuse. Parfait pour observer la Lune en entier, les amas d'étoiles et les nébuleuses."
           },
           {
             "icon": "rocket-launch",
-            "title": "10mm — Fort grossissement",
+            "title": "10mm : Fort grossissement",
             "description": "Pour aller chercher les détails. Cratères lunaires, anneaux de Saturne, bandes nuageuses de Jupiter. L'oculaire qui révèle le système solaire."
           },
           {
             "icon": "strategy",
-            "title": "Pack 20mm + 10mm — Le duo idéal",
+            "title": "Pack 20mm + 10mm : Le duo idéal",
             "description": "La combinaison parfaite pour une soirée complète. On commence avec le 20mm pour repérer, on bascule sur le 10mm pour observer."
           },
           {
@@ -100,21 +100,21 @@
           {
             "title": "Oculaire 20mm",
             "priceNote": "15€",
-            "description": "Grand champ — Lune, amas, nébuleuses",
+            "description": "Grand champ : Lune, amas, nébuleuses",
             "ctaText": "Commander",
             "ctaHref": "https://buy.stripe.com/14AbJ31Ng719c2fcOU67S0k"
           },
           {
             "title": "Oculaire 10mm",
             "priceNote": "15€",
-            "description": "Fort grossissement — planètes, détails lunaires",
+            "description": "Fort grossissement : planètes, détails lunaires",
             "ctaText": "Commander",
             "ctaHref": "https://buy.stripe.com/fZueVf3Vo85dferbKQ67S0l"
           },
           {
             "title": "Pack 20mm + 10mm",
             "priceNote": "25€",
-            "description": "Le duo complet — économisez 5€",
+            "description": "Le duo complet : économisez 5€",
             "ctaText": "Commander le pack",
             "ctaHref": "https://buy.stripe.com/bJe9AVcrUclt6HVg1667S0i"
           }

@@ -5,6 +5,9 @@ publishDate: 2026-01-24
 tags: ["voyage", "avion", "télescope", "transport", "astronomie"]
 img: "/assets/smallest-fullsize-01.jpg"
 img_alt: "Télescope Smallest dans sa configuration de transport pour avion"
+seoTitle: "Voyager en avion avec un télescope : guide et réglementation 2026 | La 3ème dimension"
+seoDescription: "Voyager en avion avec un télescope, cabine ou soute : réglementation 2026, astuces d'emballage et solutions portables pour observer partout dans le monde."
+seoKeywords: "voyager avec un télescope, télescope avion, télescope portable voyage, réglementation bagage cabine, astronomie voyage"
 draft: true
 ---
 

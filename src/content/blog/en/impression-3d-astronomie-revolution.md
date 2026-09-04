@@ -5,6 +5,9 @@ publishDate: 2026-01-24
 tags: ["3d printing", "astronomy", "innovation", "DIY", "technology"]
 img: "/assets/smallest-fullsize-02.jpg"
 img_alt: "3D-printed telescope - Astronomical innovation"
+seoTitle: "3D printing is revolutionizing amateur astronomy: 2026 guide | La 3ème dimension"
+seoDescription: "How 3D printing is transforming amateur astronomy: telescopes, accessories and custom parts, everything you need to know about this revolution."
+seoKeywords: "3D printed astronomy, 3D printed telescope, DIY astronomy, amateur astronomy innovation, telescope manufacturing"
 draft: false
 ---
 

@@ -24,7 +24,7 @@ Comme souvent sur Hacker News, les commentaires vont droit aux questions pratiqu
 - **Quel matériau d'impression ?** Le PETG revient très largement comme le choix recommandé face au PLA, jugé trop sensible à la chaleur pour un usage extérieur. Le débat se poursuit sur l'intérêt (et la fragilité potentielle) des filaments chargés en fibre de carbone.
 - **La solidité des pièces imprimées.** Un fil de discussion entier s'attarde sur la robustesse du plastique : le consensus qui s'en dégage est qu'une pièce en PETG bien imprimée, avec un taux de remplissage d'au moins 25 %, tient largement la route pour des pièces fonctionnelles.
 - **Coût, documentation, qualité d'image.** D'autres questions portent sur le budget réel du montage, la clarté de la documentation, et si le projet tient ses promesses côté observation, au-delà de l'élégance mécanique.
-- **Conseil aux débutants.** Plusieurs astronomes amateurs expérimentés suggèrent aux nouveaux venus de d'abord passer par un club d'astronomie avant de se lancer dans un montage DIY — un rappel sympathique que le Smallest s'adresse aussi bien aux bricoleurs qu'aux curieux.
+- **Conseil aux débutants.** Plusieurs astronomes amateurs expérimentés suggèrent aux nouveaux venus de d'abord passer par un club d'astronomie avant de se lancer dans un montage DIY, un rappel sympathique que le Smallest s'adresse aussi bien aux bricoleurs qu'aux curieux.
 
 ## Version open source vs version commerciale
 
@@ -34,6 +34,6 @@ La version vendue en boutique correspond au télescope tel qu'il a évolué depu
 
 ## Merci
 
-Merci à toutes les personnes qui ont commenté, posé des questions et partagé le projet sur Hacker News, et plus largement à toute la communauté qui imprime, teste et fait vivre le Smallest depuis le début — notamment [Magnitude 78](https://discord.gg/PmNhTSpWCt), qui a beaucoup inspiré ce projet.
+Merci à toutes les personnes qui ont commenté, posé des questions et partagé le projet sur Hacker News, et plus largement à toute la communauté qui imprime, teste et fait vivre le Smallest depuis le début, notamment [Magnitude 78](https://discord.gg/PmNhTSpWCt), qui a beaucoup inspiré ce projet.
 
 Retrouvez le [Smallest en boutique](/product/smallest/), le [fichier open source sur Printables](https://www.printables.com/@La3emedimens_2102135), ou la [discussion complète sur Hacker News](https://news.ycombinator.com/item?id=44289276).

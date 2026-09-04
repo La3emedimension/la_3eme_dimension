@@ -20,7 +20,7 @@ August 12, 2026 will remain a special date for astronomy enthusiasts in the Tarn
 
 ## A partial eclipse... but a spectacular one in Occitania
 
-The path of totality, where the Moon fully covered the Sun, crossed the North Atlantic, Iceland, Greenland, and northern Spain. In mainland France, the eclipse remained partial, but Occitania was among the best-placed regions in the country. In Toulouse, the obscuration rate reached about 97.8% of the solar disk — one of the highest figures among major French cities. In Verdun-sur-Garonne, just a stone's throw from Toulouse, the coverage was in the same range: the Sun was reduced to a thin crescent by the end of the day.
+The path of totality, where the Moon fully covered the Sun, crossed the North Atlantic, Iceland, Greenland, and northern Spain. In mainland France, the eclipse remained partial, but Occitania was among the best-placed regions in the country. In Toulouse, the obscuration rate reached about 97.8% of the solar disk, one of the highest figures among major French cities. In Verdun-sur-Garonne, just a stone's throw from Toulouse, the coverage was in the same range: the Sun was reduced to a thin crescent by the end of the day.
 
 <img src="/assets/Eclipse_2.jpg" alt="Solar eclipse of August 12, 2026" class="lightbox-trigger">
 
@@ -28,7 +28,7 @@ The event began around 7:20 PM, reaching its maximum around 8:20–8:25 PM, as t
 
 ## Why this eclipse was exceptional
 
-You have to go back to the total eclipse of August 11, 1999 to find a comparable event in Europe. The next chance to see such a high obscuration rate from France won't come around again for several decades. Another detail that added to the magic of the evening: the annual peak of the Perseids fell on the very same night, giving observers who stayed out a rare double feature — an eclipse at dusk, followed by shooting stars once night fell.
+You have to go back to the total eclipse of August 11, 1999 to find a comparable event in Europe. The next chance to see such a high obscuration rate from France won't come around again for several decades. Another detail that added to the magic of the evening: the annual peak of the Perseids fell on the very same night, giving observers who stayed out a rare double feature: an eclipse at dusk, followed by shooting stars once night fell.
 
 ## Observing an eclipse safely
 
@@ -36,7 +36,7 @@ A few essential reminders for anyone who missed the August 12 eclipse, or who's 
 
 - **Never look with the naked eye**, not even for a few seconds, even when the Sun is only very partially covered.
 - **ISO 12312-2 certified eclipse glasses** are essential for direct observation.
-- For an instrument (refractor, telescope), a **solar filter matching the aperture** must be fitted at the front of the instrument — never at the eyepiece.
+- For an instrument (refractor, telescope), a **solar filter matching the aperture** must be fitted at the front of the instrument, never at the eyepiece.
 - Photography or instrumental observation require **specific filtering**, different from what's used for naked-eye viewing.
 
 ## What's next?

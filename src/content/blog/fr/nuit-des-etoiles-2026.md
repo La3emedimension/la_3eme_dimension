@@ -3,11 +3,15 @@ title: "La 3ème Dimension à la Nuit des Étoiles 2026 (Cité de l'espace)"
 publishDate: 2026-07-20
 img: "/assets/nocturnes-cite-espace.jpg"
 img_alt: "Les nocturnes de la Cité de l'espace, Toulouse"
+description: "La 3ème Dimension anime un atelier à la Nuit des Étoiles 2026 à la Cité de l'espace de Toulouse, le 7 août, pour assembler son propre télescope."
+seoTitle: "La 3ème Dimension à la Nuit des Étoiles 2026 (Cité de l'espace) | La 3ème dimension"
+seoDescription: "La 3ème Dimension anime un atelier à la Nuit des Étoiles 2026 à la Cité de l'espace de Toulouse, le 7 août, pour assembler son propre télescope."
+seoKeywords: "Nuit des Étoiles 2026, Cité de l'espace Toulouse, atelier télescope, Perséides, événement astronomie"
 ---
 
 # La 3ème Dimension à la Nuit des Étoiles 2026, à la Cité de l'espace
 
-Le **vendredi 7 août 2026**, la Cité de l'espace à Toulouse ouvre ses portes en nocturne pour la **Nuit des Étoiles**, organisée par l'Association Française d'Astronomie sur le thème *« Des nuits des étoiles à la nuit de l'étoile »*. Observation du ciel, ateliers, spectacles, et surtout les **Perséides** — la pluie d'étoiles filantes la plus spectaculaire de l'année.
+Le **vendredi 7 août 2026**, la Cité de l'espace à Toulouse ouvre ses portes en nocturne pour la **Nuit des Étoiles**, organisée par l'Association Française d'Astronomie sur le thème *« Des nuits des étoiles à la nuit de l'étoile »*. Observation du ciel, ateliers, spectacles, et surtout les **Perséides**, la pluie d'étoiles filantes la plus spectaculaire de l'année.
 
 **La 3ème Dimension** sera présente pour animer un atelier.
 
@@ -15,7 +19,7 @@ Le **vendredi 7 août 2026**, la Cité de l'espace à Toulouse ouvre ses portes 
 
 Comment une simple lunette permet-elle d'observer les étoiles ? Sur le **Belvédère d'Ariane**, petits et grands assemblent un « télescope » pas à pas et découvrent le rôle de chaque lentille dans la formation de l'image.
 
-Tout public, conseillé à partir de 6 ans. En continu et en accès libre, toute la soirée — pas besoin de réservation.
+Tout public, conseillé à partir de 6 ans. En continu et en accès libre, toute la soirée, pas besoin de réservation.
 
 ## Le reste du programme
 

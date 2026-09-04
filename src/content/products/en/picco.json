@@ -11,16 +11,16 @@
       "id": "section-hero",
       "data": {
         "title": "Picco",
-        "tagline": "Newtonian 114/450 — 1.5 kg",
-        "description": "An ultra-compact Newtonian telescope designed for nomadic astronomy. Only 1.5 kg for a 114 mm aperture and 450 mm focal length instrument, 3D-printed in France.<br><br><em>Product under development, release planned for early 2027 — the colour shown is not final.</em>",
+        "tagline": "Newtonian 114/450, 1.5 kg",
+        "description": "An ultra-compact Newtonian telescope designed for nomadic astronomy. Only 1.5 kg for a 114 mm aperture and 450 mm focal length instrument, 3D-printed in France.<br><br><em>Product under development, release planned for early 2027. The colour shown is not final.</em>",
         "features": [
-          { "icon": "rocket-launch", "text": "114/450 — F/D 3.9" },
+          { "icon": "rocket-launch", "text": "114/450, F/D 3.9" },
           { "icon": "strategy", "text": "1.5 kg" },
           { "icon": "terminal-window", "text": "3D Printed in France" }
         ],
         "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
         "heroImage": { "src": "/assets/Piccov2_4.jpeg", "alt": "Picco 114/450 telescope" },
-        "imageOverlayText": "Pre-order at €350 — release early 2027",
+        "imageOverlayText": "Pre-order at €350 (release early 2027)",
         "showFabLogo": false
       }
     },
@@ -75,7 +75,7 @@
           {
             "icon": "rocket-launch",
             "title": "Ultra-portable",
-            "description": "Only 1.5 kg — take it hiking, travelling, or on a balcony."
+            "description": "Only 1.5 kg: take it hiking, travelling, or on a balcony."
           },
           {
             "icon": "strategy",
@@ -89,7 +89,7 @@
           },
           {
             "icon": "paper-plane-tilt",
-            "title": "Fast — F/D 3.9",
+            "title": "Fast (F/D 3.9)",
             "description": "A short focal ratio ideal for deep-sky observing and wide-field astrophotography."
           }
         ]
@@ -101,7 +101,7 @@
       "data": {
         "title": "Picco 114/450",
         "price": "€350",
-        "priceNote": "Pre-order price — opening before end of 2026, release planned for early 2027",
+        "priceNote": "Pre-order price (opening before end of 2026, release planned for early 2027)",
         "included": [
           "3D-printed optical tube",
           "114 mm primary mirror",

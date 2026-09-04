@@ -20,6 +20,6 @@ We're happy to announce that the **Lumi educational refractor** is featured in a
 
 Alongside the review, the magazine includes a **10% discount code** for the Lumi, exclusively for readers of this issue.
 
-The code is only available inside the magazine — [get issue #608 of Ciel & Espace](https://www.cieletespace.fr/edition/608) to read the full review and grab your code.
+The code is only available inside the magazine: [get issue #608 of Ciel & Espace](https://www.cieletespace.fr/edition/608) to read the full review and grab your code.
 
 Thanks to the whole Ciel & Espace team for this wonderful feature on our work!

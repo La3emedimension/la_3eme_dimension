@@ -2,6 +2,14 @@
 title: "À la découverte de l'Astro-dessin"
 publishDate: 2025-09-17
 img: "/assets/blog/astrodessin/dessinorion.jpg"
+img_alt: "Dessin d'observation astronomique de la nébuleuse d'Orion"
+description: "L'astro-dessin, une pratique ancestrale qui combine observation astronomique et dessin, avec les témoignages de plusieurs astro-dessinateurs passionnés."
+tags:
+  - Astronomie
+  - Astro-dessin
+seoTitle: "Astro-dessin : dessiner ce qu'on observe au télescope | La 3ème dimension"
+seoDescription: "Qu'est-ce que l'astro-dessin ? Découvrez cette pratique ancestrale qui combine observation astronomique et dessin, entre technique, patience et émerveillement."
+seoKeywords: "astro-dessin, dessin astronomique, observation télescope, croquis astronomie, dessin ciel profond"
 ---
 
 # Qu'est-ce que l'astro dessin ?

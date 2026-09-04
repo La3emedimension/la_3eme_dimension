@@ -18,13 +18,13 @@ It's official: **pre-orders for the Picco** will open **before the end of 2026**
 
 ## The Picco, in short
 
-The Picco is our next Newtonian telescope, **114/450**, designed to push nomadic astronomy even further than the Smallest: just **1.5 kg**, an ultra-compact build, and the same DNA — an instrument that makes sense the moment you pick it up, no manual required.
+The Picco is our next Newtonian telescope, **114/450**, designed to push nomadic astronomy even further than the Smallest: just **1.5 kg**, an ultra-compact build, and the same DNA: an instrument that makes sense the moment you pick it up, no manual required.
 
 Release planned for **early 2027**. Pre-orders opening before year's end let you reserve yours ahead of time, at the launch price.
 
 ## Why a preferential price
 
-The €350 pre-order price rewards those who've been following along from the start and trust the project before its official release. The final price, once the Picco is available in the shop, will be announced later — and it will be higher.
+The €350 pre-order price rewards those who've been following along from the start and trust the project before its official release. The final price, once the Picco is available in the shop, will be announced later, and it will be higher.
 
 ## How to be notified
 

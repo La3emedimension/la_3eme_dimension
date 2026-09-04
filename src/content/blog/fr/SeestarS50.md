@@ -25,11 +25,11 @@ Le Seestar S50 est un instrument remarquable pour l'astrophotographie, mais il m
 
 ## Contenu du pack
 
-- **Capuchon de protection** — protège la lentille lors du transport
-- **Baffle anti-lumière parasite** — réduit les reflets indésirables lors des sessions
-- **Masque à aigrettes Newton** — donne des étoiles avec des diffraction spikes style Newton
-- **Masque à aigrettes JWST** — donne des étoiles avec des diffraction spikes style James Webb
-- **Masque de Bahtinov** — facilite la mise au point précise
+- **Capuchon de protection** : protège la lentille lors du transport
+- **Baffle anti-lumière parasite** : réduit les reflets indésirables lors des sessions
+- **Masque à aigrettes Newton** : donne des étoiles avec des diffraction spikes style Newton
+- **Masque à aigrettes JWST** : donne des étoiles avec des diffraction spikes style James Webb
+- **Masque de Bahtinov** : facilite la mise au point précise
 
 <img src="/assets/s50-03.jpg" alt="Vue avec pare-lumière">
 

@@ -5,6 +5,9 @@ publishDate: 2026-01-24
 tags: ["travel", "airplane", "telescope", "transport", "astronomy"]
 img: "/assets/smallest-fullsize-01.jpg"
 img_alt: "Smallest telescope in its airplane travel configuration"
+seoTitle: "Flying with a telescope: guide and 2026 regulations | La 3ème dimension"
+seoDescription: "Flying with a telescope, in cabin or hold: 2026 regulations, packing tips and portable solutions for observing the sky anywhere in the world."
+seoKeywords: "flying with a telescope, telescope airplane, portable telescope travel, cabin baggage regulations, astronomy travel"
 draft: true
 ---
 

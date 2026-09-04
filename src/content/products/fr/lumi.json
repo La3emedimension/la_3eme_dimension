@@ -56,7 +56,7 @@
           { "icon": "terminal-window", "text": "Montage intuitif" },
           { "icon": "moon-stars", "text": "Idéal pour débutants" }
         ],
-        "primaryCta": { "text": "Commander — 219€", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
+        "primaryCta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
         "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation dans les Pyrénées" },
         "logoImage": "/assets/logolumi.png",
         "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique."

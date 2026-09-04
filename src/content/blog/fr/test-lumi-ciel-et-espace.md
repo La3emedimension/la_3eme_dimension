@@ -20,6 +20,6 @@ Nous sommes heureux d'annoncer que la **lunette pédagogique Lumi** fait l'objet
 
 En plus du test, le magazine propose un **code de réduction de 10%** valable sur la Lumi, réservé aux lecteurs de cette édition.
 
-Le code n'est disponible que dans le magazine — [procurez-vous le numéro 608 de Ciel & Espace](https://www.cieletespace.fr/edition/608) pour découvrir le test complet et récupérer votre code.
+Le code n'est disponible que dans le magazine : [procurez-vous le numéro 608 de Ciel & Espace](https://www.cieletespace.fr/edition/608) pour découvrir le test complet et récupérer votre code.
 
 Merci à toute l'équipe de Ciel & Espace pour ce beau retour sur notre travail !

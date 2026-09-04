@@ -9,13 +9,16 @@ tags:
   - Design
   - Astronomy
   - Accessory
+seoTitle: "Easy Clip: magnetic mount for Quickfinder finder | La 3ème dimension"
+seoDescription: "Easy Clip, the magnetic mount that lets you switch telescopes in seconds with a Quickfinder finder, external CR2032 battery."
+seoKeywords: "Easy Clip, Quickfinder finder, telescope accessory, 3D printed astronomy, magnetic mount"
 ---
 
 ---
 The Easy Clip
 ---
 
-The Easy Clip is a magnetic mount designed for your Quickfinder. It lets you switch between telescopes in seconds without unscrewing anything — and gives you access to the CR2032 battery without dismounting the finder.
+The Easy Clip is a magnetic mount designed for your Quickfinder. It lets you switch between telescopes in seconds without unscrewing anything, and gives you access to the CR2032 battery without dismounting the finder.
 
 <img src="/assets/easyclip/Easygi.gif">
 

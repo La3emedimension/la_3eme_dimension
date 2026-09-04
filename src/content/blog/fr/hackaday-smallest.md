@@ -18,16 +18,16 @@ Belle surprise : **[Hackaday](https://hackaday.com/2025/06/19/build-your-own-tel
 
 ## Ce que dit l'article
 
-Hackaday revient sur l'approche du projet : plutôt que de tailler son propre miroir à la main comme le veut la tradition amateur, le Smallest mise sur l'impression 3D pour la structure, et sur des optiques du commerce (ou récupérées) pour la partie optique — une manière résolument moderne d'aborder la construction d'un télescope.
+Hackaday revient sur l'approche du projet : plutôt que de tailler son propre miroir à la main comme le veut la tradition amateur, le Smallest mise sur l'impression 3D pour la structure, et sur des optiques du commerce (ou récupérées) pour la partie optique, une manière résolument moderne d'aborder la construction d'un télescope.
 
 L'article détaille aussi quelques choix techniques qu'on assume pleinement :
 
 - **150/750 mm** de focale, pour un tube complet autour de **2 kg** une fois imprimé
-- **PETG, ASA ou ABS** recommandés plutôt que le PLA, qui se déforme trop facilement à la chaleur — un point important pour un télescope pensé pour voyager
+- **PETG, ASA ou ABS** recommandés plutôt que le PLA, qui se déforme trop facilement à la chaleur, un point important pour un télescope pensé pour voyager
 - Documentation en français et communauté Discord pour accompagner les monteurs
 - Un kit pré-assemblé pour celles et ceux qui préfèrent ne pas imprimer eux-mêmes
 
-Hackaday met aussi le projet en perspective avec d'autres démarches récentes de télescopes open source, comme le Hadley — une bonne nouvelle pour toute la communauté qui explore ces approches.
+Hackaday met aussi le projet en perspective avec d'autres démarches récentes de télescopes open source, comme le Hadley, une bonne nouvelle pour toute la communauté qui explore ces approches.
 
 ## Version open source vs version commerciale
 
@@ -37,6 +37,6 @@ La version vendue en boutique correspond au télescope tel qu'il a évolué depu
 
 ## Merci
 
-Un immense merci à l'équipe de Hackaday pour ce beau coup de projecteur, et à toute la communauté qui imprime, teste et fait vivre le Smallest depuis le début — notamment [Magnitude 78](https://discord.gg/PmNhTSpWCt), qui a beaucoup inspiré ce projet.
+Un immense merci à l'équipe de Hackaday pour ce beau coup de projecteur, et à toute la communauté qui imprime, teste et fait vivre le Smallest depuis le début, notamment [Magnitude 78](https://discord.gg/PmNhTSpWCt), qui a beaucoup inspiré ce projet.
 
 Retrouvez le [Smallest en boutique](/product/smallest/) ou le [fichier open source sur Printables](https://www.printables.com/@La3emedimens_2102135).

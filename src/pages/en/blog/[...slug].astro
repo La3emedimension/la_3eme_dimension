@@ -32,6 +32,7 @@ const { Content } = await render(entry);
 const entrySlug = getSlugWithoutLocale(entry.id, locale);
 const isSergePortrait = entrySlug === 'portrait-trouvelot';
 const isFlorianPortrait = entrySlug === 'portrait-webb';
+const hideTopHeroImage = entrySlug === 'pedagogie-lumi';
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString("en-GB", {
@@ -67,7 +68,7 @@ const formatDate = (date: Date) => {
           <h1>{entry.data.title}</h1>
         </div>
 
-        {entry.data.img && (
+        {entry.data.img && !hideTopHeroImage && (
           <div class={isSergePortrait ? "hero-image-wrapper with-watermark" : "hero-image-wrapper"}>
             <img src={entry.data.img} alt={entry.data.title} class="hero-image" loading="eager" decoding="async" />
             {isSergePortrait && (

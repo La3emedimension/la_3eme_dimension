@@ -32,7 +32,7 @@ A lovely evening, with curious visitors of all ages assembling their own refract
   </div>
 </div>
 
-We hope to see you at the next event — follow us to stay in the loop!
+We hope to see you at the next event: follow us to stay in the loop!
 
 **Raphaël - La 3ème Dimension**
 

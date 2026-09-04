@@ -25,11 +25,11 @@ The Seestar S50 is a remarkable instrument for astrophotography, but it lacks a 
 
 ## Pack contents
 
-- **Protective cap** — protects the lens during transport
-- **Anti-stray-light baffle** — reduces unwanted reflections during sessions
-- **Newton diffraction spike mask** — gives stars Newton-style diffraction spikes
-- **JWST diffraction spike mask** — gives stars James Webb-style diffraction spikes
-- **Bahtinov mask** — enables precise focusing
+- **Protective cap**: protects the lens during transport
+- **Anti-stray-light baffle**: reduces unwanted reflections during sessions
+- **Newton diffraction spike mask**: gives stars Newton-style diffraction spikes
+- **JWST diffraction spike mask**: gives stars James Webb-style diffraction spikes
+- **Bahtinov mask**: enables precise focusing
 
 <img src="/assets/s50-03.jpg" alt="View with light shield">
 

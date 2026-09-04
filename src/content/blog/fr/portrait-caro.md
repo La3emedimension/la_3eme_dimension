@@ -2,6 +2,11 @@
 title: "Caroline"
 publishDate: 2025-09-17
 img: "/assets/blog/astrodessin/caro.jpg"
+img_alt: "Portrait de Caroline, astro-dessinatrice"
+description: "Portrait de Caroline, astro-dessinatrice passionnée d'observation visuelle au Dobson, qui partage son parcours et sa pratique de l'astro-dessin."
+seoTitle: "Portrait d'astro-dessinatrice : Caroline | La 3ème dimension"
+seoDescription: "Portrait de Caroline, astro-dessinatrice passionnée d'observation visuelle au Dobson, qui raconte son parcours et sa pratique de l'astro-dessin."
+seoKeywords: "portrait astro-dessinateur, astro-dessin, observation Dobson, dessin astronomique"
 draft: true
 ---
 

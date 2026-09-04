@@ -19,16 +19,16 @@ seoKeywords: "vis collimation newton, vis moletées télescope, collimation dobs
 
 ## Le projet
 
-La collimation est une étape incontournable pour tout possesseur de télescope Newton ou Dobson. Les vis standard fournies avec les instruments sont souvent peu pratiques — trop petites, nécessitant un outil, parfois abrasives pour le support du miroir. Ces vis moletées imprimées en 3D résolvent ces problèmes.
+La collimation est une étape incontournable pour tout possesseur de télescope Newton ou Dobson. Les vis standard fournies avec les instruments sont souvent peu pratiques : trop petites, nécessitant un outil, parfois abrasives pour le support du miroir. Ces vis moletées imprimées en 3D résolvent ces problèmes.
 
 <img src="/assets/visdecollim/visdecollim0.jpeg" alt="Jeu de 3 vis moletées de collimation">
 
 ## Caractéristiques
 
-- **Filetage M4, longueur 45mm** — remplacement direct des vis standard
-- **Molette de 13mm de diamètre** — prise en main confortable, réglage à la main sans outil
-- **Extrémités arrondies** — évite de ponctionner ou déformer le support du miroir primaire
-- **Impression en PETG** — résistant aux manipulations répétées sur le terrain
+- **Filetage M4, longueur 45mm** : remplacement direct des vis standard
+- **Molette de 13mm de diamètre** : prise en main confortable, réglage à la main sans outil
+- **Extrémités arrondies** : évite de ponctionner ou déformer le support du miroir primaire
+- **Impression en PETG** : résistant aux manipulations répétées sur le terrain
 
 <img src="/assets/visdecollim/visdecollim1.jpeg" alt="Détail de la molette ergonomique">
 

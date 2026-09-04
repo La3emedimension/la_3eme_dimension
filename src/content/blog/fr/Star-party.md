@@ -2,6 +2,14 @@
 title: "Venez nous voir le 11 octobre 2025"
 publishDate: 2025-09-12
 img: "/assets/starparty1.jpg"
+img_alt: "La 3ème Dimension à la Star Party de Gratentour"
+description: "La 3ème Dimension à la Star Party de Gratentour le 11 octobre 2025 : planétarium gonflable, ateliers créatifs et observations avec le Smallest et la Lumi."
+tags:
+  - Astronomie
+  - Événement
+seoTitle: "La 3ème Dimension à la Star Party de Gratentour | La 3ème dimension"
+seoDescription: "Retrouvez La 3ème Dimension à la Star Party de Gratentour le 11 octobre 2025 pour découvrir le Smallest et la Lumi lors d'ateliers et observations."
+seoKeywords: "star party Gratentour, événement astronomie, Smallest télescope, Lumi lunette, observation ciel"
 ---
 
 # La 3eme Dimension à la Star Party de Gratentour

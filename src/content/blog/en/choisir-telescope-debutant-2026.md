@@ -207,7 +207,7 @@ For example:
 - You store everything in its bag (still compact)
 - Next time you go out: **30 seconds to set up** instead of 4 minutes
 
-**In practice:** you're in your garden on a weeknight, you see the sky is clear. You take out the bag, clip the tubes together, place it on its base — and you're ready!
+**In practice:** you're in your garden on a weeknight, you see the sky is clear. You take out the bag, clip the tubes together, place it on its base, and you're ready!
 
 With classic telescopes? You have to get out the big bag, open it, set up the tripod or the table... Too much hassle. You put it off till tomorrow. And you never do it.
 
@@ -431,7 +431,7 @@ The Smallest fits in a normal closet. Silly detail, but it changes everything.
 No. If you can assemble simple IKEA furniture, you can assemble the Smallest. The first time takes 10 minutes, after that it's 4 minutes flat. And bonus: you can leave it partially assembled in its bag, which cuts setup to 30 seconds for quick weeknight outings.
 
 **"Is the plastic sturdy?"**
-It's not ordinary plastic — it's carbon-fiber reinforced PETG. Very tough and durable. Guaranteed for 2 years.
+It's not ordinary plastic: it's carbon-fiber reinforced PETG. Very tough and durable. Guaranteed for 2 years.
 
 **"Can I use it in the city?"**
 For the Moon and planets, yes, no problem. To see nebulae and galaxies, you need to head out to the countryside (but that's exactly why it's easy to bring along).
@@ -467,7 +467,7 @@ But if you want to **really enjoy the sky**, if you want to show Saturn to your 
 
 ### Questions? Call me
 
-I'm available to answer your questions, even the most basic ones. No salesperson, just me — the guy who makes the telescopes and knows the subject.
+I'm available to answer your questions, even the most basic ones. No salesperson, just me, the guy who makes the telescopes and knows the subject.
 
 📧 **Email:** la3emedim@gmail.com
 📞 **Phone:** +33 7 60 85 38 70

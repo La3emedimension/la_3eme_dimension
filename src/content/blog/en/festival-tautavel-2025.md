@@ -3,6 +3,10 @@ title: "La 3ème Dimension at the Tautavel Astronomy Festival"
 publishDate: 2026-05-21
 img: "/assets/ert_montauban1.jpeg"
 img_alt: "La 3ème Dimension at the 19th Tautavel Astronomy Festival"
+description: "Raphaël Labro and La 3ème Dimension at the 19th Tautavel Astronomy Festival, July 16 to 19, with a workshop to build your own Lumi refractor."
+seoTitle: "La 3ème Dimension at the Tautavel Astronomy Festival | La 3ème dimension"
+seoDescription: "Raphaël Labro and La 3ème Dimension at the 19th Tautavel Astronomy Festival, July 16 to 19, with a workshop to build your own Lumi refractor."
+seoKeywords: "Tautavel Astronomy Festival, Astrotavel, Lumi workshop, 3D printed telescope, astronomy event"
 ---
 
 # La 3ème Dimension at the 19th Tautavel Astronomy Festival
@@ -17,7 +21,7 @@ The flagship workshop of this event: **assembling the Lumi refractor as a family
 
 In 45 minutes, kids and adults alike assemble their own optical instrument, understand the principle behind an astronomical refractor, and leave with the pride of having built something with their own hands.
 
-Groups are limited to **4 people maximum** to ensure quality guidance. No prerequisites, no instructions — just curiosity.
+Groups are limited to **4 people maximum** to ensure quality guidance. No prerequisites, no instructions, just curiosity.
 
 ![The Lumi refractor assembled by a family](/assets/ert_montauban1.jpeg)
 
@@ -34,12 +38,12 @@ A behind-the-scenes look at a craft workshop, at the crossroads of design, 3D pr
 ## Instruments on display
 
 ### The Smallest
-An ultra-compact 150/750 Newtonian telescope, ready in 4 minutes, that fits in a plane's cabin. Designed for observing without constraints — from a balcony, a garden, or the top of a mountain.
+An ultra-compact 150/750 Newtonian telescope, ready in 4 minutes, that fits in a plane's cabin. Designed for observing without constraints, from a balcony, a garden, or the top of a mountain.
 
 ![The Smallest telescope](/assets/smallest-fullsize-01.jpg)
 
 ### The Lumi
-An educational astronomical refractor you assemble yourself. Each module only fits together the right way — the assembly teaches optics before you even make your first observation.
+An educational astronomical refractor you assemble yourself. Each module only fits together the right way, the assembly teaches optics before you even make your first observation.
 
 ![The Lumi refractor](/assets/ert_montauban7.jpg)
 
@@ -55,4 +59,4 @@ Organized by [Astrotavel](https://www.facebook.com/astrotavel)
 
 ---
 
-If you're in the area this summer, this is an event not to miss. Free entry, clear skies, and curiosity — that's all you need.
+If you're in the area this summer, this is an event not to miss. Free entry, clear skies, and curiosity: that's all you need.

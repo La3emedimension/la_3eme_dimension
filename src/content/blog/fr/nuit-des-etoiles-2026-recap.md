@@ -32,7 +32,7 @@ Une belle soirée, entre curieux venus découvrir l'optique en montant leur prop
   </div>
 </div>
 
-On espère vous retrouver aux prochains événements — suivez-nous pour ne rien manquer !
+On espère vous retrouver aux prochains événements : suivez-nous pour ne rien manquer !
 
 **Raphaël - La 3ème Dimension**
 

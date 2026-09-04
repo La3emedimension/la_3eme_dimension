@@ -5,6 +5,9 @@ publishDate: 2026-01-24
 tags: ["impression 3d", "astronomie", "innovation", "DIY", "technologie"]
 img: "/assets/smallest-fullsize-02.jpg"
 img_alt: "Télescope imprimé en 3D - Innovation astronomique"
+seoTitle: "L'impression 3D révolutionne l'astronomie amateur : guide 2026 | La 3ème dimension"
+seoDescription: "Comment l'impression 3D transforme l'astronomie amateur : télescopes, accessoires et pièces sur mesure, tout ce qu'il faut savoir sur cette révolution."
+seoKeywords: "impression 3D astronomie, télescope imprimé 3D, DIY astronomie, innovation astronomie amateur, fabrication télescope"
 draft: false
 ---
 

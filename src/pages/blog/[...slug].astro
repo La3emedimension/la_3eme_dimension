@@ -34,6 +34,7 @@ const entrySlug = getSlugWithoutLocale(entry.id, locale);
 const needsCalculator = entrySlug === 'OEP';
 const isSergePortrait = entrySlug === 'portrait-trouvelot';
 const isFlorianPortrait = entrySlug === 'portrait-webb';
+const hideTopHeroImage = entrySlug === 'pedagogie-lumi';
 
 const pageUrl = `https://la3emedim.fr/blog/${entrySlug}/`;
 const blogPostSchema = {
@@ -166,7 +167,7 @@ const formatDate = (date: Date) => {
           <h1>{entry.data.title}</h1>
         </div>
 
-        {entry.data.img && (
+        {entry.data.img && !hideTopHeroImage && (
           <div class={isSergePortrait ? "hero-image-wrapper with-watermark" : "hero-image-wrapper"}>
             <img
               src={entry.data.img}

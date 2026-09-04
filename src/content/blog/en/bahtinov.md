@@ -25,7 +25,7 @@ Achieving focus is one of the most critical steps in astrophotography. The Bahti
 
 ## Why use a Bahtinov mask?
 
-Without a mask, judging focus on a star is often a matter of approximation. With a Bahtinov mask, confirmation is visual and immediate — even in total darkness, even with a motorised mount.
+Without a mask, judging focus on a star is often a matter of approximation. With a Bahtinov mask, confirmation is visual and immediate, even in total darkness, even with a motorised mount.
 
 <img src="/assets/Bathinov8.jpeg" alt="Bahtinov diffraction pattern">
 <img src="/assets/Bathinov9.jpeg" alt="Bahtinov mask - detail">
@@ -39,7 +39,7 @@ Each mask is printed to fit its target instrument perfectly:
 - **SVbony SV106**
 - **Williams Optics 50/200**
 
-Have a different instrument? Contact us — custom manufacturing is available.
+Have a different instrument? Contact us, custom manufacturing is available.
 
 <img src="/assets/Bathinov10.jpeg" alt="Bahtinov mask - mounted view">
 <img src="/assets/askar-fra500.jpeg" alt="Bahtinov mask on Askar FRA500">

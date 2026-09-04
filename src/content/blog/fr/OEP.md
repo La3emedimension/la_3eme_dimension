@@ -2,6 +2,15 @@
 title: "OEP - L'oculaire open source"
 publishDate: 2025-09-12
 img: "/assets/OEP1.png"
+img_alt: "Oculaire Plössl open source imprimé en 3D, projet OEP"
+description: "OEP (Open Eyepiece Project) : la conception d'un oculaire Plössl open source imprimé en 3D, pensé pour être reproductible par toute la communauté."
+tags:
+  - Astronomie
+  - Open Source
+  - Impression 3D
+seoTitle: "OEP : l'oculaire astronomique open source imprimé en 3D | La 3ème dimension"
+seoDescription: "Découvrez OEP (Open Eyepiece Project), un oculaire Plössl open source conçu pour être imprimé en 3D et reproduit librement par la communauté."
+seoKeywords: "oculaire open source, oculaire Plössl, impression 3D astronomie, DIY oculaire, Open Eyepiece Project"
 ---
 
 # Comment fabriquer son propre Plössl !

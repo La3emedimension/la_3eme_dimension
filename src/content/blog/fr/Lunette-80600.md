@@ -2,6 +2,14 @@
 title: "Construire sa lunette astronomique"
 publishDate: 2025-09-17
 img: "/assets/lunette23.png"
+img_alt: "Lunette astronomique artisanale 80/600 construite par Raphaël"
+description: "Le récit de la construction d'une lunette astronomique artisanale 80mm/600mm, du châssis en cornières aluminium au tube PVC, jusqu'à l'impression 3D."
+tags:
+  - Astronomie
+  - DIY
+seoTitle: "Construire sa lunette astronomique 80/600 fait main | La 3ème dimension"
+seoDescription: "Suivez la construction pas à pas d'une lunette astronomique artisanale 80mm/600mm : structure aluminium, tube PVC puis impression 3D."
+seoKeywords: "construire lunette astronomique, lunette 80/600, fabrication instrument optique, DIY astronomie, impression 3D télescope"
 ---
 
 # Une idée !

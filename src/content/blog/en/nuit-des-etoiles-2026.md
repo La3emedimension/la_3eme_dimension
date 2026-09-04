@@ -3,11 +3,15 @@ title: "La 3ème Dimension at Nuit des Étoiles 2026 (Cité de l'espace)"
 publishDate: 2026-07-20
 img: "/assets/nocturnes-cite-espace.jpg"
 img_alt: "Evening events at the Cité de l'espace, Toulouse"
+description: "La 3ème Dimension runs a workshop at Nuit des Étoiles 2026 at the Cité de l'espace in Toulouse, on August 7, to build your own telescope."
+seoTitle: "La 3ème Dimension at Nuit des Étoiles 2026 (Cité de l'espace) | La 3ème dimension"
+seoDescription: "La 3ème Dimension runs a workshop at Nuit des Étoiles 2026 at the Cité de l'espace in Toulouse, on August 7, to build your own telescope."
+seoKeywords: "Nuit des Étoiles 2026, Cité de l'espace Toulouse, telescope workshop, Perseids, astronomy event"
 ---
 
 # La 3ème Dimension at Nuit des Étoiles 2026, at the Cité de l'espace
 
-On **Friday, August 7, 2026**, the Cité de l'espace in Toulouse opens its doors for an evening event for **Nuit des Étoiles** (Night of the Stars), organized by the French Astronomy Association around the theme *"From nights of stars to the night of the Star."* Sky watching, workshops, shows, and above all the **Perseids** — the most spectacular meteor shower of the year.
+On **Friday, August 7, 2026**, the Cité de l'espace in Toulouse opens its doors for an evening event for **Nuit des Étoiles** (Night of the Stars), organized by the French Astronomy Association around the theme *"From nights of stars to the night of the Star."* Sky watching, workshops, shows, and above all the **Perseids**, the most spectacular meteor shower of the year.
 
 **La 3ème Dimension** will be there to run a workshop.
 
@@ -15,7 +19,7 @@ On **Friday, August 7, 2026**, the Cité de l'espace in Toulouse opens its doors
 
 How does a simple refractor let you observe the stars? On the **Belvédère d'Ariane**, kids and adults assemble a "telescope" step by step and discover the role each lens plays in forming the image.
 
-Open to everyone, recommended from age 6. Ongoing, drop-in access all evening — no booking required.
+Open to everyone, recommended from age 6. Ongoing, drop-in access all evening, no booking required.
 
 ## The rest of the program
 

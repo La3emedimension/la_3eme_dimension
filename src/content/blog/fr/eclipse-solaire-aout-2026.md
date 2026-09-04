@@ -28,7 +28,7 @@ Le phénomène a débuté aux alentours de 19h20, pour un maximum atteint vers 2
 
 ## Pourquoi cette éclipse était exceptionnelle
 
-Il faut remonter à l'éclipse totale du 11 août 1999 pour trouver un événement comparable en Europe. La prochaine occasion de voir un taux d'obscuration aussi élevé depuis la France ne se représentera pas avant plusieurs décennies. Autre détail qui a ajouté à la magie de la soirée : le pic annuel des Perséides tombait la même nuit, offrant aux observateurs restés dehors un doublé rare — éclipse au crépuscule, puis étoiles filantes une fois la nuit tombée.
+Il faut remonter à l'éclipse totale du 11 août 1999 pour trouver un événement comparable en Europe. La prochaine occasion de voir un taux d'obscuration aussi élevé depuis la France ne se représentera pas avant plusieurs décennies. Autre détail qui a ajouté à la magie de la soirée : le pic annuel des Perséides tombait la même nuit, offrant aux observateurs restés dehors un doublé rare : éclipse au crépuscule, puis étoiles filantes une fois la nuit tombée.
 
 ## Observer une éclipse en toute sécurité
 

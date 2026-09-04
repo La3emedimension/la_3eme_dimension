@@ -16,7 +16,7 @@ seoKeywords: "ciel et espace special issue, which telescope for planets, lumi re
 
 Another great mention for the **Lumi educational refractor**: it's featured in [Ciel & Espace's special issue #55](https://www.cieletespace.fr/edition/hs-55), entirely dedicated to the question **"Which telescope to see the planets?"**.
 
-This guide helps beginners choose the instrument best suited to their observing goals — and Lumi naturally finds its place as a beginner-friendly instrument.
+This guide helps beginners choose the instrument best suited to their observing goals, and Lumi naturally finds its place as a beginner-friendly instrument.
 
 Find all the details in [Ciel & Espace's special issue #55](https://www.cieletespace.fr/edition/hs-55), available on newsstands and on their website.
 

@@ -3,11 +3,15 @@ title: "La 3ème Dimension at the Made in France Show 2026 (MIF Expo, Paris)"
 publishDate: 2026-07-20
 img: "/assets/mif-expo-2026-lumi.jpg"
 img_alt: "A child looking through the Lumi astronomical refractor"
+description: "Join La 3ème Dimension at MIF Expo, the Made in France show, from November 12 to 15, 2026 in Paris, within the Craft Village."
+seoTitle: "La 3ème Dimension at the Made in France Show 2026 (MIF Expo Paris) | La 3ème dimension"
+seoDescription: "Join La 3ème Dimension at MIF Expo, the Made in France show, from November 12 to 15, 2026 in Paris, within the Craft Village."
+seoKeywords: "MIF Expo Paris, Made in France show, French craftsmanship, Lumi refractor, 3D printing"
 ---
 
 # La 3ème Dimension at the Made in France Show 2026
 
-From **November 12 to 15, 2026**, **La 3ème Dimension** will be at **MIF Expo**, the Made in France show, in Paris — Porte de Versailles.
+From **November 12 to 15, 2026**, **La 3ème Dimension** will be at **MIF Expo**, the Made in France show, in Paris, Porte de Versailles.
 
 ## The Craft Village
 
@@ -18,8 +22,8 @@ La 3ème Dimension represents Occitan craftsmanship there, in the Leisure catego
 ## Practical information
 
 - **Dates:** Thursday, November 12 to Sunday, November 15, 2026
-- **Hours:** Thursday 12th, Friday 13th and Saturday 14th of November, 10am to 7pm — Sunday, November 15th, 10am to 6pm
-- **Location:** Paris, Porte de Versailles — Hall 7.2
+- **Hours:** Thursday 12th, Friday 13th and Saturday 14th of November, 10am to 7pm, Sunday, November 15th, 10am to 6pm
+- **Location:** Paris, Porte de Versailles, Hall 7.2
 - **Price:** free with pre-registration, €10 on site (refunded on your first purchase)
 
 ⚠️ Don't buy your tickets from a street vendor: they won't be accepted at the entrance to the show.

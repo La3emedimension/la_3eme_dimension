@@ -16,7 +16,7 @@ seoKeywords: "ciel et espace hors-série, quel télescope pour voir les planète
 
 Nouvelle belle mention pour la **lunette pédagogique Lumi** : elle est citée dans le [hors-série n°55 de Ciel & Espace](https://www.cieletespace.fr/edition/hs-55), entièrement consacré à la question **« Quel télescope pour voir les planètes ? »**.
 
-Ce guide aide les débutants à choisir l'instrument le plus adapté selon leurs envies d'observation — et la Lumi y trouve naturellement sa place comme instrument d'initiation.
+Ce guide aide les débutants à choisir l'instrument le plus adapté selon leurs envies d'observation, et la Lumi y trouve naturellement sa place comme instrument d'initiation.
 
 Retrouvez tous les détails dans le [hors-série n°55 de Ciel & Espace](https://www.cieletespace.fr/edition/hs-55), disponible en kiosque et sur leur site.
 

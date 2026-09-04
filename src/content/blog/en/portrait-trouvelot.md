@@ -2,6 +2,11 @@
 title: "Serge Vieillard"
 publishDate: 2025-09-17
 img: "/assets/blog/astrodessin/trombine.jpg"
+img_alt: "Portrait of Serge Vieillard, astro-sketcher"
+description: "Portrait of Serge Vieillard, a seasoned astro-sketcher from the Magnitude78 club, looking back on decades of observation and astronomical drawing."
+seoTitle: "Astro-sketcher portrait: Serge Vieillard | La 3ème dimension"
+seoDescription: "Portrait of Serge Vieillard, a seasoned astro-sketcher from the Magnitude78 club, looking back on decades of observation and astronomical drawing."
+seoKeywords: "astro-sketcher portrait, Serge Vieillard, Magnitude78, astronomical drawing, deep sky observation"
 draft: true
 ---
 
