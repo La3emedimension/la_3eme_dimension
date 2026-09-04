@@ -13,6 +13,8 @@ draft: false
 
 # How to Choose a Portable Telescope in 2026: The Complete Guide
 
+**Short answer: an ideal portable telescope weighs under 4 kg, assembles in under 5 minutes with no tools, and fits in a carry-on case (55×40×20cm).** Weight and bulk are the #1 criterion, ahead of aperture: a powerful telescope that's too heavy to carry often ends up permanently stored away.
+
 Nomadic astronomy has grown considerably in recent years. Whether you're a passionate amateur astronomer or a traveler curious about the starry sky, **choosing the right portable telescope** is crucial to making the most of your observations on the go.
 
 ## Why choose a portable telescope?

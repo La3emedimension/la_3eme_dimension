@@ -13,6 +13,8 @@ draft: false
 
 # 3D Printing Is Revolutionizing Amateur Astronomy: Complete 2026 Guide
 
+**Short answer: 3D printing now makes it possible to build complete telescopes** (structure, mount, focuser) in carbon-fiber-reinforced PETG, 30% lighter than aluminum, for a material cost of just €20 to €50. It also puts repairs and custom accessories within reach of any amateur, something previously out of reach without a workshop.
+
 **3D printing** is radically transforming the world of amateur astronomy. What seemed impossible ten years ago is now a reality: **building a complete telescope** or **custom astronomy accessories** from home.
 
 ## What is 3D printing applied to astronomy?

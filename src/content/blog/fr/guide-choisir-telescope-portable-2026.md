@@ -13,6 +13,8 @@ draft: false
 
 # Comment choisir un télescope portable en 2026 : Le guide complet
 
+**En résumé : un télescope portable idéal pèse moins de 4 kg, se monte en moins de 5 minutes sans outil, et tient dans une valise cabine (55×40×20cm).** Le critère n°1 est le poids et l'encombrement, avant même le diamètre optique : un télescope performant mais trop lourd pour être sorti souvent finit toujours par rester au garage.
+
 L'astronomie nomade connaît un essor considérable ces dernières années. Que vous soyez un astronome amateur passionné ou un voyageur curieux du ciel étoilé, **choisir le bon télescope portable** est crucial pour profiter pleinement de vos observations en déplacement.
 
 ## Pourquoi opter pour un télescope portable ?

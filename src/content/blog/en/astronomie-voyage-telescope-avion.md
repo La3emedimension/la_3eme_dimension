@@ -13,6 +13,8 @@ draft: true
 
 # Flying with a Telescope: Practical Guide and 2026 Regulations
 
+**Short answer: yes, a telescope can go in the cabin.** IATA standards allow up to 55×40×20cm and 8 to 12kg depending on the airline. The simplest solution is a lightweight, foldable instrument like the [Smallest](/product/smallest/) (25×25×20cm folded, 4kg), which fits under the seat and never needs to go in the hold.
+
 Do you dream of observing the southern sky from Chile, the northern lights in Iceland, or the pristine skies of the Canary Islands? **Flying with a telescope** is possible, but it takes some preparation. This complete guide explains everything you need to know.
 
 ## Why bring your telescope on a plane?

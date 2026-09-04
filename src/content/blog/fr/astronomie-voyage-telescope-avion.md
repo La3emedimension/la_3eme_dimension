@@ -13,6 +13,8 @@ draft: true
 
 # Voyager en avion avec un télescope : Guide pratique et réglementation 2026
 
+**En résumé : oui, un télescope passe en cabine d'avion.** Les normes IATA autorisent jusqu'à 55×40×20cm et 8 à 12kg selon les compagnies. La solution la plus simple reste un instrument démontable et léger comme le [Smallest](/product/smallest/) (25×25×20cm plié, 4kg), qui tient sous le siège sans jamais passer par la soute.
+
 Vous rêvez d'observer le ciel austral depuis le Chili, les aurores boréales en Islande, ou les ciels purs des Canaries ? **Voyager en avion avec un télescope** est possible, mais nécessite une bonne préparation. Ce guide complet vous explique tout ce qu'il faut savoir.
 
 ## Pourquoi emmener son télescope en avion ?

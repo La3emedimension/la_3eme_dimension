@@ -27,6 +27,32 @@ const t = useTranslations(locale);
 
 		</main>
 
+		<section class="press">
+			<h2 class="press-title">Featured in the press</h2>
+			<div class="press-grid">
+				<a class="press-card" href="/en/blog/hackernews-smallest/">
+					<span class="press-source">Hacker News</span>
+					<span class="press-desc">The Smallest hit the front page, sparking dozens of comments on 3D printing in astronomy.</span>
+				</a>
+				<a class="press-card" href="/en/blog/hackaday-smallest/">
+					<span class="press-source">Hackaday</span>
+					<span class="press-desc">"Build your own telescope, the modern way."</span>
+				</a>
+				<a class="press-card" href="/en/blog/test-lumi-ciel-et-espace/">
+					<span class="press-source">Ciel &amp; Espace #608</span>
+					<span class="press-desc">A full review of the Lumi educational refractor.</span>
+				</a>
+				<a class="press-card" href="/en/blog/lumi-hors-serie-ciel-et-espace/">
+					<span class="press-source">Ciel &amp; Espace, special issue</span>
+					<span class="press-desc">Lumi featured in "Which telescope to see the planets?"</span>
+				</a>
+				<a class="press-card" href="/en/blog/lopinion-portrait-la3edim/">
+					<span class="press-source">L'Opinion</span>
+					<span class="press-desc">A portrait of La 3ème Dimension, a Tarn-et-Garonne workshop.</span>
+				</a>
+			</div>
+		</section>
+
 		<ContactCTA locale={locale} />
 	</div>
 </BaseLayout>
@@ -35,6 +61,13 @@ const t = useTranslations(locale);
 	p { text-align: left; font-size: 70%; margin-right: 15px; margin-left: 15px; }
 	.about { display: flex; flex-direction: column; gap: 3.5rem; align-items: center; margin-right: 15px; margin-left: 15px; }
 	img { max-width: 45vh; width: 55vh; margin-right: 5%; border-radius: 1.5rem; box-shadow: var(--shadow-md); }
+	.press { width: 100%; max-width: 1100px; padding: 0 1rem; box-sizing: border-box; text-align: center; }
+	.press-title { font-size: var(--text-xl); color: var(--gray-0); margin-bottom: 1.5rem; }
+	.press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+	.press-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.25rem; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 0.75rem; text-align: left; text-decoration: none; transition: border-color 0.2s ease; }
+	.press-card:hover, .press-card:focus { border-color: var(--accent-regular); }
+	.press-source { font-weight: 700; color: var(--accent-regular); font-size: var(--text-md); }
+	.press-desc { font-size: var(--text-sm); color: var(--gray-300); line-height: 1.5; }
 	@media (min-width: 50em) {
 		.about { display: flex; flex-direction: row; text-align: center; margin-left: 5%; }
 	}

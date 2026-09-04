@@ -15,9 +15,10 @@ interface Props {
   totalReviews: number;
   productName: string;
   locale?: 'fr' | 'en';
+  emitSchema?: boolean;
 }
 
-const { reviews, averageRating, totalReviews, productName, locale = 'fr' } = Astro.props;
+const { reviews, averageRating, totalReviews, productName, locale = 'fr', emitSchema = true } = Astro.props;
 
 const t = locale === 'en' ? {
   title: 'Customer reviews',
@@ -165,7 +166,9 @@ const renderStars = (rating: number) => Array.from({ length: 5 }, (_, i) => i < 
   </div>
 </section>
 
-<script type="application/ld+json" set:html={JSON.stringify(reviewsStructuredData)} />
+{emitSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(reviewsStructuredData)} />
+)}
 
 <script>
   document.querySelectorAll('.reviews-carousel').forEach((carousel) => {

@@ -12,11 +12,11 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   const frSlugs = new Set(
     blogEntries
-      .filter(entry => entry.id.startsWith('fr/'))
+      .filter(entry => entry.id.startsWith('fr/') && (import.meta.env.DEV || !entry.data.draft))
       .map(entry => entry.id.replace('fr/', '').replace(/\.md$/, ''))
   );
   return blogEntries
-    .filter(entry => entry.id.startsWith('en/'))
+    .filter(entry => entry.id.startsWith('en/') && (import.meta.env.DEV || !entry.data.draft))
     .map((entry) => {
       const slug = entry.id.replace('en/', '').replace(/\.md$/, '');
       return {

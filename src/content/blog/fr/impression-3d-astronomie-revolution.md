@@ -13,6 +13,8 @@ draft: false
 
 # L'impression 3D révolutionne l'astronomie amateur : Guide complet 2026
 
+**En résumé : l'impression 3D permet aujourd'hui de fabriquer des télescopes complets** (structure, monture, porte-oculaire) en PETG chargé fibre de carbone, 30% plus léger que l'aluminium, pour un coût matière de 20 à 50€. Elle rend aussi accessibles la réparation et les accessoires sur mesure, autrefois hors de portée d'un amateur.
+
 L'**impression 3D** transforme radicalement le monde de l'astronomie amateur. Ce qui semblait impossible il y a dix ans est aujourd'hui une réalité : **fabriquer un télescope complet** ou des **accessoires astronomiques sur mesure** depuis chez soi.
 
 ## Qu'est-ce que l'impression 3D appliquée à l'astronomie ?

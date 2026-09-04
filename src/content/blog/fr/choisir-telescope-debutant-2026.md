@@ -18,6 +18,8 @@ seoKeywords: "acheter télescope, voir la lune télescope, observer planètes ma
 
 ## Vous voulez observer la Lune, planètes, nébuleuses, galaxies... ? Lisez ceci avant d'acheter
 
+**En résumé : pour ne pas finir au garage, choisissez un télescope léger (moins de 5kg), qui se monte en moins de 5 minutes sans notice compliquée, et dont vous comprenez le fonctionnement.** Ce guide compare trois télescopes 150mm (Skywatcher Heritage, Bresser Messier, Smallest) pour vous aider à repérer celui que vous sortirez vraiment.
+
 Vous regardez le ciel la nuit et vous vous dites : "Ce serait génial d'avoir un télescope pour voir la Lune de près, la galaxie d'Andromède, les anneaux de Saturne !". **Mais vous ne connaissez rien à l'astronomie et vous avez peur d'acheter un truc compliqué qui finira au fond du garage.**
 
 Bonne nouvelle : **vous n'avez pas besoin d'être astronome pour profiter d'un télescope.**

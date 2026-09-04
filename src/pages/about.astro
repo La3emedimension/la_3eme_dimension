@@ -28,6 +28,32 @@ const locale: Locale = 'fr';
 
 		</main>
 
+		<section class="press">
+			<h2 class="press-title">Vu dans la presse</h2>
+			<div class="press-grid">
+				<a class="press-card" href="/blog/hackernews-smallest/">
+					<span class="press-source">Hacker News</span>
+					<span class="press-desc">Le Smallest en une, des dizaines de commentaires sur l'impression 3D en astronomie.</span>
+				</a>
+				<a class="press-card" href="/blog/hackaday-smallest/">
+					<span class="press-source">Hackaday</span>
+					<span class="press-desc">« Build your own telescope, the modern way. »</span>
+				</a>
+				<a class="press-card" href="/blog/test-lumi-ciel-et-espace/">
+					<span class="press-source">Ciel &amp; Espace n°608</span>
+					<span class="press-desc">Test complet de la lunette pédagogique Lumi.</span>
+				</a>
+				<a class="press-card" href="/blog/lumi-hors-serie-ciel-et-espace/">
+					<span class="press-source">Ciel &amp; Espace, hors-série</span>
+					<span class="press-desc">La Lumi citée dans « Quel télescope pour voir les planètes ? »</span>
+				</a>
+				<a class="press-card" href="/blog/lopinion-portrait-la3edim/">
+					<span class="press-source">L'Opinion</span>
+					<span class="press-desc">Portrait de La 3ème Dimension, entreprise du Tarn-et-Garonne.</span>
+				</a>
+			</div>
+		</section>
+
 		<div class="interview">
 			<p>Retrouver l'interview de Bambu lab inspire :</p>
 			<div class="video-wrapper">
@@ -98,6 +124,56 @@ const locale: Locale = 'fr';
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	.press {
+		width: 100%;
+		max-width: 1100px;
+		padding: 0 1rem;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	.press-title {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin-bottom: 1.5rem;
+	}
+
+	.press-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+
+	.press-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		padding: 1.25rem;
+		background: var(--gray-900);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		text-align: left;
+		text-decoration: none;
+		transition: border-color var(--theme-transition, 0.2s ease);
+	}
+
+	.press-card:hover,
+	.press-card:focus {
+		border-color: var(--accent-regular);
+	}
+
+	.press-source {
+		font-weight: 700;
+		color: var(--accent-regular);
+		font-size: var(--text-md);
+	}
+
+	.press-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.5;
 	}
 
 	.interview {

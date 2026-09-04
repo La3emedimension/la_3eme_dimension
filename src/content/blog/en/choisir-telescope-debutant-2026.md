@@ -18,6 +18,8 @@ seoKeywords: "buy a telescope, telescope to see the moon, observe planets at hom
 
 ## Want to observe the Moon, planets, nebulae, galaxies...? Read this before you buy
 
+**Short answer: to avoid it ending up in the garage, pick a telescope that's light (under 5kg), assembles in under 5 minutes with no complicated manual, and that you actually understand.** This guide compares three 150mm telescopes (Skywatcher Heritage, Bresser Messier, Smallest) to help you spot the one you'll actually take outside.
+
 You look up at the night sky and think: "It would be amazing to have a telescope to see the Moon up close, the Andromeda galaxy, the rings of Saturn!" **But you don't know anything about astronomy, and you're afraid of buying something complicated that will end up gathering dust in the garage.**
 
 Good news: **you don't need to be an astronomer to enjoy a telescope.**
