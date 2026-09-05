@@ -168,8 +168,17 @@
       "data": {
         "productName": "Lumi",
         "averageRating": 5,
-        "totalReviews": 2,
+        "totalReviews": 3,
         "reviews": [
+          {
+            "author": "Phil P.",
+            "rating": 5,
+            "date": "2026-09-05",
+            "title": "Loin d'être un jouet !",
+            "content": "Je n'ai pas tardé à l'assembler, très facilement, et à l'essayer comme longue vue mais j'ai vraiment été bluffé par la qualité en le pointant sur la lune, c'est loin d'être un jouet ! Très bel objet, très pédagogique aussi même si c'est loin d'être sa seule qualité, merci d'avoir accepté de graver mon prénom dessus et bravo pour la conception de ce petit télescope : c'est génial ! 😍🙏",
+            "verified": true,
+            "images": ["/assets/PhilP_1.jpg", "/assets/PhilP_2.jpg"]
+          },
           {
             "author": "Alessandra L.",
             "rating": 5,

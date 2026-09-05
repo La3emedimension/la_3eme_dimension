@@ -106,7 +106,8 @@ const homepageStructuredData = {
                 <Hero
                     align="start"
                 >
-                    <h1 class="service-description">Compact, playful, and easy-to-use astronomical instruments</h1>
+                    <h1 class="service-description">Experience astronomy differently!</h1>
+                    <p class="hero-subtitle">Compact, playful, and easy-to-use astronomical instruments</p>
                     <div class="roles">
                         <a href={localePath('/product/lumi/', locale)} class="product-pill pill-lumi">Lumi</a>
                         <a href={localePath('/product/picco/', locale)} class="product-pill pill-picco">Picco</a>
@@ -165,8 +166,16 @@ const homepageStructuredData = {
             productName="La 3ème dimension"
             emitSchema={false}
             averageRating={5}
-            totalReviews={5}
+            totalReviews={6}
             reviews={[{
+                author: "Phil P.",
+                rating: 5,
+                date: "2026-09-05",
+                title: "Far from being a toy!",
+                content: "I wasted no time putting it together, it was really easy, and I first tried it out as a spotting scope, but I was truly blown away by the quality when I pointed it at the moon, it's far from being a toy! A beautiful object, and a very educational one too, though that's far from its only quality. Thanks for agreeing to engrave my name on it, and congratulations on designing this little telescope: it's fantastic! 😍🙏",
+                verified: true,
+                images: ["/assets/PhilP_1.jpg", "/assets/PhilP_2.jpg"]
+            }, {
                 author: "Alessandra L.",
                 rating: 5,
                 date: "2026-06-07",
@@ -323,9 +332,17 @@ const homepageStructuredData = {
     }
 
     .service-description {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
         color: white;
         margin: 0 0 0.75rem 0;
+        max-width: 57ch;
+        line-height: 1.5;
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-md);
+        color: var(--gray-300);
+        margin: -0.5rem 0 0.75rem 0;
         max-width: 57ch;
         line-height: 1.5;
     }
@@ -384,7 +401,11 @@ const homepageStructuredData = {
         }
 
         .service-description {
-            font-size: var(--text-2xl);
+            font-size: var(--text-3xl);
+        }
+
+        .hero-subtitle {
+            font-size: var(--text-lg);
         }
 
         .roles {

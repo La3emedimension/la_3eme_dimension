@@ -155,8 +155,17 @@
       "data": {
         "productName": "Lumi",
         "averageRating": 5,
-        "totalReviews": 1,
+        "totalReviews": 2,
         "reviews": [
+          {
+            "author": "Phil P.",
+            "rating": 5,
+            "date": "2026-09-05",
+            "title": "Far from being a toy!",
+            "content": "I wasted no time putting it together, it was really easy, and I first tried it out as a spotting scope, but I was truly blown away by the quality when I pointed it at the moon, it's far from being a toy! A beautiful object, and a very educational one too, though that's far from its only quality. Thanks for agreeing to engrave my name on it, and congratulations on designing this little telescope: it's fantastic! 😍🙏",
+            "verified": true,
+            "images": ["/assets/PhilP_1.jpg", "/assets/PhilP_2.jpg"]
+          },
           {
             "author": "Maxime G.",
             "rating": 5,
