@@ -77,7 +77,7 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.pn
         return (
           <div class="carousel-slide" data-index={index} data-video="true">
             <div class="video-fill">
-              <video autoplay muted playsinline>
+              <video muted playsinline preload="metadata">
                 <source src={carouselVideoSrc} type="video/webm" />
               </video>
             </div>
