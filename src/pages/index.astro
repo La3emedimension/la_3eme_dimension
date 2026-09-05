@@ -106,7 +106,8 @@ const homepageStructuredData = {
                 <Hero
                     align="start"
                 >
-                    <h1 class="service-description">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</h1>
+                    <h1 class="service-description">Vivez l'astronomie autrement !</h1>
+                    <p class="hero-subtitle">Des instruments astronomiques, compacts, ludiques et faciles à utiliser</p>
                     <div class="roles">
                         <a href={localePath('/product/lumi/', locale)} class="product-pill pill-lumi">Lumi</a>
                         <a href={localePath('/product/picco/', locale)} class="product-pill pill-picco">Picco</a>
@@ -322,9 +323,17 @@ const homepageStructuredData = {
     }
 
     .service-description {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
         color: white;
         margin: 0 0 0.75rem 0;
+        max-width: 57ch;
+        line-height: 1.5;
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-md);
+        color: var(--gray-300);
+        margin: -0.5rem 0 0.75rem 0;
         max-width: 57ch;
         line-height: 1.5;
     }
@@ -383,7 +392,11 @@ const homepageStructuredData = {
         }
 
         .service-description {
-            font-size: var(--text-2xl);
+            font-size: var(--text-3xl);
+        }
+
+        .hero-subtitle {
+            font-size: var(--text-lg);
         }
 
         .roles {
