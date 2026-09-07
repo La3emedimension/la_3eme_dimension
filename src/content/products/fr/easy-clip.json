@@ -124,6 +124,25 @@
       }
     },
     {
+      "type": "reviews",
+      "id": "section-reviews",
+      "data": {
+        "productName": "Easy Clip",
+        "averageRating": 5,
+        "totalReviews": 1,
+        "reviews": [
+          {
+            "author": "Caroline P.",
+            "rating": 5,
+            "date": "2026-09-05",
+            "title": "Super pratique !",
+            "content": "Adaptateur pour mon Quickfinder super pratique ! Il s'installe très facilement et je peux l'utiliser sur mes différents instruments. 5 étoiles pour le support de Quickfinder.",
+            "verified": true
+          }
+        ]
+      }
+    },
+    {
       "type": "gallery",
       "id": "section-gallery",
       "data": {
@@ -190,6 +209,10 @@
     {
       "id": "section-specs",
       "label": "Spécifications"
+    },
+    {
+      "id": "section-reviews",
+      "label": "Avis clients"
     },
     {
       "id": "section-gallery",

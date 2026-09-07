@@ -5,6 +5,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
 import ProductReviews from "../components/ProductReviews.astro";
+import Lightbox from "../components/Lightbox.astro";
 import { useTranslations, localePath, type Locale } from '../i18n';
 
 const locale: Locale = 'fr';
@@ -166,8 +167,16 @@ const homepageStructuredData = {
             productName="La 3ème dimension"
             emitSchema={false}
             averageRating={5}
-            totalReviews={6}
+            totalReviews={7}
             reviews={[{
+                author: "Darry N.",
+                rating: 5,
+                date: "2026-09-07",
+                title: "Léger, maniable et facile à monter !",
+                content: "J'ai sauté le pas, et ai reçu un Smallest. Et bien, en seulement deux soirées à observer avec ce petit bijou, je suis conquis !! Léger, maniable, facile et rapide à monter, il sera le compagnon de nombreuses sorties ! Couplé d'un cheshire, la collimation se fait en un clin d'œil. Et, les miroirs sélectionnés sont d'une excellente qualité ! Approuvé à 100% !!",
+                verified: true,
+                images: ["/assets/DarryS.jpg", "/assets/DarryS_2.jpg"]
+            }, {
                 author: "Phil P.",
                 rating: 5,
                 date: "2026-09-05",
@@ -221,6 +230,7 @@ const homepageStructuredData = {
     </div>
 
     <ScrollIndicator />
+    <Lightbox locale={locale} />
 </BaseLayout>
 
 <style>
