@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import FocalCalculator from "../../components/FocalCalculator.astro";
+import StarMap from "../../components/StarMap.astro";
 import Lightbox from "../../components/Lightbox.astro";
 import { localePath, type Locale } from '../../i18n';
 import { getSlugWithoutLocale } from '../../lib/collections';
@@ -32,6 +33,7 @@ const { Content } = await render(entry);
 
 const entrySlug = getSlugWithoutLocale(entry.id, locale);
 const needsCalculator = entrySlug === 'OEP';
+const needsStarMap = entrySlug === 'carte-du-ciel-interactive';
 const isSergePortrait = entrySlug === 'portrait-trouvelot';
 const isFlorianPortrait = entrySlug === 'portrait-webb';
 const hideTopHeroImage = entrySlug === 'pedagogie-lumi';
@@ -193,6 +195,15 @@ const formatDate = (date: Date) => {
       {needsCalculator && (
         <div id="calculator-template" style="display: none;">
           <FocalCalculator />
+        </div>
+      )}
+
+      {needsStarMap && (
+        <div class="starmap-embed">
+          <StarMap
+            title="Que voir ce soir ?"
+            description="Entrez une date et un lieu d'observation pour découvrir ce qui est visible dans le ciel : c'est exactement l'outil intégré à la notice papier de la Lumi."
+          />
         </div>
       )}
 
@@ -408,6 +419,10 @@ const formatDate = (date: Date) => {
   .blog-content :global(pre code) {
     background: transparent;
     padding: 0;
+  }
+
+  .starmap-embed {
+    margin: 3rem 0;
   }
 
   .blog-footer {

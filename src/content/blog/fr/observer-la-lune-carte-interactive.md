@@ -779,7 +779,7 @@ Contrairement à une idée reçue, la pleine Lune n'est pas le meilleur moment p
 
 - **À l'œil nu**, vous distinguez déjà les grandes mers et, en pleine Lune, les rayons de Tycho.
 - **Aux jumelles** (10x50 suffisent), la plupart des points de cette carte deviennent identifiables : Mare Crisium, Copernic, Tycho, Grimaldi...
-- **Avec une petite lunette**, comme notre [Smallest](/product/smallest/), vous résolvez des dizaines de cratères supplémentaires et vous voyez apparaître le relief du terminateur : chaînes de montagnes, failles, dômes volcaniques.
+- **Avec une lunette ou un télescope**, vous résolvez des dizaines de cratères supplémentaires et vous voyez apparaître le relief du terminateur : chaînes de montagnes, failles, dômes volcaniques. Et avec notre [Lumi](/product/lumi/), notre [Smallest](/product/smallest/) ou notre [Picco](/product/picco/), la Lune est justement la première cible qu'on recommande : elle est brillante, facile à pointer, et pardonne les petites erreurs de visée le temps de prendre en main l'instrument.
 
 C'est exactement ce qu'on essaie de rendre accessible chez **La 3ème Dimension**, depuis notre atelier de Verdun-sur-Garonne : des instruments d'observation conçus pour qu'on puisse les prendre en main le soir même, sans mode d'emploi, et pointer la Lune en quelques minutes. Si l'envie vous prend de pousser l'observation plus loin, jetez un œil à [nos instruments](/shop/).
 
