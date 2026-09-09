@@ -10,6 +10,7 @@ tags:
 seoTitle: "La 3ème Dimension at the Gratentour Star Party | La 3ème dimension"
 seoDescription: "Join La 3ème Dimension at the Gratentour Star Party on October 11, 2025 to discover the Smallest and the Lumi through workshops and observations."
 seoKeywords: "Gratentour star party, astronomy event, Smallest telescope, Lumi refractor, sky observation"
+category: "evenements"
 ---
 
 # La 3eme Dimension at the Gratentour Star Party

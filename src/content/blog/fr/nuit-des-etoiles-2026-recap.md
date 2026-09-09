@@ -12,6 +12,7 @@ tags:
 seoTitle: "Retour sur la Nuit des Étoiles 2026 à la Cité de l'espace | La 3ème dimension"
 seoDescription: "Photos et retour sur la soirée du 7 août 2026 à la Cité de l'espace : atelier d'assemblage de télescope avec La 3ème Dimension pour la Nuit des Étoiles."
 seoKeywords: "nuit des étoiles cité de l'espace, atelier télescope toulouse, retour événement astronomie, la 3ème dimension"
+category: "evenements"
 ---
 
 Le vendredi 7 août 2026, nous étions à la **Cité de l'espace** à Toulouse pour la **Nuit des Étoiles**, sur le Belvédère d'Ariane, pour animer notre atelier « Assemble ton télescope ».

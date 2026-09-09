@@ -14,6 +14,7 @@ tags:
 seoTitle: "Telescope Collimation: Simple Guide for Sharp Images 2026"
 seoDescription: "Blurry images from your telescope? Discover collimation explained in simple terms. A practical guide to checking and adjusting your telescope's alignment easily."
 seoKeywords: "telescope collimation, adjust telescope, blurry telescope image, telescope mirror alignment, collimate newton, cheshire collimation, laser collimation, blurry telescope, how to collimate, telescope optical adjustment, collimation screws, primary secondary mirror, dobson telescope adjustment, newton 150 collimation, why is my telescope image blurry"
+category: "pedagogie"
 ---
 
 ## Is your telescope showing blurry images? The problem is probably collimation

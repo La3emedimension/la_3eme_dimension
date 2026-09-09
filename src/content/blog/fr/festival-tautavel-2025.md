@@ -7,6 +7,7 @@ description: "Raphaël Labro et La 3ème Dimension au 19e Festival d'Astronomie 
 seoTitle: "La 3ème Dimension au Festival d'Astronomie de Tautavel | La 3ème dimension"
 seoDescription: "Raphaël Labro et La 3ème Dimension au 19e Festival d'Astronomie de Tautavel, du 16 au 19 juillet, avec un atelier pour construire sa lunette Lumi."
 seoKeywords: "Festival Astronomie Tautavel, Astrotavel, atelier Lumi, télescope impression 3D, événement astronomie"
+category: "evenements"
 ---
 
 # La 3ème Dimension au 19e Festival d'Astronomie de Tautavel

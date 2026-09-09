@@ -12,7 +12,7 @@ tags:
 seoTitle: "Aide au service - Solution Restaurant Imprimée 3D | La 3ème dimension"
 seoDescription: "Solution d'optimisation restaurant imprimée en 3D. Pots multifonctions pour couverts, verres et serviettes. Matériau PETG professionnel résistant 90°C."
 seoKeywords: "optimisation restaurant, rangement service, restauration solution, aide restaurant, optimisation, confort, design, toulouse"
-
+category: "coulisses"
 ---
 
 <a class="button" href="https://www.facebook.com/p/La-Fabric-de-C%C3%A9dric-100063651157095/?locale=fr_FR">La Fabric de Cédric</a> est un restaurant Rue D'Auriol à Montauban (82), Cédric a fait part de sa problèmatique pour la mise à disposition des couverts et des verres lors des services, étant seul il avait pour souhait d'optimiser son dressage des tables. Avec cette idée en tête il est venu me voir pour concevoir un outil qui lui permette d'optimiser son service.

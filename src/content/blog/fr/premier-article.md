@@ -10,6 +10,7 @@ tags:
 seoTitle: "Bienvenue sur le blog de La 3ème Dimension"
 seoDescription: "Découvrez le blog de La 3ème Dimension : créations, tutoriels d'impression 3D et actualités autour de la conception de télescopes faits main."
 seoKeywords: "blog impression 3D, télescope fait main, La 3ème Dimension, astronomie DIY"
+category: "actualites"
 ---
 
 # Et Bonjour !

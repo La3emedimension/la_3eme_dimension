@@ -9,6 +9,7 @@ seoTitle: "3D printing is revolutionizing amateur astronomy: 2026 guide | La 3è
 seoDescription: "How 3D printing is transforming amateur astronomy: telescopes, accessories and custom parts, everything you need to know about this revolution."
 seoKeywords: "3D printed astronomy, 3D printed telescope, DIY astronomy, amateur astronomy innovation, telescope manufacturing"
 draft: false
+category: "astronomie"
 ---
 
 # 3D Printing Is Revolutionizing Amateur Astronomy: Complete 2026 Guide

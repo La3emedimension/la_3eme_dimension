@@ -11,6 +11,7 @@ tags:
 seoTitle: "OEP: the open source 3D printed astronomical eyepiece | La 3ème dimension"
 seoDescription: "Discover OEP (Open Eyepiece Project), an open source Plössl eyepiece designed to be 3D printed and freely reproduced by the community."
 seoKeywords: "open source eyepiece, Plössl eyepiece, 3D printed astronomy, DIY eyepiece, Open Eyepiece Project"
+category: "coulisses"
 ---
 
 # How to make your own Plössl!

@@ -8,6 +8,7 @@ seoTitle: "Astro-sketcher portrait: Serge Vieillard | La 3ème dimension"
 seoDescription: "Portrait of Serge Vieillard, a seasoned astro-sketcher from the Magnitude78 club, looking back on decades of observation and astronomical drawing."
 seoKeywords: "astro-sketcher portrait, Serge Vieillard, Magnitude78, astronomical drawing, deep sky observation"
 draft: true
+category: "portraits"
 ---
 
 ## A quick introduction?

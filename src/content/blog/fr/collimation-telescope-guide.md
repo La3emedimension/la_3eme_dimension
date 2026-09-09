@@ -14,6 +14,7 @@ tags:
 seoTitle: "Collimation Télescope : Guide Simple pour Images Nettes 2026"
 seoDescription: "Images floues avec votre télescope ? Découvrez la collimation en termes simples. Guide pratique pour vérifier et régler l'alignement de votre télescope facilement."
 seoKeywords: "collimation télescope, régler télescope, image floue télescope, alignement miroir télescope, collimater newton, cheshire collimation, laser collimation, télescope flou, comment collimater, réglage optique télescope, vis collimation, miroir primaire secondaire, télescope dobson réglage, newton 150 collimation, pourquoi image floue télescope"
+category: "pedagogie"
 ---
 
 ## Votre télescope montre des images floues ? Le problème est probablement la collimation

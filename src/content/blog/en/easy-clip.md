@@ -12,6 +12,7 @@ tags:
 seoTitle: "Easy Clip: magnetic mount for Quickfinder finder | La 3ème dimension"
 seoDescription: "Easy Clip, the magnetic mount that lets you switch telescopes in seconds with a Quickfinder finder, external CR2032 battery."
 seoKeywords: "Easy Clip, Quickfinder finder, telescope accessory, 3D printed astronomy, magnetic mount"
+category: "coulisses"
 ---
 
 ---

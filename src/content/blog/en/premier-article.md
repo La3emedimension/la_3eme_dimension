@@ -8,6 +8,7 @@ seoTitle: "Welcome to the La 3ème Dimension blog"
 seoDescription: "Discover the La 3ème Dimension blog: creations, 3D printing tutorials and news about the design of handmade telescopes."
 seoKeywords: "3D printing blog, handmade telescope, La 3ème Dimension, DIY astronomy"
 draft: false
+category: "actualites"
 ---
 
 ## Welcome to La 3ème dimension

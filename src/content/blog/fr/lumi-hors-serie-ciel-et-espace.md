@@ -12,6 +12,7 @@ tags:
 seoTitle: "La Lumi dans le hors-série Ciel & Espace HS-55 | La 3ème dimension"
 seoDescription: "La lunette pédagogique Lumi citée dans le hors-série n°55 de Ciel & Espace, dédié au choix d'un télescope pour observer les planètes."
 seoKeywords: "ciel et espace hors-série, quel télescope pour voir les planètes, lunette lumi, presse astronomie, télescope débutant planètes"
+category: "actualites"
 ---
 
 Nouvelle belle mention pour la **lunette pédagogique Lumi** : elle est citée dans le [hors-série n°55 de Ciel & Espace](https://www.cieletespace.fr/edition/hs-55), entièrement consacré à la question **« Quel télescope pour voir les planètes ? »**.

@@ -8,6 +8,7 @@ seoTitle: "Astro-sketcher portrait: Caroline | La 3ème dimension"
 seoDescription: "Portrait of Caroline, an astro-sketcher passionate about visual observation with a Dobsonian, sharing her journey and practice of astro-drawing."
 seoKeywords: "astro-sketcher portrait, astro-drawing, Dobsonian observation, astronomical sketching"
 draft: true
+category: "portraits"
 ---
 
 ## A quick introduction?

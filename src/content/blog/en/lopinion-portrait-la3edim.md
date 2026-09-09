@@ -14,6 +14,7 @@ tags:
 seoTitle: "La 3ème Dimension featured in L'Opinion | La 3ème dimension"
 seoDescription: "French newspaper L'Opinion features La 3ème Dimension, the Tarn-et-Garonne company founded by Raphaël Labro, on the occasion of the August 12, 2026 solar eclipse."
 seoKeywords: "l'opinion la 3ème dimension, nomadic telescope press, raphaël labro astronomy, tarn-et-garonne telescope company, smallest lumi picco"
+category: "actualites"
 ---
 
 In the wake of the solar eclipse of August 12, 2026, which drew more than 5,300 visitors to the Cité de l'espace in Toulouse, French business newspaper **L'Opinion** published a feature on **La 3ème Dimension**, the company I founded in 2025 in Verdun-sur-Garonne (Tarn-et-Garonne).

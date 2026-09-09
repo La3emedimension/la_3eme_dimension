@@ -12,6 +12,7 @@ tags:
 seoTitle: "B.H.H - 3D Printed Backpack Hook | La 3ème dimension"
 seoDescription: "3D printed backpack hook. Supports up to 12kg, optimized design for backpackers and travelers. Free files available."
 seoKeywords: "backpack hook, travel accessory, 3d printing utility, design, optimization, toulouse"
+category: "coulisses"
 ---
 
 ---

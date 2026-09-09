@@ -12,6 +12,7 @@ tags:
 seoTitle: "Pédagogie par l'objet : apprendre l'optique en construisant la Lumi | La 3ème dimension"
 seoDescription: "Pourquoi la lunette Lumi s'assemble sans notice : le principe de la pédagogie par l'objet, pour comprendre l'optique en la montant plutôt qu'en la lisant."
 seoKeywords: "pédagogie astronomie enfant, apprendre en construisant, télescope pédagogique enfant, apprentissage par la manipulation, initiation astronomie famille, learning by doing astronomie"
+category: "coulisses"
 ---
 
 # La pédagogie par l'objet

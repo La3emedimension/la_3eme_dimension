@@ -13,6 +13,7 @@ tags:
 seoTitle: "Vis moletées de collimation pour télescope Newton | La 3ème dimension"
 seoDescription: "Vis moletées de collimation imprimées en 3D pour télescopes Newton. M4 45mm, réglage sans outil du miroir primaire. Compatible Dobson et Newton. Fabrication artisanale Toulouse."
 seoKeywords: "vis collimation newton, vis moletées télescope, collimation dobson, réglage miroir primaire, vis M4 collimation, impression 3d astronomie toulouse"
+category: "coulisses"
 ---
 
 **Voir la fiche produit :** <a class="button" href="/product/vis-collimation/">Commander</a>

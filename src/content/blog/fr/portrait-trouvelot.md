@@ -8,6 +8,7 @@ seoTitle: "Portrait d'astro-dessinateur : Serge Vieillard | La 3ème dimension"
 seoDescription: "Portrait de Serge Vieillard, astro-dessinateur chevronné du club Magnitude78, qui revient sur des décennies d'observation et de dessin astronomique."
 seoKeywords: "portrait astro-dessinateur, Serge Vieillard, Magnitude78, dessin astronomique, observation ciel profond"
 draft: true
+category: "portraits"
 ---
 
 ## Une petite présentation ?

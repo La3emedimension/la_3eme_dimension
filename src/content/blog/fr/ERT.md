@@ -12,6 +12,7 @@ tags:
 seoTitle: "Lumi - Lunette Astronomique Éducative Imprimée 3D | La 3ème dimension"
 seoDescription: "Lunette astronomique éducative imprimée en 3D. Parfaite pour découvrir l'optique et observer lune, amas d'étoiles. Design éducatif et facile à assembler."
 seoKeywords: "lunette astronomique, telescope éducatif, pédagogie astronomie, optique telescope, éducation, design, toulouse"
+category: "coulisses"
 ---
 
 Lumi est un projet éducatif pour découvrir l'optique et quelques objets du ciel, lune, galaxies lumineuses, amas d'étoiles... 

@@ -9,6 +9,7 @@ seoTitle: "Flying with a telescope: guide and 2026 regulations | La 3ème dimens
 seoDescription: "Flying with a telescope, in cabin or hold: 2026 regulations, packing tips and portable solutions for observing the sky anywhere in the world."
 seoKeywords: "flying with a telescope, telescope airplane, portable telescope travel, cabin baggage regulations, astronomy travel"
 draft: true
+category: "pedagogie"
 ---
 
 # Flying with a Telescope: Practical Guide and 2026 Regulations

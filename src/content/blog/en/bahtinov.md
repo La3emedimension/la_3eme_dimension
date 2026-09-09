@@ -13,6 +13,7 @@ tags:
 seoTitle: "3D Printed Bahtinov Mask | La 3ème dimension"
 seoDescription: "Custom 3D-printed Bahtinov masks. Compatible with Askar FRA500, TS 80/544, SVbony SV106, Williams Optics. Precise focus for astrophotography. Made in Toulouse."
 seoKeywords: "bahtinov mask, telescope focusing, 3d print focus mask, askar fra500 bahtinov, astrophotography accessory, toulouse"
+category: "coulisses"
 ---
 
 **See the product page:** <a class="button" href="/en/product/bahtinov/">Order</a>

@@ -12,6 +12,7 @@ tags:
 seoTitle: "Lumi - 3D Printed Educational Astronomical Telescope | La 3ème dimension"
 seoDescription: "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Educational design easy to assemble."
 seoKeywords: "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse"
+category: "coulisses"
 ---
 
 Lumi is an educational project to discover optics and some sky objects, moon, bright galaxies, star clusters...

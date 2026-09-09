@@ -7,10 +7,24 @@ import { getLocalizedCollection, getSlugWithoutLocale } from '../../lib/collecti
 const locale: Locale = 'en';
 const t = useTranslations(locale);
 
+const CATEGORY_LABELS: Record<string, string> = {
+  pedagogie: 'Learning',
+  evenements: 'Events',
+  actualites: 'News & Press',
+  coulisses: 'Behind the Scenes',
+  portraits: 'Portraits',
+  astronomie: 'Astronomy',
+};
+const CATEGORY_ORDER = ['pedagogie', 'evenements', 'actualites', 'coulisses', 'portraits', 'astronomie'];
+
 const blogPosts = await getLocalizedCollection('blog', locale);
 const filteredPosts = blogPosts.filter(({ data }) => data.draft !== true);
 const sortedPosts = filteredPosts.sort((a, b) =>
   b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+const presentCategories = CATEGORY_ORDER.filter((cat) =>
+  sortedPosts.some((post) => post.data.category === cat)
 );
 
 const formatDate = (date: Date) => {
@@ -35,6 +49,15 @@ const formatDate = (date: Date) => {
         <p>{t.blog.tagline}</p>
       </header>
 
+      {presentCategories.length > 0 && (
+        <div class="category-filters" role="tablist" aria-label="Filter articles by category">
+          <button type="button" class="filter-tab is-active" data-filter="all">All</button>
+          {presentCategories.map((cat) => (
+            <button type="button" class="filter-tab" data-filter={cat}>{CATEGORY_LABELS[cat]}</button>
+          ))}
+        </div>
+      )}
+
       <main class="blog-grid">
         {sortedPosts.length === 0 ? (
           <p class="no-posts">No articles yet. Check back soon!</p>
@@ -42,10 +65,13 @@ const formatDate = (date: Date) => {
           sortedPosts.map((post) => {
             const postSlug = getSlugWithoutLocale(post.id, locale);
             return (
-            <article class="blog-card">
+            <article class="blog-card" data-category={post.data.category ?? 'other'}>
               <a href={localePath(`/blog/${postSlug}/`, locale)}>
                 {post.data.img && (
                   <div class="image-container">
+                    {post.data.category && (
+                      <span class="category-badge">{CATEGORY_LABELS[post.data.category]}</span>
+                    )}
                     <img src={post.data.img} alt={post.data.img_alt || post.data.title} loading="lazy" decoding="async" />
                     <div class="image-overlay">
                       <h2 class="overlay-title">{post.data.title}</h2>
@@ -71,11 +97,37 @@ const formatDate = (date: Date) => {
   </div>
 </BaseLayout>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+    if (!tabs.length) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        const filter = tab.dataset.filter;
+        cards.forEach((card) => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.hidden = !match;
+        });
+      });
+    });
+  });
+</script>
+
 <style>
   .hero { text-align: center; padding: 2rem 0; }
   .hero h1 { font-size: var(--text-4xl); font-weight: 700; margin-bottom: 0.5rem; background: var(--gradient-accent); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero p { font-size: var(--text-lg); color: var(--gray-400); }
+  .category-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 0 0 0.5rem; }
+  .filter-tab { appearance: none; -webkit-appearance: none; border: 1px solid var(--gray-800) !important; background-color: var(--gray-900) !important; color: var(--gray-300) !important; padding: 0.45rem 1rem; border-radius: 2rem; font-size: var(--text-sm); font-weight: 500; cursor: pointer; transition: all var(--theme-transition); }
+  .filter-tab:hover { border-color: var(--accent-regular) !important; color: var(--gray-50) !important; }
+  .filter-tab.is-active { background-color: var(--accent-regular) !important; border-color: var(--accent-regular) !important; color: var(--accent-text-over) !important; }
+  .category-badge { position: absolute; top: 0.6rem; left: 0.6rem; z-index: 1; background: rgba(10, 10, 15, 0.75); color: var(--gray-50); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em; padding: 0.25rem 0.6rem; border-radius: 1rem; backdrop-filter: blur(2px); }
   .blog-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .blog-card[hidden] { display: none; }
   .blog-card { border-radius: 1rem; overflow: hidden; background: var(--gradient-subtle); border: 1px solid var(--gray-800); transition: all var(--theme-transition); height: 140px; }
   .blog-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--accent-regular); }
   .blog-card a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }

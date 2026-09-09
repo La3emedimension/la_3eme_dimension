@@ -12,6 +12,7 @@ tags:
 seoTitle: "Le Smallest sur Hackaday | La 3ème dimension"
 seoDescription: "Hackaday, référence mondiale du hacking et du DIY, consacre un article au télescope Smallest imprimé en 3D de La 3ème Dimension."
 seoKeywords: "hackaday smallest, télescope imprimé 3D presse, hackaday telescope, smallest newton 150/750, open source telescope"
+category: "actualites"
 ---
 
 Belle surprise : **[Hackaday](https://hackaday.com/2025/06/19/build-your-own-telescope-the-modern-way/)**, référence mondiale du hacking, du DIY et de la fabrication numérique, a consacré un article au **Smallest**, sous le titre *« Build your own telescope, the modern way »*.

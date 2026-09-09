@@ -12,6 +12,7 @@ tags:
 seoTitle: "Lumi featured in Ciel & Espace special issue HS-55 | La 3ème dimension"
 seoDescription: "The Lumi educational refractor featured in Ciel & Espace's special issue #55, dedicated to choosing a telescope for planetary observation."
 seoKeywords: "ciel et espace special issue, which telescope for planets, lumi refractor, astronomy press, beginner planetary telescope"
+category: "actualites"
 ---
 
 Another great mention for the **Lumi educational refractor**: it's featured in [Ciel & Espace's special issue #55](https://www.cieletespace.fr/edition/hs-55), entirely dedicated to the question **"Which telescope to see the planets?"**.

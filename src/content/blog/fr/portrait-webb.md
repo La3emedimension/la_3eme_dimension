@@ -8,6 +8,7 @@ seoTitle: "Portrait d'astro-dessinateur : Florian Rabiller | La 3ème dimension"
 seoDescription: "Portrait de Florian Rabiller, astro-dessinateur pratiquant l'observation visuelle au Dobson, qui partage ses conseils pour débuter l'astro-dessin."
 seoKeywords: "portrait astro-dessinateur, Florian Rabiller, observation Dobson, astro-dessin débutant"
 draft: true
+category: "portraits"
 ---
 
 ## Une petite présentation ?

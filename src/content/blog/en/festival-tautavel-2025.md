@@ -7,6 +7,7 @@ description: "Raphaël Labro and La 3ème Dimension at the 19th Tautavel Astrono
 seoTitle: "La 3ème Dimension at the Tautavel Astronomy Festival | La 3ème dimension"
 seoDescription: "Raphaël Labro and La 3ème Dimension at the 19th Tautavel Astronomy Festival, July 16 to 19, with a workshop to build your own Lumi refractor."
 seoKeywords: "Tautavel Astronomy Festival, Astrotavel, Lumi workshop, 3D printed telescope, astronomy event"
+category: "evenements"
 ---
 
 # La 3ème Dimension at the 19th Tautavel Astronomy Festival

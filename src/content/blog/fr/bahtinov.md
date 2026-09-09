@@ -13,6 +13,7 @@ tags:
 seoTitle: "Masque de Bahtinov imprimé en 3D | La 3ème dimension"
 seoDescription: "Masques de Bahtinov imprimés en 3D sur mesure. Compatible Askar FRA500, TS 80/544, SVbony SV106, Williams Optics. Mise au point précise pour l'astrophotographie. Toulouse."
 seoKeywords: "masque bahtinov, mise au point télescope, focus mask impression 3d, askar fra500 bahtinov, astrophotographie accessoire, toulouse"
+category: "coulisses"
 ---
 
 **Voir la fiche produit :** <a class="button" href="/product/bahtinov/">Commander</a>

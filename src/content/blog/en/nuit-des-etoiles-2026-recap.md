@@ -12,6 +12,7 @@ tags:
 seoTitle: "Recap: Nuit des Étoiles 2026 at the Cité de l'espace | La 3ème dimension"
 seoDescription: "Photos and recap of the evening of August 7, 2026 at the Cité de l'espace: our telescope-building workshop with La 3ème Dimension for the Nuit des Étoiles."
 seoKeywords: "nuit des étoiles cité de l'espace, telescope workshop toulouse, astronomy event recap, la 3ème dimension"
+category: "evenements"
 ---
 
 On Friday, August 7, 2026, we were at the **Cité de l'espace** in Toulouse for the **Nuit des Étoiles**, on the Belvédère d'Ariane, running our "Build your own telescope" workshop.

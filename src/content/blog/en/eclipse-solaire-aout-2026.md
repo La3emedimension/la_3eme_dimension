@@ -12,6 +12,7 @@ tags:
 seoTitle: "Solar Eclipse of August 12, 2026 seen from Verdun-sur-Garonne | La 3ème dimension"
 seoDescription: "A recap of the partial solar eclipse of August 12, 2026 observed from Verdun-sur-Garonne (Tarn-et-Garonne, France): obscuration rate, timing, safe observing tips, and upcoming eclipses."
 seoKeywords: "solar eclipse august 12 2026, eclipse toulouse, eclipse verdun-sur-garonne, safe eclipse observation, telescope solar filter, next eclipse europe"
+category: "evenements"
 ---
 
 August 12, 2026 will remain a special date for astronomy enthusiasts in the Tarn-et-Garonne region. That Wednesday evening, the Moon moved between the Earth and the Sun to deliver the first major solar eclipse visible from Europe since 1999. From Verdun-sur-Garonne, about thirty kilometers from Toulouse, the show was anything but a minor event.

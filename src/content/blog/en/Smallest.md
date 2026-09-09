@@ -13,6 +13,7 @@ tags:
 seoTitle: "Smallest - Compact Portable Telescope | La 3ème dimension"
 seoDescription: "Smallest: The portable 150/750 telescope. Compact, air transportable, perfect for nomadic astronomy. Conversion kit available €550."
 seoKeywords: "smallest telescope, portable telescope, nomadic astronomy, travel telescope, 3d printing astronomy, compact telescope, 150/750, toulouse"
+category: "coulisses"
 ---
 Files are available on <a class="button" href="https://www.printables.com/@La3emedimens_2102135">Printables</a>. You can find the <a class="button" href="https://la3emedim.fr/assets/smallest-readme.pdf">README here</a>
 

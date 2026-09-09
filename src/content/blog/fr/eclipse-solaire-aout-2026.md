@@ -12,6 +12,7 @@ tags:
 seoTitle: "Éclipse solaire du 12 août 2026 vue depuis Verdun-sur-Garonne | La 3ème dimension"
 seoDescription: "Retour sur l'éclipse solaire partielle du 12 août 2026 observée depuis Verdun-sur-Garonne (Tarn-et-Garonne) : taux d'obscuration, horaires, sécurité d'observation et prochaines éclipses."
 seoKeywords: "éclipse solaire 12 août 2026, éclipse toulouse, éclipse verdun-sur-garonne, observer éclipse en sécurité, filtre solaire télescope, prochaine éclipse europe"
+category: "evenements"
 ---
 
 Le 12 août 2026 restera une date à part pour tous les passionnés d'astronomie du Tarn-et-Garonne. Ce mercredi soir, la Lune s'est interposée entre la Terre et le Soleil pour offrir la première grande éclipse solaire visible en Europe depuis 1999. Depuis Verdun-sur-Garonne, à une trentaine de kilomètres de Toulouse, le spectacle était loin d'être anecdotique.

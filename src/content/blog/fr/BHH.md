@@ -12,6 +12,7 @@ tags:
 seoTitle: "B.H.H - Crochet Sac à Dos Imprimé 3D | La 3ème dimension"
 seoDescription: "Crochet pour sac à dos imprimé en 3D. Supporte jusqu'à 12kg, design optimisé pour baroudeurs et voyageurs. Fichiers gratuits disponibles."
 seoKeywords: "crochet sac à dos, backpack hook, accessoire voyage, impression 3d utilitaire, design, optimisation, toulouse"
+category: "coulisses"
 ---
 
 ---

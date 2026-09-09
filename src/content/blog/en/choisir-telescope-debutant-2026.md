@@ -14,6 +14,7 @@ tags:
 seoTitle: "Buying a Telescope to See the Moon: Simple 2026 Guide (No Jargon)"
 seoDescription: "Want to observe the Moon and planets? A simple guide to choosing a telescope that won't end up in the garage. A clear comparison with no technical terms. Practical advice."
 seoKeywords: "buy a telescope, telescope to see the moon, observe planets at home, easy to use telescope, which telescope to buy, 150mm telescope, newton 150 750, skywatcher heritage 150p review, bresser messier 150, flextube heritage flaws, compact dobson telescope, beginner equatorial mount, skywatcher 150/750 pds, omegon 150/750, celestron astromaster 130, gso dobson 150, lightweight portable telescope, telescope for airplane travel, easy telescope, see saturn jupiter, 150mm telescope comparison, best 150mm telescope, beginner telescope 2026, smallest telescope review, orion skyquest xt6, levenhuk dobson, french telescope, 3d printed astronomy"
+category: "astronomie"
 ---
 
 ## Want to observe the Moon, planets, nebulae, galaxies...? Read this before you buy

@@ -9,6 +9,7 @@ seoTitle: "Comment choisir un télescope portable en 2026 : le guide complet | L
 seoDescription: "Comment choisir un télescope portable en 2026 : critères essentiels, comparatif et conseils d'expert pour observer le ciel en voyage ou en randonnée."
 seoKeywords: "télescope portable, choisir télescope, meilleur télescope voyage, télescope compact, guide télescope débutant"
 draft: false
+category: "astronomie"
 ---
 
 # Comment choisir un télescope portable en 2026 : Le guide complet

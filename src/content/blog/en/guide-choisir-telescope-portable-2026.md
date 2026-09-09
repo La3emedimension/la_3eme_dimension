@@ -9,6 +9,7 @@ seoTitle: "How to choose a portable telescope in 2026: the complete guide | La 3
 seoDescription: "How to choose a portable telescope in 2026: essential criteria, comparison and expert advice for observing the sky while traveling or hiking."
 seoKeywords: "portable telescope, choose a telescope, best travel telescope, compact telescope, beginner telescope guide"
 draft: false
+category: "astronomie"
 ---
 
 # How to Choose a Portable Telescope in 2026: The Complete Guide

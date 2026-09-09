@@ -12,6 +12,7 @@ tags:
 seoTitle: "Picco pre-orders at €350 before end of 2026 | La 3ème dimension"
 seoDescription: "Pre-orders for the Picco 114/450 telescope open before the end of 2026, at a preferential price of €350."
 seoKeywords: "picco pre-order, picco telescope price, picco 114/450, ultra compact telescope price, telescope pre-order 2026"
+category: "actualites"
 ---
 
 It's official: **pre-orders for the Picco** will open **before the end of 2026**, at a preferential price of **€350**.

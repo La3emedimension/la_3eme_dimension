@@ -12,7 +12,7 @@ tags:
 seoTitle: "Service Helper - 3D Printed Restaurant Solution | La 3ème dimension"
 seoDescription: "3D printed restaurant optimization solution. Multifunction pots for cutlery, glasses and napkins. Professional PETG material resistant to 90°C."
 seoKeywords: "restaurant optimization, service storage, restaurant solution, restaurant helper, optimization, comfort, design, toulouse"
-
+category: "coulisses"
 ---
 
 <a class="button" href="https://www.facebook.com/p/La-Fabric-de-C%C3%A9dric-100063651157095/?locale=fr_FR">La Fabric de Cédric</a> is a restaurant on Rue D'Auriol in Montauban (82), France. Cédric shared his problem with making cutlery and glasses available during service, being alone he wanted to optimize his table setting. With this idea in mind, he came to see me to design a tool that would allow him to optimize his service.

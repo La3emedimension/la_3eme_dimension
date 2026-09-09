@@ -9,6 +9,7 @@ seoTitle: "L'impression 3D révolutionne l'astronomie amateur : guide 2026 | La 
 seoDescription: "Comment l'impression 3D transforme l'astronomie amateur : télescopes, accessoires et pièces sur mesure, tout ce qu'il faut savoir sur cette révolution."
 seoKeywords: "impression 3D astronomie, télescope imprimé 3D, DIY astronomie, innovation astronomie amateur, fabrication télescope"
 draft: false
+category: "astronomie"
 ---
 
 # L'impression 3D révolutionne l'astronomie amateur : Guide complet 2026

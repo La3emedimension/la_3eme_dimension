@@ -9,6 +9,7 @@ seoTitle: "Voyager en avion avec un télescope : guide et réglementation 2026 |
 seoDescription: "Voyager en avion avec un télescope, cabine ou soute : réglementation 2026, astuces d'emballage et solutions portables pour observer partout dans le monde."
 seoKeywords: "voyager avec un télescope, télescope avion, télescope portable voyage, réglementation bagage cabine, astronomie voyage"
 draft: true
+category: "pedagogie"
 ---
 
 # Voyager en avion avec un télescope : Guide pratique et réglementation 2026

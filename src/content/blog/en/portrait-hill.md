@@ -8,6 +8,7 @@ seoTitle: "Astronomer portrait: Harold Hill, lunar observation specialist | La 3
 seoDescription: "Portrait of Harold Hill (1920-2005), British amateur astronomer and reference figure in selenography, specialist in lunar drawing and mapping."
 seoKeywords: "Harold Hill astronomer, selenography, lunar drawing, Moon mapping, astronomer portrait"
 draft: true
+category: "portraits"
 ---
 
 # Harold Hill (1920-2005)

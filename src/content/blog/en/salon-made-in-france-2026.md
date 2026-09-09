@@ -7,6 +7,7 @@ description: "Join La 3ème Dimension at MIF Expo, the Made in France show, from
 seoTitle: "La 3ème Dimension at the Made in France Show 2026 (MIF Expo Paris) | La 3ème dimension"
 seoDescription: "Join La 3ème Dimension at MIF Expo, the Made in France show, from November 12 to 15, 2026 in Paris, within the Craft Village."
 seoKeywords: "MIF Expo Paris, Made in France show, French craftsmanship, Lumi refractor, 3D printing"
+category: "evenements"
 ---
 
 # La 3ème Dimension at the Made in France Show 2026

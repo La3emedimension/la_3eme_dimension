@@ -13,6 +13,7 @@ const blog = defineCollection({
 		seoDescription: z.string().optional(),
 		seoKeywords: z.string().optional(),
 		tags: z.array(z.string()).optional(),
+		category: z.enum(['pedagogie', 'actualites', 'evenements', 'portraits', 'coulisses', 'astronomie']).optional(),
 		draft: z.boolean().optional(),
 	}),
 });

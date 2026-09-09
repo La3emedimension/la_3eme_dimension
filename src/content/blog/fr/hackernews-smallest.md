@@ -12,6 +12,7 @@ tags:
 seoTitle: "Le Smallest sur Hacker News | La 3ème dimension"
 seoDescription: "Le télescope Smallest, imprimé en 3D par La 3ème Dimension, a fait la une de Hacker News. Retour sur la discussion et les questions de la communauté."
 seoKeywords: "hacker news smallest, télescope imprimé 3D hacker news, smallest newton 150/750, open source telescope, printables telescope"
+category: "actualites"
 ---
 
 Nouvelle belle surprise pour le projet : le prototype open source du **Smallest**, partagé sur Printables, a été mis en avant sur **[Hacker News](https://news.ycombinator.com/item?id=44289276)**, sous le titre *« 3D printable 6" f/5 compact travel telescope model »*. Le fil a rapidement grimpé en première page et généré des dizaines de commentaires.

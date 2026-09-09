@@ -7,6 +7,7 @@ description: "La 3ème Dimension runs a workshop at Nuit des Étoiles 2026 at th
 seoTitle: "La 3ème Dimension at Nuit des Étoiles 2026 (Cité de l'espace) | La 3ème dimension"
 seoDescription: "La 3ème Dimension runs a workshop at Nuit des Étoiles 2026 at the Cité de l'espace in Toulouse, on August 7, to build your own telescope."
 seoKeywords: "Nuit des Étoiles 2026, Cité de l'espace Toulouse, telescope workshop, Perseids, astronomy event"
+category: "evenements"
 ---
 
 # La 3ème Dimension at Nuit des Étoiles 2026, at the Cité de l'espace

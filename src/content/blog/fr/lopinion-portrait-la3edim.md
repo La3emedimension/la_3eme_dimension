@@ -14,6 +14,7 @@ tags:
 seoTitle: "La 3ème Dimension dans L'Opinion | La 3ème dimension"
 seoDescription: "Le journal L'Opinion consacre un portrait à La 3ème Dimension, entreprise du Tarn-et-Garonne fondée par Raphaël Labro, à l'occasion de l'éclipse solaire du 12 août 2026."
 seoKeywords: "l'opinion la 3ème dimension, presse télescope nomade, raphaël labro astronomie, entreprise tarn-et-garonne télescope, smallest lumi picco"
+category: "actualites"
 ---
 
 Dans la foulée de l'éclipse solaire du 12 août 2026, qui a attiré plus de 5 300 visiteurs à la Cité de l'espace de Toulouse, le journal économique **L'Opinion** a consacré un article à **La 3ème Dimension**, l'entreprise que j'ai fondée en 2025 à Verdun-sur-Garonne (Tarn-et-Garonne).

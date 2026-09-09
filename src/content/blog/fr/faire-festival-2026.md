@@ -7,6 +7,7 @@ description: "La 3ème Dimension sera au Faire Festival 2026, du 28 au 30 mai à
 seoTitle: "La 3ème Dimension au Faire Festival 2026 (Toulouse) | La 3ème dimension"
 seoDescription: "La 3ème Dimension sera au Faire Festival 2026, du 28 au 30 mai à La Cité - RoseLab de Toulouse, pour présenter ses télescopes imprimés en 3D."
 seoKeywords: "Faire Festival Toulouse, RoseLab, événement fabrication, télescope impression 3D, La 3ème Dimension"
+category: "evenements"
 ---
 
 # La 3ème Dimension au Faire Festival 2026

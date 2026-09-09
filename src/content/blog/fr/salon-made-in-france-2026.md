@@ -7,6 +7,7 @@ description: "Retrouvez La 3ème Dimension au MIF Expo, le Salon Made in France,
 seoTitle: "La 3ème Dimension au Salon Made in France 2026 (MIF Expo Paris) | La 3ème dimension"
 seoDescription: "Retrouvez La 3ème Dimension au MIF Expo, le Salon Made in France, du 12 au 15 novembre 2026 à Paris, au sein du Village de l'Artisanat."
 seoKeywords: "MIF Expo Paris, Salon Made in France, artisanat français, télescope Lumi, impression 3D"
+category: "evenements"
 ---
 
 # La 3ème Dimension au Salon Made in France 2026

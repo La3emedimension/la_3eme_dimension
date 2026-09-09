@@ -10,6 +10,7 @@ tags:
 seoTitle: "Construire sa lunette astronomique 80/600 fait main | La 3ème dimension"
 seoDescription: "Suivez la construction pas à pas d'une lunette astronomique artisanale 80mm/600mm : structure aluminium, tube PVC puis impression 3D."
 seoKeywords: "construire lunette astronomique, lunette 80/600, fabrication instrument optique, DIY astronomie, impression 3D télescope"
+category: "astronomie"
 ---
 
 # Une idée !

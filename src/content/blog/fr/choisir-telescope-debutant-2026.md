@@ -14,6 +14,7 @@ tags:
 seoTitle: "Acheter un Télescope pour Voir la Lune : Guide Simple 2026 (Sans Jargon)"
 seoDescription: "Vous voulez observer la Lune et les planètes ? Guide simple pour choisir un télescope qui ne finira pas au garage. Comparatif clair sans termes techniques. Conseils pratiques."
 seoKeywords: "acheter télescope, voir la lune télescope, observer planètes maison, télescope simple utiliser, quel télescope acheter, télescope 150mm, newton 150 750, skywatcher heritage 150p avis, bresser messier 150, flextube heritage défauts, télescopedobson compact, monture équatoriale débutant, skywatcher 150/750 pds, omegon 150/750, celestron astromaster 130, gso dobson 150, télescope portable léger, télescope transportable avion, télescope pas compliqué, voir saturne jupiter, telescope 150mm comparatif, meilleur télescope 150mm, télescope débutant 2026, smallest telescope avis, orion skyquest xt6, levenhuk dobson, télescope français, impression 3d astronomie"
+category: "astronomie"
 ---
 
 ## Vous voulez observer la Lune, planètes, nébuleuses, galaxies... ? Lisez ceci avant d'acheter

@@ -10,6 +10,7 @@ tags:
 seoTitle: "Astro-drawing: sketching what you observe through a telescope | La 3ème dimension"
 seoDescription: "What is astro-drawing? Discover this age-old practice combining astronomical observation and drawing, between technique, patience and wonder."
 seoKeywords: "astro-drawing, astronomical sketching, telescope observation, astronomy sketch, deep sky drawing"
+category: "pedagogie"
 ---
 
 # What is astro-drawing?

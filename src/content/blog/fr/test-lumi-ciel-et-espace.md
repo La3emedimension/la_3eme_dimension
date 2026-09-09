@@ -12,6 +12,7 @@ tags:
 seoTitle: "Test de la Lumi dans Ciel & Espace n°608 | La 3ème dimension"
 seoDescription: "La lunette pédagogique Lumi testée par le magazine Ciel & Espace dans son édition n°608, avec un code de réduction de 10% exclusif pour les lecteurs."
 seoKeywords: "ciel et espace, test lunette lumi, presse astronomie, code reduction lumi, lunette pédagogique débutant"
+category: "actualites"
 ---
 
 Nous sommes heureux d'annoncer que la **lunette pédagogique Lumi** fait l'objet d'un **test complet** dans le [numéro 608 de Ciel & Espace](https://www.cieletespace.fr/edition/608), l'un des magazines de référence en astronomie amateur.

@@ -12,7 +12,7 @@ tags:
 seoTitle: "LED Sign - Custom 3D Printed LED Sign | La 3ème dimension"
 seoDescription: "Custom 3D printed LED sign. Custom design with RGB controller, aviator connector, paracord cabling. Modern communication solution."
 seoKeywords: "led sign, 3d signage, visual communication, custom sign, communication, design, toulouse"
-
+category: "coulisses"
 ---
 
 3D printing offers many possibilities in terms of shapes, colors and textures. The integration of LEDs with a controller provides a multitude of combinations.

@@ -12,6 +12,7 @@ tags:
 seoTitle: "Précommandes Picco à 350€ avant fin 2026 | La 3ème dimension"
 seoDescription: "Les précommandes du télescope Picco 114/450 ouvrent avant la fin de l'année 2026, à un tarif préférentiel de 350€."
 seoKeywords: "précommande picco, télescope picco prix, picco 114/450, télescope ultra compact prix, précommande télescope 2026"
+category: "actualites"
 ---
 
 C'est officiel : les **précommandes du Picco** ouvriront **avant la fin de l'année 2026**, à un tarif préférentiel de **350€**.

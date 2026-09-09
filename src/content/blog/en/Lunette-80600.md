@@ -10,6 +10,7 @@ tags:
 seoTitle: "Building a handmade 80/600 astronomical refractor | La 3ème dimension"
 seoDescription: "Follow the step-by-step build of a handmade 80mm/600mm astronomical refractor: aluminum frame, PVC tube, then 3D printing."
 seoKeywords: "build astronomical refractor, 80/600 refractor, DIY optical instrument, DIY astronomy, 3D printed telescope"
+category: "astronomie"
 ---
 
 # An idea!
