@@ -5,12 +5,13 @@ import AssemblyGuide from '../components/AssemblyGuide.astro';
 import ObservationGuide from '../components/ObservationGuide.astro';
 import CommunityMap from '../components/CommunityMap.astro';
 import StarMap from '../components/StarMap.astro';
+import MoonMap from '../components/MoonMap.astro';
 import { type Locale } from '../i18n';
 
 const locale: Locale = 'fr';
 
 const products = await getCollection('products');
-const lumiProduct = products.find(product => product.id.includes('lumi'));
+const lumiProduct = products.find(product => product.id === `${locale}/lumi`);
 
 if (!lumiProduct) {
 	console.error('Available product IDs:', products.map(p => p.id));
@@ -140,8 +141,7 @@ const noticeConfig = {
 			}
 		},
 
-		// Ajouter la section vidéo après la notice
-		...productConfig.sections.filter(section => section.type === 'video'),
+		// Vidéos retirées de la notice
 
 		// Ajouter la section Observation
 		{
@@ -197,6 +197,10 @@ const noticeConfig = {
 				],
 				stellariumLink: "https://stellarium.org/fr/",
 				stellariumText: "Utilisez Stellarium pour planifier vos observations",
+				skyMapLink: "/blog/carte-du-ciel-interactive/",
+				skyMapText: "Ouvrir la carte du ciel",
+				moonMapLink: "/blog/observer-la-lune-carte-interactive/",
+				moonMapText: "Ouvrir la carte de la Lune",
 				discordLink: "https://discord.gg/PmNhTSpWCt",
 				discordText: "Rejoindre la communauté",
 				mapLink: "/carte-communaute/",
@@ -204,12 +208,14 @@ const noticeConfig = {
 			}
 		},
 
-		// Continuer avec les autres sections (sauf video qui est déjà ajoutée, et sans specs, pricing, features)
+		// Continuer avec les autres sections (sans video, specs, pricing, features, reviews, porte-filtre)
 		...productConfig.sections.slice(2).filter(section =>
 			section.type !== 'video' &&
 			section.type !== 'specs' &&
 			section.type !== 'pricing' &&
-			section.type !== 'features'
+			section.type !== 'features' &&
+			section.type !== 'reviews' &&
+			section.id !== 'section-filter'
 		),
 
 		// Carte du ciel interactive
@@ -220,6 +226,17 @@ const noticeConfig = {
 			data: {
 				title: "Observe ce soir",
 				description: "Génère ta carte du ciel personnalisée : entre une date et ton lieu d'observation pour savoir ce qui est visible cette nuit-là."
+			}
+		},
+
+		// Carte de la Lune interactive
+		{
+			type: 'custom',
+			id: 'section-moonmap',
+			customComponent: MoonMap,
+			data: {
+				title: "Identifier les mers et les cratères",
+				description: "Survolez une zone de la Lune avec la souris pour voir son nom, cliquez pour en savoir plus."
 			}
 		},
 
@@ -239,10 +256,9 @@ const noticeConfig = {
 	navigationItems: [
 		{ "id": "section-hero", "label": "Présentation" },
 		{ "id": "section-assembly-guide", "label": "Notice" },
-		{ "id": "section-video", "label": "Montage" },
 		{ "id": "section-observation", "label": "Observer" },
 		{ "id": "section-starmap", "label": "Carte du ciel" },
-		{ "id": "section-filter", "label": "Filtres" },
+		{ "id": "section-moonmap", "label": "Carte de la Lune" },
 		{ "id": "section-gallery", "label": "Galerie" },
 		{ "id": "section-community", "label": "Communauté" }
 	]
