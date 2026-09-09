@@ -494,7 +494,7 @@ Contrairement aux nébuleuses ou aux galaxies, qui demandent un ciel bien noir e
     },
     {
       name: "Copernic",
-      x: 63, y: 62, r: 6, type: "crater",
+      x: 43, y: 38, r: 6, type: "crater",
       desc: "L'un des cratères les plus célèbres de la Lune : 93 km de diamètre, environ 800 millions d'années, entouré d'un système de rayons clairs si spectaculaire qu'on le surnommait autrefois le \"Monarque des mers lunaires\".",
       tip: "Superbe en éclairage rasant (premier quartier) pour son relief, superbe en pleine Lune pour ses rayons."
     },
@@ -503,6 +503,12 @@ Contrairement aux nébuleuses ou aux galaxies, qui demandent un ciel bien noir e
       x: 41, y: 60, r: 7, type: "crater",
       desc: "Le cratère à rayons le plus spectaculaire de la Lune. Ses éjectas s'étendent sur plus de 1500 km et restent visibles à l'œil nu en pleine Lune. Il n'a \"que\" 108 millions d'années : les dinosaures existaient encore quand il s'est formé.",
       tip: "Le point le plus brillant de la Lune en pleine phase : impossible à manquer."
+    },
+    {
+      name: "Langrenus",
+      x: 65, y: 62, r: 7, type: "crater",
+      desc: "Un grand cratère à rayons de 132 km de diamètre, posé sur le bord est de la Mer de la Fécondité. Ses parois terrassées et son pic central sont visibles dans un instrument un peu plus puissant.",
+      tip: "Repérez-le juste à côté de Mare Fecunditatis, du côté est du disque."
     }
   ];
 
@@ -763,7 +769,7 @@ Contrairement aux nébuleuses ou aux galaxies, qui demandent un ciel bien noir e
 
 ## Ce que vous venez de découvrir
 
-Ces douze repères ne sont qu'un début, mais ils suffisent déjà à comprendre la Lune autrement. Les taches sombres ne sont pas des "ombres" : ce sont d'anciennes coulées de lave qui ont rempli des bassins d'impact il y a plusieurs milliards d'années, d'où leur nom de "mers" (*maria* en latin), donné par les premiers observateurs qui les prenaient pour de véritables océans.
+Ces treize repères ne sont qu'un début, mais ils suffisent déjà à comprendre la Lune autrement. Les taches sombres ne sont pas des "ombres" : ce sont d'anciennes coulées de lave qui ont rempli des bassins d'impact il y a plusieurs milliards d'années, d'où leur nom de "mers" (*maria* en latin), donné par les premiers observateurs qui les prenaient pour de véritables océans.
 
 Les points brillants avec des traînées, eux, sont des cratères récents (à l'échelle géologique) : leur impact a projeté de la matière fraîche sur des centaines, parfois des milliers de kilomètres, formant ces rayons qui n'ont pas encore eu le temps de s'assombrir sous l'effet du vent solaire. **Tycho**, avec ses 108 millions d'années, est le plus jeune des grands cratères de la face visible : ses rayons dominent encore tout l'hémisphère sud en pleine Lune.
 
