@@ -103,20 +103,49 @@ const breadcrumbItems = [
   { label: productName, href: Astro.url.pathname }
 ];
 
-const siteUrl = 'https://la3emedim.fr';
-const breadcrumbSchema = {
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": locale === 'fr' ? 'Accueil' : 'Home', "item": `${siteUrl}${localePath('/', locale)}` },
-    { "@type": "ListItem", "position": 2, "name": locale === 'fr' ? 'Boutique' : 'Shop', "item": `${siteUrl}${localePath('/shop/', locale)}` },
-    { "@type": "ListItem", "position": 3, "name": productName, "item": `${siteUrl}${Astro.url.pathname}` }
-  ]
-};
+// Note: breadcrumb structured data is emitted by <Breadcrumbs> itself (built from
+// breadcrumbItems below) — it isn't duplicated here to avoid two competing
+// BreadcrumbList blocks on the same page.
 
-const finalStructuredData = structuredData ? {
-  "@context": "https://schema.org",
-  "@graph": [structuredData, breadcrumbSchema]
-} : { "@context": "https://schema.org", "@graph": [breadcrumbSchema] };
+// Merge reviews (aggregateRating + review) into the main Product node instead of
+// letting ProductReviews.astro emit a second, competing Product with the same @id
+// (Google flags that as missing offers/review/aggregateRating since it only sees
+// whichever duplicate node it parses last).
+const reviewsSection = sections.find(s => s.type === 'reviews');
+const reviewsData = reviewsSection?.data as {
+  reviews?: Array<{ author: string; rating: number; date: string; title: string; content: string }>;
+  averageRating?: number;
+  totalReviews?: number;
+} | undefined;
+
+const reviewsSchemaFields = reviewsData?.reviews?.length ? {
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: String(reviewsData.averageRating),
+    reviewCount: String(reviewsData.totalReviews),
+    bestRating: "5",
+    worstRating: "1"
+  },
+  review: reviewsData.reviews.map(review => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: review.author },
+    datePublished: review.date,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(review.rating),
+      bestRating: "5",
+      worstRating: "1"
+    },
+    reviewBody: review.content,
+    name: review.title
+  }))
+} : {};
+
+const mergedProductSchema = structuredData ? { ...structuredData, ...reviewsSchemaFields } : structuredData;
+
+const finalStructuredData = mergedProductSchema
+  ? { "@context": "https://schema.org", ...mergedProductSchema }
+  : undefined;
 ---
 
 <BaseLayout
@@ -148,6 +177,8 @@ const finalStructuredData = structuredData ? {
 
     const propsWithLocale = section.type === 'pricing'
       ? { ...section.data, locale }
+      : section.type === 'reviews'
+      ? { ...section.data, emitSchema: false }
       : section.data;
 
     return (
