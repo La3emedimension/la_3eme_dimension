@@ -13,6 +13,7 @@ interface Props {
 	structuredData?: object | undefined;
 	noIndex?: boolean;
 	hasAlternate?: boolean;
+	overlayNav?: boolean;
 }
 
 const {
@@ -23,7 +24,8 @@ const {
 	ogImage,
 	structuredData,
 	noIndex = false,
-	hasAlternate = true
+	hasAlternate = true,
+	overlayNav = false
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -57,7 +59,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://la3emedim.
 	</head>
 	<body>
 		<div class="stack backgrounds">
-			<Nav locale={locale} />
+			<div class:list={['nav-wrap', { 'nav-wrap--overlay': overlayNav }]}>
+				<Nav locale={locale} />
+			</div>
 			<slot />
 			<Footer locale={locale} />
 		</div>
@@ -104,6 +108,14 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://la3emedim.
 				.backgrounds {
 					background: none;
 				}
+			}
+
+			.nav-wrap--overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 500;
 			}
 		</style>
 	</body>

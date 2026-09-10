@@ -194,13 +194,15 @@ function isActivePath(href: string): boolean {
 	.menu-button {
 		position: relative;
 		display: flex;
-		border: 0;
+		border: 1px solid rgba(255, 255, 255, 0.18);
 		border-radius: 999rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
 		color: var(--gray-300);
-		background: var(--gray-999_40);
-		box-shadow: var(--shadow-md);
+		background: rgba(255, 255, 255, 0.12);
+		backdrop-filter: blur(14px) saturate(180%);
+		-webkit-backdrop-filter: blur(14px) saturate(180%);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 	}
 
 	.menu-button[aria-expanded='true'] {
@@ -311,10 +313,12 @@ function isActivePath(href: string): boolean {
 			flex-direction: row;
 			font-size: var(--text-sm);
 			border-radius: 999rem;
-			border: 1px solid var(--gray-800);
+			border: 1px solid rgba(255, 255, 255, 0.18);
 			padding: 0.5rem 0.5625rem;
-			background-color: var(--gray-999_40);
-			box-shadow: var(--shadow-sm);
+			background-color: rgba(255, 255, 255, 0.12);
+			backdrop-filter: blur(14px) saturate(180%);
+			-webkit-backdrop-filter: blur(14px) saturate(180%);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 		}
 
 		/* .nav-items::before removed to match Skills.astro styling */
@@ -341,7 +345,7 @@ function isActivePath(href: string): boolean {
 
 		li:nth-child(2) .link:hover,
 		li:nth-child(2) .link:focus {
-			background-color: #5B9BD5;
+			background-color: var(--accent-regular);
 		}
 
 		li:nth-child(3) .link:hover,
@@ -359,9 +363,17 @@ function isActivePath(href: string): boolean {
 
 			justify-self: flex-end;
 			align-items: center;
+			gap: 0.5rem;
 			padding: 0;
 			background-color: transparent;
 			box-shadow: none;
+		}
+
+		.menu-footer :global(.lang-toggle) {
+			background-color: rgba(255, 255, 255, 0.12);
+			backdrop-filter: blur(14px) saturate(180%);
+			-webkit-backdrop-filter: blur(14px) saturate(180%);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 		}
 
 		.socials {

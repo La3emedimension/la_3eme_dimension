@@ -67,9 +67,6 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.pn
           <h3>{!isLumi && !isSmallest && (heroData?.title || product.id)}</h3>
           {isLumi && <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" width={lumiLogoDimensions?.width} height={lumiLogoDimensions?.height} />}
           {isSmallest && <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" width={smallestLogoDimensions?.width} height={smallestLogoDimensions?.height} />}
-          {isSmallest && <p class="carousel-subtitle">Le Télescope de 150mm le plus transportable au monde</p>}
-          {heroData?.tagline && <p class={isLumi ? 'carousel-subtitle' : 'carousel-text'}>{heroData.tagline}</p>}
-          {isLumi && <p class="carousel-text">« La science est une chose trop importante pour être laissée entre les mains des seuls savants. » — Carl Sagan</p>}
         </div>
       );
 
@@ -192,6 +189,7 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.pn
     height: auto !important;
     object-fit: unset !important;
     margin-bottom: 0.25rem;
+    opacity: 0.6;
   }
 
   @media (min-width: 50em) {
@@ -210,40 +208,9 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.pn
     font-size: var(--text-xl);
     font-weight: 600;
     color: white;
+    opacity: 0.6;
   }
 
-  .carousel-text {
-    display: none;
-  }
-
-  @media (min-width: 50em) {
-    .carousel-text {
-      display: block;
-      margin: 0.25rem 0 0 0;
-      font-size: 0.875rem;
-      font-style: italic;
-      opacity: 0.9;
-      color: white;
-      line-height: 1.4;
-    }
-  }
-
-  .carousel-subtitle {
-    margin: 0.25rem 0 0 0;
-    font-size: 1.05rem;
-    font-style: normal;
-    font-weight: 700;
-    opacity: 0.9;
-    color: white;
-    line-height: 1.4;
-  }
-
-  @media (min-width: 50em) {
-    .carousel-text,
-    .carousel-subtitle {
-      transform: translateY(-0.4rem);
-    }
-  }
 
   /* Video slide */
   .video-fill {

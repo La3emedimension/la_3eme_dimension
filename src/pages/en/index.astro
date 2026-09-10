@@ -1,11 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.astro";
 import ScrollIndicator from "../../components/ScrollIndicator.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import ProductCarousel from "../../components/ProductCarousel.astro";
 import ProductReviews from "../../components/ProductReviews.astro";
-import { useTranslations, localePath, type Locale } from '../../i18n';
+import { useTranslations, type Locale } from '../../i18n';
 
 const locale: Locale = 'en';
 const t = useTranslations(locale);
@@ -99,31 +98,23 @@ const homepageStructuredData = {
     description="Smallest and Lumi: compact telescope and educational refractor made in France. Assemble, understand, observe, without the hassle. Astronomical instruments via 3D printing. Toulouse, France."
     keywords="easy to use telescope, telescope made in france, educational astronomical refractor, refractor to assemble, kids astronomy kit, compact portable telescope, Lumi educational refractor, Smallest telescope, beginner astronomy, 3d printed astronomy, toulouse, france"
     structuredData={homepageStructuredData}
+    overlayNav
 >
-    <div class="stack gap-20 lg:gap-36">
+    <div class="stack gap-20 lg:gap-36 home-hero-stack">
+        <div class="hero-carousel-full hero-carousel-top">
+            <div class="hero-carousel-copy">
+                <h1 class="hero-carousel-title">Experience astronomy differently!</h1>
+                <p class="hero-carousel-subtitle">Compact, playful, and easy-to-use astronomical instruments</p>
+            </div>
+            <div class="hero-labels hero-labels-carousel">
+                <a class="hero-label" href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="label-logo" /></a>
+                <a class="hero-label" href="https://www.fabriquenenfrance.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/fab_bloc_rvb.png" alt="Made in France" class="label-logo" /></a>
+                <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Made in Occitanie" class="label-logo" /></a>
+            </div>
+            <ProductCarousel locale={locale} />
+        </div>
+
         <div class="wrapper stack gap-20 lg:gap-36 hero-section">
-            <header class="hero homepage-hero">
-                <Hero
-                    align="start"
-                >
-                    <h1 class="service-description">Experience astronomy differently!</h1>
-                    <p class="hero-subtitle">Compact, playful, and easy-to-use astronomical instruments</p>
-                    <div class="roles">
-                        <a href={localePath('/product/lumi/', locale)} class="product-pill pill-lumi">Lumi</a>
-                        <a href={localePath('/product/picco/', locale)} class="product-pill pill-picco">Picco</a>
-                        <a href={localePath('/product/smallest/', locale)} class="product-pill pill-smallest">Smallest</a>
-                    </div>
-                </Hero>
-
-                <ProductCarousel locale={locale} />
-
-                <div class="hero-labels">
-                    <a class="hero-label" href="https://www.lafrenchfab.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/FFB_LOGO_RVB.png" alt="French Fab" class="label-logo" /></a>
-                    <a class="hero-label" href="https://www.fabriquenenfrance.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/fab_bloc_rvb.png" alt="Made in France" class="label-logo" /></a>
-                    <a class="hero-label" href="https://www.fabrique-en-occitanie.fr/" target="_blank" rel="noopener noreferrer"><img src="/assets/LOGO-FAB-OCC-Q.png" alt="Made in Occitanie" class="label-logo" /></a>
-                </div>
-            </header>
-
             <div class="partners-section wrapper">
                 <div class="section-header stack gap-2 lg:gap-4">
                     <h2>Our partners</h2>
@@ -232,19 +223,117 @@ const homepageStructuredData = {
         gap: 1rem !important;
     }
 
+    .home-hero-stack {
+        gap: 1.5rem !important;
+    }
+
     .hero-labels {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75rem;
-        margin-top: 1rem;
-        justify-content: flex-end;
+        justify-content: flex-start;
+    }
+
+    .hero-carousel-full {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .hero-carousel-full :global(.product-carousel) {
+        width: 100%;
+        max-width: 100%;
+        height: 74vh;
+        min-height: 26rem;
+        max-height: 40rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Nav floats over this carousel (BaseLayout overlayNav): a top scrim keeps
+       the logo/menu legible regardless of which slide is showing. */
+    .hero-carousel-top {
+        position: relative;
+    }
+
+    .hero-carousel-top::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 60%, transparent 85%);
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .hero-carousel-copy {
+        position: absolute;
+        top: 50%;
+        left: 4.5rem;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-carousel-title {
+        margin: 0;
+        color: white;
+        font-size: var(--text-lg);
+        white-space: nowrap;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.95);
+    }
+
+    .hero-carousel-subtitle {
+        margin: 0.5rem 0 0 0;
+        color: var(--gray-100);
+        font-size: var(--text-md);
+        max-width: 40ch;
+        line-height: 1.5;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
     }
 
     @media (min-width: 50em) {
-        .hero-labels {
-            grid-column: 2;
-            margin-top: -3rem;
-            align-self: start;
+        .hero-carousel-copy {
+            left: 5.5rem;
+        }
+
+        .hero-carousel-title {
+            font-size: var(--text-3xl);
+        }
+
+        .hero-carousel-subtitle {
+            margin-top: 0.75rem;
+            font-size: var(--text-xl);
+            max-width: none;
+            white-space: nowrap;
+        }
+    }
+
+    @media (min-width: 50em) {
+        .hero-carousel-full :global(.product-carousel) {
+            height: 78vh;
+            max-height: 50rem;
+        }
+    }
+
+    .hero-labels-carousel {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 20;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+    @media (min-width: 50em) {
+        .hero-labels-carousel {
+            bottom: 2.5rem;
+            right: 3rem;
+            gap: 0.75rem;
         }
     }
 
@@ -255,14 +344,18 @@ const homepageStructuredData = {
         width: 4rem;
         height: 4rem;
         padding: 0.4rem;
-        border-radius: 0.5rem;
-        border: 1px solid var(--gray-700);
-        background: white;
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(14px) saturate(180%);
+        -webkit-backdrop-filter: blur(14px) saturate(180%);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
     }
 
     .hero-label:hover {
-        box-shadow: var(--shadow-md);
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.6);
         transform: translateY(-2px);
     }
 
@@ -271,97 +364,6 @@ const homepageStructuredData = {
         height: 100%;
         object-fit: contain;
         display: block;
-    }
-
-    .product-pill {
-        cursor: pointer;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        padding: 0.5rem 1.25rem;
-        color: white;
-        border: none;
-        border-radius: 999rem;
-        font-size: var(--text-md);
-        font-weight: 600;
-        line-height: 1.35;
-        white-space: nowrap;
-        vertical-align: middle;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .product-pill:hover {
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-md);
-        filter: brightness(1.08);
-    }
-
-    .pill-lumi {
-        background-color: #FF69B4;
-    }
-
-    .pill-picco {
-        background-color: #FFD700;
-    }
-
-    .pill-smallest {
-        background-color: #129DE2;
-    }
-
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.25rem;
-        width: 100%;
-    }
-
-    .hero :global(.hero-content) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .custom-tagline {
-        font-size: var(--text-md);
-        font-weight: 600;
-        color: var(--accent-regular);
-        margin: -1.2rem 0 0.1rem 0;
-        max-width: fit-content;
-    }
-
-    .service-description {
-        font-size: var(--text-xl);
-        color: white;
-        margin: 0 0 0.75rem 0;
-        max-width: 57ch;
-        line-height: 1.5;
-    }
-
-    .hero-subtitle {
-        font-size: var(--text-md);
-        color: var(--gray-300);
-        margin: -0.5rem 0 0.75rem 0;
-        max-width: 57ch;
-        line-height: 1.5;
-    }
-
-    .roles {
-        margin-top: 0.5rem;
-        display: flex;
-        gap: 0.5rem;
-        justify-content: flex-start;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-
-    .hero :global(.product-carousel) {
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: 2 / 1;
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-md);
     }
 
     @media (max-width: 49.99em) {
@@ -378,45 +380,11 @@ const homepageStructuredData = {
             width: 2.75rem;
             height: 2.75rem;
         }
-    }
 
-    @media (min-width: 50em) {
-        .hero {
-            max-width: none;
-            display: grid;
-            grid-template-columns: 5fr 4fr;
-            padding-inline: 2.5rem;
-            gap: 3.75rem;
-            align-items: center;
-        }
-
-        .hero :global(.hero-content) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .custom-tagline {
-            font-size: var(--text-lg);
-        }
-
-        .service-description {
-            font-size: var(--text-3xl);
-        }
-
-        .hero-subtitle {
-            font-size: var(--text-lg);
-        }
-
-        .roles {
-            margin-top: 0.5rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .hero :global(.product-carousel) {
-            aspect-ratio: 4 / 3;
-            border-radius: 1rem;
+        .hero-labels-carousel {
+            top: 4.5rem;
+            bottom: auto;
+            right: 1rem;
         }
     }
 
@@ -529,7 +497,7 @@ const homepageStructuredData = {
     .partners-section {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.5rem;
         align-items: center;
     }
 
