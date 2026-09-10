@@ -141,7 +141,27 @@ const reviewsSchemaFields = reviewsData?.reviews?.length ? {
   }))
 } : {};
 
-const mergedProductSchema = structuredData ? { ...structuredData, ...reviewsSchemaFields } : structuredData;
+// Return policy per the site's actual terms (mentions légales §8): 14-day
+// withdrawal window, buyer covers return shipping unless the seller is at
+// fault, full refund once the return is accepted. Nested under offers, as
+// Google's Product snippet guidelines expect.
+const merchantReturnPolicy = {
+  "@type": "MerchantReturnPolicy",
+  applicableCountry: "FR",
+  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+  merchantReturnDays: 14,
+  returnMethod: "https://schema.org/ReturnByMail",
+  returnFees: "https://schema.org/ReturnShippingFees",
+  refundType: "https://schema.org/FullRefund"
+};
+
+const mergedProductSchema = structuredData ? {
+  ...structuredData,
+  ...reviewsSchemaFields,
+  ...(structuredData.offers ? {
+    offers: { ...structuredData.offers, hasMerchantReturnPolicy: merchantReturnPolicy }
+  } : {})
+} : structuredData;
 
 const finalStructuredData = mergedProductSchema
   ? { "@context": "https://schema.org", ...mergedProductSchema }
