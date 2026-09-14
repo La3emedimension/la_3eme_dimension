@@ -47,7 +47,7 @@ Three instruments will be on show:
 
 ![Smallest telescope](/assets/smallest-fullsize-01.jpg)
 
-**Picco**: the ultra-compact 114/450 Newtonian weighing 1.5 kg, currently in development.
+**Picco**: the ultra-compact 114/450 Newtonian weighing 1.5 kg, currently in development, release planned for early 2027.
 
 ![Picco 114/450](/assets/114_7.jpeg)
 

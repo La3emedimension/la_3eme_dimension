@@ -1,0 +1,134 @@
+---
+import { type Locale } from '../i18n';
+
+interface Props {
+	locale: Locale;
+	email: string;
+	storageKey: string;
+}
+
+const { locale, email, storageKey } = Astro.props;
+
+const copy = {
+	fr: {
+		message: "La précommande du Picco arrive bientôt (un acompte sera demandé au moment de la commande).",
+		cta: "M'inscrire à la précommande",
+		close: "Fermer",
+		subject: "Précommande Picco",
+		body: "Bonjour, je souhaite être informé(e) de l'ouverture des précommandes du Picco."
+	},
+	en: {
+		message: "Picco pre-orders are coming soon (a deposit will be required when you place your order).",
+		cta: "Sign up for the pre-order",
+		close: "Close",
+		subject: "Picco Pre-order",
+		body: "Hello, I would like to be notified when Picco pre-orders open."
+	}
+};
+
+const t = copy[locale] ?? copy.fr;
+const mailtoHref = `mailto:${email}?subject=${encodeURIComponent(t.subject)}&body=${encodeURIComponent(t.body)}`;
+---
+
+<div id={storageKey} class="preorder-notice-overlay" hidden>
+	<div class="preorder-notice-card" role="dialog" aria-modal="true" aria-labelledby={`${storageKey}-title`}>
+		<button type="button" class="preorder-notice-close" aria-label={t.close}>&times;</button>
+		<p id={`${storageKey}-title`} class="preorder-notice-text">{t.message}</p>
+		<a href={mailtoHref} class="preorder-notice-cta">{t.cta}</a>
+	</div>
+</div>
+
+<style>
+	.preorder-notice-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(2px);
+	}
+
+	.preorder-notice-overlay[hidden] {
+		display: none;
+	}
+
+	.preorder-notice-card {
+		position: relative;
+		max-width: 480px;
+		width: 100%;
+		background: var(--gray-900);
+		border: 1px solid var(--accent-regular);
+		border-radius: 1rem;
+		padding: 2rem 1.75rem;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.preorder-notice-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.75rem;
+		background: none;
+		border: none;
+		color: var(--gray-300);
+		font-size: 1.75rem;
+		line-height: 1;
+		cursor: pointer;
+		padding: 0.25rem;
+	}
+
+	.preorder-notice-close:hover {
+		color: var(--gray-100);
+	}
+
+	.preorder-notice-text {
+		margin: 0 0 1.25rem;
+		font-size: var(--text-base);
+		line-height: 1.6;
+		color: var(--gray-100);
+		text-align: center;
+	}
+
+	.preorder-notice-cta {
+		display: block;
+		text-align: center;
+		padding: 0.75rem 1.5rem;
+		font-size: var(--text-base);
+		font-weight: 600;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-radius: 0.5rem;
+		text-decoration: none;
+	}
+
+	.preorder-notice-cta:hover {
+		background: var(--accent-dark);
+	}
+</style>
+
+<script define:vars={{ storageKey }}>
+document.addEventListener('DOMContentLoaded', function() {
+	const notice = document.getElementById(storageKey);
+	if (!notice) return;
+
+	if (!sessionStorage.getItem(storageKey)) {
+		notice.hidden = false;
+	}
+
+	const dismissNotice = () => {
+		notice.hidden = true;
+		sessionStorage.setItem(storageKey, '1');
+	};
+
+	notice.querySelector('.preorder-notice-close')?.addEventListener('click', dismissNotice);
+	notice.addEventListener('click', (e) => {
+		if (e.target === notice) dismissNotice();
+	});
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && !notice.hidden) dismissNotice();
+	});
+	notice.querySelector('.preorder-notice-cta')?.addEventListener('click', dismissNotice);
+});
+</script>

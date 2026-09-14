@@ -63,6 +63,15 @@ const shopStructuredData = {
 	keywords="3d printing shop, portable telescope, travel accessory, educational instrument, smallest telescope, backpack hook, astronomical eyepiece, toulouse"
 	structuredData={shopStructuredData}
 >
+	<div id="shipping-delay-notice" class="shipping-notice-overlay" hidden>
+		<div class="shipping-notice-card" role="dialog" aria-modal="true" aria-labelledby="shipping-notice-title">
+			<button type="button" class="shipping-notice-close" aria-label="Close">&times;</button>
+			<p id="shipping-notice-title" class="shipping-notice-text">
+				⚠️ Due to high demand and our participation in the Made in France trade show, delivery times may be longer than expected. Thank you for your understanding!
+			</p>
+		</div>
+	</div>
+
 	<div class="stack gap-4 lg:gap-6">
 		<div class="wrapper stack gap-2 lg:gap-4">
 			<header class="hero">
@@ -149,6 +158,58 @@ const shopStructuredData = {
 </BaseLayout>
 
 <style>
+	.shipping-notice-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(2px);
+	}
+
+	.shipping-notice-overlay[hidden] {
+		display: none;
+	}
+
+	.shipping-notice-card {
+		position: relative;
+		max-width: 480px;
+		width: 100%;
+		background: var(--gray-900);
+		border: 1px solid var(--accent-regular);
+		border-radius: 1rem;
+		padding: 2rem 1.75rem;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.shipping-notice-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.75rem;
+		background: none;
+		border: none;
+		color: var(--gray-300);
+		font-size: 1.75rem;
+		line-height: 1;
+		cursor: pointer;
+		padding: 0.25rem;
+	}
+
+	.shipping-notice-close:hover {
+		color: var(--gray-100);
+	}
+
+	.shipping-notice-text {
+		margin: 0;
+		font-size: var(--text-base);
+		line-height: 1.6;
+		color: var(--gray-100);
+		text-align: center;
+	}
+
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -477,6 +538,26 @@ const shopStructuredData = {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+	const notice = document.getElementById('shipping-delay-notice');
+	const noticeStorageKey = 'shippingDelayNoticeDismissed';
+
+	if (notice && !sessionStorage.getItem(noticeStorageKey)) {
+		notice.hidden = false;
+
+		const dismissNotice = () => {
+			notice.hidden = true;
+			sessionStorage.setItem(noticeStorageKey, '1');
+		};
+
+		notice.querySelector('.shipping-notice-close')?.addEventListener('click', dismissNotice);
+		notice.addEventListener('click', (e) => {
+			if (e.target === notice) dismissNotice();
+		});
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && !notice.hidden) dismissNotice();
+		});
+	}
+
 	const categoryButtons = document.querySelectorAll('.category-btn');
 	const productCards = document.querySelectorAll('.product-card');
 	const surMesureCard = document.querySelector('.product-card[data-category="services"]');

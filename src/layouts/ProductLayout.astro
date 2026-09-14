@@ -151,7 +151,10 @@ const merchantReturnPolicy = {
   returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
   merchantReturnDays: 14,
   returnMethod: "https://schema.org/ReturnByMail",
-  returnFees: "https://schema.org/ReturnShippingFees",
+  // Buyer ships the return themselves at their own cost (no fixed fee the
+  // merchant charges), so "customer responsibility" is accurate and — unlike
+  // ReturnShippingFees — doesn't require a returnShippingFeesAmount we don't have.
+  returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
   refundType: "https://schema.org/FullRefund"
 };
 

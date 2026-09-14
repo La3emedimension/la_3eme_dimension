@@ -47,7 +47,7 @@ Trois instruments seront exposés :
 
 ![Le Smallest](/assets/smallest-fullsize-01.jpg)
 
-**Le Picco** : le newtonien 114/450 ultra-compact de 1,5 kg, en cours de développement.
+**Le Picco** : le newtonien 114/450 ultra-compact de 1,5 kg, en cours de développement, sortie prévue début 2027.
 
 ![Le Picco 114/450](/assets/114_7.jpeg)
 

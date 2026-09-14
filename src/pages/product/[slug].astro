@@ -7,6 +7,7 @@ import SmallestSocialProof from '../../components/SmallestSocialProof.astro';
 import CommunityMap from '../../components/CommunityMap.astro';
 import CommunitySection from '../../components/CommunitySection.astro';
 import ClefEtoilesSection from '../../components/ClefEtoilesSection.astro';
+import PreorderNotice from '../../components/PreorderNotice.astro';
 import { type Locale } from '../../i18n';
 import { getSlugWithoutLocale } from '../../lib/collections';
 
@@ -95,3 +96,11 @@ const finalConfig = {
 ---
 
 <ProductLayout {...finalConfig} />
+
+{productSlug === 'picco' && (
+  <PreorderNotice
+    locale={locale}
+    email={productConfig.emailContact}
+    storageKey="picco-preorder-notice"
+  />
+)}
