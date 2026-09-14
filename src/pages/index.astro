@@ -618,8 +618,13 @@ const homepageStructuredData = {
         margin: 0.5rem;
         padding: 0.5rem 1rem;
         background: var(--gray-999);
+        background: var(--glass-sheen), var(--glass-tint-strong);
+        backdrop-filter: blur(16px) saturate(150%);
+        -webkit-backdrop-filter: blur(16px) saturate(150%);
+        border: 1px solid var(--glass-border-color);
+        box-shadow: var(--glass-highlight);
         color: var(--gray-200);
-        border-radius: 0.375rem;
+        border-radius: 999rem;
     }
 
     .card img {
@@ -699,11 +704,14 @@ const homepageStructuredData = {
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 1px solid var(--gray-800);
+        border: 1px solid var(--glass-border-color);
         border-radius: 1.5rem;
         color: var(--gray-300);
         background: var(--gradient-subtle);
-        box-shadow: var(--shadow-sm);
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+        box-shadow: var(--glass-highlight);
     }
 
     @media (min-width: 50em) {

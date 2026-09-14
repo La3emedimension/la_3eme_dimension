@@ -646,7 +646,11 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
 
   .how-to-post {
     background: var(--gray-800);
-    border: 1px solid var(--gray-700);
+    background: var(--glass-sheen), var(--glass-tint);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border-color);
+    box-shadow: var(--glass-highlight);
     border-radius: 1rem;
     padding: 1.5rem 2rem;
     margin-bottom: 2rem;
@@ -709,7 +713,7 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--gray-800);
+    border: 1px solid var(--glass-border-color);
   }
 
   #community-map {
@@ -748,9 +752,13 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
   /* Styles pour les popups */
   :global(.build-popup-container .leaflet-popup-content-wrapper) {
     background: var(--gray-999);
+    background: var(--glass-sheen), var(--glass-tint-strong);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     color: var(--gray-100);
     border-radius: 0.5rem;
-    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--glass-border-color);
+    box-shadow: var(--shadow-xl), var(--glass-highlight);
     max-width: none !important;
     min-width: 300px !important;
   }
@@ -959,7 +967,9 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
     z-index: 50000;
     opacity: 0;
     visibility: hidden;
@@ -975,13 +985,16 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
 
   .build-modal-content {
     background: var(--gray-999);
+    background: var(--glass-sheen), var(--glass-tint-strong);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     border-radius: 1rem;
     max-width: 500px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: var(--shadow-xl);
-    border: 1px solid var(--gray-800);
+    box-shadow: var(--shadow-xl), var(--glass-highlight);
+    border: 1px solid var(--glass-border-color);
     position: relative;
   }
 
@@ -1003,7 +1016,7 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
 
   .modal-close {
     background: none;
-    border: none;
+    border: 1px solid var(--glass-border-color);
     color: var(--gray-400);
     font-size: 1.8rem;
     cursor: pointer;
@@ -1013,13 +1026,13 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.25rem;
+    border-radius: 50%;
     transition: color 0.2s ease, background 0.2s ease;
   }
 
   .modal-close:hover {
     color: var(--gray-100);
-    background: var(--gray-800);
+    background: var(--glass-sheen), var(--glass-tint);
   }
 
   .build-modal-body {
@@ -1376,7 +1389,10 @@ const mailtoHref = `mailto:la3emedim@gmail.com?subject=${encodeURIComponent(t.em
       padding: 1.5rem;
       flex-shrink: 0;
       background: var(--gray-999);
-      border-bottom: 1px solid var(--gray-800);
+      background: var(--glass-sheen), var(--glass-tint-strong);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border-bottom: 1px solid var(--glass-border-color);
     }
 
     .build-modal-body {

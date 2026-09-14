@@ -84,9 +84,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .content-grid {
     background: var(--gray-999);
+    background: var(--glass-sheen), var(--glass-tint);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     padding: 3rem;
     border-radius: 1rem;
-    border: 1px solid var(--gray-800);
+    border: 1px solid var(--glass-border-color);
+    box-shadow: var(--glass-highlight);
     margin-bottom: 2rem;
   }
 

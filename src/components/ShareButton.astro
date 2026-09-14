@@ -64,7 +64,11 @@ const { title, url } = Astro.props;
 	.share-container {
 		padding: 1.5rem;
 		background: var(--gray-900);
-		border: 1px solid var(--gray-800);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
 		border-radius: 0.75rem;
 		margin: 2rem 0;
 	}
@@ -88,8 +92,12 @@ const { title, url } = Astro.props;
 		gap: 0.5rem;
 		padding: 0.625rem 1rem;
 		background: var(--gray-800);
-		border: 1px solid var(--gray-700);
-		border-radius: 0.5rem;
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(16px) saturate(150%);
+		-webkit-backdrop-filter: blur(16px) saturate(150%);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
+		border-radius: 999rem;
 		color: var(--gray-200);
 		font-size: var(--text-sm);
 		cursor: pointer;
@@ -131,8 +139,7 @@ const { title, url } = Astro.props;
 	}
 
 	:global(.theme-light) .share-btn {
-		background: var(--gray-500);
-		border-color: var(--gray-400);
+		border-color: var(--glass-border-color-strong);
 		color: var(--gray-0);
 	}
 
@@ -140,18 +147,11 @@ const { title, url } = Astro.props;
 		color: var(--gray-500);
 	}
 
-	:global(.theme-dark) .share-container {
-		background: var(--gray-900);
-		border-color: var(--gray-800);
-	}
-
 	:global(.theme-dark) .share-label {
 		color: var(--gray-400);
 	}
 
 	:global(.theme-dark) .share-btn {
-		background: var(--gray-800);
-		border-color: var(--gray-700);
 		color: var(--gray-300);
 	}
 

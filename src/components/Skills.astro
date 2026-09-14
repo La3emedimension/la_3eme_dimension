@@ -30,11 +30,14 @@ const t = useTranslations(locale);
 <style>
 
 	.box {
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--glass-border-color);
 		border-radius: 2rem;
 		padding: 1.5rem;
 		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		box-shadow: var(--glass-highlight);
 	}
 
 	.skills {

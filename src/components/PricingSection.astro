@@ -192,9 +192,13 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
     .pricing-card {
         background: var(--gray-999);
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
         padding: 3rem 2rem;
         border-radius: 1rem;
-        border: 1px solid var(--gray-800);
+        border: 1px solid var(--glass-border-color);
+        box-shadow: var(--glass-highlight);
         text-align: center;
         min-height: 600px;
         display: flex;
@@ -277,8 +281,12 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
         display: inline-block;
         margin-top: 1.5rem;
         padding: 0.6rem 1.25rem;
-        border: 1px solid var(--gray-600);
-        border-radius: 0.5rem;
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: blur(16px) saturate(150%);
+        -webkit-backdrop-filter: blur(16px) saturate(150%);
+        border: 1px solid var(--glass-border-color);
+        box-shadow: var(--glass-highlight);
+        border-radius: 999rem;
         color: var(--gray-300);
         text-decoration: none;
         font-size: 0.9rem;
@@ -333,11 +341,14 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
     .cta-contact {
         display: inline-block;
-        background: transparent;
-        border: 1px solid var(--gray-700);
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: blur(16px) saturate(150%);
+        -webkit-backdrop-filter: blur(16px) saturate(150%);
+        border: 1px solid var(--glass-border-color);
+        box-shadow: var(--glass-highlight);
         color: var(--gray-300);
         padding: 0.5rem 1.25rem;
-        border-radius: 0.5rem;
+        border-radius: 999rem;
         font-size: 0.85rem;
         font-weight: 500;
         text-decoration: none;
@@ -372,9 +383,13 @@ const isExternalLink = (href: string) => href.startsWith('http://') || href.star
 
     .option-card {
         background: var(--gray-999);
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
         padding: 2rem 1.5rem;
         border-radius: 1rem;
-        border: 1px solid var(--gray-800);
+        border: 1px solid var(--glass-border-color);
+        box-shadow: var(--glass-highlight);
         text-align: center;
         display: flex;
         flex-direction: column;

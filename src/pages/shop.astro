@@ -14,13 +14,6 @@ const filteredProducts = products.filter(({ data }) => {
 	return import.meta.env.DEV || !data.draft;
 });
 
-const categories = [
-	{ id: 'all', name: t.shop.allProducts },
-	{ id: 'services', name: t.shop.services },
-	{ id: 'astronomie', name: t.shop.astronomy },
-	{ id: 'accessoire', name: t.shop.accessories }
-];
-
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
@@ -92,18 +85,6 @@ const shopStructuredData = {
 					align="start"
 				/>
 			</header>
-			
-			<!-- Category Filter -->
-			<div class="category-filter">
-				{categories.map((category) => (
-					<button
-						class={`category-btn ${category.id === 'all' ? 'active' : ''}`}
-						data-category={category.id}
-					>
-						{category.name}
-					</button>
-				))}
-			</div>
 		</div>
 
 		<main class="wrapper">
@@ -258,8 +239,7 @@ const shopStructuredData = {
 		max-width: 480px;
 		width: 100%;
 		background: var(--gray-900);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0) 60%),
-			color-mix(in srgb, var(--gray-900) 55%, transparent);
+		background: var(--glass-sheen), var(--glass-tint);
 		backdrop-filter: blur(20px) saturate(160%);
 		-webkit-backdrop-filter: blur(20px) saturate(160%);
 		border: 1px solid rgba(255, 255, 255, 0.2);
@@ -404,8 +384,12 @@ const shopStructuredData = {
 		margin: 2rem auto;
 		padding: 2rem;
 		background: var(--gradient-subtle);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
 		border-radius: 1rem;
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
 	}
 
 	.seo-content h2 {
@@ -433,8 +417,12 @@ const shopStructuredData = {
 	.highlight-item {
 		padding: 1.5rem;
 		background: var(--gray-900);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
 		border-radius: 0.75rem;
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
 	}
 
 	.highlight-item h3 {
@@ -466,56 +454,6 @@ const shopStructuredData = {
 		}
 	}
 
-	.category-filter {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 1rem;
-		margin-bottom: 1rem;
-		padding: 0 1rem;
-	}
-
-	.category-btn {
-		padding: 0.75rem 1.5rem;
-		border: 1px solid rgba(255, 255, 255, 0.18);
-		background: var(--gray-900);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0) 70%),
-			color-mix(in srgb, var(--gray-900) 55%, transparent);
-		backdrop-filter: blur(16px) saturate(160%);
-		-webkit-backdrop-filter: blur(16px) saturate(160%);
-		color: var(--gray-300);
-		border-radius: 2rem;
-		font-weight: 500;
-		cursor: pointer;
-		transition: all var(--theme-transition);
-		font-size: var(--text-sm);
-		white-space: nowrap;
-		transform: translateY(0);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
-	}
-
-	.category-btn:hover {
-		border-color: rgba(255, 255, 255, 0.3);
-		color: var(--gray-100);
-		background: var(--gray-800);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0) 70%),
-			color-mix(in srgb, var(--gray-800) 55%, transparent);
-		transform: translateY(-2px);
-		box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-	}
-
-	.category-btn.active {
-		border-color: rgba(255, 255, 255, 0.35);
-		background: var(--accent-regular);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 70%),
-			color-mix(in srgb, var(--accent-regular) 75%, transparent);
-		backdrop-filter: blur(16px) saturate(180%);
-		-webkit-backdrop-filter: blur(16px) saturate(180%);
-		color: var(--accent-text-over);
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-	}
-
 	/* Product Grid */
 	.product-grid {
 		display: grid;
@@ -537,7 +475,11 @@ const shopStructuredData = {
 
 	.product-card:not(.hidden) {
 		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
 		border-radius: 1rem;
 		overflow: hidden;
 		transition: all var(--theme-transition);
@@ -783,7 +725,11 @@ const shopStructuredData = {
 
 	.testimonial-card {
 		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		background: var(--glass-sheen), var(--glass-tint);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		border: 1px solid var(--glass-border-color);
+		box-shadow: var(--glass-highlight);
 		border-radius: 1rem;
 		padding: 2rem;
 		margin: 0;
@@ -865,46 +811,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
-	const categoryButtons = document.querySelectorAll('.category-btn');
 	const productCards = document.querySelectorAll('.product-card');
 	const surMesureCard = document.querySelector('.product-card[data-category="services"]');
-
-	function filterProducts(selectedCategory) {
-		// Simple show/hide logic only
-		productCards.forEach(card => {
-			const cardCategory = card.getAttribute('data-category') || 'all';
-			
-			if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-				card.style.display = 'flex';
-			} else {
-				card.style.display = 'none';
-			}
-		});
-
-		// Update active button
-		categoryButtons.forEach(btn => btn.classList.remove('active'));
-		const activeBtn = document.querySelector(`[data-category="${selectedCategory}"]`);
-		if (activeBtn) activeBtn.classList.add('active');
-		
-		// Scroll to products section
-		setTimeout(() => {
-			const productGrid = document.querySelector('.product-grid');
-			if (productGrid) {
-				productGrid.scrollIntoView({ 
-					behavior: 'smooth', 
-					block: 'start' 
-				});
-			}
-		}, 100);
-	}
-
-	// Add click event listeners
-	categoryButtons.forEach(button => {
-		button.addEventListener('click', (e) => {
-			const selectedCategory = e.target.getAttribute('data-category');
-			filterProducts(selectedCategory);
-		});
-	});
 
 	// Initialize: set product order
 	const smallestCard = Array.from(productCards).find(card =>

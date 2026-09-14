@@ -64,7 +64,7 @@ const t = useTranslations(locale);
 	.press { width: 100%; max-width: 1100px; padding: 0 1rem; box-sizing: border-box; text-align: center; }
 	.press-title { font-size: var(--text-xl); color: var(--gray-0); margin-bottom: 1.5rem; }
 	.press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-	.press-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.25rem; background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 0.75rem; text-align: left; text-decoration: none; transition: border-color 0.2s ease; }
+	.press-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.25rem; background: var(--gray-900); background: var(--glass-sheen), var(--glass-tint); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--glass-border-color); box-shadow: var(--glass-highlight); border-radius: 0.75rem; text-align: left; text-decoration: none; transition: border-color 0.2s ease; }
 	.press-card:hover, .press-card:focus { border-color: var(--accent-regular); }
 	.press-source { font-weight: 700; color: var(--accent-regular); font-size: var(--text-md); }
 	.press-desc { font-size: var(--text-sm); color: var(--gray-300); line-height: 1.5; }
