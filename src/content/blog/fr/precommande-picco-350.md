@@ -1,27 +1,27 @@
 ---
-title: "Précommandes du Picco : lancement avant la fin de l'année à 350€"
+title: "Précommandes du Picco : lancement début 2027 à 350€"
 publishDate: 2026-08-20
 img: "/assets/Piccov2_4.jpeg"
 img_alt: "Télescope Picco 114/450, prototype en cours de développement"
 description: |
-  Les précommandes du Picco, notre télescope Newton 114/450 ultra-compact, ouvriront avant la fin de l'année 2026 à un tarif préférentiel de 350€.
+  Les précommandes du Picco, notre télescope Newton 114/450 ultra-compact, ouvriront début 2027 à un tarif préférentiel de 350€.
 tags:
   - Picco
   - Précommande
   - Annonce
-seoTitle: "Précommandes Picco à 350€ avant fin 2026 | La 3ème dimension"
-seoDescription: "Les précommandes du télescope Picco 114/450 ouvrent avant la fin de l'année 2026, à un tarif préférentiel de 350€."
-seoKeywords: "précommande picco, télescope picco prix, picco 114/450, télescope ultra compact prix, précommande télescope 2026"
+seoTitle: "Précommandes Picco à 350€ dès début 2027 | La 3ème dimension"
+seoDescription: "Les précommandes du télescope Picco 114/450 ouvrent début 2027, à un tarif préférentiel de 350€."
+seoKeywords: "précommande picco, télescope picco prix, picco 114/450, télescope ultra compact prix, précommande télescope 2027"
 category: "actualites"
 ---
 
-C'est officiel : les **précommandes du Picco** ouvriront **avant la fin de l'année 2026**, à un tarif préférentiel de **350€**.
+C'est officiel : les **précommandes du Picco** ouvriront **début 2027**, à un tarif préférentiel de **350€**.
 
 ## Le Picco, en bref
 
 Le Picco est notre prochain télescope Newton **114/450**, pensé pour aller encore plus loin que le Smallest sur le terrain de l'astronomie nomade : à peine **1,5 kg**, une conception ultra-compacte, et le même ADN, un instrument qui se comprend en le prenant en main, sans notice.
 
-Sortie prévue **début 2027**. Les précommandes qui ouvriront d'ici la fin de l'année permettront de réserver le vôtre en avance, au tarif de lancement.
+Sortie prévue **début 2027**, au moment même de l'ouverture des précommandes. Ce sera l'occasion de réserver le vôtre dès le lancement, au tarif de lancement.
 
 ## Pourquoi un tarif préférentiel
 
