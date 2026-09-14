@@ -237,13 +237,20 @@ const shopStructuredData = {
 		align-items: center;
 		justify-content: center;
 		padding: 1.5rem;
-		background: rgba(0, 0, 0, 0.35);
-		backdrop-filter: blur(10px) saturate(140%);
-		-webkit-backdrop-filter: blur(10px) saturate(140%);
+		background: rgba(0, 0, 0, 0.32);
+		backdrop-filter: blur(18px) saturate(135%);
+		-webkit-backdrop-filter: blur(18px) saturate(135%);
+		opacity: 1;
+		transition: opacity 0.25s ease;
 	}
 
 	.shipping-notice-overlay[hidden] {
 		display: none;
+	}
+
+	.shipping-notice-overlay.is-closing {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.shipping-notice-card {
@@ -251,16 +258,16 @@ const shopStructuredData = {
 		max-width: 480px;
 		width: 100%;
 		background: var(--gray-900);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.03) 45%, rgba(255, 255, 255, 0) 60%),
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0) 60%),
 			color-mix(in srgb, var(--gray-900) 55%, transparent);
-		backdrop-filter: blur(28px) saturate(180%);
-		-webkit-backdrop-filter: blur(28px) saturate(180%);
-		border: 1px solid rgba(255, 255, 255, 0.25);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		border: 1px solid rgba(255, 255, 255, 0.2);
 		border-radius: 1.25rem;
 		padding: 2rem 1.75rem;
 		box-shadow:
 			0 8px 32px rgba(0, 0, 0, 0.3),
-			inset 0 1px 0 rgba(255, 255, 255, 0.25);
+			inset 0 1px 0 rgba(255, 255, 255, 0.2);
 	}
 
 	.shipping-notice-close {
@@ -840,8 +847,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		notice.hidden = false;
 
 		const dismissNotice = () => {
-			notice.hidden = true;
-			sessionStorage.setItem(noticeStorageKey, '1');
+			if (notice.hidden || notice.classList.contains('is-closing')) return;
+			notice.classList.add('is-closing');
+			window.setTimeout(() => {
+				notice.hidden = true;
+				notice.classList.remove('is-closing');
+				sessionStorage.setItem(noticeStorageKey, '1');
+			}, 250);
 		};
 
 		notice.querySelector('.shipping-notice-close')?.addEventListener('click', dismissNotice);
