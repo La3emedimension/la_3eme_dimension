@@ -1,5 +1,7 @@
 /* Global variables */
 :root {
+	color-scheme: light;
+
 	/* Colors */
 	--gray-0: #000000;
 	--gray-50: #1d1d1f;
@@ -81,6 +83,8 @@
 }
 
 :root.theme-dark {
+	color-scheme: dark;
+
 	--gray-0: #ffffff;
 	--gray-50: #f2f2f7;
 	--gray-100: #e5e5ea;
