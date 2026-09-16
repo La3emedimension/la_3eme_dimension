@@ -96,6 +96,39 @@ const noticeConfig = {
 			}
 		},
 
+		// Ajouter la section Retrait/ajout du miroir dans le barillet
+		{
+			type: 'custom',
+			id: 'section-mirror-cell',
+			customComponent: AssemblyGuide,
+			data: {
+				title: "Retirer ou ajouter un miroir dans le barillet",
+				steps: [
+					{
+						number: 1,
+						title: "",
+						description: "Retirer le pare-lumière.",
+						image: "/assets/Smallestmontage1.jpeg",
+						alt: "Retrait du pare-lumière"
+					},
+					{
+						number: 2,
+						title: "",
+						description: "Retirer la vis supérieure pour pouvoir retirer l'écran de protection du miroir primaire.",
+						image: "/assets/Smallestmontage2.jpeg",
+						alt: "Retrait de la vis supérieure et de l'écran de protection"
+					},
+					{
+						number: 3,
+						title: "",
+						description: "Retirer l'ensemble des 3 vis indiquées par le cercle rose, puis retirer le masque de chanfrein et les 3 patins antichute noirs. Vous pouvez alors placer le miroir.<br><strong>⚠️ Attention :</strong> ne pas trop serrer les vis, elles doivent être à peine en contact, cela peut déformer l'optique et créer de l'astigmatisme.",
+						image: "/assets/Smallestmontage3.jpeg",
+						alt: "Retrait des vis, du masque de chanfrein et des patins antichute"
+					}
+				]
+			}
+		},
+
 		// Ajouter la section vidéo après la notice
 		...productConfig.sections.filter(section => section.type === 'video'),
 
@@ -127,6 +160,7 @@ const noticeConfig = {
 	navigationItems: [
 		{ "id": "section-hero", "label": "Présentation" },
 		{ "id": "section-assembly-guide", "label": "Notice" },
+		{ "id": "section-mirror-cell", "label": "Barillet" },
 		{ "id": "section-video", "label": "Montage" },
 		{ "id": "section-voyage", "label": "Transport" },
 		{ "id": "section-community", "label": "Communauté" }
