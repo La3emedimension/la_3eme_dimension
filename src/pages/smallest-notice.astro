@@ -144,6 +144,18 @@ const noticeConfig = {
 			}
 		},
 
+		// Ajouter la section rangement après le voyage
+		{
+			type: 'custom',
+			id: 'section-rangement',
+			customComponent: TravelSection,
+			data: {
+				title: "Rangement",
+				description: "Entre deux observations, rangez votre télescope Smallest à l'abri de la poussière et de l'humidité.",
+				image: { src: "/assets/smallestrangement.png", alt: "Smallest - Rangement du télescope" }
+			}
+		},
+
 		// Ajouter la carte de la communauté
 		{
 			type: 'custom',
@@ -163,6 +175,7 @@ const noticeConfig = {
 		{ "id": "section-mirror-cell", "label": "Barillet" },
 		{ "id": "section-video", "label": "Montage" },
 		{ "id": "section-voyage", "label": "Transport" },
+		{ "id": "section-rangement", "label": "Rangement" },
 		{ "id": "section-community", "label": "Communauté" }
 	]
 };

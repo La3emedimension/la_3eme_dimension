@@ -18,7 +18,13 @@ const { title, description, image } = Astro.props;
 		<div class="travel-content">
 			{image ? (
 				<div class="image-container">
-					<img src={image.src} alt={image.alt} class="travel-image" />
+					<img
+						src={image.src}
+						alt={image.alt}
+						class="travel-image lightbox-trigger"
+						data-src={image.src}
+						data-alt={image.alt}
+					/>
 				</div>
 			) : (
 				<div class="media-placeholder">
@@ -68,6 +74,13 @@ const { title, description, image } = Astro.props;
 		width: 100%;
 		border-radius: 1rem;
 		box-shadow: var(--shadow-lg);
+		cursor: pointer;
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+
+	.travel-image:hover {
+		transform: scale(1.02);
+		opacity: 0.9;
 	}
 
 	.media-placeholder {
