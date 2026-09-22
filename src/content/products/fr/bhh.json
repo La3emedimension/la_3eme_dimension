@@ -34,11 +34,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/bhh-02.jpg",
-    "features": [
-      "Supporte jusqu'à 10kg",
-      "Design épuré et optimisé forme C",
-      "Compatible avec les mousquetons",
-      "Fichiers gratuits disponibles"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Charge max", "value": "Supporte jusqu'à 10kg" },
+      { "@type": "PropertyValue", "name": "Design", "value": "Design épuré et optimisé forme C" },
+      { "@type": "PropertyValue", "name": "Compatibilité", "value": "Compatible avec les mousquetons" },
+      { "@type": "PropertyValue", "name": "Fichiers", "value": "Fichiers gratuits disponibles" }
     ]
   },
   "sections": [

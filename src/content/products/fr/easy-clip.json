@@ -34,13 +34,13 @@
       }
     },
     "image": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
-    "features": [
-      "Platine aimantée haute résistance",
-      "Compatible différents chercheurs astronomiques",
-      "Changement rapide entre télescopes",
-      "Pile CR2032 déportée",
-      "Installation facile",
-      "Matériau PETG résistant"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Aimantation", "value": "Platine aimantée haute résistance" },
+      { "@type": "PropertyValue", "name": "Compatibilité", "value": "Compatible différents chercheurs astronomiques" },
+      { "@type": "PropertyValue", "name": "Usage", "value": "Changement rapide entre télescopes" },
+      { "@type": "PropertyValue", "name": "Alimentation", "value": "Pile CR2032 déportée" },
+      { "@type": "PropertyValue", "name": "Installation", "value": "Installation facile" },
+      { "@type": "PropertyValue", "name": "Matériau", "value": "Matériau PETG résistant" }
     ]
   },
   "sections": [

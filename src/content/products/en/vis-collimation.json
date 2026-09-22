@@ -51,11 +51,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
-    "features": [
-      "Ergonomic knobs",
-      "Compatible with Newton telescopes",
-      "Set of 3 M4 45mm screws",
-      "Tool-free adjustment"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Grip", "value": "Ergonomic knobs" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Compatible with Newton telescopes" },
+      { "@type": "PropertyValue", "name": "Contents", "value": "Set of 3 M4 45mm screws" },
+      { "@type": "PropertyValue", "name": "Adjustment", "value": "Tool-free adjustment" }
     ]
   },
   "sections": [

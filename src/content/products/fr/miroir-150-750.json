@@ -53,12 +53,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/miroir150/150-750.png",
-    "features": [
-      "Miroir primaire parabolique 150mm f/5",
-      "Miroir secondaire 35mm",
-      "Primaire testé à l'interféromètre",
-      "Masque de chanfrein pour primaire",
-      "Compatible Smallest"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Miroir primaire", "value": "Parabolique 150mm f/5" },
+      { "@type": "PropertyValue", "name": "Miroir secondaire", "value": "35mm" },
+      { "@type": "PropertyValue", "name": "Contrôle qualité", "value": "Primaire testé à l'interféromètre" },
+      { "@type": "PropertyValue", "name": "Accessoire", "value": "Masque de chanfrein pour primaire" },
+      { "@type": "PropertyValue", "name": "Compatibilité", "value": "Compatible Smallest" }
     ]
   },
   "sections": [

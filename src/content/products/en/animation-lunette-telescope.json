@@ -1,0 +1,223 @@
+{
+  "shopImage": { "src": "/assets/CDL_6.jpeg", "alt": "\"How does a telescope work?\" workshop at the Cité de l'espace", "objectPosition": "center 50%" },
+  "seoTitle": "Workshop: how does a refractor telescope work? | La 3ème dimension",
+  "seoDescription": "Turnkey science workshop for events, schools and libraries: participants assemble a real refractor telescope and understand the role of every lens. On quote, across France.",
+  "seoKeywords": "astronomy workshop, telescope workshop, school astronomy activity, science outreach optics, build your own telescope workshop, astronomy event activity, science mediation toulouse",
+  "ogImage": "https://la3emedim.fr/assets/CDL_6.jpeg",
+  "price": "On quote",
+  "priceNote": "Free quote, tailored to your event",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Workshop \"How does a refractor telescope work?\"",
+    "description": "Science outreach workshop about optics: participants assemble a refractor telescope step by step and discover the role of each lens in forming the image. For events, festivals, schools, libraries and companies.",
+    "provider": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr",
+      "email": "la3emedim@gmail.com"
+    },
+    "serviceType": "Science outreach workshop",
+    "areaServed": "France",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "General public, ages 6 and up"
+    },
+    "image": "https://la3emedim.fr/assets/CDL_6.jpeg",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "description": "On quote, depending on duration, number of participants and location"
+      }
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "How does a refractor telescope work?",
+        "tagline": "A workshop where you understand optics by building it with your own hands",
+        "description": "Rather than explaining optics on a blackboard, we let people assemble it. Module after module — objective, baffle, tube, focuser, star diagonal, eyepiece — each participant builds a real refractor telescope and discovers, live, what every part is for and how the image is formed.<br><br>A workshop we have been running for years at public events, notably at the <strong>Cité de l'espace</strong> for the Night of the Stars, at festivals and in schools.",
+        "features": [
+          { "icon": "moon-stars", "text": "General public, ages 6+" },
+          { "icon": "cube-3d", "text": "Real telescopes, not mock-ups" },
+          { "icon": "strategy", "text": "Drop-in or scheduled sessions" },
+          { "icon": "rocket-launch", "text": "Turnkey, we bring everything" }
+        ],
+        "primaryCta": { "text": "Request a free quote", "href": "mailto:la3emedim@gmail.com?subject=Quote request - Telescope workshop" },
+        "heroImage": {
+          "src": "/assets/CDL_6.jpeg",
+          "alt": "Telescope assembly workshop at the Cité de l'espace"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-deroule",
+      "data": {
+        "title": "How the workshop runs",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "1. The starting question",
+            "description": "How can a simple lens bring the Moon closer? We start from what participants actually see, with no prerequisites and no technical jargon."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "2. Module-by-module assembly",
+            "description": "Each module only fits one way: getting it wrong is impossible. With every part added, we look at how the image changes."
+          },
+          {
+            "icon": "strategy",
+            "title": "3. Understanding",
+            "description": "Objective, baffle, focal length, eyepiece, star diagonal: the role of each element becomes obvious once you have held it in your hands."
+          },
+          {
+            "icon": "moon-stars",
+            "title": "4. Observation",
+            "description": "We point the assembled telescope: the Moon and planets in the evening, a distant target or the Sun (with a proper filter) during the day."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "The workshop at the Cité de l'espace — Night of the Stars 2026",
+        "images": [
+          { "src": "/assets/CDL_1.jpeg", "alt": "\"Build your own telescope\" workshop at the Night of the Stars", "caption": "\"Build your own telescope\" workshop on the Ariane Belvedere" },
+          { "src": "/assets/CDL_2.jpeg", "alt": "Participants assembling a refractor telescope", "caption": "Participants build their telescope step by step" },
+          { "src": "/assets/CDL_3.jpeg", "alt": "Explaining the role of the lenses during the workshop", "caption": "Discovering what each lens is for" },
+          { "src": "/assets/CDL_4.jpeg", "alt": "Astronomy workshop for all audiences at the Cité de l'espace", "caption": "A workshop accessible from age 6" },
+          { "src": "/assets/CDL_5.jpeg", "alt": "Family optics workshop at the Night of the Stars", "caption": "A workshop families do together" },
+          { "src": "/assets/CDL_6.jpeg", "alt": "La 3ème Dimension stand at the Cité de l'espace", "caption": "The La 3ème Dimension stand during the evening" },
+          { "src": "/assets/CDL_7.jpeg", "alt": "Assembling a refractor telescope during the workshop", "caption": "Every module only fits one way" },
+          { "src": "/assets/CDL_8.jpeg", "alt": "Observing with the assembled telescope", "caption": "First observation with the finished instrument" },
+          { "src": "/assets/CDL_9.jpeg", "alt": "Night of the Stars 2026 at the Cité de l'espace", "caption": "Night of the Stars 2026, Cité de l'espace, Toulouse" }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-infos",
+      "data": {
+        "title": "Practical information",
+        "specGroups": [
+          {
+            "title": "Format",
+            "specs": {
+              "Audience": "General public, recommended from age 6",
+              "Duration": "From 15 min per participant to a full evening",
+              "Setup": "Drop-in and continuous, or guided sessions",
+              "Participants": "From a handful to several hundred over an evening",
+              "Language": "French or English"
+            }
+          },
+          {
+            "title": "What we bring",
+            "specs": {
+              "Instruments": "Complete telescopes to assemble and disassemble",
+              "Staff": "One or more facilitators depending on attendance",
+              "Equipment": "Supports, signage and workshop material",
+              "Setup": "Stand set-up and take-down included"
+            }
+          },
+          {
+            "title": "Venues and contexts",
+            "specs": {
+              "Events": "Night of the Stars, festivals, science fairs",
+              "Schools": "Primary, middle and high schools, field trips",
+              "Culture": "Libraries, museums, planetariums, astronomy clubs",
+              "Companies": "Seminars, family days, team building",
+              "Area": "Toulouse and Occitanie first, anywhere in France on quote"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Workshop on quote",
+        "price": "On quote",
+        "priceNote": "The price depends on duration, number of participants and location",
+        "included": [
+          "Preparing the workshop with you beforehand",
+          "Facilitator(s) for the whole duration of the event",
+          "Complete refractor telescopes provided",
+          "Workshop material and stand set-up",
+          "Content adapted to your audience",
+          "Travel and logistics"
+        ],
+        "ctaText": "Request a free quote",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Quote request - Telescope workshop",
+        "afterCtaNote": "Just tell us the date, the venue, the expected audience and the duration you have in mind, and we will come back to you with a tailored proposal.",
+        "optionsTitle": "Options",
+        "options": [
+          {
+            "title": "Sky observation",
+            "description": "Add an observing session with our instruments, depending on weather and the time of the event."
+          },
+          {
+            "title": "Solar observation",
+            "description": "Daytime session with a proper solar filter to observe the Sun safely."
+          },
+          {
+            "title": "School session",
+            "description": "Format adapted to the curriculum and to class length, with several groups over the day."
+          },
+          {
+            "title": "Kit left on site",
+            "description": "Option to keep one or more Lumi telescopes so the activity lives on after we leave."
+          }
+        ]
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do participants need any astronomy background?",
+      "answer": "None at all. The workshop is designed for complete beginners: you discover how a telescope works by building it, with no technical vocabulary required."
+    },
+    {
+      "question": "What age is it for?",
+      "answer": "Recommended <strong>from age 6</strong>. Younger children assemble with help from an adult or the facilitator, and adults are often just as captivated as the kids."
+    },
+    {
+      "question": "How many people can you host?",
+      "answer": "It depends on the format. Running drop-in and continuous, we welcome several hundred people over an evening, as at the Cité de l'espace. In a school setting, we work class group by class group."
+    },
+    {
+      "question": "Do participants keep the telescope?",
+      "answer": "By default no: telescopes are assembled and then taken apart for the next participant. We can arrange <a href=\"/en/product/lumi\">Lumi</a> kits to be given or sold on site — just mention it when asking for a quote."
+    },
+    {
+      "question": "Do you travel across France?",
+      "answer": "Yes. We are based in Toulouse, so Occitanie is the easiest to arrange, but we travel anywhere in France — travel is then included in the quote."
+    },
+    {
+      "question": "What happens if the weather is bad?",
+      "answer": "The assembly workshop works indoors as well as outdoors and does not depend on the sky. Only the observing option depends on the weather."
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "deroule", "label": "How it runs" },
+    { "id": "gallery", "label": "Gallery" },
+    { "id": "infos", "label": "Practical info" },
+    { "id": "pricing", "label": "Quote" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "services",
+  "draft": false
+}

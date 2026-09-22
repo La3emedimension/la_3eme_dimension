@@ -51,11 +51,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/visdecollim/visdecollim0.jpeg",
-    "features": [
-      "Molette ergonomique",
-      "Compatible télescopes Newton",
-      "Jeu de 3 vis M4 45mm",
-      "Réglage sans outil"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Préhension", "value": "Molette ergonomique" },
+      { "@type": "PropertyValue", "name": "Compatibilité", "value": "Compatible télescopes Newton" },
+      { "@type": "PropertyValue", "name": "Contenu", "value": "Jeu de 3 vis M4 45mm" },
+      { "@type": "PropertyValue", "name": "Réglage", "value": "Réglage sans outil" }
     ]
   },
   "sections": [

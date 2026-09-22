@@ -53,12 +53,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/miroir150/150-750.png",
-    "features": [
-      "150mm f/5 parabolic primary mirror",
-      "35mm secondary mirror",
-      "Primary tested with interferometer",
-      "Bevel mask for primary",
-      "Smallest compatible"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Primary mirror", "value": "150mm f/5 parabolic" },
+      { "@type": "PropertyValue", "name": "Secondary mirror", "value": "35mm" },
+      { "@type": "PropertyValue", "name": "Quality control", "value": "Primary tested with interferometer" },
+      { "@type": "PropertyValue", "name": "Accessory", "value": "Bevel mask for primary" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Smallest compatible" }
     ]
   },
   "sections": [

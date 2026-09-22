@@ -40,13 +40,13 @@
       }
     },
     "image": "https://la3emedim.fr/assets/smallest-fullsize-02.jpg",
-    "features": [
-      "Newton 150/750 telescope",
-      "Portable and compact",
-      "Air transportable",
-      "3D printed structure",
-      "Compatible with standard optics",
-      "Weight: 4kg with optics"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Type", "value": "Newton 150/750 telescope" },
+      { "@type": "PropertyValue", "name": "Portability", "value": "Portable and compact" },
+      { "@type": "PropertyValue", "name": "Transport", "value": "Air transportable" },
+      { "@type": "PropertyValue", "name": "Build", "value": "3D printed structure" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Compatible with standard optics" },
+      { "@type": "PropertyValue", "name": "Weight", "value": "4kg with optics" }
     ]
   },
   "sections": [

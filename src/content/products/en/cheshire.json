@@ -34,13 +34,13 @@
       }
     },
     "image": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
-    "features": [
-      "High precision 3D printing",
-      "Interchangeable reticles via screw system",
-      "Newton telescope compatible",
-      "Delivered with 3 standard reticles",
-      "Ergonomic design",
-      "Resistant PETG material"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Build", "value": "High precision 3D printing" },
+      { "@type": "PropertyValue", "name": "Reticles", "value": "Interchangeable reticles via screw system" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Newton telescope compatible" },
+      { "@type": "PropertyValue", "name": "Contents", "value": "Delivered with 3 standard reticles" },
+      { "@type": "PropertyValue", "name": "Design", "value": "Ergonomic design" },
+      { "@type": "PropertyValue", "name": "Material", "value": "Resistant PETG material" }
     ]
   },
   "sections": [

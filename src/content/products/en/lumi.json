@@ -34,12 +34,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/ert_montauban7.jpg",
-    "features": [
-      "Modular educational design",
-      "Intuitive assembly",
-      "1.25\" focuser",
-      "Moon and bright objects observation",
-      "Perfect for learning"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Design", "value": "Modular educational design" },
+      { "@type": "PropertyValue", "name": "Assembly", "value": "Intuitive assembly" },
+      { "@type": "PropertyValue", "name": "Focuser", "value": "1.25\" focuser" },
+      { "@type": "PropertyValue", "name": "Observations", "value": "Moon and bright objects observation" },
+      { "@type": "PropertyValue", "name": "Suitability", "value": "Perfect for learning" }
     ]
   },
   "sections": [

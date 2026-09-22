@@ -33,11 +33,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/bhh-02.jpg",
-    "features": [
-      "Supports up to 10kg",
-      "Clean and optimized C-shaped design",
-      "Compatible with carabiners",
-      "Free files available"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Max load", "value": "Supports up to 10kg" },
+      { "@type": "PropertyValue", "name": "Design", "value": "Clean and optimized C-shaped design" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Compatible with carabiners" },
+      { "@type": "PropertyValue", "name": "Files", "value": "Free files available" }
     ]
   },
   "sections": [

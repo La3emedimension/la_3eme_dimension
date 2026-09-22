@@ -1,0 +1,223 @@
+{
+  "shopImage": { "src": "/assets/CDL_6.jpeg", "alt": "Animation « Comment fonctionne une lunette astronomique » à la Cité de l'espace", "objectPosition": "center 50%" },
+  "seoTitle": "Animation : comment fonctionne une lunette astronomique ou un télescope | La 3ème dimension",
+  "seoDescription": "Animation clé en main pour événements, écoles et médiathèques : le public assemble une vraie lunette astronomique et comprend le rôle de chaque lentille. Sur devis, partout en France.",
+  "seoKeywords": "animation astronomie, atelier télescope, animation scolaire astronomie, médiation scientifique optique, atelier assemble ton télescope, animation événement astronomie, animateur astronomie toulouse, atelier lunette astronomique école",
+  "ogImage": "https://la3emedim.fr/assets/CDL_6.jpeg",
+  "price": "Sur devis",
+  "priceNote": "Devis gratuit, adapté à votre événement",
+  "emailContact": "la3emedim@gmail.com",
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Animation « Comment fonctionne une lunette astronomique ou un télescope »",
+    "description": "Animation de médiation scientifique autour de l'optique : les participants assemblent pas à pas une lunette astronomique et découvrent le rôle de chaque lentille dans la formation de l'image. Pour événements, festivals, écoles, médiathèques et entreprises.",
+    "provider": {
+      "@type": "Organization",
+      "name": "La 3ème dimension",
+      "url": "https://la3emedim.fr",
+      "email": "la3emedim@gmail.com"
+    },
+    "serviceType": "Animation et médiation scientifique",
+    "areaServed": "France",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Tout public, à partir de 6 ans"
+    },
+    "image": "https://la3emedim.fr/assets/CDL_6.jpeg",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "description": "Sur devis, selon la durée, le nombre de participants et le lieu"
+      }
+    }
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "id": "section-hero",
+      "data": {
+        "title": "Comment fonctionne une lunette astronomique ou un télescope ?",
+        "tagline": "Une animation où l'on comprend l'optique en la montant de ses mains",
+        "description": "Plutôt que d'expliquer l'optique au tableau, nous la faisons assembler. Module après module — objectif, baffle, tube, porte-oculaire, renvoi coudé, oculaire — chaque participant construit une vraie lunette astronomique et découvre, en direct, à quoi sert chaque pièce et comment naît l'image.<br><br>Une animation menée depuis plusieurs années sur des événements grand public, notamment à la <strong>Cité de l'espace</strong> pour la Nuit des Étoiles, en festivals et en milieu scolaire.",
+        "features": [
+          { "icon": "moon-stars", "text": "Tout public, dès 6 ans" },
+          { "icon": "cube-3d", "text": "Vraies lunettes, pas des maquettes" },
+          { "icon": "strategy", "text": "En continu ou en sessions" },
+          { "icon": "rocket-launch", "text": "Clé en main, nous apportons tout" }
+        ],
+        "primaryCta": { "text": "Demander un devis gratuit", "href": "mailto:la3emedim@gmail.com?subject=Demande de devis - Animation lunette astronomique" },
+        "heroImage": {
+          "src": "/assets/CDL_6.jpeg",
+          "alt": "Animation d'assemblage de lunette astronomique à la Cité de l'espace"
+        }
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-deroule",
+      "data": {
+        "title": "Le déroulé de l'animation",
+        "features": [
+          {
+            "icon": "eye",
+            "title": "1. La question de départ",
+            "description": "Comment une simple lentille peut-elle rapprocher la Lune ? On part de ce que voient les participants, sans prérequis ni vocabulaire technique."
+          },
+          {
+            "icon": "cube-3d",
+            "title": "2. L'assemblage module par module",
+            "description": "Chaque module ne se monte que dans un sens : impossible de se tromper. À chaque pièce ajoutée, on observe ce que cela change dans l'image."
+          },
+          {
+            "icon": "strategy",
+            "title": "3. La compréhension",
+            "description": "Objectif, baffle, longueur focale, oculaire, renvoi coudé : le rôle de chaque élément devient évident une fois qu'on l'a eu entre les mains."
+          },
+          {
+            "icon": "moon-stars",
+            "title": "4. L'observation",
+            "description": "On pointe la lunette assemblée : la Lune et les planètes en soirée, un objet lointain ou le Soleil (avec filtre adapté) en journée."
+          }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "id": "section-gallery",
+      "data": {
+        "title": "L'animation à la Cité de l'espace — Nuit des Étoiles 2026",
+        "images": [
+          { "src": "/assets/CDL_1.jpeg", "alt": "Atelier « Assemble ton télescope » à la Nuit des Étoiles", "caption": "Atelier « Assemble ton télescope » sur le Belvédère d'Ariane" },
+          { "src": "/assets/CDL_2.jpeg", "alt": "Participants assemblant une lunette astronomique", "caption": "Les participants montent leur lunette pas à pas" },
+          { "src": "/assets/CDL_3.jpeg", "alt": "Explication du rôle des lentilles pendant l'animation", "caption": "Découverte du rôle de chaque lentille" },
+          { "src": "/assets/CDL_4.jpeg", "alt": "Animation astronomie tout public à la Cité de l'espace", "caption": "Une animation accessible dès 6 ans" },
+          { "src": "/assets/CDL_5.jpeg", "alt": "Atelier d'optique en famille à la Nuit des Étoiles", "caption": "Un atelier qui se fait en famille" },
+          { "src": "/assets/CDL_6.jpeg", "alt": "Stand La 3ème Dimension à la Cité de l'espace", "caption": "Le stand La 3ème Dimension pendant la soirée" },
+          { "src": "/assets/CDL_7.jpeg", "alt": "Assemblage d'une lunette astronomique pendant l'animation", "caption": "Chaque module ne se monte que dans un sens" },
+          { "src": "/assets/CDL_8.jpeg", "alt": "Observation avec la lunette assemblée", "caption": "Première observation avec l'instrument monté" },
+          { "src": "/assets/CDL_9.jpeg", "alt": "Nuit des Étoiles 2026 à la Cité de l'espace", "caption": "Nuit des Étoiles 2026, Cité de l'espace, Toulouse" }
+        ],
+        "background": "light"
+      }
+    },
+    {
+      "type": "specs",
+      "id": "section-infos",
+      "data": {
+        "title": "Infos pratiques",
+        "specGroups": [
+          {
+            "title": "Format",
+            "specs": {
+              "Public": "Tout public, conseillé à partir de 6 ans",
+              "Durée": "De 15 min par participant à une soirée complète",
+              "Modalité": "En continu et en accès libre, ou en sessions encadrées",
+              "Participants": "De quelques personnes à plusieurs centaines sur une soirée",
+              "Langue": "Français ou anglais"
+            }
+          },
+          {
+            "title": "Ce que nous apportons",
+            "specs": {
+              "Instruments": "Lunettes complètes à assembler et à désassembler",
+              "Animation": "Un ou plusieurs animateurs selon l'affluence",
+              "Matériel": "Supports, signalétique et matériel d'atelier",
+              "Installation": "Montage et démontage du stand inclus"
+            }
+          },
+          {
+            "title": "Lieux et contextes",
+            "specs": {
+              "Événements": "Nuit des Étoiles, festivals, fêtes de la science",
+              "Scolaire": "Écoles, collèges, lycées, classes de découverte",
+              "Culture": "Médiathèques, musées, planétariums, clubs d'astronomie",
+              "Entreprise": "Séminaires, journées familles, team building",
+              "Zone": "Toulouse et Occitanie en priorité, toute la France sur devis"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "pricing",
+      "id": "section-pricing",
+      "data": {
+        "title": "Animation sur devis",
+        "price": "Sur devis",
+        "priceNote": "Le tarif dépend de la durée, du nombre de participants et du lieu",
+        "included": [
+          "Préparation de l'animation avec vous en amont",
+          "Animateur(s) sur toute la durée de l'événement",
+          "Lunettes astronomiques complètes fournies",
+          "Matériel d'atelier et installation du stand",
+          "Adaptation du discours au public visé",
+          "Déplacement et logistique"
+        ],
+        "ctaText": "Demander un devis gratuit",
+        "ctaHref": "mailto:la3emedim@gmail.com?subject=Demande de devis - Animation lunette astronomique",
+        "afterCtaNote": "Dites-nous simplement la date, le lieu, le public attendu et la durée souhaitée : nous revenons vers vous avec une proposition adaptée.",
+        "optionsTitle": "Options",
+        "options": [
+          {
+            "title": "Observation du ciel",
+            "description": "Ajout d'une session d'observation avec nos instruments, selon la météo et l'horaire de l'événement."
+          },
+          {
+            "title": "Observation solaire",
+            "description": "Animation de jour avec filtre solaire adapté pour observer le Soleil en toute sécurité."
+          },
+          {
+            "title": "Intervention scolaire",
+            "description": "Format adapté au programme et à la durée d'une séance de classe, avec plusieurs groupes sur la journée."
+          },
+          {
+            "title": "Kit à laisser sur place",
+            "description": "Possibilité de repartir avec une ou plusieurs lunettes Lumi pour prolonger l'animation après notre départ."
+          }
+        ]
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Faut-il des connaissances en astronomie pour participer ?",
+      "answer": "Non, aucune. L'animation est conçue pour des débutants complets : on découvre le fonctionnement d'une lunette en la montant, sans vocabulaire technique préalable."
+    },
+    {
+      "question": "À partir de quel âge ?",
+      "answer": "Conseillé <strong>à partir de 6 ans</strong>. Les plus jeunes assemblent avec l'aide d'un adulte ou de l'animateur, et les adultes sont souvent aussi captivés que les enfants."
+    },
+    {
+      "question": "Combien de personnes peut-on accueillir ?",
+      "answer": "Cela dépend du format. En accès libre et en continu, nous accueillons plusieurs centaines de personnes sur une soirée, comme à la Cité de l'espace. En format scolaire, nous travaillons par groupes classe."
+    },
+    {
+      "question": "Est-ce que les participants repartent avec la lunette ?",
+      "answer": "Par défaut, non : les lunettes sont assemblées puis désassemblées pour le participant suivant. Il est possible de prévoir des kits <a href=\"/product/lumi\">Lumi</a> à offrir ou à vendre sur place, à préciser dans le devis."
+    },
+    {
+      "question": "Intervenez-vous partout en France ?",
+      "answer": "Oui. Nous sommes basés à Toulouse, donc l'Occitanie est la plus simple à organiser, mais nous nous déplaçons dans toute la France — le déplacement est alors intégré au devis."
+    },
+    {
+      "question": "Que se passe-t-il si la météo est mauvaise ?",
+      "answer": "L'animation d'assemblage fonctionne en intérieur comme en extérieur et ne dépend pas du ciel. Seule l'option observation est soumise à la météo."
+    }
+  ],
+  "navigationItems": [
+    { "id": "hero", "label": "Présentation" },
+    { "id": "deroule", "label": "Déroulé" },
+    { "id": "gallery", "label": "Galerie" },
+    { "id": "infos", "label": "Infos pratiques" },
+    { "id": "pricing", "label": "Devis" }
+  ],
+  "showContactCTA": true,
+  "showNavigation": true,
+  "showLightbox": true,
+  "category": "services",
+  "draft": false
+}

@@ -30,11 +30,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/seestars50.png",
-    "features": [
-      "Capuchon de protection ",
-      "Pare-lumière",
-      "Masque de Bathinov",
-      "masque type Newton et JWST"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Protection", "value": "Capuchon de protection" },
+      { "@type": "PropertyValue", "name": "Baffle", "value": "Pare-lumière" },
+      { "@type": "PropertyValue", "name": "Mise au point", "value": "Masque de Bathinov" },
+      { "@type": "PropertyValue", "name": "Aigrettes", "value": "Masque type Newton et JWST" }
     ]
   },
   "sections": [

@@ -30,11 +30,11 @@
       }
     },
     "image": "https://la3emedim.fr/assets/seestars50.png",
-    "features": [
-      "Protective cap",
-      "Light shield",
-      "Bahtinov mask",
-      "Newton and JWST style masks"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Protection", "value": "Protective cap" },
+      { "@type": "PropertyValue", "name": "Baffle", "value": "Light shield" },
+      { "@type": "PropertyValue", "name": "Focusing", "value": "Bahtinov mask" },
+      { "@type": "PropertyValue", "name": "Diffraction spikes", "value": "Newton and JWST style masks" }
     ]
   },
   "sections": [

@@ -34,13 +34,13 @@
       }
     },
     "image": "https://la3emedim.fr/assets/Cheshire/chesh8.png",
-    "features": [
-      "Impression 3D haute précision",
-      "Mires interchangeables par système de vis",
-      "Compatible télescopes Newton",
-      "Livré avec 3 mires standard",
-      "Design ergonomique",
-      "Matériau résistant PETG"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Fabrication", "value": "Impression 3D haute précision" },
+      { "@type": "PropertyValue", "name": "Mires", "value": "Mires interchangeables par système de vis" },
+      { "@type": "PropertyValue", "name": "Compatibilité", "value": "Compatible télescopes Newton" },
+      { "@type": "PropertyValue", "name": "Contenu", "value": "Livré avec 3 mires standard" },
+      { "@type": "PropertyValue", "name": "Design", "value": "Design ergonomique" },
+      { "@type": "PropertyValue", "name": "Matériau", "value": "Matériau résistant PETG" }
     ]
   },
   "sections": [

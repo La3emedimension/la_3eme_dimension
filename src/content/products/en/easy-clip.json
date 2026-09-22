@@ -34,13 +34,13 @@
       }
     },
     "image": "https://la3emedim.fr/assets/easyclip/Easyclip7.jpeg",
-    "features": [
-      "High-strength magnetic mount",
-      "Compatible with different astronomical finders",
-      "Quick switching between telescopes",
-      "External CR2032 battery",
-      "Easy installation",
-      "Resistant PETG material"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Mount", "value": "High-strength magnetic mount" },
+      { "@type": "PropertyValue", "name": "Compatibility", "value": "Compatible with different astronomical finders" },
+      { "@type": "PropertyValue", "name": "Usage", "value": "Quick switching between telescopes" },
+      { "@type": "PropertyValue", "name": "Power", "value": "External CR2032 battery" },
+      { "@type": "PropertyValue", "name": "Installation", "value": "Easy installation" },
+      { "@type": "PropertyValue", "name": "Material", "value": "Resistant PETG material" }
     ]
   },
   "sections": [

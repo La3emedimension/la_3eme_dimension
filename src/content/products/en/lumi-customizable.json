@@ -33,12 +33,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/ertcolor1.jpeg",
-    "features": [
-      "Customizable print colors",
-      "Assembly without instructions",
-      "Made in France, 3D printed",
-      "Moon, planets and star clusters observation",
-      "Complete ready-to-assemble kit"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Customization", "value": "Customizable print colors" },
+      { "@type": "PropertyValue", "name": "Assembly", "value": "Assembly without instructions" },
+      { "@type": "PropertyValue", "name": "Build", "value": "Made in France, 3D printed" },
+      { "@type": "PropertyValue", "name": "Observations", "value": "Moon, planets and star clusters observation" },
+      { "@type": "PropertyValue", "name": "Kit", "value": "Complete ready-to-assemble kit" }
     ]
   },
   "sections": [

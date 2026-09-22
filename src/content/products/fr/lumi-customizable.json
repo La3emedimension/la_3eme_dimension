@@ -33,12 +33,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/ertcolor1.jpeg",
-    "features": [
-      "Couleurs d'impression personnalisables",
-      "Assemblage sans notice",
-      "Fabriquée en France, impression 3D",
-      "Observation Lune, planètes et amas d'étoiles",
-      "Kit complet prêt à assembler"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Personnalisation", "value": "Couleurs d'impression personnalisables" },
+      { "@type": "PropertyValue", "name": "Assemblage", "value": "Assemblage sans notice" },
+      { "@type": "PropertyValue", "name": "Fabrication", "value": "Fabriquée en France, impression 3D" },
+      { "@type": "PropertyValue", "name": "Observations", "value": "Lune, planètes et amas d'étoiles" },
+      { "@type": "PropertyValue", "name": "Kit", "value": "Kit complet prêt à assembler" }
     ]
   },
   "sections": [

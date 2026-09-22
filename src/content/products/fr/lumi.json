@@ -34,12 +34,12 @@
       }
     },
     "image": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
-    "features": [
-      "Assemblage sans notice",
-      "Comprendre l'optique en la montant",
-      "Fabriquée en France, impression 3D",
-      "Observation Lune, planètes et amas d'étoiles",
-      "Kit complet prêt à assembler"
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Assemblage", "value": "Sans notice" },
+      { "@type": "PropertyValue", "name": "Pédagogie", "value": "Comprendre l'optique en la montant" },
+      { "@type": "PropertyValue", "name": "Fabrication", "value": "Fabriquée en France, impression 3D" },
+      { "@type": "PropertyValue", "name": "Observations", "value": "Lune, planètes et amas d'étoiles" },
+      { "@type": "PropertyValue", "name": "Kit", "value": "Kit complet prêt à assembler" }
     ]
   },
   "sections": [
