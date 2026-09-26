@@ -1,7 +1,7 @@
 ---
 title: "La 3ème Dimension au Salon Made in France 2026 (MIF Expo, Paris)"
 publishDate: 2026-07-20
-img: "/assets/mif-expo-2026-lumi.jpg"
+img: "/assets/ert_montauban1.jpeg"
 img_alt: "Enfant observant à travers la lunette astronomique Lumi"
 description: "Retrouvez La 3ème Dimension au MIF Expo, le Salon Made in France, du 12 au 15 novembre 2026 à Paris, au sein du Village de l'Artisanat."
 seoTitle: "La 3ème Dimension au Salon Made in France 2026 (MIF Expo Paris) | La 3ème dimension"
@@ -26,6 +26,8 @@ La 3ème Dimension y représente l'artisanat occitan, catégorie Loisir, au titr
 - **Horaires :** jeudi 12, vendredi 13 et samedi 14 novembre de 10h à 19h, dimanche 15 novembre de 10h à 18h
 - **Lieu :** Paris, Porte de Versailles, Hall 7.2
 - **Tarif :** gratuit sur pré-inscription, 10€ sur place (remboursés au premier achat)
+
+👉 **[Prenez votre invitation gratuite ici](https://www.mifexpo.fr/espace-invitations/la-3eme-dimension-997256/)**
 
 ⚠️ N'achetez pas vos billets à un vendeur à la sauvette : ils seront refusés à l'entrée du salon.
 
