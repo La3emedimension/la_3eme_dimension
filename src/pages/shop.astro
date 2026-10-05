@@ -17,7 +17,7 @@ const filteredProducts = products.filter(({ data }) => {
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
-	const order = ['smallest', 'lumi', 'lumi-customizable', 'picco', 'sur-mesure'];
+	const order = ['lumi', 'picco', 'smallest', 'lumi-customizable', 'sur-mesure'];
 	const aIdx = order.indexOf(aSlug);
 	const bIdx = order.indexOf(bSlug);
 	if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
@@ -62,9 +62,9 @@ const shopStructuredData = {
 		<div class="shipping-notice-card" role="dialog" aria-modal="true" aria-labelledby="shipping-notice-title">
 			<button type="button" class="shipping-notice-close" aria-label="Fermer">&times;</button>
 			<p id="shipping-notice-title" class="shipping-notice-text">
-				⚠️ Compte tenu de la forte demande et de notre participation au Salon du Made in France, les délais de livraison peuvent être plus longs que prévu. Merci de votre compréhension !
+				🎄 Commandez avant le 1er décembre 2026 pour une livraison avant Noël.
 			</p>
-			<p class="shipping-notice-text">Vous voulez venir au Salon du MIF ?</p>
+			<p class="shipping-notice-text">Retrouvez-moi au Salon du Made in France du 12 au 15 novembre 2026 à Paris, Porte de Versailles : votre invitation est ici 👉</p>
 			<a href="https://www.mifexpo.fr/espace-invitations/la-3eme-dimension-997256" target="_blank" rel="noopener noreferrer" class="shipping-notice-cta">Prenez votre invitation</a>
 		</div>
 	</div>
@@ -819,7 +819,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		card.querySelector('a')?.href.includes('/smallest')
 	);
 	if (smallestCard) {
-		smallestCard.style.order = '-5';
+		smallestCard.style.order = '-3';
 	}
 
 	const ertCard = Array.from(productCards).find(card => {
@@ -827,21 +827,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		return href.includes('/lumi') && !href.includes('/lumi-customizable');
 	});
 	if (ertCard) {
-		ertCard.style.order = '-4';
+		ertCard.style.order = '-5';
 	}
 
 	const lumiCustomCard = Array.from(productCards).find(card =>
 		card.querySelector('a')?.href.includes('/lumi-customizable')
 	);
 	if (lumiCustomCard) {
-		lumiCustomCard.style.order = '-3';
+		lumiCustomCard.style.order = '-2';
 	}
 
 	const piccoCard = Array.from(productCards).find(card =>
 		card.querySelector('a')?.href.includes('/picco')
 	);
 	if (piccoCard) {
-		piccoCard.style.order = '-2';
+		piccoCard.style.order = '-4';
 	}
 
 	if (surMesureCard) {

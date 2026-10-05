@@ -167,6 +167,11 @@
         "title": "Galerie complète",
         "images": [
           {
+            "src": "/assets/Smallestmoon.JPG",
+            "alt": "Photo de la Lune prise à travers le Smallest",
+            "caption": "Image réalisée à l'iPhone 14 tenu à main levée devant un oculaire Explore Scientific 14 mm 82° de champ"
+          },
+          {
             "src": "/assets/smallest-03.jpg",
             "alt": "Smallest photo 3"
           },

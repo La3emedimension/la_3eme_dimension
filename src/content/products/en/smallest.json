@@ -167,6 +167,11 @@
         "title": "Complete gallery",
         "images": [
           {
+            "src": "/assets/Smallestmoon.JPG",
+            "alt": "Photo of the Moon taken through the Smallest",
+            "caption": "Image taken with an iPhone 14, handheld behind an Explore Scientific 14 mm 82° field of view eyepiece"
+          },
+          {
             "src": "/assets/smallest-03.jpg",
             "alt": "Smallest photo 3"
           },
