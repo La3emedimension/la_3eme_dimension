@@ -16,7 +16,7 @@ const filteredProducts = products.filter(({ data }) => {
 const allProducts = filteredProducts.sort((a, b) => {
 	const aSlug = getSlugWithoutLocale(a.id, locale);
 	const bSlug = getSlugWithoutLocale(b.id, locale);
-	const order = ['lumi', 'picco', 'smallest', 'lumi-customizable', 'sur-mesure'];
+	const order = ['lumi', 'picco', 'smallest', 'lumi-customizable', 'sur-mesure', 'animation-lunette-telescope', 'miroir-150-750', 'cheshire', 'oculaires'];
 	const aIdx = order.indexOf(aSlug);
 	const bIdx = order.indexOf(bSlug);
 	if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
