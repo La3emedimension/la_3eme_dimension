@@ -142,9 +142,11 @@ export async function initLumiScroll(section) {
   const target = new THREE.Vector3(0, meta.size[2] * 0.5 - 20, 0);
   const az = THREE.MathUtils.degToRad(38), el = THREE.MathUtils.degToRad(20);
   const frameSize = +(section.dataset.frame || 418);   // scene units kept in view on the shorter side (418 = original framing)
+  const frameWide = +(section.dataset.frameWide || frameSize);   // landscape screens (desktop) can use their own framing
   function placeCamera() {
+    const frame = camera.aspect > 1 ? frameWide : frameSize;
     const half = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * Math.min(camera.aspect, 1);
-    const dist = frameSize / 2 / half;
+    const dist = frame / 2 / half;
     camera.position.set(dist * Math.cos(el) * Math.sin(az), target.y + dist * Math.sin(el), dist * Math.cos(el) * Math.cos(az));
     camera.lookAt(target);
   }
@@ -179,6 +181,7 @@ export async function initLumiScroll(section) {
       renderer.render(scene, camera);
       section.style.setProperty('--lumi-progress', cur.toFixed(4));   // lets the CSS fade the intro text
       section.classList.toggle('is-scrolled', cur > 0.1);
+      section.classList.toggle('is-done', cur > 0.97);
       dirty = false;
     }
     requestAnimationFrame(frame);

@@ -11,7 +11,7 @@ interface Props {
 const { logo, logoAlt, tagline, cta, warning, canvasLabel } = Astro.props;
 ---
 
-<div class="lumi-scroll" data-model="/assets/3d/lumi/" data-spin-share="0.3" data-shadow="#000000" data-frame="290">
+<div class="lumi-scroll" data-model="/assets/3d/lumi/" data-spin-share="0.3" data-shadow="#000000" data-frame="290" data-frame-wide="340">
 	<div class="lumi-scroll__stage">
 		<div class="container lumi-scroll__content">
 			<img src={logo} alt={logoAlt} class="lumi-scroll__logo" width="1024" height="1024" loading="eager" />
@@ -28,6 +28,12 @@ const { logo, logoAlt, tagline, cta, warning, canvasLabel } = Astro.props;
 			{warning && <p class="lumi-scroll__warning">{warning}</p>}
 		</div>
 		<canvas role="img" aria-label={canvasLabel}></canvas>
+		<div class="lumi-scroll__indicator" aria-hidden="true">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 14L12 19L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M7 5L12 10L17 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
 	</div>
 </div>
 
@@ -144,6 +150,59 @@ const { logo, logoAlt, tagline, cta, warning, canvasLabel } = Astro.props;
 		opacity: 1;
 	}
 
+	/* same bubble as the homepage ScrollIndicator; hidden once the 360° turn is over */
+	.lumi-scroll__indicator {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		z-index: 1;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		box-shadow: var(--shadow-lg);
+		animation: lumi-bounce 2s infinite;
+		transition: opacity 0.3s ease;
+	}
+
+	.lumi-scroll__indicator svg {
+		opacity: 0.9;
+	}
+
+	.lumi-scroll:global(.is-done) .lumi-scroll__indicator {
+		opacity: 0;
+	}
+
+	@keyframes lumi-bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-8px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-4px);
+		}
+	}
+
+	@media (max-width: 50em) {
+		.lumi-scroll__indicator {
+			bottom: 1.5rem;
+			width: 3rem;
+			height: 3rem;
+		}
+
+		.lumi-scroll__indicator svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.lumi-scroll {
 			height: auto;
@@ -165,6 +224,10 @@ const { logo, logoAlt, tagline, cta, warning, canvasLabel } = Astro.props;
 
 		.lumi-scroll canvas {
 			transition: none;
+		}
+
+		.lumi-scroll__indicator {
+			display: none;
 		}
 	}
 </style>
