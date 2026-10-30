@@ -44,6 +44,19 @@
   },
   "sections": [
     {
+      "type": "custom",
+      "id": "section-lumi-scroll",
+      "data": {
+        "logo": "/assets/logolumi.png",
+        "logoAlt": "Logo Lumi",
+        "tagline": "Lumi, la lunette pédagogique à monter soi-même",
+        "cta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
+        "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique.",
+        "canvasLabel": "La lunette Lumi s'assemble pièce par pièce, puis fait un tour complet"
+      }
+    },
+
+    {
       "type": "hero",
       "id": "section-hero",
       "data": {

@@ -44,6 +44,19 @@
   },
   "sections": [
     {
+      "type": "custom",
+      "id": "section-lumi-scroll",
+      "data": {
+        "logo": "/assets/logolumi.png",
+        "logoAlt": "Lumi logo",
+        "tagline": "Lumi, the educational telescope you build yourself",
+        "cta": { "text": "Order (€219)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
+        "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope.",
+        "canvasLabel": "The Lumi telescope assembles piece by piece, then turns all the way around"
+      }
+    },
+
+    {
       "type": "hero",
       "id": "section-hero",
       "data": {

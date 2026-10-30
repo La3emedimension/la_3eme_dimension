@@ -127,6 +127,8 @@ html,
 body {
 	min-height: 100%;
 	overflow-x: hidden;
+	/* clip (not hidden) so body doesn't become a scroll container, which breaks position: sticky */
+	overflow-x: clip;
 	background-color: var(--gray-999);
 }
 

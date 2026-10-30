@@ -26,7 +26,7 @@ const noticeConfig = {
 	seoTitle: "Notice Lumi - Guide d'utilisation | La 3ème dimension",
 	seoDescription: "Notice d'utilisation complète de la lunette astronomique Lumi. Guide de montage, conseils d'observation et informations techniques.",
 	sections: [
-		...productConfig.sections.map(section => {
+		...productConfig.sections.filter(section => section.type === 'hero').map(section => {
 			if (section.type === 'hero') {
 				const { primaryCta, ...sectionData } = section.data;
 				return {
