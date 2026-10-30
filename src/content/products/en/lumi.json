@@ -44,19 +44,6 @@
   },
   "sections": [
     {
-      "type": "custom",
-      "id": "section-lumi-scroll",
-      "data": {
-        "logo": "/assets/logolumi.png",
-        "logoAlt": "Lumi logo",
-        "tagline": "Lumi, the educational telescope you build yourself",
-        "cta": { "text": "Order (€219)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope.",
-        "canvasLabel": "The Lumi telescope assembles piece by piece, then turns all the way around"
-      }
-    },
-
-    {
       "type": "hero",
       "id": "section-hero",
       "data": {
@@ -69,9 +56,18 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees" },
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi educational telescope for beginners, on a railing in Montauban" },
         "logoImage": "/assets/logolumi.png",
         "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope."
+      }
+    },
+
+    {
+      "type": "custom",
+      "id": "section-lumi-scroll",
+      "data": {
+        "tagline": "Lumi, the educational telescope you build yourself",
+        "canvasLabel": "The Lumi telescope assembles piece by piece, then turns all the way around"
       }
     },
     {

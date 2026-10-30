@@ -44,19 +44,6 @@
   },
   "sections": [
     {
-      "type": "custom",
-      "id": "section-lumi-scroll",
-      "data": {
-        "logo": "/assets/logolumi.png",
-        "logoAlt": "Logo Lumi",
-        "tagline": "Lumi, la lunette pédagogique à monter soi-même",
-        "cta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique.",
-        "canvasLabel": "La lunette Lumi s'assemble pièce par pièce, puis fait un tour complet"
-      }
-    },
-
-    {
       "type": "hero",
       "id": "section-hero",
       "data": {
@@ -70,9 +57,18 @@
           { "icon": "moon-stars", "text": "Idéal pour débutants" }
         ],
         "primaryCta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Télescope pédagogique Lumi pour débutant, en observation dans les Pyrénées" },
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Télescope pédagogique Lumi pour débutant, posé sur une rambarde à Montauban" },
         "logoImage": "/assets/logolumi.png",
         "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique."
+      }
+    },
+
+    {
+      "type": "custom",
+      "id": "section-lumi-scroll",
+      "data": {
+        "tagline": "Lumi, la lunette pédagogique à monter soi-même",
+        "canvasLabel": "La lunette Lumi s'assemble pièce par pièce, puis fait un tour complet"
       }
     },
 
