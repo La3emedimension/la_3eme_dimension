@@ -64,15 +64,6 @@
     },
 
     {
-      "type": "custom",
-      "id": "section-lumi-scroll",
-      "data": {
-        "tagline": "Lumi, la lunette pédagogique à monter soi-même",
-        "canvasLabel": "La lunette Lumi s'assemble pièce par pièce, puis fait un tour complet"
-      }
-    },
-
-    {
       "type": "video",
       "id": "section-video-2",
       "data": {
