@@ -94,12 +94,13 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 			<div class="hero-visual">
 				{heroAnimation && (
 					<img
-						src={heroAnimation.src}
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+						data-src={heroAnimation.src}
 						alt={heroAnimation.alt}
 						class="hero-animation"
 						width={heroAnimationDimensions?.width}
 						height={heroAnimationDimensions?.height}
-						loading="eager"
+						style={heroAnimationDimensions ? `aspect-ratio: ${heroAnimationDimensions.width} / ${heroAnimationDimensions.height}` : undefined}
 					/>
 				)}
 				<div class="hero-media">
@@ -416,3 +417,24 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 		}
 	}
 </style>
+
+<script>
+	// Start the animation only once it is on screen, so visitors who scroll down to it
+	// (on mobile it sits below the text) see it from the beginning instead of mid-pause.
+	for (const img of document.querySelectorAll<HTMLImageElement>('img.hero-animation[data-src]')) {
+		const start = () => {
+			img.src = img.dataset.src!;
+			img.removeAttribute('data-src');
+		};
+		if (!('IntersectionObserver' in window)) {
+			start();
+			continue;
+		}
+		const observer = new IntersectionObserver((entries) => {
+			if (!entries.some((entry) => entry.isIntersecting)) return;
+			observer.disconnect();
+			start();
+		}, { threshold: 0.3 });
+		observer.observe(img);
+	}
+</script>
