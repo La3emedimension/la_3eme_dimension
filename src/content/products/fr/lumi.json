@@ -58,6 +58,7 @@
         ],
         "primaryCta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
         "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Télescope pédagogique Lumi pour débutant, posé sur une rambarde à Montauban" },
+        "heroAnimation": { "src": "/assets/lumi-saut.webp", "alt": "Animation : la lunette Lumi fait des petits sauts et son capuchon s'envole" },
         "logoImage": "/assets/logolumi.png",
         "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique."
       }

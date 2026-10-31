@@ -10,6 +10,7 @@ interface Props {
 	primaryCta: {text: string, href: string};
 	secondaryCta?: {text: string, href: string};
 	heroImage?: {src: string, alt: string};
+	heroAnimation?: {src: string, alt: string};
 	imageOverlayText?: string;
 	afterCtaNote?: string;
 	warning?: string;
@@ -18,17 +19,18 @@ interface Props {
 	logoImage?: string;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true, logoImage } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, heroAnimation, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true, logoImage } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 
 const heroImageDimensions = await getImageDimensions(heroImage?.src);
+const heroAnimationDimensions = await getImageDimensions(heroAnimation?.src);
 const fabLogoDimensions = await getImageDimensions('/assets/fab_bloc_rvb.png');
 const logoImageDimensions = await getImageDimensions(logoImage);
 ---
 
-<section class="hero-product">
+<section class:list={['hero-product', { 'hero-product--animated': heroAnimation }]}>
 	<div class="hero-content">
 		<div class="hero-text">
 			{logoImage && (
@@ -89,28 +91,40 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 			)}
 		</div>
 		{heroImage && (
-			<div class="hero-media">
-				<div class="hero-image-wrapper">
+			<div class="hero-visual">
+				{heroAnimation && (
 					<img
-						src={heroImage.src}
-						alt={heroImage.alt}
-						class="hero-image"
-						width={heroImageDimensions?.width}
-						height={heroImageDimensions?.height}
+						src={heroAnimation.src}
+						alt={heroAnimation.alt}
+						class="hero-animation"
+						width={heroAnimationDimensions?.width}
+						height={heroAnimationDimensions?.height}
 						loading="eager"
-						fetchpriority="high"
 					/>
-					{showFabLogo && (
+				)}
+				<div class="hero-media">
+					<div class="hero-image-wrapper">
 						<img
-							src="/assets/fab_bloc_rvb.png"
-							alt="Logo FAB"
-							class="fab-logo"
-							width={fabLogoDimensions?.width}
-							height={fabLogoDimensions?.height}
-							loading="lazy"
+							src={heroImage.src}
+							alt={heroImage.alt}
+							class="hero-image"
+							width={heroImageDimensions?.width}
+							height={heroImageDimensions?.height}
+							loading="eager"
+							fetchpriority="high"
 						/>
-					)}
-					{imageOverlayText && <div class="image-overlay-badge">{imageOverlayText}</div>}
+						{showFabLogo && (
+							<img
+								src="/assets/fab_bloc_rvb.png"
+								alt="Logo FAB"
+								class="fab-logo"
+								width={fabLogoDimensions?.width}
+								height={fabLogoDimensions?.height}
+								loading="lazy"
+							/>
+						)}
+						{imageOverlayText && <div class="image-overlay-badge">{imageOverlayText}</div>}
+					</div>
 				</div>
 			</div>
 		)}
@@ -129,6 +143,20 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 		.hero-product {
 			min-height: 80vh;
 		}
+	}
+
+	/* with the animation the media column is tall: pin both columns to the top instead of centering */
+	.hero-product--animated {
+		padding-top: 1.5rem;
+	}
+
+	.hero-product--animated .hero-content {
+		align-items: start;
+	}
+
+	/* the logo file has a near-empty band at the top, pull it up to absorb it */
+	.hero-product--animated .product-logo {
+		margin-top: -3rem;
 	}
 
 	.hero-content {
@@ -307,6 +335,17 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 	.hero-image-wrapper {
 		position: relative;
 		width: 100%;
+	}
+
+	/* transparent looping animation; pulled down so the Lumi walks over the top of the photo */
+	.hero-animation {
+		display: block;
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: auto;
+		margin-bottom: calc(-8% + 25px);
+		pointer-events: none;
 	}
 
 	.hero-image {
