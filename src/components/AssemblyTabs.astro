@@ -1,0 +1,433 @@
+---
+// Notice de montage en deux onglets : la liste classique (AssemblyGuide)
+// ou une version animée qui présente une étape à la fois.
+import AssemblyGuide from './AssemblyGuide.astro';
+
+interface Image {
+  src: string;
+  alt: string;
+}
+
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+  image?: string;
+  alt?: string;
+  images?: Image[];
+  // Animation affichée dans l'onglet animé à la place des images :
+  // chemin sans extension, décliné en .webm (VP9 alpha) et .mov (HEVC alpha, Safari)
+  animation?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  steps: Step[];
+  nextLink?: { href: string; label: string };
+}
+
+const {
+  title,
+  subtitle = 'Instructions détaillées pour assembler votre lunette Lumi',
+  steps,
+  nextLink
+} = Astro.props;
+
+const media = (step: Step): Image[] =>
+  step.images ?? (step.image ? [{ src: step.image, alt: step.alt ?? '' }] : []);
+---
+
+<div class="assembly-tabs" data-mode="animated" data-assembly-tabs>
+  <div class="mode-switch" role="group" aria-label="Affichage de la notice">
+    <button type="button" data-mode-btn="animated" aria-pressed="true">Notice animée</button>
+    <button type="button" data-mode-btn="list" aria-pressed="false">Notice classique</button>
+  </div>
+
+  <div class="animated wrapper">
+    <header class="section-header stack gap-2">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </header>
+
+    <div class="player" data-player tabindex="-1">
+      <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+      <ol class="rail" aria-label="Étapes">
+        {steps.map((step, i) => (
+          <li>
+            <button type="button" data-goto={i} aria-label={`Étape ${step.number}`} aria-current={i === 0 ? 'step' : undefined}>
+              {step.number}
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      {steps.map((step, i) => {
+        const imgs = media(step);
+        return (
+          <article class="slide" data-slide hidden={i !== 0}>
+            {step.animation ? (
+              <div class="media animation">
+                <video
+                  data-anim
+                  data-webm={`${step.animation}.webm`}
+                  data-mov={`${step.animation}.mov`}
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label={step.alt}
+                ></video>
+                <button type="button" class="anim-toggle" data-anim-toggle aria-label="Mettre en pause">
+                  <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+                  <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
+                </button>
+              </div>
+            ) : (
+            <div class:list={['media', { multi: imgs.length > 1 }]}>
+              {imgs.map((img) => (
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  class="lightbox-trigger"
+                  data-src={img.src}
+                  data-alt={img.alt}
+                />
+              ))}
+            </div>
+            )}
+            <div class="text">
+              <p class="kicker">Étape {step.number} <span>sur {steps.length}</span></p>
+              {step.title && <h3>{step.title}</h3>}
+              <p class="desc" set:html={step.description}></p>
+            </div>
+          </article>
+        );
+      })}
+
+      <div class="controls">
+        <button type="button" class="ctrl" data-prev>← Précédent</button>
+        <span class="counter" data-counter aria-live="polite">1 / {steps.length}</span>
+        <button type="button" class="ctrl primary" data-next>Suivant →</button>
+        {nextLink && <a class="ctrl primary" href={nextLink.href} data-finish hidden>{nextLink.label} →</a>}
+      </div>
+    </div>
+  </div>
+
+  <div class="classic">
+    <AssemblyGuide title={title} steps={steps} />
+  </div>
+</div>
+
+<style>
+  /* On masque la liste mais pas sa Lightbox, utilisée aussi par l'onglet animé. */
+  .assembly-tabs[data-mode='list'] .animated { display: none; }
+  .assembly-tabs[data-mode='animated'] .classic :global(.assembly-guide) { display: none; }
+
+  /* !important : la page Lumi force des couleurs globales sur les liens et boutons */
+  .mode-switch {
+    display: flex;
+    gap: 4px;
+    width: max-content;
+    margin: 3rem auto 0;
+    padding: 4px;
+    border-radius: 999px;
+    background: var(--gray-900);
+    border: 1px solid var(--gray-700);
+    position: relative;
+    z-index: 1;
+  }
+  .mode-switch button {
+    all: unset;
+    cursor: pointer;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px !important;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: transparent !important;
+    border: none !important;
+    color: var(--gray-300) !important;
+  }
+  .mode-switch button[aria-pressed='true'] {
+    background: var(--gray-0) !important;
+    color: var(--gray-999) !important;
+  }
+  .mode-switch button:focus-visible { outline: 2px solid var(--accent-regular); }
+
+  .animated { padding-block: 3rem 5rem; }
+  .section-header {
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto 2rem;
+    color: var(--gray-300);
+  }
+  .section-header h2 { font-size: var(--text-2xl); color: var(--gray-0); }
+
+  .player {
+    max-width: 64rem;
+    margin: 0 auto;
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .progress { height: 4px; background: var(--gray-700); }
+  .progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--gray-0);
+    transition: width 0.35s ease;
+  }
+
+  .rail {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .rail button {
+    all: unset;
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50% !important;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    background: transparent !important;
+    border: 1px solid var(--gray-600) !important;
+    color: var(--gray-300) !important;
+    transition: background 0.2s, color 0.2s;
+  }
+  .rail button.done { border-color: var(--gray-300) !important; color: var(--gray-0) !important; }
+  .rail button[aria-current='step'] {
+    background: var(--gray-0) !important;
+    border-color: var(--gray-0) !important;
+    color: var(--gray-999) !important;
+  }
+  .rail button:focus-visible { outline: 2px solid var(--accent-regular); outline-offset: 2px; }
+
+  .slide {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 2rem;
+    padding: 1.5rem;
+    align-items: start;
+    animation: slide-in 0.35s ease both;
+  }
+  .slide[hidden] { display: none; }
+  .slide.from-left { animation-name: slide-in-left; }
+  @keyframes slide-in { from { opacity: 0; transform: translateX(24px); } }
+  @keyframes slide-in-left { from { opacity: 0; transform: translateX(-24px); } }
+  @media (prefers-reduced-motion: reduce) { .slide { animation: none; } }
+
+  .media {
+    background: #fff;
+    border-radius: 1rem;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    padding: 0.75rem;
+    gap: 0.75rem;
+    overflow: hidden;
+  }
+  .media.multi { grid-auto-rows: minmax(0, 1fr); }
+  /* Les animations ont un fond transparent ; les schémas fixes gardent le fond blanc (légendes en noir) */
+  .media.animation { background: transparent; position: relative; padding: 0; }
+  .media video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .anim-toggle {
+    all: unset;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 50% !important;
+    background: var(--gray-0) !important;
+    border: none !important;
+    color: var(--gray-999) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+  .anim-toggle:focus-visible { outline: 2px solid var(--accent-regular); outline-offset: 2px; }
+  .anim-toggle svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+  .anim-toggle .icon-play,
+  .anim-toggle.paused .icon-pause { display: none; }
+  .anim-toggle.paused .icon-play { display: block; }
+  .media img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    cursor: zoom-in;
+  }
+
+  .text { color: var(--gray-200); line-height: 1.6; }
+  .kicker {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--gray-0);
+    margin-bottom: 0.75rem;
+  }
+  .kicker span { color: var(--gray-400); font-weight: 500; }
+  .text h3 { font-size: var(--text-xl); color: var(--gray-0); margin-bottom: 0.75rem; }
+  .desc { font-size: var(--text-lg); }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  .ctrl {
+    all: unset;
+    cursor: pointer;
+    padding: 0.65rem 1.25rem;
+    border-radius: 999px !important;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    background: transparent !important;
+    border: 1px solid var(--gray-600) !important;
+    color: var(--gray-0) !important;
+  }
+  .ctrl.primary {
+    background: var(--gray-0) !important;
+    border-color: var(--gray-0) !important;
+    color: var(--gray-999) !important;
+  }
+  .ctrl[disabled] { opacity: 0.35; cursor: default; }
+  .ctrl[hidden] { display: none; }
+  .ctrl:focus-visible { outline: 2px solid var(--accent-regular); outline-offset: 2px; }
+  .counter { color: var(--gray-400); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 760px) {
+    .slide { grid-template-columns: 1fr; gap: 1.25rem; padding: 1rem; }
+    .rail { gap: 0.35rem; padding-inline: 1rem; }
+    .rail button { width: 2rem; height: 2rem; }
+    .desc { font-size: var(--text-base); }
+    .controls { padding: 0.75rem 1rem 1rem; }
+    .ctrl { padding: 0.6rem 1rem; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-assembly-tabs]');
+  const player = root?.querySelector<HTMLElement>('[data-player]');
+
+  if (root && player) {
+    const slides = Array.from(player.querySelectorAll<HTMLElement>('[data-slide]'));
+    const dots = Array.from(player.querySelectorAll<HTMLButtonElement>('[data-goto]'));
+    const prev = player.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = player.querySelector<HTMLButtonElement>('[data-next]')!;
+    const finish = player.querySelector<HTMLElement>('[data-finish]');
+    const counter = player.querySelector<HTMLElement>('[data-counter]')!;
+    const bar = player.querySelector<HTMLElement>('[data-progress]')!;
+    let current = 0;
+    // Safari ne gère la transparence qu'en HEVC ; les autres navigateurs en WebM VP9
+    const isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent);
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Pause / lecture : bouton ou clic sur l'animation
+    player.querySelectorAll<HTMLElement>('.media.animation').forEach((box) => {
+      const v = box.querySelector<HTMLVideoElement>('[data-anim]')!;
+      const btn = box.querySelector<HTMLButtonElement>('[data-anim-toggle]')!;
+      const toggle = () => (v.paused ? v.play().catch(() => {}) : v.pause());
+      const sync = () => {
+        btn.classList.toggle('paused', v.paused);
+        btn.setAttribute('aria-label', v.paused ? 'Lire l’animation' : 'Mettre en pause');
+      };
+      btn.addEventListener('click', toggle);
+      v.addEventListener('click', toggle);
+      v.addEventListener('play', sync);
+      v.addEventListener('pause', sync);
+      sync();
+    });
+
+    const show = (i: number) => {
+      i = Math.min(Math.max(i, 0), slides.length - 1);
+      const back = i < current;
+      slides.forEach((s, k) => {
+        s.hidden = k !== i;
+        s.classList.toggle('from-left', back);
+      });
+      // Chaque étape repart du début ; les autres animations sont arrêtées
+      slides.forEach((s, k) => {
+        const v = s.querySelector<HTMLVideoElement>('[data-anim]');
+        if (!v) return;
+        if (k !== i) return v.pause();
+        if (!v.src) v.src = isSafari ? v.dataset.mov! : v.dataset.webm!;
+        v.currentTime = 0;
+        if (!reduceMotion) v.play().catch(() => {});
+      });
+      dots.forEach((d, k) => {
+        if (k === i) d.setAttribute('aria-current', 'step');
+        else d.removeAttribute('aria-current');
+        d.classList.toggle('done', k < i);
+      });
+      const last = i === slides.length - 1;
+      prev.disabled = i === 0;
+      next.hidden = last && !!finish;
+      next.disabled = last;
+      if (finish) finish.hidden = !last;
+      counter.textContent = `${i + 1} / ${slides.length}`;
+      bar.style.width = `${((i + 1) / slides.length) * 100}%`;
+      current = i;
+    };
+
+    prev.addEventListener('click', () => show(current - 1));
+    next.addEventListener('click', () => show(current + 1));
+    dots.forEach((d) => d.addEventListener('click', () => show(Number(d.dataset.goto))));
+
+    // Flèches du clavier quand le lecteur est visible
+    addEventListener('keydown', (e) => {
+      if (root.dataset.mode !== 'animated' || document.querySelector('.lightbox.active')) return;
+      const r = player.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'ArrowLeft') show(current - 1);
+    });
+
+    // Balayage sur mobile
+    let startX = 0;
+    player.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX), { passive: true });
+    player.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    });
+
+    // Choix de l'onglet, mémorisé pour le visiteur
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-mode-btn]'));
+    const setMode = (mode: string) => {
+      root.dataset.mode = mode;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.modeBtn === mode)));
+    };
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      setMode(b.dataset.modeBtn!);
+      try { localStorage.setItem('lumi-notice-choice', b.dataset.modeBtn!); } catch {}
+    }));
+
+    let saved: string | null = null;
+    try { saved = localStorage.getItem('lumi-notice-choice'); } catch {}
+    setMode(saved === 'list' ? 'list' : 'animated');
+    show(0);
+  }
+</script>
