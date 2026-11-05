@@ -1,0 +1,126 @@
+---
+// Article « Comment observer » : un volet par geste, avec son animation.
+import AnimVideo from './AnimVideo.astro';
+import StepPlayer from './StepPlayer.astro';
+
+interface Part {
+  title: string;
+  intro: string;
+  steps?: string[];
+  tips?: string[];
+  // Chemin sans extension (voir AnimVideo)
+  animation?: string;
+  alt?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  parts: Part[];
+  nextLink?: { href: string; label: string };
+}
+
+const { title, description, parts, nextLink } = Astro.props;
+---
+
+<div class="how-to-observe wrapper">
+  <header class="section-header stack gap-2">
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
+  </header>
+
+  <StepPlayer labels={parts.map((part) => part.title)} rail="text" railLabel="Gestes" nextLink={nextLink}>
+    {parts.map((part, i) => (
+      <article class:list={['slide', { 'no-media': !part.animation }]} data-slide hidden={i !== 0}>
+        {part.animation && (
+          <div class="media">
+            <AnimVideo src={part.animation} label={part.alt} />
+          </div>
+        )}
+        <div class="text">
+          <p class="kicker"><span class="num">{i + 1}</span>{part.title}</p>
+          <p class="intro" set:html={part.intro}></p>
+          {part.steps && (
+            <ol class="steps">
+              {part.steps.map((step) => <li set:html={step}></li>)}
+            </ol>
+          )}
+          {part.tips && (
+            <div class="tips">
+              <p class="tips-title">Bon à savoir</p>
+              <ul>
+                {part.tips.map((tip) => <li set:html={tip}></li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
+  </StepPlayer>
+</div>
+
+<style>
+  .how-to-observe { padding-block: 4rem 5rem; }
+
+  .section-header {
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto 2rem;
+    color: var(--gray-300);
+  }
+  .section-header h2 { font-size: var(--text-2xl); color: var(--gray-0); }
+  @media (min-width: 50em) {
+    .section-header h2 { font-size: var(--text-4xl); }
+  }
+
+  .slide { --slide-cols: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .slide.no-media { --slide-cols: 1fr; }
+
+  .media { aspect-ratio: 1 / 1; border-radius: 1rem; overflow: hidden; }
+
+  .text { color: var(--gray-200); line-height: 1.6; display: grid; gap: 1rem; }
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--gray-0);
+  }
+  .num {
+    flex: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--gray-0);
+    color: var(--gray-999);
+    font-size: var(--text-base);
+    font-variant-numeric: tabular-nums;
+  }
+  .intro { font-size: var(--text-lg); }
+
+  .steps { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.5rem; }
+  .steps li::marker { color: var(--gray-0); font-weight: 700; }
+
+  .tips {
+    border: 1px solid var(--gray-500);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .tips-title {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--gray-0);
+    margin-bottom: 0.5rem;
+  }
+  .tips ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; font-size: var(--text-sm); }
+
+  @media (max-width: 760px) {
+    .intro { font-size: var(--text-base); }
+  }
+</style>

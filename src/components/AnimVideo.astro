@@ -1,0 +1,78 @@
+---
+// Animation à fond transparent avec bouton pause / lecture.
+// `src` est le chemin sans extension : <src>.webm (VP9 alpha) et <src>.mov (HEVC alpha).
+interface Props {
+  src: string;
+  label?: string;
+}
+
+const { src, label } = Astro.props;
+---
+
+<div class="anim-video" data-anim-video>
+  <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} muted loop playsinline preload="none" aria-label={label}></video>
+  <button type="button" class="anim-toggle paused" data-anim-toggle aria-label="Lire l’animation">
+    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
+  </button>
+</div>
+
+<style>
+  .anim-video { position: relative; width: 100%; height: 100%; }
+  video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  /* !important : la page Lumi force des couleurs globales sur les boutons */
+  .anim-toggle {
+    all: unset;
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 50% !important;
+    background: var(--gray-0) !important;
+    border: none !important;
+    color: var(--gray-999) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+  .anim-toggle:focus-visible { outline: 2px solid var(--accent-regular); outline-offset: 2px; }
+  .anim-toggle svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+  .anim-toggle .icon-play,
+  .anim-toggle.paused .icon-pause { display: none; }
+  .anim-toggle.paused .icon-play { display: block; }
+</style>
+
+<script>
+  import { play } from '../lib/animVideo';
+
+  document.querySelectorAll<HTMLElement>('[data-anim-video]').forEach((box) => {
+    const v = box.querySelector<HTMLVideoElement>('[data-anim]')!;
+    const btn = box.querySelector<HTMLButtonElement>('[data-anim-toggle]')!;
+    // Une pause demandée par le visiteur est respectée par la lecture automatique
+    const toggle = () => {
+      if (v.paused) {
+        delete v.dataset.userPaused;
+        play(v);
+      } else {
+        v.dataset.userPaused = '1';
+        v.pause();
+      }
+    };
+    const sync = () => {
+      btn.classList.toggle('paused', v.paused);
+      btn.setAttribute('aria-label', v.paused ? 'Lire l’animation' : 'Mettre en pause');
+    };
+    btn.addEventListener('click', toggle);
+    v.addEventListener('click', toggle);
+    v.addEventListener('play', sync);
+    v.addEventListener('pause', sync);
+  });
+</script>
