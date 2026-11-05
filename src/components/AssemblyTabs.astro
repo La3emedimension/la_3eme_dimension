@@ -342,8 +342,11 @@ const media = (step: Step): Image[] =>
     const counter = player.querySelector<HTMLElement>('[data-counter]')!;
     const bar = player.querySelector<HTMLElement>('[data-progress]')!;
     let current = 0;
-    // Safari ne gère la transparence qu'en HEVC ; les autres navigateurs en WebM VP9
-    const isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent);
+    // WebKit (Safari, et tous les navigateurs sur iPhone/iPad) ne gère la transparence
+    // qu'en HEVC ; les autres navigateurs en WebM VP9
+    const ua = navigator.userAgent;
+    const isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const useHevc = isIOS || /^((?!chrome|chromium|android|edg|firefox).)*safari/i.test(ua);
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Pause / lecture : bouton ou clic sur l'animation
@@ -374,7 +377,7 @@ const media = (step: Step): Image[] =>
         const v = s.querySelector<HTMLVideoElement>('[data-anim]');
         if (!v) return;
         if (k !== i) return v.pause();
-        if (!v.src) v.src = isSafari ? v.dataset.mov! : v.dataset.webm!;
+        if (!v.src) v.src = useHevc ? v.dataset.mov! : v.dataset.webm!;
         v.currentTime = 0;
         if (!reduceMotion) v.play().catch(() => {});
       });
