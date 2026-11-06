@@ -4,6 +4,7 @@
 import AssemblyGuide from './AssemblyGuide.astro';
 import AnimVideo from './AnimVideo.astro';
 import StepPlayer from './StepPlayer.astro';
+import type { Locale } from '../i18n';
 
 interface Image {
   src: string;
@@ -27,23 +28,31 @@ interface Props {
   subtitle?: string;
   steps: Step[];
   nextLink?: { href: string; label: string };
+  locale?: Locale;
 }
+
+const ui = {
+  fr: { switcher: 'Affichage de la notice', animated: 'Notice animée', classic: 'Notice classique', step: 'Étape', of: 'sur' },
+  en: { switcher: 'Guide display', animated: 'Animated guide', classic: 'Classic guide', step: 'Step', of: 'of' }
+};
 
 const {
   title,
   subtitle = 'Instructions détaillées pour assembler votre lunette Lumi',
   steps,
-  nextLink
+  nextLink,
+  locale = 'fr'
 } = Astro.props;
+const t = ui[locale];
 
 const media = (step: Step): Image[] =>
   step.images ?? (step.image ? [{ src: step.image, alt: step.alt ?? '' }] : []);
 ---
 
 <div class="assembly-tabs" data-mode="animated" data-assembly-tabs>
-  <div class="mode-switch" role="group" aria-label="Affichage de la notice">
-    <button type="button" data-mode-btn="animated" aria-pressed="true">Notice animée</button>
-    <button type="button" data-mode-btn="list" aria-pressed="false">Notice classique</button>
+  <div class="mode-switch" role="group" aria-label={t.switcher}>
+    <button type="button" data-mode-btn="animated" aria-pressed="true">{t.animated}</button>
+    <button type="button" data-mode-btn="list" aria-pressed="false">{t.classic}</button>
   </div>
 
   <div class="animated wrapper">
@@ -52,14 +61,14 @@ const media = (step: Step): Image[] =>
       <p>{subtitle}</p>
     </header>
 
-    <StepPlayer labels={steps.map((step) => String(step.number))} nextLink={nextLink}>
+    <StepPlayer labels={steps.map((step) => String(step.number))} nextLink={nextLink} locale={locale}>
       {steps.map((step, i) => {
         const imgs = media(step);
         return (
           <article class="slide" data-slide hidden={i !== 0}>
             {step.animation ? (
               <div class="media animation">
-                <AnimVideo src={step.animation} label={step.alt} />
+                <AnimVideo src={step.animation} label={step.alt} locale={locale} />
               </div>
             ) : (
             <div class:list={['media', { multi: imgs.length > 1 }]}>
@@ -76,7 +85,7 @@ const media = (step: Step): Image[] =>
             </div>
             )}
             <div class="text">
-              <p class="kicker">Étape {step.number} <span>sur {steps.length}</span></p>
+              <p class="kicker">{t.step} {step.number} <span>{t.of} {steps.length}</span></p>
               {step.title && <h3>{step.title}</h3>}
               <p class="desc" set:html={step.description}></p>
             </div>
@@ -87,7 +96,7 @@ const media = (step: Step): Image[] =>
   </div>
 
   <div class="classic">
-    <AssemblyGuide title={title} steps={steps} />
+    <AssemblyGuide title={title} subtitle={subtitle} steps={steps} locale={locale} />
   </div>
 </div>
 

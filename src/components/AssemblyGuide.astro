@@ -1,5 +1,6 @@
 ---
 import Lightbox from './Lightbox.astro';
+import type { Locale } from '../i18n';
 import { getImageDimensions } from '../lib/imageDimensions';
 
 interface Image {
@@ -19,10 +20,12 @@ interface Step {
 
 interface Props {
   title: string;
+  subtitle?: string;
   steps: Step[];
+  locale?: Locale;
 }
 
-const { title, steps } = Astro.props;
+const { title, subtitle = 'Instructions détaillées pour assembler votre lunette Lumi', steps, locale = 'fr' } = Astro.props;
 
 const imageDimensions = new Map<string, { width: number; height: number } | null>();
 await Promise.all(
@@ -39,7 +42,7 @@ await Promise.all(
   <div class="wrapper stack gap-8">
     <header class="section-header stack gap-2 lg:gap-4">
       <h2>{title}</h2>
-      <p>Instructions détaillées pour assembler votre lunette Lumi</p>
+      <p>{subtitle}</p>
     </header>
     
     <div class="steps-container">
@@ -92,7 +95,7 @@ await Promise.all(
   </div>
 </div>
 
-<Lightbox />
+<Lightbox locale={locale} />
 
 <style>
   .assembly-guide {

@@ -2,6 +2,7 @@
 // Article « Comment observer » : un volet par geste, avec son animation.
 import AnimVideo from './AnimVideo.astro';
 import StepPlayer from './StepPlayer.astro';
+import type { Locale } from '../i18n';
 
 interface Part {
   title: string;
@@ -18,9 +19,16 @@ interface Props {
   description?: string;
   parts: Part[];
   nextLink?: { href: string; label: string };
+  locale?: Locale;
 }
 
-const { title, description, parts, nextLink } = Astro.props;
+const ui = {
+  fr: { rail: 'Gestes', tips: 'Bon à savoir' },
+  en: { rail: 'Skills', tips: 'Good to know' }
+};
+
+const { title, description, parts, nextLink, locale = 'fr' } = Astro.props;
+const t = ui[locale];
 ---
 
 <div class="how-to-observe wrapper">
@@ -29,12 +37,12 @@ const { title, description, parts, nextLink } = Astro.props;
     {description && <p>{description}</p>}
   </header>
 
-  <StepPlayer labels={parts.map((part) => part.title)} rail="text" railLabel="Gestes" nextLink={nextLink}>
+  <StepPlayer labels={parts.map((part) => part.title)} rail="text" railLabel={t.rail} nextLink={nextLink} locale={locale}>
     {parts.map((part, i) => (
       <article class:list={['slide', { 'no-media': !part.animation }]} data-slide hidden={i !== 0}>
         {part.animation && (
           <div class="media">
-            <AnimVideo src={part.animation} label={part.alt} />
+            <AnimVideo src={part.animation} label={part.alt} locale={locale} />
           </div>
         )}
         <div class="text">
@@ -47,7 +55,7 @@ const { title, description, parts, nextLink } = Astro.props;
           )}
           {part.tips && (
             <div class="tips">
-              <p class="tips-title">Bon à savoir</p>
+              <p class="tips-title">{t.tips}</p>
               <ul>
                 {part.tips.map((tip) => <li set:html={tip}></li>)}
               </ul>

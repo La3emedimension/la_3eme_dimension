@@ -3,15 +3,25 @@
 // boutons Précédent / Suivant, flèches du clavier et balayage sur mobile.
 // Chaque volet est un élément enfant portant la classe "slide" et l'attribut data-slide
 // (tous sauf le premier avec l'attribut hidden).
+import type { Locale } from '../i18n';
+
 interface Props {
   labels: string[];
+  locale?: Locale;
   // 'number' : pastilles numérotées ; 'text' : onglets avec le libellé
   rail?: 'number' | 'text';
   railLabel?: string;
   nextLink?: { href: string; label: string };
 }
 
-const { labels, rail = 'number', railLabel = 'Étapes', nextLink } = Astro.props;
+const ui = {
+  fr: { steps: 'Étapes', prev: 'Précédent', next: 'Suivant' },
+  en: { steps: 'Steps', prev: 'Previous', next: 'Next' }
+};
+
+const { labels, locale = 'fr', rail = 'number', nextLink } = Astro.props;
+const t = ui[locale];
+const railLabel = Astro.props.railLabel ?? t.steps;
 ---
 
 <div class="player" data-step-player tabindex="-1">
@@ -31,15 +41,18 @@ const { labels, rail = 'number', railLabel = 'Étapes', nextLink } = Astro.props
   <slot />
 
   <div class="controls">
-    <button type="button" class="ctrl" data-prev>← Précédent</button>
+    <button type="button" class="ctrl" data-prev>← {t.prev}</button>
     <span class="counter" data-counter aria-live="polite">1 / {labels.length}</span>
-    <button type="button" class="ctrl primary" data-next>Suivant →</button>
+    <button type="button" class="ctrl primary" data-next>{t.next} →</button>
     {nextLink && <a class="ctrl primary" href={nextLink.href} data-finish hidden>{nextLink.label} →</a>}
   </div>
 </div>
 
 <style>
   .player {
+    /* min-width: 0 : dans un conteneur flex, la rangée d'onglets défile au lieu d'élargir le lecteur */
+    width: 100%;
+    min-width: 0;
     max-width: 64rem;
     margin: 0 auto;
     /* plus clair que les cartes du site */

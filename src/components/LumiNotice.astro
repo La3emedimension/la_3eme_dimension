@@ -1,0 +1,333 @@
+---
+// Page de la notice Lumi, partagée entre /lumi/ et /en/lumi/.
+// Les textes viennent de src/data/lumiNotice.ts.
+import { getCollection } from 'astro:content';
+import ProductLayout from '../layouts/ProductLayout.astro';
+import AssemblyTabs from './AssemblyTabs.astro';
+import ObservationGuide from './ObservationGuide.astro';
+import HowToObserve from './HowToObserve.astro';
+import CommunityMap from './CommunityMap.astro';
+import StarMap from './StarMap.astro';
+import MoonMap from './MoonMap.astro';
+import type { Locale } from '../i18n';
+import { lumiNotice } from '../data/lumiNotice';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = lumiNotice(locale);
+
+const products = await getCollection('products');
+const lumiProduct = products.find(product => product.id === `${locale}/lumi`);
+
+if (!lumiProduct) {
+	console.error('Available product IDs:', products.map(p => p.id));
+	throw new Error('Lumi product not found');
+}
+
+const productConfig = lumiProduct.data;
+const hero = productConfig.sections.find(section => section.type === 'hero')!;
+const { primaryCta, ...heroData } = hero.data;
+
+const sections = [
+	{
+		...hero,
+		data: { ...heroData, ...c.hero, logoImage: '/assets/logolumi.png' }
+	},
+	{
+		type: 'custom',
+		id: 'section-assembly-guide',
+		customComponent: AssemblyTabs,
+		data: {
+			title: c.assembly.title,
+			subtitle: c.assembly.subtitle,
+			nextLink: { href: '#section-how-to-observe', label: c.assembly.nextLabel },
+			steps: c.assembly.steps,
+			locale
+		}
+	},
+	{
+		type: 'custom',
+		id: 'section-how-to-observe',
+		customComponent: HowToObserve,
+		data: {
+			title: c.howTo.title,
+			description: c.howTo.description,
+			nextLink: { href: '#section-observation', label: c.howTo.nextLabel },
+			parts: c.howTo.parts,
+			locale
+		}
+	},
+	{
+		type: 'custom',
+		id: 'section-observation',
+		customComponent: ObservationGuide,
+		data: {
+			...c.observation,
+			discordLink: 'https://discord.gg/PmNhTSpWCt',
+			locale
+		}
+	},
+	// Autres sections du produit (sans vidéos, galerie, specs, prix, avantages, avis, porte-filtre)
+	...productConfig.sections.slice(2).filter(section =>
+		section.type !== 'video' &&
+		section.type !== 'gallery' &&
+		section.type !== 'specs' &&
+		section.type !== 'pricing' &&
+		section.type !== 'features' &&
+		section.type !== 'reviews' &&
+		section.id !== 'section-filter'
+	),
+	...(c.starMap ? [{ type: 'custom', id: 'section-starmap', customComponent: StarMap, data: c.starMap }] : []),
+	...(c.moonMap ? [{ type: 'custom', id: 'section-moonmap', customComponent: MoonMap, data: c.moonMap }] : []),
+	{
+		type: 'custom',
+		id: 'section-community',
+		customComponent: CommunityMap,
+		data: { title: c.communityTitle, locale }
+	}
+];
+
+const noticeConfig = {
+	...productConfig,
+	seoTitle: c.seoTitle,
+	seoDescription: c.seoDescription,
+	sections,
+	navigationItems: sections
+		.filter(section => section.id && c.nav[section.id])
+		.map(section => ({ id: section.id!, label: c.nav[section.id!] }))
+};
+---
+
+<ProductLayout {...noticeConfig} locale={locale} />
+
+<div id="sn-card" style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;background:#0f0f0f;border:1px solid #4b5563;border-radius:1rem;padding:1.25rem 1.5rem;box-shadow:0 8px 32px rgba(0,0,0,0.4);max-width:280px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:0.75rem;">{c.snCard.title}</div>
+  <div style="margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#555;margin-bottom:0.15rem;">{c.snCard.product}</div>
+    <div style="font-size:0.95rem;font-weight:600;color:#fff;">Lunette Lumi</div>
+  </div>
+  <div style="margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#555;margin-bottom:0.15rem;">{c.snCard.serial}</div>
+    <div id="sn-value" style="font-size:1rem;font-weight:700;font-family:monospace;color:#d1d5db;letter-spacing:0.1em;"></div>
+  </div>
+  <div id="sn-date-row" style="display:none;margin-bottom:0.5rem;">
+    <div style="font-size:0.7rem;color:#555;margin-bottom:0.15rem;">{c.snCard.date}</div>
+    <div id="sn-date" style="font-size:0.9rem;font-weight:500;color:#e2e8f0;"></div>
+  </div>
+  <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid #1f1f1f;font-size:0.7rem;color:#444;">La 3ème Dimension — la3emedim.fr</div>
+</div>
+
+<script is:inline>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const sn = params.get('sn');
+    if (!sn) return;
+    if (!/^LUMI\d{7}$/.test(sn)) return;
+    document.getElementById('sn-value').textContent = sn;
+    const d = params.get('d');
+    if (d && d.length === 8) {
+      const dateStr = d.slice(6,8) + '/' + d.slice(4,6) + '/' + d.slice(0,4);
+      document.getElementById('sn-date').textContent = dateStr;
+      document.getElementById('sn-date-row').style.display = 'block';
+    }
+    document.getElementById('sn-card').style.display = 'block';
+  })();
+</script>
+
+<style>
+  /* Override accent colors with gray-700 for Lumi page */
+  :global(.accent-regular) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(a) {
+    color: var(--gray-300) !important;
+  }
+
+  :global(button),
+  :global(.btn),
+  :global(.button) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    border-color: var(--gray-600) !important;
+  }
+
+  :global(button:hover),
+  :global(.btn:hover),
+  :global(.button:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+  }
+
+  /* Override specific component styles */
+  :global(.hero .cta-primary) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(.hero .cta-primary:hover) {
+    background-color: var(--gray-600) !important;
+  }
+
+  :global(.pricing-cta) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  :global(.pricing-cta:hover) {
+    background-color: var(--gray-600) !important;
+  }
+
+  /* Additional button selectors */
+  :global(.cta-primary),
+  :global(.cta-secondary),
+  :global(.product-link),
+  :global(.boutique-link) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    border-color: var(--gray-600) !important;
+  }
+
+  :global(.cta-primary:hover),
+  :global(.cta-secondary:hover),
+  :global(.product-link:hover),
+  :global(.boutique-link:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+  }
+
+  /* Feature badges/pills */
+  :global(.feature-badge),
+  :global(.pill) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Navigation active states */
+  :global(.nav-link.active) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Feature icons and highlights */
+  :global(.feature-icon) {
+    color: var(--gray-400) !important;
+  }
+
+  /* Any other accent-colored elements */
+  :global([style*="var(--accent-regular)"]) {
+    background-color: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Title override for hero */
+  :global(.hero-product h1) {
+    color: black !important;
+  }
+
+  /* Section filter title in gray */
+  :global(#section-filter h1),
+  :global(#section-filter h2),
+  :global(#section-filter .hero-product h1) {
+    color: var(--gray-100) !important;
+  }
+
+  /* Feature badges text in black */
+  :global(.feature-badge) {
+    background-color: var(--gray-700) !important;
+    color: black !important;
+  }
+
+  /* Navigation pills - white text when active */
+  :global(.nav-link.active) {
+    background: var(--gray-700) !important;
+    color: white !important;
+  }
+
+  /* Notice sur mobile : pas de photo dans l'en-tête.
+     Ciblé via la section de montage : les styles de cette page peuvent aussi
+     être chargés sur la fiche produit Lumi, qui garde sa photo. */
+  @media (max-width: 760px) {
+    :global(body:has(#section-assembly-guide) #section-hero .hero-media) {
+      display: none !important;
+    }
+  }
+
+  /* Hero image container - make it square */
+  :global(.hero-media) {
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+    border-radius: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: var(--shadow-xl) !important;
+  }
+
+  :global(.hero-image) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: scale(1.1) !important;
+  }
+
+  /* Quantum button styling */
+  :global(.quantum-button-container) {
+    margin-top: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  :global(.quantum-button) {
+    display: inline-block !important;
+    background-color: var(--gray-700) !important;
+    color: white !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 0.5rem !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    margin-left: 1rem !important;
+    border: 2px solid var(--gray-600) !important;
+  }
+
+  :global(.quantum-button:hover) {
+    background-color: var(--gray-600) !important;
+    border-color: var(--gray-500) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Light theme : forcer des gris foncés sur tous les boutons */
+  :global(.theme-light) :global(button),
+  :global(.theme-light) :global(.btn),
+  :global(.theme-light) :global(.button),
+  :global(.theme-light) :global(.cta-primary),
+  :global(.theme-light) :global(.cta-secondary),
+  :global(.theme-light) :global(.product-link),
+  :global(.theme-light) :global(.boutique-link),
+  :global(.theme-light) :global(.pricing-cta),
+  :global(.theme-light) :global(.quantum-button) {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #1f2937 !important;
+  }
+
+  :global(.theme-light) :global(button:hover),
+  :global(.theme-light) :global(.btn:hover),
+  :global(.theme-light) :global(.button:hover),
+  :global(.theme-light) :global(.cta-primary:hover),
+  :global(.theme-light) :global(.cta-secondary:hover),
+  :global(.theme-light) :global(.product-link:hover),
+  :global(.theme-light) :global(.boutique-link:hover),
+  :global(.theme-light) :global(.pricing-cta:hover),
+  :global(.theme-light) :global(.quantum-button:hover) {
+    background-color: #1f2937 !important;
+    border-color: #111827 !important;
+  }
+</style>

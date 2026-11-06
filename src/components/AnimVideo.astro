@@ -1,17 +1,26 @@
 ---
 // Animation à fond transparent avec bouton pause / lecture.
 // `src` est le chemin sans extension : <src>.webm (VP9 alpha) et <src>.mov (HEVC alpha).
+import type { Locale } from '../i18n';
+
 interface Props {
   src: string;
   label?: string;
+  locale?: Locale;
 }
 
-const { src, label } = Astro.props;
+const ui = {
+  fr: { play: 'Lire l’animation', pause: 'Mettre en pause' },
+  en: { play: 'Play the animation', pause: 'Pause' }
+};
+
+const { src, label, locale = 'fr' } = Astro.props;
+const t = ui[locale];
 ---
 
-<div class="anim-video" data-anim-video>
+<div class="anim-video" data-anim-video data-label-play={t.play} data-label-pause={t.pause}>
   <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} muted loop playsinline preload="none" aria-label={label}></video>
-  <button type="button" class="anim-toggle paused" data-anim-toggle aria-label="Lire l’animation">
+  <button type="button" class="anim-toggle paused" data-anim-toggle aria-label={t.play}>
     <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
     <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
   </button>
@@ -68,7 +77,7 @@ const { src, label } = Astro.props;
     };
     const sync = () => {
       btn.classList.toggle('paused', v.paused);
-      btn.setAttribute('aria-label', v.paused ? 'Lire l’animation' : 'Mettre en pause');
+      btn.setAttribute('aria-label', (v.paused ? box.dataset.labelPlay : box.dataset.labelPause)!);
     };
     btn.addEventListener('click', toggle);
     v.addEventListener('click', toggle);

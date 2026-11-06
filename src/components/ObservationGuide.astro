@@ -1,5 +1,6 @@
 ---
 import StepPlayer from './StepPlayer.astro';
+import type { Locale } from '../i18n';
 
 interface Observation {
   title: string;
@@ -23,9 +24,46 @@ interface Props {
   moonMapLink?: string;
   moonMapText?: string;
   nextLink?: { href: string; label: string };
+  locale?: Locale;
 }
 
-const { title, description, observations, stellariumLink, stellariumText, discordLink, discordText, mapLink, mapText, skyMapLink, skyMapText, moonMapLink, moonMapText, nextLink } = Astro.props;
+const ui = {
+  fr: {
+    rail: 'Objets à observer',
+    of: 'sur',
+    stellariumTitle: 'Atlas et carte du ciel',
+    stellariumText: 'Pour planifier vos observations et découvrir ce qui est visible depuis votre position, nous recommandons Stellarium, un logiciel gratuit et open-source de planétarium.',
+    stellariumFeatures: '<strong>Fonctionnalités :</strong> Carte du ciel en temps réel • Position des planètes • Heures de lever/coucher • Simulation du mouvement céleste',
+    discordText: "Rejoignez notre communauté d'astronomes amateurs ! Partagez vos observations, posez vos questions et échangez avec d'autres passionnés d'astronomie.",
+    discordFeatures: "<strong>Dans la communauté :</strong> Conseils d'observation • Photos d'astronomes • Support technique • Événements astronomiques",
+    skyMapTitle: 'Carte du ciel interactive',
+    skyMapText: "Entrez une date et un lieu d'observation pour découvrir en un coup d'œil ce qui est visible dans le ciel ce soir : c'est l'outil intégré à la notice papier de la Lumi.",
+    moonMapTitle: 'Carte de la Lune interactive',
+    moonMapText: 'Survolez ou touchez la photo de pleine Lune pour identifier les mers et les cratères que vous observez : Tycho, Copernic, Mare Crisium...',
+    mapTitle: 'Carte de la communauté',
+    mapText: 'Découvrez et partagez vos meilleures observations avec la communauté.',
+    mapFeatures: '<strong>Sur la carte :</strong> Localisations des membres • Spots d\'observation partagés • Événements locaux • Groupes régionaux'
+  },
+  en: {
+    rail: 'Objects to observe',
+    of: 'of',
+    stellariumTitle: 'Sky atlas and chart',
+    stellariumText: 'To plan your observations and see what is visible from where you are, we recommend Stellarium, a free and open-source planetarium software.',
+    stellariumFeatures: '<strong>Features:</strong> Real-time sky chart • Planet positions • Rise and set times • Simulation of the sky’s motion',
+    discordText: 'Join our community of amateur astronomers! Share your observations, ask your questions and chat with other astronomy enthusiasts.',
+    discordFeatures: '<strong>In the community:</strong> Observing tips • Astronomers’ photos • Technical support • Astronomy events',
+    skyMapTitle: 'Interactive sky chart',
+    skyMapText: 'Enter a date and an observing location to see at a glance what is visible in tonight’s sky.',
+    moonMapTitle: 'Interactive Moon map',
+    moonMapText: 'Hover over or tap the full Moon photo to identify the seas and craters you are looking at: Tycho, Copernicus, Mare Crisium...',
+    mapTitle: 'Community map',
+    mapText: 'Discover and share your best observations with the community.',
+    mapFeatures: '<strong>On the map:</strong> Members’ locations • Shared observing spots • Local events • Regional groups'
+  }
+};
+
+const { title, description, observations, stellariumLink, stellariumText, discordLink, discordText, mapLink, mapText, skyMapLink, skyMapText, moonMapLink, moonMapText, nextLink, locale = 'fr' } = Astro.props;
+const t = ui[locale];
 ---
 
 <div class="observation-guide">
@@ -35,7 +73,7 @@ const { title, description, observations, stellariumLink, stellariumText, discor
       <p>{description}</p>
     </header>
     
-    <StepPlayer labels={observations.map((o) => o.title)} rail="text" railLabel="Objets à observer" nextLink={nextLink}>
+    <StepPlayer labels={observations.map((o) => o.title)} rail="text" railLabel={t.rail} nextLink={nextLink} locale={locale}>
       {observations.map((observation, i) => (
         <article class:list={['slide', { 'no-media': !observation.image }]} data-slide hidden={i !== 0}>
           {observation.image && (
@@ -44,7 +82,7 @@ const { title, description, observations, stellariumLink, stellariumText, discor
             </div>
           )}
           <div class="observation-text">
-            <p class="kicker">{i + 1} <span>sur {observations.length}</span></p>
+            <p class="kicker">{i + 1} <span>{t.of} {observations.length}</span></p>
             <h3>{observation.title}</h3>
             <p>{observation.description}</p>
           </div>
@@ -54,39 +92,35 @@ const { title, description, observations, stellariumLink, stellariumText, discor
 
     <div class="resources-section">
       <div class="stellarium-card">
-        <h3>Atlas et carte du ciel</h3>
-        <p>Pour planifier vos observations et découvrir ce qui est visible depuis votre position, nous recommandons Stellarium, un logiciel gratuit et open-source de planétarium.</p>
+        <h3>{t.stellariumTitle}</h3>
+        <p>{t.stellariumText}</p>
         <a href={stellariumLink} target="_blank" rel="noopener noreferrer" class="stellarium-link">
           {stellariumText}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <p class="stellarium-features">
-          <strong>Fonctionnalités :</strong> Carte du ciel en temps réel • Position des planètes • Heures de lever/coucher • Simulation du mouvement céleste
-        </p>
+        <p class="stellarium-features" set:html={t.stellariumFeatures}></p>
       </div>
       
       {discordLink && discordText && (
         <div class="discord-card">
           <h3>Discord</h3>
-          <p>Rejoignez notre communauté d'astronomes amateurs ! Partagez vos observations, posez vos questions et échangez avec d'autres passionnés d'astronomie.</p>
+          <p>{t.discordText}</p>
           <a href={discordLink} target="_blank" rel="noopener noreferrer" class="discord-link">
             {discordText}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <p class="discord-features">
-            <strong>Dans la communauté :</strong> Conseils d'observation • Photos d'astronomes • Support technique • Événements astronomiques
-          </p>
+          <p class="discord-features" set:html={t.discordFeatures}></p>
         </div>
       )}
       
       {skyMapLink && skyMapText && (
         <div class="stellarium-card">
-          <h3>Carte du ciel interactive</h3>
-          <p>Entrez une date et un lieu d'observation pour découvrir en un coup d'œil ce qui est visible dans le ciel ce soir : c'est l'outil intégré à la notice papier de la Lumi.</p>
+          <h3>{t.skyMapTitle}</h3>
+          <p>{t.skyMapText}</p>
           <a href={skyMapLink} class="stellarium-link">
             {skyMapText}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,8 +132,8 @@ const { title, description, observations, stellariumLink, stellariumText, discor
 
       {moonMapLink && moonMapText && (
         <div class="discord-card">
-          <h3>Carte de la Lune interactive</h3>
-          <p>Survolez ou touchez la photo de pleine Lune pour identifier les mers et les cratères que vous observez : Tycho, Copernic, Mare Crisium...</p>
+          <h3>{t.moonMapTitle}</h3>
+          <p>{t.moonMapText}</p>
           <a href={moonMapLink} class="discord-link">
             {moonMapText}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,17 +145,15 @@ const { title, description, observations, stellariumLink, stellariumText, discor
 
       {mapLink && mapText && (
         <div class="map-card">
-          <h3>Carte de la communauté</h3>
-          <p>Découvrer, partager vos meilleirs observations avec la communauté.</p>
+          <h3>{t.mapTitle}</h3>
+          <p>{t.mapText}</p>
           <a href={mapLink} target="_blank" rel="noopener noreferrer" class="map-link">
             {mapText}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11M15 3H21M21 3V9M21 3L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <p class="map-features">
-            <strong>Sur la carte :</strong> Localisations des membres • Spots d'observation partagés • Événements locaux • Groupes régionaux
-          </p>
+          <p class="map-features" set:html={t.mapFeatures}></p>
         </div>
       )}
     </div>
