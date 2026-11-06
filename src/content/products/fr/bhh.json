@@ -104,12 +104,12 @@
         "title": "En action",
         "images": [
           {
-            "src": "/assets/bhh-desk.gif",
+            "src": "/assets/bhh-desk.webp",
             "alt": "Animation du crochet en utilisation",
             "caption": "Démonstration de l'utilisation du crochet BHH - accrochage simple et efficace"
           },
           {
-            "src": "/assets/bhh-03.gif",
+            "src": "/assets/bhh-03.webp",
             "alt": "Test de résistance",
             "caption": "Test de résistance avec sac à dos chargé - supporte jusqu'à 12kg"
           },

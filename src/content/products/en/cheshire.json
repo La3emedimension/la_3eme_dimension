@@ -107,12 +107,12 @@
             "caption": "Correct positioning in the focuser"
           },
           {
-            "src": "/assets/Cheshire/chesh6.png",
+            "src": "/assets/Cheshire/chesh6.webp",
             "alt": "Cheshire technical diagram",
             "caption": "Design diagram and dimensions"
           },
           {
-            "src": "/assets/Cheshire/chesh7.png",
+            "src": "/assets/Cheshire/chesh7.webp",
             "alt": "Exploded view of components",
             "caption": "Breakdown of different elements"
           },
@@ -122,7 +122,7 @@
             "caption": "Visual explanation of collimation principle"
           },
           {
-            "src": "/assets/Cheshire/Chesh9.png",
+            "src": "/assets/Cheshire/Chesh9.webp",
             "alt": "Practical usage",
             "caption": "Cheshire usage guide on telescope"
           }

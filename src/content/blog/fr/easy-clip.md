@@ -21,7 +21,7 @@ L'Easy Clip
 
 L'Easy Clip est une platine aimantée conçue pour votre chercheur Quickfinder. Elle permet de passer d'un télescope à l'autre en quelques secondes sans dévisser quoi que ce soit, et donne accès à la pile CR2032 sans avoir à démonter le chercheur.
 
-<img src="/assets/easyclip/Easygi.gif">
+<img src="/assets/easyclip/Easygi.webp">
 
 Le système repose sur des aimants néodyme haute puissance. La fixation est sécurisée mais le retrait reste instantané. Deux platines sont fournies pour équiper deux tubes optiques différents.
 

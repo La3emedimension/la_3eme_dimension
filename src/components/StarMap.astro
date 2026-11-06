@@ -1990,7 +1990,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Logo ---
     const logo = new Image();
-    logo.src = '/assets/logolumi.png';
+    logo.src = '/assets/logolumi.webp';
     await new Promise<void>(res => { logo.onload = () => res(); logo.onerror = () => res(); });
     if (logo.naturalWidth > 0) {
       const logoH = 56;

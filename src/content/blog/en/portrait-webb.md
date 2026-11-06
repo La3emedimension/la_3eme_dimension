@@ -1,7 +1,7 @@
 ---
 title: "Florian Rabiller"
 publishDate: 2025-09-17
-img: "/assets/blog/astrodessin/florian1.png"
+img: "/assets/blog/astrodessin/florian1.webp"
 img_alt: "Portrait of Florian Rabiller, astro-sketcher"
 description: "Portrait of Florian Rabiller, an astro-sketcher practicing visual observation with a Dobsonian, sharing his tips for getting started with astro-drawing."
 seoTitle: "Astro-sketcher portrait: Florian Rabiller | La 3ème dimension"
@@ -47,7 +47,7 @@ Don't be afraid to start drawing, nor be afraid of the result. Drawing should be
 
 ![M51 - February 4, 2024](/assets/blog/astrodessin/M51_4_fevrier_2024_Issarbe_150-400xT400_rescanneB.jpg)
 
-![Astronomical drawing by Florian Rabiller](/assets/blog/astrodessin/cachedImage.png)
+![Astronomical drawing by Florian Rabiller](/assets/blog/astrodessin/cachedImage.webp)
 
 ---
 

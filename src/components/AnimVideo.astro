@@ -1,6 +1,7 @@
 ---
 // Animation à fond transparent avec bouton pause / lecture.
-// `src` est le chemin sans extension : <src>.webm (VP9 alpha) et <src>.mov (HEVC alpha).
+// `src` est le chemin sans extension : <src>.webm (VP9 alpha), <src>.mov (HEVC alpha)
+// et <src>.webp (image animée de secours si la lecture automatique est refusée).
 import type { Locale } from '../i18n';
 
 interface Props {
@@ -19,7 +20,7 @@ const t = ui[locale];
 ---
 
 <div class="anim-video" data-anim-video data-label-play={t.play} data-label-pause={t.pause}>
-  <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} muted loop playsinline preload="none" aria-label={label}></video>
+  <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} data-webp={`${src}.webp`} muted loop playsinline preload="none" aria-label={label}></video>
   <button type="button" class="anim-toggle paused" data-anim-toggle aria-label={t.play}>
     <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
     <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
@@ -28,13 +29,17 @@ const t = ui[locale];
 
 <style>
   .anim-video { position: relative; width: 100%; height: 100%; }
-  video {
+  /* :global : l'image de secours et son arrêt sur image sont créés par le script */
+  video,
+  .anim-video :global(.anim-image) {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     cursor: pointer;
   }
+  video[hidden],
+  .anim-video :global(.anim-image[hidden]) { display: none; }
   /* !important : la page Lumi force des couleurs globales sur les boutons */
   .anim-toggle {
     all: unset;
@@ -60,28 +65,58 @@ const t = ui[locale];
 </style>
 
 <script>
-  import { play } from '../lib/animVideo';
+  import { play, pause } from '../lib/animVideo';
 
   document.querySelectorAll<HTMLElement>('[data-anim-video]').forEach((box) => {
     const v = box.querySelector<HTMLVideoElement>('[data-anim]')!;
     const btn = box.querySelector<HTMLButtonElement>('[data-anim-toggle]')!;
+
+    const setButton = (paused: boolean) => {
+      btn.classList.toggle('paused', paused);
+      btn.setAttribute('aria-label', (paused ? box.dataset.labelPlay : box.dataset.labelPause)!);
+    };
+
+    // Image de secours : la pause fige l'image courante dans un canvas posé à sa place
+    let frozen: HTMLCanvasElement | null = null;
+    const toggleImage = () => {
+      const img = box.querySelector<HTMLImageElement>('.anim-image');
+      if (!img) return;
+      if (frozen) {
+        frozen.remove();
+        frozen = null;
+        img.hidden = false;
+        setButton(false);
+      } else {
+        frozen = document.createElement('canvas');
+        frozen.className = 'anim-image';
+        frozen.width = img.naturalWidth;
+        frozen.height = img.naturalHeight;
+        frozen.getContext('2d')?.drawImage(img, 0, 0);
+        frozen.addEventListener('click', toggleImage);
+        img.after(frozen);
+        img.hidden = true;
+        setButton(true);
+      }
+    };
+
     // Une pause demandée par le visiteur est respectée par la lecture automatique
     const toggle = () => {
+      if (box.dataset.fallback) return toggleImage();
       if (v.paused) {
         delete v.dataset.userPaused;
         play(v);
       } else {
         v.dataset.userPaused = '1';
-        v.pause();
+        pause(v);
       }
-    };
-    const sync = () => {
-      btn.classList.toggle('paused', v.paused);
-      btn.setAttribute('aria-label', (v.paused ? box.dataset.labelPlay : box.dataset.labelPause)!);
     };
     btn.addEventListener('click', toggle);
     v.addEventListener('click', toggle);
-    v.addEventListener('play', sync);
-    v.addEventListener('pause', sync);
+    v.addEventListener('play', () => setButton(false));
+    v.addEventListener('pause', () => { if (!box.dataset.fallback) setButton(true); });
+    box.addEventListener('anim-fallback', () => {
+      setButton(false);
+      box.querySelector('.anim-image')?.addEventListener('click', toggle);
+    });
   });
 </script>

@@ -1,7 +1,7 @@
 ---
 title: "OEP - The open source eyepiece"
 publishDate: 2025-09-12
-img: "/assets/OEP1.png"
+img: "/assets/OEP1.webp"
 img_alt: "3D printed open source Plössl eyepiece, OEP project"
 description: "OEP (Open Eyepiece Project): designing an open source 3D printed Plössl eyepiece, made to be reproducible by the whole community."
 tags:
@@ -60,10 +60,10 @@ Note: this formula is only an approximation. To precisely model a Plössl, you n
 The eyepiece assembly diagram:
 ![OEP assembly diagram](/assets/OEPSchema.png)
 The different parts:
-![OEP eyepiece on mouse pad](/assets/OEP2.png)
-![OEP eyepiece on desk](/assets/OEP4.png)
+![OEP eyepiece on mouse pad](/assets/OEP2.webp)
+![OEP eyepiece on desk](/assets/OEP4.webp)
 
-![OEP open source eyepiece](/assets/OEP3.png)
+![OEP open source eyepiece](/assets/OEP3.webp)
 
 The files are not yet available on my Printables page.
 

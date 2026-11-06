@@ -21,11 +21,11 @@ Le Backpack Holder Hook
 
 Le Backpack Holder Hook est une adaptation du crochet de sac à main à destination des baroudeurs, il est conçu et designé pour avoir un maximum d'éfficacité avec le moins de matière possible.
 
-<img src="/assets/bhh-desk.gif">
+<img src="/assets/bhh-desk.webp">
 
 La forme proche de la lettre C et le sens d'impression permets au crochet de maintenir jusqu'à 12 kilos (test effectué avec un sac à dos de 12 kilos sur 8 heures). Il peut aussi servir de crochet universel avec un mousqueton et un bout de paracorde.
 
- <img src="/assets/bhh-03.gif">
+ <img src="/assets/bhh-03.webp">
 
 
 Vous pouvez retrouver le Réel <a  class="button" href="https://www.instagram.com/la_3eme_dimension/reel/DEVR18UN4Cb/">ici</a> et les fichiers gratuitement sur <a class="button" href="https://www.printables.com/model/920511-bhh-backpack-holder-hook/comments">printables</a>

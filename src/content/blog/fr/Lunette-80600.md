@@ -1,7 +1,7 @@
 ---
 title: "Construire sa lunette astronomique"
 publishDate: 2025-09-17
-img: "/assets/lunette23.png"
+img: "/assets/lunette23.webp"
 img_alt: "Lunette astronomique artisanale 80/600 construite par Raphaël"
 description: "Le récit de la construction d'une lunette astronomique artisanale 80mm/600mm, du châssis en cornières aluminium au tube PVC, jusqu'à l'impression 3D."
 tags:
@@ -28,9 +28,9 @@ L’idée était de créer une structure légère et modulable :
 - **Se monte sur toutes les montures** : Avec une queue d'aronde Vixen
 - **Objectif un peu optimiste** : Je voulais faire de la photo avec...
 
-![test de la focale](/assets/lunette18.png)
-![lunette alu](/assets/lunette.png)
-![objectifs](/assets/lunetteobjectif.png)
+![test de la focale](/assets/lunette18.webp)
+![lunette alu](/assets/lunette.webp)
+![objectifs](/assets/lunetteobjectif.webp)
 
 Cependant, après quelques essais, j’ai rapidement constaté les limites de ce montage au vu de la longueur focale de l'instrument. La structure, trop flexible, ne garantissait pas une stabilité suffisante pour faire de l'astrophoto. Je me suis donc orienté vers autre chose...
 
@@ -53,11 +53,11 @@ Mais dans la pratique, ce montage exerçait une contrainte mécanique sur le ver
 
 Cette expérience m’a montré à quel point le barillet est un point sensible : même une petite pression peut suffire à poser problème
 
-![barillet 1](/assets/lunettebarillet1.png)
+![barillet 1](/assets/lunettebarillet1.webp)
 
 J’ai même réalisé une photo d’Orion avec ce montage : le défaut saute immédiatement aux yeux, les étoiles n’avaient plus du tout leur forme.
 
-![Photo d'Orion ](/assets/lunetteorionv1.png)
+![Photo d'Orion ](/assets/lunetteorionv1.webp)
 
 Je me suis orienté vers un barillet plus "standard", équipé d'un système de vis qui vient maintenir le doublet sans le contraindre. Cette solution s’est avérée bien plus efficace : le verre est correctement positionné et libre de ses dilatations, les étoiles retrouvent enfin leur rondeur, et l’ensemble gagne en qualité.
 
@@ -73,8 +73,8 @@ Comme on peut le voir sur les photos du barillet, il y a trois vis supplémentai
 J'ai conçu un petit outil : un collimateur imprimé en 3D très proche du TSRCKOLLI collimator.
 
 ![collimateur](/assets/collimateur1.jpg)
-![Collimateur imprimé en 3D](/assets/Collim2.png)
-![Collimateur imprimé en 3D](/assets/collim1.png)
+![Collimateur imprimé en 3D](/assets/Collim2.webp)
+![Collimateur imprimé en 3D](/assets/collim1.webp)
 
 ## Les tests !
 
@@ -86,7 +86,7 @@ ChantePierre m'a proposé de faire un test de [Ronchi](https://www.grattavetro.i
 Sans le diaphragme:
 ![Test de Ronchi](/assets/lunette11.jpg)
 Sans diaph et avec le couleurs éclatées:
-![Test de Ronchi](/assets/ronchitricolor.PNG)
+![Test de Ronchi](/assets/ronchitricolor.webp)
 Avec le diaph: 
 ![Test de Ronchi](/assets/Lunetteronchimasque.PNG)
 
@@ -94,8 +94,8 @@ Avec le diaph:
 
 Il ressort donc qu’il est nécessaire de réduire au maximum le bleu causé par l’aberration chromatique de l’objectif. Il est également intéressant d’utiliser un diaphragme à 70 mm, ce qui permet de limiter les défauts optiques, tout en ajoutant des baffles internes afin d’éviter les lumières parasites et d’améliorer le contraste de l’image.
 
-![Baffle et masque 70MM](/assets/lunette22.png)
-![Construction avec Baffle](/assets/lunette21.png)
+![Baffle et masque 70MM](/assets/lunette22.webp)
+![Construction avec Baffle](/assets/lunette21.webp)
 
 Pour vérifier l’efficacité d’un filtre dans le bleu, j’ai décidé de faire un test avec le matériel que j’avais sous la main. J’ai utilisé un ancien filtre photo de couleur jaune. L’idée c'est de bloquer une partie du spectre bleu pour améliorer la netteté et le contraste de l'image.
 

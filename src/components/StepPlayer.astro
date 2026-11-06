@@ -174,7 +174,7 @@ const railLabel = Astro.props.railLabel ?? t.steps;
 </style>
 
 <script>
-  import { play, reduceMotion } from '../lib/animVideo';
+  import { play, pause, reduceMotion } from '../lib/animVideo';
 
   const players = Array.from(document.querySelectorAll<HTMLElement>('[data-step-player]'));
   const controllers = new Map<HTMLElement, (d: number) => void>();
@@ -208,7 +208,7 @@ const railLabel = Astro.props.railLabel ?? t.steps;
       slides.forEach((_, k) => {
         const v = video(k);
         if (!v) return;
-        v.pause();
+        pause(v);
         if (k === i) {
           v.currentTime = 0;
           delete v.dataset.userPaused;
@@ -257,7 +257,7 @@ const railLabel = Astro.props.railLabel ?? t.steps;
         if (entry.isIntersecting) visible.add(v);
         else {
           visible.delete(v);
-          v.pause();
+          pause(v);
         }
       }
       playCurrent();

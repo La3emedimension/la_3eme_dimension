@@ -104,12 +104,12 @@
         "title": "In action",
         "images": [
           {
-            "src": "/assets/bhh-desk.gif",
+            "src": "/assets/bhh-desk.webp",
             "alt": "Hook usage animation",
             "caption": "Demonstration of BHH hook usage - simple and effective attachment"
           },
           {
-            "src": "/assets/bhh-03.gif",
+            "src": "/assets/bhh-03.webp",
             "alt": "Strength test",
             "caption": "Strength test with loaded backpack - supports up to 12kg"
           },

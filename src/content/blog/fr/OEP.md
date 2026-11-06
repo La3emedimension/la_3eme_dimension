@@ -1,7 +1,7 @@
 ---
 title: "OEP - L'oculaire open source"
 publishDate: 2025-09-12
-img: "/assets/OEP1.png"
+img: "/assets/OEP1.webp"
 img_alt: "Oculaire Plössl open source imprimé en 3D, projet OEP"
 description: "OEP (Open Eyepiece Project) : la conception d'un oculaire Plössl open source imprimé en 3D, pensé pour être reproductible par toute la communauté."
 tags:
@@ -60,10 +60,10 @@ Attention : cette formule n’est qu’une approximation. Pour modéliser préci
 Le schéma de montage de l'oculaire : 
 ![OEP schéma de montage](/assets/OEPSchema.png)
 Les différentes pièces:
-![OEP oculaire sur le tapis de souris](/assets/OEP2.png)
-![OEP oculaire sur le bureau](/assets/OEP4.png)
+![OEP oculaire sur le tapis de souris](/assets/OEP2.webp)
+![OEP oculaire sur le bureau](/assets/OEP4.webp)
 
-![OEP oculaire open source](/assets/OEP3.png)
+![OEP oculaire open source](/assets/OEP3.webp)
 
 Les fichiers ne sont pas encore disponibles sur ma page Printables.
 

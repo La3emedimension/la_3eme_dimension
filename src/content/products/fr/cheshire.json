@@ -107,12 +107,12 @@
             "caption": "Positionnement correct dans le porte-oculaire"
           },
           {
-            "src": "/assets/Cheshire/chesh6.png",
+            "src": "/assets/Cheshire/chesh6.webp",
             "alt": "Schéma technique du Cheshire",
             "caption": "Schéma de conception et dimensions"
           },
           {
-            "src": "/assets/Cheshire/chesh7.png",
+            "src": "/assets/Cheshire/chesh7.webp",
             "alt": "Vue éclatée des composants",
             "caption": "Décomposition des différents éléments"
           },
@@ -122,7 +122,7 @@
             "caption": "Explication visuelle du principe de collimation"
           },
           {
-            "src": "/assets/Cheshire/Chesh9.png",
+            "src": "/assets/Cheshire/Chesh9.webp",
             "alt": "Utilisation pratique",
             "caption": "Guide d'utilisation du Cheshire sur télescope"
           }

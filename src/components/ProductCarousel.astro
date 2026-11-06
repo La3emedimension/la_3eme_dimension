@@ -45,8 +45,8 @@ await Promise.all(
   })
 );
 
-const lumiLogoDimensions = await getImageDimensions('/assets/logolumi.png');
-const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.png');
+const lumiLogoDimensions = await getImageDimensions('/assets/logolumi.webp');
+const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.webp');
 ---
 
 <div class="product-carousel">
@@ -65,8 +65,8 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.pn
       const productInfoContent = (
         <div class="product-info">
           <h3>{!isLumi && !isSmallest && (heroData?.title || product.id)}</h3>
-          {isLumi && <img src="/assets/logolumi.png" alt="Lumi" class="lumi-logo-carousel" width={lumiLogoDimensions?.width} height={lumiLogoDimensions?.height} />}
-          {isSmallest && <img src="/assets/smallestlogo.png" alt="Smallest" class="smallest-logo-carousel" width={smallestLogoDimensions?.width} height={smallestLogoDimensions?.height} />}
+          {isLumi && <img src="/assets/logolumi.webp" alt="Lumi" class="lumi-logo-carousel" width={lumiLogoDimensions?.width} height={lumiLogoDimensions?.height} />}
+          {isSmallest && <img src="/assets/smallestlogo.webp" alt="Smallest" class="smallest-logo-carousel" width={smallestLogoDimensions?.width} height={smallestLogoDimensions?.height} />}
         </div>
       );
 

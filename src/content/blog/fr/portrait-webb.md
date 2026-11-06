@@ -1,7 +1,7 @@
 ---
 title: "Florian Rabiller"
 publishDate: 2025-09-17
-img: "/assets/blog/astrodessin/florian1.png"
+img: "/assets/blog/astrodessin/florian1.webp"
 img_alt: "Portrait de Florian Rabiller, astro-dessinateur"
 description: "Portrait de Florian Rabiller, astro-dessinateur pratiquant l'observation visuelle au Dobson, qui partage ses conseils pour se lancer dans le dessin astronomique."
 seoTitle: "Portrait d'astro-dessinateur : Florian Rabiller | La 3ème dimension"
@@ -47,7 +47,7 @@ Il ne faut pas avoir peur de se lancer dans le dessin, ni avoir peur du résulta
 
 ![M51 - 4 février 2024](/assets/blog/astrodessin/M51_4_fevrier_2024_Issarbe_150-400xT400_rescanneB.jpg)
 
-![Dessin astronomique par Florian Rabiller](/assets/blog/astrodessin/cachedImage.png)
+![Dessin astronomique par Florian Rabiller](/assets/blog/astrodessin/cachedImage.webp)
 
 ---
 

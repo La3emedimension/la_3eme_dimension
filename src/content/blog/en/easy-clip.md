@@ -21,7 +21,7 @@ The Easy Clip
 
 The Easy Clip is a magnetic mount designed for your Quickfinder. It lets you switch between telescopes in seconds without unscrewing anything, and gives you access to the CR2032 battery without dismounting the finder.
 
-<img src="/assets/easyclip/Easygi.gif">
+<img src="/assets/easyclip/Easygi.webp">
 
 The system uses high-power neodymium magnets. The attachment is secure but removal is instant. Two mounts are included to equip two different optical tubes.
 

@@ -1,7 +1,7 @@
 ---
 title: "Building your astronomical telescope"
 publishDate: 2025-09-17
-img: "/assets/lunette23.png"
+img: "/assets/lunette23.webp"
 img_alt: "Handmade 80/600 astronomical refractor built by Raphaël"
 description: "The story of building a handmade 80mm/600mm astronomical refractor, from an aluminum angle-bracket frame to a PVC tube, then 3D printing."
 tags:
@@ -27,9 +27,9 @@ The idea was to create a light and modular structure:
 - **Mounts on all mounts**: With a Vixen dovetail
 - **A bit optimistic objective**: I wanted to do photography with it...
 
-![focal length test](/assets/lunette18.png)
-![aluminum telescope](/assets/lunette.png)
-![objectives](/assets/lunetteobjectif.png)
+![focal length test](/assets/lunette18.webp)
+![aluminum telescope](/assets/lunette.webp)
+![objectives](/assets/lunetteobjectif.webp)
 
 However, after a few tests, I quickly noticed the limitations of this setup given the instrument's focal length. The structure, too flexible, did not guarantee sufficient stability for astrophotography. So I moved on to something else...
 
@@ -52,11 +52,11 @@ But in practice, this setup exerted mechanical stress on the glass, which causes
 
 This experience showed me how sensitive the lens cell is: even small pressure can be enough to cause problems.
 
-![cell 1](/assets/lunettebarillet1.png)
+![cell 1](/assets/lunettebarillet1.webp)
 
 I even took a photo of Orion with this setup: the defect is immediately obvious, the stars no longer had their shape at all.
 
-![Orion photo](/assets/lunetteorionv1.png)
+![Orion photo](/assets/lunetteorionv1.webp)
 
 I moved towards a more "standard" cell, equipped with a screw system that holds the doublet without constraining it. This solution proved much more effective: the glass is correctly positioned and free of its expansions, the stars finally regain their roundness, and the whole gains in quality.
 
@@ -72,8 +72,8 @@ As you can see in the cell photos, there are three additional spring-mounted scr
 I designed a small tool: a 3D printed collimator very similar to the TSRCKOLLI collimator.
 
 ![collimator](/assets/collimateur1.jpg)
-![3D printed collimator](/assets/Collim2.png)
-![3D printed collimator](/assets/collim1.png)
+![3D printed collimator](/assets/Collim2.webp)
+![3D printed collimator](/assets/collim1.webp)
 
 ## The tests!
 
@@ -85,7 +85,7 @@ ChantePierre offered to do a [Ronchi test](https://www.grattavetro.it/introduzio
 Without the diaphragm:
 ![Ronchi Test](/assets/lunette11.jpg)
 Without diaphragm and with burst colors:
-![Ronchi Test](/assets/ronchitricolor.PNG)
+![Ronchi Test](/assets/ronchitricolor.webp)
 With the diaphragm:
 ![Ronchi Test](/assets/Lunetteronchimasque.PNG)
 
@@ -93,8 +93,8 @@ With the diaphragm:
 
 It emerges that it is necessary to reduce the blue caused by the objective's chromatic aberration as much as possible. It is also interesting to use a 70mm diaphragm, which limits optical defects, while adding internal baffles to avoid stray light and improve image contrast.
 
-![Baffle and 70MM mask](/assets/lunette22.png)
-![Construction with Baffle](/assets/lunette21.png)
+![Baffle and 70MM mask](/assets/lunette22.webp)
+![Construction with Baffle](/assets/lunette21.webp)
 
 To verify the effectiveness of a blue filter, I decided to do a test with the equipment I had on hand. I used an old yellow photo filter. The idea is to block part of the blue spectrum to improve image sharpness and contrast.
 

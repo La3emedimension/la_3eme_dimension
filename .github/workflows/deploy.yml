@@ -35,11 +35,15 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
+      # GitHub Pages met parfois plus de 10 min (délai maximal autorisé) à publier le site :
+      # en cas d'échec, une seconde tentative est lancée automatiquement.
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v4
-        with:
-          # GitHub Pages met parfois plus de 10 min (délai par défaut) à publier le site
-          timeout: 1200000
+      - name: Deploy to GitHub Pages (2e tentative)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4

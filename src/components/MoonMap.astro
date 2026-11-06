@@ -693,7 +693,7 @@ const { title = t.title, description = t.description } = Astro.props;
       let y = margin;
 
       const logo = new Image();
-      logo.src = '/assets/logolumi.png';
+      logo.src = '/assets/logolumi.webp';
       await new Promise((resolve) => {
         logo.onload = () => resolve(null);
         logo.onerror = () => resolve(null);
