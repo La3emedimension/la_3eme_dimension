@@ -28,7 +28,7 @@ const observationImages = [
   '/assets/le-double-amas-de-persee.png'
 ];
 
-const howToMedia = ['/assets/notice/miseaupoint', '/assets/notice/chercheur'];
+const howToMedia = ['/assets/notice/trajet-lumiere', '/assets/notice/miseaupoint', '/assets/notice/chercheur'];
 
 interface StepText {
   description: string;
@@ -112,6 +112,22 @@ const text: Record<Locale, NoticeText> = {
       description: 'Votre Lumi est montée. Voici les gestes à connaître pour réussir vos premières observations.',
       nextLabel: 'Quoi observer ?',
       parts: [
+        {
+          title: 'Comment ça marche',
+          alt: "Trajet de la lumière : depuis une galaxie, à travers l'objectif, puis renvoyée par le prisme vers l'oculaire",
+          intro: "La Lumi est une lunette : elle utilise une lentille et un prisme pour collecter la lumière des astres et l'amener jusqu'à votre œil.",
+          steps: [
+            "<strong>L'objectif</strong>, à l'avant, est une lentille bien plus large que votre pupille : il capte beaucoup plus de lumière que l'œil nu et la fait converger.",
+            '<strong>Le renvoi coudé</strong> contient un prisme qui dévie la lumière à 90° vers le haut : vous observez confortablement, sans vous tordre le cou.',
+            "<strong>L'oculaire</strong> agit comme une loupe : il grossit l'image formée par l'objectif. C'est là que vous placez votre œil."
+          ],
+          tips: [
+            "Le grossissement est égal à la focale de la lunette divisée par celle de l'oculaire : c'est pour cela qu'en changeant d'oculaire, on change de grossissement.",
+            "Plus l'objectif est large, plus il capte de lumière : c'est ce qui permet de voir des objets trop faibles pour l'œil nu.",
+            "Avec le renvoi coudé, l'image apparaît comme dans un miroir, inversée de gauche à droite : c'est normal.",
+            "<strong>Jamais en direction du Soleil</strong> : l'objectif concentre aussi sa lumière, et brûlerait l'œil instantanément."
+          ]
+        },
         {
           title: 'La mise au point',
           alt: "Rotation de la molette de mise au point qui fait avancer et reculer l'oculaire",
@@ -226,6 +242,22 @@ const text: Record<Locale, NoticeText> = {
       description: 'Your Lumi is assembled. Here are the key skills for a successful first night.',
       nextLabel: 'What to observe',
       parts: [
+        {
+          title: 'How it works',
+          alt: 'Path of light: from a galaxy, through the objective lens, then sent up by the prism to the eyepiece',
+          intro: 'The Lumi is a refractor: it uses a lens and a prism to collect the light from celestial objects and bring it to your eye.',
+          steps: [
+            '<strong>The objective lens</strong>, at the front, is much wider than your pupil: it gathers far more light than the naked eye and brings it to a focus.',
+            '<strong>The star diagonal</strong> contains a prism that turns the light 90° upwards, so you can observe comfortably without craning your neck.',
+            '<strong>The eyepiece</strong> works like a magnifying glass: it enlarges the image formed by the objective. This is where you put your eye.'
+          ],
+          tips: [
+            'Magnification equals the focal length of the refractor divided by the focal length of the eyepiece: that is why changing the eyepiece changes the magnification.',
+            'The wider the objective, the more light it gathers: this is what lets you see objects too faint for the naked eye.',
+            'With the star diagonal, the image looks like a mirror image, flipped left to right: this is normal.',
+            '<strong>Never towards the Sun</strong>: the objective concentrates its light too, and would burn your eye instantly.'
+          ]
+        },
         {
           title: 'Focusing',
           alt: 'Turning the focus knob moves the eyepiece in and out',

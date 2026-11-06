@@ -70,7 +70,7 @@ const sections = [
 			locale
 		}
 	},
-	// Autres sections du produit (sans vidéos, galerie, specs, prix, avantages, avis, porte-filtre)
+	// Autres sections du produit (sans vidéos, galerie, specs, prix, avantages, avis, porte-filtre, Clef des Étoiles)
 	...productConfig.sections.slice(2).filter(section =>
 		section.type !== 'video' &&
 		section.type !== 'gallery' &&
@@ -78,7 +78,8 @@ const sections = [
 		section.type !== 'pricing' &&
 		section.type !== 'features' &&
 		section.type !== 'reviews' &&
-		section.id !== 'section-filter'
+		section.id !== 'section-filter' &&
+		section.id !== 'section-clef-etoiles'
 	),
 	...(c.starMap ? [{ type: 'custom', id: 'section-starmap', customComponent: StarMap, data: c.starMap }] : []),
 	...(c.moonMap ? [{ type: 'custom', id: 'section-moonmap', customComponent: MoonMap, data: c.moonMap }] : []),
