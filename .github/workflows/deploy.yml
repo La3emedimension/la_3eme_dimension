@@ -40,3 +40,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # GitHub Pages met parfois plus de 10 min (délai par défaut) à publier le site
+          timeout: 1200000
