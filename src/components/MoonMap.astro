@@ -1,41 +1,68 @@
 ---
+import type { Locale } from '../i18n';
+
 interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
 }
 
-const {
-  title = "Carte interactive de la Lune",
-  description = "Survolez une zone avec la souris pour voir son nom, cliquez pour en savoir plus.",
-} = Astro.props;
+const ui = {
+  fr: {
+    title: 'Carte interactive de la Lune',
+    description: 'Survolez une zone avec la souris pour voir son nom, cliquez pour en savoir plus.',
+    mobileHint: 'Touchez une zone pour découvrir son nom et son histoire.',
+    alt: 'Pleine Lune - carte interactive des mers et cratères',
+    altFs: 'Pleine Lune - carte interactive plein écran',
+    fullscreenLabel: 'Voir la carte en plein écran', fullscreen: 'Plein écran',
+    close: 'Fermer', closeFs: 'Fermer le plein écran',
+    mare: 'Mer lunaire', crater: 'Cratère', print: 'Imprimer la carte (N&B)',
+    fsHint: "Touchez une zone pour l'identifier", escape: 'Échap', toClose: 'pour fermer'
+  },
+  en: {
+    title: 'Interactive Moon map',
+    description: 'Hover over an area to see its name, click to learn more.',
+    mobileHint: 'Tap an area to discover its name and its story.',
+    alt: 'Full Moon - interactive map of the seas and craters',
+    altFs: 'Full Moon - full-screen interactive map',
+    fullscreenLabel: 'View the map in full screen', fullscreen: 'Full screen',
+    close: 'Close', closeFs: 'Close full screen',
+    mare: 'Lunar sea', crater: 'Crater', print: 'Print the map (B&W)',
+    fsHint: 'Tap an area to identify it', escape: 'Esc', toClose: 'to close'
+  }
+};
+
+const { locale = 'fr' } = Astro.props;
+const t = ui[locale];
+const { title = t.title, description = t.description } = Astro.props;
 ---
 
-<div class="moonmap-tool" id="moonmap-tool">
+<div class="moonmap-tool" id="moonmap-tool" data-locale={locale}>
   <div class="moonmap-header">
     <h3>{title}</h3>
     <p class="moonmap-hint">
       <span class="moonmap-hint-desktop">{description}</span>
-      <span class="moonmap-hint-mobile">Touchez une zone pour découvrir son nom et son histoire.</span>
+      <span class="moonmap-hint-mobile">{t.mobileHint}</span>
     </p>
   </div>
 
   <div class="moonmap-stage-wrap">
     <div class="moonmap-stage" data-moonmap-stage>
-      <img src="/assets/Moon.jpg" alt="Pleine Lune - carte interactive des mers et cratères" class="moonmap-img" data-moonmap-img />
+      <img src="/assets/Moon.jpg" alt={t.alt} class="moonmap-img" data-moonmap-img />
       <div class="moonmap-zones" data-moonmap-zones></div>
       <div class="moonmap-tooltip" data-moonmap-tooltip hidden></div>
     </div>
-    <button type="button" class="moonmap-fullscreen-btn" data-moonmap-fullscreen-open aria-label="Voir la carte en plein écran">
+    <button type="button" class="moonmap-fullscreen-btn" data-moonmap-fullscreen-open aria-label={t.fullscreenLabel}>
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
         <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
       </svg>
-      Plein écran
+      {t.fullscreen}
     </button>
   </div>
 
   <div class="moonmap-card" data-moonmap-card hidden tabindex="-1">
-    <button type="button" class="moonmap-card-close" data-moonmap-card-close aria-label="Fermer">×</button>
+    <button type="button" class="moonmap-card-close" data-moonmap-card-close aria-label={t.close}>×</button>
     <span class="moonmap-card-badge" data-moonmap-card-badge></span>
     <h4 class="moonmap-card-name" data-moonmap-card-name></h4>
     <p class="moonmap-card-desc" data-moonmap-card-desc></p>
@@ -44,36 +71,36 @@ const {
 
   <div class="moonmap-toolbar">
     <div class="moonmap-legend">
-      <span class="moonmap-legend-item"><span class="moonmap-zone-swatch moonmap-zone-swatch--mare" aria-hidden="true"></span>Mer lunaire</span>
-      <span class="moonmap-legend-item"><span class="moonmap-zone-swatch moonmap-zone-swatch--crater" aria-hidden="true"></span>Cratère</span>
+      <span class="moonmap-legend-item"><span class="moonmap-zone-swatch moonmap-zone-swatch--mare" aria-hidden="true"></span>{t.mare}</span>
+      <span class="moonmap-legend-item"><span class="moonmap-zone-swatch moonmap-zone-swatch--crater" aria-hidden="true"></span>{t.crater}</span>
     </div>
     <button type="button" class="moonmap-print-btn" data-moonmap-print>
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
       </svg>
-      <span data-moonmap-print-label>Imprimer la carte (N&amp;B)</span>
+      <span data-moonmap-print-label>{t.print}</span>
     </button>
   </div>
 </div>
 
 <div class="moonmap-fs-overlay" id="moonmap-fs-overlay" aria-hidden="true">
-  <button type="button" class="moonmap-fs-close" data-moonmap-fullscreen-close aria-label="Fermer le plein écran">×</button>
+  <button type="button" class="moonmap-fs-close" data-moonmap-fullscreen-close aria-label={t.closeFs}>×</button>
 
   <div class="moonmap-stage moonmap-stage--fs" data-moonmap-stage>
-    <img src="/assets/Moon.jpg" alt="Pleine Lune - carte interactive plein écran" class="moonmap-img" data-moonmap-img />
+    <img src="/assets/Moon.jpg" alt={t.altFs} class="moonmap-img" data-moonmap-img />
     <div class="moonmap-zones" data-moonmap-zones></div>
     <div class="moonmap-tooltip" data-moonmap-tooltip hidden></div>
   </div>
 
   <div class="moonmap-card moonmap-card--fs" data-moonmap-card hidden tabindex="-1">
-    <button type="button" class="moonmap-card-close" data-moonmap-card-close aria-label="Fermer">×</button>
+    <button type="button" class="moonmap-card-close" data-moonmap-card-close aria-label={t.close}>×</button>
     <span class="moonmap-card-badge" data-moonmap-card-badge></span>
     <h4 class="moonmap-card-name" data-moonmap-card-name></h4>
     <p class="moonmap-card-desc" data-moonmap-card-desc></p>
     <p class="moonmap-card-tip" data-moonmap-card-tip></p>
   </div>
 
-  <p class="moonmap-fs-hint">Touchez une zone pour l'identifier · <kbd>Échap</kbd> pour fermer</p>
+  <p class="moonmap-fs-hint">{t.fsHint} · <kbd>{t.escape}</kbd> {t.toClose}</p>
 </div>
 
 <style is:global>
@@ -503,6 +530,30 @@ const {
     }
   ];
 
+  // Traduction anglaise, dans le même ordre que MOON_FEATURES
+  const MOON_FEATURES_EN = [
+    { name: "Mare Crisium (Sea of Crises)", desc: "A small, almost circular sea, set apart from the other lunar seas. It formed about 3.9 billion years ago when a huge body struck the Moon, then filled with basaltic lava.", tip: "Easy to spot with the naked eye from first quarter." },
+    { name: "Proclus", desc: "A young, bright crater (about 1 billion years old) on the edge of the Sea of Crises. Curiously, its ejecta rays only spread out on one side of the crater.", tip: "Visible in binoculars at full Moon, next to Mare Crisium." },
+    { name: "Mare Serenitatis (Sea of Serenity)", desc: "A vast impact basin filled with cooled lava, bordered by the Caucasus mountain range. One of the easiest seas to identify thanks to its almost round shape.", tip: "Clearly visible even in simple 10x50 binoculars." },
+    { name: "Mare Tranquillitatis (Sea of Tranquility)", desc: "This is where Apollo 11 landed on 20 July 1969: humanity's first step on another world took place on this dark plain.", tip: "The landing site cannot be seen with amateur equipment, but the sea itself is very easy to see." },
+    { name: "Mare Fecunditatis (Sea of Fertility)", desc: "A large basaltic plain visited in 1970 by the Soviet robotic probe Luna 16, which brought back the first lunar samples ever returned by a machine.", tip: "Clearly visible at full Moon, a little fainter at quarter phase." },
+    { name: "Mare Imbrium (Sea of Showers)", desc: "The largest impact basin on the near side, about 1,100 km across, dug out 3.9 billion years ago by one of the biggest impacts the Moon has ever suffered.", tip: "Impossible to miss: it is the largest dark patch in the Moon's whole northern hemisphere." },
+    { name: "Oceanus Procellarum (Ocean of Storms)", desc: "The largest dark expanse on the Moon, several million km². Too big to be a mere \"sea\", it is called an ocean, the only one on the Moon.", tip: "Visible to the naked eye, it covers the whole western quarter of the lunar disc." },
+    { name: "Mare Nubium (Sea of Clouds)", desc: "A more discreet sea south of Imbrium, crossed by faults and dotted with small volcanic domes that you can make out with an instrument.", tip: "Easier to spot under grazing light, around first quarter." },
+    { name: "Mare Humorum (Sea of Moisture)", desc: "An almost circular basin, isolated near the Moon's western edge, one of the sharpest seas to identify in binoculars.", tip: "Its round shape makes it unmistakable." },
+    { name: "Grimaldi", desc: "A vast dark plain near the Moon's western edge, one of the darkest places (lowest albedo) on the whole lunar surface.", tip: "Look for it near the limb: it stands out against the bright surrounding terrain." },
+    { name: "Copernicus", desc: "One of the most famous craters on the Moon: 93 km across, about 800 million years old, surrounded by a system of bright rays so spectacular that it was once nicknamed the \"Monarch of the Moon\".", tip: "Superb under grazing light (first quarter) for its relief, and at full Moon for its rays." },
+    { name: "Tycho", desc: "The Moon's most spectacular rayed crater. Its ejecta stretch for more than 1,500 km and are visible to the naked eye at full Moon. It is \"only\" 108 million years old: dinosaurs still roamed the Earth when it formed.", tip: "The brightest spot on the Moon at full phase: impossible to miss." },
+    { name: "Langrenus", desc: "A large rayed crater 132 km across, on the eastern edge of the Sea of Fertility. Its terraced walls and central peak can be seen in a slightly more powerful instrument.", tip: "Look for it right next to Mare Fecunditatis, on the eastern side of the disc." }
+  ];
+
+  const LANG = document.getElementById('moonmap-tool')?.dataset.locale === 'en' ? 'en' : 'fr';
+  const FEATURES = LANG === 'en' ? MOON_FEATURES.map((f, i) => ({ ...f, ...MOON_FEATURES_EN[i] })) : MOON_FEATURES;
+  const UI = {
+    fr: { mare: 'Mer lunaire', crater: 'Cratère', generating: 'Génération…', printTitle: 'Carte de la Lune', printSubtitle: 'Mers et cratères à identifier sur le terrain', printFooter: "la3emedim.fr · Guide d'observation lunaire", printFile: 'carte-lune-la3edim.png' },
+    en: { mare: 'Lunar sea', crater: 'Crater', generating: 'Generating…', printTitle: 'Moon map', printSubtitle: 'Seas and craters to identify in the field', printFooter: 'la3emedim.fr · Lunar observing guide', printFile: 'moon-map-la3edim.png' }
+  }[LANG];
+
   function initMoonMapRoot(root: Element) {
     const el = root as HTMLElement;
     if (!el || el.dataset.moonmapInit === '1') return;
@@ -536,7 +587,7 @@ const {
       activeBtn = btn;
       btn.classList.add('is-active');
 
-      cardBadge!.textContent = feature.type === 'mare' ? 'Mer lunaire' : 'Cratère';
+      cardBadge!.textContent = feature.type === 'mare' ? UI.mare : UI.crater;
       cardBadge!.className = 'moonmap-card-badge' + (feature.type === 'mare' ? ' is-mare' : '');
       cardName!.textContent = feature.name;
       cardDesc!.textContent = feature.desc;
@@ -553,7 +604,7 @@ const {
     }
 
     // Craters render after (on top of) the larger mare circles so they stay clickable.
-    const renderOrder = MOON_FEATURES.slice().sort((a, b) => b.r - a.r);
+    const renderOrder = FEATURES.slice().sort((a, b) => b.r - a.r);
 
     renderOrder.forEach((feature) => {
       const btn = document.createElement('button');
@@ -618,7 +669,7 @@ const {
     if (!btn || !label) return;
     const originalLabel = label.textContent;
     btn.disabled = true;
-    label.textContent = 'Génération…';
+    label.textContent = UI.generating;
 
     try {
       const img = new Image();
@@ -657,10 +708,10 @@ const {
       ctx.fillStyle = '#111111';
       ctx.textAlign = 'right';
       ctx.textBaseline = 'top';
-      ctx.fillText('Carte de la Lune', A4W - margin, y);
+      ctx.fillText(UI.printTitle, A4W - margin, y);
       ctx.font = '17px sans-serif';
       ctx.fillStyle = '#555555';
-      ctx.fillText('Mers et cratères à identifier sur le terrain', A4W - margin, y + 42);
+      ctx.fillText(UI.printSubtitle, A4W - margin, y + 42);
 
       y += 92;
       ctx.strokeStyle = 'rgba(0,0,0,0.15)';
@@ -692,7 +743,7 @@ const {
       ctx.arc(discCx, discCy, discR, 0, Math.PI * 2);
       ctx.stroke();
 
-      MOON_FEATURES.forEach((f, i) => {
+      FEATURES.forEach((f, i) => {
         const mx = mapX + (f.x / 100) * mapSize;
         const my = y + (f.y / 100) * drawH;
         const rpx = 30;
@@ -719,7 +770,7 @@ const {
       ctx.textBaseline = 'top';
       const colW = (A4W - margin * 2) / 2;
       const rowH = 44;
-      MOON_FEATURES.forEach((f, i) => {
+      FEATURES.forEach((f, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
         const lx = margin + col * colW;
@@ -732,17 +783,17 @@ const {
         ctx.fillText(f.name, lx + 38, ly);
       });
 
-      y += Math.ceil(MOON_FEATURES.length / 2) * rowH + 20;
+      y += Math.ceil(FEATURES.length / 2) * rowH + 20;
       ctx.strokeStyle = 'rgba(0,0,0,0.1)';
       ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(A4W - margin, y); ctx.stroke();
       y += 18;
       ctx.font = '14px sans-serif';
       ctx.fillStyle = '#999999';
       ctx.textAlign = 'center';
-      ctx.fillText('la3emedim.fr · Guide d\'observation lunaire', A4W / 2, y);
+      ctx.fillText(UI.printFooter, A4W / 2, y);
 
       const link = document.createElement('a');
-      link.download = 'carte-lune-la3edim.png';
+      link.download = UI.printFile;
       link.href = canvas.toDataURL('image/png');
       link.click();
     } finally {

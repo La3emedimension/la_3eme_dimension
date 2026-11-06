@@ -81,8 +81,8 @@ const sections = [
 		section.id !== 'section-filter' &&
 		section.id !== 'section-clef-etoiles'
 	),
-	...(c.starMap ? [{ type: 'custom', id: 'section-starmap', customComponent: StarMap, data: c.starMap }] : []),
-	...(c.moonMap ? [{ type: 'custom', id: 'section-moonmap', customComponent: MoonMap, data: c.moonMap }] : []),
+	{ type: 'custom', id: 'section-starmap', customComponent: StarMap, data: { ...c.starMap, locale } },
+	{ type: 'custom', id: 'section-moonmap', customComponent: MoonMap, data: { ...c.moonMap, locale } },
 	{
 		type: 'custom',
 		id: 'section-community',

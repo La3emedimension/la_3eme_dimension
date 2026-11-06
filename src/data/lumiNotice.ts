@@ -13,6 +13,7 @@ const stepMedia = [
     images: ['/assets/ERT_montage_3.png', '/assets/ERT_montage_3.1.png', '/assets/ERT_montage_5.png']
   },
   { image: '/assets/ERT_montage_6.png', animation: '/assets/notice/notice4' },
+  { animation: '/assets/notice/notice-vis' },
   { image: '/assets/ERT_montage_7.png', animation: '/assets/notice/notice5' },
   { image: '/assets/ERT_montage_9.png', animation: '/assets/notice/notice6' },
   { image: '/assets/ERT_montage_10.png', animation: '/assets/notice/notice7' }
@@ -66,9 +67,8 @@ interface NoticeText {
     mapLink: string;
     mapText: string;
   };
-  // Cartes du ciel et de la Lune : interface encore en français uniquement
-  starMap?: { title: string; description: string };
-  moonMap?: { title: string; description: string };
+  starMap: { title: string; description: string };
+  moonMap: { title: string; description: string };
   communityTitle: string;
   nav: Record<string, string>;
   snCard: { title: string; product: string; serial: string; date: string };
@@ -102,6 +102,7 @@ const text: Record<Locale, NoticeText> = {
           ]
         },
         { description: 'Assemblage porte-oculaire et tube.', alt: 'Assemblage porte-oculaire et tube' },
+        { description: 'Visser la vis M3 par le dessous du tube : elle sécurise le porte-oculaire avec le tube.', alt: 'Vissage de la vis M3 par le dessous du tube à la clef Allen' },
         { description: 'Le renvoi coudé, assemblage de la plaque, du prisme et du châssis du renvoi coudé.', alt: 'Assemblage du renvoi coudé avec plaque, prisme et châssis' },
         { description: 'Et voilà vous pouvez observer !', alt: "Lunette Lumi prête pour l'observation" },
         { description: 'Bravo ! Vous savez maintenant comment assembler une lunette astronomique', alt: 'Étape finale du montage Lumi' }
@@ -232,6 +233,7 @@ const text: Record<Locale, NoticeText> = {
           ]
         },
         { description: 'Assembling the focuser and the tube.', alt: 'Assembling the focuser and the tube' },
+        { description: 'Screw the M3 screw in from underneath the tube: it secures the focuser to the tube.', alt: 'Tightening the M3 screw from underneath the tube with the Allen key' },
         { description: 'The star diagonal: assemble the plate, the prism and the diagonal housing.', alt: 'Assembling the star diagonal with plate, prism and housing' },
         { description: "That's it, you're ready to observe!", alt: 'Lumi refractor ready to observe' },
         { description: 'Well done! You now know how to assemble an astronomical refractor.', alt: 'Final step of the Lumi assembly' }
@@ -294,6 +296,7 @@ const text: Record<Locale, NoticeText> = {
     observation: {
       title: 'What to observe',
       description: 'Discover the wonders of the night sky with your Lumi refractor, from the Moon to distant galaxies.',
+      nextLink: { href: '#section-starmap', label: 'Sky chart' },
       items: [
         { title: 'The Moon', description: 'Observe lunar craters, seas and mountains. The best time is during the waxing and waning phases.', alt: 'Observing the Moon with the Lumi refractor' },
         { title: 'Jupiter and its moons', description: 'The largest planet in the Solar System and its four main moons, Io, Europa, Ganymede and Callisto, visible as small bright dots around Jupiter.', alt: 'Observing Jupiter and its moons with the Lumi refractor' },
@@ -309,12 +312,22 @@ const text: Record<Locale, NoticeText> = {
       mapLink: '/en/carte-communaute/',
       mapText: 'See the map'
     },
+    starMap: {
+      title: 'Observe tonight',
+      description: 'Generate your own sky chart: enter a date and your observing location to find out what is visible that night.'
+    },
+    moonMap: {
+      title: 'Identify the seas and craters',
+      description: 'Hover over an area of the Moon to see its name, click to learn more.'
+    },
     communityTitle: 'Community map',
     nav: {
       'section-hero': 'Overview',
       'section-assembly-guide': 'Assembly',
       'section-how-to-observe': 'How to observe',
       'section-observation': 'Observe',
+      'section-starmap': 'Sky chart',
+      'section-moonmap': 'Moon map',
       'section-community': 'Community'
     },
     snCard: { title: '🔭 Product card', product: 'Product', serial: 'Serial number', date: 'Purchase date' }

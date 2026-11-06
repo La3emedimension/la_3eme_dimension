@@ -1,12 +1,95 @@
 ---
+import type { Locale } from '../i18n';
+
 interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
 }
-const { title = "Observe ce soir", description = "Génère ta carte du ciel personnalisée pour cette nuit." } = Astro.props;
+
+const ui = {
+  fr: {
+    title: 'Observe ce soir',
+    description: 'Génère ta carte du ciel personnalisée pour cette nuit.',
+    datetime: 'Date et heure', place: 'Lieu', gpsTitle: 'Utiliser ma position GPS', myPosition: 'Ma position',
+    generate: 'Générer la carte', chart: 'Carte du ciel', fullscreen: 'Plein écran',
+    visible: 'Objets visibles', sidebarEmpty: 'Clique sur "Générer" pour voir les objets visibles.',
+    legendTitle: 'Objets visibles avec une 50/200',
+    types: ['Nébuleuse', 'Amas ouvert', 'Amas globulaire', 'Galaxie', 'Étoile double'],
+    tutoTitle: 'Comment lire la carte du ciel ?',
+    orientTitle: 'Orientation de la carte',
+    orient1: "Le <strong>centre</strong> représente le point juste au-dessus de ta tête (le zénith). Le <strong>bord</strong> représente l'horizon. Plus un objet est proche du centre, plus il est haut dans le ciel.",
+    orient2: 'Les directions sont : <strong>N</strong> en haut, <strong>E</strong> à gauche, <strong>S</strong> en bas, <strong>O</strong> à droite, comme si tu regardais le ciel en te couchant sur le dos, la tête vers le Nord.',
+    starsTitle: 'Les étoiles et constellations',
+    stars1: 'Les points blancs sont les étoiles : plus ils sont gros, plus l\'étoile est brillante. Les lignes bleues relient les étoiles pour former les <strong>constellations</strong>, comme Orion ou la Grande Ourse.',
+    stars2: 'Les couleurs indiquent la température : bleu = très chaud, blanc = chaud, jaune-orange = plus froid.',
+    symbolsTitle: "Les symboles d'objets",
+    symbols: [
+      ['sym-neb', '□ pointillé cyan', 'Nébuleuse : nuage de gaz'],
+      ['sym-oc', '○ pointillé jaune', "Amas ouvert : groupe d'étoiles"],
+      ['sym-gc', '⊕ bleu clair', "Amas globulaire : sphère d'étoiles"],
+      ['sym-gal', '⬭ rose', "Galaxie : système d'étoiles lointain"],
+      ['sym-db', '◎ blanc', 'Étoile double : deux étoiles liées']
+    ],
+    lumiTitle: 'Utiliser la carte avec ta Lumi',
+    lumiSteps: [
+      "Génère la carte pour <strong>ce soir</strong> à ton lieu d'observation.",
+      'Repère un objet dans la liste à droite, en commençant par la <strong>Lune</strong> ou une planète brillante.',
+      "Oriente-toi avec une boussole ou en repérant l'Étoile Polaire (toujours au Nord).",
+      "Pointe ta lunette dans la bonne direction et cherche l'objet dans le champ.",
+      'Attends <strong>20 minutes dans le noir</strong> pour que tes yeux s\'adaptent, tu verras beaucoup plus !'
+    ],
+    print: 'Imprimer A4 N&B',
+    note: 'N = Nord · E = Est · S = Sud · O = Ouest (vue depuis le sol, Nord en haut)',
+    fsChart: 'Carte du ciel plein écran', fsDatetime: 'Date & heure', fsGps: 'Ma position GPS',
+    now: 'Maintenant', day: 'j', search: 'Recherche', searchPlaceholder: 'Étoile, planète, objet…',
+    close: 'Fermer', fsHint: 'Déplacez la souris pour afficher les contrôles', escape: 'Échap', toClose: 'pour fermer'
+  },
+  en: {
+    title: 'Observe tonight',
+    description: 'Generate your own sky chart for tonight.',
+    datetime: 'Date and time', place: 'Location', gpsTitle: 'Use my GPS location', myPosition: 'My location',
+    generate: 'Generate the chart', chart: 'Sky chart', fullscreen: 'Full screen',
+    visible: 'Visible objects', sidebarEmpty: 'Click "Generate" to see the visible objects.',
+    legendTitle: 'Objects visible with a 50/200',
+    types: ['Nebula', 'Open cluster', 'Globular cluster', 'Galaxy', 'Double star'],
+    tutoTitle: 'How to read the sky chart',
+    orientTitle: 'Chart orientation',
+    orient1: 'The <strong>centre</strong> is the point right above your head (the zenith). The <strong>edge</strong> is the horizon. The closer an object is to the centre, the higher it is in the sky.',
+    orient2: 'Directions are: <strong>N</strong> at the top, <strong>E</strong> on the left, <strong>S</strong> at the bottom, <strong>W</strong> on the right, as if you were lying on your back looking up, with your head towards the North.',
+    starsTitle: 'Stars and constellations',
+    stars1: 'The white dots are stars: the bigger the dot, the brighter the star. The blue lines join the stars into <strong>constellations</strong>, such as Orion or Ursa Major.',
+    stars2: 'Colours show temperature: blue = very hot, white = hot, yellow-orange = cooler.',
+    symbolsTitle: 'Object symbols',
+    symbols: [
+      ['sym-neb', '□ dotted cyan', 'Nebula: a cloud of gas'],
+      ['sym-oc', '○ dotted yellow', 'Open cluster: a group of stars'],
+      ['sym-gc', '⊕ light blue', 'Globular cluster: a ball of stars'],
+      ['sym-gal', '⬭ pink', 'Galaxy: a distant system of stars'],
+      ['sym-db', '◎ white', 'Double star: two linked stars']
+    ],
+    lumiTitle: 'Using the chart with your Lumi',
+    lumiSteps: [
+      'Generate the chart for <strong>tonight</strong> at your observing location.',
+      'Pick an object from the list on the right, starting with the <strong>Moon</strong> or a bright planet.',
+      'Find your bearings with a compass or by spotting the Pole Star (always to the North).',
+      'Point your refractor in the right direction and look for the object in the field of view.',
+      'Wait <strong>20 minutes in the dark</strong> for your eyes to adapt: you will see much more!'
+    ],
+    print: 'Print A4 B&W',
+    note: 'N = North · E = East · S = South · W = West (seen from the ground, North at the top)',
+    fsChart: 'Full-screen sky chart', fsDatetime: 'Date & time', fsGps: 'My GPS location',
+    now: 'Now', day: 'd', search: 'Search', searchPlaceholder: 'Star, planet, object…',
+    close: 'Close', fsHint: 'Move the mouse to show the controls', escape: 'Esc', toClose: 'to close'
+  }
+};
+
+const { locale = 'fr' } = Astro.props;
+const t = ui[locale];
+const { title = t.title, description = t.description } = Astro.props;
 ---
 
-<div class="starmap-section">
+<div class="starmap-section" data-locale={locale}>
   <div class="wrapper stack gap-8">
     <header class="section-header stack gap-2 lg:gap-4">
       <h2>{title}</h2>
@@ -16,11 +99,11 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
     <div class="starmap-controls">
       <div class="control-row">
         <div class="control-group">
-          <label for="sm-datetime">Date et heure</label>
+          <label for="sm-datetime">{t.datetime}</label>
           <input type="datetime-local" id="sm-datetime" />
         </div>
         <div class="control-group">
-          <label for="sm-city">Lieu</label>
+          <label for="sm-city">{t.place}</label>
           <div class="city-row">
             <select id="sm-city">
               <option value="48.8566,2.3522">Paris</option>
@@ -44,16 +127,16 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
               <option value="49.4432,1.0993">Rouen</option>
               <option value="49.1193,6.1757">Metz</option>
             </select>
-            <button id="sm-geolocate" title="Utiliser ma position GPS">
+            <button id="sm-geolocate" title={t.gpsTitle}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
                 <circle cx="12" cy="12" r="8" opacity="0.3"/>
               </svg>
-              Ma position
+              {t.myPosition}
             </button>
           </div>
         </div>
-        <button id="sm-generate" class="generate-btn">Générer la carte</button>
+        <button id="sm-generate" class="generate-btn">{t.generate}</button>
       </div>
     </div>
 
@@ -61,21 +144,21 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
       <div id="sm-detail" class="sm-detail-left"></div>
 
       <div class="canvas-container">
-        <canvas id="starmap-canvas" width="700" height="700" aria-label="Carte du ciel"></canvas>
+        <canvas id="starmap-canvas" width="700" height="700" aria-label={t.chart}></canvas>
         <div id="sm-tooltip" class="sm-tooltip"></div>
         <div class="sm-expand-hint">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
             <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
           </svg>
-          Plein écran
+          {t.fullscreen}
         </div>
       </div>
 
       <div class="sm-sidebar">
-        <div class="sidebar-header">Objets visibles</div>
+        <div class="sidebar-header">{t.visible}</div>
         <div id="sm-list" class="sidebar-list">
-          <p class="sidebar-empty">Clique sur "Générer" pour voir les objets visibles.</p>
+          <p class="sidebar-empty">{t.sidebarEmpty}</p>
         </div>
       </div>
     </div>
@@ -83,54 +166,46 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
     <div id="sm-info" class="sm-info"></div>
 
     <div class="dso-legend">
-      <span class="legend-title">Objets visibles avec une 50/200</span>
-      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" fill="none" stroke="#44ffcc" stroke-width="1.2" stroke-dasharray="2,2"/></svg>Nébuleuse</span>
-      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" fill="none" stroke="#ffdd44" stroke-width="1.2" stroke-dasharray="2,2"/></svg>Amas ouvert</span>
-      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" fill="none" stroke="#88ccff" stroke-width="1.2"/><line x1="2" y1="9" x2="16" y2="9" stroke="#88ccff" stroke-width="1.2"/><line x1="9" y1="2" x2="9" y2="16" stroke="#88ccff" stroke-width="1.2"/></svg>Amas globulaire</span>
-      <span class="legend-item"><svg width="20" height="18" viewBox="0 0 20 18"><ellipse cx="10" cy="9" rx="9" ry="4" fill="none" stroke="#ff88cc" stroke-width="1.2"/></svg>Galaxie</span>
-      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="6" cy="9" r="4" fill="none" stroke="rgba(220,240,255,0.85)" stroke-width="1.2"/><circle cx="12" cy="9" r="4" fill="none" stroke="rgba(220,240,255,0.85)" stroke-width="1.2"/></svg>Étoile double</span>
+      <span class="legend-title">{t.legendTitle}</span>
+      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" fill="none" stroke="#44ffcc" stroke-width="1.2" stroke-dasharray="2,2"/></svg>{t.types[0]}</span>
+      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" fill="none" stroke="#ffdd44" stroke-width="1.2" stroke-dasharray="2,2"/></svg>{t.types[1]}</span>
+      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" fill="none" stroke="#88ccff" stroke-width="1.2"/><line x1="2" y1="9" x2="16" y2="9" stroke="#88ccff" stroke-width="1.2"/><line x1="9" y1="2" x2="9" y2="16" stroke="#88ccff" stroke-width="1.2"/></svg>{t.types[2]}</span>
+      <span class="legend-item"><svg width="20" height="18" viewBox="0 0 20 18"><ellipse cx="10" cy="9" rx="9" ry="4" fill="none" stroke="#ff88cc" stroke-width="1.2"/></svg>{t.types[3]}</span>
+      <span class="legend-item"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="6" cy="9" r="4" fill="none" stroke="rgba(220,240,255,0.85)" stroke-width="1.2"/><circle cx="12" cy="9" r="4" fill="none" stroke="rgba(220,240,255,0.85)" stroke-width="1.2"/></svg>{t.types[4]}</span>
     </div>
 
     <details class="sm-tuto">
-      <summary class="sm-tuto-title">Comment lire la carte du ciel ?</summary>
+      <summary class="sm-tuto-title">{t.tutoTitle}</summary>
       <div class="sm-tuto-body">
         <div class="tuto-grid">
 
           <div class="tuto-card">
             <div class="tuto-icon">🔵</div>
-            <h4>Orientation de la carte</h4>
-            <p>Le <strong>centre</strong> représente le point juste au-dessus de ta tête (le zénith). Le <strong>bord</strong> représente l'horizon. Plus un objet est proche du centre, plus il est haut dans le ciel.</p>
-            <p>Les directions sont : <strong>N</strong> en haut, <strong>E</strong> à gauche, <strong>S</strong> en bas, <strong>O</strong> à droite, comme si tu regardais le ciel en te couchant sur le dos, la tête vers le Nord.</p>
+            <h4>{t.orientTitle}</h4>
+            <p set:html={t.orient1}></p>
+            <p set:html={t.orient2}></p>
           </div>
 
           <div class="tuto-card">
             <div class="tuto-icon">⭐</div>
-            <h4>Les étoiles et constellations</h4>
-            <p>Les points blancs sont les étoiles : plus ils sont gros, plus l'étoile est brillante. Les lignes bleues relient les étoiles pour former les <strong>constellations</strong>, comme Orion ou la Grande Ourse.</p>
-            <p>Les couleurs indiquent la température : bleu = très chaud, blanc = chaud, jaune-orange = plus froid.</p>
+            <h4>{t.starsTitle}</h4>
+            <p set:html={t.stars1}></p>
+            <p>{t.stars2}</p>
           </div>
 
           <div class="tuto-card">
             <div class="tuto-icon">🔭</div>
-            <h4>Les symboles d'objets</h4>
+            <h4>{t.symbolsTitle}</h4>
             <ul class="tuto-symbols">
-              <li><span class="sym-neb">□ pointillé cyan</span> Nébuleuse : nuage de gaz</li>
-              <li><span class="sym-oc">○ pointillé jaune</span> Amas ouvert : groupe d'étoiles</li>
-              <li><span class="sym-gc">⊕ bleu clair</span> Amas globulaire : sphère d'étoiles</li>
-              <li><span class="sym-gal">⬭ rose</span> Galaxie : système d'étoiles lointain</li>
-              <li><span class="sym-db">◎ blanc</span> Étoile double : deux étoiles liées</li>
+              {t.symbols.map(([cls, sym, label]) => <li><span class={cls}>{sym}</span> {label}</li>)}
             </ul>
           </div>
 
           <div class="tuto-card">
             <div class="tuto-icon">🌙</div>
-            <h4>Utiliser la carte avec ta Lumi</h4>
+            <h4>{t.lumiTitle}</h4>
             <ol class="tuto-steps">
-              <li>Génère la carte pour <strong>ce soir</strong> à ton lieu d'observation.</li>
-              <li>Repère un objet dans la liste à droite, en commençant par la <strong>Lune</strong> ou une planète brillante.</li>
-              <li>Oriente-toi avec une boussole ou en repérant l'Étoile Polaire (toujours au Nord).</li>
-              <li>Pointe ta lunette dans la bonne direction et cherche l'objet dans le champ.</li>
-              <li>Attends <strong>20 minutes dans le noir</strong> pour que tes yeux s'adaptent, tu verras beaucoup plus !</li>
+              {t.lumiSteps.map((step) => <li set:html={step}></li>)}
             </ol>
           </div>
 
@@ -143,16 +218,16 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
         </svg>
-        Imprimer A4 N&amp;B
+        {t.print}
       </button>
-      <p class="starmap-note">N = Nord · E = Est · S = Sud · O = Ouest (vue depuis le sol, Nord en haut)</p>
+      <p class="starmap-note">{t.note}</p>
     </div>
   </div>
 </div>
 
 <!-- Overlay plein écran -->
 <div id="sm-fullscreen" class="sm-fullscreen-overlay" aria-hidden="true">
-  <canvas id="sm-fs-canvas" aria-label="Carte du ciel plein écran"></canvas>
+  <canvas id="sm-fs-canvas" aria-label={t.fsChart}></canvas>
 
   <!-- Toolbar Stellarium -->
   <div id="sm-fs-toolbar" class="sm-fs-toolbar">
@@ -163,7 +238,7 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
-          Date &amp; heure
+          {t.fsDatetime}
         </label>
         <input type="datetime-local" id="sm-fs-datetime" />
       </div>
@@ -173,11 +248,11 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
           </svg>
-          Lieu
+          {t.place}
         </label>
         <div class="fs-city-row">
           <select id="sm-fs-city"></select>
-          <button id="sm-fs-geolocate" title="Ma position GPS">
+          <button id="sm-fs-geolocate" title={t.fsGps}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
               <circle cx="12" cy="12" r="8" opacity="0.35"/>
@@ -186,14 +261,14 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
         </div>
       </div>
 
-      <button id="sm-fs-now" class="fs-btn">Maintenant</button>
+      <button id="sm-fs-now" class="fs-btn">{t.now}</button>
 
       <div class="fs-time-nav">
         <button class="fs-step-btn" data-step="-3600">−1h</button>
         <button class="fs-step-btn" data-step="-600">−10m</button>
         <button class="fs-step-btn" data-step="600">+10m</button>
         <button class="fs-step-btn" data-step="3600">+1h</button>
-        <button class="fs-step-btn" data-step="86400">+1j</button>
+        <button class="fs-step-btn" data-step="86400">+1{t.day}</button>
       </div>
 
       <div class="fs-ctrl-group fs-search-group">
@@ -201,15 +276,15 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
-          Recherche
+          {t.search}
         </label>
         <div class="fs-search-wrap">
-          <input type="text" id="sm-fs-search" placeholder="Étoile, planète, objet…" autocomplete="off" />
+          <input type="text" id="sm-fs-search" placeholder={t.searchPlaceholder} autocomplete="off" />
           <ul id="sm-fs-search-results" class="fs-search-results"></ul>
         </div>
       </div>
 
-      <button id="sm-fs-close" class="sm-fs-close" aria-label="Fermer">
+      <button id="sm-fs-close" class="sm-fs-close" aria-label={t.close}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
@@ -220,15 +295,22 @@ const { title = "Observe ce soir", description = "Génère ta carte du ciel pers
 
   <div id="sm-fs-tooltip" class="sm-fs-tooltip"></div>
   <div id="sm-fs-card" class="sm-fs-card" aria-hidden="true">
-    <button id="sm-fs-card-close" class="sm-fs-card-close" aria-label="Fermer">×</button>
+    <button id="sm-fs-card-close" class="sm-fs-card-close" aria-label={t.close}>×</button>
     <div id="sm-fs-card-badge" class="sm-fs-card-badge"></div>
     <div id="sm-fs-card-name" class="sm-fs-card-name"></div>
     <div id="sm-fs-card-desc" class="sm-fs-card-desc"></div>
   </div>
-  <p class="sm-fs-hint">Déplacez la souris pour afficher les contrôles · <kbd>Échap</kbd> pour fermer</p>
+  <p class="sm-fs-hint">{t.fsHint} · <kbd>{t.escape}</kbd> {t.toClose}</p>
 </div>
 
 <script>
+import { STARMAP_UI, translateDsoToEnglish } from '../lib/starmapI18n';
+
+// Langue de la page (data-locale sur la section), pour les textes générés par le script
+const LANG = document.querySelector<HTMLElement>('.starmap-section')?.dataset.locale === 'en' ? 'en' : 'fr';
+const UI = STARMAP_UI[LANG];
+const dirLabel = (lbl: string) => UI.directions[lbl] ?? lbl;
+
 // Star catalog sourced from the HYG database (astronexus/HYG-Database) and
 // Stellarium's "modern" (IAU) skyculture constellation lines — [ra_h, dec_deg, mag, colorIdx, name]
 // colorIdx: 0=B(blue) 1=A(white) 2=F(yw) 3=G(yel) 4=K(org) 5=M(red)
@@ -1228,11 +1310,11 @@ const OE: Record<string, number[]> = {
 };
 
 const PLANET_DISPLAY: Record<string,[string,string]> = {
-  mercury: ['#aaaaaa','Mercure'],
-  venus:   ['#ffffa0','Vénus'],
-  mars:    ['#ff6633','Mars'],
-  jupiter: ['#ffd8a0','Jupiter'],
-  saturn:  ['#ffee88','Saturne'],
+  mercury: ['#aaaaaa', UI.planets.mercury],
+  venus:   ['#ffffa0', UI.planets.venus],
+  mars:    ['#ff6633', UI.planets.mars],
+  jupiter: ['#ffd8a0', UI.planets.jupiter],
+  saturn:  ['#ffee88', UI.planets.saturn],
 };
 
 // Deep Sky Objects: the full Messier catalog (110 objects), sourced from the
@@ -1360,6 +1442,7 @@ const DSO: [number,number,string,string,string][] = [
   [19.5120, 27.9597, 'Albireo: Étoile double', 'db', 'Le plus beau couple du ciel : une étoile dorée et une étoile bleu-turquoise.'],
   [13.3988, 54.9253, 'Mizar & Alcor: Étoiles doubles', 'db', 'Célèbre couple de la Grande Ourse, facilement séparé à l\'œil nu ou à la lunette.'],
 ];
+if (LANG === 'en') translateDsoToEnglish(DSO);
 
 // Module-level state
 type VisibleObj = {x:number;y:number;name:string;desc:string;type:string;alt:number};
@@ -1367,13 +1450,7 @@ let dsoPositions: {x:number;y:number;name:string;desc:string}[] = [];
 let visibleObjects: VisibleObj[] = [];
 let highlightIdx = -1;
 
-const PLANET_DESC: Record<string,string> = {
-  mercury: 'Difficile à observer car toujours proche du Soleil. Cherchez-le au crépuscule, bas sur l\'horizon.',
-  venus:   'La plus brillante des planètes ! Trop éblouissante pour voir des détails, mais magnifique à l\'œil nu et à la lunette.',
-  mars:    'Reconnaissable à sa teinte rouge-orangée. En période d\'opposition, on peut deviner ses calottes polaires.',
-  jupiter: 'La plus grande planète du système solaire ! Avec la Lumi, cherchez les 4 lunes galiléennes (petits points alignés).',
-  saturn:  'Les anneaux sont visibles même à 10×, une découverte mémorable pour tout débutant !',
-};
+const PLANET_DESC: Record<string,string> = UI.planetDesc;
 
 // ─── Math helpers
 function mod360(x: number) { return ((x % 360) + 360) % 360; }
@@ -1608,7 +1685,7 @@ function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: H
     ctx.fillStyle = bw ? '#333333' : '#ffee44';
     ctx.beginPath(); ctx.arc(sunPt.x, sunPt.y, 6, 0, Math.PI*2); ctx.fill();
     ctx.font = '10px sans-serif'; ctx.fillStyle = bw ? '#333333' : '#ffee44'; ctx.textAlign = 'left';
-    ctx.fillText('Soleil', sunPt.x+8, sunPt.y+3);
+    ctx.fillText(UI.sun, sunPt.x+8, sunPt.y+3);
   }
 
   // Moon
@@ -1625,8 +1702,8 @@ function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: H
     ctx.fillStyle = bw ? '#444444' : '#dde4ff';
     ctx.beginPath(); ctx.arc(moonPt.x, moonPt.y, 5, 0, Math.PI*2); ctx.fill();
     ctx.font = '10px sans-serif'; ctx.fillStyle = bw ? '#444444' : '#dde4ff'; ctx.textAlign = 'left';
-    ctx.fillText('Lune', moonPt.x+8, moonPt.y+3);
-    visibleObjects.push({ x: moonPt.x, y: moonPt.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', type: 'moon', alt: moonAA.alt });
+    ctx.fillText(UI.moon, moonPt.x+8, moonPt.y+3);
+    visibleObjects.push({ x: moonPt.x, y: moonPt.y, name: UI.moon, desc: UI.moonDesc, type: 'moon', alt: moonAA.alt });
   }
 
   // Planets
@@ -1734,22 +1811,19 @@ function draw(date: Date, lat: number, lon: number, bw = false, targetCanvas?: H
     ctx.font = 'bold 17px sans-serif';
     ctx.fillStyle = bw ? '#111111' : '#aabbee';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillText(lbl, x, y);
+    ctx.fillText(dirLabel(lbl), x, y);
   }
 
   // Date/time label
-  const dateLabel = date.toLocaleDateString('fr-FR', {weekday:'long',day:'numeric',month:'long',year:'numeric'})
-    + ', ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+  const dateLabel = date.toLocaleDateString(UI.dateLocale, {weekday:'long',day:'numeric',month:'long',year:'numeric'})
+    + ', ' + date.toLocaleTimeString(UI.dateLocale,{hour:'2-digit',minute:'2-digit'});
   ctx.font = '11px sans-serif'; ctx.fillStyle = bw ? 'rgba(0,0,0,0.5)' : 'rgba(160,180,220,0.7)';
   ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
   ctx.fillText(dateLabel, cx, H - 6);
 }
 
 // ─── Sidebar
-const TYPE_LABELS: Record<string,string> = {
-  moon:'Lune', planet:'Planètes', neb:'Nébuleuses',
-  oc:'Amas ouverts', gc:'Amas globulaires', gal:'Galaxies', db:'Étoiles doubles',
-};
+const TYPE_LABELS: Record<string,string> = UI.typeLabels;
 const TYPE_COLOR: Record<string,string> = {
   moon:'#dde4ff', planet:'#ffd8a0', neb:'#44ffcc',
   oc:'#ffdd44', gc:'#88ccff', gal:'#ff88cc', db:'rgba(220,240,255,0.85)',
@@ -1762,7 +1836,7 @@ function populateSidebar() {
   if (!list || !detail) return;
 
   if (visibleObjects.length === 0) {
-    list.innerHTML = '<p class="sidebar-empty">Génère la carte pour voir les objets visibles.</p>';
+    list.innerHTML = `<p class="sidebar-empty">${UI.sidebarEmpty}</p>`;
     detail.innerHTML = '';
     return;
   }
@@ -1835,16 +1909,16 @@ function updateInfo(date: Date, lat: number, lon: number) {
   const info = document.getElementById('sm-info');
   if (!info) return;
   if (sunAlt > 0) {
-    info.textContent = `Le Soleil est encore au-dessus de l'horizon (${sunAlt.toFixed(0)}°). Les étoiles ne sont pas encore visibles.`;
+    info.textContent = UI.infoSunUp(sunAlt.toFixed(0));
     info.style.color = '#ffcc44';
   } else if (sunAlt > -6) {
-    info.textContent = `Crépuscule civil : le ciel commence à s'assombrir.`;
+    info.textContent = UI.infoCivil;
     info.style.color = '#aabbff';
   } else if (sunAlt > -12) {
-    info.textContent = `Crépuscule nautique : bonnes conditions pour les étoiles brillantes.`;
+    info.textContent = UI.infoNautical;
     info.style.color = '#aabbff';
   } else {
-    info.textContent = `Nuit astronomique : toutes les étoiles sont visibles.`;
+    info.textContent = UI.infoNight;
     info.style.color = '#88aaff';
   }
 }
@@ -1873,23 +1947,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add a custom option
       const opt = document.createElement('option');
       opt.value = `${lat.toFixed(4)},${lon.toFixed(4)}`;
-      opt.text = `Ma position (${lat.toFixed(2)}°, ${lon.toFixed(2)}°)`;
+      opt.text = `${UI.myPosition} (${lat.toFixed(2)}°, ${lon.toFixed(2)}°)`;
       opt.selected = true;
       sel.insertBefore(opt, sel.firstChild);
-      btn.textContent = '✓ Localisé';
+      btn.textContent = UI.located;
       const { date } = getParams();
       highlightIdx = -1;
       draw(date, lat, lon);
       updateInfo(date, lat, lon);
       populateSidebar();
-    }, () => { btn.textContent = 'Ma position'; });
+    }, () => { btn.textContent = UI.myPosition; });
   });
 
   // Export A4 N&B pour impression
   document.getElementById('sm-print-a4')!.addEventListener('click', async () => {
     const btn = document.getElementById('sm-print-a4') as HTMLButtonElement;
     btn.disabled = true;
-    btn.textContent = 'Génération…';
+    btn.textContent = UI.generating;
 
     const { date, lat, lon } = getParams();
     const citySelect = document.getElementById('sm-city') as HTMLSelectElement;
@@ -1929,11 +2003,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillStyle = '#111111';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'top';
-    ctx.fillText('Carte du ciel', A4W - margin, y + 4);
+    ctx.fillText(UI.printTitle, A4W - margin, y + 4);
     ctx.font = '16px sans-serif';
     ctx.fillStyle = '#555555';
-    const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-      + ', ' + date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    const dateStr = date.toLocaleDateString(UI.dateLocale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+      + ', ' + date.toLocaleTimeString(UI.dateLocale, { hour: '2-digit', minute: '2-digit' });
     ctx.fillText(dateStr, A4W - margin, y + 40);
     ctx.fillText(cityName, A4W - margin, y + 62);
 
@@ -1961,26 +2035,26 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.fillStyle = '#444444';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    ctx.fillText('N = Nord  ·  E = Est  ·  S = Sud  ·  O = Ouest  (vue depuis le sol, Nord en haut)', A4W / 2, y);
+    ctx.fillText(UI.printDirections, A4W / 2, y);
     y += 22;
 
     // --- Légende objets DSO (dessinés au trait) ---
     const dsoItems: [string, (cx: number, cy: number) => void][] = [
-      ['Nébuleuse', (cx, cy) => {
+      [UI.printTypes[0], (cx, cy) => {
         ctx.setLineDash([3, 2]); ctx.strokeRect(cx - 7, cy - 7, 14, 14); ctx.setLineDash([]);
       }],
-      ['Amas ouvert', (cx, cy) => {
+      [UI.printTypes[1], (cx, cy) => {
         ctx.setLineDash([3, 2]); ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
       }],
-      ['Amas globulaire', (cx, cy) => {
+      [UI.printTypes[2], (cx, cy) => {
         ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(cx - 7, cy); ctx.lineTo(cx + 7, cy); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(cx, cy - 7); ctx.lineTo(cx, cy + 7); ctx.stroke();
       }],
-      ['Galaxie', (cx, cy) => {
+      [UI.printTypes[3], (cx, cy) => {
         ctx.beginPath(); ctx.ellipse(cx, cy, 11, 4, 0, 0, Math.PI * 2); ctx.stroke();
       }],
-      ['Étoile double', (cx, cy) => {
+      [UI.printTypes[4], (cx, cy) => {
         ctx.beginPath(); ctx.arc(cx - 4, cy, 4, 0, Math.PI * 2); ctx.stroke();
         ctx.beginPath(); ctx.arc(cx + 4, cy, 4, 0, Math.PI * 2); ctx.stroke();
       }],
@@ -2008,11 +2082,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.font = '12px sans-serif';
     ctx.fillStyle = '#999999';
     ctx.textAlign = 'center';
-    ctx.fillText('la3emedim.fr · Lunette astronomique Lumi', A4W / 2, y);
+    ctx.fillText(UI.printFooter, A4W / 2, y);
 
     // 3. Télécharger
     const link = document.createElement('a');
-    link.download = 'carte-du-ciel-lumi.png';
+    link.download = UI.printFile;
     link.href = off.toDataURL('image/png');
     link.click();
 
@@ -2021,7 +2095,7 @@ document.addEventListener('DOMContentLoaded', () => {
     draw(date, lat, lon, false);
 
     btn.disabled = false;
-    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Imprimer A4 N&B`;
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> ${UI.printButton}`;
   });
 
   // ─── Voie Lactée : waypoints [RA_deg, Dec_deg] le long du plan galactique
@@ -2219,8 +2293,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,28,0,Math.PI*2); ctx.fill();
         ctx.fillStyle='#ffee44'; ctx.beginPath(); ctx.arc(p.x,p.y,7,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#ffee44'; ctx.textAlign='left'; ctx.textBaseline='middle';
-        ctx.fillText('Soleil', p.x+12, p.y);
-        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Soleil', desc: 'Notre étoile. Ne jamais observer à l\'œil nu ou avec un instrument sans filtre solaire adapté.', r: 28, type: 'sun' });
+        ctx.fillText(UI.sun, p.x+12, p.y);
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: UI.sun, desc: UI.sunDesc, r: 28, type: 'sun' });
       }
     }
 
@@ -2233,8 +2307,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,18,0,Math.PI*2); ctx.fill();
         ctx.fillStyle='#dde4ff'; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,Math.PI*2); ctx.fill();
         ctx.font='11px sans-serif'; ctx.fillStyle='#dde4ff'; ctx.textAlign='left'; ctx.textBaseline='middle';
-        ctx.fillText('Lune', p.x+10, p.y);
-        fsCelestialPositions.push({ x: p.x, y: p.y, name: 'Lune', desc: 'Cible n°1 pour débuter ! Observez les cratères, les mers (grandes plaines sombres) et les chaînes de montagnes. Idéale aux phases croissante et décroissante.', r: 18, type: 'moon' });
+        ctx.fillText(UI.moon, p.x+10, p.y);
+        fsCelestialPositions.push({ x: p.x, y: p.y, name: UI.moon, desc: UI.moonDesc, r: 18, type: 'moon' });
       }
     }
 
@@ -2288,14 +2362,14 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.fillStyle = lbl.length===1 ? 'rgba(130,200,90,0.9)' : 'rgba(95,160,70,0.72)';
       ctx.font=`bold ${lbl.length===1?16:12}px sans-serif`;
       ctx.textAlign='center'; ctx.textBaseline='top';
-      ctx.fillText(lbl, p.x, p.y+8);
+      ctx.fillText(dirLabel(lbl), p.x, p.y+8);
     }
 
     // ── HUD
     const fsCityEl = document.getElementById('sm-fs-city') as HTMLSelectElement;
     const cityName = fsCityEl?.options[fsCityEl.selectedIndex]?.text ?? '';
-    const dateStr = date.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'})
-      + '  ·  ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    const dateStr = date.toLocaleDateString(UI.dateLocale,{day:'numeric',month:'long',year:'numeric'})
+      + '  ·  ' + date.toLocaleTimeString(UI.dateLocale,{hour:'2-digit',minute:'2-digit'});
     const dirStr = `Az ${Math.round(((fsAzC%360)+360)%360)}°  ·  Alt ${Math.round(fsAltC)}°  ·  FOV ${Math.round(fsFov)}°`;
     ctx.save();
     ctx.fillStyle='rgba(4,6,22,0.70)';
@@ -2426,8 +2500,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const fsCity = document.getElementById('sm-fs-city') as HTMLSelectElement;
       const customVal = `${pos.coords.latitude.toFixed(4)},${pos.coords.longitude.toFixed(4)}`;
       // Ajoute ou réutilise une option "Ma position"
-      let opt = Array.from(fsCity.options).find(o => o.text === 'Ma position');
-      if (!opt) { opt = new Option('Ma position', customVal); fsCity.add(opt); }
+      let opt = Array.from(fsCity.options).find(o => o.text === UI.myPosition);
+      if (!opt) { opt = new Option(UI.myPosition, customVal); fsCity.add(opt); }
       else opt.value = customVal;
       fsCity.value = customVal;
       redrawFs();
@@ -2446,8 +2520,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (const d of DSO) {
       items.push({ label: d[2], ra: d[0] * 15, dec: d[1] });
     }
-    items.push({ label: 'Soleil', ra: -1, dec: -1 });
-    items.push({ label: 'Lune', ra: -2, dec: -2 });
+    items.push({ label: UI.sun, ra: -1, dec: -1 });
+    items.push({ label: UI.moon, ra: -2, dec: -2 });
     for (const [pname, [, plabel]] of Object.entries(PLANET_DISPLAY)) {
       items.push({ label: plabel, ra: -10, dec: Number(Object.keys(PLANET_DISPLAY).indexOf(pname)) });
     }
