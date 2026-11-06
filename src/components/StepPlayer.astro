@@ -188,12 +188,13 @@ const railLabel = Astro.props.railLabel ?? t.steps;
     const counter = player.querySelector<HTMLElement>('[data-counter]')!;
     const bar = player.querySelector<HTMLElement>('[data-progress]')!;
     let current = 0;
-    let inView = false;
+    // Vidéos au moins à moitié visibles à l'écran
+    const visible = new Set<HTMLVideoElement>();
 
     const video = (i: number) => slides[i]?.querySelector<HTMLVideoElement>('[data-anim]');
     const playCurrent = () => {
       const v = video(current);
-      if (v && inView && !reduceMotion() && !v.dataset.userPaused) play(v);
+      if (v && visible.has(v) && !reduceMotion() && !v.dataset.userPaused) play(v);
     };
 
     const show = (i: number) => {
@@ -248,12 +249,23 @@ const railLabel = Astro.props.railLabel ?? t.steps;
       if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
     });
 
-    // Les animations ne tournent que lorsque le lecteur est à l'écran
-    new IntersectionObserver(([entry]) => {
-      inView = entry.isIntersecting;
-      if (inView) playCurrent();
-      else video(current)?.pause();
-    }, { threshold: 0.3 }).observe(player);
+    // Les animations ne tournent que lorsqu'elles sont à l'écran : on observe l'animation
+    // elle-même, car sur mobile le texte sous l'animation rend le lecteur très haut
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const v = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) visible.add(v);
+        else {
+          visible.delete(v);
+          v.pause();
+        }
+      }
+      playCurrent();
+    }, { threshold: 0.5 });
+    slides.forEach((_, k) => {
+      const v = video(k);
+      if (v) observer.observe(v);
+    });
 
     controllers.set(player, (d) => show(current + d));
     show(0);

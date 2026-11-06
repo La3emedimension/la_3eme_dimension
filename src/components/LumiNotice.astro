@@ -248,11 +248,11 @@ const noticeConfig = {
     color: white !important;
   }
 
-  /* Notice sur mobile : pas de photo dans l'en-tête.
+  /* Notice sur mobile : ni photo ni animation dans l'en-tête.
      Ciblé via la section de montage : les styles de cette page peuvent aussi
-     être chargés sur la fiche produit Lumi, qui garde sa photo. */
+     être chargés sur la fiche produit Lumi, qui garde les siennes. */
   @media (max-width: 760px) {
-    :global(body:has(#section-assembly-guide) #section-hero .hero-media) {
+    :global(body:has(#section-assembly-guide) #section-hero .hero-visual) {
       display: none !important;
     }
   }

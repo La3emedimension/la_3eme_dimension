@@ -13,5 +13,8 @@ export function ensureSource(v: HTMLVideoElement) {
 
 export function play(v: HTMLVideoElement) {
   ensureSource(v);
+  // Safari iOS n'autorise la lecture automatique que d'une vidéo muette et intégrée à la page
+  v.muted = true;
+  v.playsInline = true;
   v.play().catch(() => {});
 }
