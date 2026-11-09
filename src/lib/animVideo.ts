@@ -44,10 +44,17 @@ export function play(v: HTMLVideoElement) {
   v.play().catch((err: DOMException) => {
     if (err?.name === 'NotAllowedError') useImageFallback(v);
   });
-  // Certains navigateurs ne rejettent pas la lecture : ils la laissent simplement à l'arrêt
-  setTimeout(() => {
-    if (v.dataset.wantPlay === attempt && v.paused && v.readyState >= 2) useImageFallback(v);
-  }, BLOCKED_AFTER_MS);
+  // Certains navigateurs ne rejettent pas la lecture : ils la laissent simplement à l'arrêt,
+  // parfois sans même télécharger la vidéo (Firefox sur iPhone, sans action du visiteur)
+  const started = Date.now();
+  const check = () => {
+    if (v.dataset.wantPlay !== attempt || !v.paused) return;
+    // Téléchargement encore en cours sur une connexion lente : on patiente, dans la limite de 15 s
+    const downloading = v.readyState < 2 && v.networkState === HTMLMediaElement.NETWORK_LOADING;
+    if (downloading && Date.now() - started < 15000) setTimeout(check, 2000);
+    else useImageFallback(v);
+  };
+  setTimeout(check, BLOCKED_AFTER_MS);
 }
 
 /** Toute mise en pause voulue passe par ici, pour ne pas être prise pour un blocage. */
