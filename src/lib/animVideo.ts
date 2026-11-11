@@ -23,6 +23,7 @@ export function useImageFallback(v: HTMLVideoElement) {
   const box = boxOf(v);
   if (!box || box.dataset.fallback) return;
   box.dataset.fallback = '1';
+  pending.delete(v);
   v.pause();
   v.hidden = true;
   const img = document.createElement('img');
@@ -33,6 +34,24 @@ export function useImageFallback(v: HTMLVideoElement) {
   box.dispatchEvent(new CustomEvent('anim-fallback'));
 }
 
+// Vidéos dont la lecture a été demandée sans avoir encore démarré. Sur iPhone, la première
+// animation d'un lecteur est lancée par le défilement, sans action du visiteur : Safari peut la
+// laisser en attente sans rien télécharger (cadre vide). Le premier toucher la relance.
+const pending = new Set<HTMLVideoElement>();
+let unlockListening = false;
+const unlock = () => {
+  pending.forEach((v) => {
+    if (v.dataset.wantPlay && v.paused && !boxOf(v)?.dataset.fallback) v.play().catch(() => {});
+  });
+};
+const listenForUnlock = () => {
+  if (unlockListening) return;
+  unlockListening = true;
+  for (const type of ['touchend', 'click', 'keydown']) {
+    addEventListener(type, unlock, { capture: true, passive: true });
+  }
+};
+
 export function play(v: HTMLVideoElement) {
   if (boxOf(v)?.dataset.fallback) return;
   ensureSource(v);
@@ -41,6 +60,9 @@ export function play(v: HTMLVideoElement) {
   v.playsInline = true;
   const attempt = String(Date.now());
   v.dataset.wantPlay = attempt;
+  pending.add(v);
+  listenForUnlock();
+  v.addEventListener('playing', () => pending.delete(v), { once: true });
   v.play().catch((err: DOMException) => {
     if (err?.name === 'NotAllowedError') useImageFallback(v);
   });
@@ -49,8 +71,10 @@ export function play(v: HTMLVideoElement) {
   const started = Date.now();
   const check = () => {
     if (v.dataset.wantPlay !== attempt || !v.paused) return;
-    // Téléchargement encore en cours sur une connexion lente : on patiente, dans la limite de 15 s
-    const downloading = v.readyState < 2 && v.networkState === HTMLMediaElement.NETWORK_LOADING;
+    // Téléchargement réellement commencé (dimensions et durée déjà reçues) sur une connexion
+    // lente : on patiente, dans la limite de 15 s. Rien reçu du tout après 4 s : la lecture est
+    // bloquée (Safari sur iPhone peut afficher « chargement » sans jamais rien demander).
+    const downloading = v.readyState === HTMLMediaElement.HAVE_METADATA && v.networkState === HTMLMediaElement.NETWORK_LOADING;
     if (downloading && Date.now() - started < 15000) setTimeout(check, 2000);
     else useImageFallback(v);
   };
@@ -60,5 +84,6 @@ export function play(v: HTMLVideoElement) {
 /** Toute mise en pause voulue passe par ici, pour ne pas être prise pour un blocage. */
 export function pause(v: HTMLVideoElement) {
   delete v.dataset.wantPlay;
+  pending.delete(v);
   v.pause();
 }
