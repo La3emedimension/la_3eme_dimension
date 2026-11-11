@@ -41,7 +41,7 @@ const pending = new Set<HTMLVideoElement>();
 let unlockListening = false;
 const unlock = () => {
   pending.forEach((v) => {
-    if (v.dataset.wantPlay && v.paused && !boxOf(v)?.dataset.fallback) v.play().catch(() => {});
+    if (v.dataset.wantPlay && !boxOf(v)?.dataset.fallback) v.play().catch(() => {});
   });
 };
 const listenForUnlock = () => {
@@ -68,14 +68,20 @@ export function play(v: HTMLVideoElement) {
   });
   // Certains navigateurs ne rejettent pas la lecture : ils la laissent simplement à l'arrêt,
   // parfois sans même télécharger la vidéo (Firefox sur iPhone, sans action du visiteur)
+  // On juge sur des faits (l'image avance, le téléchargement avance) et non sur `paused` ou
+  // `readyState` : sur iPhone, une lecture demandée mais bloquée peut se dire « en lecture »,
+  // ou avoir reçu ses métadonnées sans jamais télécharger la suite.
   const started = Date.now();
+  const buffered = () => (v.buffered.length ? v.buffered.end(v.buffered.length - 1) : 0);
+  const startTime = v.currentTime;
+  let lastBuffered = buffered();
   const check = () => {
-    if (v.dataset.wantPlay !== attempt || !v.paused) return;
-    // Téléchargement réellement commencé (dimensions et durée déjà reçues) sur une connexion
-    // lente : on patiente, dans la limite de 15 s. Rien reçu du tout après 4 s : la lecture est
-    // bloquée (Safari sur iPhone peut afficher « chargement » sans jamais rien demander).
-    const downloading = v.readyState === HTMLMediaElement.HAVE_METADATA && v.networkState === HTMLMediaElement.NETWORK_LOADING;
-    if (downloading && Date.now() - started < 15000) setTimeout(check, 2000);
+    if (v.dataset.wantPlay !== attempt) return;
+    if (!v.paused && v.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && v.currentTime !== startTime) return;
+    // Connexion lente mais téléchargement qui avance : on patiente, dans la limite de 15 s
+    const progressing = buffered() > lastBuffered;
+    lastBuffered = buffered();
+    if (progressing && Date.now() - started < 15000) setTimeout(check, 2000);
     else useImageFallback(v);
   };
   setTimeout(check, BLOCKED_AFTER_MS);
