@@ -43,7 +43,7 @@ const formatDate = (date: Date) => {
   keywords="3d printing blog, telescope news, 3d innovations"
 >
   <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack gap-8 lg:gap-20">
+    <div class="wrapper stack gap-8">
       <header class="hero">
         <h1>{t.blog.title}</h1>
         <p>{t.blog.tagline}</p>
@@ -118,7 +118,7 @@ const formatDate = (date: Date) => {
 </script>
 
 <style>
-  .hero { text-align: center; padding: 2rem 0; }
+  .hero { text-align: center; padding: 2rem 0 0; }
   .hero h1 { font-size: var(--text-4xl); font-weight: 700; margin-bottom: 0.5rem; background: var(--gradient-accent); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero p { font-size: var(--text-lg); color: var(--gray-400); }
   .category-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 0 0 0.5rem; }

@@ -44,7 +44,7 @@ const formatDate = (date: Date) => {
   ogImage={sortedPosts.length > 0 && sortedPosts[0].data.img ? `https://la3emedim.fr${sortedPosts[0].data.img}` : "https://la3emedim.fr/assets/smallest-16.jpg"}
 >
   <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack gap-8 lg:gap-20">
+    <div class="wrapper stack gap-8">
       <header class="hero">
         <h1>Le billet de blog</h1>
         <p>Café, actualités et projets</p>
@@ -127,7 +127,7 @@ const formatDate = (date: Date) => {
 <style>
   .hero {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 0 0;
   }
 
   .hero h1 {
