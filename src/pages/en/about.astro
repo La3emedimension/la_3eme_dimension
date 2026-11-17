@@ -35,6 +35,34 @@ const t = useTranslations(locale);
 		<section class="press">
 			<h2 class="press-title">Featured in the press</h2>
 			<div class="press-grid">
+				<a class="press-card" href="/en/blog/nautes-de-paris-mif-2026/">
+					<span class="press-source">Les Nautes de Paris</span>
+					<span class="press-desc">A look back at the Made in France show and its craftspeople.</span>
+				</a>
+				<a class="press-card" href="/en/blog/sud-radio-cest-ca-la-france-mif-2026/">
+					<span class="press-source">Sud Radio</span>
+					<span class="press-desc">On "C'est ça la France" at the Made in France show.</span>
+				</a>
+				<a class="press-card" href="/en/blog/radio-totem-salon-made-in-france-2026/">
+					<span class="press-source">Radio Totem</span>
+					<span class="press-desc">3D-printed refractor kits made in Verdun-sur-Garonne.</span>
+				</a>
+				<a class="press-card" href="/en/blog/rts-telescope-nomade-impression-3d/">
+					<span class="press-source">RTS</span>
+					<span class="press-desc">The 3D-printed travel telescope.</span>
+				</a>
+				<a class="press-card" href="/en/blog/la-depeche-salon-made-in-france-2026/">
+					<span class="press-source">La Dépêche du Midi</span>
+					<span class="press-desc">The workshop featured ahead of the Made in France show.</span>
+				</a>
+				<a class="press-card" href="/en/blog/livre-vivre-de-l-impression-3d-mathilde-berchon/">
+					<span class="press-source">"Vivre de l'impression 3D"</span>
+					<span class="press-desc">La 3ème Dimension in Mathilde Berchon's book.</span>
+				</a>
+				<a class="press-card" href="/en/blog/gazette-du-midi-telescopes-imprimes-3d/">
+					<span class="press-source">La Gazette du Midi</span>
+					<span class="press-desc">3D-printed telescopes to make astronomy accessible.</span>
+				</a>
 				<a class="press-card" href="/en/blog/hackernews-smallest/">
 					<span class="press-source">Hacker News</span>
 					<span class="press-desc">The Smallest hit the front page, sparking dozens of comments on 3D printing in astronomy.</span>
@@ -82,10 +110,10 @@ const t = useTranslations(locale);
 	p { text-align: left; font-size: 70%; margin-right: 15px; margin-left: 15px; }
 	.about { display: flex; flex-direction: column; gap: 3.5rem; align-items: center; margin-right: 15px; margin-left: 15px; }
 	img { max-width: 45vh; width: 55vh; margin-right: 5%; border-radius: 1.5rem; box-shadow: var(--shadow-md); }
-	.press { width: 100%; max-width: 1100px; padding: 0 1rem; box-sizing: border-box; text-align: center; }
-	.press-title { font-size: var(--text-xl); color: var(--gray-0); margin-bottom: 1.5rem; }
-	.press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-	.press-card { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.25rem; background: var(--gray-900); background: var(--glass-sheen), var(--glass-tint); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--glass-border-color); box-shadow: var(--glass-highlight); border-radius: 0.75rem; text-align: left; text-decoration: none; transition: border-color 0.2s ease; }
+	.press { display: block; margin-inline: auto; width: 100%; max-width: 1100px; padding: 0 1rem; box-sizing: border-box; text-align: center; }
+	.press-title { font-size: var(--text-3xl); color: var(--gray-0); margin-bottom: 1rem; }
+	.press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+	.press-card { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.85rem 1rem; background: var(--gray-900); background: var(--glass-sheen), var(--glass-tint); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--glass-border-color); box-shadow: var(--glass-highlight); border-radius: 0.75rem; text-align: left; text-decoration: none; transition: border-color 0.2s ease; }
 	.press-card:hover, .press-card:focus { border-color: var(--accent-regular); }
 	.press-source { font-weight: 700; color: var(--accent-regular); font-size: var(--text-md); }
 	.press-desc { font-size: var(--text-sm); color: var(--gray-300); line-height: 1.5; }
