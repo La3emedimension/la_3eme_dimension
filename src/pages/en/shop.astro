@@ -60,10 +60,10 @@ const shopStructuredData = {
 		<div class="shipping-notice-card" role="dialog" aria-modal="true" aria-labelledby="shipping-notice-title">
 			<button type="button" class="shipping-notice-close" aria-label="Close">&times;</button>
 			<p id="shipping-notice-title" class="shipping-notice-text">
-				🎄 Order before December 1, 2026 for delivery before Christmas.
+				🎄 Order before December 1, 2026 to receive your order before Christmas.
 			</p>
-			<p class="shipping-notice-text">Come and see me at the Salon du Made in France from November 12 to 15, 2026 in Paris, Porte de Versailles: your invitation is right here 👉</p>
-			<a href="https://www.mifexpo.fr/espace-invitations/la-3eme-dimension-997256" target="_blank" rel="noopener noreferrer" class="shipping-notice-cta">Get your invitation</a>
+			<p class="shipping-notice-text">Every instrument is made to order in my workshop. After that date, I can no longer guarantee delivery in time for the holidays.</p>
+			<button type="button" class="shipping-notice-cta shipping-notice-dismiss">Browse the products</button>
 		</div>
 	</div>
 
@@ -107,7 +107,7 @@ const shopStructuredData = {
 											<span class="draft-badge">DRAFT</span>
 										)}
 									</h3>
-									<p class="product-tagline">{heroData?.tagline}</p>
+									<p class="product-tagline">{heroData?.shopTagline || heroData?.tagline}</p>
 
 									{heroData?.features && (
 										<ul class="product-features">
@@ -230,6 +230,13 @@ const shopStructuredData = {
 		color: var(--accent-text-over);
 		border-radius: 0.5rem;
 		text-decoration: none;
+	}
+
+	button.shipping-notice-cta {
+		width: 100%;
+		border: none;
+		font-family: inherit;
+		cursor: pointer;
 	}
 
 	.shipping-notice-cta:hover {
@@ -531,7 +538,7 @@ const shopStructuredData = {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	const notice = document.getElementById('shipping-delay-notice');
-	const noticeStorageKey = 'shippingDelayNoticeDismissed';
+	const noticeStorageKey = 'christmasNoticeDismissed';
 
 	if (notice && !sessionStorage.getItem(noticeStorageKey)) {
 		notice.hidden = false;
@@ -547,6 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		};
 
 		notice.querySelector('.shipping-notice-close')?.addEventListener('click', dismissNotice);
+		notice.querySelector('.shipping-notice-dismiss')?.addEventListener('click', dismissNotice);
 		notice.addEventListener('click', (e) => {
 			if (e.target === notice) dismissNotice();
 		});

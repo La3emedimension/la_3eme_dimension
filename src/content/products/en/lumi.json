@@ -1,18 +1,18 @@
 {
-  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi educational telescope observing in Montauban" },
+  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi educational refractor observing in Montauban" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "seoTitle": "Lumi - Educational 3D Printed Astronomical Telescope | La 3ème dimension",
-  "seoDescription": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.",
-  "seoKeywords": "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse",
+  "seoTitle": "Lumi, Educational Refractor Telescope Kit | La 3ème Dimension",
+  "seoDescription": "An educational refractor you assemble without instructions: building it teaches how optics work, then you observe the Moon and planets. Made in France, €219.",
+  "seoKeywords": "refractor telescope kit, educational refractor, astronomy pedagogy, telescope optics, education, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
-  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational telescope for beginners, observing in the Pyrenees", "objectPosition": "center 80%" },
+  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational refractor kit observing in the Pyrenees", "objectPosition": "center 80%" },
   "price": "€219",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Lumi - Educational Astronomical Telescope",
-    "description": "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters.",
+    "name": "Lumi – Educational Refractor Telescope Kit",
+    "description": "Educational refractor kit, made in France. Assemble it without instructions, understand optics as you build it, observe the Moon and planets.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -48,6 +48,8 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi",
+        "h1": "Lumi, the educational refractor telescope kit",
+        "shopTagline": "The educational refractor kit you build yourself",
         "tagline": "\"The astronomical experience, at your fingertips\"",
         "description": "Educational project to discover optics and some sky objects: moon, bright galaxies, star clusters...",
         "features": [
@@ -56,10 +58,20 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi educational telescope for beginners, on a railing in Montauban" },
-        "heroAnimation": { "src": "/assets/lumi-saut.webp", "alt": "Animation: the Lumi telescope hops around and its cap pops off" },
+        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi educational refractor kit, assembled, on a railing in Montauban" },
+        "heroAnimation": { "src": "/assets/lumi-saut.webp", "alt": "Animation: the Lumi refractor hops around and its cap pops off" },
         "logoImage": "/assets/logolumi.webp",
         "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope."
+      }
+    },
+    {
+      "type": "video",
+      "id": "section-video-assembly",
+      "data": {
+        "title": "Assembly guide",
+        "description": "The complete step-by-step assembly guide for the Lumi refractor.",
+        "videoId": "jEhrQBck5Y8",
+        "videoTitle": "Lumi refractor assembly guide"
       }
     },
     {
@@ -78,9 +90,9 @@
       "id": "section-video-2",
       "data": {
         "title": "Quick demonstration",
-        "description": "Overview of the Lumi telescope assembly in short version.",
+        "description": "Overview of the Lumi refractor assembly in short version.",
         "videoId": "fL8zU5coKBg",
-        "videoTitle": "Quick assembly of the Lumi telescope"
+        "videoTitle": "Quick assembly of the Lumi refractor"
       }
     },
     {
@@ -90,7 +102,7 @@
         "title": "Montage par Rgt Lab",
         "description": "",
         "videoId": "YG80mhXsRSU",
-        "videoTitle": "Lumi telescope assembly by Rgt Lab"
+        "videoTitle": "Lumi refractor assembly by Rgt Lab"
       }
     },
     {
@@ -113,7 +125,7 @@
           {
             "title": "Characteristics",
             "specs": {
-              "Type": "Astronomical telescope",
+              "Type": "Refractor",
               "Optics": "Achromatic doublet 50/200",
               "Eyepiece": "20mm",
               "Usage": "Educational/Initiation",
@@ -126,7 +138,7 @@
             "title": "Pedagogy",
             "specs": {
               "Objective": "Optics discovery",
-              "Learning": "Telescope assembly",
+              "Learning": "Refractor assembly",
               "Understanding": "Optical function",
               "Practice": "Direct observation",
               "Support": "Documentation included",
@@ -146,7 +158,7 @@
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Filter holder for the Lumi telescope"
+          "alt": "Filter holder for the Lumi refractor"
         }
       }
     },
@@ -187,18 +199,18 @@
         "images": [
           {
             "src": "/assets/draw-ert.png",
-            "alt": "Technical diagram of the Lumi telescope",
+            "alt": "Technical diagram of the Lumi refractor",
             "caption": "Detailed assembly diagram - each module has only one assembly direction"
           },
           {
             "src": "/assets/ERT.jpg",
-            "alt": "Telescope in observation position",
+            "alt": "Lumi refractor in observation position",
             "caption": "Observation position - ergonomics designed for learning"
           },
           {
             "src": "/assets/ert_montauban1.jpeg",
             "alt": "Lumi in Montauban 1",
-            "caption": "Observation with the Lumi telescope in Montauban"
+            "caption": "Observation with the Lumi refractor in Montauban"
           },
           {
             "src": "/assets/ert_montauban2.jpeg",
@@ -208,7 +220,7 @@
           {
             "src": "/assets/ert_montauban3.jpeg",
             "alt": "Lumi in Montauban 3",
-            "caption": "Educational use of the Lumi telescope"
+            "caption": "Educational use of the Lumi refractor"
           },
           {
             "src": "/assets/ert_montauban4.jpeg",
@@ -223,7 +235,7 @@
           {
             "src": "/assets/ert_montauban6.jpeg",
             "alt": "Lumi in Montauban 6",
-            "caption": "Sky observation with the educational telescope"
+            "caption": "Sky observation with the educational refractor"
           },
           {
             "src": "/assets/ert_montauban7.jpg",
@@ -233,7 +245,7 @@
           {
             "src": "/assets/ert_montauban8.jpeg",
             "alt": "Lumi in Montauban 8",
-            "caption": "The Lumi telescope in real observation situation"
+            "caption": "The Lumi refractor in real observation situation"
           },
           {
             "src": "/assets/ert_montauban9.jpeg",
@@ -248,7 +260,7 @@
           {
             "src": "/assets/ert_montauban11.jpeg",
             "alt": "Lumi in Montauban 11",
-            "caption": "Observation in Montauban with the educational telescope"
+            "caption": "Observation in Montauban with the educational refractor"
           },
           {
             "src": "/assets/ert_montauban12.jpeg",
@@ -263,41 +275,41 @@
           {
             "src": "/assets/ert_montauban14.jpeg",
             "alt": "Lumi in Montauban 14",
-            "caption": "The Lumi telescope during an astronomical evening in Montauban"
+            "caption": "The Lumi refractor during an astronomical evening in Montauban"
           },
           {
             "src": "/assets/ertcolor1.jpeg",
-            "alt": "Lumi telescope color variant 1",
-            "caption": "Color variant for the Lumi astronomical telescope"
+            "alt": "Lumi refractor color variant 1",
+            "caption": "Color variant for the Lumi astronomical refractor"
           },
           {
             "src": "/assets/ertcolor2.jpeg",
-            "alt": "Lumi telescope color variant 2",
+            "alt": "Lumi refractor color variant 2",
             "caption": "Customization possible with different print colors"
           },
           {
             "src": "/assets/ertcolor3.jpeg",
-            "alt": "Lumi telescope color variant 3",
+            "alt": "Lumi refractor color variant 3",
             "caption": "Color customization example for the educational project"
           },
           {
             "src": "/assets/ertcolor4.jpeg",
-            "alt": "Lumi telescope color variant 4",
+            "alt": "Lumi refractor color variant 4",
             "caption": "Diversity of available color options"
           },
           {
             "src": "/assets/ertcolor5.jpeg",
-            "alt": "Lumi telescope color variant 5",
+            "alt": "Lumi refractor color variant 5",
             "caption": "Visual rendering with another color palette"
           },
           {
             "src": "/assets/ertcolor6.jpeg",
-            "alt": "Lumi telescope color variant 6",
+            "alt": "Lumi refractor color variant 6",
             "caption": "Adaptation possible according to educational preferences"
           },
           {
             "src": "/assets/ertcolor7.jpeg",
-            "alt": "Lumi telescope color variant 7",
+            "alt": "Lumi refractor color variant 7",
             "caption": "Last color variant to complete the collection"
           }
         ],
@@ -339,7 +351,7 @@
           {
             "icon": "strategy",
             "title": "Learning by experience",
-            "description": "Intuitive assembly that helps understand how an astronomical telescope works."
+            "description": "Intuitive assembly that helps understand how an astronomical refractor works."
           },
           {
             "icon": "rocket-launch",

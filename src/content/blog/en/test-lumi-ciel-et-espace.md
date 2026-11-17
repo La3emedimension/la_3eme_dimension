@@ -11,7 +11,7 @@ tags:
   - Lumi
 seoTitle: "Lumi reviewed in Ciel & Espace #608 | La 3ème dimension"
 seoDescription: "The Lumi educational refractor reviewed by French astronomy magazine Ciel & Espace in issue #608, with an exclusive 10% discount code for readers."
-seoKeywords: "ciel et espace, lumi telescope review, astronomy press, lumi discount code, beginner refractor"
+seoKeywords: "ciel et espace, lumi refractor review, astronomy press, lumi discount code, beginner refractor"
 category: "actualites"
 ---
 

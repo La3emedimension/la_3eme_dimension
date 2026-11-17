@@ -29,7 +29,7 @@ if (!lumiProduct) {
 
 const productConfig = lumiProduct.data;
 const hero = productConfig.sections.find(section => section.type === 'hero')!;
-const { primaryCta, ...heroData } = hero.data;
+const { primaryCta, h1, shopTagline, ...heroData } = hero.data;
 
 const sections = [
 	{
@@ -47,6 +47,11 @@ const sections = [
 			steps: c.assembly.steps,
 			locale
 		}
+	},
+	{
+		type: 'video',
+		id: 'section-assembly-video',
+		data: { ...c.assemblyVideo, videoId: 'jEhrQBck5Y8' }
 	},
 	{
 		type: 'custom',

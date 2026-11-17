@@ -17,9 +17,10 @@ interface Props {
 	ecoWarning?: string;
 	showFabLogo?: boolean;
 	logoImage?: string;
+	h1?: string;
 }
 
-const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, heroAnimation, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true, logoImage } = Astro.props;
+const { title, tagline, description, features, primaryCta, secondaryCta, heroImage, heroAnimation, imageOverlayText, afterCtaNote, warning, ecoWarning, showFabLogo = true, logoImage, h1 } = Astro.props;
 
 // Helper to determine if a link is external
 const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://');
@@ -44,7 +45,7 @@ const logoImageDimensions = await getImageDimensions(logoImage);
 				/>
 			)}
 			<h1 class={logoImage ? 'visually-hidden' : ''}>
-				{title === 'Lumi' ? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span> – Télescope Pédagogique pour Débutant</> : title}
+				{h1 || title}
 			</h1>
 			<p class="hero-tagline">{tagline}</p>
 			<div class="hero-description" set:html={description} />

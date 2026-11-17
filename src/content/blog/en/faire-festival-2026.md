@@ -41,7 +41,7 @@ Three instruments will be on show:
 
 **Lumi**: the educational astronomical telescope, shown for the first time under its new name. You may have known it as ERT, it's now Lumi.
 
-![Lumi telescope](/assets/ert_montauban7.jpg)
+![Lumi refractor](/assets/ert_montauban7.jpg)
 
 **Smallest**: the compact, fast telescope, already well known to regulars.
 

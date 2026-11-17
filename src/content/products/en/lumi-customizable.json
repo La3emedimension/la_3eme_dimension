@@ -1,17 +1,17 @@
 {
   "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - custom colors" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "seoTitle": "Lumi Customizable - Personalized Astronomical Telescope | La 3ème dimension",
-  "seoDescription": "Lumi Customizable: the educational astronomical telescope with your first name engraved on the blue tube. A unique gift made in France, to assemble yourself.",
-  "seoKeywords": "personalized astronomical telescope, engraved name telescope, original astronomy gift, customizable astronomy kit, 3D printed telescope, astronomy toulouse, unique educational telescope",
+  "seoTitle": "Lumi Customizable - Personalized Refractor Kit | La 3ème dimension",
+  "seoDescription": "Lumi Customizable: the educational refractor kit with your first name engraved on the blue tube. A unique gift made in France, to assemble yourself.",
+  "seoKeywords": "personalized refractor kit, engraved name refractor, original astronomy gift, customizable astronomy kit, 3D printed refractor, astronomy toulouse, unique educational refractor",
   "ogImage": "https://la3emedim.fr/assets/lumiperso_4.jpg",
   "price": "€300",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Lumi Customizable - Personalized Astronomical Telescope",
-    "description": "Educational astronomical telescope with the recipient's first name engraved on the blue tube. A unique and memorable gift, made in France.",
+    "name": "Lumi Customizable - Personalized Refractor Kit",
+    "description": "Educational refractor kit with the recipient's first name engraved on the blue tube. A unique and memorable gift, made in France.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -47,7 +47,7 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi Customizable",
-        "tagline": "Your telescope, your name/logo",
+        "tagline": "Your refractor, your name/logo",
         "description": "The Lumi you know, with the recipient's first name engraved on the blue tube. A unique astronomical gift, handmade in France.",
         "features": [
           { "icon": "strategy", "text": "Name or logo engraved on the tube" },
@@ -55,7 +55,7 @@
           { "icon": "terminal-window", "text": "Intuitive assembly" }
         ],
         "primaryCta": { "text": "Contact us", "href": "mailto:la3emedim@gmail.com" },
-        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - personalized astronomical telescope" },
+        "heroImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Customizable - personalized educational refractor" },
         "logoImage": "/assets/logolumi.webp"
       }
     },
@@ -103,12 +103,12 @@
           {
             "icon": "strategy",
             "title": "A name or logo engraved forever",
-            "description": "The recipient's first name or logo is inscribed on the blue tube of the telescope. For a logo, provide an SVG file. Depending on the level of detail, some adaptation may be required."
+            "description": "The recipient's first name or logo is inscribed on the blue tube of the refractor. For a logo, provide an SVG file. Depending on the level of detail, some adaptation may be required."
           },
           {
             "icon": "rocket-launch",
             "title": "The perfect astronomy gift",
-            "description": "Give a truly unique telescope: for a birthday, Christmas, or simply to pass on a passion for the sky."
+            "description": "Give a truly unique refractor: for a birthday, Christmas, or simply to pass on a passion for the sky."
           },
           {
             "icon": "terminal-window",
@@ -143,7 +143,7 @@
           {
             "title": "Characteristics",
             "specs": {
-              "Type": "Astronomical telescope",
+              "Type": "Refractor",
               "Optics": "Achromatic doublet 50/200",
               "Eyepiece": "20mm",
               "Usage": "Educational/Initiation",
@@ -165,7 +165,7 @@
         "features": [],
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
-          "alt": "Filter holder for the Lumi telescope"
+          "alt": "Filter holder for the Lumi refractor"
         }
       }
     },

@@ -11,7 +11,7 @@ tags:
   - Astronomy
 seoTitle: "Learning by building: understanding optics by assembling the Lumi | La 3ème dimension"
 seoDescription: "Why the Lumi refractor comes with no manual: the hands-on learning principle behind it, understanding optics by building rather than reading."
-seoKeywords: "hands-on astronomy learning, learning by doing, educational telescope for kids, kids telescope no manual, family astronomy introduction, STEM astronomy kit"
+seoKeywords: "hands-on astronomy learning, learning by doing, educational refractor for kids, refractor kit no manual, family astronomy introduction, STEM astronomy kit"
 category: "coulisses"
 ---
 

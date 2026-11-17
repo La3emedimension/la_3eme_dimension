@@ -292,7 +292,7 @@ Les trois télescopes ci-dessus sont excellents, mais représentent un budget de
 
 L'idée est différente du Smallest : ici, l'objectif n'est pas la puissance d'observation mais la **compréhension**. En montant Lumi pièce par pièce, on comprend concrètement comment fonctionne un télescope (l'optique, le porte-oculaire, la mise au point), avant d'observer la Lune et quelques amas d'étoiles. C'est le télescope débutant le plus accessible qu'on propose, pensé comme une vraie porte d'entrée pédagogique avant de passer, plus tard, à un instrument comme le Smallest.
 
-👉 [Découvrir Lumi, le télescope pédagogique pour débutant](/product/lumi/)
+👉 [Découvrir Lumi, la lunette astronomique en kit pour débuter](/product/lumi/)
 
 ---
 

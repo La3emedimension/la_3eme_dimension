@@ -2,7 +2,7 @@
 title: Lumi
 publishDate: 2019-12-01 00:00:00
 img: /assets/ert-04.jpg
-img_alt: Small educational telescope for astronomy and understanding optical function.
+img_alt: Small educational refractor for astronomy and understanding optical function.
 description: |
   3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Modular design easy to assemble.
 tags:
@@ -11,7 +11,7 @@ tags:
   - Astronomy
 seoTitle: "Lumi - 3D Printed Educational Astronomical Telescope | La 3ème dimension"
 seoDescription: "3D printed educational astronomical telescope. Perfect for discovering optics and observing the moon, star clusters. Educational design easy to assemble."
-seoKeywords: "astronomical telescope, educational telescope, astronomy pedagogy, telescope optics, education, design, toulouse"
+seoKeywords: "refractor kit, educational refractor, astronomy pedagogy, refractor optics, education, design, toulouse"
 category: "coulisses"
 ---
 

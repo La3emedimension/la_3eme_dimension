@@ -48,7 +48,7 @@ relatedProducts = relatedProducts.slice(0, maxProducts);
           const slug = getSlugWithoutLocale(product.id, locale);
           const heroSection = product.data.sections.find((s: any) => s.type === 'hero');
           const title = heroSection?.data?.title || slug;
-          const tagline = heroSection?.data?.tagline || '';
+          const tagline = heroSection?.data?.shopTagline || heroSection?.data?.tagline || '';
           const image = heroSection?.data?.heroImage?.src || '/assets/preview.png';
           const imageAlt = heroSection?.data?.heroImage?.alt || title;
           const price = product.data.price || '';

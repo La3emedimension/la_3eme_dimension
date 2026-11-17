@@ -51,6 +51,7 @@ interface NoticeText {
   seoDescription: string;
   hero: { title: string; tagline: string; description: string; warning: string; ecoWarning: string };
   assembly: { title: string; subtitle: string; nextLabel: string; steps: StepText[] };
+  assemblyVideo: { title: string; description: string; videoTitle: string };
   howTo: { title: string; description: string; nextLabel: string; parts: PartText[] };
   observation: {
     title: string;
@@ -107,6 +108,11 @@ const text: Record<Locale, NoticeText> = {
         { description: 'Et voilà vous pouvez observer !', alt: "Lunette Lumi prête pour l'observation" },
         { description: 'Bravo ! Vous savez maintenant comment assembler une lunette astronomique', alt: 'Étape finale du montage Lumi' }
       ]
+    },
+    assemblyVideo: {
+      title: 'Guide de montage en vidéo',
+      description: 'Suivez le montage complet de la lunette Lumi, étape par étape.',
+      videoTitle: 'Guide de montage de la lunette Lumi'
     },
     howTo: {
       title: 'Comment observer ?',
@@ -197,6 +203,7 @@ const text: Record<Locale, NoticeText> = {
     nav: {
       'section-hero': 'Présentation',
       'section-assembly-guide': 'Notice',
+      'section-assembly-video': 'Vidéo de montage',
       'section-how-to-observe': 'Comment observer',
       'section-observation': 'Observer',
       'section-starmap': 'Carte du ciel',
@@ -238,6 +245,11 @@ const text: Record<Locale, NoticeText> = {
         { description: "That's it, you're ready to observe!", alt: 'Lumi refractor ready to observe' },
         { description: 'Well done! You now know how to assemble an astronomical refractor.', alt: 'Final step of the Lumi assembly' }
       ]
+    },
+    assemblyVideo: {
+      title: 'Video assembly guide',
+      description: 'Follow the complete assembly of the Lumi refractor, step by step.',
+      videoTitle: 'Lumi refractor assembly guide'
     },
     howTo: {
       title: 'How to observe',
@@ -324,6 +336,7 @@ const text: Record<Locale, NoticeText> = {
     nav: {
       'section-hero': 'Overview',
       'section-assembly-guide': 'Assembly',
+      'section-assembly-video': 'Assembly video',
       'section-how-to-observe': 'How to observe',
       'section-observation': 'Observe',
       'section-starmap': 'Sky chart',
