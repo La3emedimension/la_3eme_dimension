@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
-import Hero from '../../components/Hero.astro';
 import { useTranslations, localePath, type Locale } from '../../i18n';
 import { getLocalizedDataCollection, getSlugWithoutLocale } from '../../lib/collections';
 
@@ -69,12 +68,8 @@ const shopStructuredData = {
 
 	<div class="stack gap-4 lg:gap-6">
 		<div class="wrapper stack gap-2 lg:gap-4">
-			<header class="hero">
-				<Hero
-					title={t.shop.title}
-					tagline={t.shop.tagline}
-					align="start"
-				/>
+			<header class="shop-hero">
+				<h1>{t.shop.title}</h1>
 			</header>
 		</div>
 
@@ -142,6 +137,20 @@ const shopStructuredData = {
 </BaseLayout>
 
 <style>
+	.shop-hero {
+		text-align: center;
+		padding: 2rem 0 0;
+	}
+
+	.shop-hero h1 {
+		font-size: var(--text-4xl);
+		font-weight: 700;
+		background: var(--gradient-accent);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	.shipping-notice-overlay {
 		position: fixed;
 		inset: 0;
