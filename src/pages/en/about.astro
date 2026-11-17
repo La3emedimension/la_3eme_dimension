@@ -10,8 +10,12 @@ const t = useTranslations(locale);
 
 <BaseLayout locale={locale} title="About | La 3ème dimension" description="About La 3ème dimension">
 	<div class="stack gap-20">
+		<div class="stack">
+		<header class="page-hero">
+			<h1>The Origin of the Project</h1>
+		</header>
 		<main class="about">
-			<Hero title="The Origin of the Project">
+			<Hero title="">
 				<p>La 3ème Dimension was born from an observation: portable telescopes on the market often make frustrating compromises between size and optical quality. I wanted to design an instrument that fits in a backpack, assembles in minutes, and delivers real performance.</p>
 
 				<p>That's how the Smallest was born, a 150/750 Newtonian telescope fully 3D printable. The project has accumulated over 23,000 views on Printables and brings together an active community of builders.</p>
@@ -26,6 +30,7 @@ const t = useTranslations(locale);
 			<img src="/assets/portrait.jpg" alt="Raphaël Labro, founder of La 3ème Dimension, in his workshop">
 
 		</main>
+		</div>
 
 		<section class="press">
 			<h2 class="press-title">Featured in the press</h2>
@@ -58,6 +63,22 @@ const t = useTranslations(locale);
 </BaseLayout>
 
 <style>
+	/* Même écart sous le menu sur toutes les pages */
+	
+	.page-hero {
+		text-align: center;
+		padding: var(--page-top) 0 0;
+	}
+
+	.page-hero h1 {
+		font-size: var(--text-4xl);
+		font-weight: 700;
+		background: var(--gradient-accent);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	p { text-align: left; font-size: 70%; margin-right: 15px; margin-left: 15px; }
 	.about { display: flex; flex-direction: column; gap: 3.5rem; align-items: center; margin-right: 15px; margin-left: 15px; }
 	img { max-width: 45vh; width: 55vh; margin-right: 5%; border-radius: 1.5rem; box-shadow: var(--shadow-md); }

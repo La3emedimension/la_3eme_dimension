@@ -1,5 +1,7 @@
 /* Global variables */
+/* Écart entre le menu et le haut du contenu des pages (s'ajoute aux 8px du menu) */
 :root {
+	--page-top: 0rem;
 	color-scheme: light;
 
 	/* Colors */

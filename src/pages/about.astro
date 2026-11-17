@@ -9,8 +9,12 @@ const locale: Locale = 'fr';
 
 <BaseLayout locale={locale} title="À propos : Raphaël Labro, créateur du Smallest et Lumi | La 3ème dimension" description="Raphaël Labro, concepteur des télescopes Smallest et Lumi, fabriqués en impression 3D à Toulouse. Découvrez l'histoire de La 3ème dimension et la philosophie derrière chaque instrument.">
 	<div class="stack gap-20">
+		<div class="stack">
+		<header class="page-hero">
+			<h1>L'origine du projet</h1>
+		</header>
 		<main class="about">
-			<Hero title="L'origine du projet">
+			<Hero title="">
 				<p>La 3ème Dimension est née d'une frustration personnelle : je voulais un télescope performant que je pouvais emmener partout en rando, en voyage, sans avoir besoin de voiture. Les solutions du commerce m'imposaient toujours le même choix : soit compact, soit de qualité. J'ai décidé de concevoir celui qui me manquait.</p>
 
 				<p>C'est ainsi qu'est né le Smallest, un Newton 150/750 entièrement imprimable en 3D. Pensé d'abord pour mes propres contraintes, la version 1 a trouvé son public : plus de 23 000 vues sur Printables et une communauté active de constructeurs qui l'adaptent à leurs besoins.</p>
@@ -27,6 +31,7 @@ const locale: Locale = 'fr';
 			<img src="/assets/portrait.jpg" alt="Raphaël Labro, fondateur de La 3ème Dimension, dans son atelier">
 
 		</main>
+		</div>
 
 		<section class="press">
 			<h2 class="press-title">Vu dans la presse</h2>
@@ -80,6 +85,22 @@ const locale: Locale = 'fr';
 </BaseLayout>
 
 <style>
+	/* Même écart sous le menu sur toutes les pages */
+	
+	.page-hero {
+		text-align: center;
+		padding: var(--page-top) 0 0;
+	}
+
+	.page-hero h1 {
+		font-size: var(--text-4xl);
+		font-weight: 700;
+		background: var(--gradient-accent);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	p{
 		text-align: left;
 		font-size: 70%;

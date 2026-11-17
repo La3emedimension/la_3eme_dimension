@@ -126,13 +126,14 @@ const formatDate = (date: Date) => {
 <style>
   .hero {
     text-align: center;
-    padding: 2rem 0 0;
+    padding: var(--page-top) 0 0;
+    /* même écart (16px) sous le titre que sur Boutique et À propos */
+    margin-bottom: -1rem;
   }
 
   .hero h1 {
     font-size: var(--text-4xl);
     font-weight: 700;
-    margin-bottom: 0.5rem;
     background: var(--gradient-accent);
     background-clip: text;
     -webkit-background-clip: text;
