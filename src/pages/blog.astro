@@ -156,7 +156,7 @@ const formatDate = (date: Date) => {
   .filter-tab {
     appearance: none;
     -webkit-appearance: none;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border: none !important;
     background-color: var(--gray-900) !important;
     background: var(--glass-sheen), var(--glass-tint) !important;
     -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -168,7 +168,7 @@ const formatDate = (date: Date) => {
     font-weight: 500;
     cursor: pointer;
     transition: all var(--theme-transition);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: none;
   }
 
   .filter-tab:hover {
@@ -183,7 +183,7 @@ const formatDate = (date: Date) => {
     backdrop-filter: blur(16px) saturate(180%);
     border-color: rgba(255, 255, 255, 0.35) !important;
     color: var(--accent-text-over) !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: none;
   }
 
   .category-badge {
@@ -218,7 +218,7 @@ const formatDate = (date: Date) => {
     background: var(--glass-sheen), var(--glass-tint);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
     backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid var(--glass-border-color);
+    border: none;
     box-shadow: var(--glass-highlight);
     transition: all var(--theme-transition);
     height: 140px;

@@ -78,8 +78,8 @@
 	--glass-sheen-strong: none;
 	--glass-border-color: rgba(255, 255, 255, 0.18);
 	--glass-border-color-strong: rgba(255, 255, 255, 0.28);
-	--glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-	--glass-highlight-strong: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	--glass-highlight: none;
+	--glass-highlight-strong: none;
 }
 
 :root.theme-dark {
@@ -131,12 +131,8 @@ body {
 }
 
 body {
-	background-color: var(--gray-999);
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/fond.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
+	/* Fond gris uni (remplace l'ancien fond étoilé /assets/fond.jpg) */
+	background-color: var(--gray-800);
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;

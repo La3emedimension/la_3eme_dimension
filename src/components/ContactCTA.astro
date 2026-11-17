@@ -79,6 +79,8 @@ const t = useTranslations(locale);
 	.contact-buttons :global(a) {
 		font-size: var(--text-sm) !important;
 		padding: 0.5em 1.5em !important;
+		background: var(--accent-regular) !important;
+		box-shadow: none !important;
 	}
 
 	:global(.theme-light) .contact-buttons :global(a) {
@@ -115,7 +117,7 @@ const t = useTranslations(locale);
 	.fab-card:hover {
 		border-color: var(--glass-border-color-strong);
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), var(--glass-highlight-strong);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	}
 
 	.fab-card:hover .fab-title {

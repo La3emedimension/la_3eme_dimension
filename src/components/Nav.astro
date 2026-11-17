@@ -194,7 +194,7 @@ function isActivePath(href: string): boolean {
 	.menu-button {
 		position: relative;
 		display: flex;
-		border: 1px solid rgba(255, 255, 255, 0.18);
+		border: none;
 		border-radius: 999rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
@@ -202,7 +202,7 @@ function isActivePath(href: string): boolean {
 		background: rgba(255, 255, 255, 0.12);
 		-webkit-backdrop-filter: blur(14px) saturate(180%);
 		backdrop-filter: blur(14px) saturate(180%);
-		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 	}
 
 	.menu-button[aria-expanded='true'] {
@@ -237,7 +237,7 @@ function isActivePath(href: string): boolean {
 		background: var(--glass-sheen), var(--glass-tint-strong);
 		-webkit-backdrop-filter: blur(20px) saturate(180%);
 		backdrop-filter: blur(20px) saturate(180%);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+		border-bottom: none;
 	}
 
 	.link {
@@ -319,12 +319,12 @@ function isActivePath(href: string): boolean {
 			flex-direction: row;
 			font-size: var(--text-sm);
 			border-radius: 999rem;
-			border: 1px solid rgba(255, 255, 255, 0.18);
+			border: none;
 			padding: 0.5rem 0.5625rem;
 			background-color: rgba(255, 255, 255, 0.12);
 			-webkit-backdrop-filter: blur(14px) saturate(180%);
 			backdrop-filter: blur(14px) saturate(180%);
-			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 		}
 
 		/* .nav-items::before removed to match Skills.astro styling */
@@ -345,7 +345,7 @@ function isActivePath(href: string): boolean {
 			background: var(--glass-sheen-strong), color-mix(in srgb, var(--accent-subtle-overlay) 70%, transparent);
 			-webkit-backdrop-filter: blur(10px) saturate(160%);
 			backdrop-filter: blur(10px) saturate(160%);
-			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+			box-shadow: none;
 		}
 
 		li:nth-child(1) .link:hover,
@@ -374,7 +374,7 @@ function isActivePath(href: string): boolean {
 			background: var(--glass-sheen-strong), color-mix(in srgb, #e5e5ea 85%, transparent) !important;
 			-webkit-backdrop-filter: blur(10px) saturate(180%);
 			backdrop-filter: blur(10px) saturate(180%);
-			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+			box-shadow: none;
 		}
 
 		.menu-footer {
@@ -392,7 +392,7 @@ function isActivePath(href: string): boolean {
 			background-color: rgba(255, 255, 255, 0.12);
 			-webkit-backdrop-filter: blur(14px) saturate(180%);
 			backdrop-filter: blur(14px) saturate(180%);
-			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 		}
 
 		.socials {
