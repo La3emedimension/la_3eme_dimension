@@ -20,7 +20,7 @@ const t = ui[locale];
 ---
 
 <div class="anim-video" data-anim-video data-label-play={t.play} data-label-pause={t.pause}>
-  <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} data-webp={`${src}.webp`} muted loop playsinline preload="none" aria-label={label}></video>
+  <video data-anim data-webm={`${src}.webm`} data-mov={`${src}.mov`} data-webp={`${src}.webp`} muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label={label}></video>
   <button type="button" class="anim-toggle paused" data-anim-toggle aria-label={t.play}>
     <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
     <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>

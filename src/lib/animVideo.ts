@@ -15,7 +15,26 @@ const boxOf = (v: HTMLVideoElement) => v.closest<HTMLElement>('[data-anim-video]
 
 /** Donne sa source à la vidéo au premier besoin (preload="none" : rien n'est téléchargé avant). */
 export function ensureSource(v: HTMLVideoElement) {
-  if (!v.src) v.src = useHevc ? v.dataset.mov! : v.dataset.webm!;
+  if (!v.src) {
+    guardFullscreen(v);
+    v.src = useHevc ? v.dataset.mov! : v.dataset.webm!;
+  }
+}
+
+// Certains navigateurs intégrés aux applis (lecteurs de QR code, Instagram, Messenger…)
+// ignorent `playsinline` sur iPhone et ouvrent toute vidéo en plein écran. Si cela arrive,
+// on ressort aussitôt et on bascule sur l'image WebP animée, qui reste dans la page.
+function guardFullscreen(v: HTMLVideoElement) {
+  const leave = () => {
+    const w = v as HTMLVideoElement & { webkitExitFullscreen?: () => void };
+    try {
+      if (document.fullscreenElement === v) document.exitFullscreen().catch(() => {});
+      w.webkitExitFullscreen?.();
+    } catch {}
+    useImageFallback(v);
+  };
+  v.addEventListener('webkitbeginfullscreen', leave);
+  v.addEventListener('fullscreenchange', () => { if (document.fullscreenElement === v) leave(); });
 }
 
 /** Remplace la vidéo par l'image WebP animée équivalente. */
