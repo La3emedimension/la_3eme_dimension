@@ -44,19 +44,21 @@
 	.scroll-indicator {
 		position: fixed;
 		bottom: 2rem;
-		left: 50%;
+		left: 0;
+		right: 0;
+		width: fit-content;
 		z-index: 100;
 		transition: opacity 0.3s ease, transform 0.3s ease;
 		cursor: pointer;
 		opacity: 1;
 		animation: bounce 2s infinite;
-		margin-left: 0;
-		margin-right: 0;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.scroll-indicator.hidden {
 		opacity: 0;
-		transform: translateX(-50%) translateY(20px);
+		transform: translateY(20px);
 		pointer-events: none;
 	}
 
@@ -87,13 +89,13 @@
 
 	@keyframes bounce {
 		0%, 20%, 50%, 80%, 100% {
-			transform: translateX(-50%) translateY(0);
+			transform: translateY(0);
 		}
 		40% {
-			transform: translateX(-50%) translateY(-8px);
+			transform: translateY(-8px);
 		}
 		60% {
-			transform: translateX(-50%) translateY(-4px);
+			transform: translateY(-4px);
 		}
 	}
 
