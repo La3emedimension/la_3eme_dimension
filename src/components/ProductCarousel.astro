@@ -55,11 +55,15 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.we
       );
 
       if (carouselVideoSrc) {
+        // Le WebM VP9 n'est pas lu par tous les iPhone : une version MP4 H.264 et une image
+        // d'aperçu (même nom, extensions .mp4 et .jpg) servent de relais
+        const videoBase = carouselVideoSrc.replace(/\.webm$/, '');
         return (
           <div class="carousel-slide" data-index={index} data-video="true">
             <div class="video-fill">
-              <video muted playsinline preload="metadata">
-                <source src={carouselVideoSrc} type="video/webm" />
+              <video muted playsinline disablepictureinpicture disableremoteplayback preload="metadata" poster={`${videoBase}.jpg`}>
+                <source src={carouselVideoSrc} type='video/webm; codecs="vp9"' />
+                <source src={`${videoBase}.mp4`} type="video/mp4" />
               </video>
             </div>
             <a href={localePath(`/product/${productSlug}/`, locale)} class="slide-link-overlay"></a>
@@ -296,12 +300,36 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.we
         if (autoInterval) clearInterval(autoInterval);
         autoInterval = null;
         const video = (slides[index] as HTMLElement).querySelector('video');
-        if (video) {
-          video.currentTime = 0;
-          video.play();
-        }
+        if (video) playVideoSlide(video, index);
       }
+      // Les autres vidéos s'arrêtent quand leur slide n'est plus affichée
+      slides.forEach((slide, i) => {
+        if (i !== index) slide.querySelector('video')?.pause();
+      });
     }
+
+    // Lecture refusée (mode économie d'énergie sur iPhone, navigateur intégré…) ou bloquée :
+    // l'image d'aperçu reste affichée et le carrousel continue comme pour une slide image
+    function playVideoSlide(video: HTMLVideoElement, index: number) {
+      // Safari iOS n'autorise la lecture automatique que d'une vidéo muette et intégrée à la page
+      video.muted = true;
+      video.playsInline = true;
+      try { video.currentTime = 0; } catch {}
+      const fallback = () => {
+        if (currentIndex !== index || !video.paused) return;
+        if (!autoInterval) autoInterval = setTimeout(nextSlide, 5000) as unknown as ReturnType<typeof setInterval>;
+      };
+      const p = video.play();
+      if (p) p.catch(fallback);
+      setTimeout(() => { if (video.paused || video.readyState < 2) fallback(); }, 4000);
+    }
+
+    // Le premier toucher de l'écran débloque une lecture refusée
+    const unlock = () => {
+      const video = (slides[currentIndex] as HTMLElement)?.querySelector('video');
+      if (video && video.paused) video.play().catch(() => {});
+    };
+    document.addEventListener('touchend', unlock, { once: true, passive: true });
 
     function nextSlide() {
       currentIndex = (currentIndex + 1) % slides.length;
@@ -377,6 +405,14 @@ const smallestLogoDimensions = await getImageDimensions('/assets/smallestlogo.we
         // Réinitialise le flag quand la vidéo repart depuis le début
         video.addEventListener('play', () => {
           if (video.currentTime < 0.5) advanced = false;
+        });
+
+        // Lecture finalement démarrée (après un toucher) : on annule l'avance de secours
+        video.addEventListener('playing', () => {
+          if (slides[currentIndex] === slide && autoInterval) {
+            clearInterval(autoInterval);
+            autoInterval = null;
+          }
         });
       }
     });
