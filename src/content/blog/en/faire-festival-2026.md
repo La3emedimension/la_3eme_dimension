@@ -39,7 +39,7 @@ This is exactly the kind of event that fits the spirit of the project: instrumen
 
 Three instruments will be on show:
 
-**Lumi**: the educational astronomical telescope, shown for the first time under its new name. You may have known it as ERT, it's now Lumi.
+**Lumi**: the [educational refractor kit](/en/product/lumi/), shown for the first time under its new name. You may have known it as ERT, it's now Lumi.
 
 ![Lumi refractor](/assets/ert_montauban7.jpg)
 

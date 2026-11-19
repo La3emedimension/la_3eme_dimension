@@ -230,8 +230,8 @@ const noticeConfig = {
     color: white !important;
   }
 
-  /* Title override for hero */
-  :global(.hero-product h1) {
+  /* Title override for hero (sauf le H1 affiché sous le logo) */
+  :global(.hero-product h1:not(.hero-heading--sub)) {
     color: black !important;
   }
 

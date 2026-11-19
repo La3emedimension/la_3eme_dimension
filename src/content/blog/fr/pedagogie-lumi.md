@@ -2,7 +2,7 @@
 title: "La pédagogie par l'objet : pourquoi la Lumi s'assemble sans notice"
 publishDate: 2026-09-04
 img: "/assets/MG1.JPG"
-img_alt: "Un parent et son enfant assemblant ensemble la lunette pédagogique Lumi"
+img_alt: "Un parent et son enfant assemblant ensemble la lunette astronomique pédagogique Lumi"
 description: |
   Pourquoi la lunette Lumi se monte sans notice écrite : le principe pédagogique de l'apprentissage par la construction, appliqué à l'initiation à l'astronomie en famille.
 tags:
@@ -11,13 +11,13 @@ tags:
   - Astronomie
 seoTitle: "Pédagogie par l'objet : apprendre l'optique en construisant la Lumi | La 3ème dimension"
 seoDescription: "Pourquoi la lunette Lumi s'assemble sans notice : le principe de la pédagogie par l'objet, pour comprendre l'optique en la montant plutôt qu'en la lisant."
-seoKeywords: "pédagogie astronomie enfant, apprendre en construisant, lunette pédagogique enfant, lunette astronomique en kit, apprentissage par la manipulation, initiation astronomie famille, learning by doing astronomie"
+seoKeywords: "pédagogie astronomie enfant, apprendre en construisant, lunette astronomique pédagogique enfant, lunette astronomique en kit, apprentissage par la manipulation, initiation astronomie famille, learning by doing astronomie"
 category: "coulisses"
 ---
 
 # La pédagogie par l'objet
 
-Quand on demande à un enfant comment fonctionne une lunette astronomique, il hausse les épaules. Quand on lui met les pièces entre les mains et qu'on le laisse comprendre par où passe la lumière, il vous l'explique lui-même dix minutes plus tard. C'est cette différence qui a guidé la conception de la **Lumi**, notre lunette pédagogique.
+Quand on demande à un enfant comment fonctionne une lunette astronomique, il hausse les épaules. Quand on lui met les pièces entre les mains et qu'on le laisse comprendre par où passe la lumière, il vous l'explique lui-même dix minutes plus tard. C'est cette différence qui a guidé la conception de la **Lumi**, notre lunette astronomique pédagogique.
 
 ## Apprendre en construisant plutôt qu'en lisant
 
@@ -36,7 +36,7 @@ Concrètement, la Lumi ne vient pas avec un long mode d'emploi à lire avant de 
 
 ## Ce que ça change en famille
 
-![Un parent et son enfant assemblant ensemble la lunette pédagogique Lumi](/assets/MG1.JPG)
+![Un parent et son enfant assemblant ensemble la lunette astronomique pédagogique Lumi](/assets/MG1.JPG)
 
 Ce sont surtout les retours des familles qui confirment l'intérêt de cette approche. Une maman nous écrivait récemment que le montage de la Lumi avec sa fille de 8 ans a été « un vrai moment de partage », où le fonctionnement du télescope « se comprend facilement » en le montant. Ce n'est pas un jouet qu'on déballe et qu'on oublie : c'est un objet qu'on construit ensemble, un soir, avant de sortir observer le ciel le lendemain.
 

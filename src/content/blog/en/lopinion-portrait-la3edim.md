@@ -21,7 +21,7 @@ In the wake of the solar eclipse of August 12, 2026, which drew more than 5,300 
 
 ## A portrait covering the journey and philosophy behind the workshop
 
-The article covers the three instruments developed so far: **Lumi**, the self-assembled educational refractor designed to teach optics while observing the Moon and deep-sky objects; **Smallest**, the ultra-compact, transportable 150/750 Newtonian telescope born from a personal frustration; and **Picco**, the next Newtonian telescope, even lighter, currently in development.
+The article covers the three instruments developed so far: **Lumi**, the [self-assembled educational refractor](/en/product/lumi/) designed to teach optics while observing the Moon and deep-sky objects; **Smallest**, the ultra-compact, transportable 150/750 Newtonian telescope born from a personal frustration; and **Picco**, the next Newtonian telescope, even lighter, currently in development.
 
 The piece also captures the philosophy behind every instrument:
 

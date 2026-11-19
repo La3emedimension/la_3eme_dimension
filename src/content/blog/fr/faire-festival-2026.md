@@ -39,7 +39,7 @@ C'est le genre d'événement qui colle parfaitement à l'esprit du projet : des 
 
 Trois instruments seront exposés :
 
-**La Lumi** : lunette astronomique pédagogique, pour la première fois présentée sous son nouveau nom. Vous la connaissiez peut-être sous le nom ERT, c'est désormais Lumi.
+**La Lumi** : [lunette astronomique en kit](/product/lumi/), pour la première fois présentée sous son nouveau nom. Vous la connaissiez peut-être sous le nom ERT, c'est désormais Lumi.
 
 ![La lunette Lumi à Montauban](/assets/ert_montauban7.jpg)
 

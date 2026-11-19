@@ -1,9 +1,9 @@
 {
-  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lumi Personnalisable - couleurs personnalisées" },
+  "carouselImage": { "src": "/assets/lumiperso_4.jpg", "alt": "Lunette astronomique Lumi Personnalisable gravée « Faire »" },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "seoTitle": "Lumi Personnalisable, lunette en kit avec prénom gravé | La 3ème Dimension",
+  "seoTitle": "Lumi Personnalisable, lunette astronomique avec prénom gravé",
   "seoDescription": "Lumi Personnalisable : la lunette astronomique pédagogique avec votre prénom gravé sur le tube bleu. Un cadeau unique fabriqué en France, à assembler soi-même.",
-  "seoKeywords": "lunette astronomique personnalisée, prénom gravé lunette, cadeau astronomie original, kit astronomie personnalisable, lunette 3D impression, astronomie toulouse, lunette pédagogique unique",
+  "seoKeywords": "lunette astronomique personnalisée, prénom gravé lunette, cadeau astronomie original, kit astronomie personnalisable, lunette astronomique fabrication additive, astronomie toulouse, lunette astronomique pédagogique unique",
   "ogImage": "https://la3emedim.fr/assets/lumiperso_4.jpg",
   "price": "300€",
   "emailContact": "la3emedim@gmail.com",
@@ -34,9 +34,9 @@
     },
     "image": "https://la3emedim.fr/assets/ertcolor1.jpeg",
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Personnalisation", "value": "Couleurs d'impression personnalisables" },
+      { "@type": "PropertyValue", "name": "Personnalisation", "value": "Couleurs personnalisables" },
       { "@type": "PropertyValue", "name": "Assemblage", "value": "Assemblage sans notice" },
-      { "@type": "PropertyValue", "name": "Fabrication", "value": "Fabriquée en France, impression 3D" },
+      { "@type": "PropertyValue", "name": "Fabrication", "value": "Fabriquée en France, fabrication additive" },
       { "@type": "PropertyValue", "name": "Observations", "value": "Lune, planètes et amas d'étoiles" },
       { "@type": "PropertyValue", "name": "Kit", "value": "Kit complet prêt à assembler" }
     ]
@@ -67,27 +67,27 @@
         "images": [
           {
             "src": "/assets/lumiperso_1.png",
-            "alt": "Lumi personnalisée avec logo 1",
+            "alt": "Rendu 3D d'une lunette astronomique Lumi personnalisée, aux couleurs violet, turquoise et orange",
             "caption": "Exemple de personnalisation avec logo"
           },
           {
             "src": "/assets/lumiperso_2.png",
-            "alt": "Lumi personnalisée avec logo 2",
+            "alt": "Prénom « Maxime » gravé sur le tube d'une lunette astronomique Lumi personnalisée",
             "caption": "Exemple de personnalisation avec logo"
           },
           {
             "src": "/assets/lumiperso_3.png",
-            "alt": "Lumi personnalisée avec logo 3",
+            "alt": "Rendu 3D d'une lunette astronomique Lumi personnalisée avec prénom gravé sur le tube",
             "caption": "Exemple de personnalisation avec logo"
           },
           {
             "src": "/assets/lumiperso_3.jpg",
-            "alt": "Lumi personnalisée avec logo 4",
+            "alt": "Lunette astronomique Lumi personnalisée, gravure « Faire » sur le tube bleu",
             "caption": "Exemple de personnalisation avec logo"
           },
           {
             "src": "/assets/lumiperso_4.jpg",
-            "alt": "Lumi personnalisée avec logo 5",
+            "alt": "Lunette astronomique Lumi personnalisée gravée « Faire », posée sur une table",
             "caption": "Exemple de personnalisation avec logo"
           }
         ],

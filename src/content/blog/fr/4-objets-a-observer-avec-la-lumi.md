@@ -2,7 +2,7 @@
 title: "4 objets à observer avec la Lumi quand on débute"
 publishDate: 2026-09-09
 img: "/assets/Lumipyrénée.jpg"
-img_alt: "Lunette pédagogique Lumi en observation dans les Pyrénées"
+img_alt: "Lunette astronomique pédagogique Lumi en observation dans les Pyrénées"
 description: |
   La Lumi est une lunette 50/200 : pas besoin de viser trop haut pour être bluffé. Voici les 4 premières cibles qu'on recommande, dans l'ordre : la Lune, Jupiter, la nébuleuse d'Orion et la galaxie d'Andromède.
 tags:
@@ -13,7 +13,7 @@ tags:
 category: "pedagogie"
 seoTitle: "4 objets à observer avec la Lumi | La 3ème dimension"
 seoDescription: "Les 4 meilleures cibles pour débuter avec la lunette Lumi : la Lune, Jupiter, la nébuleuse d'Orion (M42) et la galaxie d'Andromède (M31). Ce qu'on voit vraiment dans l'oculaire."
-seoKeywords: "lumi observation, que voir avec la lumi, premier télescope objets à observer, lunette 50mm que voir, observer jupiter débutant, nébuleuse orion débutant, galaxie andromède débutant"
+seoKeywords: "lumi observation, que voir avec la lumi, première lunette astronomique objets à observer, lunette 50mm que voir, observer jupiter débutant, nébuleuse orion débutant, galaxie andromède débutant"
 ---
 
 La Lumi est une petite lunette 50/200 : 50mm d'ouverture, un oculaire de 20mm fourni, soit un grossissement d'environ 10x. Ce n'est pas un instrument de professionnel, et ce n'est pas censé l'être — c'est fait pour comprendre comment fonctionne une lunette astronomique et voir, de ses propres yeux, que le ciel n'est pas juste une photo dans un livre.

@@ -1,18 +1,25 @@
 {
-  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lumi educational refractor observing in Montauban" },
+  "carouselImage": {
+    "src": "/assets/ert_montauban1.jpeg",
+    "alt": "Lumi educational refractor observing in Montauban"
+  },
   "carouselVideoSrc": "/assets/Carroussel.webm",
   "seoTitle": "Lumi, Educational Refractor Telescope Kit | La 3ème Dimension",
   "seoDescription": "An educational refractor you assemble without instructions: building it teaches how optics work, then you observe the Moon and planets. Made in France, €219.",
   "seoKeywords": "refractor telescope kit, educational refractor, astronomy pedagogy, telescope optics, education, design, toulouse",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban7.jpg",
-  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lumi educational refractor kit observing in the Pyrenees", "objectPosition": "center 80%" },
+  "shopImage": {
+    "src": "/assets/Lumipyrénée.jpg",
+    "alt": "Lumi educational refractor kit observing in the Pyrenees",
+    "objectPosition": "center 80%"
+  },
   "price": "€219",
   "emailContact": "la3emedim@gmail.com",
   "structuredData": {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Lumi – Educational Refractor Telescope Kit",
-    "description": "Educational refractor kit, made in France. Assemble it without instructions, understand optics as you build it, observe the Moon and planets.",
+    "description": "Educational refractor kit (50/200, 20 mm eyepiece, alt-azimuth mount), made in France by additive manufacturing. Assemble it without instructions, understand optics as you build it, then observe the Moon, Jupiter, Saturn and deep-sky objects.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -25,22 +32,225 @@
     "category": "Educational instruments",
     "offers": {
       "@type": "Offer",
+      "url": "https://la3emedim.fr/en/product/lumi/",
       "price": "219",
       "priceCurrency": "EUR",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
       "availability": "https://schema.org/InStock",
+      "shippingDetails": [
+        {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "17.09",
+            "currency": "EUR"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "FR"
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 15,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "28.09",
+            "currency": "EUR"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "AT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BG"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "CY"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "CZ"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "DE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "DK"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "EE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "ES"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "FI"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "GR"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "HR"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "HU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "IE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "IT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LV"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "MT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "NL"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "PL"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "PT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "RO"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SI"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SK"
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 15,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      ],
       "seller": {
         "@type": "Organization",
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ert_montauban7.jpg",
+    "image": [
+      "https://la3emedim.fr/assets/ert_montauban7.jpg",
+      "https://la3emedim.fr/assets/ert_montauban1.jpeg",
+      "https://la3emedim.fr/assets/Lumipyrénée.jpg"
+    ],
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Design", "value": "Modular educational design" },
-      { "@type": "PropertyValue", "name": "Assembly", "value": "Intuitive assembly" },
-      { "@type": "PropertyValue", "name": "Focuser", "value": "1.25\" focuser" },
-      { "@type": "PropertyValue", "name": "Observations", "value": "Moon and bright objects observation" },
-      { "@type": "PropertyValue", "name": "Suitability", "value": "Perfect for learning" }
-    ]
+      {
+        "@type": "PropertyValue",
+        "name": "Type",
+        "value": "Refractor"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Optics",
+        "value": "Achromatic doublet 50/200"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Eyepiece",
+        "value": "20 mm (about 10× magnification)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Focuser",
+        "value": "1.25\""
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Mount",
+        "value": "Integrated alt-azimuth mount"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Assembly",
+        "value": "No instructions needed, educational guide included"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Manufacturing",
+        "value": "Made in France, additive manufacturing"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Observations",
+        "value": "Moon, Jupiter, Saturn and deep-sky objects"
+      }
+    ],
+    "sku": "LUMI"
   },
   "sections": [
     {
@@ -53,15 +263,34 @@
         "tagline": "\"The astronomical experience, at your fingertips\"",
         "description": "Educational project to discover optics and some sky objects: moon, bright galaxies, star clusters...",
         "features": [
-          { "icon": "strategy", "text": "Modular design" },
-          { "icon": "rocket-launch", "text": "1.25\" focuser" },
-          { "icon": "terminal-window", "text": "Intuitive assembly" }
+          {
+            "icon": "strategy",
+            "text": "Modular design"
+          },
+          {
+            "icon": "rocket-launch",
+            "text": "1.25\" focuser"
+          },
+          {
+            "icon": "terminal-window",
+            "text": "Intuitive assembly"
+          }
         ],
-        "primaryCta": { "text": "Order", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lumi educational refractor kit, assembled, on a railing in Montauban" },
-        "heroAnimation": { "src": "/assets/lumi-saut.webp", "alt": "Animation: the Lumi refractor hops around and its cap pops off" },
-        "logoImage": "/assets/logolumi.webp",
-        "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope."
+        "primaryCta": {
+          "text": "Order",
+          "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g"
+        },
+        "heroImage": {
+          "src": "/assets/ert_montauban7.jpg",
+          "alt": "Lumi educational refractor kit, assembled, on a railing in Montauban"
+        },
+        "heroAnimation": {
+          "src": "/assets/lumi-saut.webp",
+          "alt": "Animation: the Lumi refractor hops around and its cap pops off"
+        },
+        "logoImage": "/assets/logolumi-hero.webp",
+        "warning": "Lumi is not a toy: it is an astronomical instrument and should be handled with the same care as a classic telescope.",
+        "h1Visible": true
       }
     },
     {
@@ -72,6 +301,46 @@
         "description": "The complete step-by-step assembly guide for the Lumi refractor.",
         "videoId": "jEhrQBck5Y8",
         "videoTitle": "Lumi refractor assembly guide"
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-learn",
+      "data": {
+        "title": "What you learn by building it",
+        "headingLevel": 2,
+        "tagline": "",
+        "description": "<p>Lumi is built module by module, and each part matches a step along the path of light:</p><ul><li><strong>Lens barrel and objective</strong>: the 50 mm lens (achromatic doublet) collects light and forms the image, 200 mm further on.</li><li><strong>Baffle</strong>: blocks stray light that would reduce contrast.</li><li><strong>Optical tube</strong>: keeps the objective and eyepiece at the right distance.</li><li><strong>1.25\" focuser</strong>: used to bring the image into focus.</li><li><strong>Prism diagonal</strong>: redirects the light for comfortable viewing.</li><li><strong>20 mm eyepiece</strong>: magnifies the image formed by the objective, here about 10 times (200 ÷ 20).</li></ul><p>Each module only fits one way: you understand what each part does as you put it in place, without instructions.</p>",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/draw-ert.png",
+          "alt": "Diagram of the Lumi refractor modules: objective, baffle, tube, focuser, diagonal and eyepiece"
+        },
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-observe",
+      "data": {
+        "title": "What you can see with a 50 mm refractor",
+        "features": [
+          {
+            "icon": "moon-stars",
+            "title": "The Moon",
+            "description": "The first target: maria, craters and relief along the terminator."
+          },
+          {
+            "icon": "star",
+            "title": "Jupiter and Saturn",
+            "description": "Jupiter shows as a small disc, often with its moons. Saturn is within reach too."
+          },
+          {
+            "icon": "eye",
+            "title": "Deep sky",
+            "description": "Star clusters, the Orion Nebula, the Andromeda Galaxy: faint glows to look for under a dark sky."
+          }
+        ]
       }
     },
     {
@@ -109,7 +378,7 @@
       "type": "specs",
       "id": "section-specs",
       "data": {
-        "title": "Modules and specifications",
+        "title": "Kit contents and specifications",
         "specGroups": [
           {
             "title": "Included modules",
@@ -127,11 +396,12 @@
             "specs": {
               "Type": "Refractor",
               "Optics": "Achromatic doublet 50/200",
-              "Eyepiece": "20mm",
+              "Eyepiece": "20 mm (about 10× magnification)",
               "Usage": "Educational/Initiation",
               "Assembly": "Intuitive, one-way only",
-              "Observations": "Moon, clusters, galaxies",
-              "Recommended age": "Assembly to be done with an adult"
+              "Observations": "Moon, Jupiter, Saturn, deep sky",
+              "Recommended age": "Assembly to be done with an adult",
+              "Mount": "Integrated alt-azimuth"
             }
           },
           {
@@ -141,7 +411,7 @@
               "Learning": "Refractor assembly",
               "Understanding": "Optical function",
               "Practice": "Direct observation",
-              "Support": "Documentation included",
+              "Support": "Educational guide included",
               "Evolution": "Towards advanced instruments"
             }
           }
@@ -159,7 +429,8 @@
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
           "alt": "Filter holder for the Lumi refractor"
-        }
+        },
+        "headingLevel": 2
       }
     },
     {
@@ -177,7 +448,10 @@
             "title": "Far from being a toy!",
             "content": "I wasted no time putting it together, it was really easy, and I first tried it out as a spotting scope, but I was truly blown away by the quality when I pointed it at the moon, it's far from being a toy! A beautiful object, and a very educational one too, though that's far from its only quality. Thanks for agreeing to engrave my name on it, and congratulations on designing this little telescope: it's fantastic! 😍🙏",
             "verified": true,
-            "images": ["/assets/PhilP_1.jpg", "/assets/PhilP_2.jpg"]
+            "images": [
+              "/assets/PhilP_1.jpg",
+              "/assets/PhilP_2.jpg"
+            ]
           },
           {
             "author": "Maxime G.",
@@ -186,7 +460,12 @@
             "title": "A wonderful birthday gift for my daughter… and a little for me too!",
             "content": "A wonderful birthday gift for my daughter… and a little for me too, I'll admit! The assembly is very well thought out and makes it easy to understand how the telescope works. Assembling it as a family was a real moment of togetherness. The images are magnificent, very sharp, and the design is truly superb. Both educational and elegant, it immediately makes you want to observe the sky. We can't wait for the next starry nights!",
             "verified": true,
-            "images": ["/assets/MG1.JPG", "/assets/MG2.JPG", "/assets/MG3.JPG", "/assets/MG4.JPG"]
+            "images": [
+              "/assets/MG1.JPG",
+              "/assets/MG2.JPG",
+              "/assets/MG3.JPG",
+              "/assets/MG4.JPG"
+            ]
           }
         ]
       }
@@ -209,72 +488,72 @@
           },
           {
             "src": "/assets/ert_montauban1.jpeg",
-            "alt": "Lumi in Montauban 1",
+            "alt": "Child looking through the eyepiece of the Lumi refractor by the Tarn river in Montauban",
             "caption": "Observation with the Lumi refractor in Montauban"
           },
           {
             "src": "/assets/ert_montauban2.jpeg",
-            "alt": "Lumi in Montauban 2",
+            "alt": "Child attaching the diagonal to the Lumi refractor during assembly",
             "caption": "Astronomical observation session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban3.jpeg",
-            "alt": "Lumi in Montauban 3",
+            "alt": "Assembled Lumi refractor on its alt-azimuth mount, in front of the Pont Vieux in Montauban",
             "caption": "Educational use of the Lumi refractor"
           },
           {
             "src": "/assets/ert_montauban4.jpeg",
-            "alt": "Lumi in Montauban 4",
+            "alt": "Child holding the tube of the Lumi refractor during assembly",
             "caption": "Lumi demonstration during an observation evening"
           },
           {
             "src": "/assets/ert_montauban5.jpeg",
-            "alt": "Lumi in Montauban 5",
+            "alt": "Child looking through the tube and objective of the Lumi refractor",
             "caption": "The Lumi in action in Montauban"
           },
           {
             "src": "/assets/ert_montauban6.jpeg",
-            "alt": "Lumi in Montauban 6",
+            "alt": "Parts of the Lumi refractor kit laid out on a table before assembly",
             "caption": "Sky observation with the educational refractor"
           },
           {
             "src": "/assets/ert_montauban7.jpg",
-            "alt": "Lumi in Montauban 7",
+            "alt": "Assembled Lumi refractor with its diagonal and eyepiece",
             "caption": "Practical astronomy session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban8.jpeg",
-            "alt": "Lumi in Montauban 8",
+            "alt": "Child fitting the objective lens barrel of the Lumi refractor",
             "caption": "The Lumi refractor in real observation situation"
           },
           {
             "src": "/assets/ert_montauban9.jpeg",
-            "alt": "Lumi in Montauban 9",
+            "alt": "Child fitting the yellow tube of the Lumi refractor",
             "caption": "Discovering the starry sky with the Lumi"
           },
           {
             "src": "/assets/ert_montauban10.jpeg",
-            "alt": "Lumi in Montauban 10",
+            "alt": "Child inserting the eyepiece into the focuser of the Lumi refractor",
             "caption": "Using the Lumi during an astronomical event"
           },
           {
             "src": "/assets/ert_montauban11.jpeg",
-            "alt": "Lumi in Montauban 11",
+            "alt": "Child handling a part of the Lumi refractor kit",
             "caption": "Observation in Montauban with the educational refractor"
           },
           {
             "src": "/assets/ert_montauban12.jpeg",
-            "alt": "Lumi in Montauban 12",
+            "alt": "Child assembling the focuser and diagonal of the Lumi refractor",
             "caption": "The Lumi in demonstration in Montauban"
           },
           {
             "src": "/assets/ert_montauban13.jpeg",
-            "alt": "Lumi in Montauban 13",
+            "alt": "Child tightening the knob of the Lumi alt-azimuth mount",
             "caption": "Observation session with the Lumi"
           },
           {
             "src": "/assets/ert_montauban14.jpeg",
-            "alt": "Lumi in Montauban 14",
+            "alt": "Child looking through the eyepiece of the Lumi refractor",
             "caption": "The Lumi refractor during an astronomical evening in Montauban"
           },
           {
@@ -322,20 +601,20 @@
       "data": {
         "title": "Complete Lumi Kit",
         "price": "€219",
-        "priceNote": "Printed parts + assembly kit",
+        "priceNote": "Additive-manufactured parts + optics",
         "included": [
-          "3D printed parts",
-          "50mm objective lens",
-          "25mm eyepiece",
+          "Parts made by additive manufacturing",
+          "50 mm objective lens (achromatic doublet, 200 mm focal length)",
+          "20 mm eyepiece",
           "Diagonal prism",
-          "Detailed assembly instructions",
-          "Educational support",
-          "Some sky objects to observe",
-          "Integrated mount"
+          "Integrated alt-azimuth mount",
+          "1.25\" filter holder",
+          "Educational guide",
+          "Some sky objects to observe"
         ],
         "ctaText": "Order complete kit",
         "ctaHref": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g",
-        "afterCtaNote": "As each part is handcrafted, please allow approximately 20 days for manufacturing, plus shipping time.",
+        "afterCtaNote": "As each part is made in our workshop, please allow approximately 20 days to receive your Lumi.",
         "secondaryCtaText": "Want to personalize your Lumi?",
         "secondaryCtaHref": "/en/product/lumi-customizable",
         "optionsTitle": "",
@@ -346,17 +625,12 @@
       "type": "features",
       "id": "section-features",
       "data": {
-        "title": "Educational benefits",
+        "title": "Why start with a refractor kit",
         "features": [
           {
             "icon": "strategy",
             "title": "Learning by experience",
             "description": "Intuitive assembly that helps understand how an astronomical refractor works."
-          },
-          {
-            "icon": "rocket-launch",
-            "title": "Real observations",
-            "description": "Allows observation of the moon, star clusters and bright galaxies."
           },
           {
             "icon": "terminal-window",
@@ -373,16 +647,54 @@
     }
   ],
   "navigationItems": [
-    { "id": "hero", "label": "Overview" },
-    { "id": "video-ciel-espace", "label": "Ciel & Espace" },
-    { "id": "video-2", "label": "Quick assembly" },
-    { "id": "video-3", "label": "Field test" },
-    { "id": "specs", "label": "Modules" },
-    { "id": "filter", "label": "Filters" },
-    { "id": "reviews", "label": "Reviews" },
-    { "id": "gallery", "label": "Gallery" },
-    { "id": "pricing", "label": "Pricing" },
-    { "id": "features", "label": "Benefits" }
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "learn",
+      "label": "What you learn"
+    },
+    {
+      "id": "observe",
+      "label": "What you see"
+    },
+    {
+      "id": "video-ciel-espace",
+      "label": "Ciel & Espace"
+    },
+    {
+      "id": "video-2",
+      "label": "Quick assembly"
+    },
+    {
+      "id": "video-3",
+      "label": "Field test"
+    },
+    {
+      "id": "specs",
+      "label": "Kit contents"
+    },
+    {
+      "id": "filter",
+      "label": "Filters"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    },
+    {
+      "id": "gallery",
+      "label": "Gallery"
+    },
+    {
+      "id": "pricing",
+      "label": "Pricing"
+    },
+    {
+      "id": "features",
+      "label": "Benefits"
+    }
   ],
   "showContactCTA": true,
   "showNavigation": true,

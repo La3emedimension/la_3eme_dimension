@@ -29,7 +29,7 @@ Sous-titré *« Lancer et développer son entreprise dans l'impression 3D »*, c
 
 ## Concevoir un télescope grand public grâce à l'impression 3D
 
-Dans le chapitre *« Trouver la bonne idée »*, un encadré est consacré à l'atelier. Il raconte comment le premier modèle, le **Smallest**, est né d'un besoin personnel : un instrument plus léger et plus facile à transporter que les télescopes classiques. Pendant près de deux ans, je l'ai amélioré (matériaux, assemblages, expérience utilisateur, facilité de montage). Est ensuite venue la **Lumi**, la lunette pédagogique à assembler soi-même, pensée pour les enfants et les débutants.
+Dans le chapitre *« Trouver la bonne idée »*, un encadré est consacré à l'atelier. Il raconte comment le premier modèle, le **Smallest**, est né d'un besoin personnel : un instrument plus léger et plus facile à transporter que les télescopes classiques. Pendant près de deux ans, je l'ai amélioré (matériaux, assemblages, expérience utilisateur, facilité de montage). Est ensuite venue la **Lumi**, la lunette astronomique pédagogique à assembler soi-même, pensée pour les enfants et les débutants.
 
 ![L'encadré consacré à La 3ème Dimension et à la lunette Lumi, page 92 du livre](/assets/mathilde2.jpg)
 

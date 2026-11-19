@@ -100,10 +100,7 @@ const shopStructuredData = {
 								</div>
 								<div class="card-content">
 									<h3 class="product-title">
-										{heroData?.title === 'Lumi'
-											? <>L<span style="color:#5BC8F5">u</span><span style="color:#FFD93D">m</span><span style="color:#FF6FB7">i</span></>
-											: (heroData?.title || product.id)
-										}
+										{heroData?.title || product.id}
 										{import.meta.env.DEV && product.data.draft && (
 											<span class="draft-badge">DRAFT</span>
 										)}
@@ -172,7 +169,7 @@ const shopStructuredData = {
 					</div>
 					<div class="highlight-item">
 						<h3>Instruments éducatifs</h3>
-						<p>La lunette Lumi permet de comprendre le fonctionnement d'un télescope tout en observant la Lune, les planètes et les nébuleuses brillantes.</p>
+						<p>La <a href="/product/lumi/">lunette astronomique pédagogique Lumi</a> permet de comprendre le fonctionnement d'une lunette astronomique en l'assemblant, puis d'observer la Lune, Jupiter, Saturne et les nébuleuses brillantes.</p>
 					</div>
 					<div class="highlight-item">
 						<h3>Accessoires de collimation</h3>

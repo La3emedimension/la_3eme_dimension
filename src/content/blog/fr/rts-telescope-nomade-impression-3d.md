@@ -27,7 +27,7 @@ Il présente les trois instruments :
 
 - le **[Smallest](/product/smallest/)**, télescope Newton compact qui se replie sur lui-même, avec tubes en carbone démontables, pensé pour les amateurs qui veulent de la précision dans un sac de voyage ;
 - le **[Picco](/product/picco/)**, une version plus légère, en cours de finalisation ;
-- la **[Lumi, la lunette astronomique en kit](/product/lumi/)**, présentée comme l'instrument le plus apprécié du grand public : une lunette pédagogique de 50 mm qui se monte comme un jeu de construction, en une demi-heure seul ou une heure en famille, avant d'observer la Lune, les satellites de Jupiter ou les amas d'étoiles.
+- la **[Lumi, la lunette astronomique en kit](/product/lumi/)**, présentée comme l'instrument le plus apprécié du grand public : une lunette astronomique pédagogique de 50 mm qui se monte comme un jeu de construction, en une demi-heure seul ou une heure en famille, avant d'observer la Lune, les satellites de Jupiter ou les amas d'étoiles.
 
 L'article mentionne aussi le revendeur [La Clef des Étoiles](https://laclefdesetoiles.com/), à Plaisance-du-Touch près de Toulouse, et l'exposition des instruments à Montpellier à partir du 3 décembre, dans le cadre des [Vitrines Engagées de la Maif](/blog/soiree-pitch-maif-cress-occitanie-2026/).
 

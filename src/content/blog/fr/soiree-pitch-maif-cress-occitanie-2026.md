@@ -33,7 +33,7 @@ Les projets lauréats bénéficieront :
 
 ## Ce que je viendrai défendre
 
-Je présenterai l'atelier et sa démarche : concevoir et fabriquer en Occitanie, grâce à l'impression 3D, des instruments astronomiques simples, transportables et accessibles, comme le **Smallest** et la **Lumi**, la lunette pédagogique à assembler soi-même.
+Je présenterai l'atelier et sa démarche : concevoir et fabriquer en Occitanie, grâce à l'impression 3D, des instruments astronomiques simples, transportables et accessibles, comme le **Smallest** et la **Lumi**, la lunette astronomique pédagogique à assembler soi-même.
 
 Une vitrine en agence serait une belle occasion de faire découvrir l'astronomie au plus grand nombre, avec des démonstrations et des ateliers autour des instruments.
 

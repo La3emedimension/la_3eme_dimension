@@ -1,10 +1,17 @@
 {
-  "carouselImage": { "src": "/assets/ert_montauban1.jpeg", "alt": "Lunette astronomique en kit Lumi en observation à Montauban" },
+  "carouselImage": {
+    "src": "/assets/ert_montauban1.jpeg",
+    "alt": "Lunette astronomique en kit Lumi en observation à Montauban"
+  },
   "carouselVideoSrc": "/assets/Carroussel.webm",
-  "shopImage": { "src": "/assets/Lumipyrénée.jpg", "alt": "Lunette astronomique en kit Lumi en observation dans les Pyrénées", "objectPosition": "center 80%" },
-  "seoTitle": "Lumi, lunette astronomique en kit pédagogique | La 3ème Dimension",
-  "seoDescription": "Lunette astronomique en kit, à monter sans notice : on comprend l'optique en l'assemblant, puis on observe la Lune et les planètes. Fabriquée en France, 219 €.",
-  "seoKeywords": "lunette astronomique en kit, lunette en kit, lunette astronomique pédagogique, lunette à assembler, kit astronomie enfant, initiation astronomie famille, première lunette astronomique enfant, lunette made in france, astronomie toulouse occitanie",
+  "shopImage": {
+    "src": "/assets/Lumipyrénée.jpg",
+    "alt": "Lunette astronomique en kit Lumi en observation dans les Pyrénées",
+    "objectPosition": "center 80%"
+  },
+  "seoTitle": "Lunette astronomique en kit pédagogique | Lumi",
+  "seoDescription": "Lunette astronomique pédagogique à assembler soi-même : on comprend l'optique en la montant, puis on observe la Lune et Jupiter. Fabriquée en France, 219 €.",
+  "seoKeywords": "lunette astronomique en kit, lunette astronomique pédagogique, lunette astronomique à assembler, kit astronomie enfant, première lunette astronomique enfant, initiation astronomie famille, lunette astronomique made in france, astronomie toulouse occitanie",
   "ogImage": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
   "price": "219€",
   "emailContact": "la3emedim@gmail.com",
@@ -12,7 +19,7 @@
     "@type": "Product",
     "@id": "https://la3emedim.fr/product/lumi/#product",
     "name": "Lumi – Lunette astronomique en kit",
-    "description": "Lunette astronomique en kit pédagogique, fabriquée en France. Assemblez-la sans notice, comprenez l'optique en la montant, observez la Lune et les planètes.",
+    "description": "Lunette astronomique en kit pédagogique (50/200, oculaire 20 mm, monture altazimutale), fabriquée en France par fabrication additive. On l'assemble sans notice, on comprend l'optique en la montant, puis on observe la Lune, Jupiter, Saturne et le ciel profond.",
     "brand": {
       "@type": "Brand",
       "name": "La 3ème dimension"
@@ -25,22 +32,225 @@
     "category": "Instruments éducatifs",
     "offers": {
       "@type": "Offer",
+      "url": "https://la3emedim.fr/product/lumi/",
       "price": "219",
       "priceCurrency": "EUR",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
       "availability": "https://schema.org/InStock",
+      "shippingDetails": [
+        {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "17.09",
+            "currency": "EUR"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "FR"
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 15,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "28.09",
+            "currency": "EUR"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "AT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BG"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "CY"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "CZ"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "DE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "DK"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "EE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "ES"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "FI"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "GR"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "HR"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "HU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "IE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "IT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "LV"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "MT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "NL"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "PL"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "PT"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "RO"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SE"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SI"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "SK"
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 15,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      ],
       "seller": {
         "@type": "Organization",
         "name": "La 3ème dimension"
       }
     },
-    "image": "https://la3emedim.fr/assets/ert_montauban1.jpeg",
+    "image": [
+      "https://la3emedim.fr/assets/ert_montauban1.jpeg",
+      "https://la3emedim.fr/assets/ert_montauban7.jpg",
+      "https://la3emedim.fr/assets/Lumipyrénée.jpg"
+    ],
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Assemblage", "value": "Sans notice" },
-      { "@type": "PropertyValue", "name": "Pédagogie", "value": "Comprendre l'optique en la montant" },
-      { "@type": "PropertyValue", "name": "Fabrication", "value": "Fabriquée en France, impression 3D" },
-      { "@type": "PropertyValue", "name": "Observations", "value": "Lune, planètes et amas d'étoiles" },
-      { "@type": "PropertyValue", "name": "Kit", "value": "Kit complet prêt à assembler" }
-    ]
+      {
+        "@type": "PropertyValue",
+        "name": "Type",
+        "value": "Lunette astronomique (réfracteur)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Optique",
+        "value": "Doublet achromatique 50/200"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Oculaire",
+        "value": "20 mm (grossissement d'environ 10×)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Porte-oculaire",
+        "value": "1,25\""
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Monture",
+        "value": "Altazimutale, intégrée"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Assemblage",
+        "value": "Sans notice, avec support pédagogique"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Fabrication",
+        "value": "Fabriquée en France, fabrication additive"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Observations",
+        "value": "Lune, Jupiter, Saturne et ciel profond"
+      }
+    ],
+    "sku": "LUMI"
   },
   "sections": [
     {
@@ -48,24 +258,45 @@
       "id": "section-hero",
       "data": {
         "title": "Lumi",
-        "h1": "Lumi, la lunette astronomique en kit",
-        "tagline": "Pédagogique, à monter soi-même sans notice",
-        "shopTagline": "La lunette en kit pédagogique, à monter soi-même",
-        "description": "<blockquote>« La science est une chose trop importante pour être laissée entre les mains des seuls savants. »<br><cite>— Carl Sagan</cite></blockquote><br>Une lunette en kit pour découvrir l'optique et quelques objets du ciel : Lune, galaxies lumineuses, amas d'étoiles. Pensée pour les débutants, cette lunette en kit se monte en famille, sans connaissance préalable.",
+        "h1": "La lunette pédagogique en kit",
+        "tagline": "",
+        "shopTagline": "La lunette astronomique en kit pédagogique, à monter soi-même",
+        "description": "Une lunette astronomique en kit pour découvrir l'optique et quelques objets du ciel : la Lune, Jupiter et Saturne, les amas d'étoiles et les galaxies lumineuses. Pensée pour les débutants, elle se monte en famille, sans connaissance préalable.",
         "features": [
-          { "icon": "strategy", "text": "Design modulaire" },
-          { "icon": "rocket-launch", "text": "Porte-oculaire 1.25\"" },
-          { "icon": "terminal-window", "text": "Montage intuitif" },
-          { "icon": "moon-stars", "text": "Idéal pour débutants" }
+          {
+            "icon": "strategy",
+            "text": "Design modulaire"
+          },
+          {
+            "icon": "rocket-launch",
+            "text": "Porte-oculaire 1.25\""
+          },
+          {
+            "icon": "terminal-window",
+            "text": "Montage intuitif"
+          },
+          {
+            "icon": "moon-stars",
+            "text": "Idéal pour débutants"
+          }
         ],
-        "primaryCta": { "text": "Commander (219€)", "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g" },
-        "heroImage": { "src": "/assets/ert_montauban7.jpg", "alt": "Lunette astronomique en kit Lumi assemblée, posée sur une rambarde à Montauban" },
-        "heroAnimation": { "src": "/assets/lumi-saut.webp", "alt": "Animation : la lunette Lumi fait des petits sauts et son capuchon s'envole" },
-        "logoImage": "/assets/logolumi.webp",
-        "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique."
+        "primaryCta": {
+          "text": "Commander (219€)",
+          "href": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g"
+        },
+        "heroImage": {
+          "src": "/assets/ert_montauban7.jpg",
+          "alt": "Lunette astronomique en kit Lumi assemblée, posée sur une rambarde à Montauban"
+        },
+        "heroAnimation": {
+          "src": "/assets/lumi-saut.webp",
+          "alt": "Animation : la lunette Lumi fait des petits sauts et son capuchon s'envole"
+        },
+        "logoImage": "/assets/logolumi-hero.webp",
+        "warning": "La Lumi n'est pas un jouet : c'est un instrument astronomique, il faut le manipuler avec le même soin qu'un télescope classique.",
+        "h1Visible": true
       }
     },
-
     {
       "type": "video",
       "id": "section-video-assembly",
@@ -74,6 +305,51 @@
         "description": "Le guide de montage complet de la lunette Lumi, étape par étape.",
         "videoId": "jEhrQBck5Y8",
         "videoTitle": "Guide de montage de la lunette Lumi"
+      }
+    },
+    {
+      "type": "hero",
+      "id": "section-learn",
+      "data": {
+        "title": "Ce qu'on apprend en assemblant la lunette",
+        "headingLevel": 2,
+        "tagline": "",
+        "description": "<p>La Lumi se monte module par module, et chaque pièce correspond à une étape du trajet de la lumière :</p><ul><li><strong>Barillet et objectif</strong> : la lentille de 50 mm (doublet achromatique) collecte la lumière et forme l'image, 200 mm plus loin.</li><li><strong>Baffle</strong> : il bloque la lumière parasite qui dégraderait le contraste.</li><li><strong>Tube optique</strong> : il maintient l'objectif et l'oculaire à la bonne distance.</li><li><strong>Porte-oculaire 1,25\"</strong> : il sert à faire la mise au point.</li><li><strong>Renvoi coudé à prisme</strong> : il dévie la lumière pour observer confortablement.</li><li><strong>Oculaire 20 mm</strong> : il grossit l'image formée par l'objectif, ici d'environ 10 fois (200 ÷ 20).</li></ul><p>Chaque module n'a qu'un seul sens de montage : on comprend le rôle de chaque pièce en la mettant en place, sans notice.</p>",
+        "features": [],
+        "heroImage": {
+          "src": "/assets/draw-ert.png",
+          "alt": "Schéma des modules de la lunette astronomique Lumi : objectif, baffle, tube, porte-oculaire, renvoi coudé et oculaire"
+        },
+        "showFabLogo": false
+      }
+    },
+    {
+      "type": "features",
+      "id": "section-observe",
+      "data": {
+        "title": "Ce qu'on observe avec une lunette de 50 mm",
+        "features": [
+          {
+            "icon": "moon-stars",
+            "title": "La Lune",
+            "description": "La première cible : mers, cratères et relief au terminateur. Notre <a href=\"/blog/observer-la-lune-carte-interactive/\">carte interactive de la Lune</a> aide à les identifier."
+          },
+          {
+            "icon": "star",
+            "title": "Jupiter et Saturne",
+            "description": "Jupiter apparaît comme un petit disque, souvent accompagné de ses satellites. Saturne est aussi accessible."
+          },
+          {
+            "icon": "eye",
+            "title": "Le ciel profond",
+            "description": "Amas d'étoiles, nébuleuse d'Orion, galaxie d'Andromède : des lueurs diffuses, à chercher sous un ciel noir."
+          },
+          {
+            "icon": "list",
+            "title": "Par où commencer",
+            "description": "Notre guide <a href=\"/blog/4-objets-a-observer-avec-la-lumi/\">4 objets à observer avec la Lumi</a> détaille ce qu'on voit vraiment dans l'oculaire."
+          }
+        ]
       }
     },
     {
@@ -121,7 +397,7 @@
       "type": "specs",
       "id": "section-specs",
       "data": {
-        "title": "Modules et spécifications",
+        "title": "Contenu du kit et caractéristiques",
         "specGroups": [
           {
             "title": "Modules inclus",
@@ -139,12 +415,13 @@
             "specs": {
               "Type": "Lunette astronomique",
               "Optique": "Doublet achromatique 50/200",
-              "Oculaire": "20mm",
+              "Oculaire": "20 mm (grossissement d'environ 10×)",
               "Usage": "Éducatif/Initiation",
               "Niveau": "Débutant, aucune expérience requise",
               "Montage": "Intuitif, un seul sens",
-              "Observations": "Lune, amas, galaxies",
-              "Âge recommandé": "Montage à faire avec un adulte"
+              "Observations": "Lune, Jupiter, Saturne, ciel profond",
+              "Âge recommandé": "Montage à faire avec un adulte",
+              "Monture": "Altazimutale, intégrée"
             }
           },
           {
@@ -154,7 +431,7 @@
               "Apprentissage": "Assemblage d'une lunette",
               "Compréhension": "Fonctionnement optique",
               "Pratique": "Observation directe",
-              "Support": "Documentation incluse",
+              "Support": "Support pédagogique inclus",
               "Évolution": "Vers instruments avancés"
             }
           }
@@ -172,7 +449,8 @@
         "heroImage": {
           "src": "/assets/Filtreert.jpg",
           "alt": "Porte-filtre pour la lunette Lumi"
-        }
+        },
+        "headingLevel": 2
       }
     },
     {
@@ -190,7 +468,10 @@
             "title": "Loin d'être un jouet !",
             "content": "Je n'ai pas tardé à l'assembler, très facilement, et à l'essayer comme longue vue mais j'ai vraiment été bluffé par la qualité en le pointant sur la lune, c'est loin d'être un jouet ! Très bel objet, très pédagogique aussi même si c'est loin d'être sa seule qualité, merci d'avoir accepté de graver mon prénom dessus et bravo pour la conception de ce petit télescope : c'est génial ! 😍🙏",
             "verified": true,
-            "images": ["/assets/PhilP_1.jpg", "/assets/PhilP_2.jpg"]
+            "images": [
+              "/assets/PhilP_1.jpg",
+              "/assets/PhilP_2.jpg"
+            ]
           },
           {
             "author": "Alessandra L.",
@@ -199,7 +480,10 @@
             "title": "Magique ! 🌙",
             "content": "Télescope coloré et robuste avec une vue parfaite de la Lune. Ma fille de 8 ans et demi est conquise. On a partagé en famille des moments d'étude et de beauté sous les étoiles. Le meilleur cadeau pour rêver ensemble. Qualité top !",
             "verified": true,
-            "images": ["/assets/Alavis_1.jpg", "/assets/Alavis_2.jpg"]
+            "images": [
+              "/assets/Alavis_1.jpg",
+              "/assets/Alavis_2.jpg"
+            ]
           },
           {
             "author": "Maxime G.",
@@ -208,7 +492,11 @@
             "title": "Un superbe cadeau d'anniversaire pour ma fille… et un peu pour moi aussi !",
             "content": "Un superbe cadeau d'anniversaire pour ma fille… et un peu pour moi aussi, je l'avoue ! Le montage est très bien pensé et permet de comprendre facilement le fonctionnement du télescope. Le monter en famille a été un vrai moment de partage. Les images sont magnifiques, très nettes, et le design est vraiment superbe. À la fois éducatif et élégant, il donne immédiatement envie d'observer le ciel. On a hâte de profiter des prochaines nuits étoilées !",
             "verified": true,
-            "images": ["/assets/MG1.JPG", "/assets/MG2.JPG", "/assets/MG3.JPG"]
+            "images": [
+              "/assets/MG1.JPG",
+              "/assets/MG2.JPG",
+              "/assets/MG3.JPG"
+            ]
           }
         ]
       }
@@ -221,107 +509,107 @@
         "images": [
           {
             "src": "/assets/ert_montauban1.jpeg",
-            "alt": "Lumi à Montauban 1",
+            "alt": "Enfant observant dans l'oculaire de la lunette astronomique Lumi, au bord du Tarn à Montauban",
             "caption": "Observation avec la lunette Lumi à Montauban"
           },
           {
             "src": "/assets/ert_montauban2.jpeg",
-            "alt": "Lumi à Montauban 2",
+            "alt": "Enfant fixant le renvoi coudé sur la lunette astronomique Lumi pendant le montage",
             "caption": "Séance d'observation astronomique avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban3.jpeg",
-            "alt": "Lumi à Montauban 3",
+            "alt": "Lunette astronomique Lumi assemblée sur sa monture altazimutale, devant le Pont Vieux de Montauban",
             "caption": "Utilisation pédagogique de la lunette Lumi"
           },
           {
             "src": "/assets/ert_montauban4.jpeg",
-            "alt": "Lumi à Montauban 4",
+            "alt": "Enfant tenant le tube de la lunette astronomique Lumi pendant l'assemblage",
             "caption": "Démonstration de la Lumi lors d'une soirée d'observation"
           },
           {
             "src": "/assets/ert_montauban5.jpeg",
-            "alt": "Lumi à Montauban 5",
+            "alt": "Enfant regardant à travers le tube et l'objectif de la lunette astronomique Lumi",
             "caption": "La Lumi en action à Montauban"
           },
           {
             "src": "/assets/ert_montauban6.jpeg",
-            "alt": "Lumi à Montauban 6",
-            "caption": "Observation du ciel avec la lunette éducative"
+            "alt": "Pièces de la lunette astronomique en kit Lumi posées sur une table avant l'assemblage",
+            "caption": "Observation du ciel avec la lunette astronomique éducative"
           },
           {
             "src": "/assets/ert_montauban7.jpg",
-            "alt": "Lumi à Montauban 7",
+            "alt": "Lunette astronomique Lumi assemblée avec son renvoi coudé et son oculaire",
             "caption": "Séance d'astronomie pratique avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban8.jpeg",
-            "alt": "Lumi à Montauban 8",
+            "alt": "Enfant mettant en place le barillet de l'objectif de la lunette Lumi",
             "caption": "La lunette Lumi en situation d'observation réelle"
           },
           {
             "src": "/assets/ert_montauban9.jpeg",
-            "alt": "Lumi à Montauban 9",
+            "alt": "Enfant emboîtant le tube jaune de la lunette astronomique Lumi",
             "caption": "Découverte du ciel étoilé avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban10.jpeg",
-            "alt": "Lumi à Montauban 10",
+            "alt": "Enfant insérant l'oculaire dans le porte-oculaire de la lunette Lumi",
             "caption": "Utilisation de la Lumi lors d'un événement astronomique"
           },
           {
             "src": "/assets/ert_montauban11.jpeg",
-            "alt": "Lumi à Montauban 11",
-            "caption": "Observation à Montauban avec la lunette pédagogique"
+            "alt": "Enfant manipulant une pièce de la lunette astronomique en kit Lumi",
+            "caption": "Observation à Montauban avec la lunette astronomique pédagogique"
           },
           {
             "src": "/assets/ert_montauban12.jpeg",
-            "alt": "Lumi à Montauban 12",
+            "alt": "Enfant assemblant le porte-oculaire et le renvoi coudé de la lunette Lumi",
             "caption": "La Lumi en démonstration à Montauban"
           },
           {
             "src": "/assets/ert_montauban13.jpeg",
-            "alt": "Lumi à Montauban 13",
+            "alt": "Enfant serrant la molette de la monture altazimutale de la lunette Lumi",
             "caption": "Séance d'observation avec la Lumi"
           },
           {
             "src": "/assets/ert_montauban14.jpeg",
-            "alt": "Lumi à Montauban 14",
+            "alt": "Enfant observant dans l'oculaire de la lunette astronomique Lumi",
             "caption": "La lunette Lumi lors d'une soirée astronomique à Montauban"
           },
           {
             "src": "/assets/ertcolor1.jpeg",
-            "alt": "Lunette Lumi variante couleur 1",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (1)",
             "caption": "Variante de couleur pour la lunette astronomique Lumi"
           },
           {
             "src": "/assets/ertcolor2.jpeg",
-            "alt": "Lunette Lumi variante couleur 2",
-            "caption": "Personnalisation possible avec différentes couleurs d'impression"
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (2)",
+            "caption": "Personnalisation possible avec différentes couleurs"
           },
           {
             "src": "/assets/ertcolor3.jpeg",
-            "alt": "Lunette Lumi variante couleur 3",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (3)",
             "caption": "Exemple de customisation de couleur pour le projet éducatif"
           },
           {
             "src": "/assets/ertcolor4.jpeg",
-            "alt": "Lunette Lumi variante couleur 4",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (4)",
             "caption": "Diversité des options de couleurs disponibles"
           },
           {
             "src": "/assets/ertcolor5.jpeg",
-            "alt": "Lunette Lumi variante couleur 5",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (5)",
             "caption": "Rendu visuel avec une autre palette de couleurs"
           },
           {
             "src": "/assets/ertcolor6.jpeg",
-            "alt": "Lunette Lumi variante couleur 6",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (6)",
             "caption": "Possibilité d'adaptation selon les préférences éducatives"
           },
           {
             "src": "/assets/ertcolor7.jpeg",
-            "alt": "Lunette Lumi variante couleur 7",
+            "alt": "Lunette astronomique Lumi dans une variante de couleur (7)",
             "caption": "Dernière variante de couleur pour compléter la collection"
           }
         ],
@@ -349,20 +637,20 @@
       "data": {
         "title": "Kit Lumi complet",
         "price": "219€",
-        "priceNote": "Pièces imprimées + kit de montage",
+        "priceNote": "Pièces en fabrication additive + optiques",
         "included": [
-          "Pièces imprimées en 3D",
-          "Lentille objectif 50mm",
-          "Oculaire 25mm",
+          "Pièces produites par fabrication additive",
+          "Lentille objectif 50 mm (doublet achromatique, focale 200 mm)",
+          "Oculaire 20 mm",
           "Prisme renvoi coudé",
-          "Instructions de montage détaillées",
+          "Monture altazimutale intégrée",
+          "Porte-filtre 1,25\"",
           "Support pédagogique",
-          "Quelques objets du ciel à observer",
-          "Monture intégrée"
+          "Quelques objets du ciel à observer"
         ],
         "ctaText": "Commander kit complet",
         "ctaHref": "https://buy.stripe.com/4gMdRbbnQ99h8Q302867S0g",
-        "afterCtaNote": "Chaque pièce étant fabriquée artisanalement, il faut prévoir environ 20 jours pour la conception, auxquels s'ajoute le délai d'envoi.",
+        "afterCtaNote": "Chaque pièce étant fabriquée à l'atelier, prévoir environ 20 jours pour la réception de votre Lumi.",
         "secondaryCtaText": "Vous voulez personnaliser votre Lumi ?",
         "secondaryCtaHref": "/product/lumi-customizable",
         "optionsTitle": "",
@@ -373,27 +661,22 @@
       "type": "features",
       "id": "section-features",
       "data": {
-        "title": "Avantages éducatifs",
+        "title": "Pourquoi commencer par une lunette astronomique en kit",
         "features": [
           {
             "icon": "strategy",
-            "title": "Une lunette en kit pour débuter",
-            "description": "Montage intuitif qui permet de comprendre le fonctionnement d'une lunette astronomique, sans aucune expérience préalable."
-          },
-          {
-            "icon": "rocket-launch",
-            "title": "Observations réelles",
-            "description": "Permet d'observer la lune, les amas d'étoiles et les galaxies lumineuses."
+            "title": "Une lunette astronomique pour débuter",
+            "description": "Aucune expérience préalable n'est nécessaire : le montage se fait en famille, avec un adulte."
           },
           {
             "icon": "terminal-window",
-            "title": "Design modulaire",
-            "description": "Chaque module n'a qu'un seul sens de montage pour éviter les erreurs d'assemblage."
+            "title": "Un seul sens de montage",
+            "description": "Chaque module ne s'assemble que dans un sens, ce qui évite les erreurs."
           },
           {
             "icon": "paper-plane-tilt",
             "title": "Évolutif",
-            "description": "Excellente introduction avant de passer à des instruments plus avancés."
+            "description": "Une introduction avant de passer à un instrument plus avancé, comme le télescope <a href=\"/product/smallest/\">Smallest</a>."
           }
         ]
       }
@@ -409,8 +692,8 @@
       "answer": "Techniquement, Lumi est une <strong>lunette astronomique</strong> (elle utilise des lentilles), alors qu'un télescope utilise des miroirs. Dans le langage courant, les deux sont souvent regroupés sous le terme « télescope débutant ». L'avantage de Lumi est de rendre ce fonctionnement optique visible et compréhensible pendant le montage."
     },
     {
-      "question": "Que peut-on observer avec cette lunette pédagogique ?",
-      "answer": "Avec Lumi, un débutant peut observer la Lune en détail, ainsi que certains amas d'étoiles et galaxies lumineuses selon les conditions d'observation."
+      "question": "Que peut-on observer avec cette lunette astronomique pédagogique ?",
+      "answer": "Avec Lumi, un débutant peut observer la Lune en détail, Jupiter et ses satellites, Saturne, ainsi que des objets du ciel profond comme la nébuleuse d'Orion, la galaxie d'Andromède ou des amas d'étoiles, selon les conditions d'observation. Voir notre guide <a href=\"/blog/4-objets-a-observer-avec-la-lumi/\">4 objets à observer avec la Lumi</a>."
     },
     {
       "question": "Après Lumi, quel télescope choisir pour progresser ?",
@@ -418,18 +701,62 @@
     }
   ],
   "navigationItems": [
-    { "id": "hero", "label": "Présentation" },
-    { "id": "video-2", "label": "Ciel et Espace" },
-    { "id": "video-3", "label": "Rgt Lab" },
-    { "id": "video-4", "label": "En action" },
-    { "id": "video-5", "label": "Montage rapide" },
-    { "id": "specs", "label": "Modules" },
-    { "id": "filter", "label": "Porte filtre" },
-    { "id": "reviews", "label": "Avis clients" },
-    { "id": "gallery", "label": "Galerie" },
-    { "id": "clef-etoiles", "label": "Où le voir" },
-    { "id": "pricing", "label": "Tarifs" },
-    { "id": "features", "label": "Avantages" }
+    {
+      "id": "hero",
+      "label": "Présentation"
+    },
+    {
+      "id": "learn",
+      "label": "Ce qu'on apprend"
+    },
+    {
+      "id": "observe",
+      "label": "Ce qu'on observe"
+    },
+    {
+      "id": "video-2",
+      "label": "Ciel et Espace"
+    },
+    {
+      "id": "video-3",
+      "label": "Rgt Lab"
+    },
+    {
+      "id": "video-4",
+      "label": "En action"
+    },
+    {
+      "id": "video-5",
+      "label": "Montage rapide"
+    },
+    {
+      "id": "specs",
+      "label": "Contenu du kit"
+    },
+    {
+      "id": "filter",
+      "label": "Porte filtre"
+    },
+    {
+      "id": "reviews",
+      "label": "Avis clients"
+    },
+    {
+      "id": "gallery",
+      "label": "Galerie"
+    },
+    {
+      "id": "clef-etoiles",
+      "label": "Où le voir"
+    },
+    {
+      "id": "pricing",
+      "label": "Tarifs"
+    },
+    {
+      "id": "features",
+      "label": "Pourquoi la Lumi"
+    }
   ],
   "showContactCTA": true,
   "showNavigation": true,

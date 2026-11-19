@@ -21,7 +21,7 @@ Dans la foulée de l'éclipse solaire du 12 août 2026, qui a attiré plus de 5 
 
 ## Un portrait qui revient sur le parcours et la philosophie de l'atelier
 
-L'article présente les trois instruments développés jusqu'ici : **Lumi**, la lunette pédagogique à assembler soi-même pour comprendre l'optique en observant la Lune et le ciel profond ; **Smallest**, le télescope Newton 150/750 ultra-compact et transportable né d'une frustration personnelle ; et **Picco**, le prochain télescope Newton 114/450 encore plus léger, en cours de développement.
+L'article présente les trois instruments développés jusqu'ici : **Lumi**, [la lunette astronomique à assembler soi-même](/product/lumi/) pour comprendre l'optique en observant la Lune et le ciel profond ; **Smallest**, le télescope Newton 150/750 ultra-compact et transportable né d'une frustration personnelle ; et **Picco**, le prochain télescope Newton 114/450 encore plus léger, en cours de développement.
 
 On y retrouve aussi la philosophie qui guide la conception de chaque instrument :
 

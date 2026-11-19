@@ -15,7 +15,7 @@ seoKeywords: "ciel et espace, lumi refractor review, astronomy press, lumi disco
 category: "actualites"
 ---
 
-We're happy to announce that the **Lumi educational refractor** is featured in a **full review** in [issue #608 of Ciel & Espace](https://www.cieletespace.fr/edition/608), one of the leading French amateur astronomy magazines.
+We're happy to announce that the **[Lumi educational refractor](/en/product/lumi/)** is featured in a **full review** in [issue #608 of Ciel & Espace](https://www.cieletespace.fr/edition/608), one of the leading French amateur astronomy magazines.
 
 ## An exclusive discount code
 
