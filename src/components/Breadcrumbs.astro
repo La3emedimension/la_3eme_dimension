@@ -9,9 +9,11 @@ interface BreadcrumbItem {
 interface Props {
 	items: BreadcrumbItem[];
 	locale?: Locale;
+	/** false : seules les données structurées sont émises, sans fil d'Ariane affiché */
+	visible?: boolean;
 }
 
-const { items, locale = 'fr' } = Astro.props;
+const { items, locale = 'fr', visible = true } = Astro.props;
 
 // Structured data for breadcrumbs
 const breadcrumbStructuredData = {
@@ -26,6 +28,7 @@ const breadcrumbStructuredData = {
 };
 ---
 
+{visible && (
 <nav aria-label="Fil d'Ariane" class="breadcrumbs">
 	<ol class="breadcrumb-list">
 		{items.map((item, index) => (
@@ -44,6 +47,7 @@ const breadcrumbStructuredData = {
 		))}
 	</ol>
 </nav>
+)}
 
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbStructuredData)} />
 
