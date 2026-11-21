@@ -18,6 +18,11 @@ category: "actualites"
 
 Le 12 novembre 2026, premier jour du [Salon Made in France](/blog/salon-made-in-france-2026/), **Radio Totem** a publié un article de Johan Gesrel sur **La 3ème Dimension** et ses instruments imprimés en 3D.
 
+<figure>
+  <img src="/assets/presse/presse-radio-totem.jpg" alt="Article de Radio Totem : « Verdun-sur-Garonne : il fabrique des lunettes astronomiques en kit »" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">L'article sur le site de Radio Totem.</figcaption>
+</figure>
+
 ## Ce que raconte l'article
 
 L'article revient sur la création de l'atelier en avril 2025 à Verdun-sur-Garonne, avec un objectif : rendre l'astronomie plus accessible. Toutes les pièces sont dessinées sur ordinateur puis imprimées en 3D, et les instruments sont livrés en kit, à assembler chez soi.

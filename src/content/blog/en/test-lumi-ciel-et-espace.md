@@ -17,6 +17,17 @@ category: "actualites"
 
 We're happy to announce that the **[Lumi educational refractor](/en/product/lumi/)** is featured in a **full review** in [issue #608 of Ciel & Espace](https://www.cieletespace.fr/edition/608), one of the leading French amateur astronomy magazines.
 
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0;">
+<figure style="flex: 1 1 240px; max-width: 360px; margin: 0;">
+  <img src="/assets/presse/couverture-ciel-espace-608.jpg" alt="Cover of Ciel & Espace #608" style="margin: 0 0 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">Ciel & Espace #608, August-September 2026.</figcaption>
+</figure>
+<figure style="flex: 1 1 240px; max-width: 360px; margin: 0;">
+  <img src="/assets/presse/page-ciel-espace-608-test.jpg" alt="First page of the review “Lumi, la lunette en kit” by Jean-Luc Dauvergne" style="margin: 0 0 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The review “Lumi, la lunette en kit”, by Jean-Luc Dauvergne.</figcaption>
+</figure>
+</div>
+
 ## An exclusive discount code
 
 Alongside the review, the magazine includes a **10% discount code** for the Lumi, exclusively for readers of this issue.

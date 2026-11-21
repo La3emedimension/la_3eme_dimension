@@ -19,6 +19,11 @@ category: "actualites"
 
 On November 11, 2026, radio station **RTS** published an article by Corentin Aubry about **La 3ème Dimension**, as part of its series on Occitanie companies exhibiting at the [Made in France show](/en/blog/salon-made-in-france-2026/), November 12–15 in Paris.
 
+<figure>
+  <img src="/assets/presse/presse-rts.jpg" alt="RTS article about La 3ème Dimension, with a photo of Lumi" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The article on the RTS website.</figcaption>
+</figure>
+
 ## What the article covers
 
 The article starts from a simple observation: it is hard to find a telescope that is both capable and easy to carry on a hike or a bike ride. It then traces the workshop's story: a first wooden prototype, then 3D printing for light, modular parts, and finally the presentation at the Pint of Science festival that launched the project.

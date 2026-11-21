@@ -19,6 +19,11 @@ category: "actualites"
 
 On September 18, 2026, **La Gazette du Midi** published an article by Maxime Cossé about **La 3ème Dimension**: *"With his 3D-printed telescopes, Raphaël Labro wants to make astronomy accessible to everyone"*.
 
+<figure>
+  <img src="/assets/presse/presse-gazette-du-midi.jpg" alt="Headline of the La Gazette du Midi article about Raphaël Labro" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The article on the La Gazette du Midi website.</figcaption>
+</figure>
+
 ## Astronomy for everyone
 
 The article starts from a simple observation: long reserved for a community of insiders, astronomy is now opening up to a wider audience. From the Tarn-et-Garonne, the workshop contributes with 3D-printed instruments that are affordable and designed to be understood.

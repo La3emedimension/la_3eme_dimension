@@ -343,14 +343,143 @@
       }
     },
     {
-      "type": "video",
-      "id": "section-video-ciel-espace",
+      "type": "custom",
+      "id": "section-press",
       "data": {
-        "title": "Ciel & Espace talks about it",
-        "description": "2026 astro news, ch.1",
-        "videoId": "ocNVXNSKH3g",
-        "videoTitle": "The Lumi refractor in observation",
-        "note": "📰 <strong>Lumi in the press:</strong> reviewed in <a href=\"https://www.cieletespace.fr/edition/608\" target=\"_blank\" rel=\"noopener noreferrer\">Ciel & Espace #608</a> and featured in the special issue <a href=\"https://www.cieletespace.fr/edition/hs-55\" target=\"_blank\" rel=\"noopener noreferrer\">\"Which telescope to see the planets\" (HS-55)</a>."
+        "title": "In the press",
+        "intro": "Magazines, newspapers, radio and videos that have featured Lumi.",
+        "items": [
+          {
+            "kind": "Magazine",
+            "source": "Ciel & Espace #608",
+            "date": "August 2026",
+            "text": "“Lumi, la lunette en kit”: a full review by Jean-Luc Dauvergne, with a 10% discount code for readers.",
+            "href": "/en/blog/test-lumi-ciel-et-espace/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/couverture-ciel-espace-608.jpg",
+              "alt": "Cover of Ciel & Espace #608",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Video",
+            "source": "Ciel & Espace",
+            "text": "Lumi in “Les nouveautés astro 2026”, chapter 1.",
+            "videoId": "ocNVXNSKH3g",
+            "videoTitle": "Ciel & Espace: astronomy news 2026"
+          },
+          {
+            "kind": "Magazine",
+            "source": "Ciel & Espace, special issue #55",
+            "date": "August 2026",
+            "text": "Lumi picked in the “For children” selection of the guide to observing the planets.",
+            "href": "/en/blog/lumi-hors-serie-ciel-et-espace/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/couverture-ciel-espace-hs55.jpg",
+              "alt": "Cover of Ciel & Espace special issue #55",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Video",
+            "source": "Rgt Lab",
+            "text": "Lumi's assembly, filmed from start to finish.",
+            "videoId": "YG80mhXsRSU",
+            "videoTitle": "Lumi refractor assembly by Rgt Lab"
+          },
+          {
+            "kind": "Book",
+            "source": "“Vivre de l'impression 3D”, Mathilde Berchon",
+            "date": "2026",
+            "text": "A sidebar about the workshop and Lumi, page 92.",
+            "href": "/en/blog/livre-vivre-de-l-impression-3d-mathilde-berchon/",
+            "image": {
+              "src": "/assets/presse/couverture-vivre-impression-3d.jpg",
+              "alt": "Cover of the book “Vivre de l'impression 3D” by Mathilde Berchon",
+              "cover": true
+            },
+            "linkText": "Read the article"
+          },
+          {
+            "kind": "Newspaper",
+            "source": "La Dépêche du Midi",
+            "date": "November 2026",
+            "text": "Lumi presented ahead of the Made in France show: it takes fifteen minutes to an hour to assemble.",
+            "href": "/en/blog/la-depeche-salon-made-in-france-2026/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/couverture-la-depeche.jpg",
+              "alt": "Front page of La Dépêche du Midi (Tarn-et-Garonne edition), 10 November 2026",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "Radio Totem",
+            "date": "November 2026",
+            "text": "Astronomical refractor kits made in Verdun-sur-Garonne.",
+            "href": "/en/blog/radio-totem-salon-made-in-france-2026/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/presse-radio-totem.jpg",
+              "alt": "Radio Totem article: “Verdun-sur-Garonne: he makes astronomical refractor kits”"
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "RTS",
+            "date": "November 2026",
+            "text": "Lumi presented as the instrument the general public likes most.",
+            "href": "/en/blog/rts-telescope-nomade-impression-3d/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/presse-rts.jpg",
+              "alt": "RTS article about La 3ème Dimension, with a photo of Lumi"
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "Sud Radio",
+            "date": "November 2026",
+            "text": "Lumi presented on “C'est ça la France”, at the Made in France show.",
+            "href": "/en/blog/sud-radio-cest-ca-la-france-mif-2026/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/presse-sud-radio.jpg",
+              "alt": "Sud Radio episode page, Sunday 15 November 2026, special on the Made in France show",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Newspaper",
+            "source": "L'Opinion",
+            "date": "August 2026",
+            "text": "A portrait of the workshop and its instruments, including Lumi.",
+            "href": "/en/blog/lopinion-portrait-la3edim/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/presse-lopinion.jpg",
+              "alt": "Headline of the L'Opinion article about La 3ème Dimension"
+            }
+          },
+          {
+            "kind": "Regional press",
+            "source": "La Gazette du Midi",
+            "date": "September 2026",
+            "text": "Lumi, the refractor delivered as a kit to build yourself.",
+            "href": "/en/blog/gazette-du-midi-telescopes-imprimes-3d/",
+            "linkText": "Read the article",
+            "image": {
+              "src": "/assets/presse/presse-gazette-du-midi.jpg",
+              "alt": "Headline of the La Gazette du Midi article about Raphaël Labro"
+            }
+          }
+        ],
+        "prevLabel": "Previous",
+        "nextLabel": "Next",
+        "playLabel": "Play the video"
       }
     },
     {
@@ -361,16 +490,6 @@
         "description": "Overview of the Lumi refractor assembly in short version.",
         "videoId": "fL8zU5coKBg",
         "videoTitle": "Quick assembly of the Lumi refractor"
-      }
-    },
-    {
-      "type": "video",
-      "id": "section-video-3",
-      "data": {
-        "title": "Montage par Rgt Lab",
-        "description": "",
-        "videoId": "YG80mhXsRSU",
-        "videoTitle": "Lumi refractor assembly by Rgt Lab"
       }
     },
     {
@@ -659,16 +778,12 @@
       "label": "What you see"
     },
     {
-      "id": "video-ciel-espace",
-      "label": "Ciel & Espace"
+      "id": "press",
+      "label": "Press"
     },
     {
       "id": "video-2",
       "label": "Quick assembly"
-    },
-    {
-      "id": "video-3",
-      "label": "Field test"
     },
     {
       "id": "specs",

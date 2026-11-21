@@ -19,6 +19,11 @@ category: "actualites"
 
 Le 11 novembre 2026, la radio **RTS** a publié un article de Corentin Aubry sur **La 3ème Dimension**, dans sa série consacrée aux entreprises d'Occitanie présentes au [Salon Made in France](/blog/salon-made-in-france-2026/), du 12 au 15 novembre à Paris.
 
+<figure>
+  <img src="/assets/presse/presse-rts.jpg" alt="Article de RTS sur La 3ème Dimension, avec une photo de la Lumi" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">L'article sur le site de RTS.</figcaption>
+</figure>
+
 ## Ce que raconte l'article
 
 L'article part d'un constat : il est difficile de trouver un télescope à la fois performant et transportable en randonnée ou à vélo. Il retrace ensuite le parcours de l'atelier : un premier prototype en bois, puis l'impression 3D pour des pièces légères et modulaires, et enfin la présentation au festival Pint of Science qui a lancé le projet.

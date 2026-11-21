@@ -17,6 +17,11 @@ category: "actualites"
 
 On Sunday, November 15, 2026, French radio station **Sud Radio** broadcast a special episode of **"C'est ça la France"** recorded at the [Made in France show](/en/blog/salon-made-in-france-2026/) in Paris. Hosted by Nathalie Schraen-Guirma, the show is dedicated to French craftsmanship and companies that manufacture in France.
 
+<figure>
+  <img src="/assets/presse/presse-sud-radio.jpg" alt="Sud Radio episode page, Sunday 15 November 2026" style="max-width: 380px; margin: 2rem auto 0.5rem; display: block;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The episode page on the Sud Radio website.</figcaption>
+</figure>
+
 In a few minutes on air, I talked about what I do at La 3ème Dimension: astronomy instruments designed and 3D printed in my workshop in Verdun-sur-Garonne, from the [Smallest](/en/product/smallest/) travel telescope to the [Lumi educational refractor kit](/en/product/lumi/), which you build yourself to understand how optics work.
 
 ## Listen to the show

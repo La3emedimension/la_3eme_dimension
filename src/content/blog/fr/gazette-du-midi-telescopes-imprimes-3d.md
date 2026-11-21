@@ -19,6 +19,11 @@ category: "actualites"
 
 Le 18 septembre 2026, **La Gazette du Midi** a publié un article signé Maxime Cossé consacré à **La 3ème Dimension** : *« Avec ses télescopes imprimés en 3D, Raphaël Labro veut mettre l'astronomie à la portée de tous »*.
 
+<figure>
+  <img src="/assets/presse/presse-gazette-du-midi.jpg" alt="Titre de l'article de La Gazette du Midi sur Raphaël Labro" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">L'article sur le site de La Gazette du Midi.</figcaption>
+</figure>
+
 ## Une astronomie qui se démocratise
 
 L'article part d'un constat : longtemps réservée à une communauté d'initiés, l'astronomie s'ouvre aujourd'hui à un public plus large. Depuis le Tarn-et-Garonne, l'atelier y contribue avec des instruments imprimés en 3D, accessibles et pensés pour être compris.

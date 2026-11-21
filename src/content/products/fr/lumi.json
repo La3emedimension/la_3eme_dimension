@@ -352,24 +352,131 @@
       }
     },
     {
-      "type": "video",
-      "id": "section-video-2",
+      "type": "custom",
+      "id": "section-press",
       "data": {
-        "title": "Ciel et Espace en parle",
-        "description": "Les nouveautés astro 2026 ch.1",
-        "videoId": "ocNVXNSKH3g",
-        "videoTitle": "La lunette Lumi en observation",
-        "note": "📰 <strong>La Lumi dans la presse :</strong> testée dans <a href=\"https://www.cieletespace.fr/edition/608\" target=\"_blank\" rel=\"noopener noreferrer\">Ciel & Espace n°608</a> et citée dans le hors-série <a href=\"https://www.cieletespace.fr/edition/hs-55\" target=\"_blank\" rel=\"noopener noreferrer\">« Quel télescope pour voir les planètes » (HS-55)</a>."
-      }
-    },
-    {
-      "type": "video",
-      "id": "section-video-3",
-      "data": {
-        "title": "Montage par Rgt Lab",
-        "description": "",
-        "videoId": "YG80mhXsRSU",
-        "videoTitle": "Montage de la lunette Lumi par Rgt Lab"
+        "title": "La presse en parle",
+        "intro": "Magazines, journaux, radios et vidéos qui ont présenté la Lumi.",
+        "items": [
+          {
+            "kind": "Magazine",
+            "source": "Ciel & Espace n°608",
+            "date": "Août 2026",
+            "text": "« Lumi, la lunette en kit » : un test complet par Jean-Luc Dauvergne, avec un code de réduction de 10 % pour les lecteurs.",
+            "href": "/blog/test-lumi-ciel-et-espace/",
+            "image": {
+              "src": "/assets/presse/couverture-ciel-espace-608.jpg",
+              "alt": "Couverture de Ciel & Espace n°608",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Vidéo",
+            "source": "Ciel & Espace",
+            "text": "La Lumi dans « Les nouveautés astro 2026 », chapitre 1.",
+            "videoId": "ocNVXNSKH3g",
+            "videoTitle": "Ciel & Espace : les nouveautés astro 2026"
+          },
+          {
+            "kind": "Magazine",
+            "source": "Ciel & Espace, hors-série n°55",
+            "date": "Août 2026",
+            "text": "La Lumi retenue dans la sélection « Pour les enfants » du guide pour observer les planètes.",
+            "href": "/blog/lumi-hors-serie-ciel-et-espace/",
+            "image": {
+              "src": "/assets/presse/couverture-ciel-espace-hs55.jpg",
+              "alt": "Couverture du hors-série Ciel & Espace n°55",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Vidéo",
+            "source": "Rgt Lab",
+            "text": "Le montage de la Lumi, filmé du début à la fin.",
+            "videoId": "YG80mhXsRSU",
+            "videoTitle": "Montage de la lunette Lumi par Rgt Lab"
+          },
+          {
+            "kind": "Livre",
+            "source": "« Vivre de l'impression 3D », Mathilde Berchon",
+            "date": "2026",
+            "text": "Un encadré consacré à l'atelier et à la Lumi, page 92.",
+            "href": "/blog/livre-vivre-de-l-impression-3d-mathilde-berchon/",
+            "image": {
+              "src": "/assets/presse/couverture-vivre-impression-3d.jpg",
+              "alt": "Couverture du livre « Vivre de l'impression 3D » de Mathilde Berchon",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Quotidien",
+            "source": "La Dépêche du Midi",
+            "date": "Novembre 2026",
+            "text": "La Lumi présentée avant le Salon Made in France : elle se monte en un quart d'heure à une heure.",
+            "href": "/blog/la-depeche-salon-made-in-france-2026/",
+            "image": {
+              "src": "/assets/presse/couverture-la-depeche.jpg",
+              "alt": "Une de La Dépêche du Midi (édition Tarn-et-Garonne) du 10 novembre 2026",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "Radio Totem",
+            "date": "Novembre 2026",
+            "text": "Des lunettes astronomiques en kit fabriquées à Verdun-sur-Garonne.",
+            "href": "/blog/radio-totem-salon-made-in-france-2026/",
+            "image": {
+              "src": "/assets/presse/presse-radio-totem.jpg",
+              "alt": "Article de Radio Totem : « Verdun-sur-Garonne : il fabrique des lunettes astronomiques en kit »"
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "RTS",
+            "date": "Novembre 2026",
+            "text": "La Lumi présentée comme l'instrument le plus apprécié du grand public.",
+            "href": "/blog/rts-telescope-nomade-impression-3d/",
+            "image": {
+              "src": "/assets/presse/presse-rts.jpg",
+              "alt": "Article de RTS sur La 3ème Dimension, avec une photo de la Lumi"
+            }
+          },
+          {
+            "kind": "Radio",
+            "source": "Sud Radio",
+            "date": "Novembre 2026",
+            "text": "La Lumi présentée dans « C'est ça la France », au Salon Made in France.",
+            "href": "/blog/sud-radio-cest-ca-la-france-mif-2026/",
+            "image": {
+              "src": "/assets/presse/presse-sud-radio.jpg",
+              "alt": "Page de l'émission Sud Radio du dimanche 15 novembre 2026, spéciale Salon du Made in France",
+              "cover": true
+            }
+          },
+          {
+            "kind": "Quotidien",
+            "source": "L'Opinion",
+            "date": "Août 2026",
+            "text": "Portrait de l'atelier et de ses instruments, dont la Lumi.",
+            "href": "/blog/lopinion-portrait-la3edim/",
+            "image": {
+              "src": "/assets/presse/presse-lopinion.jpg",
+              "alt": "Titre de l'article de L'Opinion sur La 3ème Dimension"
+            }
+          },
+          {
+            "kind": "Presse régionale",
+            "source": "La Gazette du Midi",
+            "date": "Septembre 2026",
+            "text": "La Lumi, lunette livrée en kit à assembler soi-même.",
+            "href": "/blog/gazette-du-midi-telescopes-imprimes-3d/",
+            "image": {
+              "src": "/assets/presse/presse-gazette-du-midi.jpg",
+              "alt": "Titre de l'article de La Gazette du Midi sur Raphaël Labro"
+            }
+          }
+        ]
       }
     },
     {
@@ -713,12 +820,8 @@
       "label": "Ce qu'on observe"
     },
     {
-      "id": "video-2",
-      "label": "Ciel et Espace"
-    },
-    {
-      "id": "video-3",
-      "label": "Rgt Lab"
+      "id": "press",
+      "label": "Presse"
     },
     {
       "id": "video-4",

@@ -17,6 +17,11 @@ category: "actualites"
 
 Le dimanche 15 novembre 2026, **Sud Radio** a diffusé une émission spéciale de **« C'est ça la France »** enregistrée au [Salon Made in France](/blog/salon-made-in-france-2026/), à Paris. Présentée par Nathalie Schraen-Guirma, cette émission est consacrée au savoir-faire français et aux entreprises qui fabriquent en France.
 
+<figure>
+  <img src="/assets/presse/presse-sud-radio.jpg" alt="Page de l'émission Sud Radio du dimanche 15 novembre 2026" style="max-width: 380px; margin: 2rem auto 0.5rem; display: block;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">La page de l'émission sur le site de Sud Radio.</figcaption>
+</figure>
+
 J'y ai présenté en quelques minutes ce que je fais à La 3ème Dimension : des instruments d'astronomie conçus et imprimés en 3D dans mon atelier de Verdun-sur-Garonne, du télescope de voyage [Smallest](/product/smallest/) à la [Lumi, la lunette astronomique en kit](/product/lumi/) qu'on monte soi-même pour comprendre l'optique.
 
 ## Écouter l'émission

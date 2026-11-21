@@ -18,6 +18,11 @@ category: "actualites"
 
 On November 12, 2026, the opening day of the [Made in France show](/en/blog/salon-made-in-france-2026/), regional radio station **Radio Totem** published an article by Johan Gesrel about **La 3ème Dimension** and its 3D-printed instruments.
 
+<figure>
+  <img src="/assets/presse/presse-radio-totem.jpg" alt="Radio Totem article: “Verdun-sur-Garonne: he makes astronomical refractor kits”" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The article on the Radio Totem website.</figcaption>
+</figure>
+
 ## What the article covers
 
 The article looks back at the founding of the workshop in April 2025 in Verdun-sur-Garonne, with one goal: making astronomy more accessible. Every part is designed on a computer and then 3D printed, and the instruments are delivered as kits to assemble at home.

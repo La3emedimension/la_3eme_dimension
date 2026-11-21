@@ -19,6 +19,11 @@ category: "actualites"
 
 Dans la foulée de l'éclipse solaire du 12 août 2026, qui a attiré plus de 5 300 visiteurs à la Cité de l'espace de Toulouse, le journal économique **L'Opinion** a consacré un article à **La 3ème Dimension**, l'entreprise que j'ai fondée en 2025 à Verdun-sur-Garonne (Tarn-et-Garonne).
 
+<figure>
+  <img src="/assets/presse/presse-lopinion.jpg" alt="Titre de l'article de L'Opinion sur La 3ème Dimension" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">L'article sur le site de L'Opinion.</figcaption>
+</figure>
+
 ## Un portrait qui revient sur le parcours et la philosophie de l'atelier
 
 L'article présente les trois instruments développés jusqu'ici : **Lumi**, [la lunette astronomique à assembler soi-même](/product/lumi/) pour comprendre l'optique en observant la Lune et le ciel profond ; **Smallest**, le télescope Newton 150/750 ultra-compact et transportable né d'une frustration personnelle ; et **Picco**, le prochain télescope Newton 114/450 encore plus léger, en cours de développement.

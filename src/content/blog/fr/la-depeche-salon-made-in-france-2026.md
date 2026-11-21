@@ -18,6 +18,11 @@ category: "actualites"
 
 Le 9 novembre 2026, **La Dépêche du Midi** a publié un article signé Éric Théron sur **La 3ème Dimension**, quelques jours avant le [Salon Made in France](/blog/salon-made-in-france-2026/) (MIF Expo), du 12 au 15 novembre à Paris, Porte de Versailles.
 
+<figure>
+  <img src="/assets/presse/couverture-la-depeche.jpg" alt="Une de La Dépêche du Midi, édition Tarn-et-Garonne, du 10 novembre 2026" style="max-width: 380px; margin: 2rem auto 0.5rem; display: block;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">La une de La Dépêche du Midi (édition Tarn-et-Garonne).</figcaption>
+</figure>
+
 ## Ce que raconte l'article
 
 Le journaliste est venu à Verdun-sur-Garonne, dans la pièce qui sert à la fois de bureau, d'atelier et de salle de réunion, en attendant « la cabane au fond du jardin ». L'article revient sur les débuts du projet : un premier télescope offert, les premières photos du ciel, un prototype en bois, puis un premier concours et le festival Pint of Science.

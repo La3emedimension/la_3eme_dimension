@@ -1,0 +1,450 @@
+---
+// Carrousel « La presse en parle » : parutions (magazines, journaux, radio, livre) et vidéos.
+// Défilement horizontal au doigt sur mobile, flèches sur ordinateur.
+// Les vidéos n'affichent que leur miniature : le lecteur YouTube n'est chargé qu'au clic.
+
+interface PressItem {
+  kind: string;            // libellé affiché : Magazine, Vidéo, Radio…
+  source: string;          // nom du média
+  date?: string;           // ex. « Août 2026 »
+  text: string;            // une phrase sur ce que dit le média
+  href?: string;           // article du blog (ou lien externe)
+  linkText?: string;
+  image?: { src: string; alt: string; cover?: boolean }; // cover : couverture affichée en entier
+  videoId?: string;        // vidéo YouTube : remplace l'image
+  videoTitle?: string;
+}
+
+interface Props {
+  title: string;
+  intro?: string;
+  items: PressItem[];
+  prevLabel?: string;
+  nextLabel?: string;
+  playLabel?: string;
+}
+
+const { title, intro, items, prevLabel = 'Précédent', nextLabel = 'Suivant', playLabel = 'Lire la vidéo' } = Astro.props;
+
+// Couleurs de la Lumi pour les cartes sans image
+const palette = ['#5BC8F5', '#FFD93D', '#FF6FB7'];
+const isExternal = (href: string) => /^https?:\/\//.test(href);
+---
+
+<div class="press" data-press>
+  <div class="press-head">
+    <div>
+      <h2>{title}</h2>
+      {intro && <p class="press-intro">{intro}</p>}
+    </div>
+    <div class="press-nav">
+      <button type="button" class="press-arrow" data-press-prev aria-label={prevLabel}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <button type="button" class="press-arrow" data-press-next aria-label={nextLabel}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+
+  <ul class="press-track" data-press-track>
+    {items.map((item, i) => (
+      <li class="press-card" style={`--card-accent: ${palette[i % palette.length]}`}>
+        <div class="press-media">
+          {item.videoId ? (
+            <button
+              type="button"
+              class="press-video"
+              data-video-id={item.videoId}
+              data-video-title={item.videoTitle || item.source}
+              aria-label={`${playLabel} : ${item.videoTitle || item.source}`}
+            >
+              <img
+                src={`https://i.ytimg.com/vi/${item.videoId}/hqdefault.jpg`}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                width="480"
+                height="360"
+              />
+              <span class="press-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
+              </span>
+            </button>
+          ) : item.image ? (
+            item.image.cover ? (
+              <div class="press-cover-wrap">
+                <img src={item.image.src} alt={item.image.alt} loading="lazy" decoding="async" class="press-cover" />
+              </div>
+            ) : (
+              <img src={item.image.src} alt={item.image.alt} loading="lazy" decoding="async" class="press-photo" />
+            )
+          ) : (
+            <div class="press-masthead" aria-hidden="true">
+              <span>{item.source}</span>
+            </div>
+          )}
+          <h3 class="press-source">{item.source}</h3>
+        </div>
+        <div class="press-body">
+          <p class="press-meta">
+            <span class="press-kind">{item.kind}</span>
+            {item.date && <span class="press-date">{item.date}</span>}
+          </p>
+          <p class="press-text">{item.text}</p>
+          {item.href && (
+            <a
+              href={item.href}
+              class="press-link"
+              {...(isExternal(item.href) && { target: '_blank', rel: 'noopener noreferrer' })}
+            >
+              {item.linkText || 'Lire l’article'} →
+            </a>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .press {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .press-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--gray-100);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .press-intro {
+    margin: 0.5rem 0 0;
+    color: var(--gray-300);
+    font-size: 1.1rem;
+  }
+
+  .press-nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .press-arrow {
+    all: unset;
+    box-sizing: border-box;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--gray-700);
+    color: var(--gray-100);
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+  }
+
+  .press-arrow:hover:not(:disabled) { background: var(--gray-800); }
+  .press-arrow:focus-visible { outline: 2px solid var(--accent-regular); outline-offset: 2px; }
+  .press-arrow:disabled { opacity: 0.3; cursor: default; }
+
+  .press-arrow svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .press-track {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3 * 1rem) / 4);
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .press-track::-webkit-scrollbar { display: none; }
+
+  .press-card {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
+    border-radius: 1rem;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .press-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--gray-800);
+    overflow: hidden;
+  }
+
+  .press-media img,
+  .press-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .press-photo { object-position: center top; }
+
+  /* Couverture (format portrait) : affichée en entier sur un fond sombre teinté */
+  .press-cover-wrap {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0;
+    background:
+      radial-gradient(70% 90% at 50% 50%, color-mix(in srgb, var(--card-accent) 35%, transparent), transparent 75%),
+      var(--gray-999);
+  }
+
+  .press-media img.press-cover {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    min-height: 0;
+    object-fit: contain;
+    border-radius: 3px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+  }
+
+  .press-video {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .press-video:focus-visible { outline: 3px solid var(--accent-regular); outline-offset: -3px; }
+
+  .press-play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .press-video:hover .press-play { transform: scale(1.08); background: rgba(0, 0, 0, 0.8); }
+
+  .press-play svg { width: 1.5rem; height: 1.5rem; fill: #fff; margin-left: 0.15rem; }
+
+  .press-media :global(iframe) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Carte sans visuel : le nom du média sur un aplat aux couleurs de la Lumi */
+  .press-masthead {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: var(--card-accent);
+  }
+
+  .press-masthead span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    color: #111;
+    text-wrap: balance;
+  }
+
+  .press-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem 0.9rem;
+    flex: 1;
+  }
+
+  .press-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+  }
+
+  .press-kind {
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    background: var(--card-accent);
+    color: #111;
+    font-weight: 600;
+  }
+
+  /* Nom du média posé en bas de l'image, sur un dégradé sombre pour rester lisible */
+  .press-source {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 2rem 1rem 0.7rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.78) 50%, transparent);
+    pointer-events: none;
+    text-wrap: balance;
+  }
+
+  /* la vidéo lancée occupe tout le cadre : le titre s'efface */
+  .press-media:has(iframe) .press-source { display: none; }
+
+  .press-text {
+    margin: 0;
+    color: var(--gray-300);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    /* 3 lignes au plus : des cartes moins hautes et de hauteur régulière */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .press-link {
+    margin-top: auto;
+    padding-top: 0.25rem;
+    font-size: 0.92rem;
+    color: var(--accent-regular);
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .press-link:hover { text-decoration: underline; }
+
+  /* Le menu latéral de la fiche (fixe, à droite, visible dès 1280 px) recouvrirait les flèches
+     et la dernière carte : on lui laisse sa place tant que l'écran n'est pas assez large */
+  @media (min-width: 1280px) and (max-width: 1760px) {
+    .press { padding-right: calc(2rem + max(0px, 15rem - (100vw - 1200px) / 2)); }
+  }
+
+  @media (max-width: 1000px) {
+    .press-track { grid-auto-columns: calc((100% - 2 * 1rem) / 3); }
+  }
+
+  @media (max-width: 768px) {
+    .press { padding: 3.5rem 1rem; }
+    .press-head { align-items: flex-start; }
+    h2 { font-size: 2rem; }
+    .press-intro { font-size: 1rem; }
+    /* sur mobile : on fait défiler au doigt, la carte suivante dépasse pour l'indiquer */
+    .press-nav { display: none; }
+    .press-track { grid-auto-columns: 68%; gap: 0.85rem; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-press]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-press-track]')!;
+    const prev = root.querySelector<HTMLButtonElement>('[data-press-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-press-next]')!;
+    const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+    const step = () => {
+      const card = track.querySelector<HTMLElement>('.press-card');
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.offsetWidth + gap : track.clientWidth;
+    };
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: smooth as ScrollBehavior }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: smooth as ScrollBehavior }));
+    track.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+
+    // Défilement automatique : une carte toutes les 4 s, retour au début en fin de liste.
+    // En pause au survol, au focus clavier, hors de l'écran, onglet caché, et quelques secondes
+    // après un geste du visiteur. Arrêté dès qu'une vidéo est lancée, et désactivé si le visiteur
+    // a demandé à réduire les animations.
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let hovered = false;
+    let focused = false;
+    let inView = false;
+    let stopped = reduce;
+    let resumeAt = 0;
+    const holdAfterInteraction = () => { resumeAt = Date.now() + 8000; };
+
+    root.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') hovered = true; });
+    root.addEventListener('pointerleave', () => { hovered = false; });
+    root.addEventListener('focusin', () => { focused = true; });
+    root.addEventListener('focusout', () => { focused = false; });
+    track.addEventListener('touchstart', holdAfterInteraction, { passive: true });
+    track.addEventListener('wheel', holdAfterInteraction, { passive: true });
+    prev.addEventListener('click', holdAfterInteraction);
+    next.addEventListener('click', holdAfterInteraction);
+    new IntersectionObserver((entries) => { inView = entries.some((en) => en.isIntersecting); }, { threshold: 0.3 }).observe(track);
+
+    setInterval(() => {
+      if (stopped || hovered || focused || !inView || document.hidden || Date.now() < resumeAt) return;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step(), behavior: 'smooth' });
+    }, 4000);
+
+    // Vidéo : la miniature est remplacée par le lecteur au clic
+    root.querySelectorAll<HTMLButtonElement>('.press-video').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        stopped = true;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.videoId}?autoplay=1&rel=0&playsinline=1`;
+        iframe.title = btn.dataset.videoTitle || '';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        btn.replaceWith(iframe);
+      });
+    });
+  });
+</script>

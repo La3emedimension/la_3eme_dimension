@@ -19,6 +19,11 @@ category: "actualites"
 
 In the wake of the solar eclipse of August 12, 2026, which drew more than 5,300 visitors to the Cité de l'espace in Toulouse, French business newspaper **L'Opinion** published a feature on **La 3ème Dimension**, the company I founded in 2025 in Verdun-sur-Garonne (Tarn-et-Garonne).
 
+<figure>
+  <img src="/assets/presse/presse-lopinion.jpg" alt="Headline of the L'Opinion article about La 3ème Dimension" style="margin-bottom: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The article on the L'Opinion website.</figcaption>
+</figure>
+
 ## A portrait covering the journey and philosophy behind the workshop
 
 The article covers the three instruments developed so far: **Lumi**, the [self-assembled educational refractor](/en/product/lumi/) designed to teach optics while observing the Moon and deep-sky objects; **Smallest**, the ultra-compact, transportable 150/750 Newtonian telescope born from a personal frustration; and **Picco**, the next Newtonian telescope, even lighter, currently in development.

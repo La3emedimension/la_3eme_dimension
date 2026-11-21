@@ -18,6 +18,11 @@ category: "actualites"
 
 On November 9, 2026, regional newspaper **La Dépêche du Midi** published an article by Éric Théron about **La 3ème Dimension**, a few days before the [Made in France show](/en/blog/salon-made-in-france-2026/) (MIF Expo), November 12–15 in Paris, Porte de Versailles.
 
+<figure>
+  <img src="/assets/presse/couverture-la-depeche.jpg" alt="Front page of La Dépêche du Midi, Tarn-et-Garonne edition, 10 November 2026" style="max-width: 380px; margin: 2rem auto 0.5rem; display: block;">
+  <figcaption style="text-align: center; font-size: 0.9rem; color: var(--gray-400);">The front page of La Dépêche du Midi (Tarn-et-Garonne edition).</figcaption>
+</figure>
+
 ## What the article covers
 
 The journalist visited Verdun-sur-Garonne, in the room that serves as office, workshop and meeting room while waiting for "the cabin at the bottom of the garden". The article looks back at how the project started: a first telescope received as a gift, the first sky photos, a wooden prototype, then a first competition and the Pint of Science festival.
